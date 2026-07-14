@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="image-slot.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
+    a { color: #0090E8; text-decoration: none; }
+    a:hover { color: #00B5F1; }
+    * { box-sizing: border-box; }
+    @keyframes cubiiPulse { 0% { box-shadow: 0 0 0 0 rgba(0,181,241,0.40); } 70% { box-shadow: 0 0 0 16px rgba(0,181,241,0); } 100% { box-shadow: 0 0 0 0 rgba(0,181,241,0); } }
+    @keyframes cubiiDemoBar { 0% { width: 0%; } 100% { width: 100%; } }
+  </style>
+</helmet>
+
+<!-- ===================== HEADER ===================== -->
+<header data-screen-label="Header" style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #E8F6FC;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 12px 24px;">
+    <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px; flex-shrink: 0;">
+      <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 34px; width: auto; object-fit: contain; display: block;">
+      
+    </a>
+    <nav style="display: flex; gap: 34px; margin-right: auto; padding-left: 32px;">
+      <div style="position: relative;">
+        <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
+        <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: calc(100% + 12px); left: -8px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 230px; z-index: 60;">
+            <a href="Cubii Funcionalidades.dc.html" style="display: block; padding: 9px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 700; color: #0090E8;" style-hover="background: #EAF8FE; color: #0090E8;">{{ t.navFeaturesAll }} →</a>
+          </div>
+        </sc-if>
+      </div>
+      <a href="Cubii Marketplace.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Marketplace</a>
+      <a href="Cubii Para Quem.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navWho }}</a>
+      <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
+      <a href="#" style="font-size: 17px; font-weight: 700; color: #0090E8; white-space: nowrap;">Smart Cube</a>
+    </nav>
+    <div style="position: relative; flex-shrink: 0;">
+      <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
+        <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 9px; color: #6C8087;">▼</span>
+      </button>
+      <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
+          <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="5">
+            <button onClick="{{ lo.onClick }}" style="{{ lo.style }}"><span>{{ lo.flag }} {{ lo.name }}</span><span style="font-size: 11px; font-weight: 800; opacity: 0.6;">{{ lo.code }}</span></button>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+  </div>
+</header>
+
+<!-- ===================== HERO INSTITUCIONAL ===================== -->
+<section data-screen-label="Smart Cube — hero" style="padding: 84px 32px 56px; background: linear-gradient(180deg, #FFFFFF 0%, #EAF8FE 100%);">
+  <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+    <span style="background: #CCF0FC; color: #0090E8; font-size: 12.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;">{{ t.eyebrow }}</span>
+    <h1 style="margin: 0; font-size: 50px; font-weight: 800; letter-spacing: -1.8px; line-height: 1.08; color: #0A0A0A;">{{ t.h1a }} <span style="color: #00B5F1;">{{ t.h1b }}</span></h1>
+    <p style="margin: 0; font-size: 18px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.heroSub }}</p>
+  </div>
+</section>
+
+<!-- ===================== IMAGEM / VÍDEO ===================== -->
+<section data-screen-label="Vídeo institucional" style="padding: 20px 32px 72px; background: #FFFFFF;">
+  <div onClick="{{ playDemo }}" style="max-width: 960px; margin: 0 auto; position: relative; border-radius: 22px; overflow: hidden; box-shadow: 0 26px 64px rgba(41,109,131,0.22); cursor: pointer;">
+    <div style="height: 8px; background: linear-gradient(90deg, #00B5F1, #4DCBF5);"></div>
+    <!-- Espaço para imagem/vídeo institucional (placeholder) -->
+    <div style="position: relative; height: 460px; background: repeating-linear-gradient(45deg, #F4FBFE, #F4FBFE 16px, #EAF8FE 16px, #EAF8FE 32px); display: flex; align-items: center; justify-content: center;">
+      <span style="font-family: monospace; font-size: 13px; color: #6C8087; background: #FFFFFF; padding: 8px 16px; border-radius: 8px;">{{ t.mediaLabel }}</span>
+      <sc-if value="{{ demoNotPlaying }}" hint-placeholder-val="{{ true }}">
+        <div style="position: absolute; inset: 0; background: rgba(10,10,10,0.14); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+          <div style="width: 82px; height: 82px; border-radius: 999px; background: #00B5F1; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,144,232,0.5); animation: cubiiPulse 2s ease-out infinite;"><span style="color: #FFFFFF; font-size: 30px; margin-left: 5px;">▶</span></div>
+          <span style="background: rgba(10,10,10,0.72); color: #FFFFFF; font-size: 12.5px; font-weight: 700; padding: 6px 16px; border-radius: 999px;">{{ t.watch }}</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ demoPlaying }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; inset: 0; display: flex; align-items: flex-end;">
+          <div style="width: 100%;">
+            <div style="padding: 10px 16px;"><span style="color: #FFFFFF; font-size: 12px; background: rgba(10,10,10,0.72); padding: 4px 12px; border-radius: 999px; font-weight: 700;">● {{ t.playing }}</span></div>
+            <div style="height: 5px; background: rgba(255,255,255,0.5);"><div style="height: 100%; background: linear-gradient(90deg, #0090E8, #00B5F1); animation: cubiiDemoBar 5s linear forwards;"></div></div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUEM SOMOS ===================== -->
+<section data-screen-label="Quem somos" style="padding: 8px 32px 84px; background: #FFFFFF;">
+  <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px;">
+    <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1.1px; color: #0A0A0A;">{{ t.aboutH2 }}</h2>
+    <sc-for list="{{ t.aboutParas }}" as="p" hint-placeholder-count="3">
+      <p style="margin: 0; font-size: 16.5px; font-weight: 500; line-height: 1.7; color: #296D83;">{{ p }}</p>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===================== FACTOS ===================== -->
+<section data-screen-label="Factos" style="padding: 0 32px 88px; background: #FFFFFF;">
+  <div style="max-width: 960px; margin: 0 auto; background: #EAF8FE; border-radius: 22px; padding: 44px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+    <sc-for list="{{ t.facts }}" as="fa" hint-placeholder-count="3">
+      <div style="display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+        <span style="font-size: 34px; font-weight: 800; letter-spacing: -1px; color: #00B5F1; line-height: 1.1;">{{ fa.big }}</span>
+        <span style="font-size: 14px; font-weight: 600; color: #296D83; line-height: 1.45;">{{ fa.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===================== MISSÃO (texto + imagem) ===================== -->
+<section data-screen-label="Missão" style="padding: 80px 32px; background: #F7FBFD;">
+  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #0090E8;">A nossa missão</span>
+      <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1.1px; line-height: 1.12; color: #0A0A0A;">Tecnologia sóbria, útil e humana para cada edifício.</h2>
+      <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.7; color: #296D83;">Acreditamos que gerir um edifício deve ser simples para todos — do residente ao síndico. Construímos a Cubii para revelar a sua robustez à medida da necessidade, sem nunca complicar o dia a dia.</p>
+    </div>
+    <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 18px 46px rgba(41,109,131,0.16); height: 360px; position: relative;">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=60&auto=format&fit=crop" alt="Escritório Smart Cube" style="display:block; width:100%; height:100%; object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VALORES ===================== -->
+<section data-screen-label="Valores" style="padding: 80px 32px; background: #FFFFFF;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+    <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1.1px; color: #0A0A0A; text-align: center;">O que nos guia</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0090E8" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #0A0A0A;">Proximidade</h3>
+        <p style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.6; color: #6C8087;">Uma equipa europeia, perto de quem gere e de quem vive nos edifícios.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0090E8" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 6.5-7 9-4-2.5-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #0A0A0A;">Confiança</h3>
+        <p style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.6; color: #6C8087;">Dados alojados na Europa, em conformidade com o RGPD, com rasto completo.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0090E8" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-11h-6z"/></svg>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #0A0A0A;">Simplicidade</h3>
+        <p style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.6; color: #6C8087;">Menos ruído, mais ação — a tecnologia trabalha em silêncio por si.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BASTIDORES (galeria) ===================== -->
+<section data-screen-label="Bastidores" style="padding: 80px 32px; background: #F7FBFD;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+    <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1.1px; color: #0A0A0A;">Bastidores da Smart Cube</h2>
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 200px 200px; gap: 18px;">
+      <div style="grid-row: span 2; border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(41,109,131,0.14); position: relative;"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=60&auto=format&fit=crop" alt="Escritório Smart Cube" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div style="border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(41,109,131,0.14); position: relative;"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=60&auto=format&fit=crop" alt="Escritório Smart Cube" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+      <div style="border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(41,109,131,0.14); position: relative;"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=60&auto=format&fit=crop" alt="Escritório Smart Cube" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background: #0A0A0A; color: #FFFFFF; padding: 76px 32px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 52px;">
+    <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.35fr; gap: 44px;">
+      <div data-news style="display: flex; flex-direction: column; gap: 20px; max-width: 380px;">
+        <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px;">
+          <img src="assets/cubii-mascot.png" alt="Cubii" style="width: 34px; height: 34px; object-fit: contain; display: block;">
+          <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: #FFFFFF;">cubii</span>
+        </a>
+        <p style="margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: #C6D2D7;">{{ fx.newsTitle }}</p>
+        <div data-news-row style="display: flex; background: #17191C; border: 1.5px solid #2A2E33; border-radius: 12px; overflow: hidden;">
+          <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
+          <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
+        </div>
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #296D83; border-radius: 12px; padding: 13px 16px;">
+          <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
+        </div>
+        <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footProduct }}</span>
+        <a href="Cubii Funcionalidades.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navFeaturesAll }}</a>
+        <a href="Cubii Marketplace.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">Marketplace</a>
+        <a href="Cubii Precos.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navPricing }}</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footCompany }}</span>
+        <a href="#" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.smartCube }}</a>
+        <a href="mailto:hello@cubii.lu" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.contact }}</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ fx.networks }}</span>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>Instagram</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"></path></svg>LinkedIn</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.46-5.33a2.78 2.78 0 0 0-1.95-1.96C18.86 4.25 12 4.25 12 4.25s-6.86 0-8.59.46A2.78 2.78 0 0 0 1.46 6.67C1 8.4 1 12 1 12s0 3.6.46 5.33a2.78 2.78 0 0 0 1.95 1.96c1.73.46 8.59.46 8.59.46s6.86 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5z"></path></svg>YouTube</a>
+      </div>
+      <div style="background: #131417; border: 1.5px solid #24282D; border-radius: 18px; padding: 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+        <div style="width: 48px; height: 48px; border-radius: 999px; background: rgba(0,181,241,0.14); display: flex; align-items: center; justify-content: center; font-size: 22px;">🎧</div>
+        <span style="font-size: 16px; font-weight: 700; color: #FFFFFF;">{{ fx.expertTitle }}</span>
+        <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #878888;">{{ fx.expertBody }}</span>
+        <a href="mailto:hello@cubii.lu" style="margin-top: 6px; background: #00B5F1; color: #FFFFFF; font-size: 13.5px; font-weight: 700; padding: 10px 22px; border-radius: 999px;" style-hover="background: #0090E8; color: #FFFFFF;">{{ fx.expertBtn }}</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Acessar Admin</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="mailto:hello@cubii.lu" aria-label="Falar com a Cubii" style="position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 58px; height: 58px; border-radius: 999px; background: #00B5F1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 28px rgba(0,144,232,0.4);" onmouseover="this.style.background='#0090E8'" onmouseout="this.style.background='#00B5F1'">💬</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;pt&quot;, &quot;options&quot;: [&quot;pt&quot;, &quot;en&quot;, &quot;fr&quot;, &quot;lb&quot;, &quot;de&quot;], &quot;tsType&quot;: &quot;'pt' | 'en' | 'fr' | 'lb' | 'de'&quot;, &quot;section&quot;: &quot;Idioma&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, langMenuOpen: false, featMenuOpen: false, demoPlaying: false };
+
+  componentDidMount() {
+    try {
+      const saved = localStorage.getItem('cubii-lang');
+      if (saved && Component.LANGS.some((l) => l.code === saved)) this.setState({ lang: saved });
+    } catch (e) {}
+  }
+  componentWillUnmount() { if (this._demoTimer) clearTimeout(this._demoTimer); }
+
+  static LANGS = [
+    { code: 'pt', label: 'PT', name: 'Português' },
+    { code: 'en', label: 'EN', name: 'English' },
+    { code: 'fr', label: 'FR', name: 'Français' },
+    { code: 'lb', label: 'LB', name: 'Lëtzebuergesch' },
+    { code: 'de', label: 'DE', name: 'Deutsch' },
+  ];
+
+  static T = {
+    pt: {
+      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navWho: 'Para quem é', navPricing: 'Preços', ctaDemo: 'Agendar Demonstração',
+      footProduct: 'Produto', footCompany: 'Empresa', footRights: 'Todos os direitos reservados.',
+      eyebrow: 'Quem somos', h1a: 'Somos a', h1b: 'Smart Cube.',
+      heroSub: 'A empresa por trás da Cubii — a operar desde 2018 no Luxemburgo, com a missão de simplificar a gestão de edifícios para toda a Europa.',
+      mediaLabel: '[ imagem / vídeo institucional ]', watch: 'Ver vídeo (1:20)', playing: 'A reproduzir…',
+      aboutH2: 'A nossa história',
+      aboutParas: [
+        'A Smart Cube nasceu em 2018, no Luxemburgo, da convicção de que gerir edifícios não tem de ser caótico. Reunimos gestores, engenheiros e especialistas em energia à volta de um objetivo comum: dar a cada interveniente — residente, síndico, prestador ou sindicato — as ferramentas certas, num só lugar.',
+        'Dessa visão nasceu a Cubii: uma plataforma que liga pessoas e processos, do reporte de uma avaria à análise de consumos, com transparência e rasto completo. Hoje servimos administradoras e sindicatos por todo o Luxemburgo e além.',
+        'Somos uma equipa europeia, com dados alojados na Europa e em conformidade com o RGPD. Acreditamos em tecnologia sóbria, útil e humana — que revela a sua robustez à medida da necessidade, sem nunca complicar o dia a dia.',
+      ],
+      facts: [
+        { big: '2018', label: 'ano de fundação, no Luxemburgo' },
+        { big: '🇪🇺', label: 'dados alojados na Europa · RGPD' },
+        { big: '5', label: 'idiomas, uma só plataforma' },
+      ],
+    },
+    en: {
+      navFeatures: 'Features', navFeaturesAll: 'All features', navWho: 'Who it\u2019s for', navPricing: 'Pricing', ctaDemo: 'Book a Demo',
+      footProduct: 'Product', footCompany: 'Company', footRights: 'All rights reserved.',
+      eyebrow: 'About us', h1a: 'We are', h1b: 'Smart Cube.',
+      heroSub: 'The company behind Cubii — operating since 2018 in Luxembourg, on a mission to make building management simple across Europe.',
+      mediaLabel: '[ institutional image / video ]', watch: 'Watch video (1:20)', playing: 'Playing…',
+      aboutH2: 'Our story',
+      aboutParas: [
+        'Smart Cube was founded in 2018 in Luxembourg, from the conviction that managing buildings doesn\u2019t have to be chaotic. We brought managers, engineers and energy specialists together around a common goal: to give every stakeholder — resident, syndic, provider or syndicate — the right tools, in one place.',
+        'From that vision, Cubii was born: a platform that connects people and processes, from reporting a fault to analysing consumption, with transparency and a full audit trail. Today we serve property managers and syndicates across Luxembourg and beyond.',
+        'We are a European team, with data hosted in Europe and GDPR-compliant. We believe in sober, useful, human technology — one that reveals its robustness as needed, without ever complicating the everyday.',
+      ],
+      facts: [
+        { big: '2018', label: 'founded, in Luxembourg' },
+        { big: '🇪🇺', label: 'data hosted in Europe · GDPR' },
+        { big: '5', label: 'languages, one platform' },
+      ],
+    },
+    fr: {
+      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navWho: 'Pour qui', navPricing: 'Tarifs', ctaDemo: 'Réserver une démo',
+      footProduct: 'Produit', footCompany: 'Entreprise', footRights: 'Tous droits réservés.',
+      eyebrow: 'À propos', h1a: 'Nous sommes', h1b: 'Smart Cube.',
+      heroSub: 'L\u2019entreprise derrière Cubii — active depuis 2018 au Luxembourg, avec la mission de simplifier la gestion des immeubles dans toute l\u2019Europe.',
+      mediaLabel: '[ image / vidéo institutionnelle ]', watch: 'Voir la vidéo (1:20)', playing: 'Lecture…',
+      aboutH2: 'Notre histoire',
+      aboutParas: [
+        'Smart Cube est née en 2018 au Luxembourg, de la conviction que gérer des immeubles ne doit pas être chaotique. Nous avons réuni gestionnaires, ingénieurs et spécialistes de l\u2019énergie autour d\u2019un objectif commun : donner à chaque acteur — résident, syndic, prestataire ou syndicat — les bons outils, au même endroit.',
+        'De cette vision est née Cubii : une plateforme qui relie les personnes et les processus, du signalement d\u2019une panne à l\u2019analyse des consommations, avec transparence et traçabilité complète. Aujourd\u2019hui, nous servons gestionnaires et syndics dans tout le Luxembourg et au-delà.',
+        'Nous sommes une équipe européenne, avec des données hébergées en Europe et conformes au RGPD. Nous croyons en une technologie sobre, utile et humaine — qui révèle sa robustesse selon les besoins, sans jamais compliquer le quotidien.',
+      ],
+      facts: [
+        { big: '2018', label: 'année de fondation, au Luxembourg' },
+        { big: '🇪🇺', label: 'données hébergées en Europe · RGPD' },
+        { big: '5', label: 'langues, une seule plateforme' },
+      ],
+    },
+    lb: {
+      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navWho: 'Fir wien', navPricing: 'Präisser', ctaDemo: 'Demo reservéieren',
+      footProduct: 'Produkt', footCompany: 'Firma', footRights: 'All Rechter reservéiert.',
+      eyebrow: 'Iwwer eis', h1a: 'Mir sinn', h1b: 'Smart Cube.',
+      heroSub: 'D\u2019Firma hannert Cubii — aktiv zanter 2018 zu Lëtzebuerg, mat der Missioun d\u2019Gebaisverwaltung an ganz Europa ze vereinfachen.',
+      mediaLabel: '[ institutionellt Bild / Video ]', watch: 'Video kucken (1:20)', playing: 'Leeft…',
+      aboutH2: 'Eis Geschicht',
+      aboutParas: [
+        'Smart Cube gouf 2018 zu Lëtzebuerg gegrënnt, aus der Iwwerzeegung datt d\u2019Verwaltung vu Gebaier net chaotesch muss sinn. Mir hunn Gestionnairen, Ingenieuren an Energiespezialisten ëm e gemeinsamt Zil versammelt: all Acteur — Awunner, Syndic, Déngschtleeschter oder Syndicat — déi richteg Tools ze ginn, op enger Plaz.',
+        'Aus dëser Visioun ass Cubii entstanen: eng Plattform déi Leit a Prozesser verbënnt, vum Mellen vun enger Panne bis zur Analyse vum Verbrauch, mat Transparenz a kompletter Nofollegbarkeet. Haut déngen mir Administratiounen a Syndicaten a ganz Lëtzebuerg an doriwwer eraus.',
+        'Mir sinn en europäescht Team, mat Donnéeën an Europa gehost a RGPD-konform. Mir gleewen u sober, nëtzlech a mënschlech Technologie — déi hir Robustheet no Besoin weist, ouni jeemools den Alldag ze komplizéieren.',
+      ],
+      facts: [
+        { big: '2018', label: 'Grënnungsjoer, zu Lëtzebuerg' },
+        { big: '🇪🇺', label: 'Donnéeën an Europa gehost · RGPD' },
+        { big: '5', label: 'Sproochen, eng Plattform' },
+      ],
+    },
+    de: {
+      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navWho: 'Für wen', navPricing: 'Preise', ctaDemo: 'Demo vereinbaren',
+      footProduct: 'Produkt', footCompany: 'Unternehmen', footRights: 'Alle Rechte vorbehalten.',
+      eyebrow: 'Über uns', h1a: 'Wir sind', h1b: 'Smart Cube.',
+      heroSub: 'Das Unternehmen hinter Cubii — seit 2018 in Luxemburg tätig, mit der Mission, die Gebäudeverwaltung in ganz Europa einfach zu machen.',
+      mediaLabel: '[ institutionelles Bild / Video ]', watch: 'Video ansehen (1:20)', playing: 'Läuft…',
+      aboutH2: 'Unsere Geschichte',
+      aboutParas: [
+        'Smart Cube wurde 2018 in Luxemburg gegründet, aus der Überzeugung, dass die Verwaltung von Gebäuden nicht chaotisch sein muss. Wir brachten Verwalter, Ingenieure und Energiespezialisten um ein gemeinsames Ziel zusammen: jedem Beteiligten — Bewohner, Syndikus, Dienstleister oder Syndikat — die richtigen Werkzeuge an einem Ort zu geben.',
+        'Aus dieser Vision entstand Cubii: eine Plattform, die Menschen und Prozesse verbindet, von der Schadensmeldung bis zur Verbrauchsanalyse, mit Transparenz und vollständiger Nachverfolgbarkeit. Heute betreuen wir Verwaltungen und Syndikate in ganz Luxemburg und darüber hinaus.',
+        'Wir sind ein europäisches Team, mit Daten in Europa gehostet und DSGVO-konform. Wir glauben an nüchterne, nützliche, menschliche Technologie — die ihre Robustheit nach Bedarf zeigt, ohne den Alltag je zu verkomplizieren.',
+      ],
+      facts: [
+        { big: '2018', label: 'Gründungsjahr, in Luxemburg' },
+        { big: '🇪🇺', label: 'Daten in Europa gehostet · DSGVO' },
+        { big: '5', label: 'Sprachen, eine Plattform' },
+      ],
+    },
+  };
+
+  setLang(code) {
+    this.setState({ lang: code, langMenuOpen: false });
+    try { localStorage.setItem('cubii-lang', code); } catch (e) {}
+  }
+
+  renderVals() {
+    const s = this.state;
+    const lang = s.lang ?? this.props.defaultLang ?? 'pt';
+    const t = Component.T[lang] || Component.T.pt;
+    const FX = {
+      pt: { newsTitle: 'Assine a nossa newsletter e fique por dentro de novidades e lançamentos.', emailPh: 'Coloque o seu e-mail', send: 'Enviar', consent: 'Ao subscrever, concorda com a nossa', privacy: 'Política de Privacidade', networks: 'Redes', expertTitle: 'Fale com um especialista', expertBody: 'Fale diretamente com um especialista Cubii.', expertBtn: 'Contactar', terms: 'Termos de serviço', legalPrivacy: 'Política de privacidade', thanks: 'Obrigado! Subscrição registada.', smartCube: 'Smart Cube', contact: 'Contacto' },
+      en: { newsTitle: 'Subscribe to our newsletter and keep up with news and releases.', emailPh: 'Enter your e-mail', send: 'Send', consent: 'By subscribing, you agree to our', privacy: 'Privacy Policy', networks: 'Social', expertTitle: 'Talk to a specialist', expertBody: 'Speak directly with a Cubii specialist.', expertBtn: 'Get in touch', terms: 'Terms of service', legalPrivacy: 'Privacy policy', thanks: 'Thank you! You are subscribed.', smartCube: 'Smart Cube', contact: 'Contact' },
+      fr: { newsTitle: 'Abonnez-vous à notre newsletter et restez informé des nouveautés et sorties.', emailPh: 'Entrez votre e-mail', send: 'Envoyer', consent: 'En vous abonnant, vous acceptez notre', privacy: 'Politique de confidentialité', networks: 'Réseaux', expertTitle: 'Parlez à un spécialiste', expertBody: 'Parlez directement à un spécialiste Cubii.', expertBtn: 'Nous contacter', terms: 'Conditions de service', legalPrivacy: 'Politique de confidentialité', thanks: 'Merci ! Abonnement enregistré.', smartCube: 'Smart Cube', contact: 'Contact' },
+      lb: { newsTitle: 'Abonnéiert eis Newsletter a bleift um Lafenden iwwer Neiegkeeten.', emailPh: 'Gitt Är E-Mail an', send: 'Schécken', consent: 'Mam Abonnement akzeptéiert Dir eis', privacy: 'Dateschutzrichtlinn', networks: 'Netzwierker', expertTitle: 'Schwätzt mat engem Spezialist', expertBody: 'Schwätzt direkt mat engem Cubii-Spezialist.', expertBtn: 'Kontaktéieren', terms: 'Notzungsbedéngungen', legalPrivacy: 'Dateschutz', thanks: 'Merci! Abonnement registréiert.', smartCube: 'Smart Cube', contact: 'Kontakt' },
+      de: { newsTitle: 'Abonnieren Sie unseren Newsletter und bleiben Sie über Neuigkeiten informiert.', emailPh: 'E-Mail eingeben', send: 'Senden', consent: 'Mit dem Abonnement akzeptieren Sie unsere', privacy: 'Datenschutzrichtlinie', networks: 'Netzwerke', expertTitle: 'Sprechen Sie mit einem Experten', expertBody: 'Sprechen Sie direkt mit einem Cubii-Experten.', expertBtn: 'Kontakt aufnehmen', terms: 'Nutzungsbedingungen', legalPrivacy: 'Datenschutz', thanks: 'Danke! Abo registriert.', smartCube: 'Smart Cube', contact: 'Kontakt' },
+    };
+
+    const FLAGS = { pt: '🇵🇹', en: '🇬🇧', fr: '🇫🇷', lb: '🇱🇺', de: '🇩🇪' };
+    const langOptions = Component.LANGS.map((l) => ({
+      code: l.label, flag: FLAGS[l.code], name: l.name,
+      onClick: () => this.setLang(l.code),
+      style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', width: '100%', padding: '9px 14px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left', fontWeight: l.code === lang ? 800 : 500, background: l.code === lang ? '#CCF0FC' : 'transparent', color: l.code === lang ? '#0090E8' : '#296D83' },
+    }));
+    const langPills = Component.LANGS.map((l) => ({
+      code: l.label, flag: FLAGS[l.code],
+      onClick: () => this.setLang(l.code),
+      style: { border: l.code === lang ? '1px solid #0090E8' : '1px solid #CCF0FC', background: l.code === lang ? '#CCF0FC' : 'transparent', borderRadius: '999px', padding: '4px 12px', fontSize: '12px', cursor: 'pointer', fontFamily: "'Hanken Grotesk', sans-serif", fontWeight: l.code === lang ? 800 : 600, color: l.code === lang ? '#0090E8' : '#6C8087' },
+    }));
+
+    const playDemo = () => {
+      this.setState({ demoPlaying: true });
+      if (this._demoTimer) clearTimeout(this._demoTimer);
+      this._demoTimer = setTimeout(() => this.setState({ demoPlaying: false }), 5200);
+    };
+
+    return {
+      t,
+      langCode: (Component.LANGS.find((l) => l.code === lang) || Component.LANGS[0]).label, langFlag: FLAGS[lang] || '',
+      langMenuOpen: s.langMenuOpen,
+      toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen, featMenuOpen: false }),
+      featMenuOpen: s.featMenuOpen,
+      toggleFeatMenu: () => this.setState({ featMenuOpen: !s.featMenuOpen, langMenuOpen: false }),
+      featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
+      navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
+      navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },
+      langOptions,
+      langPills,
+      fx: FX[lang] || FX.pt,
+      newsSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); const wrap = e.currentTarget.closest('[data-news]'); if (!wrap) return; const input = wrap.querySelector('input'); const ok = input && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value); if (!ok) { if (input) { input.style.borderColor = '#00B5F1'; input.focus(); } return; } const row = wrap.querySelector('[data-news-row]'); const done = wrap.querySelector('[data-news-done]'); if (row) row.style.display = 'none'; if (done) done.style.display = 'flex'; },
+      demoPlaying: s.demoPlaying,
+      demoNotPlaying: !s.demoPlaying,
+      playDemo,
+    };
+  }
+}
+</script>
+</body>
+</html>

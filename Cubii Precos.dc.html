@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
+    a { color: #0090E8; text-decoration: none; }
+    a:hover { color: #00B5F1; }
+    input::placeholder { color: #878888; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<!-- ===================== HEADER ===================== -->
+<header data-screen-label="Header" style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #E8F6FC;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 12px 24px;">
+    <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px; flex-shrink: 0;">
+      <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 34px; width: auto; object-fit: contain; display: block;">
+      
+    </a>
+    <nav style="display: flex; gap: 34px; margin-right: auto; padding-left: 32px;">
+      <div style="position: relative;">
+        <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
+        <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: calc(100% + 12px); left: -8px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 230px; z-index: 60;">
+            <a href="Cubii Funcionalidades.dc.html" style="display: block; padding: 9px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 700; color: #0090E8;" style-hover="background: #EAF8FE; color: #0090E8;">{{ t.navFeaturesAll }} →</a>
+          </div>
+        </sc-if>
+      </div>
+      <a href="Cubii Marketplace.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Marketplace</a>
+      <a href="Cubii Para Quem.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navWho }}</a>
+      <a href="#" style="font-size: 17px; font-weight: 700; color: #0090E8; white-space: nowrap; transition: color 0.22s ease;">{{ t.navPricing }}</a>
+      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Smart Cube</a>
+    </nav>
+    <div style="position: relative; flex-shrink: 0;">
+      <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
+        <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 9px; color: #6C8087;">▼</span>
+      </button>
+      <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
+          <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="5">
+            <button onClick="{{ lo.onClick }}" style="{{ lo.style }}">
+              <span>{{ lo.flag }} {{ lo.name }}</span>
+              <span style="font-size: 11px; font-weight: 800; opacity: 0.6;">{{ lo.code }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+  </div>
+</header>
+
+<!-- ===================== HERO + CALCULADORA ===================== -->
+<section data-screen-label="Preços — hero" style="padding: 72px 32px 40px; background: #FFFFFF;">
+  <div style="max-width: 1150px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 36px;">
+    <h1 style="margin: 0; font-size: 52px; font-weight: 900; letter-spacing: -2px; line-height: 1.08; text-align: center; color: #0A0A0A; max-width: 800px;">{{ t.prH1a }} <span style="color: #00B5F1;">{{ t.prH1b }}</span></h1>
+    <!-- Controlo: nº de frações + faturação -->
+    <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 14.5px; font-weight: 800; color: #0A0A0A;">{{ t.teamSizeLabel }}</span>
+        <input type="number" min="1" value="{{ units }}" onChange="{{ onUnits }}" style="width: 84px; border: 1.5px solid #CCF0FC; border-radius: 10px; padding: 10px 12px; font-size: 14.5px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; color: #0A0A0A; outline: none; background: #F7FBFD;" style-focus="border-color: #00B5F1;">
+        <span style="font-size: 14px; font-weight: 500; color: #6C8087;">{{ t.unitsWord }}</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 14.5px; font-weight: 800; color: #0A0A0A;">{{ t.billMe }}</span>
+        <div style="display: flex; gap: 8px;">
+          <button onClick="{{ setMonthly }}" style="{{ monthlyBtnStyle }}">{{ t.monthly }}</button>
+          <button onClick="{{ setAnnual }}" style="{{ annualBtnStyle }}">{{ t.annually }}</button>
+        </div>
+        <span style="background: #CCF0FC; color: #0090E8; font-size: 11.5px; font-weight: 800; padding: 5px 12px; border-radius: 999px; letter-spacing: 0.5px;">{{ t.saveBadge }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CARDS DE PLANOS ===================== -->
+<section data-screen-label="Planos" style="padding: 24px 32px 80px; background: #FFFFFF;">
+  <div style="max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1.5px solid #E2ECEF; border-radius: 20px; overflow: visible;">
+    <sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
+      <div style="{{ p.cardStyle }}" onMouseEnter="{{ cardHoverOn }}" onMouseLeave="{{ cardHoverOff }}">
+        <sc-if value="{{ p.recommended }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: -30px; left: -1.5px; right: -1.5px; background: #0A0A0A; color: #FFFFFF; font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-align: center; padding: 8px 0; border-radius: 12px 12px 0 0;">{{ t.recommended }}</div>
+        </sc-if>
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; min-height: 96px;">
+          <h3 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #0A0A0A;">{{ p.name }}</h3>
+          <p style="margin: 0; font-size: 13px; font-weight: 500; line-height: 1.5; color: #6C8087;">{{ p.tag }}</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; align-items: center; text-align: center; min-height: 86px;">
+          <span style="font-size: 38px; font-weight: 900; letter-spacing: -1.5px; color: #0A0A0A;">{{ p.price }}</span>
+          <span style="font-size: 12.5px; font-weight: 600; color: #6C8087;">{{ p.priceNote }}</span>
+          <sc-if value="{{ p.estimate }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size: 12.5px; font-weight: 700; color: #0090E8;">{{ p.estimate }}</span>
+          </sc-if>
+        </div>
+        <a href="Cubii Landing.dc.html#lead-form" style="{{ p.ctaStyle }}">{{ p.cta }}</a>
+        <div style="display: flex; flex-direction: column; gap: 11px;">
+          <span style="font-size: 13.5px; font-weight: 800; color: #0A0A0A;">{{ p.includesTitle }}</span>
+          <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="4">
+            <div style="display: flex; gap: 9px; align-items: flex-start;">
+              <span style="color: #0090E8; font-size: 11px; font-weight: 900; margin-top: 2px;">›</span>
+              <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #296D83;">{{ f }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===================== TABELA COMPARATIVA ===================== -->
+<section data-screen-label="Comparar planos" style="padding: 64px 32px 90px; background: #F7FBFD;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 900; letter-spacing: -1.4px; text-align: center; color: #0A0A0A;">{{ t.compareH2 }}</h2>
+      <a href="Cubii Funcionalidades.dc.html" style="font-size: 14.5px; font-weight: 700; color: #0090E8;">{{ t.compareLink }}</a>
+    </div>
+    <div style="background: #FFFFFF; border: 1.5px solid #E2ECEF; border-radius: 18px; overflow: hidden;">
+      <!-- Cabeçalho -->
+      <div style="display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr; padding: 18px 24px; border-bottom: 1.5px solid #E2ECEF;">
+        <span></span>
+        <sc-for list="{{ planHeaders }}" as="ph" hint-placeholder-count="4">
+          <span style="font-size: 14.5px; font-weight: 800; text-align: center; color: #0A0A0A;">{{ ph }}</span>
+        </sc-for>
+      </div>
+      <sc-for list="{{ tableSections }}" as="sec" hint-placeholder-count="3">
+        <div>
+          <div style="background: #EAF8FE; padding: 12px 24px; font-size: 13px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #296D83;">{{ sec.title }}</div>
+          <sc-for list="{{ sec.rows }}" as="row" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr; align-items: center; padding: 13px 24px; border-bottom: 1px solid #F0F5F7;">
+              <span style="font-size: 14px; font-weight: 600; color: #0A0A0A;">{{ row.label }}</span>
+              <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+                <span style="display: flex; justify-content: center;"><span style="{{ cell.style }}">{{ cell.txt }}</span></span>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAIS DETALHES (acordeão) ===================== -->
+<section data-screen-label="Mais detalhes" style="position: relative; overflow: hidden; padding: 80px 32px; background: #FFFFFF;">
+  <!-- Balões de fala decorativos (um de cada lado) -->
+  <svg width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true" style="position: absolute; left: 5%; top: 50%; pointer-events: none;">
+    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#0A0A0A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+  </svg>
+  <svg width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true" style="position: absolute; right: 5%; top: 12%; pointer-events: none; transform: scaleX(-1);">
+    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#0A0A0A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+  </svg>
+  <div style="position: relative; z-index: 1; max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+    <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.3px; text-align: center; color: #0A0A0A;">{{ t.detailsH2 }}</h2>
+    <div style="display: flex; flex-direction: column;">
+      <sc-for list="{{ details }}" as="d" hint-placeholder-count="6">
+        <div style="border-bottom: 1.5px solid #E2ECEF;">
+          <button onClick="{{ d.onToggle }}" style="width: 100%; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 4px; font-family: 'Hanken Grotesk', sans-serif; text-align: left;">
+            <span style="font-size: 16px; font-weight: 700; color: #0A0A0A;">{{ d.question }}</span>
+            <span style="width: 26px; height: 26px; border-radius: 999px; background: #00B5F1; color: #FFFFFF; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">{{ d.chevron }}</span>
+          </button>
+          <sc-if value="{{ d.open }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 0; padding: 0 4px 20px; font-size: 14px; font-weight: 500; line-height: 1.65; color: #296D83;">{{ d.answer }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PERGUNTAS? (banda escura) ===================== -->
+<section data-screen-label="Perguntas" style="padding: 64px 32px 88px; background: #FFFFFF;">
+  <div style="max-width: 1000px; margin: 0 auto; background: #0A0A0A; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), 0 100%); padding: 56px 56px 72px; display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 40px; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
+      <h2 style="margin: 0; font-size: 34px; font-weight: 900; letter-spacing: -1.2px; color: #FFFFFF;">{{ t.qH2 }}</h2>
+      <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.65; color: #878888; max-width: 480px;">{{ t.qBody }}</p>
+      <a href="Cubii Landing.dc.html#faq" style="font-size: 14.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">{{ t.qLink }}</a>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 128px; height: 128px; object-fit: contain; display: block;">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer data-screen-label="Footer" style="background: #0A0A0A; color: #FFFFFF; padding: 76px 32px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 52px;">
+    <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.35fr; gap: 44px;">
+      <!-- Newsletter -->
+      <div data-news style="display: flex; flex-direction: column; gap: 20px; max-width: 380px;">
+        <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px;">
+          <img src="assets/cubii-mascot.png" alt="Cubii" style="width: 34px; height: 34px; object-fit: contain; display: block;">
+          <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: #FFFFFF;">cubii</span>
+        </a>
+        <p style="margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: #C6D2D7;">{{ fx.newsTitle }}</p>
+        <div data-news-row style="display: flex; background: #17191C; border: 1.5px solid #2A2E33; border-radius: 12px; overflow: hidden;">
+          <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
+          <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
+        </div>
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #296D83; border-radius: 12px; padding: 13px 16px;">
+          <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
+        </div>
+        <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
+      </div>
+      <!-- Produto -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footProduct }}</span>
+        <a href="Cubii Funcionalidades.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navFeaturesAll }}</a>
+        <a href="Cubii Marketplace.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">Marketplace</a>
+        <a href="Cubii Precos.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navPricing }}</a>
+      </div>
+      <!-- Empresa -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footCompany }}</span>
+        <a href="Cubii Smart Cube.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.smartCube }}</a>
+        <a href="mailto:hello@cubii.lu" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.contact }}</a>
+      </div>
+      <!-- Redes -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ fx.networks }}</span>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>Instagram</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"></path></svg>LinkedIn</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.46-5.33a2.78 2.78 0 0 0-1.95-1.96C18.86 4.25 12 4.25 12 4.25s-6.86 0-8.59.46A2.78 2.78 0 0 0 1.46 6.67C1 8.4 1 12 1 12s0 3.6.46 5.33a2.78 2.78 0 0 0 1.95 1.96c1.73.46 8.59.46 8.59.46s6.86 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5z"></path></svg>YouTube</a>
+      </div>
+      <!-- Fale com um especialista -->
+      <div style="background: #131417; border: 1.5px solid #24282D; border-radius: 18px; padding: 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+        <div style="width: 48px; height: 48px; border-radius: 999px; background: rgba(0,181,241,0.14); display: flex; align-items: center; justify-content: center; font-size: 22px;">🎧</div>
+        <span style="font-size: 16px; font-weight: 700; color: #FFFFFF;">{{ fx.expertTitle }}</span>
+        <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #878888;">{{ fx.expertBody }}</span>
+        <a href="mailto:hello@cubii.lu" style="margin-top: 6px; background: #00B5F1; color: #FFFFFF; font-size: 13.5px; font-weight: 700; padding: 10px 22px; border-radius: 999px;" style-hover="background: #0090E8; color: #FFFFFF;">{{ fx.expertBtn }}</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+      <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Acessar Admin</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== ChatWidget ===================== -->
+<a href="mailto:hello@cubii.lu" aria-label="Falar com a Cubii" style="position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 58px; height: 58px; border-radius: 999px; background: #00B5F1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 28px rgba(0,144,232,0.4);" style-hover="background: #0090E8; color: #FFFFFF;">💬</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;pt&quot;, &quot;options&quot;: [&quot;pt&quot;, &quot;en&quot;, &quot;fr&quot;, &quot;lb&quot;, &quot;de&quot;], &quot;tsType&quot;: &quot;'pt' | 'en' | 'fr' | 'lb' | 'de'&quot;, &quot;section&quot;: &quot;Idioma&quot;}, &quot;defaultUnits&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 120, &quot;min&quot;: 1, &quot;max&quot;: 5000, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Calculadora&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, langMenuOpen: false, featMenuOpen: false, billing: 'm', units: null, openDetail: 0 };
+
+  componentDidMount() {
+    try {
+      const saved = localStorage.getItem('cubii-lang');
+      if (saved && Component.LANGS.some((l) => l.code === saved)) this.setState({ lang: saved });
+    } catch (e) {}
+  }
+
+  static LANGS = [
+    { code: 'pt', label: 'PT', name: 'Português' },
+    { code: 'en', label: 'EN', name: 'English' },
+    { code: 'fr', label: 'FR', name: 'Français' },
+    { code: 'lb', label: 'LB', name: 'Lëtzebuergesch' },
+    { code: 'de', label: 'DE', name: 'Deutsch' },
+  ];
+
+  // Preços por fração/mês (mensal vs anual ~ -15%). PLACEHOLDER: validar valores comerciais reais.
+  static PRICES = { m: [0, 1.90, 3.40, null], a: [0, 1.62, 2.89, null] };
+
+  static T = {
+    pt: {
+      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navOverview: 'Visão geral', navWho: 'Para quem é', navPricing: 'Preços', login: 'Entrar', ctaDemo: 'Agendar Demonstração',
+      prH1a: 'Preços transparentes,', prH1b: 'para cada portfólio.',
+      teamSizeLabel: 'Frações geridas:', unitsWord: 'frações', billMe: 'Faturação:', monthly: 'Mensal', annually: 'Anual', saveBadge: 'POUPE ATÉ 15%',
+      recommended: 'RECOMENDADO', perUnit: 'por fração / mês', billedAnnually: 'faturado anualmente', estSuffix: '/mês', free: 'Grátis',
+      enterprisePrice: 'Sob proposta', enterpriseNote: 'Faturação anual. Contacte-nos para uma proposta à medida.',
+      plans: [
+        { name: 'Free', tag: 'Grátis para sempre, para 1 edifício até 10 frações', cta: 'Começar agora', includesTitle: 'Inclui:', features: ['Tickets ilimitados', 'App para residentes', 'Documentos do condomínio', '1 edifício, até 10 frações'] },
+        { name: 'Standard', tag: 'Tudo para começar a gerir a sério', cta: 'Iniciar teste grátis', includesTitle: 'Tudo do Free, mais:', features: ['Edifícios ilimitados', 'Manutenção programada', 'Aprovação de orçamentos', 'Suporte 9/5', 'Até 500 frações'] },
+        { name: 'Premium', tag: 'Automação e energia para portfólios exigentes', cta: 'Iniciar teste grátis', includesTitle: 'Tudo do Standard, mais:', features: ['Alarmes automáticos 24/7', 'Integrações Enectiva & Leneda', 'Marketplace com ranking completo', 'Suporte 24/7 para críticos', 'Frações ilimitadas'] },
+        { name: 'Enterprise', tag: 'Segurança e escala para grandes administradoras', cta: 'Contactar vendas', includesTitle: 'Tudo do Premium, mais:', features: ['SSO / SAML', 'API dedicada e integrações à medida', 'Gestor de conta dedicado', 'SLA 99,95%'] },
+      ],
+      compareH2: 'Compare os planos', compareLink: 'Saiba mais sobre as funcionalidades →',
+      unlimited: 'Ilimitado', basic: 'Básico', community: 'Comunidade', critical: '24/7 críticos', full: '24/7 total',
+      tableSections: [
+        { title: 'Essenciais de gestão', rows: [
+          { label: 'Tickets inteligentes', vals: [true, true, true, true] },
+          { label: 'Edifícios', vals: ['1', '∞', '∞', '∞'] },
+          { label: 'Frações', vals: ['10', '500', '∞', '∞'] },
+          { label: 'App para cada papel', vals: [true, true, true, true] },
+          { label: 'Documentos centralizados', vals: [true, true, true, true] },
+        ]},
+        { title: 'Monitorização & energia', rows: [
+          { label: 'Alarmes automáticos', vals: [false, false, true, true] },
+          { label: 'Integração Enectiva & Leneda', vals: [false, false, true, true] },
+          { label: 'Manutenção programada', vals: [false, true, true, true] },
+          { label: 'Relatórios para assembleias', vals: [false, true, true, true] },
+        ]},
+        { title: 'Colaboração & segurança', rows: [
+          { label: 'Marketplace de prestadores', vals: ['@basic', true, true, true] },
+          { label: 'Aprovações de orçamento', vals: [false, true, true, true] },
+          { label: 'SSO / SAML', vals: [false, false, false, true] },
+          { label: 'Suporte', vals: ['@community', '9/5', '@critical', '@full'] },
+        ]},
+      ],
+      detailsH2: 'Mais detalhes',
+      details: [
+        { q: 'Como calcular o custo da subscrição', a: 'O preço é por fração ativa, por mês. Exemplo: 120 frações no Standard custam 120 × €1,90 = €228/mês. Frações do plano Free não contam para a faturação.' },
+        { q: 'O que conta como fração', a: 'Cada unidade autónoma do edifício: apartamentos, lojas, escritórios e estacionamentos com gestão própria. Áreas comuns não contam.' },
+        { q: 'Opções de pagamento', a: 'Cartão de crédito, débito direto SEPA, ou fatura única no plano anual. Todos os preços em euros, sem taxas escondidas.' },
+        { q: 'Período de teste e reembolsos', a: 'Standard e Premium incluem 30 dias de teste grátis, sem cartão. Pode cancelar a qualquer momento; o valor não utilizado do plano anual é reembolsado proporcionalmente.' },
+        { q: 'Subscrições anuais', a: 'A faturação anual poupa até 15% face ao plano mensal e emite uma única fatura — mais simples para a contabilidade do condomínio.' },
+        { q: 'Premium ou Enterprise?', a: 'Premium serve a maioria dos portfólios. Escolha Enterprise se precisa de SSO/SAML, integrações à medida via API dedicada, ou SLA contratual de 99,95%.' },
+      ],
+      qH2: 'Perguntas?', qBody: 'Temos respostas. Consulte a lista completa de perguntas frequentes sobre preços, frações e licenciamento.', qLink: 'Ver perguntas frequentes →',
+      footBased: '100% baseado em Luxemburgo', footServers: 'Servidores na Europa',
+      footProduct: 'Produto', footResources: 'Recursos', footCompany: 'Empresa', footLangs: 'Idiomas',
+      footHowItWorks: 'Como funciona', footSupport: 'Suporte', footAbout: 'Sobre a Smart Cube', footContact: 'Contacto', footPrivacy: 'Privacidade', footRights: 'Todos os direitos reservados.',
+    },
+    en: {
+      navFeatures: 'Features', navFeaturesAll: 'All features', navOverview: 'Overview', navWho: 'Who it\u2019s for', navPricing: 'Pricing', login: 'Log in', ctaDemo: 'Book a Demo',
+      prH1a: 'Transparent pricing,', prH1b: 'for every portfolio.',
+      teamSizeLabel: 'Units managed:', unitsWord: 'units', billMe: 'Bill me:', monthly: 'Monthly', annually: 'Annually', saveBadge: 'SAVE UP TO 15%',
+      recommended: 'RECOMMENDED', perUnit: 'per unit / month', billedAnnually: 'billed annually', estSuffix: '/month', free: 'Free',
+      enterprisePrice: 'Custom quote', enterpriseNote: 'Billed annually. Contact us for a tailored proposal.',
+      plans: [
+        { name: 'Free', tag: 'Free forever, for 1 building up to 10 units', cta: 'Get it now', includesTitle: 'Includes:', features: ['Unlimited tickets', 'Resident app', 'Building documents', '1 building, up to 10 units'] },
+        { name: 'Standard', tag: 'Everything you need to manage seriously', cta: 'Start free trial', includesTitle: 'Everything from Free, plus:', features: ['Unlimited buildings', 'Planned maintenance', 'Quote approvals', '9/5 support', 'Up to 500 units'] },
+        { name: 'Premium', tag: 'Automation and energy for demanding portfolios', cta: 'Start free trial', includesTitle: 'Everything from Standard, plus:', features: ['24/7 automatic alarms', 'Enectiva & Leneda integrations', 'Marketplace with full ranking', '24/7 support for critical issues', 'Unlimited units'] },
+        { name: 'Enterprise', tag: 'Security and scale for large administrators', cta: 'Contact sales', includesTitle: 'Everything from Premium, plus:', features: ['SSO / SAML', 'Dedicated API and custom integrations', 'Dedicated account manager', '99.95% SLA'] },
+      ],
+      compareH2: 'Compare plans', compareLink: 'Learn about features →',
+      unlimited: 'Unlimited', basic: 'Basic', community: 'Community', critical: '24/7 critical', full: '24/7 full',
+      tableSections: [
+        { title: 'Management essentials', rows: [
+          { label: 'Smart tickets', vals: [true, true, true, true] },
+          { label: 'Buildings', vals: ['1', '∞', '∞', '∞'] },
+          { label: 'Units', vals: ['10', '500', '∞', '∞'] },
+          { label: 'An app for every role', vals: [true, true, true, true] },
+          { label: 'Centralised documents', vals: [true, true, true, true] },
+        ]},
+        { title: 'Monitoring & energy', rows: [
+          { label: 'Automatic alarms', vals: [false, false, true, true] },
+          { label: 'Enectiva & Leneda integration', vals: [false, false, true, true] },
+          { label: 'Planned maintenance', vals: [false, true, true, true] },
+          { label: 'Assembly-ready reports', vals: [false, true, true, true] },
+        ]},
+        { title: 'Collaboration & security', rows: [
+          { label: 'Provider marketplace', vals: ['@basic', true, true, true] },
+          { label: 'Quote approvals', vals: [false, true, true, true] },
+          { label: 'SSO / SAML', vals: [false, false, false, true] },
+          { label: 'Support', vals: ['@community', '9/5', '@critical', '@full'] },
+        ]},
+      ],
+      detailsH2: 'Get more details',
+      details: [
+        { q: 'How to calculate your subscription cost', a: 'Pricing is per active unit, per month. Example: 120 units on Standard cost 120 × €1.90 = €228/month. Free-plan units don\u2019t count towards billing.' },
+        { q: 'What counts as a unit', a: 'Each autonomous unit of the building: apartments, shops, offices and separately-managed parking spaces. Common areas don\u2019t count.' },
+        { q: 'Payment options', a: 'Credit card, SEPA direct debit, or a single invoice on the annual plan. All prices in euros, no hidden fees.' },
+        { q: 'Free trial period and refunds', a: 'Standard and Premium include a 30-day free trial, no card required. Cancel anytime; unused annual-plan value is refunded pro rata.' },
+        { q: 'Annual subscriptions', a: 'Annual billing saves up to 15% versus monthly and issues a single invoice — simpler for the building\u2019s accounting.' },
+        { q: 'Premium or Enterprise?', a: 'Premium fits most portfolios. Choose Enterprise if you need SSO/SAML, custom integrations via a dedicated API, or a contractual 99.95% SLA.' },
+      ],
+      qH2: 'Questions?', qBody: 'We have answers. Read our full list of common questions about pricing, units and licensing.', qLink: 'See frequently asked questions →',
+      footBased: '100% based in Luxembourg', footServers: 'Servers in Europe',
+      footProduct: 'Product', footResources: 'Resources', footCompany: 'Company', footLangs: 'Languages',
+      footHowItWorks: 'How it works', footSupport: 'Support', footAbout: 'About Smart Cube', footContact: 'Contact', footPrivacy: 'Privacy', footRights: 'All rights reserved.',
+    },
+    fr: {
+      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navOverview: 'Aperçu', navWho: 'Pour qui', navPricing: 'Tarifs', login: 'Connexion', ctaDemo: 'Réserver une démo',
+      prH1a: 'Des tarifs transparents,', prH1b: 'pour chaque portefeuille.',
+      teamSizeLabel: 'Lots gérés :', unitsWord: 'lots', billMe: 'Facturation :', monthly: 'Mensuelle', annually: 'Annuelle', saveBadge: 'ÉCONOMISEZ JUSQU\u2019À 15%',
+      recommended: 'RECOMMANDÉ', perUnit: 'par lot / mois', billedAnnually: 'facturé annuellement', estSuffix: '/mois', free: 'Gratuit',
+      enterprisePrice: 'Sur devis', enterpriseNote: 'Facturation annuelle. Contactez-nous pour une proposition sur mesure.',
+      plans: [
+        { name: 'Free', tag: 'Gratuit pour toujours, pour 1 immeuble jusqu\u2019à 10 lots', cta: 'Commencer', includesTitle: 'Inclut :', features: ['Tickets illimités', 'App pour résidents', 'Documents de la copropriété', '1 immeuble, jusqu\u2019à 10 lots'] },
+        { name: 'Standard', tag: 'Tout pour gérer sérieusement', cta: 'Essai gratuit', includesTitle: 'Tout du Free, plus :', features: ['Immeubles illimités', 'Maintenance planifiée', 'Approbation des devis', 'Support 9/5', 'Jusqu\u2019à 500 lots'] },
+        { name: 'Premium', tag: 'Automatisation et énergie pour portefeuilles exigeants', cta: 'Essai gratuit', includesTitle: 'Tout du Standard, plus :', features: ['Alarmes automatiques 24/7', 'Intégrations Enectiva & Leneda', 'Marketplace avec classement complet', 'Support 24/7 pour incidents critiques', 'Lots illimités'] },
+        { name: 'Enterprise', tag: 'Sécurité et échelle pour grandes administrations', cta: 'Contacter les ventes', includesTitle: 'Tout du Premium, plus :', features: ['SSO / SAML', 'API dédiée et intégrations sur mesure', 'Gestionnaire de compte dédié', 'SLA 99,95%'] },
+      ],
+      compareH2: 'Comparer les formules', compareLink: 'En savoir plus sur les fonctionnalités →',
+      unlimited: 'Illimité', basic: 'Basique', community: 'Communauté', critical: '24/7 critiques', full: '24/7 total',
+      tableSections: [
+        { title: 'Essentiels de gestion', rows: [
+          { label: 'Tickets intelligents', vals: [true, true, true, true] },
+          { label: 'Immeubles', vals: ['1', '∞', '∞', '∞'] },
+          { label: 'Lots', vals: ['10', '500', '∞', '∞'] },
+          { label: 'Une app pour chaque rôle', vals: [true, true, true, true] },
+          { label: 'Documents centralisés', vals: [true, true, true, true] },
+        ]},
+        { title: 'Surveillance & énergie', rows: [
+          { label: 'Alarmes automatiques', vals: [false, false, true, true] },
+          { label: 'Intégration Enectiva & Leneda', vals: [false, false, true, true] },
+          { label: 'Maintenance planifiée', vals: [false, true, true, true] },
+          { label: 'Rapports pour assemblées', vals: [false, true, true, true] },
+        ]},
+        { title: 'Collaboration & sécurité', rows: [
+          { label: 'Marketplace de prestataires', vals: ['@basic', true, true, true] },
+          { label: 'Approbation des devis', vals: [false, true, true, true] },
+          { label: 'SSO / SAML', vals: [false, false, false, true] },
+          { label: 'Support', vals: ['@community', '9/5', '@critical', '@full'] },
+        ]},
+      ],
+      detailsH2: 'Plus de détails',
+      details: [
+        { q: 'Comment calculer le coût de votre abonnement', a: 'Le prix est par lot actif, par mois. Exemple : 120 lots en Standard coûtent 120 × 1,90 € = 228 €/mois. Les lots du plan Free ne comptent pas dans la facturation.' },
+        { q: 'Qu\u2019est-ce qui compte comme un lot', a: 'Chaque unité autonome de l\u2019immeuble : appartements, commerces, bureaux et parkings gérés séparément. Les parties communes ne comptent pas.' },
+        { q: 'Options de paiement', a: 'Carte de crédit, prélèvement SEPA, ou facture unique en plan annuel. Tous les prix en euros, sans frais cachés.' },
+        { q: 'Période d\u2019essai et remboursements', a: 'Standard et Premium incluent 30 jours d\u2019essai gratuit, sans carte. Annulez à tout moment ; la valeur non utilisée du plan annuel est remboursée au prorata.' },
+        { q: 'Abonnements annuels', a: 'La facturation annuelle économise jusqu\u2019à 15% par rapport au mensuel et émet une seule facture — plus simple pour la comptabilité de la copropriété.' },
+        { q: 'Premium ou Enterprise ?', a: 'Premium convient à la plupart des portefeuilles. Choisissez Enterprise si vous avez besoin de SSO/SAML, d\u2019intégrations sur mesure via API dédiée, ou d\u2019un SLA contractuel de 99,95%.' },
+      ],
+      qH2: 'Des questions ?', qBody: 'Nous avons des réponses. Consultez la liste complète des questions fréquentes sur les tarifs, les lots et les licences.', qLink: 'Voir les questions fréquentes →',
+      footBased: '100% basé au Luxembourg', footServers: 'Serveurs en Europe',
+      footProduct: 'Produit', footResources: 'Ressources', footCompany: 'Entreprise', footLangs: 'Langues',
+      footHowItWorks: 'Comment ça marche', footSupport: 'Support', footAbout: 'À propos de Smart Cube', footContact: 'Contact', footPrivacy: 'Confidentialité', footRights: 'Tous droits réservés.',
+    },
+    lb: {
+      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navOverview: 'Iwwerbléck', navWho: 'Fir wien', navPricing: 'Präisser', login: 'Aloggen', ctaDemo: 'Demo reservéieren',
+      prH1a: 'Transparent Präisser,', prH1b: 'fir all Portfolio.',
+      teamSizeLabel: 'Verwalt Unitéiten:', unitsWord: 'Unitéiten', billMe: 'Ofrechnung:', monthly: 'Monatlech', annually: 'Jäerlech', saveBadge: 'SPUERT BIS ZU 15%',
+      recommended: 'RECOMMANDÉIERT', perUnit: 'pro Unitéit / Mount', billedAnnually: 'jäerlech ofgerechent', estSuffix: '/Mount', free: 'Gratis',
+      enterprisePrice: 'Op Offer', enterpriseNote: 'Jäerlech Ofrechnung. Kontaktéiert eis fir eng Offer op d\u2019Mooss.',
+      plans: [
+        { name: 'Free', tag: 'Gratis fir ëmmer, fir 1 Gebai bis 10 Unitéiten', cta: 'Elo ufänken', includesTitle: 'Abegraff:', features: ['Onlimitéiert Ticketen', 'App fir Awunner', 'Dokumenter vum Gebai', '1 Gebai, bis 10 Unitéiten'] },
+        { name: 'Standard', tag: 'Alles fir eescht ze geréieren', cta: 'Gratis Test ufänken', includesTitle: 'Alles vum Free, plus:', features: ['Onlimitéiert Gebaier', 'Geplangt Maintenance', 'Devis-Approbatioun', 'Support 9/5', 'Bis 500 Unitéiten'] },
+        { name: 'Premium', tag: 'Automatioun an Energie fir usprochsvoll Portfolioen', cta: 'Gratis Test ufänken', includesTitle: 'Alles vum Standard, plus:', features: ['Automatesch Alarmer 24/7', 'Enectiva & Leneda Integratiounen', 'Marketplace mat komplettem Ranking', 'Support 24/7 fir kritesch Fäll', 'Onlimitéiert Unitéiten'] },
+        { name: 'Enterprise', tag: 'Sécherheet a Skala fir grouss Administratiounen', cta: 'Verkaf kontaktéieren', includesTitle: 'Alles vum Premium, plus:', features: ['SSO / SAML', 'Dedizéiert API an Integratiounen op Mooss', 'Dedizéierte Kontemanager', 'SLA 99,95%'] },
+      ],
+      compareH2: 'Pläng vergläichen', compareLink: 'Méi iwwer d\u2019Funktiounen →',
+      unlimited: 'Onlimitéiert', basic: 'Basis', community: 'Communautéit', critical: '24/7 kritesch', full: '24/7 total',
+      tableSections: [
+        { title: 'Gestiouns-Essentiel', rows: [
+          { label: 'Intelligent Ticketen', vals: [true, true, true, true] },
+          { label: 'Gebaier', vals: ['1', '∞', '∞', '∞'] },
+          { label: 'Unitéiten', vals: ['10', '500', '∞', '∞'] },
+          { label: 'Eng App fir all Roll', vals: [true, true, true, true] },
+          { label: 'Zentraliséiert Dokumenter', vals: [true, true, true, true] },
+        ]},
+        { title: 'Iwwerwaachung & Energie', rows: [
+          { label: 'Automatesch Alarmer', vals: [false, false, true, true] },
+          { label: 'Enectiva & Leneda Integratioun', vals: [false, false, true, true] },
+          { label: 'Geplangt Maintenance', vals: [false, true, true, true] },
+          { label: 'Rapporte fir Versammlungen', vals: [false, true, true, true] },
+        ]},
+        { title: 'Zesummenaarbecht & Sécherheet', rows: [
+          { label: 'Déngschtleeschter-Marketplace', vals: ['@basic', true, true, true] },
+          { label: 'Devis-Approbatiounen', vals: [false, true, true, true] },
+          { label: 'SSO / SAML', vals: [false, false, false, true] },
+          { label: 'Support', vals: ['@community', '9/5', '@critical', '@full'] },
+        ]},
+      ],
+      detailsH2: 'Méi Detailer',
+      details: [
+        { q: 'Wéi berechent Dir d\u2019Käschte vun Ärem Abonnement', a: 'De Präis ass pro aktiv Unitéit, pro Mount. Beispill: 120 Unitéiten am Standard kaschten 120 × 1,90 € = 228 €/Mount. Unitéiten am Free-Plang zielen net fir d\u2019Ofrechnung.' },
+        { q: 'Wat zielt als Unitéit', a: 'All autonom Eenheet vum Gebai: Appartementer, Butteker, Büroen a separat verwalt Parkplazen. Gemeinsam Beräicher zielen net.' },
+        { q: 'Bezuelméiglechkeeten', a: 'Kreditkaart, SEPA-Domiciliatioun, oder eng eenzeg Rechnung am Joresplang. All Präisser an Euro, ouni verstoppte Fraisen.' },
+        { q: 'Testperiod a Remboursementer', a: 'Standard a Premium enthalen 30 Deeg gratis Test, ouni Kaart. Dir kënnt zu all Moment ofbestellen; den net benotzte Wäert vum Joresplang gëtt proportional zréckbezuelt.' },
+        { q: 'Jäerlech Abonnementer', a: 'D\u2019jäerlech Ofrechnung spuert bis zu 15% par rapport zum monatleche Plang an et gëtt eng eenzeg Rechnung — méi einfach fir d\u2019Comptabilitéit.' },
+        { q: 'Premium oder Enterprise?', a: 'Premium passt fir déi meescht Portfolioen. Wielt Enterprise wann Dir SSO/SAML braucht, Integratiounen op Mooss iwwer eng dedizéiert API, oder e vertragleche SLA vun 99,95%.' },
+      ],
+      qH2: 'Froen?', qBody: 'Mir hunn Äntwerten. Kuckt déi komplett Lëscht vun de Froen iwwer Präisser, Unitéiten a Lizenzen.', qLink: 'Dacks gestallte Froe kucken →',
+      footBased: '100% baséiert zu Lëtzebuerg', footServers: 'Serveren an Europa',
+      footProduct: 'Produkt', footResources: 'Ressourcen', footCompany: 'Firma', footLangs: 'Sproochen',
+      footHowItWorks: 'Wéi et funktionéiert', footSupport: 'Support', footAbout: 'Iwwer Smart Cube', footContact: 'Kontakt', footPrivacy: 'Dateschutz', footRights: 'All Rechter reservéiert.',
+    },
+    de: {
+      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navOverview: 'Überblick', navWho: 'Für wen', navPricing: 'Preise', login: 'Anmelden', ctaDemo: 'Demo vereinbaren',
+      prH1a: 'Transparente Preise,', prH1b: 'für jedes Portfolio.',
+      teamSizeLabel: 'Verwaltete Einheiten:', unitsWord: 'Einheiten', billMe: 'Abrechnung:', monthly: 'Monatlich', annually: 'Jährlich', saveBadge: 'SPAREN SIE BIS ZU 15%',
+      recommended: 'EMPFOHLEN', perUnit: 'pro Einheit / Monat', billedAnnually: 'jährlich abgerechnet', estSuffix: '/Monat', free: 'Kostenlos',
+      enterprisePrice: 'Auf Anfrage', enterpriseNote: 'Jährliche Abrechnung. Kontaktieren Sie uns für ein maßgeschneidertes Angebot.',
+      plans: [
+        { name: 'Free', tag: 'Für immer kostenlos, für 1 Gebäude bis 10 Einheiten', cta: 'Jetzt starten', includesTitle: 'Enthält:', features: ['Unbegrenzte Tickets', 'App für Bewohner', 'Gebäudedokumente', '1 Gebäude, bis zu 10 Einheiten'] },
+        { name: 'Standard', tag: 'Alles, um ernsthaft zu verwalten', cta: 'Kostenlos testen', includesTitle: 'Alles aus Free, plus:', features: ['Unbegrenzte Gebäude', 'Geplante Wartung', 'Angebotsfreigaben', 'Support 9/5', 'Bis zu 500 Einheiten'] },
+        { name: 'Premium', tag: 'Automatisierung und Energie für anspruchsvolle Portfolios', cta: 'Kostenlos testen', includesTitle: 'Alles aus Standard, plus:', features: ['Automatische Alarme 24/7', 'Enectiva- & Leneda-Integrationen', 'Marketplace mit vollem Ranking', '24/7-Support für kritische Fälle', 'Unbegrenzte Einheiten'] },
+        { name: 'Enterprise', tag: 'Sicherheit und Skalierung für große Verwaltungen', cta: 'Vertrieb kontaktieren', includesTitle: 'Alles aus Premium, plus:', features: ['SSO / SAML', 'Dedizierte API und maßgeschneiderte Integrationen', 'Dedizierter Account-Manager', 'SLA 99,95%'] },
+      ],
+      compareH2: 'Pläne vergleichen', compareLink: 'Mehr über die Funktionen →',
+      unlimited: 'Unbegrenzt', basic: 'Basis', community: 'Community', critical: '24/7 kritisch', full: '24/7 komplett',
+      tableSections: [
+        { title: 'Verwaltungs-Essentials', rows: [
+          { label: 'Intelligente Tickets', vals: [true, true, true, true] },
+          { label: 'Gebäude', vals: ['1', '∞', '∞', '∞'] },
+          { label: 'Einheiten', vals: ['10', '500', '∞', '∞'] },
+          { label: 'Eine App für jede Rolle', vals: [true, true, true, true] },
+          { label: 'Zentralisierte Dokumente', vals: [true, true, true, true] },
+        ]},
+        { title: 'Überwachung & Energie', rows: [
+          { label: 'Automatische Alarme', vals: [false, false, true, true] },
+          { label: 'Enectiva- & Leneda-Integration', vals: [false, false, true, true] },
+          { label: 'Geplante Wartung', vals: [false, true, true, true] },
+          { label: 'Berichte für Versammlungen', vals: [false, true, true, true] },
+        ]},
+        { title: 'Zusammenarbeit & Sicherheit', rows: [
+          { label: 'Dienstleister-Marketplace', vals: ['@basic', true, true, true] },
+          { label: 'Angebotsfreigaben', vals: [false, true, true, true] },
+          { label: 'SSO / SAML', vals: [false, false, false, true] },
+          { label: 'Support', vals: ['@community', '9/5', '@critical', '@full'] },
+        ]},
+      ],
+      detailsH2: 'Mehr Details',
+      details: [
+        { q: 'So berechnen Sie Ihre Abonnementkosten', a: 'Der Preis gilt pro aktiver Einheit, pro Monat. Beispiel: 120 Einheiten im Standard kosten 120 × 1,90 € = 228 €/Monat. Einheiten im Free-Plan zählen nicht zur Abrechnung.' },
+        { q: 'Was als Einheit zählt', a: 'Jede autonome Einheit des Gebäudes: Wohnungen, Geschäfte, Büros und separat verwaltete Stellplätze. Gemeinschaftsflächen zählen nicht.' },
+        { q: 'Zahlungsoptionen', a: 'Kreditkarte, SEPA-Lastschrift oder eine einzige Rechnung im Jahresplan. Alle Preise in Euro, ohne versteckte Gebühren.' },
+        { q: 'Testphase und Rückerstattungen', a: 'Standard und Premium enthalten 30 Tage kostenlosen Test, ohne Karte. Jederzeit kündbar; der nicht genutzte Wert des Jahresplans wird anteilig erstattet.' },
+        { q: 'Jahresabonnements', a: 'Die jährliche Abrechnung spart bis zu 15% gegenüber dem Monatsplan und erzeugt eine einzige Rechnung — einfacher für die Buchhaltung.' },
+        { q: 'Premium oder Enterprise?', a: 'Premium passt für die meisten Portfolios. Wählen Sie Enterprise, wenn Sie SSO/SAML, maßgeschneiderte Integrationen über eine dedizierte API oder ein vertragliches SLA von 99,95% benötigen.' },
+      ],
+      qH2: 'Fragen?', qBody: 'Wir haben Antworten. Lesen Sie die vollständige Liste häufiger Fragen zu Preisen, Einheiten und Lizenzen.', qLink: 'Häufige Fragen ansehen →',
+      footBased: '100% mit Sitz in Luxemburg', footServers: 'Server in Europa',
+      footProduct: 'Produkt', footResources: 'Ressourcen', footCompany: 'Unternehmen', footLangs: 'Sprachen',
+      footHowItWorks: 'So funktioniert es', footSupport: 'Support', footAbout: 'Über Smart Cube', footContact: 'Kontakt', footPrivacy: 'Datenschutz', footRights: 'Alle Rechte vorbehalten.',
+    },
+  };
+
+  setLang(code) {
+    this.setState({ lang: code, langMenuOpen: false });
+    try { localStorage.setItem('cubii-lang', code); } catch (e) {}
+  }
+
+  fmt(n, lang) {
+    const s = n.toFixed(2);
+    return '€' + (lang === 'en' ? s : s.replace('.', ','));
+  }
+
+  renderVals() {
+    const s = this.state;
+    const lang = s.lang ?? this.props.defaultLang ?? 'pt';
+    const t = Component.T[lang] || Component.T.pt;
+    const FX = {
+      pt: { newsTitle: 'Assine a nossa newsletter e fique por dentro de novidades e lançamentos.', emailPh: 'Coloque o seu e-mail', send: 'Enviar', consent: 'Ao subscrever, concorda com a nossa', privacy: 'Política de Privacidade', networks: 'Redes', expertTitle: 'Fale com um especialista', expertBody: 'Fale diretamente com um especialista Cubii.', expertBtn: 'Contactar', terms: 'Termos de serviço', legalPrivacy: 'Política de privacidade', thanks: 'Obrigado! Subscrição registada.', smartCube: 'Smart Cube', contact: 'Contacto' },
+      en: { newsTitle: 'Subscribe to our newsletter and keep up with news and releases.', emailPh: 'Enter your e-mail', send: 'Send', consent: 'By subscribing, you agree to our', privacy: 'Privacy Policy', networks: 'Social', expertTitle: 'Talk to a specialist', expertBody: 'Speak directly with a Cubii specialist.', expertBtn: 'Get in touch', terms: 'Terms of service', legalPrivacy: 'Privacy policy', thanks: 'Thank you! You are subscribed.', smartCube: 'Smart Cube', contact: 'Contact' },
+      fr: { newsTitle: 'Abonnez-vous à notre newsletter et restez informé des nouveautés et sorties.', emailPh: 'Entrez votre e-mail', send: 'Envoyer', consent: 'En vous abonnant, vous acceptez notre', privacy: 'Politique de confidentialité', networks: 'Réseaux', expertTitle: 'Parlez à un spécialiste', expertBody: 'Parlez directement à un spécialiste Cubii.', expertBtn: 'Nous contacter', terms: 'Conditions de service', legalPrivacy: 'Politique de confidentialité', thanks: 'Merci ! Abonnement enregistré.', smartCube: 'Smart Cube', contact: 'Contact' },
+      lb: { newsTitle: 'Abonnéiert eis Newsletter a bleift um Lafenden iwwer Neiegkeeten.', emailPh: 'Gitt Är E-Mail an', send: 'Schécken', consent: 'Mam Abonnement akzeptéiert Dir eis', privacy: 'Dateschutzrichtlinn', networks: 'Netzwierker', expertTitle: 'Schwätzt mat engem Spezialist', expertBody: 'Schwätzt direkt mat engem Cubii-Spezialist.', expertBtn: 'Kontaktéieren', terms: 'Notzungsbedéngungen', legalPrivacy: 'Dateschutz', thanks: 'Merci! Abonnement registréiert.', smartCube: 'Smart Cube', contact: 'Kontakt' },
+      de: { newsTitle: 'Abonnieren Sie unseren Newsletter und bleiben Sie über Neuigkeiten informiert.', emailPh: 'E-Mail eingeben', send: 'Senden', consent: 'Mit dem Abonnement akzeptieren Sie unsere', privacy: 'Datenschutzrichtlinie', networks: 'Netzwerke', expertTitle: 'Sprechen Sie mit einem Experten', expertBody: 'Sprechen Sie direkt mit einem Cubii-Experten.', expertBtn: 'Kontakt aufnehmen', terms: 'Nutzungsbedingungen', legalPrivacy: 'Datenschutz', thanks: 'Danke! Abo registriert.', smartCube: 'Smart Cube', contact: 'Kontakt' },
+    };
+    const prices = Component.PRICES[s.billing];
+    const units = s.units ?? this.props.defaultUnits ?? 120;
+
+    const FLAGS = { pt: '🇵🇹', en: '🇬🇧', fr: '🇫🇷', lb: '🇱🇺', de: '🇩🇪' };
+    const langOptions = Component.LANGS.map((l) => ({
+      code: l.label, flag: FLAGS[l.code], name: l.name,
+      onClick: () => this.setLang(l.code),
+      style: {
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px',
+        width: '100%', padding: '9px 14px', border: 'none', borderRadius: '10px', cursor: 'pointer',
+        fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left',
+        fontWeight: l.code === lang ? 800 : 500,
+        background: l.code === lang ? '#CCF0FC' : 'transparent',
+        color: l.code === lang ? '#0090E8' : '#296D83',
+      },
+    }));
+
+    const langPills = Component.LANGS.map((l) => ({
+      code: l.label, flag: FLAGS[l.code],
+      onClick: () => this.setLang(l.code),
+      style: {
+        border: l.code === lang ? '1px solid #0090E8' : '1px solid #CCF0FC',
+        background: l.code === lang ? '#CCF0FC' : 'transparent',
+        borderRadius: '999px', padding: '4px 12px', fontSize: '12px', cursor: 'pointer',
+        fontFamily: "'Hanken Grotesk', sans-serif",
+        fontWeight: l.code === lang ? 800 : 600,
+        color: l.code === lang ? '#0090E8' : '#6C8087',
+      },
+    }));
+
+    const toggleStyle = (active) => ({
+      fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', fontWeight: active ? 800 : 600,
+      padding: '9px 20px', borderRadius: '999px', cursor: 'pointer',
+      border: active ? '1.5px solid #00B5F1' : '1.5px solid #CCF0FC',
+      background: active ? '#00B5F1' : '#FFFFFF',
+      color: active ? '#FFFFFF' : '#296D83',
+    });
+
+    const plans = t.plans.map((p, i) => {
+      const price = prices[i];
+      const recommended = i === 2;
+      let priceStr, priceNote, estimate = false;
+      if (price === null) {
+        priceStr = t.enterprisePrice; priceNote = t.enterpriseNote;
+      } else if (price === 0) {
+        priceStr = '€0'; priceNote = t.free;
+      } else {
+        priceStr = this.fmt(price, lang);
+        priceNote = t.perUnit + (s.billing === 'a' ? ' · ' + t.billedAnnually : '');
+        estimate = '≈ ' + this.fmt(price * Math.max(1, units), lang).replace(/[,.]00$/, '') + ' ' + t.estSuffix;
+      }
+      return {
+        ...p, recommended,
+        price: priceStr, priceNote, estimate,
+        cardStyle: {
+          position: 'relative', display: 'flex', flexDirection: 'column', gap: '20px',
+          padding: '34px 26px 30px', background: '#FFFFFF',
+          borderRight: i < 3 ? '1.5px solid #E2ECEF' : 'none',
+          outline: recommended ? '2.5px solid #0A0A0A' : 'none',
+          borderRadius: i === 0 ? '20px 0 0 20px' : (i === 3 ? '0 20px 20px 0' : '0'),
+          zIndex: recommended ? 1 : 0,
+          transition: 'box-shadow 0.28s ease, transform 0.28s cubic-bezier(0.22,1,0.36,1)',
+        },
+        ctaStyle: recommended
+          ? { background: '#00B5F1', color: '#FFFFFF', fontSize: '14px', fontWeight: 700, padding: '12px 20px', borderRadius: '999px', textAlign: 'center', display: 'block' }
+          : { border: '1.5px solid #0090E8', color: '#0090E8', fontSize: '14px', fontWeight: 700, padding: '12px 20px', borderRadius: '999px', textAlign: 'center', display: 'block' },
+      };
+    });
+
+    const checkStyle = { width: '22px', height: '22px', borderRadius: '999px', background: '#0090E8', color: '#FFFFFF', fontSize: '12px', fontWeight: 900, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' };
+    const dashStyle = { color: '#C6D4D9', fontSize: '15px', fontWeight: 700 };
+    const txtStyle = { color: '#296D83', fontSize: '13px', fontWeight: 700, textAlign: 'center' };
+    const tokenMap = { '@basic': t.basic, '@community': t.community, '@critical': t.critical, '@full': t.full };
+    const tableSections = t.tableSections.map((sec) => ({
+      title: sec.title,
+      rows: sec.rows.map((r) => ({
+        label: r.label,
+        cells: r.vals.map((v) => {
+          if (v === true) return { txt: '✓', style: checkStyle };
+          if (v === false) return { txt: '—', style: dashStyle };
+          return { txt: tokenMap[v] || v, style: txtStyle };
+        }),
+      })),
+    }));
+
+    const details = t.details.map((d, i) => ({
+      question: d.q, answer: d.a,
+      open: i === s.openDetail,
+      chevron: i === s.openDetail ? '−' : '+',
+      onToggle: () => this.setState({ openDetail: s.openDetail === i ? -1 : i }),
+    }));
+
+    return {
+      t,
+      langCode: (Component.LANGS.find((l) => l.code === lang) || Component.LANGS[0]).label, langFlag: FLAGS[lang] || '',
+      langMenuOpen: s.langMenuOpen,
+      toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen, featMenuOpen: false }),
+      featMenuOpen: s.featMenuOpen,
+      toggleFeatMenu: () => this.setState({ featMenuOpen: !s.featMenuOpen, langMenuOpen: false }),
+      featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
+      navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
+      navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },
+      langOptions, langPills,
+      fx: FX[lang] || FX.pt,
+      newsSubmit: (e) => { if (e && e.preventDefault) e.preventDefault(); const wrap = e.currentTarget.closest('[data-news]'); if (!wrap) return; const input = wrap.querySelector('input'); const ok = input && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value); if (!ok) { if (input) { input.style.borderColor = '#00B5F1'; input.focus(); } return; } const row = wrap.querySelector('[data-news-row]'); const done = wrap.querySelector('[data-news-done]'); if (row) row.style.display = 'none'; if (done) done.style.display = 'flex'; },
+
+      units: units,
+      onUnits: (e) => this.setState({ units: Math.max(1, parseInt(e.target.value, 10) || 1) }),
+      setMonthly: () => this.setState({ billing: 'm' }),
+      setAnnual: () => this.setState({ billing: 'a' }),
+      monthlyBtnStyle: toggleStyle(s.billing === 'm'),
+      annualBtnStyle: toggleStyle(s.billing === 'a'),
+
+      plans,
+      cardHoverOn: (e) => { const el = e.currentTarget; el.style.boxShadow = '0 24px 55px rgba(41,109,131,0.22)'; el.style.transform = 'translateY(-6px)'; el.style.zIndex = 3; },
+      cardHoverOff: (e) => { const el = e.currentTarget; el.style.boxShadow = ''; el.style.transform = ''; el.style.zIndex = ''; },
+      planHeaders: t.plans.map((p) => p.name),
+      tableSections,
+      details,
+    };
+  }
+}
+</script>
+</body>
+</html>
