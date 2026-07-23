@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    html, body { margin: 0; padding: 0; background: #F1F3F4; }
     body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
     a { color: #0090E8; text-decoration: none; }
@@ -28,7 +28,7 @@
       <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 34px; width: auto; object-fit: contain; display: block;">
       
     </a>
-    <nav style="display: flex; gap: 34px; margin-right: auto; padding-left: 32px;">
+    <nav style="display: flex; flex-wrap: wrap; gap: 12px 22px; margin-right: auto; padding-left: 24px;">
       <div style="position: relative;">
         <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0090E8; white-space: nowrap; transition: color 0.22s ease;">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
         <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -37,14 +37,16 @@
           </div>
         </sc-if>
       </div>
-      <a href="Cubii Marketplace.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Marketplace</a>
-      <a href="Cubii Para Quem.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navWho }}</a>
+      
+      <a href="Cubii Proprietarios.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navResidents }}</a>
+      <a href="Cubii Gestores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFM }}</a>
+      <a href="Cubii Prestadores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navProviders }}</a>
       <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
-      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Smart Cube</a>
+      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navAbout }}</a>
     </nav>
     <div style="position: relative; flex-shrink: 0;">
       <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
-        <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">{{ langFlag }} {{ langCode }}</span>
         <span style="font-size: 9px; color: #6C8087;">▼</span>
       </button>
       <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -58,17 +60,17 @@
         </div>
       </sc-if>
     </div>
-    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0); box-shadow: 0 4px 14px rgba(0,144,232,0.4);">{{ t.ctaDemo }}</a>
   </div>
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section data-screen-label="Hero — Funcionalidades" style="padding: 80px 32px; background: #FFFFFF;">
+<section data-screen-label="Hero — Funcionalidades" style="padding: 80px 32px; background: #F1F3F4;">
   <div style="max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 56px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start;">
       <h1 style="margin: 0; font-size: 48px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.08; color: #0A0A0A;">{{ t.fhH1 }}</h1>
-      <p style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.fhSub }}</p>
-      <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 999px; display: inline-block;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+      <p style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.6; color: #0A0A0A;">{{ t.fhSub }}</p>
+      <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 999px; display: inline-block; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
     </div>
     <!-- FramedScreenshot -->
     <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 24px 58px rgba(41,109,131,0.20); transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 30px 66px rgba(41,109,131,0.28);">
@@ -119,11 +121,11 @@
 </sc-for>
 
 <!-- ===================== ESCALA (icon grid) ===================== -->
-<section data-screen-label="Escala" style="padding: 110px 32px 90px; background: #FFFFFF;">
+<section data-screen-label="Escala" style="padding: 110px 32px 90px; background: #F1F3F4;">
   <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 52px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 12px; text-align: center; max-width: 640px;">
       <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.3px; color: #0A0A0A;">{{ t.scaleH2 }}</h2>
-      <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.scaleSub }}</p>
+      <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6; color: #0A0A0A;">{{ t.scaleSub }}</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 36px; width: 100%;">
       <sc-for list="{{ scaleView }}" as="si" hint-placeholder-count="6">
@@ -140,10 +142,10 @@
 <section data-screen-label="Integrações" style="padding: 80px 32px; background: #F7FBFD;">
   <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center;">
     <h2 style="margin: 0; font-size: 34px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.intH2 }}</h2>
-    <p style="margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.6; color: #296D83; max-width: 560px;">{{ t.intSub }}</p>
+    <p style="margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.6; color: #0A0A0A; max-width: 560px;">{{ t.intSub }}</p>
     <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
-      <span style="background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 12px 26px; font-size: 15px; font-weight: 800; color: #296D83;">Enectiva</span>
-      <span style="background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 12px 26px; font-size: 15px; font-weight: 800; color: #296D83;">Leneda</span>
+      <span style="background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 12px 26px; font-size: 15px; font-weight: 800; color: #0A0A0A;">Enectiva</span>
+      <span style="background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 12px 26px; font-size: 15px; font-weight: 800; color: #0A0A0A;">Leneda</span>
     </div>
   </div>
 </section>
@@ -154,7 +156,7 @@
     <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 104px; height: 104px; object-fit: contain; display: block;">
     <h2 style="margin: 0; font-size: 44px; font-weight: 900; letter-spacing: -1.6px; line-height: 1.1; color: #FFFFFF;">{{ t.fctaH2 }}</h2>
     <p style="margin: 0; font-size: 16px; font-weight: 500; color: #CCF0FC; line-height: 1.6; max-width: 460px;">{{ t.fctaSub }}</p>
-    <a href="Cubii Landing.dc.html#lead-form" style="background: #FFFFFF; color: #0090E8; font-size: 15px; font-weight: 800; padding: 15px 36px; border-radius: 999px; display: inline-block;" style-hover="background: #CCF0FC; color: #0090E8;">{{ t.ctaDemo }}</a>
+    <a href="Cubii Landing.dc.html#lead-form" style="background: #FFFFFF; color: #0090E8; font-size: 15px; font-weight: 800; padding: 15px 36px; border-radius: 999px; display: inline-block; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #CCF0FC; color: #0090E8; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.28);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
   </div>
 </section>
 
@@ -173,7 +175,7 @@
           <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
           <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
         </div>
-        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #296D83; border-radius: 12px; padding: 13px 16px;">
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #0A0A0A; border-radius: 12px; padding: 13px 16px;">
           <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
         </div>
         <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
@@ -209,7 +211,7 @@
     <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
       <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
       <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Acessar Admin</a>
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Admin</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
       </div>
@@ -241,7 +243,7 @@ class Component extends DCLogic {
 
   static T = {
     pt: {
-      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navOverview: 'Visão geral', navWho: 'Para quem é', navPricing: 'Preços', login: 'Entrar', ctaDemo: 'Agendar Demonstração',
+      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navOverview: 'Visão geral', navWho: 'Para quem é', navPricing: 'Preços', navResidents: 'Residentes', navAbout: 'Sobre nós', navFM: 'Gestores de Instalações', navProviders: 'Prestadores de Serviços', login: 'Entrar', ctaDemo: 'Agendar Demonstração',
       fhH1: 'Conheça as funcionalidades da Cubii', fhSub: 'Tudo o que o edifício precisa — do reporte de uma avaria à análise do portfólio — explicado, funcionalidade a funcionalidade.',
       shotLabel: '[ print do produto ]',
       introH2: 'Onde gestores, residentes e prestadores resolvem o edifício — juntos.',
@@ -279,7 +281,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Como funciona', footSupport: 'Suporte', footAbout: 'Sobre a Smart Cube', footContact: 'Contacto', footPrivacy: 'Privacidade', footRights: 'Todos os direitos reservados.',
     },
     en: {
-      navFeatures: 'Features', navFeaturesAll: 'All features', navOverview: 'Overview', navWho: 'Who it\u2019s for', navPricing: 'Pricing', login: 'Log in', ctaDemo: 'Book a Demo',
+      navFeatures: 'Features', navFeaturesAll: 'All features', navOverview: 'Overview', navWho: 'Who it\u2019s for', navPricing: 'Pricing', navResidents: 'Residents', navAbout: 'About Us', navFM: 'Facility Managers', navProviders: 'Service Providers', login: 'Log in', ctaDemo: 'Book a Demo',
       fhH1: 'Get to know Cubii\u2019s features', fhSub: 'Everything a building needs — from reporting a fault to analysing the portfolio — explained, feature by feature.',
       shotLabel: '[ product screenshot ]',
       introH2: 'Where managers, residents and providers solve the building — together.',
@@ -317,7 +319,7 @@ class Component extends DCLogic {
       footHowItWorks: 'How it works', footSupport: 'Support', footAbout: 'About Smart Cube', footContact: 'Contact', footPrivacy: 'Privacy', footRights: 'All rights reserved.',
     },
     fr: {
-      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navOverview: 'Aperçu', navWho: 'Pour qui', navPricing: 'Tarifs', login: 'Connexion', ctaDemo: 'Réserver une démo',
+      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navOverview: 'Aperçu', navWho: 'Pour qui', navPricing: 'Tarifs', navResidents: 'Résidents', navAbout: 'À propos', navFM: 'Gestionnaires d\u2019installations', navProviders: 'Prestataires de services', login: 'Connexion', ctaDemo: 'Réserver une démo',
       fhH1: 'Découvrez les fonctionnalités de Cubii', fhSub: 'Tout ce dont un immeuble a besoin — du signalement d\u2019une panne à l\u2019analyse du portefeuille — expliqué, fonctionnalité par fonctionnalité.',
       shotLabel: '[ capture du produit ]',
       introH2: 'Où gestionnaires, résidents et prestataires résolvent l\u2019immeuble — ensemble.',
@@ -355,7 +357,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Comment ça marche', footSupport: 'Support', footAbout: 'À propos de Smart Cube', footContact: 'Contact', footPrivacy: 'Confidentialité', footRights: 'Tous droits réservés.',
     },
     lb: {
-      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navOverview: 'Iwwerbléck', navWho: 'Fir wien', navPricing: 'Präisser', login: 'Aloggen', ctaDemo: 'Demo reservéieren',
+      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navOverview: 'Iwwerbléck', navWho: 'Fir wien', navPricing: 'Präisser', navResidents: 'Awunner', navAbout: 'Iwwer eis', navFM: 'Gestionnaire vun Uleeën', navProviders: 'Déngschtleeschter', login: 'Aloggen', ctaDemo: 'Demo reservéieren',
       fhH1: 'Léiert dem Cubii seng Funktiounen kennen', fhSub: 'Alles wat e Gebai brauch — vum Mellen vun enger Panne bis zur Analyse vum Portfolio — erkläert, Funktioun fir Funktioun.',
       shotLabel: '[ Produkt-Screenshot ]',
       introH2: 'Wou Gestionnairen, Awunner an Déngschtleeschter d\u2019Gebai léisen — zesummen.',
@@ -393,7 +395,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Wéi et funktionéiert', footSupport: 'Support', footAbout: 'Iwwer Smart Cube', footContact: 'Kontakt', footPrivacy: 'Dateschutz', footRights: 'All Rechter reservéiert.',
     },
     de: {
-      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navOverview: 'Überblick', navWho: 'Für wen', navPricing: 'Preise', login: 'Anmelden', ctaDemo: 'Demo vereinbaren',
+      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navOverview: 'Überblick', navWho: 'Für wen', navPricing: 'Preise', navResidents: 'Bewohner', navAbout: 'Über uns', navFM: 'Facility Manager', navProviders: 'Dienstleister', login: 'Anmelden', ctaDemo: 'Demo vereinbaren',
       fhH1: 'Lernen Sie die Funktionen von Cubii kennen', fhSub: 'Alles, was ein Gebäude braucht — von der Schadensmeldung bis zur Portfolio-Analyse — erklärt, Funktion für Funktion.',
       shotLabel: '[ Produkt-Screenshot ]',
       introH2: 'Wo Verwalter, Bewohner und Dienstleister das Gebäude lösen — gemeinsam.',
@@ -435,9 +437,9 @@ class Component extends DCLogic {
   // Cores das bandas anguladas — só família azul Cubii
   static PILLAR_STYLES = [
     { bg: '#00B5F1', fg: '#FFFFFF', subFg: '#EAF8FE', eyebrowColor: '#0A2A38' },
-    { bg: '#CCF0FC', fg: '#0A0A0A', subFg: '#296D83', eyebrowColor: '#0090E8' },
-    { bg: '#296D83', fg: '#FFFFFF', subFg: '#CCF0FC', eyebrowColor: '#4DCBF5' },
-    { bg: '#EAF8FE', fg: '#0A0A0A', subFg: '#296D83', eyebrowColor: '#0090E8' },
+    { bg: '#CCF0FC', fg: '#0A0A0A', subFg: '#0A0A0A', eyebrowColor: '#0090E8' },
+    { bg: '#0A0A0A', fg: '#FFFFFF', subFg: '#CCF0FC', eyebrowColor: '#4DCBF5' },
+    { bg: '#EAF8FE', fg: '#0A0A0A', subFg: '#0A0A0A', eyebrowColor: '#0090E8' },
   ];
 
   setLang(code) {
@@ -447,7 +449,10 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const lang = s.lang ?? this.props.defaultLang ?? 'pt';
+    const lang = s.lang ?? this.props.defaultLang ?? 'en';
+    const WHO = { pt: ['Visão geral','Proprietários & Inquilinos','Prestadores de Serviços','Gestores de Instalações'], en: ['Overview','Owners & Tenants','Service Providers','Facility Managers'], fr: ['Aperçu','Propriétaires & Locataires','Prestataires de services','Gestionnaires d\u2019installations'], lb: ['Iwwerbléck','Proprietären & Locatairen','Déngschtleeschter','Gestionnaire vun Uleeën'], de: ['Überblick','Eigentümer & Mieter','Dienstleister','Facility Manager'] };
+    const WHO_HREFS = ['Cubii Para Quem.dc.html','Cubii Proprietarios.dc.html','Cubii Prestadores.dc.html','Cubii Gestores.dc.html'];
+    const whoLinks = (WHO[lang] || WHO.pt).map((label, wi) => ({ label, href: WHO_HREFS[wi] }));
     const t = Component.T[lang] || Component.T.pt;
     const FX = {
       pt: { newsTitle: 'Assine a nossa newsletter e fique por dentro de novidades e lançamentos.', emailPh: 'Coloque o seu e-mail', send: 'Enviar', consent: 'Ao subscrever, concorda com a nossa', privacy: 'Política de Privacidade', networks: 'Redes', expertTitle: 'Fale com um especialista', expertBody: 'Fale diretamente com um especialista Cubii.', expertBtn: 'Contactar', terms: 'Termos de serviço', legalPrivacy: 'Política de privacidade', thanks: 'Obrigado! Subscrição registada.', smartCube: 'Smart Cube', contact: 'Contacto' },
@@ -468,7 +473,7 @@ class Component extends DCLogic {
         fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left',
         fontWeight: l.code === lang ? 800 : 500,
         background: l.code === lang ? '#CCF0FC' : 'transparent',
-        color: l.code === lang ? '#0090E8' : '#296D83',
+        color: l.code === lang ? '#0090E8' : '#0A0A0A',
       },
     }));
 
@@ -523,6 +528,10 @@ class Component extends DCLogic {
       toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen, featMenuOpen: false }),
       featMenuOpen: s.featMenuOpen,
       toggleFeatMenu: () => this.setState({ featMenuOpen: !s.featMenuOpen, langMenuOpen: false }),
+      whoLinks,
+      whoMenuOpen: s.whoMenuOpen,
+      toggleWhoMenu: () => this.setState({ whoMenuOpen: !s.whoMenuOpen, langMenuOpen: false, featMenuOpen: false }),
+      whoArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.whoMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
       navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },

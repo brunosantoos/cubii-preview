@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    html, body { margin: 0; padding: 0; background: #F1F3F4; }
     body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
     a { color: #0090E8; text-decoration: none; }
@@ -30,7 +30,7 @@
       <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 34px; width: auto; object-fit: contain; display: block;">
       
     </a>
-    <nav style="display: flex; gap: 34px; margin-right: auto; padding-left: 32px;">
+    <nav style="display: flex; flex-wrap: wrap; gap: 12px 22px; margin-right: auto; padding-left: 24px;">
       <div style="position: relative;">
         <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
         <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -40,13 +40,15 @@
         </sc-if>
       </div>
       <a href="#" style="font-size: 17px; font-weight: 700; color: #0090E8; white-space: nowrap; transition: color 0.22s ease;">Marketplace</a>
-      <a href="Cubii Para Quem.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navWho }}</a>
+      <a href="Cubii Proprietarios.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navResidents }}</a>
+      <a href="Cubii Gestores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFM }}</a>
+      <a href="Cubii Prestadores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navProviders }}</a>
       <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
-      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Smart Cube</a>
+      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navAbout }}</a>
     </nav>
     <div style="position: relative; flex-shrink: 0;">
       <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
-        <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">{{ langFlag }} {{ langCode }}</span>
         <span style="font-size: 9px; color: #6C8087;">▼</span>
       </button>
       <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -60,7 +62,7 @@
         </div>
       </sc-if>
     </div>
-    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+    <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0); box-shadow: 0 4px 14px rgba(0,144,232,0.4);">{{ t.ctaDemo }}</a>
   </div>
 </header>
 
@@ -70,9 +72,9 @@
     <div style="display: flex; flex-direction: column; gap: 22px; align-items: flex-start;">
       <span style="background: #CCF0FC; color: #0090E8; font-size: 12.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;">Marketplace</span>
       <h1 style="margin: 0; font-size: 50px; font-weight: 800; letter-spacing: -1.8px; line-height: 1.08; color: #0A0A0A;">{{ t.hH1a }} <span style="color: #00B5F1;">{{ t.hH1b }}</span></h1>
-      <p style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.hSub }}</p>
+      <p style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.6; color: #0A0A0A;">{{ t.hSub }}</p>
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 14px 30px; border-radius: 999px;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+        <a href="Cubii Landing.dc.html#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 15px; font-weight: 700; padding: 14px 30px; border-radius: 999px; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
         <a href="Cubii Landing.dc.html#lead-form" style="border: 1.5px solid #0090E8; color: #0090E8; font-size: 15px; font-weight: 700; padding: 14px 30px; border-radius: 999px;" style-hover="background: #CCF0FC;">{{ t.ctaProvider }}</a>
       </div>
     </div>
@@ -88,7 +90,7 @@
           </div>
           <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px;">
             <span style="color: #00B5F1; font-size: 12px; letter-spacing: 1px;">★★★★★</span>
-            <span style="font-size: 12px; font-weight: 800; color: #296D83;">{{ pv.rating }}</span>
+            <span style="font-size: 12px; font-weight: 800; color: #0A0A0A;">{{ pv.rating }}</span>
           </div>
         </div>
       </sc-for>
@@ -97,11 +99,11 @@
 </section>
 
 <!-- ===================== COMO CLASSIFICA (3 critérios) ===================== -->
-<section data-screen-label="Ranking" style="padding: 84px 32px; background: #FFFFFF;">
+<section data-screen-label="Ranking" style="padding: 84px 32px; background: #F1F3F4;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
     <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px;">
       <h2 style="margin: 0; font-size: 38px; font-weight: 800; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.critH2 }}</h2>
-      <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.critSub }}</p>
+      <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6; color: #0A0A0A;">{{ t.critSub }}</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       <sc-for list="{{ critView }}" as="cr" hint-placeholder-count="3">
@@ -116,11 +118,11 @@
 </section>
 
 <!-- ===================== DEMO EM VÍDEO ===================== -->
-<section data-screen-label="Demo Marketplace" style="padding: 40px 32px 90px; background: #FFFFFF;">
+<section data-screen-label="Demo Marketplace" style="padding: 40px 32px 90px; background: #F1F3F4;">
   <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center; max-width: 620px;">
       <h2 style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -1px; color: #0A0A0A;">{{ t.demoH2 }}</h2>
-      <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.6; color: #296D83;">{{ t.demoSub }}</p>
+      <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.6; color: #0A0A0A;">{{ t.demoSub }}</p>
     </div>
     <!-- Demo em vídeo (placeholder interativo): plugar MP4/Supademo real aqui -->
     <div onClick="{{ playDemo }}" style="width: 100%; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(41,109,131,0.16); cursor: pointer;">
@@ -165,7 +167,7 @@
 </section>
 
 <!-- ===================== VALUE PROP PRESTADORES ===================== -->
-<section data-screen-label="Para prestadores" style="padding: 84px 32px; background: #FFFFFF;">
+<section data-screen-label="Para prestadores" style="padding: 84px 32px; background: #F1F3F4;">
   <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
       <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.provH2 }}</h2>
@@ -173,7 +175,7 @@
         <sc-for list="{{ t.provBenefits }}" as="pb" hint-placeholder-count="3">
           <div style="display: flex; gap: 12px; align-items: flex-start;">
             <span style="width: 22px; height: 22px; border-radius: 999px; background: #CCF0FC; color: #0090E8; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
-            <span style="font-size: 15px; font-weight: 600; color: #296D83; line-height: 1.5;">{{ pb }}</span>
+            <span style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.5;">{{ pb }}</span>
           </div>
         </sc-for>
       </div>
@@ -205,7 +207,7 @@
           <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
           <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
         </div>
-        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #296D83; border-radius: 12px; padding: 13px 16px;">
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #0A0A0A; border-radius: 12px; padding: 13px 16px;">
           <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
         </div>
         <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
@@ -241,7 +243,7 @@
     <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
       <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
       <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Acessar Admin</a>
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Admin</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
       </div>
@@ -274,7 +276,7 @@ class Component extends DCLogic {
 
   static T = {
     pt: {
-      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navWho: 'Para quem é', navPricing: 'Preços', ctaDemo: 'Agendar Demonstração', ctaProvider: 'Registar como prestador',
+      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navWho: 'Para quem é', navPricing: 'Preços', navResidents: 'Residentes', navAbout: 'Sobre nós', navFM: 'Gestores de Instalações', navProviders: 'Prestadores de Serviços', ctaDemo: 'Agendar Demonstração', ctaProvider: 'Registar como prestador',
       hH1a: 'O prestador certo,', hH1b: 'sem adivinhações.',
       hSub: 'O marketplace da Cubii liga cada pedido ao prestador ideal — classificado por preço, proximidade e reputação. O gestor compara orçamentos lado a lado; o prestador recebe trabalho qualificado sem esforço comercial.',
       rankingBadge: 'Classificado para o seu pedido',
@@ -313,7 +315,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Como funciona', footSupport: 'Suporte', footAbout: 'Sobre a Smart Cube', footContact: 'Contacto', footPrivacy: 'Privacidade', footRights: 'Todos os direitos reservados.',
     },
     en: {
-      navFeatures: 'Features', navFeaturesAll: 'All features', navWho: 'Who it\u2019s for', navPricing: 'Pricing', ctaDemo: 'Book a Demo', ctaProvider: 'Register as a provider',
+      navFeatures: 'Features', navFeaturesAll: 'All features', navWho: 'Who it\u2019s for', navPricing: 'Pricing', navResidents: 'Residents', navAbout: 'About Us', navFM: 'Facility Managers', navProviders: 'Service Providers', ctaDemo: 'Book a Demo', ctaProvider: 'Register as a provider',
       hH1a: 'The right provider,', hH1b: 'no guesswork.',
       hSub: 'Cubii\u2019s marketplace matches every request to the ideal provider — ranked by price, proximity and reputation. Managers compare quotes side by side; providers get qualified work with zero sales effort.',
       rankingBadge: 'Ranked for your request',
@@ -352,7 +354,7 @@ class Component extends DCLogic {
       footHowItWorks: 'How it works', footSupport: 'Support', footAbout: 'About Smart Cube', footContact: 'Contact', footPrivacy: 'Privacy', footRights: 'All rights reserved.',
     },
     fr: {
-      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navWho: 'Pour qui', navPricing: 'Tarifs', ctaDemo: 'Réserver une démo', ctaProvider: 'S\u2019inscrire comme prestataire',
+      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navWho: 'Pour qui', navPricing: 'Tarifs', navResidents: 'Résidents', navAbout: 'À propos', navFM: 'Gestionnaires d\u2019installations', navProviders: 'Prestataires de services', ctaDemo: 'Réserver une démo', ctaProvider: 'S\u2019inscrire comme prestataire',
       hH1a: 'Le bon prestataire,', hH1b: 'sans deviner.',
       hSub: 'La marketplace de Cubii associe chaque demande au prestataire idéal — classé par prix, proximité et réputation. Le gestionnaire compare les devis côte à côte ; le prestataire reçoit du travail qualifié sans effort commercial.',
       rankingBadge: 'Classé pour votre demande',
@@ -391,7 +393,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Comment ça marche', footSupport: 'Support', footAbout: 'À propos de Smart Cube', footContact: 'Contact', footPrivacy: 'Confidentialité', footRights: 'Tous droits réservés.',
     },
     lb: {
-      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navWho: 'Fir wien', navPricing: 'Präisser', ctaDemo: 'Demo reservéieren', ctaProvider: 'Als Déngschtleeschter registréieren',
+      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navWho: 'Fir wien', navPricing: 'Präisser', navResidents: 'Awunner', navAbout: 'Iwwer eis', navFM: 'Gestionnaire vun Uleeën', navProviders: 'Déngschtleeschter', ctaDemo: 'Demo reservéieren', ctaProvider: 'Als Déngschtleeschter registréieren',
       hH1a: 'De richtege Prestataire,', hH1b: 'ouni ze roden.',
       hSub: 'Dem Cubii säi Marketplace verbënnt all Ufro mam idealen Déngschtleeschter — klasséiert no Präis, Proximitéit a Reputatioun. De Gestionnaire vergläicht Devisen niefteneen; den Déngschtleeschter kritt qualifizéiert Aarbecht ouni kommerziellen Effort.',
       rankingBadge: 'Klasséiert fir Är Ufro',
@@ -430,7 +432,7 @@ class Component extends DCLogic {
       footHowItWorks: 'Wéi et funktionéiert', footSupport: 'Support', footAbout: 'Iwwer Smart Cube', footContact: 'Kontakt', footPrivacy: 'Dateschutz', footRights: 'All Rechter reservéiert.',
     },
     de: {
-      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navWho: 'Für wen', navPricing: 'Preise', ctaDemo: 'Demo vereinbaren', ctaProvider: 'Als Dienstleister registrieren',
+      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navWho: 'Für wen', navPricing: 'Preise', navResidents: 'Bewohner', navAbout: 'Über uns', navFM: 'Facility Manager', navProviders: 'Dienstleister', ctaDemo: 'Demo vereinbaren', ctaProvider: 'Als Dienstleister registrieren',
       hH1a: 'Der richtige Dienstleister,', hH1b: 'ohne Rätselraten.',
       hSub: 'Der Cubii-Marketplace verbindet jede Anfrage mit dem idealen Dienstleister — bewertet nach Preis, Nähe und Reputation. Verwalter vergleichen Angebote nebeneinander; Dienstleister erhalten qualifizierte Aufträge ohne Vertriebsaufwand.',
       rankingBadge: 'Für Ihre Anfrage bewertet',
@@ -477,7 +479,10 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const lang = s.lang ?? this.props.defaultLang ?? 'pt';
+    const lang = s.lang ?? this.props.defaultLang ?? 'en';
+    const WHO = { pt: ['Visão geral','Proprietários & Inquilinos','Prestadores de Serviços','Gestores de Instalações'], en: ['Overview','Owners & Tenants','Service Providers','Facility Managers'], fr: ['Aperçu','Propriétaires & Locataires','Prestataires de services','Gestionnaires d\u2019installations'], lb: ['Iwwerbléck','Proprietären & Locatairen','Déngschtleeschter','Gestionnaire vun Uleeën'], de: ['Überblick','Eigentümer & Mieter','Dienstleister','Facility Manager'] };
+    const WHO_HREFS = ['Cubii Para Quem.dc.html','Cubii Proprietarios.dc.html','Cubii Prestadores.dc.html','Cubii Gestores.dc.html'];
+    const whoLinks = (WHO[lang] || WHO.pt).map((label, wi) => ({ label, href: WHO_HREFS[wi] }));
     const t = Component.T[lang] || Component.T.pt;
     const FX = {
       pt: { newsTitle: 'Assine a nossa newsletter e fique por dentro de novidades e lançamentos.', emailPh: 'Coloque o seu e-mail', send: 'Enviar', consent: 'Ao subscrever, concorda com a nossa', privacy: 'Política de Privacidade', networks: 'Redes', expertTitle: 'Fale com um especialista', expertBody: 'Fale diretamente com um especialista Cubii.', expertBtn: 'Contactar', terms: 'Termos de serviço', legalPrivacy: 'Política de privacidade', thanks: 'Obrigado! Subscrição registada.', smartCube: 'Smart Cube', contact: 'Contacto' },
@@ -497,7 +502,7 @@ class Component extends DCLogic {
         fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left',
         fontWeight: l.code === lang ? 800 : 500,
         background: l.code === lang ? '#CCF0FC' : 'transparent',
-        color: l.code === lang ? '#0090E8' : '#296D83',
+        color: l.code === lang ? '#0090E8' : '#0A0A0A',
       },
     }));
 
@@ -539,6 +544,10 @@ class Component extends DCLogic {
       toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen, featMenuOpen: false }),
       featMenuOpen: s.featMenuOpen,
       toggleFeatMenu: () => this.setState({ featMenuOpen: !s.featMenuOpen, langMenuOpen: false }),
+      whoLinks,
+      whoMenuOpen: s.whoMenuOpen,
+      toggleWhoMenu: () => this.setState({ whoMenuOpen: !s.whoMenuOpen, langMenuOpen: false, featMenuOpen: false }),
+      whoArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.whoMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
       navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },

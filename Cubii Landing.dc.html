@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    html, body { margin: 0; padding: 0; background: #F1F3F4; }
     body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
     a { color: #0090E8; text-decoration: none; }
@@ -24,14 +24,19 @@
     @keyframes cubiiFlow { 0% { left: -30%; } 100% { left: 100%; } }
     @keyframes cubiiDemoBar { 0% { width: 0%; } 100% { width: 100%; } }
     @keyframes cubiiFloat { 0% { transform: translateY(0); } 50% { transform: translateY(-9px); } 100% { transform: translateY(0); } }
+    @keyframes cubiiAvPop { 0% { transform: scale(0.6); opacity: 0; } 55% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes cubiiAvPop1 { 0% { transform: scale(0.6); opacity: 0; } 55% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes cubiiAvPop2 { 0% { transform: scale(0.6); opacity: 0; } 55% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes cubiiAvPop3 { 0% { transform: scale(0.6); opacity: 0; } 55% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes cubiiCaret { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
   </style>
 </helmet>
 
 <!-- ===================== 0. ANNOUNCEMENT BAR ===================== -->
 <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
   <div data-screen-label="Announcement bar" style="background: #CCF0FC; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 48px; position: relative;">
-    <span style="font-size: 13.5px; font-weight: 500; color: #296D83; text-align: center;">{{ t.announce }} <a href="#dark-feature" style="font-weight: 700; text-decoration: underline; color: #0090E8;">{{ t.announceLink }}</a></span>
-    <button onClick="{{ closeAnnouncement }}" aria-label="Fechar" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; color: #296D83; font-weight: 700; padding: 4px 8px;">✕</button>
+    <span style="font-size: 13.5px; font-weight: 500; color: #0A0A0A; text-align: center;">{{ t.announce }} <a href="#dark-feature" style="font-weight: 700; text-decoration: underline; color: #0090E8;">{{ t.announceLink }}</a></span>
+    <button onClick="{{ closeAnnouncement }}" aria-label="Fechar" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; color: #0A0A0A; font-weight: 700; padding: 4px 8px;">✕</button>
   </div>
 </sc-if>
 
@@ -44,7 +49,7 @@
       
     </div>
     <!-- Nav -->
-    <nav style="display: flex; gap: 34px; margin-right: auto; padding-left: 32px;">
+    <nav style="display: flex; flex-wrap: wrap; gap: 12px 22px; margin-right: auto; padding-left: 24px;">
       <div style="position: relative;">
         <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
         <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -53,15 +58,17 @@
           </div>
         </sc-if>
       </div>
-      <a href="Cubii Marketplace.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Marketplace</a>
-      <a href="Cubii Para Quem.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navWho }}</a>
+      
+      <a href="Cubii Proprietarios.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navResidents }}</a>
+      <a href="Cubii Gestores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFM }}</a>
+      <a href="Cubii Prestadores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navProviders }}</a>
       <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
-      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">Smart Cube</a>
+      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navAbout }}</a>
     </nav>
     <!-- Language switcher -->
     <div style="position: relative; flex-shrink: 0;">
       <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
-        <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">{{ langFlag }} {{ langCode }}</span>
         <span style="font-size: 9px; color: #6C8087;">▼</span>
       </button>
       <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
@@ -75,7 +82,7 @@
         </div>
       </sc-if>
     </div>
-    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
+    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0); box-shadow: 0 4px 14px rgba(0,144,232,0.4);">{{ t.ctaDemo }}</a>
   </div>
 </header>
 
@@ -84,8 +91,8 @@
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center;">
     <!-- Left column -->
     <div style="display: flex; flex-direction: column; gap: 24px;">
-      <h1 style="margin: 0; font-size: 54px; font-weight: 900; letter-spacing: -2px; line-height: 1.05; color: #0A0A0A;">{{ t.h1a }} <span style="color: #00B5F1;">{{ t.h1b }}</span></h1>
-      <p style="margin: 0; font-size: 18px; font-weight: 500; line-height: 1.6; color: #296D83; max-width: 520px;">{{ t.heroSub }}</p>
+      <h1 style="margin: 0; font-size: 54px; font-weight: 900; letter-spacing: -2px; line-height: 1.05; color: #0A0A0A;">{{ heroH1a }} <span style="color: #00B5F1;">{{ heroH1b }}</span></h1>
+      <p style="margin: 0; font-size: 18px; font-weight: 500; line-height: 1.6; color: #0A0A0A; max-width: 520px;">{{ heroSubGen }}</p>
       <div style="display: flex; align-items: center; gap: 28px; margin-top: 12px;">
         <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 128px; height: 128px; object-fit: contain; display: block; flex-shrink: 0;">
         <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -108,14 +115,14 @@
           </div>
           <div style="display: flex; align-items: center; gap: 7px;">
             <span style="color: #00B5F1; font-size: 13px; letter-spacing: 1px;">★★★★★</span>
-            <span style="font-size: 12px; font-weight: 700; color: #296D83;">4,9</span>
+            <span style="font-size: 12px; font-weight: 700; color: #0A0A0A;">4,9</span>
             <span style="font-size: 12px; font-weight: 500; color: #6C8087;">· {{ t.appRating }}</span>
           </div>
         </div>
       </div>
     </div>
     <!-- Right column: LeadForm -->
-    <div id="lead-form" style="background: #FFFFFF; border-radius: 20px; box-shadow: 0 20px 50px rgba(41,109,131,0.15); padding: 36px; display: flex; flex-direction: column; gap: 16px;">
+    <div id="lead-form" style="background: #FFFFFF; border-radius: 20px; box-shadow: 0 0 0 1px rgba(41,109,131,0.06), 0 34px 80px rgba(41,109,131,0.34); padding: 36px; display: flex; flex-direction: column; gap: 16px;">
       <sc-if value="{{ formSuccess }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 32px 0; text-align: center;">
           <div style="width: 56px; height: 56px; border-radius: 999px; background: #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #0090E8; font-weight: 900;">✓</div>
@@ -137,7 +144,7 @@
             <option value="200+">200+</option>
           </select>
           <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size: 13px; font-weight: 600; color: #296D83;">{{ formError }}</span>
+            <span style="font-size: 13px; font-weight: 600; color: #0A0A0A;">{{ formError }}</span>
           </sc-if>
           <button onClick="{{ onSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; font-weight: 700; padding: 15px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ submitLabel }}</button>
           <span style="font-size: 12.5px; font-weight: 500; color: #878888; text-align: center;">{{ t.formSupport }}</span>
@@ -148,7 +155,7 @@
 </section>
 
 <!-- ===================== 3. LOGO WALL ===================== -->
-<section data-screen-label="Logo wall" style="padding: 48px 32px; background: #FFFFFF;">
+<section data-screen-label="Logo wall" style="padding: 48px 32px; background: #F1F3F4;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 26px;">
     <span style="font-size: 13px; font-weight: 600; color: #878888; letter-spacing: 1px; text-transform: uppercase;">{{ t.logoCaption }}</span>
     <!-- PLACEHOLDER: substituir por logos reais de clientes quando disponíveis -->
@@ -161,120 +168,35 @@
 </section>
 
 <!-- ===================== 10.5 SCROLLYTELLING — REDE CUBII ===================== -->
-<section ref="{{ storyWrapRef }}" data-screen-label="Rede Cubii (scroll)" style="position: relative; height: 520vh; background: #0A0A0A;">
-  <div style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: stretch; background: radial-gradient(130% 130% at 50% 40%, #202429 0%, #17191C 55%, #0E0F11 100%);">
-    <canvas ref="{{ gridRefStory }}" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.6;"></canvas>
+<section ref="{{ storyWrapRef }}" data-screen-label="Rede Cubii (scroll)" style="position: relative; height: 380vh; background: #050506;">
+  <div style="position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: stretch; background: #050506;">
+    <div style="{{ storyGridStyle }}"></div>
 
-    <!-- Grafo flutuante (nós + ligações) -->
-    <div style="position: absolute; inset: 0; z-index: 1;">
-      <div style="position: absolute; inset: 0; {{ storyGraphStyle }}">
-        <div style="{{ storyBgDimStyle }}">
-        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%;">
-          <path d="M120 300 C 320 220, 480 420, 700 380 S 1050 300, 1320 360" fill="none" stroke="#2A6FDB" stroke-width="2" opacity="0.55"></path>
-          <path d="M180 640 C 400 560, 620 720, 820 640 S 1160 560, 1320 620" fill="none" stroke="#1F8A5B" stroke-width="2" opacity="0.5"></path>
-          <path d="M260 200 C 460 320, 520 560, 760 560 S 1120 720, 1280 700" fill="none" stroke="#E0A100" stroke-width="2" opacity="0.5"></path>
-          <path d="M120 460 C 380 460, 700 500, 1000 480 S 1300 460, 1360 480" fill="none" stroke="#5A6A72" stroke-width="1.5" opacity="0.5"></path>
-        </svg>
-        <!-- nós (chips) — objetos/processos = retângulo (borda sólida); perfis = pílula (borda tracejada) -->
-        <div style="position: absolute; left: 8%; top: 26%; animation: cubiiFloat 6s ease-in-out infinite 0s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px solid #2A6FDB; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A6FDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17"/><path d="M14 9h5a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M7 7h.01M7 11h.01M7 15h.01"/></svg><span>Edifício</span></div></div>
-        <div style="position: absolute; left: 30%; top: 15%; animation: cubiiFloat 7s ease-in-out infinite 0.4s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px solid #6C8087; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C8087" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg><span>Ticket</span></div></div>
-        <div style="position: absolute; left: 60%; top: 12%; animation: cubiiFloat 6.5s ease-in-out infinite 0.8s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px solid #1F8A5B; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F8A5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a4 4 0 0 0-5.2 5.2L4 17l3 3 5.8-5.8A4 4 0 0 0 18 9l-2.3 2.3-2-.5-.5-2z"/></svg><span>Manutenção</span></div></div>
-        <div style="position: absolute; left: 82%; top: 30%; animation: cubiiFloat 7.5s ease-in-out infinite 0.2s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px solid #E0A100; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E0A100" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13h6l-1 9 8-11h-6z"/></svg><span>Energia</span></div></div>
-        <div style="position: absolute; left: 12%; top: 66%; animation: cubiiFloat 6.2s ease-in-out infinite 0.6s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px dashed #2A6FDB; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 999px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A6FDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg><span>Residente</span></div></div>
-        <div style="position: absolute; left: 44%; top: 78%; animation: cubiiFloat 7.2s ease-in-out infinite 0.9s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px solid #6C8087; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C8087" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h5"/></svg><span>Documento</span></div></div>
-        <div style="position: absolute; left: 70%; top: 74%; animation: cubiiFloat 6.8s ease-in-out infinite 0.3s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px dashed #1F8A5B; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 999px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F8A5B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3"/><path d="M4 20a6 6 0 0 1 12 0"/><rect x="15" y="13" width="6.5" height="6.5" rx="1.2"/></svg><span>Prestador</span></div></div>
-        <div style="position: absolute; left: 88%; top: 62%; animation: cubiiFloat 7.1s ease-in-out infinite 0.5s;"><div style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1.5px dashed #8B3FD9; color: #FFFFFF; font-size: 14.5px; font-weight: 700; padding: 12px 18px; border-radius: 999px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B3FD9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.2a3 3 0 0 1 0 5.6"/><path d="M20.5 18.5A5 5 0 0 0 17 14"/></svg><span>Sindicato</span></div></div>
-        <!-- Integrações (quadrados) -->
-        <div style="position: absolute; left: 24%; top: 44%; width: 44px; height: 44px; border-radius: 12px; background: #14171A; border: 1.5px solid #24282D; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #4DCBF5; animation: cubiiFloat 6s ease-in-out infinite 0.7s;">EN</div>
-        <div style="position: absolute; left: 54%; top: 46%; width: 44px; height: 44px; border-radius: 12px; background: #14171A; border: 1.5px solid #24282D; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #4DCBF5; animation: cubiiFloat 6.6s ease-in-out infinite 0.1s;">LE</div>
-        <div style="position: absolute; left: 76%; top: 46%; width: 44px; height: 44px; border-radius: 12px; background: #14171A; border: 1.5px solid #24282D; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #4DCBF5; animation: cubiiFloat 7s ease-in-out infinite 0.9s;">PR</div>
-        </div>
-        <!-- Linhas de progresso do projeto (cada linha = um residente; avançam com os slides) -->
-        <svg viewBox="0 0 1440 900" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
-          <path d="M60 800 C 520 782, 940 720, 1400 648" fill="none" stroke="#2A6FDB" stroke-width="2" opacity="0.16"></path>
-          <path d="M60 800 C 520 782, 940 720, 1400 648" fill="none" stroke="#2A6FDB" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" style="{{ storyLineStyle }}"></path>
-          <path d="M40 470 C 480 540, 1000 440, 1400 500" fill="none" stroke="#00B5F1" stroke-width="2" opacity="0.14"></path>
-          <path d="M40 470 C 480 540, 1000 440, 1400 500" fill="none" stroke="#00B5F1" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" style="{{ storyLineStyle }}"></path>
-        </svg>
-        <div style="position: absolute; inset: 0; z-index: 1; pointer-events: none;">
-          <sc-for list="{{ storyMarkers }}" as="m" hint-placeholder-count="9">
-            <div style="{{ m.style }}"></div>
-          </sc-for>
-        </div>
-        <!-- Avatares (perfis de utilizador — enfase por passo) -->
-        <sc-for list="{{ storyAvatars }}" as="av" hint-placeholder-count="6">
-          <div style="{{ av.wrapStyle }}">
-            <div style="{{ av.ringStyle }}"></div>
-            <span style="{{ av.labelStyle }}">{{ av.role }}</span>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-
-    <!-- Palco de foco: utilizador em questão ao centro + processo docado por baixo -->
-    <sc-if value="{{ storyActive }}" hint-placeholder-val="{{ false }}">
-      <div style="position: absolute; left: 54%; top: 49%; transform: translate(-50%,-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 14px; width: min(520px, 84vw);">
-        <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
-          <div style="{{ storyFocus.haloStyle }}"></div>
-          <div style="{{ storyFocus.ringStyle }}"></div>
-          <span style="{{ storyFocus.labelStyle }}">{{ storyFocus.role }}</span>
-        </div>
-        <sc-if value="{{ storyShowCard }}" hint-placeholder-val="{{ false }}">
-          <div style="width: 100%; border-radius: 16px; padding: 3px; background: linear-gradient(90deg, #1F8A5B, #E0A100 45%, #2A6FDB 75%, #8B3FD9);">
-            <div style="background: #16181B; border-radius: 13px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px;">
-              <sc-if value="{{ storyIsPrompt }}" hint-placeholder-val="{{ true }}">
-                <div style="display: flex; flex-direction: column; gap: 16px;">
-                  <span style="font-size: 19px; font-weight: 600; color: #FFFFFF; line-height: 1.4;">{{ curStory.cardText }}</span>
-                  <div style="display: flex; align-items: center; gap: 12px;">
-                    <span style="color: #6C8087; font-size: 18px;">＋</span>
-                    <span style="color: #6C8087; font-size: 16px;">⚙</span>
-                    <span style="margin-left: auto; width: 34px; height: 34px; border-radius: 999px; background: #00B5F1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 16px;">↑</span>
-                  </div>
-                </div>
-              </sc-if>
-              <sc-if value="{{ storyIsPull }}" hint-placeholder-val="{{ false }}">
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                  <div style="display: flex; align-items: center; gap: 12px;">
-                    <span style="width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg,#00B5F1,#8B3FD9); display: inline-block;"></span>
-                    <span style="font-size: 20px; font-weight: 700; color: #FFFFFF;">{{ curStory.cardText }}</span>
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <sc-for list="{{ storyChips }}" as="ch" hint-placeholder-count="3">
-                      <span style="align-self: flex-start; background: #1E2430; border: 1px solid #2A3547; color: #CFE0F5; font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 8px;">{{ ch }}</span>
-                    </sc-for>
-                  </div>
-                </div>
-              </sc-if>
-            </div>
-          </div>
-        </sc-if>
-      </div>
-    </sc-if>
-
-    <!-- Texto do passo -->
-    <div style="position: relative; z-index: 4; width: 100%; max-width: 1200px; margin: 0 auto; padding: 92px 40px 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; pointer-events: none;">
+    <!-- Conteúdo do passo (fluxo linear simples) -->
+    <div style="position: relative; z-index: 4; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; pointer-events: none;">
       <sc-if value="{{ storyTextCentered }}" hint-placeholder-val="{{ true }}">
-        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 40px;">
-          <h2 style="margin: 0; max-width: 980px; text-align: center; font-size: 64px; font-weight: 800; letter-spacing: -2px; line-height: 1.05; color: #FFFFFF; text-shadow: 0 2px 30px rgba(0,0,0,0.6);">{{ curStory.title }} <span style="color: #00B5F1;">{{ curStory.hi }}</span></h2>
-        </div>
+        <h2 style="margin: 0; font-size: 84px; font-weight: 800; letter-spacing: -3px; line-height: 1.02; color: #FFFFFF; text-shadow: 0 2px 30px rgba(0,0,0,0.55); max-width: 1080px;">{{ curStory.title }} <span style="color: #00B5F1;">{{ curStory.hi }}</span></h2>
       </sc-if>
-      <sc-if value="{{ storyHasLink }}" hint-placeholder-val="{{ false }}">
-        <div style="max-width: 380px; display: flex; flex-direction: column; gap: 14px; background: rgba(14,15,17,0.62); backdrop-filter: blur(4px); padding: 16px 18px; border-radius: 14px;">
-          <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1px; line-height: 1.12; color: #FFFFFF;">{{ curStory.title }}</h2>
-          <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; color: #C6D2D7;">{{ curStory.body }}</p>
-          <a href="Cubii Funcionalidades.dc.html" style="font-size: 15px; font-weight: 700; color: #4DCBF5; pointer-events: auto;" style-hover="color: #00B5F1;">{{ curStory.link }}</a>
-        </div>
-      </sc-if>
-      <sc-if value="{{ storyIsPull }}" hint-placeholder-val="{{ false }}">
-        <div style="max-width: 380px; display: flex; flex-direction: column; gap: 12px; background: rgba(14,15,17,0.62); backdrop-filter: blur(4px); padding: 16px 18px; border-radius: 14px;">
-          <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1px; line-height: 1.12; color: #FFFFFF;">{{ curStory.title }}</h2>
-          <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; color: #C6D2D7;">{{ curStory.body }}</p>
-        </div>
-      </sc-if>
-      <sc-if value="{{ storyIsPrompt }}" hint-placeholder-val="{{ false }}">
-        <div style="max-width: 380px; display: flex; flex-direction: column; gap: 12px; background: rgba(14,15,17,0.62); backdrop-filter: blur(4px); padding: 16px 18px; border-radius: 14px;">
-          <h2 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -1px; line-height: 1.12; color: #FFFFFF;">{{ curStory.title }}</h2>
-          <p style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.55; color: #C6D2D7;">{{ curStory.body }}</p>
+      <sc-if value="{{ storyShowCard }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 80px; width: 100%;">
+          <div style="display: flex; align-items: flex-start; width: 100%; max-width: 1140px;">
+            <sc-for list="{{ storyTrack }}" as="tr" hint-placeholder-count="3">
+              <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative;">
+                <div style="{{ tr.connStyle }}"></div>
+                <sc-if value="{{ tr.arrowShow }}" hint-placeholder-val="{{ false }}"><div style="{{ tr.arrowStyle }}"></div></sc-if>                <div style="{{ tr.circleStyle }}">{{ tr.iconEl }}</div>
+                <span style="{{ tr.labelStyle }}">{{ tr.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="max-width: 720px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="{{ storyStepUser.wrapStyle }}"><div style="{{ storyStepUser.imgStyle }}"></div><span style="{{ storyStepUser.roleStyle }}">{{ storyStepUser.role }}</span></div>
+            <div style="{{ storyStepUser.boxStyle }}">
+              <span style="font-size: 16px; font-weight: 600; color: #FFFFFF; text-align: left; line-height: 1.4;">{{ storyStepUser.typed }}<span style="{{ storyStepUser.caretStyle }}"></span></span>
+              <span style="{{ storyStepUser.sendStyle }}">↑</span>
+            </div>
+            <h3 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.08; color: #FFFFFF;">{{ curStory.title }}</h3>
+            <p style="margin: 0; font-size: 19px; font-weight: 500; line-height: 1.6; color: #C6D2D7;">{{ curStory.body }}</p>
+          </div>
         </div>
       </sc-if>
     </div>
@@ -290,176 +212,53 @@
 </section>
 
 
-<!-- ===================== 4. O PROBLEMA ===================== -->
-<section data-screen-label="Problema" style="padding: 80px 32px; background: #FFFFFF;">
+<!-- ===================== 4. OVERVIEW (general, audience-first) ===================== -->
+<section id="features" data-screen-label="Overview" style="padding: 84px 32px; background: #F1F3F4;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
-    <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; text-align: center; color: #0A0A0A;">{{ t.problemH2 }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-      <sc-for list="{{ t.problems }}" as="p" hint-placeholder-count="4">
-        <div style="background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 8px 26px rgba(41,109,131,0.10); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(41,109,131,0.22);">
-          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #00AAEE;">{{ p.who }}</span>
-          <p style="margin: 0; font-size: 14.5px; font-weight: 500; line-height: 1.55; color: #296D83;">{{ p.text }}</p>
-        </div>
-      </sc-for>
-    </div>
-    <p style="margin: 0; text-align: center; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #0A0A0A;">{{ t.transitionA }} <span style="color: #00B5F1;">{{ t.transitionB }}</span></p>
-  </div>
-</section>
-
-<!-- ===================== 5. FEATURE GRID ===================== -->
-<section id="features" data-screen-label="Funcionalidades" style="padding: 80px 32px; background: #EAF8FE;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
-    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px;">
-      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.featuresH2 }}</h2>
-      <p style="margin: 0; font-size: 16px; font-weight: 500; color: #296D83; line-height: 1.6;">{{ t.featuresSub }}</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; max-width: 700px; margin: 0 auto;">
+      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ ovH2 }}</h2>
+      <p style="margin: 0; font-size: 16px; font-weight: 500; color: #0A0A0A; line-height: 1.6;">{{ ovSub }}</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      <sc-for list="{{ featuresView }}" as="f" hint-placeholder-count="6">
-        <div style="background: #FFFFFF; border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; box-shadow: 0 12px 34px rgba(41,109,131,0.14); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(41,109,131,0.22);">
-          <div style="display: flex; align-items: center; justify-content: center;">{{ f.iconEl }}</div>
-          <h3 style="margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.3px; color: #0A0A0A;">{{ f.title }}</h3>
-          <p style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.55; color: #6C8087;">{{ f.desc }}</p>
-        </div>
+      <sc-for list="{{ overviewBlocks }}" as="b" hint-placeholder-count="3">
+        <a href="{{ b.href }}" onMouseEnter="{{ b.onEnter }}" onMouseLeave="{{ b.onLeave }}" style="text-decoration: none; background: #F7FBFD; border: 1px solid #E6EDF0; border-radius: 18px; padding: 32px 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; box-shadow: 0 10px 30px rgba(41,109,131,0.10); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(41,109,131,0.20);">
+          <div data-ov-ic style="{{ b.iconStyle }}">{{ b.iconEl }}</div>
+          <span data-ov-who style="{{ b.whoStyle }}">{{ b.who }}</span>
+          <p style="margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #0A0A0A;">{{ b.text }}</p>
+          <span style="font-size: 14px; font-weight: 700; color: #0090E8; margin-top: auto;">{{ b.link }}</span>
+        </a>
       </sc-for>
     </div>
   </div>
 </section>
 
 <!-- ===================== 6. DARK FEATURE SECTION ===================== -->
-<section id="dark-feature" data-screen-label="Seção escura — Alarmes" style="position: relative; overflow: hidden; padding: 96px 32px; background: radial-gradient(120% 120% at 80% 20%, #202429 0%, #17191C 55%, #131417 100%);">
+<section id="dark-feature" data-screen-label="Seção escura — Alarmes" style="position: relative; overflow: hidden; padding: 72px 32px; background: radial-gradient(120% 120% at 80% 20%, #202429 0%, #17191C 55%, #131417 100%);">
   <canvas ref="{{ gridRefA }}" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
-  <div style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; align-items: center;">
-    <h2 style="margin: 0; font-size: 46px; font-weight: 900; letter-spacing: -1.6px; color: #FFFFFF; text-align: center; max-width: 780px; line-height: 1.1;">{{ t.darkH2a }} <span style="color: #00B5F1;">{{ t.darkH2b }}</span> {{ t.darkH2c }}</h2>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 100%;">
-      <sc-for list="{{ darkView }}" as="b" hint-placeholder-count="3">
-        <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
-          <div style="display: flex; align-items: center; justify-content: center;">{{ b.iconEl }}</div>
-          <h3 style="margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -0.3px; color: #FFFFFF;">{{ b.title }}</h3>
-          <p style="margin: 0; font-size: 14px; font-weight: 500; line-height: 1.6; color: #878888;">{{ b.desc }}</p>
-        </div>
-      </sc-for>
+  <div style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; align-items: flex-start;">
+    <div style="{{ darkTermStyle }}">
+      <span style="font-family: 'Courier New', monospace; font-size: 26px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.5px;">{{ t.darkH2a }} <span style="color: #00B5F1;">{{ t.darkH2b }}</span> {{ t.darkH2c }}</span>
+      <span style="font-family: 'Courier New', monospace; font-size: 20px; font-weight: 700; color: #878888;">&gt; <span style="color: #F0A020;">{{ darkTyped }}</span><span style="{{ darkCaretStyle }}"></span></span>
     </div>
-    <!-- FramedScreenshot -->
-    <div style="width: 100%; max-width: 880px; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,181,241,0.18);">
-      <div style="height: 8px; background: linear-gradient(90deg, #00B5F1, #4DCBF5);"></div>
-      <div style="height: 380px; overflow: hidden;"><img src="assets/cubii-alarms.png" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; transform: scale(1.12); transform-origin: top left;"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 7. USER TYPE SHOWCASE ===================== -->
-<section id="para-quem" data-screen-label="Para quem é" style="padding: 88px 32px; background: #FFFFFF;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
-    <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.showcaseH2 }}</h2>
-    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-      <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="3">
-        <button onClick="{{ tb.onClick }}" style="{{ tb.style }}">{{ tb.label }}</button>
-      </sc-for>
-    </div>
-    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center;">
-      <div style="display: flex; flex-direction: column; gap: 18px;">
-        <p style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.65; color: #296D83;">{{ activeTab.desc }}</p>
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <sc-for list="{{ activeTab.capabilities }}" as="c" hint-placeholder-count="3">
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-              <span style="width: 22px; height: 22px; border-radius: 999px; background: #CCF0FC; color: #0090E8; font-size: 12px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
-              <span style="font-size: 14.5px; font-weight: 600; color: #0A0A0A;">{{ c }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 6px;">
-          <a href="#como-funciona" style="font-size: 14.5px; font-weight: 700; color: #0090E8;">{{ t.seeHow }}</a>
-        </div>
-      </div>
-      <!-- Demo em vídeo (placeholder interativo): plugar Supademo/Arcade/MP4 real aqui futuramente -->
-      <div onClick="{{ playDemo }}" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 16px 44px rgba(41,109,131,0.14); cursor: pointer;">
-        <div style="height: 8px; background: linear-gradient(90deg, #00B5F1, #4DCBF5);"></div>
-        <div style="position: relative; height: 340px; background: repeating-linear-gradient(45deg, #F4FBFE, #F4FBFE 14px, #EAF8FE 14px, #EAF8FE 28px); display: flex; align-items: center; justify-content: center;">
-          <span style="font-family: monospace; font-size: 13px; color: #6C8087; background: #FFFFFF; padding: 8px 16px; border-radius: 8px;">{{ activeTab.demoLabel }}</span>
-          <!-- Overlay play (repouso) -->
-          <sc-if value="{{ demoNotPlaying }}" hint-placeholder-val="{{ true }}">
-            <div style="position: absolute; inset: 0; background: rgba(10,10,10,0.14); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; transition: background 0.3s ease;">
-              <div style="width: 72px; height: 72px; border-radius: 999px; background: #00B5F1; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,144,232,0.5); animation: cubiiPulse 2s ease-out infinite;">
-                <span style="color: #FFFFFF; font-size: 26px; margin-left: 5px;">▶</span>
-              </div>
-              <span style="background: rgba(10,10,10,0.72); color: #FFFFFF; font-size: 12.5px; font-weight: 700; padding: 6px 16px; border-radius: 999px;">{{ demoWatchLabel }}</span>
-            </div>
-          </sc-if>
-          <!-- Estado a reproduzir -->
-          <sc-if value="{{ demoPlaying }}" hint-placeholder-val="{{ false }}">
-            <div style="position: absolute; inset: 0; background: rgba(10,10,10,0.06); display: flex; align-items: flex-end;">
-              <div style="width: 100%; padding: 0;">
-                <div style="display: flex; align-items: center; gap: 8px; padding: 10px 16px;">
-                  <span style="color: #FFFFFF; font-size: 12px; background: rgba(10,10,10,0.72); padding: 4px 12px; border-radius: 999px; font-weight: 700;">● {{ demoPlayingLabel }}</span>
-                </div>
-                <div style="height: 5px; background: rgba(255,255,255,0.5);">
-                  <div style="height: 100%; background: linear-gradient(90deg, #0090E8, #00B5F1); animation: cubiiDemoBar 5s linear forwards;"></div>
-                </div>
-              </div>
-            </div>
-          </sc-if>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 8. MARKETPLACE ===================== -->
-<section id="marketplace" data-screen-label="Marketplace" style="padding: 88px 32px; background: #EAF8FE;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
-    <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;">
-      <div style="display: flex; flex-direction: column; gap: 18px;">
-        <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.mpH2 }}</h2>
-        <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.65; color: #296D83;">{{ t.mpBody1 }} <strong>{{ t.mpStrong }}</strong>{{ t.mpBody2 }}</p>
-        <a href="Cubii Marketplace.dc.html" style="font-size: 14.5px; font-weight: 700; color: #0090E8;">{{ t.mpLink }}</a>
-      </div>
-      <!-- Card de prestador mockado (dados fictícios) -->
-      <div style="background: #FFFFFF; border-radius: 18px; padding: 26px; box-shadow: 0 20px 50px rgba(41,109,131,0.18); display: flex; flex-direction: column; gap: 14px; transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(41,109,131,0.22);">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 48px; height: 48px; border-radius: 999px; background: #CCF0FC; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 17px; color: #0090E8;">HL</div>
-          <div style="display: flex; flex-direction: column; gap: 3px;">
-            <span style="font-size: 16px; font-weight: 800; color: #0A0A0A;">Hydro-Lux Sàrl</span>
-            <span style="font-size: 12.5px; font-weight: 600; color: #6C8087;">{{ t.mpCategory }}</span>
-          </div>
-          <span style="margin-left: auto; background: #CCF0FC; color: #0090E8; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 999px;">✓ {{ t.mpVerified }}</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="color: #00B5F1; font-size: 15px; letter-spacing: 2px;">★★★★★</span>
-          <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ t.mpRating }}</span>
-        </div>
-        <div style="display: flex; gap: 8px;">
-          <span style="border: 1px solid #CCF0FC; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600; color: #296D83;">{{ t.mpChip1 }}</span>
-          <span style="border: 1px solid #CCF0FC; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600; color: #296D83;">{{ t.mpChip2 }}</span>
-        </div>
-      </div>
-    </div>
-    <div style="background: #FFFFFF; border-radius: 18px; padding: 28px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-      <p style="margin: 0; font-size: 15px; font-weight: 600; color: #0A0A0A; flex: 1; min-width: 280px;">{{ t.mpValueProp }}</p>
-      <a href="#lead-form" style="border: 1.5px solid #0090E8; color: #0090E8; font-size: 14px; font-weight: 700; padding: 11px 24px; border-radius: 999px; display: inline-block;" style-hover="background: #CCF0FC;">{{ t.mpRegister }}</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 10. COMO FUNCIONA ===================== -->
-<section id="como-funciona" data-screen-label="Como funciona" style="padding: 88px 32px 96px; background: #FFFFFF;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px;">
-    <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; text-align: center; color: #0A0A0A;">{{ t.stepsH2 }}</h2>
-    <div style="position: relative; padding-top: 4px;">
-      <!-- Trilho de progresso animado -->
-      <div style="position: absolute; top: 34px; left: 8.33%; right: 8.33%; height: 3px; background: #E2ECEF; border-radius: 999px; overflow: hidden;">
-        <div style="height: 100%; width: {{ progressPct }}; background: linear-gradient(90deg, #0090E8, #00B5F1); border-radius: 999px; transition: width 0.7s cubic-bezier(0.22,1,0.36,1); position: relative; overflow: hidden;">
-          <span style="position: absolute; top: 0; bottom: 0; width: 30%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75), transparent); animation: cubiiFlow 1.6s linear infinite;"></span>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; position: relative;">
-        <sc-for list="{{ stepsAnim }}" as="st" hint-placeholder-count="6">
-          <div onMouseEnter="{{ st.onHover }}" onClick="{{ st.onHover }}" style="{{ st.cellStyle }}">
-            <div style="height: 60px; display: flex; align-items: center; justify-content: center;"><div style="{{ st.circleStyle }}">{{ st.glyph }}</div></div>
-            <span style="{{ st.titleStyle }}">{{ st.title }}</span>
-            <span style="{{ st.descStyle }}">{{ st.desc }}</span>
-          </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <span style="font-size: 12px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF;">{{ darkWorks }}</span>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <sc-for list="{{ darkIntegrations }}" as="ig" hint-placeholder-count="3">
+          <span style="display: inline-flex; align-items: center; gap: 9px; background: #14171A; border: 1px solid #2A2E33; border-radius: 10px; padding: 8px 14px 8px 8px;">
+            <span style="width: 26px; height: 26px; border-radius: 7px; background: #1E2226; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: #4DCBF5;">{{ ig.abbr }}</span>
+            <span style="font-family: 'Courier New', monospace; font-size: 13px; font-weight: 700; color: #FFFFFF;">{{ ig.name }}</span>
+          </span>
         </sc-for>
       </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 100%; margin-top: 8px;">
+      <sc-for list="{{ darkView }}" as="b" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
+          <canvas class="dark-dot-icon" data-idx="{{ b.idx }}" style="width: 76px; height: 76px; display: block;"></canvas>
+          <h3 style="margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; color: #FFFFFF;">{{ b.title }}</h3>
+          <p style="margin: 0; font-size: 16.5px; font-weight: 700; line-height: 1.55; color: #FFFFFF;">{{ b.desc }}</p>
+        </div>
+      </sc-for>
     </div>
   </div>
 </section>
@@ -467,37 +266,52 @@
 <!-- ===================== 11. TESTIMONIALS (carrossel, modelo foto + card) ===================== -->
 <!-- PLACEHOLDER: substituir por depoimentos reais de clientes — não usar em produção -->
 <section data-screen-label="Depoimentos" style="padding: 80px 32px 64px; background: #EAF8FE; overflow: hidden;">
-  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.testimonialsH2 }}</h2>
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; overflow: visible;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 46px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.05; color: #0A0A0A;">{{ tmTitle }}</h2>
+      <p style="margin: 0; font-size: 17px; font-weight: 500; color: #0A0A0A;">{{ tmSub }}</p>
     </div>
-    <!-- Depoimento atual: foto menor sobreposta + card grande de citação -->
-    <div onMouseEnter="{{ tmHoverOn }}" onMouseLeave="{{ tmHoverOff }}" style="display: flex; align-items: center; padding: 24px 0;">
-      <!-- Foto (rosto real, focado no rosto — B&W) -->
-      <div data-tm-photo style="width: 300px; height: 340px; flex-shrink: 0; background: {{ curTm.photoBg }}; border-radius: 8px; margin-right: -84px; position: relative; z-index: 2; overflow: hidden; transform-origin: center; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;">
-        <div style="{{ curTm.photoImgStyle }}"></div>
-      </div>
-      <!-- Card de citação -->
-      <div data-tm-card style="flex: 1; background: {{ curTm.bg }}; color: #FFFFFF; border-radius: 8px; padding: 56px 60px 48px 132px; display: flex; flex-direction: column; gap: 22px; min-height: 420px; transform-origin: center; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;">
-        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: #FFFFFF; align-self: flex-start;">{{ curTm.company }}</span>
-        <span style="font-size: 72px; font-weight: 900; line-height: 0.4; margin-top: 14px;">“</span>
-        <p style="margin: 0; font-size: 24px; font-weight: 600; line-height: 1.5; letter-spacing: -0.3px; max-width: 680px;">{{ curTm.quote }}</p>
-        <div style="display: flex; flex-direction: column; gap: 4px; margin-top: auto;">
-          <span style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">{{ curTm.name }}</span>
-          <span style="font-size: 13.5px; font-weight: 500; opacity: 0.85;">{{ curTm.role }}</span>
+    <div style="background: #FFFFFF; border-radius: 18px; padding: 30px 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+      <sc-for list="{{ tmStats }}" as="st" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-size: 46px; font-weight: 900; letter-spacing: -2px; color: #0090E8; line-height: 1; font-family: 'Bricolage Grotesque', sans-serif;">{{ st.big }}</span>
+          <span style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.4;">{{ st.label }}</span>
         </div>
+      </sc-for>
+    </div>
+    <!-- Carrossel multi-card (track deslizante, full-bleed sem corte) -->
+    <div style="width: 100vw; margin-left: calc(-50vw + 50%); overflow: visible; padding: 24px 0;">
+      <div style="{{ tmTrackStyle }}">
+        <sc-for list="{{ tmTrack }}" as="tm" hint-placeholder-count="4">
+          <div style="{{ tm.cardStyle }}">
+            <div style="{{ tm.photoStyle }}"><div style="{{ tm.photoImgStyle }}"></div></div>
+            <div style="{{ tm.bodyStyle }}">
+              <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: #FFFFFF; align-self: flex-start;">{{ tm.company }}</span>
+              <span style="font-size: 72px; font-weight: 900; line-height: 0.4; margin-top: 14px;">“</span>
+              <p style="margin: 0; font-size: 24px; font-weight: 600; line-height: 1.5; letter-spacing: -0.3px; max-width: 460px;">{{ tm.quote }}</p>
+              <div style="display: flex; flex-direction: column; gap: 4px; margin-top: auto;">
+                <span style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">{{ tm.name }}</span>
+                <span style="font-size: 13.5px; font-weight: 500; opacity: 0.85;">{{ tm.role }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
       </div>
     </div>
-    <!-- Setas de navegação -->
-    <div style="display: flex; gap: 12px; justify-content: flex-end;">
-      <button onClick="{{ prevT }}" aria-label="Anterior" style="width: 48px; height: 48px; border-radius: 999px; border: none; background: #FFFFFF; color: #0A0A0A; font-size: 18px; cursor: pointer; box-shadow: 0 4px 14px rgba(41,109,131,0.14);" style-hover="background: #CCF0FC;">←</button>
-      <button onClick="{{ nextT }}" aria-label="Seguinte" style="width: 48px; height: 48px; border-radius: 999px; border: none; background: #0A0A0A; color: #FFFFFF; font-size: 18px; cursor: pointer;" style-hover="background: #296D83;">→</button>
+    <!-- Setas de navegação (pretas → azul no hover, seta igual ao print) -->
+    <div style="display: flex; gap: 14px; justify-content: flex-end;">
+      <button onClick="{{ prevT }}" aria-label="Anterior" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #0A0A0A; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="4" y2="12"></line><polyline points="10 6 4 12 10 18"></polyline></svg>
+      </button>
+      <button onClick="{{ nextT }}" aria-label="Seguinte" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #0A0A0A; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
+      </button>
     </div>
   </div>
 </section>
 
 <!-- ===================== 13. FAQ ===================== -->
-<section id="faq" data-screen-label="FAQ" style="position: relative; overflow: hidden; padding: 88px 32px; background: #FFFFFF;">
+<section id="faq" data-screen-label="FAQ" style="position: relative; overflow: hidden; padding: 88px 32px; background: #F1F3F4;">
   <!-- Balões de fala decorativos (um de cada lado) -->
   <svg width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true" style="position: absolute; left: 5%; top: 50%; pointer-events: none;">
     <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#0A0A0A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -519,7 +333,7 @@
             <span style="font-size: 18px; font-weight: 700; color: #00B5F1;">{{ q.chevron }}</span>
           </button>
           <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
-            <p style="margin: 0; padding: 0 22px 20px; font-size: 14px; font-weight: 500; line-height: 1.65; color: #296D83;">{{ q.answer }}</p>
+            <p style="margin: 0; padding: 0 22px 20px; font-size: 14px; font-weight: 500; line-height: 1.65; color: #0A0A0A;">{{ q.answer }}</p>
           </sc-if>
         </div>
       </sc-for>
@@ -527,14 +341,15 @@
   </div>
 </section>
 
-<!-- ===================== 14. CTA FINAL (dark) ===================== -->
-<section data-screen-label="CTA final" style="position: relative; overflow: hidden; padding: 104px 32px; background: radial-gradient(120% 120% at 20% 20%, #202429 0%, #17191C 55%, #131417 100%);">
-  <canvas ref="{{ gridRefB }}" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
-  <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center;">
-    <h2 style="margin: 0; font-size: 52px; font-weight: 900; letter-spacing: -2px; line-height: 1.08; color: #FFFFFF;">{{ t.ctaH2a }} <span style="color: #00B5F1;">{{ t.ctaH2b }}</span></h2>
-    <p style="margin: 0; font-size: 17px; font-weight: 500; color: #878888; max-width: 480px; line-height: 1.6;">{{ t.ctaSub }}</p>
-    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 16px 40px; border-radius: 999px; display: inline-block;" style-hover="background: #0090E8; color: #FFFFFF;">{{ t.ctaDemo }}</a>
-    <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 132px; height: 132px; object-fit: contain; display: block; opacity: 0.95; margin-top: 14px;">
+<!-- ===================== 14. CTA FINAL (dark, slim) ===================== -->
+<section data-screen-label="CTA final" style="position: relative; overflow: hidden; padding: 60px 32px; background: #0A0A0A;">
+  <div style="position: absolute; top: -120px; left: -6%; width: 340px; height: 340px; border-radius: 999px; background: rgba(255,255,255,0.05); filter: blur(110px); z-index: 0; pointer-events: none;"></div>
+  <div style="position: absolute; bottom: -140px; right: -6%; width: 320px; height: 320px; border-radius: 999px; background: rgba(255,255,255,0.035); filter: blur(110px); z-index: 0; pointer-events: none;"></div>
+  <div style="position: relative; z-index: 1; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+    <h2 style="margin: 0; font-size: 42px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.08; color: #FFFFFF;">{{ t.ctaH2a }} <span style="color: #00B5F1;">{{ t.ctaH2b }}</span></h2>
+    <p style="margin: 0; font-size: 17px; font-weight: 800; color: #FFFFFF; max-width: 480px; line-height: 1.6;">{{ t.ctaSub }}</p>
+    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 16px 40px; border-radius: 999px; display: inline-block; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
+
   </div>
 </section>
 
@@ -552,7 +367,7 @@
           <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
           <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
         </div>
-        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #296D83; border-radius: 12px; padding: 13px 16px;">
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #0A0A0A; border-radius: 12px; padding: 13px 16px;">
           <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
         </div>
         <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
@@ -588,7 +403,7 @@
     <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
       <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
       <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Acessar Admin</a>
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Admin</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
         <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
       </div>
@@ -612,6 +427,8 @@ class Component extends DCLogic {
     demoPlaying: false,
     storyStep: 0,
     storyPct: 0,
+    typedText: '',
+    darkTyped: '',
     announcementOpen: true,
     activeTab: 0,
     openFaq: 0,
@@ -636,10 +453,12 @@ class Component extends DCLogic {
       this.initDotGrid(this.gridA.current);
       this.initDotGrid(this.gridB.current);
     });
+    this.runDarkType();
+    requestAnimationFrame(() => this.initDotIcons());
     // Timeline auto-avança de passo em passo
     this.startStepTimer();
-    // Grelha de pontos do grafo interativo (scrollytelling)
-    requestAnimationFrame(() => this.initDotGrid(this.storyGrid.current));
+    // Grelha estática de fundo — reposiciona-se por etapa (sem canvas)
+    requestAnimationFrame(() => {});
     // Scrollytelling: fixa a secção e avança por passos conforme o scroll
     this._onStoryScroll = () => {
       const w = this.storyWrap.current;
@@ -659,18 +478,58 @@ class Component extends DCLogic {
     this._onStoryScroll();
   }
 
+  componentDidUpdate(prevProps, prevState) {}
+
+  runTyping() {
+    if (this._typeTimer) clearInterval(this._typeTimer);
+    const target = this._actionTarget || '';
+    this.setState({ typedText: '' });
+    let i = 0;
+    this._typeTimer = setInterval(() => {
+      i++;
+      this.setState({ typedText: target.slice(0, i) });
+      if (i >= target.length) { clearInterval(this._typeTimer); this._typeTimer = null; }
+    }, 42);
+  }
+
+  runDarkType() {
+    if (this._darkTimer) clearTimeout(this._darkTimer);
+    let i = 0, mode = 'type';
+    const tick = () => {
+      if (mode === 'type') {
+        const target = this._darkTarget || '';
+        i++;
+        this.setState({ darkTyped: target.slice(0, i) });
+        if (i >= target.length) { mode = 'hold'; this._darkTimer = setTimeout(tick, 2200); return; }
+        this._darkTimer = setTimeout(tick, 70);
+      } else if (mode === 'hold') {
+        mode = 'erase'; this._darkTimer = setTimeout(tick, 40);
+      } else {
+        const target = this._darkTarget || '';
+        i--;
+        this.setState({ darkTyped: target.slice(0, i) });
+        if (i <= 0) { mode = 'type'; this._darkTimer = setTimeout(tick, 500); return; }
+        this._darkTimer = setTimeout(tick, 34);
+      }
+    };
+    this.setState({ darkTyped: '' });
+    this._darkTimer = setTimeout(tick, 400);
+  }
+
   componentWillUnmount() {
+    if (this._darkTimer) clearTimeout(this._darkTimer);
     if (this._stepTimer) clearInterval(this._stepTimer);
     if (this._demoTimer) clearTimeout(this._demoTimer);
+    if (this._typeTimer) clearInterval(this._typeTimer);
     if (this._onStoryScroll) window.removeEventListener('scroll', this._onStoryScroll);
   }
 
-  static STORY_COUNT = 6;
+  static STORY_COUNT = 5;
 
   startStepTimer() {
     if (this._stepTimer) clearInterval(this._stepTimer);
     this._stepTimer = setInterval(() => {
-      this.setState((s) => ({ activeStep: (s.activeStep + 1) % 6 }));
+      this.setState((s) => ({ activeStep: (s.activeStep + 1) % 3 }));
     }, 2400);
   }
 
@@ -681,13 +540,67 @@ class Component extends DCLogic {
 
   static STEP_SYMBOLS = ['◉', '✓', '▤', '⚙', '●', '★'];
 
+  static DARK_ICON_PATHS = [
+    '<path d="M12 4a5 5 0 0 0-5 5c0 4-1.5 5.5-2 6h14c-.5-.5-2-2-2-6a5 5 0 0 0-5-5z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+    '<path d="M4 8h12l-3-3M20 16H8l3 3"/>',
+    '<path d="M5 4h11l3 3v13H5z"/><path d="M9 11l2 2 4-4"/><path d="M9 16h6"/>',
+  ];
+
+  initDotIcons() {
+    const canvases = document.querySelectorAll('canvas.dark-dot-icon');
+    canvases.forEach((c) => {
+      const idx = parseInt(c.getAttribute('data-idx'), 10) || 0;
+      this.initDotIcon(c, Component.DARK_ICON_PATHS[idx % Component.DARK_ICON_PATHS.length]);
+    });
+  }
+
+  initDotIcon(canvas, pathData) {
+    if (!canvas || canvas._dotInit) return;
+    canvas._dotInit = true;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const CSS = 76;
+    canvas.width = CSS * dpr; canvas.height = CSS * dpr; canvas.style.width = CSS + 'px'; canvas.style.height = CSS + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const R = 26, PUSH = 12;
+    const mouse = { x: -999, y: -999, tx: -999, ty: -999 };
+    canvas.addEventListener('pointermove', (e) => { const r = canvas.getBoundingClientRect(); mouse.tx = e.clientX - r.left; mouse.ty = e.clientY - r.top; });
+    canvas.addEventListener('pointerleave', () => { mouse.tx = -999; mouse.ty = -999; });
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + CSS + '" height="' + CSS + '" viewBox="0 0 24 24"><g fill="none" stroke="#4DCBF5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + pathData + '</g></svg>';
+    const img = new Image();
+    img.onload = () => {
+      const off = document.createElement('canvas'); off.width = CSS; off.height = CSS;
+      const octx = off.getContext('2d'); octx.drawImage(img, 0, 0, CSS, CSS);
+      const data = octx.getImageData(0, 0, CSS, CSS).data;
+      const dots = [];
+      const step = 4;
+      for (let y = 0; y < CSS; y += step) for (let x = 0; x < CSS; x += step) {
+        if (data[(y * CSS + x) * 4 + 3] > 60) dots.push({ x: x + (step / 2), y: y + (step / 2) });
+      }
+      const loop = () => {
+        mouse.x += (mouse.tx - mouse.x) * 0.2; mouse.y += (mouse.ty - mouse.y) * 0.2;
+        ctx.clearRect(0, 0, CSS, CSS);
+        for (const d of dots) {
+          const dx = d.x - mouse.x, dy = d.y - mouse.y, dist = Math.hypot(dx, dy);
+          let ox = 0, oy = 0, alpha = 0.95, rad = 1.5;
+          if (dist < R) { const f = 1 - dist / R; const a = Math.atan2(dy, dx); const disp = f * f * PUSH; ox = Math.cos(a) * disp; oy = Math.sin(a) * disp; alpha = 0.95 - f * 0.8; rad = 1.5 - f * 0.7; }
+          ctx.fillStyle = 'rgba(77,203,245,' + alpha + ')';
+          ctx.beginPath(); ctx.arc(d.x + ox, d.y + oy, Math.max(0.4, rad), 0, 6.2832); ctx.fill();
+        }
+        canvas._raf = requestAnimationFrame(loop);
+      };
+      loop();
+    };
+    img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+
   initDotGrid(canvas) {
     if (!canvas || canvas._cubiiInit) return;
     canvas._cubiiInit = true;
     const section = canvas.parentElement;
     const ctx = canvas.getContext('2d');
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const spacing = 26, R = 135, PUSH = 24;
+    const spacing = 26, R = 150, PUSH = 30;
     let w = 0, h = 0, dots = [];
     const mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
 
@@ -760,7 +673,7 @@ class Component extends DCLogic {
     pt: {
       announce: 'Cubii agora integra com Enectiva e Leneda para sincronização automática de dados —',
       announceLink: 'Saiba mais →',
-      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navOverview: 'Visão geral', navWho: 'Para quem é', navPricing: 'Preços', login: 'Entrar',
+      navFeatures: 'Funcionalidades', navFeaturesAll: 'Todas as funcionalidades', navOverview: 'Visão geral', navWho: 'Para quem é', navPricing: 'Preços', navResidents: 'Residentes', navAbout: 'Sobre nós', navFM: 'Gestores de Instalações', navProviders: 'Prestadores de Serviços', login: 'Entrar',
       ctaDemo: 'Agendar Demonstração',
       h1a: 'O edifício, sob controlo —', h1b: 'na palma da mão.',
       heroSub: 'Cubii conecta residentes, gestores, prestadores e sindicatos num só fluxo — do reporte de um problema à avaliação do serviço, sem ligações perdidas nem planilhas soltas.',
@@ -824,11 +737,11 @@ class Component extends DCLogic {
       // PLACEHOLDER: substituir por depoimentos reais de clientes
       testimonials: [
         { bg: '#00B5F1', quote: '[Depoimento placeholder — gestor de portfólio sobre redução de tempo por incidente.]', name: 'Nome do Cliente', role: 'Gestora de propriedades' },
-        { bg: '#296D83', quote: '[Depoimento placeholder — síndico sobre transparência com condóminos.]', name: 'Nome do Cliente', role: 'Síndico profissional' },
+        { bg: '#0A0A0A', quote: '[Depoimento placeholder — síndico sobre transparência com condóminos.]', name: 'Nome do Cliente', role: 'Síndico profissional' },
         { bg: '#0090E8', quote: '[Depoimento placeholder — prestador sobre novos clientes via marketplace.]', name: 'Nome do Cliente', role: 'Empresa de manutenção' },
         { bg: '#0A0A0A', quote: '[Depoimento placeholder — administradora sobre escalar o portfólio sem contratar mais equipa.]', name: 'Nome do Cliente', role: 'Administradora de condomínios' },
         { bg: '#00AAEE', quote: '[Depoimento placeholder — residente sobre acompanhar o estado da avaria em tempo real.]', name: 'Nome do Cliente', role: 'Residente' },
-        { bg: '#296D83', quote: '[Depoimento placeholder — sindicato sobre relatórios prontos para a assembleia.]', name: 'Nome do Cliente', role: 'Presidente de sindicato' },
+        { bg: '#0A0A0A', quote: '[Depoimento placeholder — sindicato sobre relatórios prontos para a assembleia.]', name: 'Nome do Cliente', role: 'Presidente de sindicato' },
         { bg: '#6C8087', quote: '[Depoimento placeholder — gestor de energia sobre alarmes de consumo via Enectiva/Leneda.]', name: 'Nome do Cliente', role: 'Gestor de energia' },
         { bg: '#0090E8', quote: '[Depoimento placeholder — canalizador sobre agenda cheia sem esforço comercial.]', name: 'Nome do Cliente', role: 'Prestador de serviços' },
       ],
@@ -851,7 +764,7 @@ class Component extends DCLogic {
     en: {
       announce: 'Cubii now integrates with Enectiva and Leneda for automatic data synchronisation —',
       announceLink: 'Learn more →',
-      navFeatures: 'Features', navFeaturesAll: 'All features', navOverview: 'Overview', navWho: 'Who it\u2019s for', navPricing: 'Pricing', login: 'Log in',
+      navFeatures: 'Features', navFeaturesAll: 'All features', navOverview: 'Overview', navWho: 'Who it\u2019s for', navPricing: 'Pricing', navResidents: 'Residents', navAbout: 'About Us', navFM: 'Facility Managers', navProviders: 'Service Providers', login: 'Log in',
       ctaDemo: 'Book a Demo',
       h1a: 'Your building, under control —', h1b: 'in the palm of your hand.',
       heroSub: 'Cubii connects residents, managers, service providers and syndicates in one flow — from reporting an issue to rating the service, without missed calls or scattered spreadsheets.',
@@ -914,11 +827,11 @@ class Component extends DCLogic {
       testimonialsH2: 'Who manages with Cubii.', tReadAll: 'Read all stories →', tReadStory: 'Read story →', tPhotoLabel: '[ customer photo ]', tLogoLabel: '[ customer logo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Placeholder testimonial — portfolio manager on time saved per incident.]', name: 'Client Name', role: 'Property manager' },
-        { bg: '#296D83', quote: '[Placeholder testimonial — syndic on transparency with co-owners.]', name: 'Client Name', role: 'Professional syndic' },
+        { bg: '#0A0A0A', quote: '[Placeholder testimonial — syndic on transparency with co-owners.]', name: 'Client Name', role: 'Professional syndic' },
         { bg: '#0090E8', quote: '[Placeholder testimonial — provider on new clients via the marketplace.]', name: 'Client Name', role: 'Maintenance company' },
         { bg: '#0A0A0A', quote: '[Placeholder testimonial — administrator on scaling the portfolio without hiring more staff.]', name: 'Client Name', role: 'Building administrator' },
         { bg: '#00AAEE', quote: '[Placeholder testimonial — resident on tracking the fault status in real time.]', name: 'Client Name', role: 'Resident' },
-        { bg: '#296D83', quote: '[Placeholder testimonial — syndicate on assembly-ready reports.]', name: 'Client Name', role: 'Syndicate president' },
+        { bg: '#0A0A0A', quote: '[Placeholder testimonial — syndicate on assembly-ready reports.]', name: 'Client Name', role: 'Syndicate president' },
         { bg: '#6C8087', quote: '[Placeholder testimonial — energy manager on consumption alarms via Enectiva/Leneda.]', name: 'Client Name', role: 'Energy manager' },
         { bg: '#0090E8', quote: '[Placeholder testimonial — plumber on a full schedule with zero sales effort.]', name: 'Client Name', role: 'Service provider' },
       ],
@@ -941,7 +854,7 @@ class Component extends DCLogic {
     fr: {
       announce: 'Cubii s\u2019intègre désormais à Enectiva et Leneda pour la synchronisation automatique des données —',
       announceLink: 'En savoir plus →',
-      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navOverview: 'Aperçu', navWho: 'Pour qui', navPricing: 'Tarifs', login: 'Connexion',
+      navFeatures: 'Fonctionnalités', navFeaturesAll: 'Toutes les fonctionnalités', navOverview: 'Aperçu', navWho: 'Pour qui', navPricing: 'Tarifs', navResidents: 'Résidents', navAbout: 'À propos', navFM: 'Gestionnaires d\u2019installations', navProviders: 'Prestataires de services', login: 'Connexion',
       ctaDemo: 'Réserver une démo',
       h1a: 'L\u2019immeuble, sous contrôle —', h1b: 'dans la paume de la main.',
       heroSub: 'Cubii connecte résidents, gestionnaires, prestataires et syndics dans un seul flux — du signalement d\u2019un problème à l\u2019évaluation du service, sans appels manqués ni tableurs éparpillés.',
@@ -1004,11 +917,11 @@ class Component extends DCLogic {
       testimonialsH2: 'Ils gèrent avec Cubii.', tReadAll: 'Lire toutes les histoires →', tReadStory: 'Lire l\u2019histoire →', tPhotoLabel: '[ photo du client ]', tLogoLabel: '[ logo du client ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Témoignage placeholder — gestionnaire de portefeuille sur le temps gagné par incident.]', name: 'Nom du client', role: 'Gestionnaire de biens' },
-        { bg: '#296D83', quote: '[Témoignage placeholder — syndic sur la transparence avec les copropriétaires.]', name: 'Nom du client', role: 'Syndic professionnel' },
+        { bg: '#0A0A0A', quote: '[Témoignage placeholder — syndic sur la transparence avec les copropriétaires.]', name: 'Nom du client', role: 'Syndic professionnel' },
         { bg: '#0090E8', quote: '[Témoignage placeholder — prestataire sur les nouveaux clients via la marketplace.]', name: 'Nom du client', role: 'Entreprise de maintenance' },
         { bg: '#0A0A0A', quote: '[Témoignage placeholder — administration sur la croissance du portefeuille sans embaucher davantage.]', name: 'Nom du client', role: 'Administration d\u2019immeubles' },
         { bg: '#00AAEE', quote: '[Témoignage placeholder — résident sur le suivi de la panne en temps réel.]', name: 'Nom du client', role: 'Résident' },
-        { bg: '#296D83', quote: '[Témoignage placeholder — syndicat sur les rapports prêts pour l\u2019assemblée.]', name: 'Nom du client', role: 'Président de syndicat' },
+        { bg: '#0A0A0A', quote: '[Témoignage placeholder — syndicat sur les rapports prêts pour l\u2019assemblée.]', name: 'Nom du client', role: 'Président de syndicat' },
         { bg: '#6C8087', quote: '[Témoignage placeholder — gestionnaire d\u2019énergie sur les alarmes de consommation via Enectiva/Leneda.]', name: 'Nom du client', role: 'Gestionnaire d\u2019énergie' },
         { bg: '#0090E8', quote: '[Témoignage placeholder — plombier sur un agenda plein sans effort commercial.]', name: 'Nom du client', role: 'Prestataire de services' },
       ],
@@ -1031,7 +944,7 @@ class Component extends DCLogic {
     lb: {
       announce: 'Cubii integréiert elo mat Enectiva a Leneda fir automatesch Datesynchroniséierung —',
       announceLink: 'Méi gewuer ginn →',
-      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navOverview: 'Iwwerbléck', navWho: 'Fir wien', navPricing: 'Präisser', login: 'Aloggen',
+      navFeatures: 'Funktiounen', navFeaturesAll: 'All Funktiounen', navOverview: 'Iwwerbléck', navWho: 'Fir wien', navPricing: 'Präisser', navResidents: 'Awunner', navAbout: 'Iwwer eis', navFM: 'Gestionnaire vun Uleeën', navProviders: 'Déngschtleeschter', login: 'Aloggen',
       ctaDemo: 'Demo reservéieren',
       h1a: 'D\u2019Gebai ënner Kontroll —', h1b: 'an Ärer Hand.',
       heroSub: 'Cubii verbënnt Awunner, Gestionnairen, Déngschtleeschter a Syndicaten an engem eenzege Flux — vum Mellen vun engem Problem bis zur Bewäertung vum Service, ouni verluer Uriff oder verstreete Tabellen.',
@@ -1094,11 +1007,11 @@ class Component extends DCLogic {
       testimonialsH2: 'Wien mat Cubii geréiert.', tReadAll: 'All Geschichte liesen →', tReadStory: 'Geschicht liesen →', tPhotoLabel: '[ Client-Foto ]', tLogoLabel: '[ Client-Logo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Placeholder-Testimonial — Portfolio-Gestionnaire iwwer gewonnen Zäit pro Tëschefall.]', name: 'Numm vum Client', role: 'Immobilie-Gestionnaire' },
-        { bg: '#296D83', quote: '[Placeholder-Testimonial — Syndic iwwer Transparenz mat de Koproprietären.]', name: 'Numm vum Client', role: 'Professionelle Syndic' },
+        { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Syndic iwwer Transparenz mat de Koproprietären.]', name: 'Numm vum Client', role: 'Professionelle Syndic' },
         { bg: '#0090E8', quote: '[Placeholder-Testimonial — Déngschtleeschter iwwer nei Cliente via de Marketplace.]', name: 'Numm vum Client', role: 'Maintenance-Firma' },
         { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Administratioun iwwer Wuesstem vum Portfolio ouni méi Personal.]', name: 'Numm vum Client', role: 'Gebai-Administratioun' },
         { bg: '#00AAEE', quote: '[Placeholder-Testimonial — Awunner iwwer de Status vun der Panne an Echtzäit.]', name: 'Numm vum Client', role: 'Awunner' },
-        { bg: '#296D83', quote: '[Placeholder-Testimonial — Syndicat iwwer Rapporte prett fir d\u2019Versammlung.]', name: 'Numm vum Client', role: 'President vum Syndicat' },
+        { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Syndicat iwwer Rapporte prett fir d\u2019Versammlung.]', name: 'Numm vum Client', role: 'President vum Syndicat' },
         { bg: '#6C8087', quote: '[Placeholder-Testimonial — Energie-Gestionnaire iwwer Verbrauchsalarmer via Enectiva/Leneda.]', name: 'Numm vum Client', role: 'Energie-Gestionnaire' },
         { bg: '#0090E8', quote: '[Placeholder-Testimonial — Plombier iwwer eng voll Agenda ouni kommerziellen Effort.]', name: 'Numm vum Client', role: 'Déngschtleeschter' },
       ],
@@ -1121,7 +1034,7 @@ class Component extends DCLogic {
     de: {
       announce: 'Cubii integriert jetzt Enectiva und Leneda für die automatische Datensynchronisierung —',
       announceLink: 'Mehr erfahren →',
-      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navOverview: 'Überblick', navWho: 'Für wen', navPricing: 'Preise', login: 'Anmelden',
+      navFeatures: 'Funktionen', navFeaturesAll: 'Alle Funktionen', navOverview: 'Überblick', navWho: 'Für wen', navPricing: 'Preise', navResidents: 'Bewohner', navAbout: 'Über uns', navFM: 'Facility Manager', navProviders: 'Dienstleister', login: 'Anmelden',
       ctaDemo: 'Demo vereinbaren',
       h1a: 'Das Gebäude unter Kontrolle —', h1b: 'in Ihrer Hand.',
       heroSub: 'Cubii verbindet Bewohner, Verwalter, Dienstleister und Syndikate in einem einzigen Fluss — von der Meldung eines Problems bis zur Bewertung des Services, ohne verpasste Anrufe oder verstreute Tabellen.',
@@ -1184,11 +1097,11 @@ class Component extends DCLogic {
       testimonialsH2: 'Wer mit Cubii verwaltet.', tReadAll: 'Alle Geschichten lesen →', tReadStory: 'Geschichte lesen →', tPhotoLabel: '[ Kundenfoto ]', tLogoLabel: '[ Kundenlogo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Platzhalter-Testimonial — Portfolioverwalter über Zeitersparnis pro Vorfall.]', name: 'Kundenname', role: 'Immobilienverwalterin' },
-        { bg: '#296D83', quote: '[Platzhalter-Testimonial — Syndikus über Transparenz mit Miteigentümern.]', name: 'Kundenname', role: 'Professioneller Syndikus' },
+        { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Syndikus über Transparenz mit Miteigentümern.]', name: 'Kundenname', role: 'Professioneller Syndikus' },
         { bg: '#0090E8', quote: '[Platzhalter-Testimonial — Dienstleister über neue Kunden via Marketplace.]', name: 'Kundenname', role: 'Wartungsunternehmen' },
         { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Verwaltung über Portfoliowachstum ohne zusätzliches Personal.]', name: 'Kundenname', role: 'Gebäudeverwaltung' },
         { bg: '#00AAEE', quote: '[Platzhalter-Testimonial — Bewohner über den Schadensstatus in Echtzeit.]', name: 'Kundenname', role: 'Bewohner' },
-        { bg: '#296D83', quote: '[Platzhalter-Testimonial — Syndikat über versammlungsfertige Berichte.]', name: 'Kundenname', role: 'Syndikatspräsident' },
+        { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Syndikat über versammlungsfertige Berichte.]', name: 'Kundenname', role: 'Syndikatspräsident' },
         { bg: '#6C8087', quote: '[Platzhalter-Testimonial — Energiemanager über Verbrauchsalarme via Enectiva/Leneda.]', name: 'Kundenname', role: 'Energiemanager' },
         { bg: '#0090E8', quote: '[Platzhalter-Testimonial — Installateur über einen vollen Kalender ohne Vertriebsaufwand.]', name: 'Kundenname', role: 'Dienstleister' },
       ],
@@ -1217,8 +1130,33 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const lang = s.lang ?? this.props.defaultLang ?? 'pt';
+    const lang = s.lang ?? this.props.defaultLang ?? 'en';
+    const WHO = { pt: ['Visão geral','Proprietários & Inquilinos','Prestadores de Serviços','Gestores de Instalações'], en: ['Overview','Owners & Tenants','Service Providers','Facility Managers'], fr: ['Aperçu','Propriétaires & Locataires','Prestataires de services','Gestionnaires d\u2019installations'], lb: ['Iwwerbléck','Proprietären & Locatairen','Déngschtleeschter','Gestionnaire vun Uleeën'], de: ['Überblick','Eigentümer & Mieter','Dienstleister','Facility Manager'] };
+    const WHO_HREFS = ['Cubii Para Quem.dc.html','Cubii Proprietarios.dc.html','Cubii Prestadores.dc.html','Cubii Gestores.dc.html'];
+    const whoLinks = (WHO[lang] || WHO.pt).map((label, wi) => ({ label, href: WHO_HREFS[wi] }));
     const t = Component.T[lang] || Component.T.pt;
+    const HERO = { pt:{a:"Uma plataforma.",b:"Todos os lados do edifício, ligados.",sub:"Cubii liga residentes, gestores e prestadores num só fluxo — do reporte de um problema à conclusão do serviço."}, en:{a:"One platform.",b:"Every side of your building, connected.",sub:"Cubii connects residents, managers and providers in one flow — from reporting an issue to getting the service done."}, fr:{a:"Une plateforme.",b:"Tous les côtés de votre immeuble, connectés.",sub:"Cubii relie résidents, gestionnaires et prestataires dans un seul flux — du signalement d’un problème à la réalisation du service."}, lb:{a:"Eng Plattform.",b:"All Säit vum Gebai, verbonnen.",sub:"Cubii verbënnt Awunner, Gestionnairen an Déngschtleeschter an engem Flux — vum Mellen bis zur Fäerdegstellung."}, de:{a:"Eine Plattform.",b:"Jede Seite Ihres Gebäudes, verbunden.",sub:"Cubii verbindet Bewohner, Verwalter und Dienstleister in einem Fluss — von der Meldung bis zur Fertigstellung."} };
+    const hero = HERO[lang] || HERO.en;
+    const OV = { pt:{h2:"Uma plataforma. Todos os lados do edifício.",sub:"Do residente ao gestor e ao prestador — cada um vê o que precisa, no mesmo fluxo.",blocks:[["Residentes","Reporte problemas e acompanhe tudo em tempo real, pelo telemóvel.","Cubii Proprietarios.dc.html","Saiba mais →","home"],["Gestores de Instalações","Visibilidade e controlo totais do portfólio, num só painel.","Cubii Gestores.dc.html","Saiba mais →","building"],["Prestadores de Serviços","Receba pedidos de serviço qualificados, sem prospeção.","Cubii Prestadores.dc.html","Saiba mais →","wrench"]]}, en:{h2:"One platform. Every side of your building.",sub:"From resident to manager to provider — each sees what they need, in the same flow.",blocks:[["Residents","Report issues and stay informed in real time, right from your phone.","Cubii Proprietarios.dc.html","Learn more →","home"],["Facility Managers","Full portfolio visibility and control, in a single panel.","Cubii Gestores.dc.html","Learn more →","building"],["Service Providers","Receive qualified job requests, with no prospecting.","Cubii Prestadores.dc.html","Learn more →","wrench"]]}, fr:{h2:"Une plateforme. Tous les côtés de votre immeuble.",sub:"Du résident au gestionnaire au prestataire — chacun voit ce dont il a besoin, dans le même flux.",blocks:[["Résidents","Signalez des problèmes et restez informé en temps réel, depuis votre téléphone.","Cubii Proprietarios.dc.html","En savoir plus →","home"],["Gestionnaires d’installations","Visibilité et contrôle complets du portefeuille, dans un seul panneau.","Cubii Gestores.dc.html","En savoir plus →","building"],["Prestataires de services","Recevez des demandes qualifiées, sans prospection.","Cubii Prestadores.dc.html","En savoir plus →","wrench"]]}, lb:{h2:"Eng Plattform. All Säit vum Gebai.",sub:"Vum Awunner bis zum Gestionnaire an Déngschtleeschter — jidderee gesäit wat en brauch.",blocks:[["Awunner","Mellt Problemer a bleift an Echtzäit informéiert, um Handy.","Cubii Proprietarios.dc.html","Méi gewuer ginn →","home"],["Gestionnaire vun Uleeën","Voll Visibilitéit a Kontroll iwwer de Portfolio, an engem Panell.","Cubii Gestores.dc.html","Méi gewuer ginn →","building"],["Déngschtleeschter","Kritt qualifizéiert Ufroen, ouni Prospektioun.","Cubii Prestadores.dc.html","Méi gewuer ginn →","wrench"]]}, de:{h2:"Eine Plattform. Jede Seite Ihres Gebäudes.",sub:"Vom Bewohner über den Verwalter bis zum Dienstleister — jeder sieht, was er braucht.",blocks:[["Bewohner","Melden Sie Probleme und bleiben Sie in Echtzeit informiert, per Handy.","Cubii Proprietarios.dc.html","Mehr erfahren →","home"],["Facility Manager","Volle Portfolio-Transparenz und Kontrolle, in einem Panel.","Cubii Gestores.dc.html","Mehr erfahren →","building"],["Dienstleister","Erhalten Sie qualifizierte Anfragen, ohne Akquise.","Cubii Prestadores.dc.html","Mehr erfahren →","wrench"]]} };
+    const ov = OV[lang] || OV.en;
+    const OV_ICONS = {
+      home:'<path d="M3 10.6 12 4l9 6.6"/><path d="M5.5 9.4V19a1 1 0 0 0 1 1H10v-5h4v5h3.5a1 1 0 0 0 1-1V9.4"/><path d="M10 15h4"/>',
+      building:'<rect x="4" y="3" width="16" height="18" rx="1.6"/><path d="M8 7h3M13 7h3M8 11h3M13 11h3M8 15h3M13 15h3"/><path d="M9.5 21v-3h5v3"/>',
+      wrench:'<path d="M15.5 7.5a3.8 3.8 0 0 1-4.9 4.9l-5.4 5.4a1.8 1.8 0 0 1-2.5-2.5l5.4-5.4a3.8 3.8 0 0 1 4.9-4.9l-2.3 2.3 1.9 1.9 2.3-2.3a3.8 3.8 0 0 1 .6.6z"/>',
+    };
+    const OV_COLORS = { home:'#0A0A0A', building:'#0A0A0A', wrench:'#0A0A0A' };
+    const OV_HOVER = { home:'#00B5F1', building:'#F0A020', wrench:'#1F9D6B' };
+    const OV_SIZE = { home:46, building:46, wrench:56 };
+    const overviewBlocks = ov.blocks.map(([who,text,href,link,ic]) => {
+      const base = OV_COLORS[ic] || '#0A0A0A', hov = OV_HOVER[ic] || '#00B5F1', sz = OV_SIZE[ic] || 46;
+      return { who, text, href, link,
+        iconEl: React.createElement('svg',{width:sz,height:sz,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.7,strokeLinecap:'round',strokeLinejoin:'round',dangerouslySetInnerHTML:{__html:OV_ICONS[ic]}}),
+        iconStyle:{ display:'flex', alignItems:'center', justifyContent:'center', width:'64px', height:'64px', color:base, transition:'color 0.28s ease, transform 0.28s ease' },
+        whoStyle:{ fontSize:'13px', fontWeight:800, letterSpacing:'1px', textTransform:'uppercase', color:base, transition:'color 0.28s ease' },
+        onEnter:(e)=>{ const ic=e.currentTarget.querySelector('[data-ov-ic]'); const wh=e.currentTarget.querySelector('[data-ov-who]'); if(ic){ic.style.color=hov; ic.style.transform='scale(1.08)';} if(wh)wh.style.color=hov; },
+        onLeave:(e)=>{ const ic=e.currentTarget.querySelector('[data-ov-ic]'); const wh=e.currentTarget.querySelector('[data-ov-who]'); if(ic){ic.style.color=base; ic.style.transform='scale(1)';} if(wh)wh.style.color=base; },
+      };
+    });
     const FX = {
       pt: { newsTitle: 'Assine a nossa newsletter e fique por dentro de novidades e lançamentos.', emailPh: 'Coloque o seu e-mail', send: 'Enviar', consent: 'Ao subscrever, concorda com a nossa', privacy: 'Política de Privacidade', networks: 'Redes', expertTitle: 'Fale com um especialista', expertBody: 'Fale diretamente com um especialista Cubii.', expertBtn: 'Contactar', terms: 'Termos de serviço', legalPrivacy: 'Política de privacidade', thanks: 'Obrigado! Subscrição registada.', smartCube: 'Smart Cube', contact: 'Contacto' },
       en: { newsTitle: 'Subscribe to our newsletter and keep up with news and releases.', emailPh: 'Enter your e-mail', send: 'Send', consent: 'By subscribing, you agree to our', privacy: 'Privacy Policy', networks: 'Social', expertTitle: 'Talk to a specialist', expertBody: 'Speak directly with a Cubii specialist.', expertBtn: 'Get in touch', terms: 'Terms of service', legalPrivacy: 'Privacy policy', thanks: 'Thank you! You are subscribed.', smartCube: 'Smart Cube', contact: 'Contact' },
@@ -1244,7 +1182,7 @@ class Component extends DCLogic {
         fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left',
         fontWeight: l.code === lang ? 800 : 500,
         background: l.code === lang ? '#CCF0FC' : 'transparent',
-        color: l.code === lang ? '#0090E8' : '#296D83',
+        color: l.code === lang ? '#0090E8' : '#0A0A0A',
       },
     }));
 
@@ -1267,10 +1205,12 @@ class Component extends DCLogic {
       onClick: () => this.setState({ activeTab: i }),
       style: i === s.activeTab
         ? { fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: 700, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #00B5F1', background: '#00B5F1', color: '#FFFFFF', cursor: 'pointer' }
-        : { fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: 600, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #CCF0FC', background: '#FFFFFF', color: '#296D83', cursor: 'pointer' },
+        : { fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: 600, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #CCF0FC', background: '#FFFFFF', color: '#0A0A0A', cursor: 'pointer' },
     }));
 
-    const faqs = t.faqs.map((f, i) => ({
+    const FAQ_GEN = { pt:[{q:'O que é a Cubii?',a:'Uma plataforma que liga residentes, gestores e prestadores para gerir o edifício de ponta a ponta — do reporte de um problema à conclusão do serviço.'},{q:'A Cubii está disponível na minha região?',a:'A Cubii opera no Luxemburgo e está a expandir-se pela Europa, com dados alojados na Europa e conformidade com o RGPD.'},{q:'Como funciona o preço?',a:'O preço é por fração gerida, por mês, com planos para cada dimensão de portfólio. Veja a página de Preços para detalhes.'}], en:[{q:'What is Cubii?',a:'A platform that connects residents, managers and providers to run the building end to end — from reporting an issue to getting the service done.'},{q:'Is Cubii available in my region?',a:'Cubii operates in Luxembourg and is expanding across Europe, with data hosted in Europe and GDPR compliance.'},{q:'How does pricing work?',a:'Pricing is per managed unit, per month, with plans for every portfolio size. See the Pricing page for details.'}], fr:[{q:'Qu\u2019est-ce que Cubii ?',a:'Une plateforme qui relie résidents, gestionnaires et prestataires pour gérer l\u2019immeuble de bout en bout — du signalement d\u2019un problème à la réalisation du service.'},{q:'Cubii est-il disponible dans ma région ?',a:'Cubii opère au Luxembourg et s\u2019étend en Europe, avec des données hébergées en Europe et la conformité RGPD.'},{q:'Comment fonctionne la tarification ?',a:'Le prix est par lot géré, par mois, avec des formules pour chaque taille de portefeuille. Voir la page Tarifs.'}], lb:[{q:'Wat ass Cubii?',a:'Eng Plattform déi Awunner, Gestionnairen an Déngschtleeschter verbënnt fir d\u2019Gebai vun A bis Z ze geréieren — vum Mellen bis zur Fäerdegstellung.'},{q:'Ass Cubii a menger Regioun verfügbar?',a:'Cubii ass zu Lëtzebuerg aktiv a wiisst an Europa, mat Donnéeën an Europa an RGPD-Konformitéit.'},{q:'Wéi funktionéiert de Präis?',a:'De Präis ass pro verwalt Unitéit, pro Mount, mat Pläng fir all Portfoliosgréisst. Kuckt d\u2019Präisser-Säit.'}], de:[{q:'Was ist Cubii?',a:'Eine Plattform, die Bewohner, Verwalter und Dienstleister verbindet, um das Gebäude durchgängig zu betreiben — von der Meldung bis zur Fertigstellung.'},{q:'Ist Cubii in meiner Region verfügbar?',a:'Cubii ist in Luxemburg aktiv und expandiert in Europa, mit Daten in Europa und DSGVO-Konformität.'},{q:'Wie funktioniert die Preisgestaltung?',a:'Der Preis gilt pro verwalteter Einheit, pro Monat, mit Plänen für jede Portfoliogröße. Siehe die Preise-Seite.'}] };
+    const faqSrc = FAQ_GEN[lang] || FAQ_GEN.en;
+    const faqs = faqSrc.map((f, i) => ({
       question: f.q,
       answer: f.a,
       open: i === s.openFaq,
@@ -1297,11 +1237,11 @@ class Component extends DCLogic {
     // CLIENTES + DEPOIMENTOS SÃO EXEMPLOS FICTÍCIOS — substituir por clientes reais.
     const T_CLIENTS = [
       { bg: '#00B5F1', name: 'Élise Weber', company: 'Résidence Belair', photo: 'https://i.pravatar.cc/480?img=45' },
-      { bg: '#296D83', name: 'Marc Hoffmann', company: 'Syndic Kirchberg', photo: 'https://i.pravatar.cc/480?img=13' },
+      { bg: '#0A0A0A', name: 'Marc Hoffmann', company: 'Syndic Kirchberg', photo: 'https://i.pravatar.cc/480?img=13' },
       { bg: '#0090E8', name: 'João Ferreira', company: 'Hydro-Lux Sàrl', photo: 'https://i.pravatar.cc/480?img=33' },
       { bg: '#0A0A0A', name: 'Sophie Muller', company: 'Administra Lux', photo: 'https://i.pravatar.cc/480?img=47' },
       { bg: '#00AAEE', name: 'Ana Rodrigues', company: 'Residência Cents', photo: 'https://i.pravatar.cc/480?img=16' },
-      { bg: '#296D83', name: 'Liam Schmit', company: 'Syndicat Gare', photo: 'https://i.pravatar.cc/480?img=60' },
+      { bg: '#0A0A0A', name: 'Liam Schmit', company: 'Syndicat Gare', photo: 'https://i.pravatar.cc/480?img=60' },
       { bg: '#6C8087', name: 'Tom Klein', company: 'EnerGestion', photo: 'https://i.pravatar.cc/480?img=51' },
       { bg: '#0090E8', name: 'Pedro Almeida', company: 'CanalPro', photo: 'https://i.pravatar.cc/480?img=68' },
     ];
@@ -1363,17 +1303,39 @@ class Component extends DCLogic {
     const tIdx = ((s.tIndex % tCount) + tCount) % tCount;
     const lighten = (hex, a) => { const n = parseInt(hex.slice(1), 16); const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255; const mix = (c) => Math.round(c + (255 - c) * a); return 'rgb(' + mix(r) + ',' + mix(g) + ',' + mix(b) + ')'; };
     const baseTm = tList[tIdx];
+    const lightBg = (hex) => lighten(hex, 0.74);
+    // Carrossel multi-card (track deslizante, com peek dos vizinhos)
+    const tmTrack = tList.map((tm, i) => ({
+      quote: tm.quote, name: tm.name, role: tm.role, company: tm.company,
+      cardStyle: { flex: '0 0 820px', width: '820px', display: 'flex', alignItems: 'center' },
+      photoStyle: { width: '300px', height: '340px', flexShrink: 0, background: lightBg(tm.bg), borderRadius: '8px', marginRight: '-84px', position: 'relative', zIndex: 2, overflow: 'hidden', boxShadow: '0 18px 44px rgba(41,109,131,0.28)' },
+      photoImgStyle: { position: 'absolute', inset: 0, backgroundImage: 'url(' + tm.photo + ')', backgroundSize: 'cover', backgroundPosition: 'center 14%', filter: 'grayscale(1) contrast(1.05)', WebkitMaskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)', maskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)' },
+      bodyStyle: { flex: 1, background: tm.bg, color: '#FFFFFF', borderRadius: '8px', padding: '56px 60px 48px 132px', display: 'flex', flexDirection: 'column', gap: '22px', minHeight: '420px', boxShadow: '0 20px 50px rgba(10,10,10,0.22)' },
+    }));
+    const CARD_STEP = 844; // 820 card + 24 gap
+    const tmTrackStyle = { display: 'flex', gap: '24px', paddingLeft: '32px', transform: 'translateX(-' + (tIdx * CARD_STEP) + 'px)', transition: 'transform 0.55s cubic-bezier(0.22,1,0.36,1)' };
+    const TMH = {
+      pt: { title: 'Confiado por edifícios grandes e pequenos', sub: 'De um único prédio a portfólios inteiros — todos gerem melhor com a Cubii.', stats: [['100%','rastreabilidade de cada incidente'],['5','perfis de utilizador numa só plataforma'],['24/7','deteção automática por alarmes']] },
+      en: { title: 'Trusted by buildings big and small', sub: 'From a single building to entire portfolios — everyone manages better with Cubii.', stats: [['100%','traceability of every incident'],['5','user profiles on one platform'],['24/7','automatic detection via alarms']] },
+      fr: { title: 'La confiance des immeubles, grands et petits', sub: 'D\u2019un seul immeuble à des portefeuilles entiers — tous gèrent mieux avec Cubii.', stats: [['100%','traçabilité de chaque incident'],['5','profils d\u2019utilisateur sur une plateforme'],['24/7','détection automatique par alarmes']] },
+      lb: { title: 'Vertraut vu groussen a klenge Gebaier', sub: 'Vun engem eenzege Gebai bis zu ganze Portfolioen — jidderee geréiert besser mat Cubii.', stats: [['100%','Nofollegbarkeet vun all Tëschefall'],['5','Benotzerprofiler op enger Plattform'],['24/7','automatesch Detektioun via Alarmer']] },
+      de: { title: 'Vertraut von großen und kleinen Gebäuden', sub: 'Von einem einzelnen Gebäude bis zu ganzen Portfolios — alle verwalten besser mit Cubii.', stats: [['100%','Rückverfolgbarkeit jedes Vorfalls'],['5','Benutzerprofile auf einer Plattform'],['24/7','automatische Erkennung via Alarme']] },
+    };
+    const tmh = TMH[lang] || TMH.en;
     const curTm = {
       ...baseTm,
-      photoBg: lighten(baseTm.bg, 0.74),
+      photoBg: lightBg(baseTm.bg),
       photoImgStyle: { position: 'absolute', inset: 0, backgroundImage: 'url(' + baseTm.photo + ')', backgroundSize: 'cover', backgroundPosition: 'center 14%', filter: 'grayscale(1) contrast(1.05)', WebkitMaskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)', maskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)' },
     };
 
     // Timeline animada de 6 passos
-    const nSteps = t.steps.length;
+    const FLOW3 = { pt:[{n:"1",title:"Reporte uma necessidade",desc:"Um residente ou um alarme automático abre o pedido."},{n:"2",title:"Encontre o match",desc:"Encaminhado ao prestador certo pelo marketplace."},{n:"3",title:"Resolva",desc:"Acompanhado até à conclusão e avaliação."}], en:[{n:"1",title:"Report a need",desc:"A resident or an automated alarm opens the request."},{n:"2",title:"Get matched",desc:"Routed to the right provider via the marketplace."},{n:"3",title:"Get it done",desc:"Tracked to completion and rated."}], fr:[{n:"1",title:"Signalez un besoin",desc:"Un résident ou une alarme automatique ouvre la demande."},{n:"2",title:"Soyez mis en relation",desc:"Dirigé vers le bon prestataire via la marketplace."},{n:"3",title:"C’est réglé",desc:"Suivi jusqu’à la fin et évalué."}], lb:[{n:"1",title:"Mellt e Besoin",desc:"En Awunner oder en automateschen Alarm mécht d’Ufro op."},{n:"2",title:"Gitt matcht",desc:"Un dee richtegen Déngschtleeschter iwwer de Marketplace."},{n:"3",title:"Erleedegt",desc:"Bis zur Fäerdegstellung verfollegt a bewäert."}], de:[{n:"1",title:"Bedarf melden",desc:"Ein Bewohner oder ein automatischer Alarm öffnet die Anfrage."},{n:"2",title:"Passend vermittelt",desc:"Über den Marktplatz zum richtigen Dienstleister geleitet."},{n:"3",title:"Erledigt",desc:"Bis zum Abschluss verfolgt und bewertet."}] };
+    const FLOW3_H2 = { pt:"Do pedido à conclusão, em 3 passos.", en:"From request to resolution, in 3 steps.", fr:"De la demande à la résolution, en 3 étapes.", lb:"Vun der Ufro bis zur Léisung, a 3 Schrëtt.", de:"Von der Anfrage bis zur Lösung, in 3 Schritten." };
+    const flowSteps = FLOW3[lang] || FLOW3.en;
+    const nSteps = flowSteps.length;
     const active = s.activeStep % nSteps;
     const progressPct = nSteps > 1 ? (active / (nSteps - 1)) * 100 : 0;
-    const stepsAnim = t.steps.map((st, i) => {
+    const stepsAnim = flowSteps.map((st, i) => {
       const done = i < active;
       const isActive = i === active;
       let circleStyle;
@@ -1431,47 +1393,100 @@ class Component extends DCLogic {
     // ===== Scrollytelling "Rede Cubii" (adaptado do Teamwork Graph) =====
     const STORY = {
       pt: [
-        { centered: true, title: 'Do chamado à resolução —', hi: 'tudo num só fluxo.' },
-        { title: 'Tudo começa com o reporte', body: 'Um residente reporta uma avaria com foto. A Cubii transforma-a num ticket com estado, prazo e responsável.', link: 'Ver como funciona →' },
-        { title: 'Aprovar e orçamentar num clique', body: 'O gestor valida o pedido e pede propostas aos prestadores certos — sem sair da conversa.', card: 'prompt', cardText: 'Aprovar AUR-142 e pedir orçamentos aos prestadores próximos' },
-        { title: 'Coordenação automática', body: 'Os prestadores respondem, o melhor é escolhido e a intervenção é agendada — tudo dentro do ticket.', card: 'pull', cardText: 'A coordenar intervenção…', chips: ['Aprovação do síndico ✓', '3 orçamentos comparados', 'Prestador a caminho · 2h'] },
-        { title: 'Concluído, com prova e avaliação', body: 'A execução fica registada, o residente avalia e a reputação do prestador atualiza-se.', card: 'pull', cardText: 'A fechar o ticket…', chips: ['Prova de execução anexada', 'Residente avaliou ★★★★★', 'Fatura sincronizada'] },
-        { centered: true, title: 'Para resolver melhor,', hi: 'e mais rápido.' },
+        { centered: true, title: 'Do pedido à resolução —', hi: 'em três passos.' },
+        { title: '1 · Reporte uma necessidade', body: 'Um residente reporta — ou um alarme automático deteta. A Cubii abre o pedido por si.', card: 'prompt', cardText: 'Infiltração na garagem · Edifício Aurora' },
+        { title: '2 · Seja conectado', body: 'A Cubii encaminha ao prestador certo, pelo marketplace — por preço, proximidade e reputação.', card: 'pull', cardText: 'A encontrar o prestador certo…', chips: ['Prestador verificado ✓', 'A 2,4 km', '★ 4,9 · reputação'] },
+        { title: '3 · Resolva', body: 'A intervenção é acompanhada até à conclusão — com prova e avaliação.', card: 'pull', cardText: 'Concluído', chips: ['Prova de execução anexada', 'Residente avaliou ★★★★★'] },
+        { centered: true, title: 'Simples para todos,', hi: 'do início ao fim.' },
       ],
       en: [
-        { centered: true, title: 'From ticket to resolution —', hi: 'one single flow.' },
-        { title: 'It all starts with the report', body: 'A resident reports a fault with a photo. Cubii turns it into a ticket with status, deadline and owner.', link: 'See how it works →' },
-        { title: 'Approve and quote in one click', body: 'The manager validates the request and asks the right providers for quotes — without leaving the conversation.', card: 'prompt', cardText: 'Approve AUR-142 and request quotes from nearby providers' },
-        { title: 'Automatic coordination', body: 'Providers respond, the best is chosen and the intervention is scheduled — all inside the ticket.', card: 'pull', cardText: 'Coordinating intervention…', chips: ['Syndic approval ✓', '3 quotes compared', 'Provider on the way · 2h'] },
-        { title: 'Completed, with proof and rating', body: 'The work is logged, the resident rates it and the provider\u2019s reputation updates.', card: 'pull', cardText: 'Closing the ticket…', chips: ['Proof of work attached', 'Resident rated ★★★★★', 'Invoice synced'] },
-        { centered: true, title: 'So you can resolve better,', hi: 'and faster.' },
+        { centered: true, title: 'From request to resolution —', hi: 'in three steps.' },
+        { title: '1 · Report a need', body: 'A resident reports it — or an automatic alarm detects it. Cubii opens the request for you.', card: 'prompt', cardText: 'Garage leak · Aurora Building' },
+        { title: '2 · Get matched', body: 'Cubii routes it to the right provider via the marketplace — by price, proximity and reputation.', card: 'pull', cardText: 'Finding the right provider…', chips: ['Verified provider ✓', '2.4 km away', '★ 4.9 · reputation'] },
+        { title: '3 · Get it done', body: 'The job is tracked to completion — with proof and a rating.', card: 'pull', cardText: 'Completed', chips: ['Proof of work attached', 'Resident rated ★★★★★'] },
+        { centered: true, title: 'Simple for everyone,', hi: 'from start to finish.' },
       ],
       fr: [
-        { centered: true, title: 'Du ticket à la résolution —', hi: 'un seul flux.' },
-        { title: 'Tout commence par le signalement', body: 'Un résident signale une panne avec une photo. Cubii la transforme en ticket avec statut, délai et responsable.', link: 'Voir comment ça marche →' },
-        { title: 'Approuver et chiffrer en un clic', body: 'Le gestionnaire valide la demande et sollicite les bons prestataires — sans quitter la conversation.', card: 'prompt', cardText: 'Approuver AUR-142 et demander des devis aux prestataires proches' },
-        { title: 'Coordination automatique', body: 'Les prestataires répondent, le meilleur est choisi et l\u2019intervention est planifiée — dans le ticket.', card: 'pull', cardText: 'Coordination de l\u2019intervention…', chips: ['Approbation du syndic ✓', '3 devis comparés', 'Prestataire en route · 2h'] },
-        { title: 'Terminé, avec preuve et évaluation', body: 'L\u2019exécution est enregistrée, le résident évalue et la réputation du prestataire se met à jour.', card: 'pull', cardText: 'Clôture du ticket…', chips: ['Preuve d\u2019exécution jointe', 'Résident a évalué ★★★★★', 'Facture synchronisée'] },
-        { centered: true, title: 'Pour résoudre mieux,', hi: 'et plus vite.' },
+        { centered: true, title: 'De la demande à la résolution —', hi: 'en trois étapes.' },
+        { title: '1 · Signalez un besoin', body: 'Un résident le signale — ou une alarme automatique le détecte. Cubii ouvre la demande pour vous.', card: 'prompt', cardText: 'Fuite au garage · Immeuble Aurora' },
+        { title: '2 · Soyez mis en relation', body: 'Cubii dirige vers le bon prestataire via la marketplace — prix, proximité et réputation.', card: 'pull', cardText: 'Recherche du bon prestataire…', chips: ['Prestataire vérifié ✓', 'À 2,4 km', '★ 4,9 · réputation'] },
+        { title: '3 · C\u2019est réglé', body: 'L\u2019intervention est suivie jusqu\u2019à la fin — avec preuve et évaluation.', card: 'pull', cardText: 'Terminé', chips: ['Preuve d\u2019exécution jointe', 'Résident a évalué ★★★★★'] },
+        { centered: true, title: 'Simple pour tous,', hi: 'du début à la fin.' },
       ],
       lb: [
-        { centered: true, title: 'Vum Chamado bis zur Léisung —', hi: 'an engem eenzege Flux.' },
-        { title: 'Alles fänkt mam Mellen un', body: 'En Awunner mellt eng Panne mat Foto. Cubii mécht doraus en Ticket mat Status, Delai a Responsabelen.', link: 'Kucken wéi et funktionéiert →' },
-        { title: 'Approuvéieren an Devis an engem Klick', body: 'De Gestionnaire validéiert d\u2019Ufro a freet déi richteg Déngschtleeschter — ouni d\u2019Konversatioun ze verloossen.', card: 'prompt', cardText: 'AUR-142 approuvéieren an Devise bei nooe Prestataire ufroen' },
-        { title: 'Automatesch Koordinatioun', body: 'D\u2019Déngschtleeschter äntweren, dee bescht gëtt gewielt an d\u2019Interventioun gëtt geplangt — am Ticket.', card: 'pull', cardText: 'Interventioun gëtt koordinéiert…', chips: ['Approbatioun vum Syndic ✓', '3 Devise verglach', 'Déngschtleeschter ënnerwee · 2h'] },
-        { title: 'Ofgeschloss, mat Beweis a Bewäertung', body: 'D\u2019Ausféierung gëtt registréiert, den Awunner bewäert an d\u2019Reputatioun vum Déngschtleeschter aktualiséiert sech.', card: 'pull', cardText: 'Ticket gëtt zougemaach…', chips: ['Beweis vun der Ausféierung', 'Awunner huet bewäert ★★★★★', 'Rechnung synchroniséiert'] },
-        { centered: true, title: 'Fir besser ze léisen,', hi: 'a méi séier.' },
+        { centered: true, title: 'Vun der Ufro bis zur Léisung —', hi: 'a dräi Schrëtt.' },
+        { title: '1 · Mellt e Besoin', body: 'En Awunner mellt — oder en automateschen Alarm erkennt. Cubii mécht d\u2019Ufro fir Iech op.', card: 'prompt', cardText: 'Infiltratioun an der Garage · Gebai Aurora' },
+        { title: '2 · Gitt matcht', body: 'Cubii leet un dee richtegen Déngschtleeschter iwwer de Marketplace — no Präis, Proximitéit a Reputatioun.', card: 'pull', cardText: 'Dee richtegen Déngschtleeschter fannen…', chips: ['Verifizéierten Déngschtleeschter ✓', '2,4 km ewech', '★ 4,9 · Reputatioun'] },
+        { title: '3 · Erleedegt', body: 'D\u2019Interventioun gëtt bis zur Fäerdegstellung verfollegt — mat Beweis a Bewäertung.', card: 'pull', cardText: 'Ofgeschloss', chips: ['Beweis vun der Ausféierung', 'Awunner huet bewäert ★★★★★'] },
+        { centered: true, title: 'Einfach fir jiddereen,', hi: 'vun Ufank bis Enn.' },
       ],
       de: [
-        { centered: true, title: 'Vom Ticket zur Lösung —', hi: 'ein einziger Fluss.' },
-        { title: 'Alles beginnt mit der Meldung', body: 'Ein Bewohner meldet einen Schaden mit Foto. Cubii macht daraus ein Ticket mit Status, Frist und Verantwortlichem.', link: 'So funktioniert es →' },
-        { title: 'Freigeben und kalkulieren mit einem Klick', body: 'Der Verwalter validiert die Anfrage und holt Angebote der passenden Dienstleister ein — ohne die Konversation zu verlassen.', card: 'prompt', cardText: 'AUR-142 freigeben und Angebote von nahen Dienstleistern anfordern' },
-        { title: 'Automatische Koordination', body: 'Dienstleister antworten, der beste wird gewählt und der Einsatz geplant — alles im Ticket.', card: 'pull', cardText: 'Einsatz wird koordiniert…', chips: ['Freigabe des Syndikus ✓', '3 Angebote verglichen', 'Dienstleister unterwegs · 2h'] },
-        { title: 'Abgeschlossen, mit Nachweis und Bewertung', body: 'Die Ausführung wird protokolliert, der Bewohner bewertet und die Reputation des Dienstleisters aktualisiert sich.', card: 'pull', cardText: 'Ticket wird geschlossen…', chips: ['Ausführungsnachweis angehängt', 'Bewohner bewertete ★★★★★', 'Rechnung synchronisiert'] },
-        { centered: true, title: 'Damit Sie besser lösen,', hi: 'und schneller.' },
+        { centered: true, title: 'Von der Anfrage zur Lösung —', hi: 'in drei Schritten.' },
+        { title: '1 · Bedarf melden', body: 'Ein Bewohner meldet es — oder ein automatischer Alarm erkennt es. Cubii öffnet die Anfrage für Sie.', card: 'prompt', cardText: 'Leck in der Garage · Gebäude Aurora' },
+        { title: '2 · Passend vermittelt', body: 'Cubii leitet zum richtigen Dienstleister über den Marktplatz — nach Preis, Nähe und Reputation.', card: 'pull', cardText: 'Den richtigen Dienstleister finden…', chips: ['Verifizierter Dienstleister ✓', '2,4 km entfernt', '★ 4,9 · Reputation'] },
+        { title: '3 · Erledigt', body: 'Der Auftrag wird bis zum Abschluss verfolgt — mit Nachweis und Bewertung.', card: 'pull', cardText: 'Abgeschlossen', chips: ['Ausführungsnachweis angehängt', 'Bewohner bewertete ★★★★★'] },
+        { centered: true, title: 'Einfach für alle,', hi: 'von Anfang bis Ende.' },
       ],
     };
     const storyList = STORY[lang] || STORY.pt;
+    const TRACK_L = { pt:['Reporte uma necessidade','Seja conectado','Resolva'], en:['Report a need','Get matched','Get it done'], fr:['Signalez un besoin','Soyez mis en relation','C\u2019est réglé'], lb:['Mellt e Besoin','Gitt matcht','Erleedegt'], de:['Bedarf melden','Vermittelt werden','Erledigt'] };
+    const trkLabels = TRACK_L[lang] || TRACK_L.en;
+    const TRK_ICONS = ['<path d="M12 3l9 16H3z"/><path d="M12 10v3M12 16h.01"/>','<circle cx="6" cy="12" r="2"/><circle cx="18" cy="12" r="2"/><path d="M8 12h8"/>','<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/>'];
+    const TRK_CHECK = '<path d="M5 12.5l4 4 10-10"/>';
+    const STEP_COLORS = ['#00B5F1', '#1F9D6B', '#F0A020'];
+    const STEP_USERS = {
+      pt: [{img:'https://i.pravatar.cc/240?img=47',role:'Residente'},{img:'https://i.pravatar.cc/240?img=32',role:'Prestador'},{img:'https://i.pravatar.cc/240?img=5',role:'Gestor'}],
+      en: [{img:'https://i.pravatar.cc/240?img=47',role:'Resident'},{img:'https://i.pravatar.cc/240?img=32',role:'Provider'},{img:'https://i.pravatar.cc/240?img=5',role:'Manager'}],
+      fr: [{img:'https://i.pravatar.cc/240?img=47',role:'Résident'},{img:'https://i.pravatar.cc/240?img=32',role:'Prestataire'},{img:'https://i.pravatar.cc/240?img=5',role:'Gestionnaire'}],
+      lb: [{img:'https://i.pravatar.cc/240?img=47',role:'Awunner'},{img:'https://i.pravatar.cc/240?img=32',role:'Déngschtleeschter'},{img:'https://i.pravatar.cc/240?img=5',role:'Gestionnaire'}],
+      de: [{img:'https://i.pravatar.cc/240?img=47',role:'Bewohner'},{img:'https://i.pravatar.cc/240?img=32',role:'Dienstleister'},{img:'https://i.pravatar.cc/240?img=5',role:'Verwalter'}],
+    };
+    const stepUserArr = STEP_USERS[lang] || STEP_USERS.en;
+    const stepIdx = s.storyStep - 1;
+    const stuActive = stepIdx >= 0 && stepIdx < 3;
+    const stuColor = STEP_COLORS[stuActive ? stepIdx : 0];
+    const stu = stuActive ? stepUserArr[stepIdx] : stepUserArr[0];
+    const ACTIONS = {
+      pt: ['A reportar uma fuga de água na garagem…', 'A enviar orçamento para o pedido AUR-142…', 'A aprovar a conclusão e a avaliar o serviço…'],
+      en: ['Reporting a water leak in the garage…', 'Sending a quote for request AUR-142…', 'Approving completion and rating the service…'],
+      fr: ['Signalement d\u2019une fuite d\u2019eau au garage…', 'Envoi d\u2019un devis pour la demande AUR-142…', 'Approbation de la clôture et évaluation du service…'],
+      lb: ['Eng Waasserfuite an der Garage mellen…', 'Devis fir d\u2019Ufro AUR-142 schécken…', 'Ofschloss approuvéieren a Service bewäerten…'],
+      de: ['Wasserleck in der Garage melden…', 'Angebot für Anfrage AUR-142 senden…', 'Abschluss freigeben und Service bewerten…'],
+    };
+    const actionArr = ACTIONS[lang] || ACTIONS.en;
+    const storyStepUser = {
+      role: stu.role,
+      wrapStyle: { display: 'flex', alignItems: 'center', alignSelf: 'center' },
+      imgStyle: { width: '150px', height: '150px', borderRadius: '999px', backgroundImage: 'url(' + stu.img + ')', backgroundSize: 'cover', backgroundPosition: 'center', border: '5px solid #FFFFFF', flexShrink: 0, position: 'relative', zIndex: 2, boxShadow: '0 0 0 12px ' + stuColor + '22, 0 16px 44px ' + stuColor + '66', animation: 'cubiiAvPop' + (stuActive ? stepIdx + 1 : 1) + ' 0.6s cubic-bezier(0.22,1,0.36,1)' },
+      roleStyle: { fontSize: '18px', fontWeight: 800, letterSpacing: '0.3px', color: '#FFFFFF', background: stuColor, borderRadius: '0 999px 999px 0', padding: '10px 28px 10px 40px', marginLeft: '-24px', position: 'relative', zIndex: 1, boxShadow: '0 12px 30px ' + stuColor + '55' },
+      boxStyle: { display: 'flex', alignItems: 'center', gap: '16px', background: '#16181B', border: '1px solid #2A2E33', borderLeft: '5px solid ' + stuColor, borderRadius: '16px', padding: '20px 26px', maxWidth: '620px', width: '100%', boxShadow: '0 18px 46px rgba(0,0,0,0.45)' },
+      typed: s.typedText,
+      caretStyle: { display: 'inline-block', width: '2px', height: '20px', background: stuColor, marginLeft: '2px', verticalAlign: 'middle', animation: 'cubiiCaret 0.9s step-end infinite' },
+      sendStyle: { marginLeft: 'auto', flexShrink: 0, width: '38px', height: '38px', borderRadius: '999px', background: stuColor, color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' },
+    };
+    this._actionTarget = stuActive ? actionArr[stepIdx] : actionArr[0];
+    const typeKey = stuActive ? ('s' + stepIdx) : 'none';
+    if (this._typeKey !== typeKey) {
+      this._typeKey = typeKey;
+      if (stuActive) setTimeout(() => this.runTyping(), 0);
+      else this.setState({ typedText: '' });
+    }
+    const storyTrack = trkLabels.map((label, i) => {
+      const done = (s.storyStep - 1) > i || s.storyStep >= 4;
+      const active = (s.storyStep - 1) === i;
+      const isLast = i === trkLabels.length - 1;
+      const cCol = STEP_COLORS[i % STEP_COLORS.length];
+      const connCol = STEP_COLORS[(i + 1) % STEP_COLORS.length];
+      return {
+        label: label,
+        iconEl: React.createElement('svg', { width: active ? 42 : 36, height: active ? 42 : 36, viewBox: '0 0 24 24', fill: 'none', stroke: (active || done) ? '#FFFFFF' : '#6C8087', strokeWidth: 1.9, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: done ? TRK_CHECK : TRK_ICONS[i] } }),
+        connStyle: isLast ? { display: 'none' } : { position: 'absolute', top: '47px', left: '50%', width: '100%', height: '6px', borderRadius: '999px', background: done ? connCol : '#2A2E33', zIndex: 0, transition: 'background 0.5s ease' },
+        circleStyle: { position: 'relative', zIndex: 1, width: '94px', height: '94px', borderRadius: '999px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.5s cubic-bezier(0.22,1,0.36,1)', background: (active || done) ? cCol : '#14171A', border: (active || done) ? 'none' : '2.5px solid #3A4048', transform: active ? 'scale(1.1)' : 'scale(1)', boxShadow: active ? '0 0 0 10px ' + cCol + '2E' : 'none' },
+        labelStyle: { fontSize: '17px', fontWeight: 700, color: (active || done) ? '#FFFFFF' : '#6C8087', maxWidth: '190px', lineHeight: 1.3, transition: 'color 0.4s ease' },
+        arrowShow: active,
+        arrowStyle: { position: 'absolute', top: '-30px', left: '50%', width: '24px', height: 0, marginLeft: '-12px', borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '15px solid ' + cCol, boxSizing: 'border-box', animation: 'cubiiFloat 1.4s ease-in-out infinite', zIndex: 2 },
+      };
+    });
     const curStory = storyList[s.storyStep] || storyList[0];
     const storyDots = storyList.map((_, i) => i);
     const AVA = [
@@ -1489,7 +1504,7 @@ class Component extends DCLogic {
       lb: { residente: 'Awunner', gestor: 'Syndic', prestador: 'Déngschtleeschter', sindicato: 'Syndicat', energia: 'Energie-Gestioun', admin: 'Administratioun' },
       de: { residente: 'Bewohner', gestor: 'Syndikus', prestador: 'Dienstleister', sindicato: 'Syndikat', energia: 'Energie-Manager', admin: 'Verwaltung' },
     };
-    const FOCUS = { 1: 0, 2: 1, 3: 2, 4: 0 };
+    const FOCUS = { 1: 0, 2: 2, 3: 1 };
     const focusIdx = (FOCUS[s.storyStep] !== undefined) ? FOCUS[s.storyStep] : null;
     const storyActive = focusIdx !== null;
     const rmap = ROLES[lang] || ROLES.pt;
@@ -1570,22 +1585,37 @@ class Component extends DCLogic {
     const darkView = (t.darkBlocks || []).map((b, i) => ({
       title: b.title,
       desc: b.desc,
-      iconEl: React.createElement('svg', { width: 40, height: 40, viewBox: '0 0 24 24', fill: 'none', stroke: '#4DCBF5', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: DARK_ICONS[i % DARK_ICONS.length] } }),
+      idx: i,
     }));
+    const DARK_CMD = { pt: 'monitorização em tempo real', en: 'real-time monitoring', fr: 'surveillance en temps réel', lb: 'Iwwerwaachung an Echtzäit', de: 'Überwachung in Echtzeit' };
+    this._darkTarget = DARK_CMD[lang] || DARK_CMD.en;
+    const DARK_WORKS = { pt: 'Integra com', en: 'Works with', fr: 'Compatible avec', lb: 'Funktionéiert mat', de: 'Kompatibel mit' };
+    const darkIntegrations = [{ name: 'Leneda', abbr: 'LE' }, { name: 'Progetis', abbr: 'PR' }, { name: 'Enectiva', abbr: 'EN' }];
 
     return {
       t,
       featuresView,
       darkView,
+      darkWorks: DARK_WORKS[lang] || DARK_WORKS.en,
+      darkIntegrations,
+      darkTermStyle: { alignSelf: 'center', background: '#0A0A0A', border: '1px solid #24282D', borderRadius: '14px', padding: '22px 28px', boxShadow: '0 20px 50px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: '10px', minWidth: '360px' },
+      darkTyped: s.darkTyped,
+      darkCaretStyle: { display: 'inline-block', width: '11px', height: '22px', background: '#F0A020', marginLeft: '3px', verticalAlign: '-4px', animation: 'cubiiCaret 0.9s step-end infinite' },
+      heroH1a: hero.a, heroH1b: hero.b, heroSubGen: hero.sub,
+      ovH2: ov.h2, ovSub: ov.sub, overviewBlocks,
+      flow3H2: FLOW3_H2[lang] || FLOW3_H2.en,
       gridRefA: this.gridA,
       gridRefB: this.gridB,
       gridRefStory: this.storyGrid,
       storyWrapRef: this.storyWrap,
       curStory,
       storyStep: s.storyStep,
+      storyTrack,
+      storyStepUser,
       storyDots,
       storyProgressPct: (((s.storyStep) / (Component.STORY_COUNT - 1)) * 100) + '%',
       storyGraphStyle: { transform: 'translateX(' + (-s.storyPct * 14) + '%) scale(' + (1 + s.storyPct * 0.18) + ')', transition: 'transform 0.5s cubic-bezier(0.22,1,0.36,1)' },
+      storyGridStyle: { position: 'absolute', inset: '-40px', zIndex: 0, pointerEvents: 'none', backgroundImage: 'linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px)', backgroundSize: '54px 54px', backgroundPosition: (s.storyStep * 90) + 'px ' + (s.storyStep % 2 === 0 ? -s.storyStep * 46 : s.storyStep * 40) + 'px', transition: 'background-position 0.7s cubic-bezier(0.22,1,0.36,1)', maskImage: 'radial-gradient(38% 42% at ' + (s.storyStep % 2 === 0 ? 26 : 72) + '% ' + (s.storyStep % 3 === 0 ? 34 : 62) + '%, #000 28%, rgba(0,0,0,0) 72%), radial-gradient(30% 34% at ' + (s.storyStep % 2 === 0 ? 78 : 22) + '% ' + (s.storyStep % 2 === 0 ? 70 : 30) + '%, #000 24%, rgba(0,0,0,0) 70%)', WebkitMaskImage: 'radial-gradient(38% 42% at ' + (s.storyStep % 2 === 0 ? 26 : 72) + '% ' + (s.storyStep % 3 === 0 ? 34 : 62) + '%, #000 28%, rgba(0,0,0,0) 72%), radial-gradient(30% 34% at ' + (s.storyStep % 2 === 0 ? 78 : 22) + '% ' + (s.storyStep % 2 === 0 ? 70 : 30) + '%, #000 24%, rgba(0,0,0,0) 70%)' },
       storyBgDimStyle: { position: 'absolute', inset: 0, opacity: storyActive ? 0.28 : 1, transition: 'opacity 0.55s ease' },
       storyLineStyle,
       storyMarkers,
@@ -1612,7 +1642,7 @@ class Component extends DCLogic {
       demoWatchLabel: { pt: 'Ver demo (0:52)', en: 'Watch demo (0:52)', fr: 'Voir la démo (0:52)', lb: 'Demo kucken (0:52)', de: 'Demo ansehen (0:52)' }[lang],
       demoPlayingLabel: { pt: 'A reproduzir demo…', en: 'Playing demo…', fr: 'Lecture de la démo…', lb: 'Demo leeft…', de: 'Demo läuft…' }[lang],
       progressPct: progressPct + '%',
-      curTm,
+      curTm, tmTrack, tmTrackStyle, tmTitle: tmh.title, tmSub: tmh.sub, tmStats: tmh.stats.map((x) => ({ big: x[0], label: x[1] })),
       prevT: () => this.setState({ tIndex: s.tIndex - 1 }),
       nextT: () => this.setState({ tIndex: s.tIndex + 1 }),
       tmHoverOn: (e) => { const ph = e.currentTarget.querySelector('[data-tm-photo]'); const cd = e.currentTarget.querySelector('[data-tm-card]'); if (ph) { ph.style.transform = 'scale(1.05)'; ph.style.zIndex = '4'; ph.style.boxShadow = '0 22px 48px rgba(41,109,131,0.32)'; } if (cd) { cd.style.transform = 'scale(1.02)'; cd.style.boxShadow = '0 26px 56px rgba(10,10,10,0.26)'; } },
@@ -1622,6 +1652,10 @@ class Component extends DCLogic {
       toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen, featMenuOpen: false }),
       featMenuOpen: s.featMenuOpen,
       toggleFeatMenu: () => this.setState({ featMenuOpen: !s.featMenuOpen, langMenuOpen: false }),
+      whoLinks,
+      whoMenuOpen: s.whoMenuOpen,
+      toggleWhoMenu: () => this.setState({ whoMenuOpen: !s.whoMenuOpen, langMenuOpen: false, featMenuOpen: false }),
+      whoArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.whoMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
       navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
       navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },
