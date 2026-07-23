@@ -10,13 +10,13 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; background: #F4F7F9; }
-    body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
-    h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
+    html, body { margin: 0; padding: 0; background: #F6F6F6; }
+    body { font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif; color: #252526; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Nunito Sans', sans-serif; }
     * { box-sizing: border-box; }
-    input, select, textarea { font-family: 'Hanken Grotesk', sans-serif; }
+    input, select, textarea { font-family: 'Nunito Sans', sans-serif; }
     ::-webkit-scrollbar { width: 10px; height: 10px; }
     ::-webkit-scrollbar-thumb { background: #CFD9DD; border-radius: 999px; }
   </style>
@@ -29,13 +29,13 @@
       <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px; text-decoration: none;">
         <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 32px; width: auto; object-fit: contain; display: block;">
         
-        <span style="margin-left: 4px; font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #0090E8; background: #EAF8FE; padding: 3px 8px; border-radius: 999px;">CMS</span>
+        <span style="margin-left: 4px; font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #1A3F6F; background: #F6F6F6; padding: 3px 8px; border-radius: 999px;">CMS</span>
       </a>
     </div>
     <nav style="flex: 1; overflow-y: auto; padding: 8px 12px 12px;">
       <sc-for list="{{ navGroups }}" as="grp" hint-placeholder-count="4">
         <div style="margin-bottom: 14px;">
-          <span style="display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #9DB0B7; padding: 6px 12px;">{{ grp.label }}</span>
+          <span style="display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #8C8C8D; padding: 6px 12px;">{{ grp.label }}</span>
           <sc-for list="{{ grp.items }}" as="it" hint-placeholder-count="3">
             <button onClick="{{ it.onClick }}" style="{{ it.style }}">
               <span style="width: 20px; display: inline-flex; justify-content: center;">{{ it.iconEl }}</span>
@@ -47,33 +47,33 @@
       </sc-for>
     </nav>
     <div style="padding: 14px;">
-      <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; border: 1.5px solid #E0E7EA; border-radius: 12px; padding: 13px; text-decoration: none; color: #296D83; font-size: 14px; font-weight: 700;" style-hover="border-color: #00B5F1; color: #0090E8;">{{ L.exit }}</a>
+      <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; border: 1.5px solid #E0E7EA; border-radius: 12px; padding: 13px; text-decoration: none; color: #296D83; font-size: 14px; font-weight: 700;" style-hover="border-color: #1A3F6F; color: #1A3F6F;">{{ L.exit }}</a>
     </div>
   </aside>
 
   <!-- ===================== MAIN ===================== -->
   <main style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
     <header style="height: 64px; background: #FFFFFF; border-bottom: 1px solid #E6EDF0; display: flex; align-items: center; gap: 16px; padding: 0 28px; position: sticky; top: 0; z-index: 20;">
-      <span style="font-size: 15px; font-weight: 800; color: #0A0A0A;">{{ activeTitle }}</span>
+      <span style="font-size: 15px; font-weight: 800; color: #252526;">{{ activeTitle }}</span>
       <sc-if value="{{ activeIsPage }}" hint-placeholder-val="{{ false }}">
-        <a href="{{ activePageHref }}" target="_blank" style="font-size: 12.5px; font-weight: 700; color: #0090E8; background: #EAF8FE; padding: 6px 14px; border-radius: 999px;">{{ L.viewPage }}</a>
+        <a href="{{ activePageHref }}" target="_blank" style="font-size: 12.5px; font-weight: 700; color: #1A3F6F; background: #F6F6F6; padding: 6px 14px; border-radius: 999px;">{{ L.viewPage }}</a>
       </sc-if>
       <div style="margin-left: auto; display: flex; align-items: center; gap: 14px;">
-        <input value="{{ search }}" onChange="{{ onSearch }}" placeholder="{{ L.search }}" style="width: 220px; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 9px 16px; font-size: 13px; outline: none; background: #F7FAFB;" style-focus="border-color: #00B5F1;">
+        <input value="{{ search }}" onChange="{{ onSearch }}" placeholder="{{ L.search }}" style="width: 220px; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 9px 16px; font-size: 13px; outline: none; background: #F7FAFB;" style-focus="border-color: #1A3F6F;">
         <div style="position: relative;">
-          <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
+          <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Nunito Sans', sans-serif;" style-hover="border-color: #1A3F6F;">
             <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
-            <span style="font-size: 9px; color: #9DB0B7;">▼</span>
+            <span style="font-size: 9px; color: #8C8C8D;">▼</span>
           </button>
           <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
-            <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
+            <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 14px; box-shadow: 0 14px 36px rgba(37,37,38,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
               <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="5">
                 <button onClick="{{ lo.onClick }}" style="{{ lo.style }}"><span>{{ lo.flag }} {{ lo.name }}</span><span style="font-size: 11px; font-weight: 800; opacity: 0.6;">{{ lo.code }}</span></button>
               </sc-for>
             </div>
           </sc-if>
         </div>
-        <div style="width: 38px; height: 38px; border-radius: 999px; background: #EAF8FE; border: 1px solid #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #0090E8;">SC</div>
+        <div style="width: 38px; height: 38px; border-radius: 999px; background: #F6F6F6; border: 1px solid #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #1A3F6F;">SC</div>
       </div>
     </header>
 
@@ -94,9 +94,9 @@
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
             <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
               <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;">
-                <span style="width: 40px; height: 40px; border-radius: 11px; background: #EAF8FE; display: flex; align-items: center; justify-content: center;">{{ k.iconEl }}</span>
-                <span style="font-size: 30px; font-weight: 800; letter-spacing: -1px; color: #0A0A0A;">{{ k.value }}</span>
-                <span style="font-size: 13px; font-weight: 600; color: #6C8087;">{{ k.label }}</span>
+                <span style="width: 40px; height: 40px; border-radius: 11px; background: #F6F6F6; display: flex; align-items: center; justify-content: center;">{{ k.iconEl }}</span>
+                <span style="font-size: 30px; font-weight: 800; letter-spacing: -1px; color: #252526;">{{ k.value }}</span>
+                <span style="font-size: 13px; font-weight: 600; color: #8C8C8D;">{{ k.label }}</span>
               </div>
             </sc-for>
           </div>
@@ -105,7 +105,7 @@
             <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 22px;">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
                 <h3 style="margin: 0; font-size: 16px; font-weight: 800;">{{ L.cLeads }}</h3>
-                <span style="font-size: 12px; font-weight: 700; color: #0090E8; background: #EAF8FE; padding: 4px 12px; border-radius: 999px;">{{ L.last6 }}</span>
+                <span style="font-size: 12px; font-weight: 700; color: #1A3F6F; background: #F6F6F6; padding: 4px 12px; border-radius: 999px;">{{ L.last6 }}</span>
               </div>
               <canvas ref="{{ lineRef }}" height="220" style="width: 100%; height: 220px; display: block;"></canvas>
             </div>
@@ -118,7 +118,7 @@
                     <div style="display: flex; align-items: center; gap: 8px;">
                       <span style="width: 11px; height: 11px; border-radius: 3px; background: {{ sl.color }};"></span>
                       <span style="font-size: 13px; font-weight: 600; color: #296D83;">{{ sl.label }}</span>
-                      <span style="font-size: 13px; font-weight: 800; color: #0A0A0A; margin-left: auto;">{{ sl.value }}%</span>
+                      <span style="font-size: 13px; font-weight: 800; color: #252526; margin-left: auto;">{{ sl.value }}%</span>
                     </div>
                   </sc-for>
                 </div>
@@ -135,10 +135,10 @@
               <h3 style="margin: 0 0 14px; font-size: 16px; font-weight: 800;">{{ L.pagesOfSite }}</h3>
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 <sc-for list="{{ pageLinks }}" as="p" hint-placeholder-count="6">
-                  <button onClick="{{ p.onClick }}" style="display: flex; align-items: center; gap: 12px; width: 100%; border: 1px solid #E6EDF0; border-radius: 12px; padding: 12px 14px; background: #FFFFFF; cursor: pointer; text-align: left;" style-hover="border-color: #00B5F1; background: #F7FBFD;">
-                    <span style="color: #0090E8; display: inline-flex;">{{ p.iconEl }}</span>
-                    <span style="flex: 1; font-size: 13.5px; font-weight: 700; color: #0A0A0A;">{{ p.name }}</span>
-                    <span style="font-size: 12px; font-weight: 600; color: #9DB0B7;">{{ p.count }} {{ L.secWord }}</span>
+                  <button onClick="{{ p.onClick }}" style="display: flex; align-items: center; gap: 12px; width: 100%; border: 1px solid #E6EDF0; border-radius: 12px; padding: 12px 14px; background: #FFFFFF; cursor: pointer; text-align: left;" style-hover="border-color: #1A3F6F; background: #F6F6F6;">
+                    <span style="color: #1A3F6F; display: inline-flex;">{{ p.iconEl }}</span>
+                    <span style="flex: 1; font-size: 13.5px; font-weight: 700; color: #252526;">{{ p.name }}</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #8C8C8D;">{{ p.count }} {{ L.secWord }}</span>
                   </button>
                 </sc-for>
               </div>
@@ -153,12 +153,12 @@
           <!-- Campos-chave da página -->
           <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 24px;">
             <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 800;">{{ L.mainContent }}</h3>
-            <p style="margin: 0 0 18px; font-size: 13px; color: #9DB0B7; font-weight: 500;">{{ L.mainContentSub }}</p>
+            <p style="margin: 0 0 18px; font-size: 13px; color: #8C8C8D; font-weight: 500;">{{ L.mainContentSub }}</p>
             <div style="display: flex; flex-direction: column; gap: 14px;">
               <sc-for list="{{ pageFields }}" as="fld" hint-placeholder-count="3">
                 <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #9DB0B7;">{{ fld.label }}</span>
-                  <input value="{{ fld.value }}" onChange="{{ fld.onChange }}" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 11px 13px; font-size: 14px; font-weight: 600; color: #0A0A0A; outline: none; width: 100%;" style-focus="border-color: #00B5F1;">
+                  <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #8C8C8D;">{{ fld.label }}</span>
+                  <input value="{{ fld.value }}" onChange="{{ fld.onChange }}" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 11px 13px; font-size: 14px; font-weight: 600; color: #252526; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
                 </div>
               </sc-for>
             </div>
@@ -168,16 +168,16 @@
             <div style="display: flex; align-items: center; margin-bottom: 16px;">
               <div>
                 <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 800;">{{ L.sectionsTitle }}</h3>
-                <p style="margin: 0; font-size: 13px; color: #9DB0B7; font-weight: 500;">{{ L.sectionsSub }}</p>
+                <p style="margin: 0; font-size: 13px; color: #8C8C8D; font-weight: 500;">{{ L.sectionsSub }}</p>
               </div>
-              <button onClick="{{ addSection }}" style="margin-left: auto; background: #00B5F1; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.newSection }}</button>
+              <button onClick="{{ addSection }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.newSection }}</button>
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px;">
               <sc-for list="{{ pageSections }}" as="sec" hint-placeholder-count="5">
                 <div style="display: flex; align-items: center; gap: 12px; border: 1px solid #E6EDF0; border-radius: 12px; padding: 12px 14px; background: {{ sec.rowBg }};">
                   <div style="display: flex; flex-direction: column; gap: 2px;">
-                    <button onClick="{{ sec.onUp }}" aria-label="Subir" style="background: none; border: none; cursor: pointer; color: #9DB0B7; font-size: 11px; line-height: 1;">▲</button>
-                    <button onClick="{{ sec.onDown }}" aria-label="Descer" style="background: none; border: none; cursor: pointer; color: #9DB0B7; font-size: 11px; line-height: 1;">▼</button>
+                    <button onClick="{{ sec.onUp }}" aria-label="Subir" style="background: none; border: none; cursor: pointer; color: #8C8C8D; font-size: 11px; line-height: 1;">▲</button>
+                    <button onClick="{{ sec.onDown }}" aria-label="Descer" style="background: none; border: none; cursor: pointer; color: #8C8C8D; font-size: 11px; line-height: 1;">▼</button>
                   </div>
                   <span style="font-size: 12px; font-weight: 800; color: #C6D4D9; width: 22px;">{{ sec.num }}</span>
                   <input value="{{ sec.label }}" onChange="{{ sec.onLabel }}" style="flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-weight: 700; color: {{ sec.textColor }}; background: transparent; outline: none;" style-focus="border-color: #CCF0FC; background: #F7FAFB;">
@@ -194,17 +194,17 @@
       <sc-if value="{{ isTestimonials }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div style="display: flex; align-items: center;">
-            <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.tIntro }}</p>
-            <button onClick="{{ addTestimonial }}" style="margin-left: auto; background: #00B5F1; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.tNew }}</button>
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.tIntro }}</p>
+            <button onClick="{{ addTestimonial }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.tNew }}</button>
           </div>
           <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
             <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start;">
               <span style="width: 42px; height: 42px; border-radius: 999px; background: {{ tm.chip }}; flex-shrink: 0;"></span>
               <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-                <textarea value="{{ tm.quote }}" onChange="{{ tm.onQuote }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 10px 12px; font-size: 13.5px; font-weight: 500; color: #0A0A0A; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #00B5F1;"></textarea>
+                <textarea value="{{ tm.quote }}" onChange="{{ tm.onQuote }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 10px 12px; font-size: 13.5px; font-weight: 500; color: #252526; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #1A3F6F;"></textarea>
                 <div style="display: flex; gap: 10px;">
-                  <input value="{{ tm.name }}" onChange="{{ tm.onName }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; outline: none;" style-focus="border-color: #00B5F1;">
-                  <input value="{{ tm.role }}" onChange="{{ tm.onRole }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 500; color: #6C8087; outline: none;" style-focus="border-color: #00B5F1;">
+                  <input value="{{ tm.name }}" onChange="{{ tm.onName }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; outline: none;" style-focus="border-color: #1A3F6F;">
+                  <input value="{{ tm.role }}" onChange="{{ tm.onRole }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 500; color: #8C8C8D; outline: none;" style-focus="border-color: #1A3F6F;">
                 </div>
               </div>
               <button onClick="{{ tm.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 16px;" style-hover="color: #E5484D;">✕</button>
@@ -217,14 +217,14 @@
       <sc-if value="{{ isFaq }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <div style="display: flex; align-items: center;">
-            <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.fIntro }}</p>
-            <button onClick="{{ addFaq }}" style="margin-left: auto; background: #00B5F1; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.fNew }}</button>
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.fIntro }}</p>
+            <button onClick="{{ addFaq }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.fNew }}</button>
           </div>
           <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
             <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start;">
               <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
-                <input value="{{ q.question }}" onChange="{{ q.onQuestion }}" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 14px; font-weight: 700; color: #0A0A0A; outline: none; width: 100%;" style-focus="border-color: #00B5F1;">
-                <textarea value="{{ q.answer }}" onChange="{{ q.onAnswer }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 13.5px; font-weight: 500; color: #296D83; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #00B5F1;"></textarea>
+                <input value="{{ q.question }}" onChange="{{ q.onQuestion }}" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 14px; font-weight: 700; color: #252526; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+                <textarea value="{{ q.answer }}" onChange="{{ q.onAnswer }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 13.5px; font-weight: 500; color: #296D83; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #1A3F6F;"></textarea>
               </div>
               <button onClick="{{ q.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 16px;" style-hover="color: #E5484D;">✕</button>
             </div>
@@ -236,13 +236,13 @@
       <sc-if value="{{ isLogos }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div style="display: flex; align-items: center;">
-            <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.lgIntro }}</p>
-            <button onClick="{{ addLogo }}" style="margin-left: auto; background: #00B5F1; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.lgNew }}</button>
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.lgIntro }}</p>
+            <button onClick="{{ addLogo }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.lgNew }}</button>
           </div>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
             <sc-for list="{{ logos }}" as="lg" hint-placeholder-count="6">
               <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 10px;">
-                <span style="width: 34px; height: 34px; border-radius: 8px; background: #F0F5F7; display: flex; align-items: center; justify-content: center; color: #9DB0B7; font-size: 14px;">▦</span>
+                <span style="width: 34px; height: 34px; border-radius: 8px; background: #F0F5F7; display: flex; align-items: center; justify-content: center; color: #8C8C8D; font-size: 14px;">▦</span>
                 <input value="{{ lg.name }}" onChange="{{ lg.onName }}" style="flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 8px 10px; font-size: 13.5px; font-weight: 700; outline: none; background: transparent;" style-focus="border-color: #CCF0FC; background: #F7FAFB;">
                 <button onClick="{{ lg.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 15px;" style-hover="color: #E5484D;">✕</button>
               </div>
@@ -254,21 +254,21 @@
       <!-- ============ LEADS ============ -->
       <sc-if value="{{ isLeads }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 18px;">
-          <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.leadsIntro }}</p>
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.leadsIntro }}</p>
           <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start;">
             <sc-for list="{{ leadColumns }}" as="col" hint-placeholder-count="5">
               <div style="background: #F0F4F6; border: 1px solid #E6EDF0; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 160px;">
                 <div style="display: flex; align-items: center; gap: 8px; padding: 4px 6px;">
                   <span style="width: 9px; height: 9px; border-radius: 999px; background: {{ col.color }};"></span>
-                  <span style="font-size: 12.5px; font-weight: 800; color: #0A0A0A;">{{ col.label }}</span>
-                  <span style="margin-left: auto; font-size: 11px; font-weight: 800; color: #6C8087; background: #FFFFFF; padding: 2px 8px; border-radius: 999px;">{{ col.count }}</span>
+                  <span style="font-size: 12.5px; font-weight: 800; color: #252526;">{{ col.label }}</span>
+                  <span style="margin-left: auto; font-size: 11px; font-weight: 800; color: #8C8C8D; background: #FFFFFF; padding: 2px 8px; border-radius: 999px;">{{ col.count }}</span>
                 </div>
                 <sc-for list="{{ col.cards }}" as="l" hint-placeholder-count="2">
                   <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 12px; border-left: 3px solid {{ col.color }}; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
-                    <span style="font-size: 13.5px; font-weight: 800; color: #0A0A0A;">{{ l.name }}</span>
+                    <span style="font-size: 13.5px; font-weight: 800; color: #252526;">{{ l.name }}</span>
                     <span style="font-size: 12px; font-weight: 600; color: #296D83;">{{ l.company }}</span>
-                    <span style="font-size: 11.5px; font-weight: 500; color: #9DB0B7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.email }}</span>
-                    <span style="align-self: flex-start; background: #EAF8FE; color: #0090E8; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;">{{ l.units }} {{ L.fracoes }}</span>
+                    <span style="font-size: 11.5px; font-weight: 500; color: #8C8C8D; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.email }}</span>
+                    <span style="align-self: flex-start; background: #F6F6F6; color: #1A3F6F; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;">{{ l.units }} {{ L.fracoes }}</span>
                     <div style="display: flex; gap: 6px; margin-top: 4px;">
                       <button onClick="{{ l.onPrev }}" aria-label="Anterior" style="{{ l.prevStyle }}">‹</button>
                       <button onClick="{{ l.onNext }}" aria-label="Seguinte" style="{{ l.nextStyle }}">›</button>
@@ -284,11 +284,11 @@
       <!-- ============ IDIOMAS ============ -->
       <sc-if value="{{ isLangs }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
-          <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.langsIntro }}</p>
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.langsIntro }}</p>
           <sc-for list="{{ languages }}" as="lang" hint-placeholder-count="5">
             <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
-              <span style="font-size: 12px; font-weight: 800; color: #0090E8; background: #EAF8FE; padding: 5px 11px; border-radius: 8px;">{{ lang.code }}</span>
-              <span style="flex: 1; font-size: 14px; font-weight: 700; color: #0A0A0A;">{{ lang.name }}</span>
+              <span style="font-size: 12px; font-weight: 800; color: #1A3F6F; background: #F6F6F6; padding: 5px 11px; border-radius: 8px;">{{ lang.code }}</span>
+              <span style="flex: 1; font-size: 14px; font-weight: 700; color: #252526;">{{ lang.name }}</span>
               <button onClick="{{ lang.onDefault }}" style="{{ lang.defaultStyle }}">{{ lang.defaultLabel }}</button>
               <button onClick="{{ lang.onToggle }}" aria-label="Alternar" style="{{ lang.switchStyle }}"><span style="{{ lang.knobStyle }}"></span></button>
             </div>
@@ -299,12 +299,12 @@
       <!-- ============ CONFIGURAÇÕES DO SITE ============ -->
       <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
-          <p style="margin: 0; font-size: 14px; color: #6C8087; font-weight: 500;">{{ L.setIntro }}</p>
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.setIntro }}</p>
           <sc-for list="{{ settings }}" as="cfg" hint-placeholder-count="4">
             <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
               <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
-                <span style="font-size: 14px; font-weight: 700; color: #0A0A0A;">{{ cfg.title }}</span>
-                <span style="font-size: 12.5px; font-weight: 500; color: #9DB0B7;">{{ cfg.desc }}</span>
+                <span style="font-size: 14px; font-weight: 700; color: #252526;">{{ cfg.title }}</span>
+                <span style="font-size: 12.5px; font-weight: 500; color: #8C8C8D;">{{ cfg.desc }}</span>
               </div>
               <button onClick="{{ cfg.onToggle }}" aria-label="Alternar" style="{{ cfg.switchStyle }}"><span style="{{ cfg.knobStyle }}"></span></button>
             </div>
@@ -415,13 +415,13 @@ class Component extends DCLogic {
     const x = (i) => pad + (i / (data.length - 1)) * (w - pad * 2), y = (v) => h - pad - (v / max) * (h - pad * 2);
     ctx.strokeStyle = '#EEF3F5'; ctx.lineWidth = 1;
     for (let g = 0; g <= 4; g++) { const gy = pad + (g / 4) * (h - pad * 2); ctx.beginPath(); ctx.moveTo(pad, gy); ctx.lineTo(w - pad, gy); ctx.stroke(); }
-    const grad = ctx.createLinearGradient(0, pad, 0, h - pad); grad.addColorStop(0, 'rgba(0,181,241,0.28)'); grad.addColorStop(1, 'rgba(0,181,241,0)');
+    const grad = ctx.createLinearGradient(0, pad, 0, h - pad); grad.addColorStop(0, 'rgba(37,37,38,0.28)'); grad.addColorStop(1, 'rgba(37,37,38,0)');
     ctx.beginPath(); ctx.moveTo(x(0), y(data[0])); for (let i = 1; i < data.length; i++) ctx.lineTo(x(i), y(data[i]));
     ctx.lineTo(x(data.length - 1), h - pad); ctx.lineTo(x(0), h - pad); ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
     ctx.beginPath(); ctx.moveTo(x(0), y(data[0])); for (let i = 1; i < data.length; i++) ctx.lineTo(x(i), y(data[i]));
     ctx.strokeStyle = '#00B5F1'; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.stroke();
     for (let i = 0; i < data.length; i++) { ctx.beginPath(); ctx.arc(x(i), y(data[i]), 4, 0, 6.2832); ctx.fillStyle = '#FFFFFF'; ctx.fill(); ctx.strokeStyle = '#0090E8'; ctx.lineWidth = 2.5; ctx.stroke(); }
-    ctx.fillStyle = '#9DB0B7'; ctx.font = '600 11px Hanken Grotesk'; ctx.textAlign = 'center';
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 11px Nunito Sans'; ctx.textAlign = 'center';
     ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'].forEach((l, i) => ctx.fillText(l, x(i), h - 6));
   }
   drawDonut(c, segs) {
@@ -429,8 +429,8 @@ class Component extends DCLogic {
     const total = segs.reduce((a, x) => a + x[0], 0); let ang = -Math.PI / 2;
     segs.forEach(([v, col]) => { const a2 = ang + (v / total) * Math.PI * 2; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, r, ang, a2); ctx.closePath(); ctx.fillStyle = col; ctx.fill(); ang = a2; });
     ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath(); ctx.arc(cx, cy, inner, 0, 6.2832); ctx.fill(); ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = '#0A0A0A'; ctx.font = '800 20px Bricolage Grotesque'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('5', cx, cy - 5);
-    ctx.fillStyle = '#9DB0B7'; ctx.font = '600 10px Hanken Grotesk'; ctx.fillText('idiomas', cx, cy + 12);
+    ctx.fillStyle = '#252526'; ctx.font = '800 20px Nunito Sans'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('5', cx, cy - 5);
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 10px Nunito Sans'; ctx.fillText('idiomas', cx, cy + 12);
   }
   drawBars(c, data, color, labels) {
     const s = this._setup(c); if (!s) return; const { ctx, w, h } = s; const pad = 24, max = Math.max(...data) * 1.2, n = data.length, bw = (w - pad * 2) / n * 0.5;
@@ -439,8 +439,8 @@ class Component extends DCLogic {
     data.forEach((v, i) => { const cx = pad + (i + 0.5) / n * (w - pad * 2), bh = (v / max) * (h - pad * 2), by = h - pad - bh, rx = cx - bw / 2, rr = 6;
       const g = ctx.createLinearGradient(0, by, 0, h - pad); g.addColorStop(0, color); g.addColorStop(1, '#4DCBF5'); ctx.fillStyle = g;
       ctx.beginPath(); ctx.moveTo(rx, h - pad); ctx.lineTo(rx, by + rr); ctx.quadraticCurveTo(rx, by, rx + rr, by); ctx.lineTo(rx + bw - rr, by); ctx.quadraticCurveTo(rx + bw, by, rx + bw, by + rr); ctx.lineTo(rx + bw, h - pad); ctx.closePath(); ctx.fill();
-      ctx.fillStyle = '#0A0A0A'; ctx.font = '800 12px Bricolage Grotesque'; ctx.textAlign = 'center'; ctx.fillText(v, cx, by - 6); });
-    ctx.fillStyle = '#9DB0B7'; ctx.font = '600 10.5px Hanken Grotesk';
+      ctx.fillStyle = '#252526'; ctx.font = '800 12px Nunito Sans'; ctx.textAlign = 'center'; ctx.fillText(v, cx, by - 6); });
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 10.5px Nunito Sans';
     labels.forEach((l, i) => ctx.fillText(l, pad + (i + 0.5) / n * (w - pad * 2), h - 6));
   }
 
@@ -465,7 +465,7 @@ class Component extends DCLogic {
     const LC = (lang || 'pt').toUpperCase();
     const t = Component.ADMIN_T[LC] || Component.ADMIN_T.PT;
     const FLAGS = { pt: '🇵🇹', en: '🇬🇧', fr: '🇫🇷', lb: '🇱🇺', de: '🇩🇪' };
-    const langOptions = Component.LANGS.map((l) => ({ code: l.code, name: l.name, flag: FLAGS[l.code.toLowerCase()], onClick: () => this.setLang(l.code.toLowerCase()), style: { display:'flex', justifyContent:'space-between', alignItems:'center', gap:'16px', width:'100%', padding:'9px 14px', border:'none', borderRadius:'10px', cursor:'pointer', fontFamily:"'Hanken Grotesk', sans-serif", fontSize:'13.5px', textAlign:'left', fontWeight: l.code===LC?800:500, background: l.code===LC?'#EAF8FE':'transparent', color: l.code===LC?'#0090E8':'#296D83' } }));
+    const langOptions = Component.LANGS.map((l) => ({ code: l.code, name: l.name, flag: FLAGS[l.code.toLowerCase()], onClick: () => this.setLang(l.code.toLowerCase()), style: { display:'flex', justifyContent:'space-between', alignItems:'center', gap:'16px', width:'100%', padding:'9px 14px', border:'none', borderRadius:'10px', cursor:'pointer', fontFamily:"'Nunito Sans', sans-serif", fontSize:'13.5px', textAlign:'left', fontWeight: l.code===LC?800:500, background: l.code===LC?'#F6F6F6':'transparent', color: l.code===LC?'#0090E8':'#296D83' } }));
 
     const ICONS = {
       home: '<path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/>',
@@ -495,10 +495,10 @@ class Component extends DCLogic {
       items: g.items.map(([id, label, icon, badge]) => {
         const active = s.tab === id;
         return { label, badge,
-          iconEl: React.createElement('span', { style: { color: active ? '#0090E8' : '#9DB0B7', display: 'inline-flex' } }, this.ic(ICONS[icon])),
+          iconEl: React.createElement('span', { style: { color: active ? '#0090E8' : '#8C8C8D', display: 'inline-flex' } }, this.ic(ICONS[icon])),
           onClick: () => this.setState({ tab: id }),
-          style: { display: 'flex', alignItems: 'center', gap: '11px', width: '100%', padding: '10px 12px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: active ? 700 : 600, background: active ? '#EAF8FE' : 'transparent', color: active ? '#0090E8' : '#3C4A50', marginBottom: '2px' },
-          badgeStyle: { background: active ? '#00B5F1' : '#E6EDF0', color: active ? '#FFFFFF' : '#6C8087', fontSize: '11px', fontWeight: 800, padding: '2px 8px', borderRadius: '999px' } };
+          style: { display: 'flex', alignItems: 'center', gap: '11px', width: '100%', padding: '10px 12px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: "'Nunito Sans', sans-serif", fontSize: '14px', fontWeight: active ? 700 : 600, background: active ? '#F6F6F6' : 'transparent', color: active ? '#0090E8' : '#3C4A50', marginBottom: '2px' },
+          badgeStyle: { background: active ? '#00B5F1' : '#E6EDF0', color: active ? '#FFFFFF' : '#8C8C8D', fontSize: '11px', fontWeight: 800, padding: '2px 8px', borderRadius: '999px' } };
       }),
     }));
 
@@ -524,11 +524,11 @@ class Component extends DCLogic {
     const pageSections = pg ? pg.sections.map((sec, i) => ({
       label: sec.label, num: i + 1,
       rowBg: sec.visible ? '#FFFFFF' : '#F7FAFB',
-      textColor: sec.visible ? '#0A0A0A' : '#9DB0B7',
+      textColor: sec.visible ? '#252526' : '#8C8C8D',
       onLabel: (e) => setPage({ sections: pg.sections.map((x, j) => j === i ? { ...x, label: e.target.value } : x) }),
       onToggle: () => setPage({ sections: pg.sections.map((x, j) => j === i ? { ...x, visible: !x.visible } : x) }),
       pillLabel: sec.visible ? t.visible : t.hidden,
-      pillStyle: { border: 'none', cursor: 'pointer', fontSize: '12px', fontWeight: 700, padding: '6px 12px', borderRadius: '999px', color: sec.visible ? '#1F8A5B' : '#9DB0B7', background: sec.visible ? '#E6F6EE' : '#EEF3F5' },
+      pillStyle: { border: 'none', cursor: 'pointer', fontSize: '12px', fontWeight: 700, padding: '6px 12px', borderRadius: '999px', color: sec.visible ? '#1F8A5B' : '#8C8C8D', background: sec.visible ? '#E6F6EE' : '#EEF3F5' },
       onUp: () => moveSec(i, -1), onDown: () => moveSec(i, 1),
       onDelete: () => setPage({ sections: pg.sections.filter((_, j) => j !== i) }),
     })) : [];
@@ -562,7 +562,7 @@ class Component extends DCLogic {
       onToggle: () => { if (lg.def) return; set('languages', i, { on: !lg.on }); },
       onDefault: () => this.setState({ languages: s.languages.map((x, j) => ({ ...x, def: j === i, on: j === i ? true : x.on })) }),
       defaultLabel: lg.def ? t.defaultBadge : t.makeDefault,
-      defaultStyle: { border: lg.def ? 'none' : '1.5px solid #E6EDF0', background: lg.def ? '#EAF8FE' : '#FFFFFF', color: lg.def ? '#0090E8' : '#6C8087', fontSize: '12px', fontWeight: 700, padding: '7px 13px', borderRadius: '999px', cursor: lg.def ? 'default' : 'pointer' },
+      defaultStyle: { border: lg.def ? 'none' : '1.5px solid #E6EDF0', background: lg.def ? '#F6F6F6' : '#FFFFFF', color: lg.def ? '#0090E8' : '#8C8C8D', fontSize: '12px', fontWeight: 700, padding: '7px 13px', borderRadius: '999px', cursor: lg.def ? 'default' : 'pointer' },
       switchStyle: { width: '46px', height: '26px', borderRadius: '999px', border: 'none', cursor: lg.def ? 'not-allowed' : 'pointer', background: lg.on ? '#00B5F1' : '#D5DEE2', position: 'relative', transition: 'background 0.2s ease', flexShrink: 0, opacity: lg.def ? 0.6 : 1 },
       knobStyle: { position: 'absolute', top: '3px', left: lg.on ? '23px' : '3px', width: '20px', height: '20px', borderRadius: '999px', background: '#FFFFFF', transition: 'left 0.2s ease', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' } }));
 

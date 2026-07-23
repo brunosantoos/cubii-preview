@@ -10,16 +10,16 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; background: #F1F3F4; }
-    body { font-family: 'Hanken Grotesk', 'Helvetica Neue', sans-serif; color: #0A0A0A; -webkit-font-smoothing: antialiased; }
-    h1, h2, h3 { font-family: 'Bricolage Grotesque', 'Hanken Grotesk', sans-serif; }
-    a { color: #0090E8; text-decoration: none; }
-    a:hover { color: #00B5F1; }
+    html, body { margin: 0; padding: 0; background: #F6F6F6; }
+    body { font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif; color: #252526; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Nunito Sans', sans-serif; }
+    a { color: #1A3F6F; text-decoration: none; }
+    a:hover { color: #1A3F6F; }
     input::placeholder { color: #878888; }
     * { box-sizing: border-box; }
-    @keyframes cubiiPulse { 0% { box-shadow: 0 0 0 0 rgba(0,181,241,0.40); } 70% { box-shadow: 0 0 0 16px rgba(0,181,241,0); } 100% { box-shadow: 0 0 0 0 rgba(0,181,241,0); } }
+    @keyframes cubiiPulse { 0% { box-shadow: 0 0 0 0 rgba(37,37,38,0.40); } 70% { box-shadow: 0 0 0 16px rgba(37,37,38,0); } 100% { box-shadow: 0 0 0 0 rgba(37,37,38,0); } }
     @keyframes cubiiPop { 0% { transform: scale(0.4); opacity: 0; } 60% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
     @keyframes cubiiFlow { 0% { left: -30%; } 100% { left: 100%; } }
     @keyframes cubiiDemoBar { 0% { width: 0%; } 100% { width: 100%; } }
@@ -35,8 +35,8 @@
 <!-- ===================== 0. ANNOUNCEMENT BAR ===================== -->
 <sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
   <div data-screen-label="Announcement bar" style="background: #CCF0FC; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 48px; position: relative;">
-    <span style="font-size: 13.5px; font-weight: 500; color: #0A0A0A; text-align: center;">{{ t.announce }} <a href="#dark-feature" style="font-weight: 700; text-decoration: underline; color: #0090E8;">{{ t.announceLink }}</a></span>
-    <button onClick="{{ closeAnnouncement }}" aria-label="Fechar" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; color: #0A0A0A; font-weight: 700; padding: 4px 8px;">✕</button>
+    <span style="font-size: 13.5px; font-weight: 500; color: #252526; text-align: center;">{{ t.announce }} <a href="#dark-feature" style="font-weight: 700; text-decoration: underline; color: #1A3F6F;">{{ t.announceLink }}</a></span>
+    <button onClick="{{ closeAnnouncement }}" aria-label="Fechar" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; color: #252526; font-weight: 700; padding: 4px 8px;">✕</button>
   </div>
 </sc-if>
 
@@ -51,28 +51,28 @@
     <!-- Nav -->
     <nav style="display: flex; flex-wrap: wrap; gap: 12px 22px; margin-right: auto; padding-left: 24px;">
       <div style="position: relative;">
-        <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
+        <button onClick="{{ toggleFeatMenu }}" style="display: flex; align-items: center; gap: 5px; background: none; border: none; padding: 0; cursor: pointer; font-family: 'Nunito Sans', sans-serif; font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFeatures }} <span class="navArrow" style="{{ featArrowStyle }}">▼</span></button>
         <sc-if value="{{ featMenuOpen }}" hint-placeholder-val="{{ false }}">
-          <div style="position: absolute; top: calc(100% + 12px); left: -8px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 230px; z-index: 60;">
-            <a href="Cubii Funcionalidades.dc.html" style="display: block; padding: 9px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 700; color: #0090E8;" style-hover="background: #EAF8FE; color: #0090E8;">{{ t.navFeaturesAll }} →</a>
+          <div style="position: absolute; top: calc(100% + 12px); left: -8px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(37,37,38,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 230px; z-index: 60;">
+            <a href="Cubii Funcionalidades.dc.html" style="display: block; padding: 9px 14px; border-radius: 10px; font-size: 13.5px; font-weight: 700; color: #1A3F6F;" style-hover="background: #F6F6F6; color: #1A3F6F;">{{ t.navFeaturesAll }} →</a>
           </div>
         </sc-if>
       </div>
       
-      <a href="Cubii Proprietarios.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navResidents }}</a>
-      <a href="Cubii Gestores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFM }}</a>
-      <a href="Cubii Prestadores.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navProviders }}</a>
-      <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
-      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #0A0A0A; white-space: nowrap; transition: color 0.22s ease;" data-base="#0A0A0A" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navAbout }}</a>
+      <a href="Cubii Proprietarios.dc.html" style="font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navResidents }}</a>
+      <a href="Cubii Gestores.dc.html" style="font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navFM }}</a>
+      <a href="Cubii Prestadores.dc.html" style="font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navProviders }}</a>
+      <a href="Cubii Precos.dc.html" style="font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navPricing }}</a>
+      <a href="Cubii Smart Cube.dc.html" style="font-size: 17px; font-weight: 700; color: #252526; white-space: nowrap; transition: color 0.22s ease;" data-base="#252526" onMouseEnter="{{ navHoverOn }}" onMouseLeave="{{ navHoverOff }}">{{ t.navAbout }}</a>
     </nav>
     <!-- Language switcher -->
     <div style="position: relative; flex-shrink: 0;">
-      <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Hanken Grotesk', sans-serif;" style-hover="border-color: #00B5F1;">
-        <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">{{ langFlag }} {{ langCode }}</span>
-        <span style="font-size: 9px; color: #6C8087;">▼</span>
+      <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Nunito Sans', sans-serif;" style-hover="border-color: #1A3F6F;">
+        <span style="font-size: 13px; font-weight: 700; color: #252526;">{{ langFlag }} {{ langCode }}</span>
+        <span style="font-size: 9px; color: #8C8C8D;">▼</span>
       </button>
       <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
-        <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(41,109,131,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
+        <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #CCF0FC; border-radius: 14px; box-shadow: 0 14px 36px rgba(37,37,38,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
           <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="5">
             <button onClick="{{ lo.onClick }}" style="{{ lo.style }}">
               <span>{{ lo.flag }} {{ lo.name }}</span>
@@ -82,30 +82,30 @@
         </div>
       </sc-if>
     </div>
-    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0); box-shadow: 0 4px 14px rgba(0,144,232,0.4);">{{ t.ctaDemo }}</a>
+    <a href="#lead-form" style="background: #252526; color: #FFFFFF; font-size: 14px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-block; white-space: nowrap; flex-shrink: 0; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #3A3A3C; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37,37,38,0.45);" style-active="transform: translateY(0); box-shadow: 0 4px 14px rgba(37,37,38,0.4);">{{ t.ctaDemo }}</a>
   </div>
 </header>
 
 <!-- ===================== 2. HERO ===================== -->
-<section data-screen-label="Hero" style="background: linear-gradient(180deg, #FFFFFF 0%, #EAF8FE 100%); padding: 72px 32px 88px;">
+<section data-screen-label="Hero" style="background: linear-gradient(180deg, #FFFFFF 0%, #F6F6F6 100%); padding: 72px 32px 88px;">
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center;">
     <!-- Left column -->
     <div style="display: flex; flex-direction: column; gap: 24px;">
-      <h1 style="margin: 0; font-size: 54px; font-weight: 900; letter-spacing: -2px; line-height: 1.05; color: #0A0A0A;">{{ heroH1a }} <span style="color: #00B5F1;">{{ heroH1b }}</span></h1>
-      <p style="margin: 0; font-size: 18px; font-weight: 500; line-height: 1.6; color: #0A0A0A; max-width: 520px;">{{ heroSubGen }}</p>
+      <h1 style="margin: 0; font-size: 54px; font-weight: 900; letter-spacing: -2px; line-height: 1.05; color: #252526;">{{ heroH1a }} <span style="color: #1A3F6F;">{{ heroH1b }}</span></h1>
+      <p style="margin: 0; font-size: 18px; font-weight: 500; line-height: 1.6; color: #252526; max-width: 520px;">{{ heroSubGen }}</p>
       <div style="display: flex; align-items: center; gap: 28px; margin-top: 12px;">
         <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 128px; height: 128px; object-fit: contain; display: block; flex-shrink: 0;">
         <div style="display: flex; flex-direction: column; gap: 12px;">
-          <span style="font-size: 13px; font-weight: 600; color: #6C8087;">{{ t.orApp }}</span>
+          <span style="font-size: 13px; font-weight: 600; color: #8C8C8D;">{{ t.orApp }}</span>
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="#" style="display: flex; align-items: center; gap: 11px; background: #0A0A0A; color: #FFFFFF; border-radius: 13px; padding: 9px 18px 9px 14px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="transform: translateY(-4px); box-shadow: 0 12px 26px rgba(0,181,241,0.35); color: #FFFFFF;">
+            <a href="#" style="display: flex; align-items: center; gap: 11px; background: #252526; color: #FFFFFF; border-radius: 13px; padding: 9px 18px 9px 14px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="transform: translateY(-4px); box-shadow: 0 12px 26px rgba(37,37,38,0.35); color: #FFFFFF;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M16.5 1.8c.1 1-.3 2-.9 2.8-.7.8-1.7 1.4-2.7 1.3-.1-1 .4-2 .9-2.7.7-.8 1.8-1.3 2.7-1.4zM19.6 17c-.5 1.1-.7 1.6-1.3 2.6-.9 1.4-2.1 3.1-3.6 3.1-1.3 0-1.7-.9-3.5-.9s-2.2.8-3.5.9c-1.5 0-2.6-1.5-3.5-2.9C1.2 16.5.9 12 2.5 9.6c1-1.5 2.6-2.4 4.1-2.4 1.5 0 2.5.9 3.7.9 1.2 0 1.9-.9 3.7-.9 1.3 0 2.7.7 3.7 2-3.2 1.8-2.7 6.4.2 7.8z"></path></svg>
               <span style="display: flex; flex-direction: column; line-height: 1.05;">
                 <span style="font-size: 10px; font-weight: 500; opacity: 0.85;">{{ t.appStoreTop }}</span>
                 <span style="font-size: 15px; font-weight: 700;">{{ t.appStoreName }}</span>
               </span>
             </a>
-            <a href="#" style="display: flex; align-items: center; gap: 11px; background: #0A0A0A; color: #FFFFFF; border-radius: 13px; padding: 9px 18px 9px 14px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="transform: translateY(-4px); box-shadow: 0 12px 26px rgba(0,181,241,0.35); color: #FFFFFF;">
+            <a href="#" style="display: flex; align-items: center; gap: 11px; background: #252526; color: #FFFFFF; border-radius: 13px; padding: 9px 18px 9px 14px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="transform: translateY(-4px); box-shadow: 0 12px 26px rgba(37,37,38,0.35); color: #FFFFFF;">
               <svg width="20" height="22" viewBox="0 0 24 26" aria-hidden="true"><path d="M2 1.3 13.4 13 2 24.7c-.4-.3-.6-.8-.6-1.4V2.7c0-.6.2-1.1.6-1.4z" fill="#4DCBF5"></path><path d="M17.8 9.2 14.9 13l2.9 3.8 3.7-2.1c.9-.5.9-1.9 0-2.4l-3.7-2.1z" fill="#00B5F1"></path><path d="M2 1.3c.3-.2.8-.2 1.3.1l14.5 7.8-2.9 3.8L2 1.3z" fill="#CCF0FC"></path><path d="M2 24.7 14.9 13l2.9 3.8L3.3 24.6c-.5.3-1 .3-1.3.1z" fill="#0090E8"></path></svg>
               <span style="display: flex; flex-direction: column; line-height: 1.05;">
                 <span style="font-size: 10px; font-weight: 500; opacity: 0.85;">{{ t.googlePlayTop }}</span>
@@ -114,29 +114,29 @@
             </a>
           </div>
           <div style="display: flex; align-items: center; gap: 7px;">
-            <span style="color: #00B5F1; font-size: 13px; letter-spacing: 1px;">★★★★★</span>
-            <span style="font-size: 12px; font-weight: 700; color: #0A0A0A;">4,9</span>
-            <span style="font-size: 12px; font-weight: 500; color: #6C8087;">· {{ t.appRating }}</span>
+            <span style="color: #1A3F6F; font-size: 13px; letter-spacing: 1px;">★★★★★</span>
+            <span style="font-size: 12px; font-weight: 700; color: #252526;">4,9</span>
+            <span style="font-size: 12px; font-weight: 500; color: #8C8C8D;">· {{ t.appRating }}</span>
           </div>
         </div>
       </div>
     </div>
     <!-- Right column: LeadForm -->
-    <div id="lead-form" style="background: #FFFFFF; border-radius: 20px; box-shadow: 0 0 0 1px rgba(41,109,131,0.06), 0 34px 80px rgba(41,109,131,0.34); padding: 36px; display: flex; flex-direction: column; gap: 16px;">
+    <div id="lead-form" style="background: #FFFFFF; border-radius: 20px; box-shadow: 0 0 0 1px rgba(37,37,38,0.06), 0 34px 80px rgba(37,37,38,0.34); padding: 36px; display: flex; flex-direction: column; gap: 16px;">
       <sc-if value="{{ formSuccess }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 32px 0; text-align: center;">
-          <div style="width: 56px; height: 56px; border-radius: 999px; background: #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #0090E8; font-weight: 900;">✓</div>
+          <div style="width: 56px; height: 56px; border-radius: 999px; background: #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #1A3F6F; font-weight: 900;">✓</div>
           <h3 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px;">{{ t.successTitle }}</h3>
-          <p style="margin: 0; font-size: 14px; font-weight: 500; color: #6C8087; line-height: 1.5;">{{ t.successBody }}</p>
+          <p style="margin: 0; font-size: 14px; font-weight: 500; color: #8C8C8D; line-height: 1.5;">{{ t.successBody }}</p>
         </div>
       </sc-if>
       <sc-if value="{{ formNotSuccess }}" hint-placeholder-val="{{ true }}">
         <div style="display: flex; flex-direction: column; gap: 16px;">
-          <h3 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #0A0A0A;">{{ t.formTitle }}</h3>
-          <input value="{{ fName }}" onChange="{{ onName }}" placeholder="{{ t.phName }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #00B5F1;">
-          <input value="{{ fEmail }}" onChange="{{ onEmail }}" placeholder="{{ t.phEmail }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #00B5F1;">
-          <input value="{{ fCompany }}" onChange="{{ onCompany }}" placeholder="{{ t.phCompany }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #00B5F1;">
-          <select value="{{ fSize }}" onChange="{{ onSize }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 500; outline: none; width: 100%; background: #FFFFFF; color: #0A0A0A; appearance: auto;">
+          <h3 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #252526;">{{ t.formTitle }}</h3>
+          <input value="{{ fName }}" onChange="{{ onName }}" placeholder="{{ t.phName }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Nunito Sans', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+          <input value="{{ fEmail }}" onChange="{{ onEmail }}" placeholder="{{ t.phEmail }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Nunito Sans', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+          <input value="{{ fCompany }}" onChange="{{ onCompany }}" placeholder="{{ t.phCompany }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Nunito Sans', sans-serif; font-weight: 500; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+          <select value="{{ fSize }}" onChange="{{ onSize }}" style="border: 1.5px solid #CCF0FC; border-radius: 12px; padding: 13px 16px; font-size: 14px; font-family: 'Nunito Sans', sans-serif; font-weight: 500; outline: none; width: 100%; background: #FFFFFF; color: #252526; appearance: auto;">
             <option value="">{{ t.phSize }}</option>
             <option value="1-10">1–10</option>
             <option value="11-50">11–50</option>
@@ -144,9 +144,9 @@
             <option value="200+">200+</option>
           </select>
           <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
-            <span style="font-size: 13px; font-weight: 600; color: #0A0A0A;">{{ formError }}</span>
+            <span style="font-size: 13px; font-weight: 600; color: #252526;">{{ formError }}</span>
           </sc-if>
-          <button onClick="{{ onSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; font-weight: 700; padding: 15px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ submitLabel }}</button>
+          <button onClick="{{ onSubmit }}" style="background: #252526; color: #FFFFFF; border: none; font-family: 'Nunito Sans', sans-serif; font-size: 15px; font-weight: 700; padding: 15px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ submitLabel }}</button>
           <span style="font-size: 12.5px; font-weight: 500; color: #878888; text-align: center;">{{ t.formSupport }}</span>
         </div>
       </sc-if>
@@ -155,9 +155,9 @@
 </section>
 
 <!-- ===================== 3. LOGO WALL ===================== -->
-<section data-screen-label="Logo wall" style="padding: 48px 32px; background: #F1F3F4;">
+<section data-screen-label="Logo wall" style="padding: 48px 32px; background: #F6F6F6;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 26px;">
-    <span style="font-size: 13px; font-weight: 600; color: #878888; letter-spacing: 1px; text-transform: uppercase;">{{ t.logoCaption }}</span>
+    <span style="font-size: 13px; font-weight: 600; color: #878888; letter-spacing: 0.18em; text-transform: uppercase;">{{ t.logoCaption }}</span>
     <!-- PLACEHOLDER: substituir por logos reais de clientes quando disponíveis -->
     <div style="display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;">
       <sc-for list="{{ logoSlots }}" as="logo" hint-placeholder-count="6">
@@ -175,7 +175,7 @@
     <!-- Conteúdo do passo (fluxo linear simples) -->
     <div style="position: relative; z-index: 4; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; pointer-events: none;">
       <sc-if value="{{ storyTextCentered }}" hint-placeholder-val="{{ true }}">
-        <h2 style="margin: 0; font-size: 84px; font-weight: 800; letter-spacing: -3px; line-height: 1.02; color: #FFFFFF; text-shadow: 0 2px 30px rgba(0,0,0,0.55); max-width: 1080px;">{{ curStory.title }} <span style="color: #00B5F1;">{{ curStory.hi }}</span></h2>
+        <h2 style="margin: 0; font-size: 84px; font-weight: 800; letter-spacing: -3px; line-height: 1.02; color: #FFFFFF; text-shadow: 0 2px 30px rgba(0,0,0,0.55); max-width: 1080px;">{{ curStory.title }} <span style="color: #1A3F6F;">{{ curStory.hi }}</span></h2>
       </sc-if>
       <sc-if value="{{ storyShowCard }}" hint-placeholder-val="{{ false }}">
         <div style="display: flex; flex-direction: column; align-items: center; gap: 80px; width: 100%;">
@@ -204,28 +204,28 @@
     <!-- Barra de progresso + Pular -->
     <div style="position: absolute; left: 0; right: 0; bottom: 34px; z-index: 5; display: flex; align-items: center; gap: 18px; max-width: 1120px; margin: 0 auto; padding: 0 40px;">
       <div style="flex: 1; height: 4px; background: rgba(255,255,255,0.16); border-radius: 999px; overflow: hidden;">
-        <div style="height: 100%; width: {{ storyProgressPct }}; background: linear-gradient(90deg, #0090E8, #00B5F1); border-radius: 999px; transition: width 0.4s cubic-bezier(0.22,1,0.36,1);"></div>
+        <div style="height: 100%; width: {{ storyProgressPct }}; background: linear-gradient(135deg, #B4E6FF 0%, #85CCF0 100%); border-radius: 999px; transition: width 0.4s cubic-bezier(0.22,1,0.36,1);"></div>
       </div>
-      <button onClick="{{ skipStory }}" style="background: rgba(20,23,26,0.9); border: 1.5px solid #2A2E33; color: #FFFFFF; font-family: 'Hanken Grotesk', sans-serif; font-size: 13px; font-weight: 700; padding: 9px 22px; border-radius: 999px; cursor: pointer;" style-hover="border-color: #00B5F1; color: #4DCBF5;">{{ skipLabel }}</button>
+      <button onClick="{{ skipStory }}" style="background: rgba(20,23,26,0.9); border: 1.5px solid #2A2E33; color: #FFFFFF; font-family: 'Nunito Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 9px 22px; border-radius: 999px; cursor: pointer;" style-hover="border-color: #1A3F6F; color: #4DCBF5;">{{ skipLabel }}</button>
     </div>
   </div>
 </section>
 
 
 <!-- ===================== 4. OVERVIEW (general, audience-first) ===================== -->
-<section id="features" data-screen-label="Overview" style="padding: 84px 32px; background: #F1F3F4;">
+<section id="features" data-screen-label="Overview" style="padding: 84px 32px; background: #F6F6F6;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; max-width: 700px; margin: 0 auto;">
-      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ ovH2 }}</h2>
-      <p style="margin: 0; font-size: 16px; font-weight: 500; color: #0A0A0A; line-height: 1.6;">{{ ovSub }}</p>
+      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #252526;">{{ ovH2 }}</h2>
+      <p style="margin: 0; font-size: 16px; font-weight: 500; color: #252526; line-height: 1.6;">{{ ovSub }}</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       <sc-for list="{{ overviewBlocks }}" as="b" hint-placeholder-count="3">
-        <a href="{{ b.href }}" onMouseEnter="{{ b.onEnter }}" onMouseLeave="{{ b.onLeave }}" style="text-decoration: none; background: #F7FBFD; border: 1px solid #E6EDF0; border-radius: 18px; padding: 32px 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; box-shadow: 0 10px 30px rgba(41,109,131,0.10); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(41,109,131,0.20);">
+        <a href="{{ b.href }}" onMouseEnter="{{ b.onEnter }}" onMouseLeave="{{ b.onLeave }}" style="text-decoration: none; background: #F6F6F6; border: 1px solid #E6EDF0; border-radius: 18px; padding: 32px 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; box-shadow: 0 10px 30px rgba(37,37,38,0.10); transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 26px 60px rgba(37,37,38,0.20);">
           <div data-ov-ic style="{{ b.iconStyle }}">{{ b.iconEl }}</div>
           <span data-ov-who style="{{ b.whoStyle }}">{{ b.who }}</span>
-          <p style="margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #0A0A0A;">{{ b.text }}</p>
-          <span style="font-size: 14px; font-weight: 700; color: #0090E8; margin-top: auto;">{{ b.link }}</span>
+          <p style="margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.5; color: #252526;">{{ b.text }}</p>
+          <span style="font-size: 14px; font-weight: 700; color: #1A3F6F; margin-top: auto;">{{ b.link }}</span>
         </a>
       </sc-for>
     </div>
@@ -237,7 +237,7 @@
   <canvas ref="{{ gridRefA }}" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
   <div style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; align-items: flex-start;">
     <div style="{{ darkTermStyle }}">
-      <span style="font-family: 'Courier New', monospace; font-size: 26px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.5px;">{{ t.darkH2a }} <span style="color: #00B5F1;">{{ t.darkH2b }}</span> {{ t.darkH2c }}</span>
+      <span style="font-family: 'Courier New', monospace; font-size: 26px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.5px;">{{ t.darkH2a }} <span style="color: #1A3F6F;">{{ t.darkH2b }}</span> {{ t.darkH2c }}</span>
       <span style="font-family: 'Courier New', monospace; font-size: 20px; font-weight: 700; color: #878888;">&gt; <span style="color: #F0A020;">{{ darkTyped }}</span><span style="{{ darkCaretStyle }}"></span></span>
     </div>
     <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -265,17 +265,17 @@
 
 <!-- ===================== 11. TESTIMONIALS (carrossel, modelo foto + card) ===================== -->
 <!-- PLACEHOLDER: substituir por depoimentos reais de clientes — não usar em produção -->
-<section data-screen-label="Depoimentos" style="padding: 80px 32px 64px; background: #EAF8FE; overflow: hidden;">
+<section data-screen-label="Depoimentos" style="padding: 80px 32px 64px; background: #F6F6F6; overflow: hidden;">
   <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; overflow: visible;">
     <div style="display: flex; flex-direction: column; gap: 12px;">
-      <h2 style="margin: 0; font-size: 46px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.05; color: #0A0A0A;">{{ tmTitle }}</h2>
-      <p style="margin: 0; font-size: 17px; font-weight: 500; color: #0A0A0A;">{{ tmSub }}</p>
+      <h2 style="margin: 0; font-size: 46px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.05; color: #252526;">{{ tmTitle }}</h2>
+      <p style="margin: 0; font-size: 17px; font-weight: 500; color: #252526;">{{ tmSub }}</p>
     </div>
     <div style="background: #FFFFFF; border-radius: 18px; padding: 30px 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
       <sc-for list="{{ tmStats }}" as="st" hint-placeholder-count="3">
         <div style="display: flex; flex-direction: column; gap: 6px;">
-          <span style="font-size: 46px; font-weight: 900; letter-spacing: -2px; color: #0090E8; line-height: 1; font-family: 'Bricolage Grotesque', sans-serif;">{{ st.big }}</span>
-          <span style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.4;">{{ st.label }}</span>
+          <span style="font-size: 46px; font-weight: 900; letter-spacing: -2px; color: #1A3F6F; line-height: 1; font-family: 'Nunito Sans', sans-serif;">{{ st.big }}</span>
+          <span style="font-size: 14px; font-weight: 600; color: #252526; line-height: 1.4;">{{ st.label }}</span>
         </div>
       </sc-for>
     </div>
@@ -286,11 +286,11 @@
           <div style="{{ tm.cardStyle }}">
             <div style="{{ tm.photoStyle }}"><div style="{{ tm.photoImgStyle }}"></div></div>
             <div style="{{ tm.bodyStyle }}">
-              <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: #FFFFFF; align-self: flex-start;">{{ tm.company }}</span>
+              <span style="font-family: 'Nunito Sans', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 0.5px; color: #FFFFFF; align-self: flex-start;">{{ tm.company }}</span>
               <span style="font-size: 72px; font-weight: 900; line-height: 0.4; margin-top: 14px;">“</span>
               <p style="margin: 0; font-size: 24px; font-weight: 600; line-height: 1.5; letter-spacing: -0.3px; max-width: 460px;">{{ tm.quote }}</p>
               <div style="display: flex; flex-direction: column; gap: 4px; margin-top: auto;">
-                <span style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">{{ tm.name }}</span>
+                <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;">{{ tm.name }}</span>
                 <span style="font-size: 13.5px; font-weight: 500; opacity: 0.85;">{{ tm.role }}</span>
               </div>
             </div>
@@ -300,10 +300,10 @@
     </div>
     <!-- Setas de navegação (pretas → azul no hover, seta igual ao print) -->
     <div style="display: flex; gap: 14px; justify-content: flex-end;">
-      <button onClick="{{ prevT }}" aria-label="Anterior" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #0A0A0A; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
+      <button onClick="{{ prevT }}" aria-label="Anterior" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #252526; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="12" x2="4" y2="12"></line><polyline points="10 6 4 12 10 18"></polyline></svg>
       </button>
-      <button onClick="{{ nextT }}" aria-label="Seguinte" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #0A0A0A; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
+      <button onClick="{{ nextT }}" aria-label="Seguinte" style="width: 62px; height: 62px; border-radius: 999px; border: none; background: #252526; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s ease;" style-hover="background: #00B5F1;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><polyline points="14 6 20 12 14 18"></polyline></svg>
       </button>
     </div>
@@ -311,29 +311,29 @@
 </section>
 
 <!-- ===================== 13. FAQ ===================== -->
-<section id="faq" data-screen-label="FAQ" style="position: relative; overflow: hidden; padding: 88px 32px; background: #F1F3F4;">
+<section id="faq" data-screen-label="FAQ" style="position: relative; overflow: hidden; padding: 88px 32px; background: #F6F6F6;">
   <!-- Balões de fala decorativos (um de cada lado) -->
   <svg width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true" style="position: absolute; left: 5%; top: 50%; pointer-events: none;">
-    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#0A0A0A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#252526" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
   </svg>
   <svg width="150" height="120" viewBox="0 0 150 120" fill="none" aria-hidden="true" style="position: absolute; right: 5%; top: 12%; pointer-events: none; transform: scaleX(-1);">
-    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#0A0A0A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M75 12 C120 12 142 33 142 55 C142 77 118 95 80 95 L62 119 L58 93 C28 87 8 68 8 48 C8 27 32 12 75 12 Z" stroke="#252526" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
   </svg>
   <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
     <div style="display: flex; align-items: center; gap: 20px;">
       <img src="assets/cubii-mascot.png" alt="Mascote Cubii" style="width: 92px; height: 92px; object-fit: contain; display: block; flex-shrink: 0;">
-      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #0A0A0A;">{{ t.faqH2 }}</h2>
+      <h2 style="margin: 0; font-size: 38px; font-weight: 900; letter-spacing: -1.2px; color: #252526;">{{ t.faqH2 }}</h2>
     </div>
     <!-- Ponto de integração futura: chat com RAG responde perguntas abertas aqui -->
     <div style="display: flex; flex-direction: column; gap: 12px;">
       <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="6">
         <div style="border: 1.5px solid #CCF0FC; border-radius: 14px; overflow: hidden;">
-          <button onClick="{{ q.onToggle }}" style="width: 100%; background: #FFFFFF; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; font-family: 'Hanken Grotesk', sans-serif; text-align: left;">
-            <span style="font-size: 15px; font-weight: 700; color: #0A0A0A;">{{ q.question }}</span>
-            <span style="font-size: 18px; font-weight: 700; color: #00B5F1;">{{ q.chevron }}</span>
+          <button onClick="{{ q.onToggle }}" style="width: 100%; background: #FFFFFF; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; font-family: 'Nunito Sans', sans-serif; text-align: left;">
+            <span style="font-size: 15px; font-weight: 700; color: #252526;">{{ q.question }}</span>
+            <span style="font-size: 18px; font-weight: 700; color: #1A3F6F;">{{ q.chevron }}</span>
           </button>
           <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
-            <p style="margin: 0; padding: 0 22px 20px; font-size: 14px; font-weight: 500; line-height: 1.65; color: #0A0A0A;">{{ q.answer }}</p>
+            <p style="margin: 0; padding: 0 22px 20px; font-size: 14px; font-weight: 500; line-height: 1.65; color: #252526;">{{ q.answer }}</p>
           </sc-if>
         </div>
       </sc-for>
@@ -342,19 +342,19 @@
 </section>
 
 <!-- ===================== 14. CTA FINAL (dark, slim) ===================== -->
-<section data-screen-label="CTA final" style="position: relative; overflow: hidden; padding: 60px 32px; background: #0A0A0A;">
+<section data-screen-label="CTA final" style="position: relative; overflow: hidden; padding: 60px 32px; background: #252526;">
   <div style="position: absolute; top: -120px; left: -6%; width: 340px; height: 340px; border-radius: 999px; background: rgba(255,255,255,0.05); filter: blur(110px); z-index: 0; pointer-events: none;"></div>
   <div style="position: absolute; bottom: -140px; right: -6%; width: 320px; height: 320px; border-radius: 999px; background: rgba(255,255,255,0.035); filter: blur(110px); z-index: 0; pointer-events: none;"></div>
   <div style="position: relative; z-index: 1; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
-    <h2 style="margin: 0; font-size: 42px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.08; color: #FFFFFF;">{{ t.ctaH2a }} <span style="color: #00B5F1;">{{ t.ctaH2b }}</span></h2>
+    <h2 style="margin: 0; font-size: 42px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.08; color: #FFFFFF;">{{ t.ctaH2a }} <span style="color: #1A3F6F;">{{ t.ctaH2b }}</span></h2>
     <p style="margin: 0; font-size: 17px; font-weight: 800; color: #FFFFFF; max-width: 480px; line-height: 1.6;">{{ t.ctaSub }}</p>
-    <a href="#lead-form" style="background: #00B5F1; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 16px 40px; border-radius: 999px; display: inline-block; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #0090E8; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,144,232,0.45);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
+    <a href="#lead-form" style="background: #FFFFFF; color: #252526; font-size: 16px; font-weight: 700; padding: 16px 40px; border-radius: 999px; display: inline-block; transition: background 0.25s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease;" style-hover="background: #F6F6F6; color: #252526; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37,37,38,0.45);" style-active="transform: translateY(0);">{{ t.ctaDemo }}</a>
 
   </div>
 </section>
 
 <!-- ===================== 15. FOOTER ===================== -->
-<footer data-screen-label="Footer" style="background: #0A0A0A; color: #FFFFFF; padding: 76px 32px 40px;">
+<footer data-screen-label="Footer" style="background: #252526; color: #FFFFFF; padding: 76px 32px 40px;">
   <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 52px;">
     <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.35fr; gap: 44px;">
       <!-- Newsletter -->
@@ -364,48 +364,48 @@
         </a>
         <p style="margin: 0; font-size: 15.5px; font-weight: 500; line-height: 1.5; color: #C6D2D7;">{{ fx.newsTitle }}</p>
         <div data-news-row style="display: flex; background: #17191C; border: 1.5px solid #2A2E33; border-radius: 12px; overflow: hidden;">
-          <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: #FFFFFF;">
-          <button onClick="{{ newsSubmit }}" style="background: #00B5F1; color: #FFFFFF; border: none; font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
+          <input type="email" placeholder="{{ fx.emailPh }}" style="flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 16px; font-family: 'Nunito Sans', sans-serif; font-size: 14px; color: #FFFFFF;">
+          <button onClick="{{ newsSubmit }}" style="background: #252526; color: #FFFFFF; border: none; font-family: 'Nunito Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 0 24px; cursor: pointer; transition: background 0.25s ease;" style-hover="background: #0090E8;">{{ fx.send }}</button>
         </div>
-        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #0A0A0A; border-radius: 12px; padding: 13px 16px;">
+        <div data-news-done style="display: none; align-items: center; gap: 8px; background: #13212A; border: 1.5px solid #252526; border-radius: 12px; padding: 13px 16px;">
           <span style="color: #4DCBF5; font-weight: 900;">✓</span><span style="font-size: 14px; font-weight: 600; color: #CCF0FC;">{{ fx.thanks }}</span>
         </div>
-        <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
+        <span style="font-size: 12.5px; font-weight: 500; color: #8C8C8D;">{{ fx.consent }} <a href="#" style="color: #4DCBF5; text-decoration: underline;">{{ fx.privacy }}</a></span>
       </div>
       <!-- Produto -->
       <div style="display: flex; flex-direction: column; gap: 14px;">
-        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footProduct }}</span>
-        <a href="Cubii Funcionalidades.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navFeaturesAll }}</a>
-        <a href="Cubii Marketplace.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">Marketplace</a>
-        <a href="Cubii Precos.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ t.navPricing }}</a>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF;">{{ t.footProduct }}</span>
+        <a href="Cubii Funcionalidades.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ t.navFeaturesAll }}</a>
+        <a href="Cubii Marketplace.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">Marketplace</a>
+        <a href="Cubii Precos.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ t.navPricing }}</a>
       </div>
       <!-- Empresa -->
       <div style="display: flex; flex-direction: column; gap: 14px;">
-        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ t.footCompany }}</span>
-        <a href="Cubii Smart Cube.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.smartCube }}</a>
-        <a href="mailto:hello@cubii.lu" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.contact }}</a>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF;">{{ t.footCompany }}</span>
+        <a href="Cubii Smart Cube.dc.html" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ fx.smartCube }}</a>
+        <a href="mailto:hello@cubii.lu" style="font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ fx.contact }}</a>
       </div>
       <!-- Redes -->
       <div style="display: flex; flex-direction: column; gap: 14px;">
-        <span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFFFFF;">{{ fx.networks }}</span>
-        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>Instagram</a>
-        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"></path></svg>LinkedIn</a>
-        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.46-5.33a2.78 2.78 0 0 0-1.95-1.96C18.86 4.25 12 4.25 12 4.25s-6.86 0-8.59.46A2.78 2.78 0 0 0 1.46 6.67C1 8.4 1 12 1 12s0 3.6.46 5.33a2.78 2.78 0 0 0 1.95 1.96c1.73.46 8.59.46 8.59.46s6.86 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5z"></path></svg>YouTube</a>
+        <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF;">{{ fx.networks }}</span>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4.5"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>Instagram</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"></path></svg>LinkedIn</a>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.46-5.33a2.78 2.78 0 0 0-1.95-1.96C18.86 4.25 12 4.25 12 4.25s-6.86 0-8.59.46A2.78 2.78 0 0 0 1.46 6.67C1 8.4 1 12 1 12s0 3.6.46 5.33a2.78 2.78 0 0 0 1.95 1.96c1.73.46 8.59.46 8.59.46s6.86 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96C23 15.6 23 12 23 12zM9.75 15.5v-7l6 3.5z"></path></svg>YouTube</a>
       </div>
       <!-- Fale com um especialista -->
       <div style="background: #131417; border: 1.5px solid #24282D; border-radius: 18px; padding: 26px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
-        <div style="width: 48px; height: 48px; border-radius: 999px; background: rgba(0,181,241,0.14); display: flex; align-items: center; justify-content: center; font-size: 22px;">🎧</div>
+        <div style="width: 48px; height: 48px; border-radius: 999px; background: rgba(37,37,38,0.14); display: flex; align-items: center; justify-content: center; font-size: 22px;"></div>
         <span style="font-size: 16px; font-weight: 700; color: #FFFFFF;">{{ fx.expertTitle }}</span>
         <span style="font-size: 13px; font-weight: 500; line-height: 1.5; color: #878888;">{{ fx.expertBody }}</span>
-        <a href="mailto:hello@cubii.lu" style="margin-top: 6px; background: #00B5F1; color: #FFFFFF; font-size: 13.5px; font-weight: 700; padding: 10px 22px; border-radius: 999px;" style-hover="background: #0090E8; color: #FFFFFF;">{{ fx.expertBtn }}</a>
+        <a href="mailto:hello@cubii.lu" style="margin-top: 6px; background: #252526; color: #FFFFFF; font-size: 13.5px; font-weight: 700; padding: 10px 22px; border-radius: 999px;" style-hover="background: #3A3A3C; color: #FFFFFF;">{{ fx.expertBtn }}</a>
       </div>
     </div>
     <div style="border-top: 1px solid #24282D; padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-      <span style="font-size: 12.5px; font-weight: 500; color: #6C8087;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
+      <span style="font-size: 12.5px; font-weight: 500; color: #8C8C8D;">© 2026 Smart Cube S.A. — Cubii. {{ t.footRights }}</span>
       <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #00B5F1;">⚙ Admin</a>
-        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.terms }}</a>
-        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #00B5F1;">{{ fx.legalPrivacy }}</a>
+        <a href="Cubii Admin.dc.html" style="font-size: 12.5px; font-weight: 700; color: #4DCBF5;" style-hover="color: #1A3F6F;">⚙ Admin</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ fx.terms }}</a>
+        <a href="#" style="font-size: 12.5px; font-weight: 500; color: #A9B6BB;" style-hover="color: #1A3F6F;">{{ fx.legalPrivacy }}</a>
       </div>
     </div>
   </div>
@@ -413,7 +413,7 @@
 
 <!-- ===================== ChatWidget (fallback: link direto; futuro: chat com RAG) ===================== -->
 <sc-if value="{{ showChat }}" hint-placeholder-val="{{ true }}">
-  <a href="mailto:hello@cubii.lu" aria-label="Falar com a Cubii" style="position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 58px; height: 58px; border-radius: 999px; background: #00B5F1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 28px rgba(0,144,232,0.4);" style-hover="background: #0090E8; color: #FFFFFF;">💬</a>
+  <a href="mailto:hello@cubii.lu" aria-label="Falar com a Cubii" style="position: fixed; bottom: 24px; right: 24px; z-index: 60; width: 58px; height: 58px; border-radius: 999px; background: #252526; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 10px 28px rgba(37,37,38,0.4);" style-hover="background: #3A3A3C; color: #FFFFFF;">💬</a>
 </sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;pt&quot;, &quot;options&quot;: [&quot;pt&quot;, &quot;en&quot;, &quot;fr&quot;, &quot;lb&quot;, &quot;de&quot;], &quot;tsType&quot;: &quot;'pt' | 'en' | 'fr' | 'lb' | 'de'&quot;, &quot;section&quot;: &quot;Idioma&quot;}, &quot;showAnnouncement&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;showChatWidget&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}}">
@@ -737,12 +737,12 @@ class Component extends DCLogic {
       // PLACEHOLDER: substituir por depoimentos reais de clientes
       testimonials: [
         { bg: '#00B5F1', quote: '[Depoimento placeholder — gestor de portfólio sobre redução de tempo por incidente.]', name: 'Nome do Cliente', role: 'Gestora de propriedades' },
-        { bg: '#0A0A0A', quote: '[Depoimento placeholder — síndico sobre transparência com condóminos.]', name: 'Nome do Cliente', role: 'Síndico profissional' },
+        { bg: '#252526', quote: '[Depoimento placeholder — síndico sobre transparência com condóminos.]', name: 'Nome do Cliente', role: 'Síndico profissional' },
         { bg: '#0090E8', quote: '[Depoimento placeholder — prestador sobre novos clientes via marketplace.]', name: 'Nome do Cliente', role: 'Empresa de manutenção' },
-        { bg: '#0A0A0A', quote: '[Depoimento placeholder — administradora sobre escalar o portfólio sem contratar mais equipa.]', name: 'Nome do Cliente', role: 'Administradora de condomínios' },
+        { bg: '#252526', quote: '[Depoimento placeholder — administradora sobre escalar o portfólio sem contratar mais equipa.]', name: 'Nome do Cliente', role: 'Administradora de condomínios' },
         { bg: '#00AAEE', quote: '[Depoimento placeholder — residente sobre acompanhar o estado da avaria em tempo real.]', name: 'Nome do Cliente', role: 'Residente' },
-        { bg: '#0A0A0A', quote: '[Depoimento placeholder — sindicato sobre relatórios prontos para a assembleia.]', name: 'Nome do Cliente', role: 'Presidente de sindicato' },
-        { bg: '#6C8087', quote: '[Depoimento placeholder — gestor de energia sobre alarmes de consumo via Enectiva/Leneda.]', name: 'Nome do Cliente', role: 'Gestor de energia' },
+        { bg: '#252526', quote: '[Depoimento placeholder — sindicato sobre relatórios prontos para a assembleia.]', name: 'Nome do Cliente', role: 'Presidente de sindicato' },
+        { bg: '#8C8C8D', quote: '[Depoimento placeholder — gestor de energia sobre alarmes de consumo via Enectiva/Leneda.]', name: 'Nome do Cliente', role: 'Gestor de energia' },
         { bg: '#0090E8', quote: '[Depoimento placeholder — canalizador sobre agenda cheia sem esforço comercial.]', name: 'Nome do Cliente', role: 'Prestador de serviços' },
       ],
       faqH2: 'Perguntas frequentes',
@@ -827,12 +827,12 @@ class Component extends DCLogic {
       testimonialsH2: 'Who manages with Cubii.', tReadAll: 'Read all stories →', tReadStory: 'Read story →', tPhotoLabel: '[ customer photo ]', tLogoLabel: '[ customer logo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Placeholder testimonial — portfolio manager on time saved per incident.]', name: 'Client Name', role: 'Property manager' },
-        { bg: '#0A0A0A', quote: '[Placeholder testimonial — syndic on transparency with co-owners.]', name: 'Client Name', role: 'Professional syndic' },
+        { bg: '#252526', quote: '[Placeholder testimonial — syndic on transparency with co-owners.]', name: 'Client Name', role: 'Professional syndic' },
         { bg: '#0090E8', quote: '[Placeholder testimonial — provider on new clients via the marketplace.]', name: 'Client Name', role: 'Maintenance company' },
-        { bg: '#0A0A0A', quote: '[Placeholder testimonial — administrator on scaling the portfolio without hiring more staff.]', name: 'Client Name', role: 'Building administrator' },
+        { bg: '#252526', quote: '[Placeholder testimonial — administrator on scaling the portfolio without hiring more staff.]', name: 'Client Name', role: 'Building administrator' },
         { bg: '#00AAEE', quote: '[Placeholder testimonial — resident on tracking the fault status in real time.]', name: 'Client Name', role: 'Resident' },
-        { bg: '#0A0A0A', quote: '[Placeholder testimonial — syndicate on assembly-ready reports.]', name: 'Client Name', role: 'Syndicate president' },
-        { bg: '#6C8087', quote: '[Placeholder testimonial — energy manager on consumption alarms via Enectiva/Leneda.]', name: 'Client Name', role: 'Energy manager' },
+        { bg: '#252526', quote: '[Placeholder testimonial — syndicate on assembly-ready reports.]', name: 'Client Name', role: 'Syndicate president' },
+        { bg: '#8C8C8D', quote: '[Placeholder testimonial — energy manager on consumption alarms via Enectiva/Leneda.]', name: 'Client Name', role: 'Energy manager' },
         { bg: '#0090E8', quote: '[Placeholder testimonial — plumber on a full schedule with zero sales effort.]', name: 'Client Name', role: 'Service provider' },
       ],
       faqH2: 'Frequently asked questions',
@@ -917,12 +917,12 @@ class Component extends DCLogic {
       testimonialsH2: 'Ils gèrent avec Cubii.', tReadAll: 'Lire toutes les histoires →', tReadStory: 'Lire l\u2019histoire →', tPhotoLabel: '[ photo du client ]', tLogoLabel: '[ logo du client ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Témoignage placeholder — gestionnaire de portefeuille sur le temps gagné par incident.]', name: 'Nom du client', role: 'Gestionnaire de biens' },
-        { bg: '#0A0A0A', quote: '[Témoignage placeholder — syndic sur la transparence avec les copropriétaires.]', name: 'Nom du client', role: 'Syndic professionnel' },
+        { bg: '#252526', quote: '[Témoignage placeholder — syndic sur la transparence avec les copropriétaires.]', name: 'Nom du client', role: 'Syndic professionnel' },
         { bg: '#0090E8', quote: '[Témoignage placeholder — prestataire sur les nouveaux clients via la marketplace.]', name: 'Nom du client', role: 'Entreprise de maintenance' },
-        { bg: '#0A0A0A', quote: '[Témoignage placeholder — administration sur la croissance du portefeuille sans embaucher davantage.]', name: 'Nom du client', role: 'Administration d\u2019immeubles' },
+        { bg: '#252526', quote: '[Témoignage placeholder — administration sur la croissance du portefeuille sans embaucher davantage.]', name: 'Nom du client', role: 'Administration d\u2019immeubles' },
         { bg: '#00AAEE', quote: '[Témoignage placeholder — résident sur le suivi de la panne en temps réel.]', name: 'Nom du client', role: 'Résident' },
-        { bg: '#0A0A0A', quote: '[Témoignage placeholder — syndicat sur les rapports prêts pour l\u2019assemblée.]', name: 'Nom du client', role: 'Président de syndicat' },
-        { bg: '#6C8087', quote: '[Témoignage placeholder — gestionnaire d\u2019énergie sur les alarmes de consommation via Enectiva/Leneda.]', name: 'Nom du client', role: 'Gestionnaire d\u2019énergie' },
+        { bg: '#252526', quote: '[Témoignage placeholder — syndicat sur les rapports prêts pour l\u2019assemblée.]', name: 'Nom du client', role: 'Président de syndicat' },
+        { bg: '#8C8C8D', quote: '[Témoignage placeholder — gestionnaire d\u2019énergie sur les alarmes de consommation via Enectiva/Leneda.]', name: 'Nom du client', role: 'Gestionnaire d\u2019énergie' },
         { bg: '#0090E8', quote: '[Témoignage placeholder — plombier sur un agenda plein sans effort commercial.]', name: 'Nom du client', role: 'Prestataire de services' },
       ],
       faqH2: 'Questions fréquentes',
@@ -1007,12 +1007,12 @@ class Component extends DCLogic {
       testimonialsH2: 'Wien mat Cubii geréiert.', tReadAll: 'All Geschichte liesen →', tReadStory: 'Geschicht liesen →', tPhotoLabel: '[ Client-Foto ]', tLogoLabel: '[ Client-Logo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Placeholder-Testimonial — Portfolio-Gestionnaire iwwer gewonnen Zäit pro Tëschefall.]', name: 'Numm vum Client', role: 'Immobilie-Gestionnaire' },
-        { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Syndic iwwer Transparenz mat de Koproprietären.]', name: 'Numm vum Client', role: 'Professionelle Syndic' },
+        { bg: '#252526', quote: '[Placeholder-Testimonial — Syndic iwwer Transparenz mat de Koproprietären.]', name: 'Numm vum Client', role: 'Professionelle Syndic' },
         { bg: '#0090E8', quote: '[Placeholder-Testimonial — Déngschtleeschter iwwer nei Cliente via de Marketplace.]', name: 'Numm vum Client', role: 'Maintenance-Firma' },
-        { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Administratioun iwwer Wuesstem vum Portfolio ouni méi Personal.]', name: 'Numm vum Client', role: 'Gebai-Administratioun' },
+        { bg: '#252526', quote: '[Placeholder-Testimonial — Administratioun iwwer Wuesstem vum Portfolio ouni méi Personal.]', name: 'Numm vum Client', role: 'Gebai-Administratioun' },
         { bg: '#00AAEE', quote: '[Placeholder-Testimonial — Awunner iwwer de Status vun der Panne an Echtzäit.]', name: 'Numm vum Client', role: 'Awunner' },
-        { bg: '#0A0A0A', quote: '[Placeholder-Testimonial — Syndicat iwwer Rapporte prett fir d\u2019Versammlung.]', name: 'Numm vum Client', role: 'President vum Syndicat' },
-        { bg: '#6C8087', quote: '[Placeholder-Testimonial — Energie-Gestionnaire iwwer Verbrauchsalarmer via Enectiva/Leneda.]', name: 'Numm vum Client', role: 'Energie-Gestionnaire' },
+        { bg: '#252526', quote: '[Placeholder-Testimonial — Syndicat iwwer Rapporte prett fir d\u2019Versammlung.]', name: 'Numm vum Client', role: 'President vum Syndicat' },
+        { bg: '#8C8C8D', quote: '[Placeholder-Testimonial — Energie-Gestionnaire iwwer Verbrauchsalarmer via Enectiva/Leneda.]', name: 'Numm vum Client', role: 'Energie-Gestionnaire' },
         { bg: '#0090E8', quote: '[Placeholder-Testimonial — Plombier iwwer eng voll Agenda ouni kommerziellen Effort.]', name: 'Numm vum Client', role: 'Déngschtleeschter' },
       ],
       faqH2: 'Dacks gestallte Froen',
@@ -1097,12 +1097,12 @@ class Component extends DCLogic {
       testimonialsH2: 'Wer mit Cubii verwaltet.', tReadAll: 'Alle Geschichten lesen →', tReadStory: 'Geschichte lesen →', tPhotoLabel: '[ Kundenfoto ]', tLogoLabel: '[ Kundenlogo ]',
       testimonials: [
         { bg: '#00B5F1', quote: '[Platzhalter-Testimonial — Portfolioverwalter über Zeitersparnis pro Vorfall.]', name: 'Kundenname', role: 'Immobilienverwalterin' },
-        { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Syndikus über Transparenz mit Miteigentümern.]', name: 'Kundenname', role: 'Professioneller Syndikus' },
+        { bg: '#252526', quote: '[Platzhalter-Testimonial — Syndikus über Transparenz mit Miteigentümern.]', name: 'Kundenname', role: 'Professioneller Syndikus' },
         { bg: '#0090E8', quote: '[Platzhalter-Testimonial — Dienstleister über neue Kunden via Marketplace.]', name: 'Kundenname', role: 'Wartungsunternehmen' },
-        { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Verwaltung über Portfoliowachstum ohne zusätzliches Personal.]', name: 'Kundenname', role: 'Gebäudeverwaltung' },
+        { bg: '#252526', quote: '[Platzhalter-Testimonial — Verwaltung über Portfoliowachstum ohne zusätzliches Personal.]', name: 'Kundenname', role: 'Gebäudeverwaltung' },
         { bg: '#00AAEE', quote: '[Platzhalter-Testimonial — Bewohner über den Schadensstatus in Echtzeit.]', name: 'Kundenname', role: 'Bewohner' },
-        { bg: '#0A0A0A', quote: '[Platzhalter-Testimonial — Syndikat über versammlungsfertige Berichte.]', name: 'Kundenname', role: 'Syndikatspräsident' },
-        { bg: '#6C8087', quote: '[Platzhalter-Testimonial — Energiemanager über Verbrauchsalarme via Enectiva/Leneda.]', name: 'Kundenname', role: 'Energiemanager' },
+        { bg: '#252526', quote: '[Platzhalter-Testimonial — Syndikat über versammlungsfertige Berichte.]', name: 'Kundenname', role: 'Syndikatspräsident' },
+        { bg: '#8C8C8D', quote: '[Platzhalter-Testimonial — Energiemanager über Verbrauchsalarme via Enectiva/Leneda.]', name: 'Kundenname', role: 'Energiemanager' },
         { bg: '#0090E8', quote: '[Platzhalter-Testimonial — Installateur über einen vollen Kalender ohne Vertriebsaufwand.]', name: 'Kundenname', role: 'Dienstleister' },
       ],
       faqH2: 'Häufige Fragen',
@@ -1144,11 +1144,11 @@ class Component extends DCLogic {
       building:'<rect x="4" y="3" width="16" height="18" rx="1.6"/><path d="M8 7h3M13 7h3M8 11h3M13 11h3M8 15h3M13 15h3"/><path d="M9.5 21v-3h5v3"/>',
       wrench:'<path d="M15.5 7.5a3.8 3.8 0 0 1-4.9 4.9l-5.4 5.4a1.8 1.8 0 0 1-2.5-2.5l5.4-5.4a3.8 3.8 0 0 1 4.9-4.9l-2.3 2.3 1.9 1.9 2.3-2.3a3.8 3.8 0 0 1 .6.6z"/>',
     };
-    const OV_COLORS = { home:'#0A0A0A', building:'#0A0A0A', wrench:'#0A0A0A' };
+    const OV_COLORS = { home:'#252526', building:'#252526', wrench:'#252526' };
     const OV_HOVER = { home:'#00B5F1', building:'#F0A020', wrench:'#1F9D6B' };
     const OV_SIZE = { home:46, building:46, wrench:56 };
     const overviewBlocks = ov.blocks.map(([who,text,href,link,ic]) => {
-      const base = OV_COLORS[ic] || '#0A0A0A', hov = OV_HOVER[ic] || '#00B5F1', sz = OV_SIZE[ic] || 46;
+      const base = OV_COLORS[ic] || '#252526', hov = OV_HOVER[ic] || '#00B5F1', sz = OV_SIZE[ic] || 46;
       return { who, text, href, link,
         iconEl: React.createElement('svg',{width:sz,height:sz,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.7,strokeLinecap:'round',strokeLinejoin:'round',dangerouslySetInnerHTML:{__html:OV_ICONS[ic]}}),
         iconStyle:{ display:'flex', alignItems:'center', justifyContent:'center', width:'64px', height:'64px', color:base, transition:'color 0.28s ease, transform 0.28s ease' },
@@ -1179,10 +1179,10 @@ class Component extends DCLogic {
       style: {
         display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px',
         width: '100%', padding: '9px 14px', border: 'none', borderRadius: '10px', cursor: 'pointer',
-        fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', textAlign: 'left',
+        fontFamily: "'Nunito Sans', sans-serif", fontSize: '13.5px', textAlign: 'left',
         fontWeight: l.code === lang ? 800 : 500,
         background: l.code === lang ? '#CCF0FC' : 'transparent',
-        color: l.code === lang ? '#0090E8' : '#0A0A0A',
+        color: l.code === lang ? '#0090E8' : '#252526',
       },
     }));
 
@@ -1191,12 +1191,12 @@ class Component extends DCLogic {
       code: l.label, flag: FLAGS[l.code],
       onClick: () => this.setLang(l.code),
       style: {
-        border: l.code === lang ? '1px solid #0090E8' : '1px solid #CCF0FC',
+        border: l.code === lang ? '1px solid #1A3F6F' : '1px solid #CCF0FC',
         background: l.code === lang ? '#CCF0FC' : 'transparent',
         borderRadius: '999px', padding: '4px 12px', fontSize: '12px', cursor: 'pointer',
-        fontFamily: "'Hanken Grotesk', sans-serif",
+        fontFamily: "'Nunito Sans', sans-serif",
         fontWeight: l.code === lang ? 800 : 600,
-        color: l.code === lang ? '#0090E8' : '#6C8087',
+        color: l.code === lang ? '#0090E8' : '#8C8C8D',
       },
     }));
 
@@ -1204,8 +1204,8 @@ class Component extends DCLogic {
       label: tb.label,
       onClick: () => this.setState({ activeTab: i }),
       style: i === s.activeTab
-        ? { fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: 700, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #00B5F1', background: '#00B5F1', color: '#FFFFFF', cursor: 'pointer' }
-        : { fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '14px', fontWeight: 600, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #CCF0FC', background: '#FFFFFF', color: '#0A0A0A', cursor: 'pointer' },
+        ? { fontFamily: "'Nunito Sans', sans-serif", fontSize: '14px', fontWeight: 700, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #00B5F1', background: '#00B5F1', color: '#FFFFFF', cursor: 'pointer' }
+        : { fontFamily: "'Nunito Sans', sans-serif", fontSize: '14px', fontWeight: 600, padding: '11px 22px', borderRadius: '999px', border: '1.5px solid #CCF0FC', background: '#FFFFFF', color: '#252526', cursor: 'pointer' },
     }));
 
     const FAQ_GEN = { pt:[{q:'O que é a Cubii?',a:'Uma plataforma que liga residentes, gestores e prestadores para gerir o edifício de ponta a ponta — do reporte de um problema à conclusão do serviço.'},{q:'A Cubii está disponível na minha região?',a:'A Cubii opera no Luxemburgo e está a expandir-se pela Europa, com dados alojados na Europa e conformidade com o RGPD.'},{q:'Como funciona o preço?',a:'O preço é por fração gerida, por mês, com planos para cada dimensão de portfólio. Veja a página de Preços para detalhes.'}], en:[{q:'What is Cubii?',a:'A platform that connects residents, managers and providers to run the building end to end — from reporting an issue to getting the service done.'},{q:'Is Cubii available in my region?',a:'Cubii operates in Luxembourg and is expanding across Europe, with data hosted in Europe and GDPR compliance.'},{q:'How does pricing work?',a:'Pricing is per managed unit, per month, with plans for every portfolio size. See the Pricing page for details.'}], fr:[{q:'Qu\u2019est-ce que Cubii ?',a:'Une plateforme qui relie résidents, gestionnaires et prestataires pour gérer l\u2019immeuble de bout en bout — du signalement d\u2019un problème à la réalisation du service.'},{q:'Cubii est-il disponible dans ma région ?',a:'Cubii opère au Luxembourg et s\u2019étend en Europe, avec des données hébergées en Europe et la conformité RGPD.'},{q:'Comment fonctionne la tarification ?',a:'Le prix est par lot géré, par mois, avec des formules pour chaque taille de portefeuille. Voir la page Tarifs.'}], lb:[{q:'Wat ass Cubii?',a:'Eng Plattform déi Awunner, Gestionnairen an Déngschtleeschter verbënnt fir d\u2019Gebai vun A bis Z ze geréieren — vum Mellen bis zur Fäerdegstellung.'},{q:'Ass Cubii a menger Regioun verfügbar?',a:'Cubii ass zu Lëtzebuerg aktiv a wiisst an Europa, mat Donnéeën an Europa an RGPD-Konformitéit.'},{q:'Wéi funktionéiert de Präis?',a:'De Präis ass pro verwalt Unitéit, pro Mount, mat Pläng fir all Portfoliosgréisst. Kuckt d\u2019Präisser-Säit.'}], de:[{q:'Was ist Cubii?',a:'Eine Plattform, die Bewohner, Verwalter und Dienstleister verbindet, um das Gebäude durchgängig zu betreiben — von der Meldung bis zur Fertigstellung.'},{q:'Ist Cubii in meiner Region verfügbar?',a:'Cubii ist in Luxemburg aktiv und expandiert in Europa, mit Daten in Europa und DSGVO-Konformität.'},{q:'Wie funktioniert die Preisgestaltung?',a:'Der Preis gilt pro verwalteter Einheit, pro Monat, mit Plänen für jede Portfoliogröße. Siehe die Preise-Seite.'}] };
@@ -1237,12 +1237,12 @@ class Component extends DCLogic {
     // CLIENTES + DEPOIMENTOS SÃO EXEMPLOS FICTÍCIOS — substituir por clientes reais.
     const T_CLIENTS = [
       { bg: '#00B5F1', name: 'Élise Weber', company: 'Résidence Belair', photo: 'https://i.pravatar.cc/480?img=45' },
-      { bg: '#0A0A0A', name: 'Marc Hoffmann', company: 'Syndic Kirchberg', photo: 'https://i.pravatar.cc/480?img=13' },
+      { bg: '#252526', name: 'Marc Hoffmann', company: 'Syndic Kirchberg', photo: 'https://i.pravatar.cc/480?img=13' },
       { bg: '#0090E8', name: 'João Ferreira', company: 'Hydro-Lux Sàrl', photo: 'https://i.pravatar.cc/480?img=33' },
-      { bg: '#0A0A0A', name: 'Sophie Muller', company: 'Administra Lux', photo: 'https://i.pravatar.cc/480?img=47' },
+      { bg: '#252526', name: 'Sophie Muller', company: 'Administra Lux', photo: 'https://i.pravatar.cc/480?img=47' },
       { bg: '#00AAEE', name: 'Ana Rodrigues', company: 'Residência Cents', photo: 'https://i.pravatar.cc/480?img=16' },
-      { bg: '#0A0A0A', name: 'Liam Schmit', company: 'Syndicat Gare', photo: 'https://i.pravatar.cc/480?img=60' },
-      { bg: '#6C8087', name: 'Tom Klein', company: 'EnerGestion', photo: 'https://i.pravatar.cc/480?img=51' },
+      { bg: '#252526', name: 'Liam Schmit', company: 'Syndicat Gare', photo: 'https://i.pravatar.cc/480?img=60' },
+      { bg: '#8C8C8D', name: 'Tom Klein', company: 'EnerGestion', photo: 'https://i.pravatar.cc/480?img=51' },
       { bg: '#0090E8', name: 'Pedro Almeida', company: 'CanalPro', photo: 'https://i.pravatar.cc/480?img=68' },
     ];
     const T_QR = {
@@ -1308,7 +1308,7 @@ class Component extends DCLogic {
     const tmTrack = tList.map((tm, i) => ({
       quote: tm.quote, name: tm.name, role: tm.role, company: tm.company,
       cardStyle: { flex: '0 0 820px', width: '820px', display: 'flex', alignItems: 'center' },
-      photoStyle: { width: '300px', height: '340px', flexShrink: 0, background: lightBg(tm.bg), borderRadius: '8px', marginRight: '-84px', position: 'relative', zIndex: 2, overflow: 'hidden', boxShadow: '0 18px 44px rgba(41,109,131,0.28)' },
+      photoStyle: { width: '300px', height: '340px', flexShrink: 0, background: lightBg(tm.bg), borderRadius: '8px', marginRight: '-84px', position: 'relative', zIndex: 2, overflow: 'hidden', boxShadow: '0 18px 44px rgba(37,37,38,0.28)' },
       photoImgStyle: { position: 'absolute', inset: 0, backgroundImage: 'url(' + tm.photo + ')', backgroundSize: 'cover', backgroundPosition: 'center 14%', filter: 'grayscale(1) contrast(1.05)', WebkitMaskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)', maskImage: 'radial-gradient(78% 86% at 50% 38%, #000 58%, rgba(0,0,0,0) 84%)' },
       bodyStyle: { flex: 1, background: tm.bg, color: '#FFFFFF', borderRadius: '8px', padding: '56px 60px 48px 132px', display: 'flex', flexDirection: 'column', gap: '22px', minHeight: '420px', boxShadow: '0 20px 50px rgba(10,10,10,0.22)' },
     }));
@@ -1372,11 +1372,11 @@ class Component extends DCLogic {
         },
         titleStyle: {
           fontSize: '14.5px', fontWeight: 800, transition: 'color 0.4s ease',
-          color: (isActive || done) ? '#0A0A0A' : '#9DB4BC',
+          color: (isActive || done) ? '#252526' : '#9DB4BC',
         },
         descStyle: {
           fontSize: '12.5px', fontWeight: 500, lineHeight: 1.5, transition: 'opacity 0.4s ease',
-          color: '#6C8087', opacity: isActive ? 1 : 0.55,
+          color: '#8C8C8D', opacity: isActive ? 1 : 0.55,
         },
         onHover: () => this.setActiveStep(i),
       };
@@ -1479,10 +1479,10 @@ class Component extends DCLogic {
       const connCol = STEP_COLORS[(i + 1) % STEP_COLORS.length];
       return {
         label: label,
-        iconEl: React.createElement('svg', { width: active ? 42 : 36, height: active ? 42 : 36, viewBox: '0 0 24 24', fill: 'none', stroke: (active || done) ? '#FFFFFF' : '#6C8087', strokeWidth: 1.9, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: done ? TRK_CHECK : TRK_ICONS[i] } }),
+        iconEl: React.createElement('svg', { width: active ? 42 : 36, height: active ? 42 : 36, viewBox: '0 0 24 24', fill: 'none', stroke: (active || done) ? '#FFFFFF' : '#8C8C8D', strokeWidth: 1.9, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: done ? TRK_CHECK : TRK_ICONS[i] } }),
         connStyle: isLast ? { display: 'none' } : { position: 'absolute', top: '47px', left: '50%', width: '100%', height: '6px', borderRadius: '999px', background: done ? connCol : '#2A2E33', zIndex: 0, transition: 'background 0.5s ease' },
         circleStyle: { position: 'relative', zIndex: 1, width: '94px', height: '94px', borderRadius: '999px', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.5s cubic-bezier(0.22,1,0.36,1)', background: (active || done) ? cCol : '#14171A', border: (active || done) ? 'none' : '2.5px solid #3A4048', transform: active ? 'scale(1.1)' : 'scale(1)', boxShadow: active ? '0 0 0 10px ' + cCol + '2E' : 'none' },
-        labelStyle: { fontSize: '17px', fontWeight: 700, color: (active || done) ? '#FFFFFF' : '#6C8087', maxWidth: '190px', lineHeight: 1.3, transition: 'color 0.4s ease' },
+        labelStyle: { fontSize: '17px', fontWeight: 700, color: (active || done) ? '#FFFFFF' : '#8C8C8D', maxWidth: '190px', lineHeight: 1.3, transition: 'color 0.4s ease' },
         arrowShow: active,
         arrowStyle: { position: 'absolute', top: '-30px', left: '50%', width: '24px', height: 0, marginLeft: '-12px', borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '15px solid ' + cCol, boxSizing: 'border-box', animation: 'cubiiFloat 1.4s ease-in-out infinite', zIndex: 2 },
       };
@@ -1516,7 +1516,7 @@ class Component extends DCLogic {
         role: rmap[a.role],
         wrapStyle: { position: 'absolute', left: a.l + '%', top: a.t + '%', width: a.size + 'px', height: a.size + 'px', animation: 'cubiiFloat ' + a.dur + 's ease-in-out infinite ' + a.del + 's', zIndex: 2, opacity: storyActive ? 0.14 : 1, transition: 'opacity 0.55s ease' },
         ringStyle: { width: '100%', height: '100%', borderRadius: '999px', border: '3px solid ' + a.ring, backgroundImage: 'url(' + a.img + ')', backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 6px 22px rgba(0,0,0,0.45)' },
-        labelStyle: { position: 'absolute', top: 'calc(100% + 7px)', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '11px', fontWeight: 600, padding: '3px 9px', borderRadius: '999px', background: 'rgba(20,23,26,0.85)', color: '#C6D2D7', border: '1px solid #24282D', opacity: storyActive ? 0 : 0.72, transition: 'opacity 0.4s ease' },
+        labelStyle: { position: 'absolute', top: 'calc(100% + 7px)', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: "'Nunito Sans', sans-serif", fontSize: '11px', fontWeight: 600, padding: '3px 9px', borderRadius: '999px', background: 'rgba(20,23,26,0.85)', color: '#C6D2D7', border: '1px solid #24282D', opacity: storyActive ? 0 : 0.72, transition: 'opacity 0.4s ease' },
       };
     });
     // Palco de foco: o utilizador em questão ao centro, grande, com halo — e o processo docado por baixo.
@@ -1526,7 +1526,7 @@ class Component extends DCLogic {
       role: rmap[fa.role],
       haloStyle: { position: 'absolute', left: '50%', top: '0', transform: 'translateX(-50%)', width: '260px', height: '260px', borderRadius: '999px', background: 'radial-gradient(circle, ' + hexA(fa.ring, 0.42) + ' 0%, ' + hexA(fa.ring, 0.12) + ' 55%, rgba(0,0,0,0) 72%)', zIndex: 0 },
       ringStyle: { position: 'relative', zIndex: 1, width: '190px', height: '190px', borderRadius: '999px', border: '4px solid ' + fa.ring, backgroundImage: 'url(' + fa.img + ')', backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 0 0 8px ' + hexA(fa.ring, 0.18) + ', 0 20px 50px rgba(0,0,0,0.6)', animation: 'cubiiFloat 6s ease-in-out infinite' },
-      labelStyle: { position: 'relative', zIndex: 1, marginTop: '-6px', fontFamily: "'Hanken Grotesk', sans-serif", fontSize: '13.5px', fontWeight: 800, letterSpacing: '0.5px', padding: '7px 18px', borderRadius: '999px', background: fa.ring, color: '#FFFFFF', boxShadow: '0 8px 22px ' + hexA(fa.ring, 0.4) },
+      labelStyle: { position: 'relative', zIndex: 1, marginTop: '-6px', fontFamily: "'Nunito Sans', sans-serif", fontSize: '13.5px', fontWeight: 800, letterSpacing: '0.5px', padding: '7px 18px', borderRadius: '999px', background: fa.ring, color: '#FFFFFF', boxShadow: '0 8px 22px ' + hexA(fa.ring, 0.4) },
     };
 
 
@@ -1598,7 +1598,7 @@ class Component extends DCLogic {
       darkView,
       darkWorks: DARK_WORKS[lang] || DARK_WORKS.en,
       darkIntegrations,
-      darkTermStyle: { alignSelf: 'center', background: '#0A0A0A', border: '1px solid #24282D', borderRadius: '14px', padding: '22px 28px', boxShadow: '0 20px 50px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: '10px', minWidth: '360px' },
+      darkTermStyle: { alignSelf: 'center', background: '#252526', border: '1px solid #24282D', borderRadius: '14px', padding: '22px 28px', boxShadow: '0 20px 50px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', gap: '10px', minWidth: '360px' },
       darkTyped: s.darkTyped,
       darkCaretStyle: { display: 'inline-block', width: '11px', height: '22px', background: '#F0A020', marginLeft: '3px', verticalAlign: '-4px', animation: 'cubiiCaret 0.9s step-end infinite' },
       heroH1a: hero.a, heroH1b: hero.b, heroSubGen: hero.sub,
@@ -1645,7 +1645,7 @@ class Component extends DCLogic {
       curTm, tmTrack, tmTrackStyle, tmTitle: tmh.title, tmSub: tmh.sub, tmStats: tmh.stats.map((x) => ({ big: x[0], label: x[1] })),
       prevT: () => this.setState({ tIndex: s.tIndex - 1 }),
       nextT: () => this.setState({ tIndex: s.tIndex + 1 }),
-      tmHoverOn: (e) => { const ph = e.currentTarget.querySelector('[data-tm-photo]'); const cd = e.currentTarget.querySelector('[data-tm-card]'); if (ph) { ph.style.transform = 'scale(1.05)'; ph.style.zIndex = '4'; ph.style.boxShadow = '0 22px 48px rgba(41,109,131,0.32)'; } if (cd) { cd.style.transform = 'scale(1.02)'; cd.style.boxShadow = '0 26px 56px rgba(10,10,10,0.26)'; } },
+      tmHoverOn: (e) => { const ph = e.currentTarget.querySelector('[data-tm-photo]'); const cd = e.currentTarget.querySelector('[data-tm-card]'); if (ph) { ph.style.transform = 'scale(1.05)'; ph.style.zIndex = '4'; ph.style.boxShadow = '0 22px 48px rgba(37,37,38,0.32)'; } if (cd) { cd.style.transform = 'scale(1.02)'; cd.style.boxShadow = '0 26px 56px rgba(10,10,10,0.26)'; } },
       tmHoverOff: (e) => { const ph = e.currentTarget.querySelector('[data-tm-photo]'); const cd = e.currentTarget.querySelector('[data-tm-card]'); if (ph) { ph.style.transform = ''; ph.style.zIndex = '2'; ph.style.boxShadow = ''; } if (cd) { cd.style.transform = ''; cd.style.boxShadow = ''; } },
       langCode: (Component.LANGS.find((l) => l.code === lang) || Component.LANGS[0]).label, langFlag: FLAGS[lang] || '',
       langMenuOpen: s.langMenuOpen,
@@ -1655,10 +1655,10 @@ class Component extends DCLogic {
       whoLinks,
       whoMenuOpen: s.whoMenuOpen,
       toggleWhoMenu: () => this.setState({ whoMenuOpen: !s.whoMenuOpen, langMenuOpen: false, featMenuOpen: false }),
-      whoArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.whoMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
-      featArrowStyle: { fontSize: '10px', color: '#6C8087', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
-      navHoverOn: (e) => { e.currentTarget.style.color = '#00B5F1'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#00B5F1'; },
-      navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#0A0A0A'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#6C8087'; },
+      whoArrowStyle: { fontSize: '10px', color: '#8C8C8D', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.whoMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
+      featArrowStyle: { fontSize: '10px', color: '#8C8C8D', display: 'inline-block', transition: 'transform 0.25s ease, color 0.22s ease', transform: s.featMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)' },
+      navHoverOn: (e) => { e.currentTarget.style.color = '#1A3F6F'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#1A3F6F'; },
+      navHoverOff: (e) => { e.currentTarget.style.color = e.currentTarget.getAttribute('data-base') || '#252526'; const ar = e.currentTarget.querySelector('.navArrow'); if (ar) ar.style.color = '#8C8C8D'; },
       langOptions,
       langPills,
       fx: FX[lang] || FX.pt,
