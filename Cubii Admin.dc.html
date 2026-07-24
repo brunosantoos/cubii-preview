@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #F6F6F6; }
+    body { font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif; color: #252526; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Nunito Sans', sans-serif; }
+    * { box-sizing: border-box; }
+    input, select, textarea { font-family: 'Nunito Sans', sans-serif; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-thumb { background: #CFD9DD; border-radius: 999px; }
+  </style>
+</helmet>
+
+<div style="display: flex; min-height: 100vh;">
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside style="width: 268px; flex-shrink: 0; background: #FFFFFF; border-right: 1px solid #E6EDF0; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh;">
+    <div style="padding: 22px 22px 16px;">
+      <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; gap: 9px; text-decoration: none;">
+        <img src="assets/cubii-wordmark.png" alt="Cubii" style="height: 32px; width: auto; object-fit: contain; display: block;">
+        
+        <span style="margin-left: 4px; font-size: 10px; font-weight: 800; letter-spacing: 1px; color: #1A3F6F; background: #F6F6F6; padding: 3px 8px; border-radius: 999px;">CMS</span>
+      </a>
+    </div>
+    <nav style="flex: 1; overflow-y: auto; padding: 8px 12px 12px;">
+      <sc-for list="{{ navGroups }}" as="grp" hint-placeholder-count="4">
+        <div style="margin-bottom: 14px;">
+          <span style="display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #8C8C8D; padding: 6px 12px;">{{ grp.label }}</span>
+          <sc-for list="{{ grp.items }}" as="it" hint-placeholder-count="3">
+            <button onClick="{{ it.onClick }}" style="{{ it.style }}">
+              <span style="width: 20px; display: inline-flex; justify-content: center;">{{ it.iconEl }}</span>
+              <span style="flex: 1; text-align: left;">{{ it.label }}</span>
+              <sc-if value="{{ it.badge }}" hint-placeholder-val="{{ false }}"><span style="{{ it.badgeStyle }}">{{ it.badge }}</span></sc-if>
+            </button>
+          </sc-for>
+        </div>
+      </sc-for>
+    </nav>
+    <div style="padding: 14px;">
+      <a href="Cubii Landing.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 10px; border: 1.5px solid #E0E7EA; border-radius: 12px; padding: 13px; text-decoration: none; color: #296D83; font-size: 14px; font-weight: 700;" style-hover="border-color: #1A3F6F; color: #1A3F6F;">{{ L.exit }}</a>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+    <header style="height: 64px; background: #FFFFFF; border-bottom: 1px solid #E6EDF0; display: flex; align-items: center; gap: 16px; padding: 0 28px; position: sticky; top: 0; z-index: 20;">
+      <span style="font-size: 15px; font-weight: 800; color: #252526;">{{ activeTitle }}</span>
+      <sc-if value="{{ activeIsPage }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ activePageHref }}" target="_blank" style="font-size: 12.5px; font-weight: 700; color: #1A3F6F; background: #F6F6F6; padding: 6px 14px; border-radius: 999px;">{{ L.viewPage }}</a>
+      </sc-if>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 14px;">
+        <input value="{{ search }}" onChange="{{ onSearch }}" placeholder="{{ L.search }}" style="width: 220px; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 9px 16px; font-size: 13px; outline: none; background: #F7FAFB;" style-focus="border-color: #1A3F6F;">
+        <div style="position: relative;">
+          <button onClick="{{ toggleLangMenu }}" aria-label="Idioma" style="display: flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 999px; padding: 8px 12px; cursor: pointer; font-family: 'Nunito Sans', sans-serif;" style-hover="border-color: #1A3F6F;">
+            <span style="font-size: 13px; font-weight: 700; color: #296D83;">{{ langFlag }} {{ langCode }}</span>
+            <span style="font-size: 9px; color: #8C8C8D;">▼</span>
+          </button>
+          <sc-if value="{{ langMenuOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1.5px solid #E6EDF0; border-radius: 14px; box-shadow: 0 14px 36px rgba(37,37,38,0.16); padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 180px; z-index: 60;">
+              <sc-for list="{{ langOptions }}" as="lo" hint-placeholder-count="5">
+                <button onClick="{{ lo.onClick }}" style="{{ lo.style }}"><span>{{ lo.flag }} {{ lo.name }}</span><span style="font-size: 11px; font-weight: 800; opacity: 0.6;">{{ lo.code }}</span></button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <div style="width: 38px; height: 38px; border-radius: 999px; background: #F6F6F6; border: 1px solid #CCF0FC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #1A3F6F;">SC</div>
+      </div>
+    </header>
+
+    <div style="flex: 1; padding: 28px; max-width: 1280px; width: 100%;">
+
+      <!-- ============ VISÃO GERAL (indicadores do SITE) ============ -->
+      <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <div style="position: relative; overflow: hidden; border-radius: 20px; background: linear-gradient(105deg, #0090E8 0%, #00B5F1 60%, #4DCBF5 100%); padding: 36px 40px; color: #FFFFFF;">
+            <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.18); font-size: 12.5px; font-weight: 700; padding: 6px 14px; border-radius: 999px;">{{ L.ovBadge }}</span>
+            <h1 style="margin: 14px 0 8px; font-size: 34px; font-weight: 800; letter-spacing: -1px;">{{ L.ovTitle }}</h1>
+            <p style="margin: 0; font-size: 15.5px; font-weight: 500; opacity: 0.92; max-width: 580px;">{{ L.ovSub }}</p>
+            <div style="position: absolute; right: 34px; top: 50%; transform: translateY(-50%); width: 128px; height: 128px; border-radius: 999px; border: 2px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center;">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
+            <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+              <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px;">
+                <span style="width: 40px; height: 40px; border-radius: 11px; background: #F6F6F6; display: flex; align-items: center; justify-content: center;">{{ k.iconEl }}</span>
+                <span style="font-size: 30px; font-weight: 800; letter-spacing: -1px; color: #252526;">{{ k.value }}</span>
+                <span style="font-size: 13px; font-weight: 600; color: #8C8C8D;">{{ k.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 18px;">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 22px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h3 style="margin: 0; font-size: 16px; font-weight: 800;">{{ L.cLeads }}</h3>
+                <span style="font-size: 12px; font-weight: 700; color: #1A3F6F; background: #F6F6F6; padding: 4px 12px; border-radius: 999px;">{{ L.last6 }}</span>
+              </div>
+              <canvas ref="{{ lineRef }}" height="220" style="width: 100%; height: 220px; display: block;"></canvas>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 22px;">
+              <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 800;">{{ L.cLang }}</h3>
+              <div style="display: flex; align-items: center; gap: 18px;">
+                <canvas ref="{{ donutRef }}" width="160" height="160" style="width: 160px; height: 160px; flex-shrink: 0;"></canvas>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <sc-for list="{{ langLegend }}" as="sl" hint-placeholder-count="5">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="width: 11px; height: 11px; border-radius: 3px; background: {{ sl.color }};"></span>
+                      <span style="font-size: 13px; font-weight: 600; color: #296D83;">{{ sl.label }}</span>
+                      <span style="font-size: 13px; font-weight: 800; color: #252526; margin-left: auto;">{{ sl.value }}%</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px;">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 22px;">
+              <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 800;">{{ L.cSections }}</h3>
+              <canvas ref="{{ barRef }}" height="200" style="width: 100%; height: 200px; display: block;"></canvas>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 22px;">
+              <h3 style="margin: 0 0 14px; font-size: 16px; font-weight: 800;">{{ L.pagesOfSite }}</h3>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <sc-for list="{{ pageLinks }}" as="p" hint-placeholder-count="6">
+                  <button onClick="{{ p.onClick }}" style="display: flex; align-items: center; gap: 12px; width: 100%; border: 1px solid #E6EDF0; border-radius: 12px; padding: 12px 14px; background: #FFFFFF; cursor: pointer; text-align: left;" style-hover="border-color: #1A3F6F; background: #F6F6F6;">
+                    <span style="color: #1A3F6F; display: inline-flex;">{{ p.iconEl }}</span>
+                    <span style="flex: 1; font-size: 13.5px; font-weight: 700; color: #252526;">{{ p.name }}</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #8C8C8D;">{{ p.count }} {{ L.secWord }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ EDITOR DE PÁGINA (CRUD de seções) ============ -->
+      <sc-if value="{{ activeIsPage }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 22px;">
+          <!-- Campos-chave da página -->
+          <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 24px;">
+            <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 800;">{{ L.mainContent }}</h3>
+            <p style="margin: 0 0 18px; font-size: 13px; color: #8C8C8D; font-weight: 500;">{{ L.mainContentSub }}</p>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <sc-for list="{{ pageFields }}" as="fld" hint-placeholder-count="3">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #8C8C8D;">{{ fld.label }}</span>
+                  <input value="{{ fld.value }}" onChange="{{ fld.onChange }}" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 11px 13px; font-size: 14px; font-weight: 600; color: #252526; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <!-- CRUD de seções -->
+          <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 16px; padding: 24px;">
+            <div style="display: flex; align-items: center; margin-bottom: 16px;">
+              <div>
+                <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 800;">{{ L.sectionsTitle }}</h3>
+                <p style="margin: 0; font-size: 13px; color: #8C8C8D; font-weight: 500;">{{ L.sectionsSub }}</p>
+              </div>
+              <button onClick="{{ addSection }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.newSection }}</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ pageSections }}" as="sec" hint-placeholder-count="5">
+                <div style="display: flex; align-items: center; gap: 12px; border: 1px solid #E6EDF0; border-radius: 12px; padding: 12px 14px; background: {{ sec.rowBg }};">
+                  <div style="display: flex; flex-direction: column; gap: 2px;">
+                    <button onClick="{{ sec.onUp }}" aria-label="Subir" style="background: none; border: none; cursor: pointer; color: #8C8C8D; font-size: 11px; line-height: 1;">▲</button>
+                    <button onClick="{{ sec.onDown }}" aria-label="Descer" style="background: none; border: none; cursor: pointer; color: #8C8C8D; font-size: 11px; line-height: 1;">▼</button>
+                  </div>
+                  <span style="font-size: 12px; font-weight: 800; color: #C6D4D9; width: 22px;">{{ sec.num }}</span>
+                  <input value="{{ sec.label }}" onChange="{{ sec.onLabel }}" style="flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-weight: 700; color: {{ sec.textColor }}; background: transparent; outline: none;" style-focus="border-color: #CCF0FC; background: #F7FAFB;">
+                  <button onClick="{{ sec.onToggle }}" style="{{ sec.pillStyle }}">{{ sec.pillLabel }}</button>
+                  <button onClick="{{ sec.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 16px;" style-hover="color: #E5484D;">✕</button>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ DEPOIMENTOS (CRUD) ============ -->
+      <sc-if value="{{ isTestimonials }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center;">
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.tIntro }}</p>
+            <button onClick="{{ addTestimonial }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.tNew }}</button>
+          </div>
+          <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start;">
+              <span style="width: 42px; height: 42px; border-radius: 999px; background: {{ tm.chip }}; flex-shrink: 0;"></span>
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                <textarea value="{{ tm.quote }}" onChange="{{ tm.onQuote }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 10px; padding: 10px 12px; font-size: 13.5px; font-weight: 500; color: #252526; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #1A3F6F;"></textarea>
+                <div style="display: flex; gap: 10px;">
+                  <input value="{{ tm.name }}" onChange="{{ tm.onName }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 700; outline: none;" style-focus="border-color: #1A3F6F;">
+                  <input value="{{ tm.role }}" onChange="{{ tm.onRole }}" style="flex: 1; border: 1px solid #E6EDF0; border-radius: 8px; padding: 8px 10px; font-size: 13px; font-weight: 500; color: #8C8C8D; outline: none;" style-focus="border-color: #1A3F6F;">
+                </div>
+              </div>
+              <button onClick="{{ tm.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 16px;" style-hover="color: #E5484D;">✕</button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- ============ FAQ (CRUD) ============ -->
+      <sc-if value="{{ isFaq }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center;">
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.fIntro }}</p>
+            <button onClick="{{ addFaq }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.fNew }}</button>
+          </div>
+          <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start;">
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+                <input value="{{ q.question }}" onChange="{{ q.onQuestion }}" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 14px; font-weight: 700; color: #252526; outline: none; width: 100%;" style-focus="border-color: #1A3F6F;">
+                <textarea value="{{ q.answer }}" onChange="{{ q.onAnswer }}" rows="2" style="border: 1px solid #E6EDF0; border-radius: 8px; padding: 9px 11px; font-size: 13.5px; font-weight: 500; color: #296D83; outline: none; resize: vertical; width: 100%;" style-focus="border-color: #1A3F6F;"></textarea>
+              </div>
+              <button onClick="{{ q.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 16px;" style-hover="color: #E5484D;">✕</button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- ============ LOGOS (CRUD) ============ -->
+      <sc-if value="{{ isLogos }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; align-items: center;">
+            <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.lgIntro }}</p>
+            <button onClick="{{ addLogo }}" style="margin-left: auto; background: #252526; color: #FFFFFF; border: none; font-size: 13.5px; font-weight: 700; padding: 10px 20px; border-radius: 999px; cursor: pointer;" style-hover="background: #0090E8;">{{ L.lgNew }}</button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <sc-for list="{{ logos }}" as="lg" hint-placeholder-count="6">
+              <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px; display: flex; align-items: center; gap: 10px;">
+                <span style="width: 34px; height: 34px; border-radius: 8px; background: #F0F5F7; display: flex; align-items: center; justify-content: center; color: #8C8C8D; font-size: 14px;">▦</span>
+                <input value="{{ lg.name }}" onChange="{{ lg.onName }}" style="flex: 1; border: 1px solid transparent; border-radius: 8px; padding: 8px 10px; font-size: 13.5px; font-weight: 700; outline: none; background: transparent;" style-focus="border-color: #CCF0FC; background: #F7FAFB;">
+                <button onClick="{{ lg.onDelete }}" aria-label="Remover" style="background: none; border: none; cursor: pointer; color: #C6D4D9; font-size: 15px;" style-hover="color: #E5484D;">✕</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ LEADS ============ -->
+      <sc-if value="{{ isLeads }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.leadsIntro }}</p>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start;">
+            <sc-for list="{{ leadColumns }}" as="col" hint-placeholder-count="5">
+              <div style="background: #F0F4F6; border: 1px solid #E6EDF0; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 160px;">
+                <div style="display: flex; align-items: center; gap: 8px; padding: 4px 6px;">
+                  <span style="width: 9px; height: 9px; border-radius: 999px; background: {{ col.color }};"></span>
+                  <span style="font-size: 12.5px; font-weight: 800; color: #252526;">{{ col.label }}</span>
+                  <span style="margin-left: auto; font-size: 11px; font-weight: 800; color: #8C8C8D; background: #FFFFFF; padding: 2px 8px; border-radius: 999px;">{{ col.count }}</span>
+                </div>
+                <sc-for list="{{ col.cards }}" as="l" hint-placeholder-count="2">
+                  <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 12px; border-left: 3px solid {{ col.color }}; padding: 12px; display: flex; flex-direction: column; gap: 6px;">
+                    <span style="font-size: 13.5px; font-weight: 800; color: #252526;">{{ l.name }}</span>
+                    <span style="font-size: 12px; font-weight: 600; color: #296D83;">{{ l.company }}</span>
+                    <span style="font-size: 11.5px; font-weight: 500; color: #8C8C8D; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ l.email }}</span>
+                    <span style="align-self: flex-start; background: #F6F6F6; color: #1A3F6F; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;">{{ l.units }} {{ L.fracoes }}</span>
+                    <div style="display: flex; gap: 6px; margin-top: 4px;">
+                      <button onClick="{{ l.onPrev }}" aria-label="Anterior" style="{{ l.prevStyle }}">‹</button>
+                      <button onClick="{{ l.onNext }}" aria-label="Seguinte" style="{{ l.nextStyle }}">›</button>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ IDIOMAS ============ -->
+      <sc-if value="{{ isLangs }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.langsIntro }}</p>
+          <sc-for list="{{ languages }}" as="lang" hint-placeholder-count="5">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
+              <span style="font-size: 12px; font-weight: 800; color: #1A3F6F; background: #F6F6F6; padding: 5px 11px; border-radius: 8px;">{{ lang.code }}</span>
+              <span style="flex: 1; font-size: 14px; font-weight: 700; color: #252526;">{{ lang.name }}</span>
+              <button onClick="{{ lang.onDefault }}" style="{{ lang.defaultStyle }}">{{ lang.defaultLabel }}</button>
+              <button onClick="{{ lang.onToggle }}" aria-label="Alternar" style="{{ lang.switchStyle }}"><span style="{{ lang.knobStyle }}"></span></button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <!-- ============ CONFIGURAÇÕES DO SITE ============ -->
+      <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+          <p style="margin: 0; font-size: 14px; color: #8C8C8D; font-weight: 500;">{{ L.setIntro }}</p>
+          <sc-for list="{{ settings }}" as="cfg" hint-placeholder-count="4">
+            <div style="background: #FFFFFF; border: 1px solid #E6EDF0; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 16px;">
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                <span style="font-size: 14px; font-weight: 700; color: #252526;">{{ cfg.title }}</span>
+                <span style="font-size: 12.5px; font-weight: 500; color: #8C8C8D;">{{ cfg.desc }}</span>
+              </div>
+              <button onClick="{{ cfg.onToggle }}" aria-label="Alternar" style="{{ cfg.switchStyle }}"><span style="{{ cfg.knobStyle }}"></span></button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    tab: 'overview',
+    search: '',
+    lang: null,
+    langMenuOpen: false,
+    pages: {
+      home: { name: 'Página Inicial', href: 'Cubii Landing.dc.html',
+        fields: [
+          { key: 'h1', label: 'Título do Hero', value: 'O edifício, sob controlo — na palma da mão.' },
+          { key: 'sub', label: 'Subtítulo do Hero', value: 'Cubii conecta residentes, gestores, prestadores e sindicatos num só fluxo.' },
+          { key: 'cta', label: 'Botão principal', value: 'Agendar Demonstração' },
+        ],
+        sections: [
+          { label: 'Hero + Formulário', visible: true }, { label: 'Logo wall', visible: true }, { label: 'Rede Cubii (scroll)', visible: true },
+          { label: 'O problema', visible: true }, { label: 'Funcionalidades', visible: true }, { label: 'Alarmes (escura)', visible: true },
+          { label: 'Um app para cada papel', visible: true }, { label: 'Marketplace', visible: true }, { label: 'Como funciona', visible: true },
+          { label: 'Depoimentos', visible: true }, { label: 'FAQ', visible: true }, { label: 'CTA final', visible: true },
+        ] },
+      features: { name: 'Funcionalidades', href: 'Cubii Funcionalidades.dc.html',
+        fields: [
+          { key: 'h1', label: 'Título', value: 'Conheça as funcionalidades da Cubii' },
+          { key: 'sub', label: 'Subtítulo', value: 'Tudo o que o edifício precisa, explicado funcionalidade a funcionalidade.' },
+        ],
+        sections: [ { label: 'Hero', visible: true }, { label: 'Intro', visible: true }, { label: 'Reportar', visible: true }, { label: 'Monitorizar', visible: true }, { label: 'Colaborar', visible: true }, { label: 'Analisar', visible: true }, { label: 'Escala', visible: true }, { label: 'Integrações', visible: true }, { label: 'CTA final', visible: true } ] },
+      marketplace: { name: 'Marketplace', href: 'Cubii Marketplace.dc.html',
+        fields: [ { key: 'h1', label: 'Título', value: 'O prestador certo, sem adivinhações.' } ],
+        sections: [ { label: 'Hero', visible: true }, { label: 'Critérios de ranking', visible: true }, { label: 'Card de prestador', visible: true }, { label: 'Fluxo de 6 passos', visible: true }, { label: 'Value prop prestadores', visible: true }, { label: 'CTA final', visible: true } ] },
+      pricing: { name: 'Preços', href: 'Cubii Precos.dc.html',
+        fields: [ { key: 'h1', label: 'Título', value: 'Preços transparentes, para cada portfólio.' } ],
+        sections: [ { label: 'Hero + calculadora', visible: true }, { label: 'Cards de planos', visible: true }, { label: 'Tabela comparativa', visible: true }, { label: 'Mais detalhes', visible: true }, { label: 'Perguntas? (escura)', visible: true } ] },
+      whofor: { name: 'Para quem é', href: 'Cubii Para Quem.dc.html',
+        fields: [ { key: 'h1', label: 'Título', value: 'Feito para cada papel do edifício.' } ],
+        sections: [ { label: 'Hero', visible: true }, { label: 'Abas por perfil', visible: true }, { label: 'Telas da interface', visible: true } ] },
+      about: { name: 'Smart Cube', href: 'Cubii Smart Cube.dc.html',
+        fields: [ { key: 'h1', label: 'Título', value: 'Somos a Smart Cube.' } ],
+        sections: [ { label: 'Hero institucional', visible: true }, { label: 'Imagem / vídeo', visible: true }, { label: 'A nossa história', visible: true }, { label: 'Factos', visible: true } ] },
+    },
+    testimonials: [
+      { quote: 'Reduzimos o tempo por incidente para metade — e os condóminos veem tudo em tempo real.', name: 'Cliente Exemplo', role: 'Gestora de propriedades', chip: '#00B5F1' },
+      { quote: 'A transparência com os condóminos mudou completamente as nossas assembleias.', name: 'Cliente Exemplo', role: 'Síndico profissional', chip: '#296D83' },
+      { quote: 'Recebo pedidos qualificados sem esforço comercial. A minha agenda nunca esteve tão cheia.', name: 'Cliente Exemplo', role: 'Empresa de manutenção', chip: '#0090E8' },
+    ],
+    faqs: [
+      { question: 'A Cubii escala para todo o portfólio?', answer: 'Sim, foi desenhada para multi-edifício desde o início.' },
+      { question: 'Os residentes pagam para usar a app?', answer: 'Não. A app para residentes é gratuita.' },
+      { question: 'Como funciona a integração com Enectiva e Leneda?', answer: 'Os consumos são sincronizados automaticamente e geram alarmes.' },
+      { question: 'Onde ficam guardados os dados?', answer: 'Em servidores na Europa, em conformidade com o RGPD.' },
+    ],
+    logos: [
+      { name: 'administradora A' }, { name: 'sindicato B' }, { name: 'gestora C' },
+      { name: 'administradora D' }, { name: 'sindicato E' }, { name: 'gestora F' },
+    ],
+    leads: [
+      { name: 'Marie Weber', email: 'm.weber@syndic-lu.com', company: 'Syndic Weber', units: '51-200', status: 'Novo' },
+      { name: 'João Almeida', email: 'joao@gestimo.pt', company: 'Gestimo', units: '11-50', status: 'Contactado' },
+      { name: 'Sophie Muller', email: 's.muller@immolux.lu', company: 'ImmoLux', units: '200+', status: 'Demo agendada' },
+      { name: 'Luca Ferreira', email: 'luca@lfsyndic.lu', company: 'LF Syndic', units: '1-10', status: 'Novo' },
+    ],
+    languages: [
+      { code: 'PT', name: 'Português', on: true, def: true },
+      { code: 'EN', name: 'English', on: true, def: false },
+      { code: 'FR', name: 'Français', on: true, def: false },
+      { code: 'LB', name: 'Lëtzebuergesch', on: true, def: false },
+      { code: 'DE', name: 'Deutsch', on: true, def: false },
+    ],
+    settings: [
+      { key: 'announce', title: 'Barra de anúncio', desc: 'Mostrar a faixa de anúncio no topo do site.', on: true },
+      { key: 'chat', title: 'Widget de chat', desc: 'Mostrar o botão de chat flutuante.', on: true },
+      { key: 'app', title: 'Badges de app', desc: 'Mostrar botões App Store / Google Play no hero.', on: true },
+      { key: 'demo', title: 'Modo demonstração', desc: 'Exibir dados de exemplo nas telas do produto.', on: false },
+    ],
+  };
+
+  lineRef = React.createRef();
+  donutRef = React.createRef();
+  barRef = React.createRef();
+
+  componentDidMount() {
+    try { const sv = localStorage.getItem('cubii-lang'); if (sv && Component.LANGS.some(l => l.code === sv)) this.setState({ lang: sv }); } catch (e) {}
+    requestAnimationFrame(() => this.drawAll());
+  }
+  componentDidUpdate() { requestAnimationFrame(() => this.drawAll()); }
+  drawAll() {
+    if (this.state.tab !== 'overview') return;
+    this.drawLine(this.lineRef.current, [4, 6, 5, 9, 7, 11]);
+    this.drawDonut(this.donutRef.current, [[100, '#00B5F1'], [100, '#0090E8'], [100, '#296D83'], [100, '#4DCBF5'], [100, '#CCF0FC']]);
+    const counts = Object.keys(this.state.pages).map(k => this.state.pages[k].sections.length);
+    this.drawBars(this.barRef.current, counts, '#00B5F1', ['Home', 'Func.', 'Market', 'Preços', 'Quem', 'Smart']);
+  }
+
+  _setup(c) { if (!c) return null; const dpr = Math.min(window.devicePixelRatio || 1, 2); const w = c.clientWidth || c.width, h = c.clientHeight || c.height; c.width = w * dpr; c.height = h * dpr; const ctx = c.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h); return { ctx, w, h }; }
+
+  drawLine(c, data) {
+    const s = this._setup(c); if (!s) return; const { ctx, w, h } = s; const pad = 24, max = Math.max(...data) * 1.2;
+    const x = (i) => pad + (i / (data.length - 1)) * (w - pad * 2), y = (v) => h - pad - (v / max) * (h - pad * 2);
+    ctx.strokeStyle = '#EEF3F5'; ctx.lineWidth = 1;
+    for (let g = 0; g <= 4; g++) { const gy = pad + (g / 4) * (h - pad * 2); ctx.beginPath(); ctx.moveTo(pad, gy); ctx.lineTo(w - pad, gy); ctx.stroke(); }
+    const grad = ctx.createLinearGradient(0, pad, 0, h - pad); grad.addColorStop(0, 'rgba(37,37,38,0.28)'); grad.addColorStop(1, 'rgba(37,37,38,0)');
+    ctx.beginPath(); ctx.moveTo(x(0), y(data[0])); for (let i = 1; i < data.length; i++) ctx.lineTo(x(i), y(data[i]));
+    ctx.lineTo(x(data.length - 1), h - pad); ctx.lineTo(x(0), h - pad); ctx.closePath(); ctx.fillStyle = grad; ctx.fill();
+    ctx.beginPath(); ctx.moveTo(x(0), y(data[0])); for (let i = 1; i < data.length; i++) ctx.lineTo(x(i), y(data[i]));
+    ctx.strokeStyle = '#00B5F1'; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.stroke();
+    for (let i = 0; i < data.length; i++) { ctx.beginPath(); ctx.arc(x(i), y(data[i]), 4, 0, 6.2832); ctx.fillStyle = '#FFFFFF'; ctx.fill(); ctx.strokeStyle = '#0090E8'; ctx.lineWidth = 2.5; ctx.stroke(); }
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 11px Nunito Sans'; ctx.textAlign = 'center';
+    ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'].forEach((l, i) => ctx.fillText(l, x(i), h - 6));
+  }
+  drawDonut(c, segs) {
+    const s = this._setup(c); if (!s) return; const { ctx, w, h } = s; const cx = w / 2, cy = h / 2, r = Math.min(w, h) / 2 - 6, inner = r * 0.62;
+    const total = segs.reduce((a, x) => a + x[0], 0); let ang = -Math.PI / 2;
+    segs.forEach(([v, col]) => { const a2 = ang + (v / total) * Math.PI * 2; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, r, ang, a2); ctx.closePath(); ctx.fillStyle = col; ctx.fill(); ang = a2; });
+    ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath(); ctx.arc(cx, cy, inner, 0, 6.2832); ctx.fill(); ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#252526'; ctx.font = '800 20px Nunito Sans'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('5', cx, cy - 5);
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 10px Nunito Sans'; ctx.fillText('idiomas', cx, cy + 12);
+  }
+  drawBars(c, data, color, labels) {
+    const s = this._setup(c); if (!s) return; const { ctx, w, h } = s; const pad = 24, max = Math.max(...data) * 1.2, n = data.length, bw = (w - pad * 2) / n * 0.5;
+    ctx.strokeStyle = '#EEF3F5'; ctx.lineWidth = 1;
+    for (let g = 0; g <= 4; g++) { const gy = pad + (g / 4) * (h - pad * 2); ctx.beginPath(); ctx.moveTo(pad, gy); ctx.lineTo(w - pad, gy); ctx.stroke(); }
+    data.forEach((v, i) => { const cx = pad + (i + 0.5) / n * (w - pad * 2), bh = (v / max) * (h - pad * 2), by = h - pad - bh, rx = cx - bw / 2, rr = 6;
+      const g = ctx.createLinearGradient(0, by, 0, h - pad); g.addColorStop(0, color); g.addColorStop(1, '#4DCBF5'); ctx.fillStyle = g;
+      ctx.beginPath(); ctx.moveTo(rx, h - pad); ctx.lineTo(rx, by + rr); ctx.quadraticCurveTo(rx, by, rx + rr, by); ctx.lineTo(rx + bw - rr, by); ctx.quadraticCurveTo(rx + bw, by, rx + bw, by + rr); ctx.lineTo(rx + bw, h - pad); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = '#252526'; ctx.font = '800 12px Nunito Sans'; ctx.textAlign = 'center'; ctx.fillText(v, cx, by - 6); });
+    ctx.fillStyle = '#8C8C8D'; ctx.font = '600 10.5px Nunito Sans';
+    labels.forEach((l, i) => ctx.fillText(l, pad + (i + 0.5) / n * (w - pad * 2), h - 6));
+  }
+
+  ic(path) { return React.createElement('svg', { width: 17, height: 17, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: path } }); }
+
+  static LANGS = [ {code:'PT',name:'Português'}, {code:'EN',name:'English'}, {code:'FR',name:'Français'}, {code:'LB',name:'Lëtzebuergesch'}, {code:'DE',name:'Deutsch'} ];
+  setLang(code){ this.setState({lang:code, langMenuOpen:false}); try{localStorage.setItem('cubii-lang',code);}catch(e){} }
+  static ADMIN_T = {
+    PT: { pages:{home:'Página Inicial',features:'Funcionalidades',marketplace:'Marketplace',pricing:'Preços',whofor:'Para quem é',about:'Smart Cube'}, groups:{manage:'Gerenciamento',pages:'Páginas do Site',global:'Conteúdo Global',system:'Sistema'}, nav:{overview:'Visão Geral',testimonials:'Depoimentos',faq:'FAQ',logos:'Logos de clientes',leads:'Leads',langs:'Idiomas',settings:'Configurações'}, search:'Pesquisar conteúdo…', viewPage:'↗ Ver página', exit:'⤺ Sair do Painel', ovBadge:'✦ Gestão de Conteúdo', ovTitle:'Bem-vindo ao Cubii CMS', ovSub:'Edite as páginas e seções do site — textos, planos, depoimentos, FAQ e leads — sem tocar no código.', kPages:'Páginas publicadas', kSections:'Seções de conteúdo', kLangs:'Idiomas ativos', kLeads:'Novos leads', cLeads:'Leads do site por mês', last6:'Últimos 6 meses', cLang:'Conteúdo por idioma', cSections:'Seções por página', pagesOfSite:'Páginas do site', secWord:'seções', mainContent:'Conteúdo principal', mainContentSub:'Textos-chave desta página.', sectionsTitle:'Seções da página', sectionsSub:'Reordene, mostre/oculte, renomeie ou remova seções.', newSection:'+ Nova seção', visible:'● Visível', hidden:'○ Oculta', tIntro:'Depoimentos exibidos na página inicial.', tNew:'+ Novo depoimento', fIntro:'Perguntas frequentes da página inicial.', fNew:'+ Nova pergunta', lgIntro:'Logos de clientes exibidos abaixo do hero.', lgNew:'+ Novo logo', leadsIntro:'Funil de leads — use ‹ › para mover cada cartão entre as colunas.', fracoes:'frações', langsIntro:'Idiomas disponíveis no site e idioma padrão.', makeDefault:'Tornar padrão', defaultBadge:'★ Padrão', setIntro:'Elementos globais do site.', stages:{'Novo':'Novo','Contactado':'Contactado','Demo agendada':'Demo agendada','Ganho':'Ganho','Perdido':'Perdido'}, settings:{announce:{t:'Barra de anúncio',d:'Mostrar a faixa de anúncio no topo do site.'},chat:{t:'Widget de chat',d:'Mostrar o botão de chat flutuante.'},app:{t:'Badges de app',d:'Mostrar botões App Store / Google Play no hero.'},demo:{t:'Modo demonstração',d:'Exibir dados de exemplo nas telas do produto.'}} },
+    EN: { pages:{home:'Home',features:'Features',marketplace:'Marketplace',pricing:'Pricing',whofor:'Who it\u2019s for',about:'Smart Cube'}, groups:{manage:'Management',pages:'Site Pages',global:'Global Content',system:'System'}, nav:{overview:'Overview',testimonials:'Testimonials',faq:'FAQ',logos:'Client logos',leads:'Leads',langs:'Languages',settings:'Settings'}, search:'Search content…', viewPage:'↗ View page', exit:'⤺ Log out', ovBadge:'✦ Content Management', ovTitle:'Welcome to Cubii CMS', ovSub:'Edit the site\u2019s pages and sections — texts, plans, testimonials, FAQ and leads — without touching code.', kPages:'Published pages', kSections:'Content sections', kLangs:'Active languages', kLeads:'New leads', cLeads:'Site leads per month', last6:'Last 6 months', cLang:'Content by language', cSections:'Sections per page', pagesOfSite:'Site pages', secWord:'sections', mainContent:'Main content', mainContentSub:'Key texts of this page.', sectionsTitle:'Page sections', sectionsSub:'Reorder, show/hide, rename or remove sections.', newSection:'+ New section', visible:'● Visible', hidden:'○ Hidden', tIntro:'Testimonials shown on the home page.', tNew:'+ New testimonial', fIntro:'Frequently asked questions on the home page.', fNew:'+ New question', lgIntro:'Client logos shown below the hero (logo wall).', lgNew:'+ New logo', leadsIntro:'Lead funnel — use ‹ › to move each card between columns.', fracoes:'units', langsIntro:'Languages available on the site and default language.', makeDefault:'Set default', defaultBadge:'★ Default', setIntro:'Global site elements.', stages:{'Novo':'New','Contactado':'Contacted','Demo agendada':'Demo booked','Ganho':'Won','Perdido':'Lost'}, settings:{announce:{t:'Announcement bar',d:'Show the announcement strip at the top of the site.'},chat:{t:'Chat widget',d:'Show the floating chat button.'},app:{t:'App badges',d:'Show App Store / Google Play buttons in the hero.'},demo:{t:'Demo mode',d:'Show sample data in product screens.'}} },
+    FR: { pages:{home:'Accueil',features:'Fonctionnalités',marketplace:'Marketplace',pricing:'Tarifs',whofor:'Pour qui',about:'Smart Cube'}, groups:{manage:'Gestion',pages:'Pages du site',global:'Contenu global',system:'Système'}, nav:{overview:'Aperçu',testimonials:'Témoignages',faq:'FAQ',logos:'Logos clients',leads:'Leads',langs:'Langues',settings:'Paramètres'}, search:'Rechercher du contenu…', viewPage:'↗ Voir la page', exit:'⤺ Se déconnecter', ovBadge:'✦ Gestion de contenu', ovTitle:'Bienvenue sur Cubii CMS', ovSub:'Modifiez les pages et sections du site — textes, formules, témoignages, FAQ et leads — sans toucher au code.', kPages:'Pages publiées', kSections:'Sections de contenu', kLangs:'Langues actives', kLeads:'Nouveaux leads', cLeads:'Leads du site par mois', last6:'6 derniers mois', cLang:'Contenu par langue', cSections:'Sections par page', pagesOfSite:'Pages du site', secWord:'sections', mainContent:'Contenu principal', mainContentSub:'Textes-clés de cette page.', sectionsTitle:'Sections de la page', sectionsSub:'Réorganisez, affichez/masquez, renommez ou supprimez des sections.', newSection:'+ Nouvelle section', visible:'● Visible', hidden:'○ Masquée', tIntro:'Témoignages affichés sur la page d\u2019accueil.', tNew:'+ Nouveau témoignage', fIntro:'Questions fréquentes de la page d\u2019accueil.', fNew:'+ Nouvelle question', lgIntro:'Logos clients affichés sous le hero.', lgNew:'+ Nouveau logo', leadsIntro:'Tunnel de leads — utilisez ‹ › pour déplacer chaque carte entre les colonnes.', fracoes:'lots', langsIntro:'Langues disponibles sur le site et langue par défaut.', makeDefault:'Définir par défaut', defaultBadge:'★ Par défaut', setIntro:'Éléments globaux du site.', stages:{'Novo':'Nouveau','Contactado':'Contacté','Demo agendada':'Démo planifiée','Ganho':'Gagné','Perdido':'Perdu'}, settings:{announce:{t:'Barre d\u2019annonce',d:'Afficher le bandeau d\u2019annonce en haut du site.'},chat:{t:'Widget de chat',d:'Afficher le bouton de chat flottant.'},app:{t:'Badges d\u2019app',d:'Afficher les boutons App Store / Google Play dans le hero.'},demo:{t:'Mode démo',d:'Afficher des données d\u2019exemple dans les écrans produit.'}} },
+    LB: { pages:{home:'Startsäit',features:'Funktiounen',marketplace:'Marketplace',pricing:'Präisser',whofor:'Fir wien',about:'Smart Cube'}, groups:{manage:'Gestioun',pages:'Säiten',global:'Globale Inhalt',system:'System'}, nav:{overview:'Iwwerbléck',testimonials:'Témoignagen',faq:'FAQ',logos:'Client-Logoen',leads:'Leads',langs:'Sproochen',settings:'Astellungen'}, search:'Inhalt sichen…', viewPage:'↗ Säit weisen', exit:'⤺ Ausloggen', ovBadge:'✦ Inhaltsverwaltung', ovTitle:'Wëllkomm bei Cubii CMS', ovSub:'Ännert d\u2019Säiten a Sektioune vum Site — Texter, Pläng, Témoignagen, FAQ a Leads — ouni Code unzefaassen.', kPages:'Verëffentlecht Säiten', kSections:'Inhaltssektiounen', kLangs:'Aktiv Sproochen', kLeads:'Nei Leads', cLeads:'Site-Leads pro Mount', last6:'Lescht 6 Méint', cLang:'Inhalt no Sprooch', cSections:'Sektioune pro Säit', pagesOfSite:'Säiten', secWord:'Sektiounen', mainContent:'Haaptinhalt', mainContentSub:'Schlësseltexter vun dëser Säit.', sectionsTitle:'Sektioune vun der Säit', sectionsSub:'Nei uerdnen, weisen/verstoppen, ëmbenennen oder läschen.', newSection:'+ Nei Sektioun', visible:'● Siichtbar', hidden:'○ Verstoppt', tIntro:'Témoignagen op der Startsäit.', tNew:'+ Neit Témoignage', fIntro:'Dacks gestallte Froen op der Startsäit.', fNew:'+ Nei Fro', lgIntro:'Client-Logoen ënner dem Hero.', lgNew:'+ Neit Logo', leadsIntro:'Lead-Trichter — benotzt ‹ › fir all Kaart tëscht de Kolonnen ze réckelen.', fracoes:'Unitéiten', langsIntro:'Sproochen um Site an d\u2019Standardsprooch.', makeDefault:'Als Standard setzen', defaultBadge:'★ Standard', setIntro:'Global Elementer vum Site.', stages:{'Novo':'Nei','Contactado':'Kontaktéiert','Demo agendada':'Demo geplangt','Ganho':'Gewonnen','Perdido':'Verluer'}, settings:{announce:{t:'Annonce-Bar',d:'D\u2019Annonce uewen um Site weisen.'},chat:{t:'Chat-Widget',d:'De schwiewende Chat-Knäppchen weisen.'},app:{t:'App-Badgen',d:'App Store / Google Play Knäppercher am Hero weisen.'},demo:{t:'Demo-Modus',d:'Beispilldaten an de Produkt-Écranen weisen.'}} },
+    DE: { pages:{home:'Startseite',features:'Funktionen',marketplace:'Marketplace',pricing:'Preise',whofor:'Für wen',about:'Smart Cube'}, groups:{manage:'Verwaltung',pages:'Website-Seiten',global:'Globaler Inhalt',system:'System'}, nav:{overview:'Überblick',testimonials:'Referenzen',faq:'FAQ',logos:'Kundenlogos',leads:'Leads',langs:'Sprachen',settings:'Einstellungen'}, search:'Inhalt suchen…', viewPage:'↗ Seite ansehen', exit:'⤺ Abmelden', ovBadge:'✦ Content-Verwaltung', ovTitle:'Willkommen bei Cubii CMS', ovSub:'Bearbeiten Sie die Seiten und Abschnitte der Website — Texte, Pläne, Referenzen, FAQ und Leads — ohne Code.', kPages:'Veröffentlichte Seiten', kSections:'Inhaltsabschnitte', kLangs:'Aktive Sprachen', kLeads:'Neue Leads', cLeads:'Website-Leads pro Monat', last6:'Letzte 6 Monate', cLang:'Inhalt nach Sprache', cSections:'Abschnitte pro Seite', pagesOfSite:'Website-Seiten', secWord:'Abschnitte', mainContent:'Hauptinhalt', mainContentSub:'Schlüsseltexte dieser Seite.', sectionsTitle:'Abschnitte der Seite', sectionsSub:'Neu anordnen, ein-/ausblenden, umbenennen oder entfernen.', newSection:'+ Neuer Abschnitt', visible:'● Sichtbar', hidden:'○ Verborgen', tIntro:'Referenzen auf der Startseite.', tNew:'+ Neue Referenz', fIntro:'Häufige Fragen auf der Startseite.', fNew:'+ Neue Frage', lgIntro:'Kundenlogos unter dem Hero.', lgNew:'+ Neues Logo', leadsIntro:'Lead-Trichter — mit ‹ › jede Karte zwischen den Spalten verschieben.', fracoes:'Einheiten', langsIntro:'Verfügbare Sprachen und Standardsprache.', makeDefault:'Als Standard', defaultBadge:'★ Standard', setIntro:'Globale Website-Elemente.', stages:{'Novo':'Neu','Contactado':'Kontaktiert','Demo agendada':'Demo geplant','Ganho':'Gewonnen','Perdido':'Verloren'}, settings:{announce:{t:'Ankündigungsleiste',d:'Ankündigungsband oben auf der Website anzeigen.'},chat:{t:'Chat-Widget',d:'Schwebenden Chat-Button anzeigen.'},app:{t:'App-Badges',d:'App Store / Google Play Buttons im Hero anzeigen.'},demo:{t:'Demo-Modus',d:'Beispieldaten in Produktbildschirmen anzeigen.'}} },
+  };
+
+  renderVals() {
+    const s = this.state;
+    const set = (arr, i, patch) => this.setState({ [arr]: s[arr].map((r, j) => j === i ? { ...r, ...patch } : r) });
+    const pageIds = Object.keys(s.pages);
+    const isPage = pageIds.indexOf(s.tab) !== -1;
+    const lang = s.lang ?? 'pt';
+    const LC = (lang || 'pt').toUpperCase();
+    const t = Component.ADMIN_T[LC] || Component.ADMIN_T.PT;
+    const FLAGS = { pt: '🇵🇹', en: '🇬🇧', fr: '🇫🇷', lb: '🇱🇺', de: '🇩🇪' };
+    const langOptions = Component.LANGS.map((l) => ({ code: l.code, name: l.name, flag: FLAGS[l.code.toLowerCase()], onClick: () => this.setLang(l.code.toLowerCase()), style: { display:'flex', justifyContent:'space-between', alignItems:'center', gap:'16px', width:'100%', padding:'9px 14px', border:'none', borderRadius:'10px', cursor:'pointer', fontFamily:"'Nunito Sans', sans-serif", fontSize:'13.5px', textAlign:'left', fontWeight: l.code===LC?800:500, background: l.code===LC?'#F6F6F6':'transparent', color: l.code===LC?'#0090E8':'#296D83' } }));
+
+    const ICONS = {
+      home: '<path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/>',
+      grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+      store: '<path d="M4 8h16l-1-4H5z"/><path d="M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8"/><path d="M9 20v-6h6v6"/>',
+      tag: '<path d="M3 12l9-9 9 9-9 9z"/><circle cx="8.5" cy="8.5" r="1.3"/>',
+      users: '<circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 6.2a3 3 0 0 1 0 5.6"/>',
+      info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+      quote: '<path d="M7 7h4v6a4 4 0 0 1-4 4M13 7h4v6a4 4 0 0 1-4 4"/>',
+      help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4 2c0 1.5-2 2-2 3.5M12 17h.01"/>',
+      image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-8 8"/>',
+      inbox: '<path d="M3 12h5l2 3h4l2-3h5"/><path d="M5 6h14l2 6v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/>',
+      globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/>',
+      gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4 12H1M23 12h-3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+    };
+    const pageIcon = { home: 'home', features: 'grid', marketplace: 'store', pricing: 'tag', whofor: 'users', about: 'info' };
+
+    const newLead = s.leads.filter(l => l.status === 'Novo').length;
+    const navDef = [
+      { label: t.groups.manage, items: [ ['overview', t.nav.overview, 'home', null] ] },
+      { label: t.groups.pages, items: pageIds.map(id => [id, t.pages[id], pageIcon[id] || 'grid', null]) },
+      { label: t.groups.global, items: [ ['testimonials', t.nav.testimonials, 'quote', null], ['faq', t.nav.faq, 'help', null], ['logos', t.nav.logos, 'image', null], ['leads', t.nav.leads, 'inbox', String(newLead)] ] },
+      { label: t.groups.system, items: [ ['langs', t.nav.langs, 'globe', null], ['settings', t.nav.settings, 'gear', null] ] },
+    ];
+    const navGroups = navDef.map(g => ({
+      label: g.label,
+      items: g.items.map(([id, label, icon, badge]) => {
+        const active = s.tab === id;
+        return { label, badge,
+          iconEl: React.createElement('span', { style: { color: active ? '#0090E8' : '#8C8C8D', display: 'inline-flex' } }, this.ic(ICONS[icon])),
+          onClick: () => this.setState({ tab: id }),
+          style: { display: 'flex', alignItems: 'center', gap: '11px', width: '100%', padding: '10px 12px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: "'Nunito Sans', sans-serif", fontSize: '14px', fontWeight: active ? 700 : 600, background: active ? '#F6F6F6' : 'transparent', color: active ? '#0090E8' : '#3C4A50', marginBottom: '2px' },
+          badgeStyle: { background: active ? '#00B5F1' : '#E6EDF0', color: active ? '#FFFFFF' : '#8C8C8D', fontSize: '11px', fontWeight: 800, padding: '2px 8px', borderRadius: '999px' } };
+      }),
+    }));
+
+    const titles = { overview: t.nav.overview, testimonials: t.nav.testimonials, faq: t.nav.faq, logos: t.nav.logos, leads: t.nav.leads, langs: t.nav.langs, settings: t.nav.settings };
+    pageIds.forEach(id => { titles[id] = t.pages[id]; });
+
+    // ---- Overview ----
+    const totalSections = pageIds.reduce((a, id) => a + s.pages[id].sections.length, 0);
+    const kpis = [
+      { icon: 'grid', value: String(pageIds.length), label: t.kPages },
+      { icon: 'home', value: String(totalSections), label: t.kSections },
+      { icon: 'globe', value: String(s.languages.filter(l => l.on).length), label: t.kLangs },
+      { icon: 'inbox', value: String(newLead), label: t.kLeads },
+    ].map(k => ({ value: k.value, label: k.label, iconEl: React.createElement('span', { style: { color: '#0090E8', display: 'inline-flex' } }, this.ic(ICONS[k.icon])) }));
+    const langLegend = [ ['Português', 22, '#00B5F1'], ['English', 21, '#0090E8'], ['Français', 20, '#296D83'], ['Lëtzebuergesch', 19, '#4DCBF5'], ['Deutsch', 18, '#CCF0FC'] ].map(([label, value, color]) => ({ label, value, color }));
+    const pageLinks = pageIds.map(id => ({ name: t.pages[id], count: s.pages[id].sections.length, onClick: () => this.setState({ tab: id }), iconEl: this.ic(ICONS[pageIcon[id] || 'grid']) }));
+
+    // ---- Active page editor ----
+    const pg = isPage ? s.pages[s.tab] : null;
+    const setPage = (patch) => this.setState({ pages: { ...s.pages, [s.tab]: { ...pg, ...patch } } });
+    const pageFields = pg ? pg.fields.map((f, i) => ({ label: f.label, value: f.value, onChange: (e) => setPage({ fields: pg.fields.map((x, j) => j === i ? { ...x, value: e.target.value } : x) }) })) : [];
+    const moveSec = (i, d) => { const arr = pg.sections.slice(); const j = i + d; if (j < 0 || j >= arr.length) return; const t = arr[i]; arr[i] = arr[j]; arr[j] = t; setPage({ sections: arr }); };
+    const pageSections = pg ? pg.sections.map((sec, i) => ({
+      label: sec.label, num: i + 1,
+      rowBg: sec.visible ? '#FFFFFF' : '#F7FAFB',
+      textColor: sec.visible ? '#252526' : '#8C8C8D',
+      onLabel: (e) => setPage({ sections: pg.sections.map((x, j) => j === i ? { ...x, label: e.target.value } : x) }),
+      onToggle: () => setPage({ sections: pg.sections.map((x, j) => j === i ? { ...x, visible: !x.visible } : x) }),
+      pillLabel: sec.visible ? t.visible : t.hidden,
+      pillStyle: { border: 'none', cursor: 'pointer', fontSize: '12px', fontWeight: 700, padding: '6px 12px', borderRadius: '999px', color: sec.visible ? '#1F8A5B' : '#8C8C8D', background: sec.visible ? '#E6F6EE' : '#EEF3F5' },
+      onUp: () => moveSec(i, -1), onDown: () => moveSec(i, 1),
+      onDelete: () => setPage({ sections: pg.sections.filter((_, j) => j !== i) }),
+    })) : [];
+
+    // ---- Global CRUD ----
+    const testimonials = s.testimonials.map((tm, i) => ({ ...tm,
+      onQuote: (e) => set('testimonials', i, { quote: e.target.value }), onName: (e) => set('testimonials', i, { name: e.target.value }), onRole: (e) => set('testimonials', i, { role: e.target.value }),
+      onDelete: () => this.setState({ testimonials: s.testimonials.filter((_, j) => j !== i) }) }));
+    const faqs = s.faqs.map((q, i) => ({ ...q,
+      onQuestion: (e) => set('faqs', i, { question: e.target.value }), onAnswer: (e) => set('faqs', i, { answer: e.target.value }),
+      onDelete: () => this.setState({ faqs: s.faqs.filter((_, j) => j !== i) }) }));
+    const logos = s.logos.map((lg, i) => ({ ...lg, onName: (e) => set('logos', i, { name: e.target.value }), onDelete: () => this.setState({ logos: s.logos.filter((_, j) => j !== i) }) }));
+
+    const leadStages = ['Novo', 'Contactado', 'Demo agendada', 'Ganho', 'Perdido'];
+    const leadStageColor = { 'Novo': '#E5A400', 'Contactado': '#00B5F1', 'Demo agendada': '#0090E8', 'Ganho': '#1F8A5B', 'Perdido': '#E5484D' };
+    const moveLead = (i, d) => { const cur = leadStages.indexOf(s.leads[i].status); const ni = Math.min(leadStages.length - 1, Math.max(0, cur + d)); set('leads', i, { status: leadStages[ni] }); };
+    const arrowBase = { width: '30px', height: '26px', borderRadius: '8px', border: '1px solid #E6EDF0', background: '#FFFFFF', cursor: 'pointer', fontSize: '15px', fontWeight: 800, color: '#0090E8', lineHeight: 1 };
+    const arrowOff = { ...arrowBase, color: '#D5DEE2', cursor: 'not-allowed' };
+    const leadColumns = leadStages.map(stage => ({
+      label: t.stages[stage] || stage, color: leadStageColor[stage],
+      count: s.leads.filter(l => l.status === stage).length,
+      cards: s.leads.map((l, i) => ({ l, i })).filter(x => x.l.status === stage).map(({ l, i }) => {
+        const idx = leadStages.indexOf(stage);
+        return { name: l.name, company: l.company, email: l.email, units: l.units,
+          onPrev: () => moveLead(i, -1), onNext: () => moveLead(i, 1),
+          prevStyle: idx === 0 ? arrowOff : arrowBase, nextStyle: idx === leadStages.length - 1 ? arrowOff : arrowBase };
+      }),
+    }));
+
+    const languages = s.languages.map((lg, i) => ({ ...lg,
+      onToggle: () => { if (lg.def) return; set('languages', i, { on: !lg.on }); },
+      onDefault: () => this.setState({ languages: s.languages.map((x, j) => ({ ...x, def: j === i, on: j === i ? true : x.on })) }),
+      defaultLabel: lg.def ? t.defaultBadge : t.makeDefault,
+      defaultStyle: { border: lg.def ? 'none' : '1.5px solid #E6EDF0', background: lg.def ? '#F6F6F6' : '#FFFFFF', color: lg.def ? '#0090E8' : '#8C8C8D', fontSize: '12px', fontWeight: 700, padding: '7px 13px', borderRadius: '999px', cursor: lg.def ? 'default' : 'pointer' },
+      switchStyle: { width: '46px', height: '26px', borderRadius: '999px', border: 'none', cursor: lg.def ? 'not-allowed' : 'pointer', background: lg.on ? '#00B5F1' : '#D5DEE2', position: 'relative', transition: 'background 0.2s ease', flexShrink: 0, opacity: lg.def ? 0.6 : 1 },
+      knobStyle: { position: 'absolute', top: '3px', left: lg.on ? '23px' : '3px', width: '20px', height: '20px', borderRadius: '999px', background: '#FFFFFF', transition: 'left 0.2s ease', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' } }));
+
+    const settings = s.settings.map((cfg, i) => ({ ...cfg, title: (t.settings[cfg.key]||{}).t || cfg.title, desc: (t.settings[cfg.key]||{}).d || cfg.desc, onToggle: () => set('settings', i, { on: !cfg.on }),
+      switchStyle: { width: '46px', height: '26px', borderRadius: '999px', border: 'none', cursor: 'pointer', background: cfg.on ? '#00B5F1' : '#D5DEE2', position: 'relative', transition: 'background 0.2s ease', flexShrink: 0 },
+      knobStyle: { position: 'absolute', top: '3px', left: cfg.on ? '23px' : '3px', width: '20px', height: '20px', borderRadius: '999px', background: '#FFFFFF', transition: 'left 0.2s ease', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' } }));
+
+    return {
+      navGroups, activeTitle: titles[s.tab],
+      activeIsPage: isPage, activePageHref: pg ? pg.href : '#',
+      search: s.search, onSearch: (e) => this.setState({ search: e.target.value }),
+      lineRef: this.lineRef, donutRef: this.donutRef, barRef: this.barRef,
+      isOverview: s.tab === 'overview', isTestimonials: s.tab === 'testimonials', isFaq: s.tab === 'faq', isLogos: s.tab === 'logos', isLeads: s.tab === 'leads', isLangs: s.tab === 'langs', isSettings: s.tab === 'settings',
+      kpis, langLegend, pageLinks, pageFields, pageSections, testimonials, faqs, logos, leadColumns, languages, settings,
+      L: t, langCode: LC, langFlag: FLAGS[lang] || '', langMenuOpen: s.langMenuOpen, toggleLangMenu: () => this.setState({ langMenuOpen: !s.langMenuOpen }), langOptions,
+      addSection: () => setPage({ sections: [...pg.sections, { label: 'Nova seção', visible: true }] }),
+      addTestimonial: () => this.setState({ testimonials: [...s.testimonials, { quote: 'Novo depoimento…', name: 'Cliente', role: 'Cargo', chip: '#00B5F1' }] }),
+      addFaq: () => this.setState({ faqs: [...s.faqs, { question: 'Nova pergunta?', answer: 'Resposta…' }] }),
+      addLogo: () => this.setState({ logos: [...s.logos, { name: 'novo cliente' }] }),
+    };
+  }
+}
+</script>
+</body>
+</html>
