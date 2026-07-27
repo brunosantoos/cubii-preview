@@ -16,6 +16,78 @@
     body { font-family: 'Nunito Sans', 'Helvetica Neue', sans-serif; color: #252526; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Nunito Sans', sans-serif; }
     * { box-sizing: border-box; }
+    /* ============ RESPONSIVIDADE ============ */
+    @media (max-width: 860px) {
+      [data-om-table] { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+      [data-om-table] > div { min-width: 720px !important; }
+    }
+
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, canvas, svg, video { max-width: 100%; }
+
+    @media (max-width: 1180px) {
+      [style*="repeat(6, 1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      [style*="repeat(5, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="1.6fr 1fr 1fr 1fr 1.35fr"] { grid-template-columns: 1.4fr 1fr 1fr !important; }
+    }
+
+    @media (max-width: 1024px) {
+      [style*="repeat(4, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="repeat(3, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      section, header, footer { padding-left: 24px !important; padding-right: 24px !important; }
+      h1 { font-size: 40px !important; letter-spacing: -1.2px !important; }
+      h2 { font-size: 30px !important; letter-spacing: -0.9px !important; }
+    }
+
+    @media (max-width: 860px) {
+      /* apenas grids de layout (repeat / fr-pares de coluna) passam a coluna única — tabelas ficam de fora */
+      [style*="repeat("] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: 1fr 1fr"],
+      [style*="grid-template-columns: 1.05fr 0.95fr"],
+      [style*="grid-template-columns: 1.15fr 0.85fr"],
+      [style*="grid-template-columns: 0.9fr 1.1fr"],
+      [style*="grid-template-columns: 0.85fr 1.15fr"],
+      [style*="grid-template-columns: 1.1fr 0.9fr"],
+      [style*="grid-template-columns: 0.95fr 1.05fr"],
+      [style*="grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr"],
+      [style*="grid-template-columns: 1.6fr 1fr 1fr 1fr 1.35fr"],
+      [style*="grid-template-columns: 1.2fr 1fr"],
+      [style*="grid-template-columns: 1.4fr 0.6fr"],
+      [style*="grid-template-columns: 1fr 1.15fr"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns"] > * { min-width: 0 !important; }
+      section, header, footer { padding-left: 18px !important; padding-right: 18px !important; }
+      section { padding-top: 52px !important; padding-bottom: 52px !important; }
+      h1 { font-size: 32px !important; letter-spacing: -1px !important; line-height: 1.12 !important; }
+      h2 { font-size: 25px !important; letter-spacing: -0.7px !important; line-height: 1.18 !important; }
+      h3 { font-size: 18px !important; }
+      /* larguras fixas de contentores não transbordam (sem afetar células/tabelas) */
+      section > div, section > div > div { max-width: 100% !important; }
+      input, select, textarea { max-width: 100% !important; }
+      /* alturas de moldura mais baixas em ecrã pequeno */
+      [style*="height: 380px"], [style*="height: 360px"], [style*="height: 340px"] { height: 220px !important; }
+      /* nav do topo centrada e compacta */
+      header nav { gap: 10px 16px !important; padding-left: 0 !important; width: 100% !important; }
+      header nav a, header nav button { font-size: 15px !important; }
+      /* linhas flex que precisam empilhar */
+      [style*="flex-direction: row"] { flex-direction: column !important; }
+    }
+
+    @media (max-width: 560px) {
+      section, header, footer { padding-left: 14px !important; padding-right: 14px !important; }
+      h1 { font-size: 27px !important; }
+      h2 { font-size: 22px !important; }
+      [style*="height: 220px"] { height: 180px !important; }
+    }
+
+    @media (max-width: 900px) {
+      body > div[style*="min-height: 100vh"] { flex-direction: column !important; }
+      aside { position: static !important; width: 100% !important; height: auto !important; border-right: none !important; border-bottom: 1px solid #E6EDF0 !important; }
+      aside nav { display: flex !important; flex-wrap: wrap !important; overflow: visible !important; }
+      aside nav > div { margin-bottom: 4px !important; }
+      main > div { padding: 18px !important; }
+      header input { width: 140px !important; }
+    }
+
     input, select, textarea { font-family: 'Nunito Sans', sans-serif; }
     ::-webkit-scrollbar { width: 10px; height: 10px; }
     ::-webkit-scrollbar-thumb { background: #CFD9DD; border-radius: 999px; }

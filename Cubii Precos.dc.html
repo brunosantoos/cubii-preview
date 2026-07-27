@@ -19,6 +19,69 @@
     a:hover { color: #1A3F6F; }
     input::placeholder { color: #878888; }
     * { box-sizing: border-box; }
+    /* ============ RESPONSIVIDADE ============ */
+    @media (max-width: 860px) {
+      [data-om-table] { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+      [data-om-table] > div { min-width: 720px !important; }
+    }
+
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, canvas, svg, video { max-width: 100%; }
+
+    @media (max-width: 1180px) {
+      [style*="repeat(6, 1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      [style*="repeat(5, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="1.6fr 1fr 1fr 1fr 1.35fr"] { grid-template-columns: 1.4fr 1fr 1fr !important; }
+    }
+
+    @media (max-width: 1024px) {
+      [style*="repeat(4, 1fr)"]:not([data-om-plans]) { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="repeat(3, 1fr)"]:not([data-om-plans]) { grid-template-columns: repeat(2, 1fr) !important; }
+      section, header, footer { padding-left: 24px !important; padding-right: 24px !important; }
+      h1 { font-size: 40px !important; letter-spacing: -1.2px !important; }
+      h2 { font-size: 30px !important; letter-spacing: -0.9px !important; }
+    }
+
+    @media (max-width: 860px) {
+      /* apenas grids de layout (repeat / fr-pares de coluna) passam a coluna única — tabelas ficam de fora */
+      [style*="repeat("]:not([data-om-plans]) { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: 1fr 1fr"],
+      [style*="grid-template-columns: 1.05fr 0.95fr"],
+      [style*="grid-template-columns: 1.15fr 0.85fr"],
+      [style*="grid-template-columns: 0.9fr 1.1fr"],
+      [style*="grid-template-columns: 0.85fr 1.15fr"],
+      [style*="grid-template-columns: 1.1fr 0.9fr"],
+      [style*="grid-template-columns: 0.95fr 1.05fr"],
+      [style*="grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr"],
+      [style*="grid-template-columns: 1.6fr 1fr 1fr 1fr 1.35fr"],
+      [style*="grid-template-columns: 1.2fr 1fr"],
+      [style*="grid-template-columns: 1.4fr 0.6fr"],
+      [style*="grid-template-columns: 1fr 1.15fr"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns"] > * { min-width: 0 !important; }
+      section, header, footer { padding-left: 18px !important; padding-right: 18px !important; }
+      section { padding-top: 52px !important; padding-bottom: 52px !important; }
+      h1 { font-size: 32px !important; letter-spacing: -1px !important; line-height: 1.12 !important; }
+      h2 { font-size: 25px !important; letter-spacing: -0.7px !important; line-height: 1.18 !important; }
+      h3 { font-size: 18px !important; }
+      /* larguras fixas de contentores não transbordam (sem afetar células/tabelas) */
+      section > div, section > div > div { max-width: 100% !important; }
+      input, select, textarea { max-width: 100% !important; }
+      /* alturas de moldura mais baixas em ecrã pequeno */
+      [style*="height: 380px"], [style*="height: 360px"], [style*="height: 340px"] { height: 220px !important; }
+      /* nav do topo centrada e compacta */
+      header nav { gap: 10px 16px !important; padding-left: 0 !important; width: 100% !important; }
+      header nav a, header nav button { font-size: 15px !important; }
+      /* linhas flex que precisam empilhar */
+      [style*="flex-direction: row"] { flex-direction: column !important; }
+    }
+
+    @media (max-width: 560px) {
+      section, header, footer { padding-left: 14px !important; padding-right: 14px !important; }
+      h1 { font-size: 27px !important; }
+      h2 { font-size: 22px !important; }
+      [style*="height: 220px"] { height: 180px !important; }
+    }
+
   </style>
 </helmet>
 
@@ -90,11 +153,11 @@
 
 <!-- ===================== CARDS DE PLANOS ===================== -->
 <section data-screen-label="Planos" style="padding: 24px 32px 80px; background: #F6F6F6;">
-  <div style="max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1.5px solid #E2ECEF; border-radius: 20px; overflow: visible;">
+  <div data-om-plans style="{{ plansWrapStyle }}">
     <sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
       <div style="{{ p.cardStyle }}" onMouseEnter="{{ cardHoverOn }}" onMouseLeave="{{ cardHoverOff }}">
         <sc-if value="{{ p.recommended }}" hint-placeholder-val="{{ false }}">
-          <div style="position: absolute; top: -30px; left: -1.5px; right: -1.5px; background: #252526; color: #FFFFFF; font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-align: center; padding: 8px 0; border-radius: 12px 12px 0 0;">{{ t.recommended }}</div>
+          <div style="{{ p.badgeStyle }}">{{ t.recommended }}</div>
         </sc-if>
         <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center; min-height: 96px;">
           <h3 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #252526;">{{ p.name }}</h3>
@@ -129,7 +192,7 @@
       <h2 style="margin: 0; font-size: 40px; font-weight: 900; letter-spacing: -1.4px; text-align: center; color: #252526;">{{ t.compareH2 }}</h2>
       <a href="Cubii Funcionalidades.dc.html" style="font-size: 14.5px; font-weight: 700; color: #1A3F6F;">{{ t.compareLink }}</a>
     </div>
-    <div style="background: #FFFFFF; border: 1.5px solid #E2ECEF; border-radius: 18px; overflow: hidden;">
+    <div data-om-table style="background: #FFFFFF; border: 1.5px solid #E2ECEF; border-radius: 18px; overflow: hidden;">
       <!-- Cabeçalho -->
       <div style="display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr; padding: 18px 24px; border-bottom: 1.5px solid #E2ECEF;">
         <span></span>
@@ -265,9 +328,22 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;pt&quot;, &quot;options&quot;: [&quot;pt&quot;, &quot;en&quot;, &quot;fr&quot;, &quot;lb&quot;, &quot;de&quot;], &quot;tsType&quot;: &quot;'pt' | 'en' | 'fr' | 'lb' | 'de'&quot;, &quot;section&quot;: &quot;Idioma&quot;}, &quot;defaultUnits&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 120, &quot;min&quot;: 1, &quot;max&quot;: 5000, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Calculadora&quot;}}">
 class Component extends DCLogic {
-  state = { lang: null, langMenuOpen: false, featMenuOpen: false, billing: 'm', units: null, openDetail: 0 };
+  state = { lang: null, langMenuOpen: false, featMenuOpen: false, billing: 'm', units: null, openDetail: 0, planCols: 4 };
+
+  componentWillUnmount() { if (this._onPlanResize) window.removeEventListener('resize', this._onPlanResize); }
+
+  planCols() {
+    if (typeof window === 'undefined') return 4;
+    const w = window.innerWidth || 1200;
+    if (w <= 860) return 1;
+    if (w <= 1024) return 2;
+    return 4;
+  }
 
   componentDidMount() {
+    this._onPlanResize = () => { const c = this.planCols(); if (c !== this.state.planCols) this.setState({ planCols: c }); };
+    window.addEventListener('resize', this._onPlanResize);
+    this._onPlanResize();
     try {
       const saved = localStorage.getItem('cubii-lang');
       if (saved && Component.LANGS.some((l) => l.code === saved)) this.setState({ lang: saved });
@@ -595,6 +671,7 @@ class Component extends DCLogic {
       color: active ? '#FFFFFF' : '#252526',
     });
 
+    const cols = s.planCols || 4;
     const plans = t.plans.map((p, i) => {
       const price = prices[i];
       const recommended = i === 2;
@@ -610,13 +687,18 @@ class Component extends DCLogic {
       }
       return {
         ...p, recommended,
+        badgeStyle: cols < 4
+          ? { position: 'static', display: 'block', background: '#252526', color: '#FFFFFF', fontSize: '11.5px', fontWeight: 800, letterSpacing: '1.5px', textAlign: 'center', padding: '7px 0', borderRadius: '999px', marginBottom: '6px' }
+          : { position: 'absolute', top: '-30px', left: '-1.5px', right: '-1.5px', background: '#252526', color: '#FFFFFF', fontSize: '11.5px', fontWeight: 800, letterSpacing: '1.5px', textAlign: 'center', padding: '8px 0', borderRadius: '12px 12px 0 0' },
         price: priceStr, priceNote, estimate,
         cardStyle: {
           position: 'relative', display: 'flex', flexDirection: 'column', gap: '20px',
           padding: '34px 26px 30px', background: '#FFFFFF',
-          borderRight: i < 3 ? '1.5px solid #E2ECEF' : 'none',
+          borderRight: (cols === 4 && i < 3) ? '1.5px solid #E2ECEF' : 'none',
+          border: cols < 4 ? '1.5px solid #E2ECEF' : undefined,
           outline: recommended ? '2.5px solid #252526' : 'none',
-          borderRadius: i === 0 ? '20px 0 0 20px' : (i === 3 ? '0 20px 20px 0' : '0'),
+          borderRadius: cols < 4 ? '20px' : (i === 0 ? '20px 0 0 20px' : (i === 3 ? '0 20px 20px 0' : '0')),
+          paddingTop: (cols < 4 && recommended) ? '18px' : '34px',
           zIndex: recommended ? 1 : 0,
           transition: 'box-shadow 0.28s ease, transform 0.28s cubic-bezier(0.22,1,0.36,1)',
         },
@@ -675,6 +757,9 @@ class Component extends DCLogic {
       annualBtnStyle: toggleStyle(s.billing === 'a'),
 
       plans,
+      plansWrapStyle: cols === 4
+        ? { maxWidth: '1150px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, border: '1.5px solid #E2ECEF', borderRadius: '20px', overflow: 'visible' }
+        : { maxWidth: '1150px', margin: '0 auto', display: 'grid', gridTemplateColumns: cols === 2 ? 'repeat(2, 1fr)' : '1fr', gap: '18px', border: 'none', borderRadius: 0, overflow: 'visible' },
       cardHoverOn: (e) => { const el = e.currentTarget; el.style.boxShadow = '0 24px 55px rgba(37,37,38,0.22)'; el.style.transform = 'translateY(-6px)'; el.style.zIndex = 3; },
       cardHoverOff: (e) => { const el = e.currentTarget; el.style.boxShadow = ''; el.style.transform = ''; el.style.zIndex = ''; },
       planHeaders: t.plans.map((p) => p.name),
