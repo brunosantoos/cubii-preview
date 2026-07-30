@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    input, select { font-family: Montserrat, sans-serif; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Demo / hero + form" style="padding:36px 0 88px;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 60%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 34px;font-size:14px;color:#6C8087;">{{ t.residentNotePrefix }} <a href="Residents.dc.html" style="font-weight:700;">{{ t.residentNoteCta }}</a></p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:start;">
+          <div>
+            <h1 style="margin:0 0 22px;font-size:clamp(36px,4.6vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span>.</h1>
+            <p style="margin:0 0 40px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+            <h2 style="margin:0 0 24px;font-size:20px;font-weight:800;letter-spacing:-0.015em;">{{ t.expectH2 }}</h2>
+            <ol style="list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:20px;">
+              <li style="display:flex;gap:16px;">
+                <span style="flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;">1</span>
+                <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:3px;">{{ t.step1Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step1Text }}</span></span>
+              </li>
+              <li style="display:flex;gap:16px;">
+                <span style="flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;">2</span>
+                <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:3px;">{{ t.step2Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step2Text }}</span></span>
+              </li>
+              <li style="display:flex;gap:16px;">
+                <span style="flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;">3</span>
+                <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:3px;">{{ t.step3Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step3Text }}</span></span>
+              </li>
+            </ol>
+            <p style="margin:0 0 32px;font-size:17px;font-weight:600;color:#296D83;">{{ t.noCommitment }}</p>
+            <div style="border:1px dashed #B9CFD7;border-radius:18px;padding:24px;">
+              <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.7;">PLACEHOLDER: one strong testimonial + client logos (social proof rail)</p>
+            </div>
+          </div>
+
+          <div style="border:1px solid #DCE7EB;border-radius:24px;padding:34px;background:#FFFFFF;box-shadow:0 24px 60px rgba(41,109,131,0.10);">
+            <h2 style="margin:0 0 24px;font-size:22px;font-weight:800;letter-spacing:-0.02em;">{{ t.formH2 }}</h2>
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <label style="display:flex;flex-direction:column;gap:7px;">
+                <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldName }}</span>
+                <input type="text" placeholder="Jane Muller" style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;color:#0A0A0A;outline:none;" />
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px;">
+                <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldCompany }}</span>
+                <input type="text" placeholder="Syndic Muller S.à r.l." style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;color:#0A0A0A;outline:none;" />
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px;">
+                <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldEmail }}</span>
+                <input type="email" placeholder="jane@company.lu" style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;color:#0A0A0A;outline:none;" />
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px;">
+                <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldIAm }}</span>
+                <select style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;color:#0A0A0A;background:#FFFFFF;outline:none;">
+                  <option>{{ t.optionManager }}</option>
+                  <option>{{ t.optionProvider }}</option>
+                  <option>{{ t.optionOther }}</option>
+                </select>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px;">
+                <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldVolume }} <span style="font-weight:500;color:#878888;">({{ t.optional }})</span></span>
+                <select style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;color:#0A0A0A;background:#FFFFFF;outline:none;">
+                  <option>1&ndash;10</option>
+                  <option>11&ndash;50</option>
+                  <option>51&ndash;150</option>
+                  <option>150+</option>
+                </select>
+              </label>
+              <button type="button" style="margin-top:6px;border:none;background:#00B5F1;color:#FFFFFF;font-size:16px;font-weight:700;font-family:Montserrat,sans-serif;padding:17px 30px;border-radius:999px;cursor:pointer;" style-hover="background:#0090E8;">{{ t.pickTime }}</button>
+              <div style="border:1px dashed #B9CFD7;border-radius:14px;height:120px;display:flex;align-items:center;justify-content:center;">
+                <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">calendar embed &mdash; direct time booking</span>
+              </div>
+              <p style="margin:0;font-size:13px;line-height:1.6;color:#6C8087;">{{ t.reassurance }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/demo" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    residentNotePrefix: "Just want the app? Residents don\u2019t need a demo.", residentNoteCta: "Get the app.",
+    heroPrefix: "See Cubii on your", heroHighlight: "buildings",
+    heroSubhead: "30 minutes with our team, focused on your portfolio or client base, not a generic slideshow. You leave with a tailored quote and a clear onboarding plan.",
+    expectH2: "What to expect",
+    step1Title: "We listen first.", step1Text: "Your buildings, your team, your current tools, your biggest time drains.",
+    step2Title: "You see your use case, live.", step2Text: "Ticket flow, energy dashboard, maintenance calendar, on scenarios that match your reality.",
+    step3Title: "You get numbers.", step3Text: "A tailored quote and what onboarding looks like week by week.",
+    noCommitment: "No commitment, no pressure. If Cubii isn\u2019t a fit, we\u2019ll tell you.",
+    formH2: "Book your demo",
+    fieldName: "Name", fieldCompany: "Company", fieldEmail: "Email", fieldIAm: "I am a",
+    optionManager: "Facility manager / Syndic", optionProvider: "Service provider", optionOther: "Other",
+    fieldVolume: "Number of buildings or clients", optional: "optional",
+    pickTime: "Pick a time",
+    reassurance: "We reply within one business day. Your data stays in Europe and is never shared."
+  },
+  pt: {
+    residentNotePrefix: "Só quer a aplicação? Os residentes não precisam de demonstração.", residentNoteCta: "Obter a aplicação.",
+    heroPrefix: "Veja a Cubii nos seus", heroHighlight: "edifícios",
+    heroSubhead: "30 minutos com a nossa equipa, focados no seu portfólio ou base de clientes, não uma apresentação genérica. Sai com um orçamento personalizado e um plano de integração claro.",
+    expectH2: "O que esperar",
+    step1Title: "Ouvimos primeiro.", step1Text: "Os seus edifícios, a sua equipa, as suas ferramentas atuais, os seus maiores desperdícios de tempo.",
+    step2Title: "Vê o seu caso de uso, ao vivo.", step2Text: "Fluxo de pedidos, painel de energia, calendário de manutenção, em cenários que correspondem à sua realidade.",
+    step3Title: "Obtém números.", step3Text: "Um orçamento personalizado e como será a integração, semana a semana.",
+    noCommitment: "Sem compromisso, sem pressão. Se a Cubii não for adequada, dizemos-lhe.",
+    formH2: "Marque a sua demonstração",
+    fieldName: "Nome", fieldCompany: "Empresa", fieldEmail: "Email", fieldIAm: "Eu sou",
+    optionManager: "Gestor de condomínio / Administrador", optionProvider: "Prestador de serviços", optionOther: "Outro",
+    fieldVolume: "Número de edifícios ou clientes", optional: "opcional",
+    pickTime: "Escolher um horário",
+    reassurance: "Respondemos no prazo de um dia útil. Os seus dados permanecem na Europa e nunca são partilhados."
+  },
+  es: {
+    residentNotePrefix: "\u00BFSolo quieres la aplicaci\u00F3n? Los residentes no necesitan una demo.", residentNoteCta: "Consigue la aplicación.",
+    heroPrefix: "Descubre Cubii en tus", heroHighlight: "edificios",
+    heroSubhead: "30 minutos con nuestro equipo, centrados en tu cartera o base de clientes, no una presentación genérica. Sales con un presupuesto a medida y un plan de incorporación claro.",
+    expectH2: "Qué esperar",
+    step1Title: "Primero escuchamos.", step1Text: "Tus edificios, tu equipo, tus herramientas actuales, tus mayores pérdidas de tiempo.",
+    step2Title: "Ves tu caso de uso, en directo.", step2Text: "Flujo de partes, panel de energía, calendario de mantenimiento, en escenarios que se ajustan a tu realidad.",
+    step3Title: "Obtienes cifras.", step3Text: "Un presupuesto a medida y cómo será la incorporación, semana a semana.",
+    noCommitment: "Sin compromiso, sin presión. Si Cubii no encaja, te lo diremos.",
+    formH2: "Reserva tu demo",
+    fieldName: "Nombre", fieldCompany: "Empresa", fieldEmail: "Correo electrónico", fieldIAm: "Soy",
+    optionManager: "Administrador de fincas / Comunidad", optionProvider: "Proveedor de servicios", optionOther: "Otro",
+    fieldVolume: "Número de edificios o clientes", optional: "opcional",
+    pickTime: "Elegir un horario",
+    reassurance: "Respondemos en un día laborable. Tus datos permanecen en Europa y nunca se comparten."
+  },
+  fr: {
+    residentNotePrefix: "Vous voulez juste l\u2019application\u00A0? Les résidents n\u2019ont pas besoin de démo.", residentNoteCta: "Téléchargez l\u2019application.",
+    heroPrefix: "Découvrez Cubii sur vos", heroHighlight: "bâtiments",
+    heroSubhead: "30 minutes avec notre équipe, centrées sur votre portefeuille ou votre base de clients, pas une présentation générique. Vous repartez avec un devis sur mesure et un plan d\u2019intégration clair.",
+    expectH2: "À quoi s\u2019attendre",
+    step1Title: "Nous écoutons d\u2019abord.", step1Text: "Vos bâtiments, votre équipe, vos outils actuels, vos plus grosses pertes de temps.",
+    step2Title: "Vous voyez votre cas d\u2019usage, en direct.", step2Text: "Flux de tickets, tableau de bord énergétique, calendrier de maintenance, sur des scénarios qui correspondent à votre réalité.",
+    step3Title: "Vous obtenez des chiffres.", step3Text: "Un devis sur mesure et le déroulé de l\u2019intégration, semaine par semaine.",
+    noCommitment: "Aucun engagement, aucune pression. Si Cubii ne convient pas, nous vous le dirons.",
+    formH2: "Réservez votre démo",
+    fieldName: "Nom", fieldCompany: "Entreprise", fieldEmail: "E-mail", fieldIAm: "Je suis",
+    optionManager: "Gestionnaire immobilier / Syndic", optionProvider: "Prestataire de services", optionOther: "Autre",
+    fieldVolume: "Nombre de bâtiments ou de clients", optional: "facultatif",
+    pickTime: "Choisir un créneau",
+    reassurance: "Nous répondons sous un jour ouvré. Vos données restent en Europe et ne sont jamais partagées."
+  }
+};
+
+const META = {
+  en: { title: "Book a Cubii Demo | 30 Minutes, Your Real Use Case", description: "See Cubii on your own buildings or client base. A 30-minute demo for facility managers and service providers, no commitment. Pick a time." },
+  pt: { title: "Marque uma Demonstração da Cubii | 30 Minutos, o seu Caso Real", description: "Veja a Cubii nos seus edifícios ou base de clientes. Uma demonstração de 30 minutos para gestores de condomínio e prestadores de serviços, sem compromisso. Escolha um horário." },
+  es: { title: "Reserva una Demo de Cubii | 30 Minutos, tu Caso Real", description: "Descubre Cubii en tus propios edificios o base de clientes. Una demo de 30 minutos para administradores de fincas y proveedores de servicios, sin compromiso. Elige un horario." },
+  fr: { title: "Réservez une Démo Cubii | 30 Minutes, votre Cas Réel", description: "Découvrez Cubii sur vos propres bâtiments ou base de clients. Une démo de 30 minutes pour gestionnaires immobiliers et prestataires de services, sans engagement. Choisissez un créneau." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["ContactPage", "Organization (Smart Cube)"],
+      h2s: ["What to expect", "Book your demo"],
+      gaps: ["Calendar embed provider + account", "Testimonial + client logos for the social proof rail", "Form field labels/options localized; a real backend must translate submitted enum values consistently"]
+    };
+  }
+}
+</script>
+</body>
+</html>

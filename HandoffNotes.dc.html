@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:fixed;right:20px;bottom:20px;z-index:200;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ true }}">
+    <div style="width:380px;max-width:calc(100vw - 40px);max-height:70vh;overflow:auto;background:#0A0A0A;color:#E8EDEF;border:1px solid #296D83;border-radius:16px;padding:20px;box-shadow:0 24px 60px rgba(10,10,10,0.35);">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px;">
+        <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#85CCF0;">Handoff notes</span>
+        <span style="font-size:11px;color:#878888;">{{ route }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">Meta title</span>
+          <span style="font-size:11px;line-height:1.55;color:#E8EDEF;">{{ metaTitle }}</span>
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;margin-top:6px;">Meta description</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">{{ metaDescription }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">JSON-LD schema</span>
+          <sc-for list="{{ schema }}" as="s" hint-placeholder-count="2">
+            <span style="font-size:11px;line-height:1.55;color:#85CCF0;">{{ s }}</span>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">H2 order (verbatim)</span>
+          <sc-for list="{{ h2s }}" as="h" hint-placeholder-count="4">
+            <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">{{ h }}</span>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">Open placeholders</span>
+          <sc-for list="{{ gaps }}" as="g" hint-placeholder-count="2">
+            <span style="font-size:11px;line-height:1.55;color:#F0D48A;">{{ g }}</span>
+          </sc-for>
+        </div>
+        <div style="border-top:1px solid #26292A;padding-top:14px;display:flex;flex-direction:column;gap:5px;">
+          <span style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">Global rules</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">SSR or SSG only &mdash; no content revealed by client JS</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">One H1 per page; H2s exactly as listed above</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">Prices in real &lt;table&gt; elements, never images</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">Canonical line identical on Home, FAQ, About, llms.txt</span>
+          <span style="font-size:11px;line-height:1.55;color:#B8C2C6;">robots.txt allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <button type="button" onClick="{{ toggle }}" style="border:1px solid #296D83;background:#0A0A0A;color:#85CCF0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:11px 18px;border-radius:999px;cursor:pointer;box-shadow:0 10px 30px rgba(10,10,10,0.25);" style-hover="background:#296D83;color:#FFFFFF;">{{ label }}</button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:600},&quot;route&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;/&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;metaTitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;metaDescription&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;schema&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;h2s&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;gaps&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  state = { open: false };
+  renderVals() {
+    return {
+      open: this.state.open,
+      label: this.state.open ? "Hide notes" : "Handoff notes",
+      route: this.props.route ?? "/",
+      metaTitle: this.props.metaTitle ?? "",
+      metaDescription: this.props.metaDescription ?? "",
+      schema: this.props.schema ?? [],
+      h2s: this.props.h2s ?? [],
+      gaps: this.props.gaps ?? [],
+      toggle: () => this.setState(s => ({ open: !s.open }))
+    };
+  }
+}
+</script>
+</body>
+</html>

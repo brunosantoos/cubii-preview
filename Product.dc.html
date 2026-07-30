@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Product / hero" style="padding:84px 0 72px;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 24px;">
+        <div style="flex:1 1 320px;min-width:280px;">
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;max-width:900px;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span></h1>
+          <p style="margin:0;font-size:19px;line-height:1.6;color:#3A4247;max-width:640px;">{{ t.heroSubhead }}</p>
+        </div>
+        <img src="assets/product-hero-mascot.png" alt="Cubii mascot" style="height:260px;width:auto;max-width:100%;object-fit:contain;object-position:top center;flex:0 0 auto;" />
+      </div>
+    </section>
+
+    <section data-screen-label="Product / answer block" style="padding:0 0 80px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2 }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / incident management" style="padding:64px 0;border-top:1px solid #E8EDEF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:52px;align-items:center;">
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">01</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f1Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f1Text }}</p>
+        </div>
+        <div style="height:280px;border:1px solid #D9E6EB;border-radius:20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);overflow:hidden;background:#FFFFFF;display:flex;align-items:center;justify-content:center;transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+          <img src="assets/product-incident-status.png" alt="Cubii ticket status progress from waiting approval to done" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / energy monitoring" style="padding:64px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:52px;align-items:center;">
+        <div style="height:280px;border:1px solid #D9E6EB;border-radius:20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);overflow:hidden;background:#FFFFFF;display:flex;align-items:center;justify-content:center;order:2;transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+          <img src="assets/product-energy-metering.png" alt="Cubii energy metering screen with live reading and consumption history" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+        </div>
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">02</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f2Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f2Text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / maintenance" style="padding:64px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:52px;align-items:center;">
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">03</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f3Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f3Text }}</p>
+        </div>
+        <div style="height:280px;border:1px solid #D9E6EB;border-radius:20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);overflow:hidden;background:#FFFFFF;display:flex;align-items:center;justify-content:center;transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+          <img src="assets/product-maintenance-list.png" alt="Cubii maintenance list with recurring tasks by category and schedule" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / documents" style="padding:64px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:52px;align-items:center;">
+        <div style="height:280px;border:1px solid #D9E6EB;border-radius:20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);overflow:hidden;background:#FFFFFF;display:flex;align-items:center;justify-content:center;order:2;transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+          <img src="assets/product-documents-list.png" alt="Cubii digital maintenance book with document folders" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+        </div>
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">04</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f4Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f4Text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / marketplace + communication" style="padding:64px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:52px;">
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">05</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f5Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f5Text }}</p>
+        </div>
+        <div>
+          <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:2px solid #00AAEE;font-size:15px;font-weight:800;letter-spacing:0.02em;color:#00AAEE;margin-bottom:16px;">06</span>
+          <h2 style="margin:0 0 16px;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-0.025em;">{{ t.f6Title }}</h2>
+          <p style="margin:0;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.f6Text }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Product / integrations" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-0.03em;line-height:1.12;">{{ t.integPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.integHighlight }}</span>{{ t.integSuffix }}</h2>
+          <p style="margin:0;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.integText }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#4DCBF5;color:#0A0A0A;">{{ t.bookDemo }}</a>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#B8C2C6;">{{ t.residentLinePrefix }} <a href="Residents.dc.html" style="color:#85CCF0;font-weight:700;text-decoration:none;border-bottom:1px solid #296D83;">{{ t.residentLineCta }}</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/product" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "Product",
+    heroPrefix: "Everything your building needs. One", heroHighlight: "app.",
+    heroSubhead: "Six capabilities that work together, so information stops falling through the cracks between residents, managers and providers.",
+    answerH2: "What features does Cubii include?",
+    answerText: "Cubii includes incident management with automatic sensor-based detection, real-time energy monitoring for water, gas and electricity, automated maintenance scheduling, centralized document management including the digital maintenance book, a service provider marketplace, and built-in communication tools such as push notifications, per-ticket chat and lobby displays.",
+    f1Title: "Incident management", f1Text: "Any user reports an incident in seconds: photos, videos, location, category, urgency. Sensors, building management systems and dry contacts create tickets automatically, from any equipment brand. Each ticket follows one lifecycle: report \u2192 validation \u2192 dispatch \u2192 intervention \u2192 closure, with the full history archived per building. Sensitive issues can be reported anonymously.",
+    f2Title: "Energy monitoring", f2Text: "Water, gas and electricity tracked in real time per building, with integration to Leneda, Luxembourg\u2019s energy data platform. Alerts fire on overconsumption or anomalies, so a hidden leak shows up in the data before it shows up in the ceiling. This monitoring also builds the records needed under the EPBD.",
+    f3Title: "Maintenance management", f3Text: "Recurring maintenance is programmed once. On the due date, Cubii creates the ticket and sends it to the assigned provider automatically. The maintenance register keeps itself complete. With connected sensors, maintenance shifts from reactive to preventive.",
+    f4Title: "Documents & building records", f4Text: "The digital maintenance book (carnet d\u2019entretien), security register, contracts, invoices, technical manuals, plans and inspection reports (\u00E9tat des lieux), all centralized per building and shareable with providers. A complete maintenance history also protects the property\u2019s value.",
+    f5Title: "Marketplace", f5Text: "A directory of service providers searchable by specialty, availability and urgency. Managers find the right company in minutes; providers gain visibility with every building on the platform.",
+    f6Title: "Communication", f6Text: "Push notifications at every ticket step, automatic deadline reminders, a chat thread inside every ticket, surveys and polls, and a lobby display option that shows building information and alerts on a screen in the entrance hall.",
+    integPrefix: "What does Cubii", integHighlight: "integrate", integSuffix: " with?",
+    integText: "Cubii is brand-agnostic. It connects to building management systems (BMS), IoT sensors and dry contacts from any manufacturer, and integrates with Leneda for energy data in Luxembourg. It runs alongside your existing property management software; nothing has to be replaced.",
+    bookDemo: "Book a demo", residentLinePrefix: "Resident?", residentLineCta: "Get the app"
+  },
+  pt: {
+    eyebrow: "Produto",
+    heroPrefix: "Tudo o que o seu edifício precisa. Uma só", heroHighlight: "aplicação.",
+    heroSubhead: "Seis funcionalidades que trabalham em conjunto, para que a informação deixe de se perder entre residentes, gestores e prestadores.",
+    answerH2: "Que funcionalidades inclui a Cubii?",
+    answerText: "A Cubii inclui gestão de incidentes com deteção automática por sensores, monitorização energética em tempo real de água, gás e eletricidade, planeamento automático da manutenção, gestão centralizada de documentos incluindo o caderno de manutenção digital, um marketplace de prestadores de serviços, e ferramentas de comunicação integradas como notificações push, conversa por pedido e ecrãs no átrio.",
+    f1Title: "Gestão de incidentes", f1Text: "Qualquer utilizador reporta um incidente em segundos: fotografias, vídeos, localização, categoria, urgência. Sensores, sistemas de gestão de edifícios e contactos secos criam pedidos automaticamente, seja qual for a marca do equipamento. Cada pedido segue um ciclo de vida: reporte \u2192 validação \u2192 despacho \u2192 intervenção \u2192 encerramento, com o histórico completo arquivado por edifício. Problemas sensíveis podem ser reportados de forma anónima.",
+    f2Title: "Monitorização energética", f2Text: "Água, gás e eletricidade acompanhados em tempo real por edifício, com integração com a Leneda, a plataforma de dados energéticos do Luxemburgo. Os alertas disparam em caso de sobreconsumo ou anomalias, para que uma fuga oculta apareça nos dados antes de aparecer no teto. Esta monitorização também gera os registos exigidos pela EPBD.",
+    f3Title: "Gestão da manutenção", f3Text: "A manutenção recorrente é programada uma vez. Na data prevista, a Cubii cria o pedido e envia-o automaticamente ao prestador responsável. O registo de manutenção mantém-se sempre completo. Com sensores ligados, a manutenção passa de reativa a preventiva.",
+    f4Title: "Documentos e registos do edifício", f4Text: "O caderno de manutenção digital, o registo de segurança, contratos, faturas, manuais técnicos, plantas e relatórios de vistoria (état des lieux), tudo centralizado por edifício e partilhável com os prestadores. Um histórico de manutenção completo também protege o valor do imóvel.",
+    f5Title: "Marketplace", f5Text: "Um diretório de prestadores de serviços pesquisável por especialidade, disponibilidade e urgência. Os gestores encontram a empresa certa em minutos; os prestadores ganham visibilidade junto de todos os edifícios na plataforma.",
+    f6Title: "Comunicação", f6Text: "Notificações push em cada etapa do pedido, lembretes automáticos de prazos, uma conversa dentro de cada pedido, inquéritos e sondagens, e uma opção de ecrã no átrio que mostra informação e alertas do edifício num ecrã na entrada.",
+    integPrefix: "Com que sistemas se", integHighlight: "integra", integSuffix: " a Cubii?",
+    integText: "A Cubii é independente de marca. Liga-se a sistemas de gestão de edifícios (BMS), sensores IoT e contactos secos de qualquer fabricante, e integra-se com a Leneda para dados de energia no Luxemburgo. Funciona a par do seu software de gestão de imóveis já existente; nada precisa de ser substituído.",
+    bookDemo: "Marcar uma demonstração", residentLinePrefix: "É residente?", residentLineCta: "Descarregar a aplicação"
+  },
+  es: {
+    eyebrow: "Producto",
+    heroPrefix: "Todo lo que tu edificio necesita. Una sola", heroHighlight: "aplicación.",
+    heroSubhead: "Seis funcionalidades que trabajan juntas, para que la información deje de perderse entre residentes, administradores y proveedores.",
+    answerH2: "\u00BFQu\u00E9 funciones incluye Cubii?",
+    answerText: "Cubii incluye gestión de incidencias con detección automática mediante sensores, monitorización energética en tiempo real de agua, gas y electricidad, programación automática del mantenimiento, gestión centralizada de documentos que incluye el libro de mantenimiento digital, un marketplace de proveedores de servicios, y herramientas de comunicación integradas como notificaciones push, chat por parte de trabajo y pantallas en el vestíbulo.",
+    f1Title: "Gestión de incidencias", f1Text: "Cualquier usuario reporta una incidencia en segundos: fotos, vídeos, ubicación, categoría, urgencia. Sensores, sistemas de gestión de edificios y contactos secos crean partes automáticamente, sea cual sea la marca del equipo. Cada parte sigue un ciclo\u00A0: reporte \u2192 validación \u2192 asignación \u2192 intervención \u2192 cierre, con el historial completo archivado por edificio. Las incidencias sensibles pueden reportarse de forma anónima.",
+    f2Title: "Monitorización energética", f2Text: "Agua, gas y electricidad controlados en tiempo real por edificio, con integración con Leneda, la plataforma de datos energéticos de Luxemburgo. Se activan alertas ante un consumo excesivo o anomalías, de modo que una fuga oculta aparece en los datos antes de aparecer en el techo. Esta monitorización también genera los registros que exige la EPBD.",
+    f3Title: "Gestión del mantenimiento", f3Text: "El mantenimiento recurrente se programa una sola vez. En la fecha prevista, Cubii crea el parte y lo envía automáticamente al proveedor asignado. El registro de mantenimiento se mantiene siempre completo. Con sensores conectados, el mantenimiento pasa de reactivo a preventivo.",
+    f4Title: "Documentos y registros del edificio", f4Text: "El libro de mantenimiento digital, el registro de seguridad, contratos, facturas, manuales técnicos, planos e informes de inspección (estado de la vivienda), todo centralizado por edificio y compartible con los proveedores. Un historial de mantenimiento completo también protege el valor de la propiedad.",
+    f5Title: "Marketplace", f5Text: "Un directorio de proveedores de servicios con búsqueda por especialidad, disponibilidad y urgencia. Los administradores encuentran a la empresa adecuada en minutos; los proveedores ganan visibilidad ante todos los edificios de la plataforma.",
+    f6Title: "Comunicación", f6Text: "Notificaciones push en cada etapa del parte, recordatorios automáticos de plazos, un chat dentro de cada parte, encuestas y sondeos, y una opción de pantalla en el vestíbulo que muestra información y alertas del edificio en una pantalla de la entrada.",
+    integPrefix: "\u00BFCon qu\u00E9 se", integHighlight: "integra", integSuffix: " Cubii?",
+    integText: "Cubii es independiente de marca. Se conecta a sistemas de gestión de edificios (BMS), sensores IoT y contactos secos de cualquier fabricante, y se integra con Leneda para datos energéticos en Luxemburgo. Funciona junto a tu software de gestión de fincas ya existente; no hay que sustituir nada.",
+    bookDemo: "Reservar una demo", residentLinePrefix: "\u00BFEres residente?", residentLineCta: "Descargar la aplicación"
+  },
+  fr: {
+    eyebrow: "Produit",
+    heroPrefix: "Tout ce dont votre bâtiment a besoin. Une seule", heroHighlight: "application.",
+    heroSubhead: "Six fonctionnalités qui travaillent ensemble, pour que l\u2019information cesse de se perdre entre résidents, gestionnaires et prestataires.",
+    answerH2: "Quelles fonctionnalités inclut Cubii\u00A0?",
+    answerText: "Cubii comprend la gestion des incidents avec détection automatique par capteurs, un suivi énergétique en temps réel de l\u2019eau, du gaz et de l\u2019électricité, une planification automatisée de la maintenance, une gestion documentaire centralisée incluant le carnet d\u2019entretien numérique, une marketplace de prestataires de services, et des outils de communication intégrés tels que notifications push, chat par ticket et affichage en hall d\u2019entrée.",
+    f1Title: "Gestion des incidents", f1Text: "Tout utilisateur signale un incident en quelques secondes\u00A0: photos, vidéos, localisation, catégorie, urgence. Les capteurs, systèmes de gestion technique du bâtiment et contacts secs créent des tickets automatiquement, quelle que soit la marque des équipements. Chaque ticket suit un même cycle\u00A0: signalement \u2192 validation \u2192 envoi \u2192 intervention \u2192 clôture, avec l\u2019historique complet archivé par bâtiment. Les problèmes sensibles peuvent être signalés de manière anonyme.",
+    f2Title: "Suivi énergétique", f2Text: "Eau, gaz et électricité suivis en temps réel par bâtiment, avec intégration à Leneda, la plateforme de données énergétiques du Luxembourg. Des alertes se déclenchent en cas de surconsommation ou d\u2019anomalies, afin qu\u2019une fuite cachée apparaisse dans les données avant d\u2019apparaître au plafond. Ce suivi constitue aussi les registres exigés par l\u2019EPBD.",
+    f3Title: "Gestion de la maintenance", f3Text: "La maintenance récurrente est programmée une seule fois. À la date prévue, Cubii crée le ticket et l\u2019envoie automatiquement au prestataire assigné. Le registre de maintenance reste toujours complet. Avec des capteurs connectés, la maintenance passe de réactive à préventive.",
+    f4Title: "Documents et registres du bâtiment", f4Text: "Le carnet d\u2019entretien numérique, le registre de sécurité, les contrats, factures, notices techniques, plans et états des lieux, tous centralisés par bâtiment et partageables avec les prestataires. Un historique de maintenance complet protège aussi la valeur du bien.",
+    f5Title: "Marketplace", f5Text: "Un annuaire de prestataires de services consultable par spécialité, disponibilité et urgence. Les gestionnaires trouvent la bonne entreprise en quelques minutes\u00A0; les prestataires gagnent en visibilité auprès de chaque bâtiment de la plateforme.",
+    f6Title: "Communication", f6Text: "Notifications push à chaque étape du ticket, rappels automatiques des échéances, un fil de discussion dans chaque ticket, sondages et enquêtes, et une option d\u2019affichage en hall d\u2019entrée qui montre les informations et alertes du bâtiment sur un écran à l\u2019entrée.",
+    integPrefix: "Avec quoi Cubii", integHighlight: "s\u2019intègre", integSuffix: "-t-elle\u00A0?",
+    integText: "Cubii est agnostique de marque. Elle se connecte aux systèmes de gestion technique du bâtiment (GTB), aux capteurs IoT et aux contacts secs de tout fabricant, et s\u2019intègre à Leneda pour les données énergétiques au Luxembourg. Elle fonctionne aux côtés de votre logiciel de gestion immobilière existant\u00A0; rien n\u2019a besoin d\u2019être remplacé.",
+    bookDemo: "Réserver une démo", residentLinePrefix: "Résident\u00A0?", residentLineCta: "Téléchargez l\u2019application"
+  }
+};
+
+const META = {
+  en: { title: "Cubii Product | Incidents, Energy, Maintenance & Documents in One App", description: "Every Cubii capability explained: automated ticketing, real-time energy monitoring with Leneda, maintenance calendars, digital maintenance book, marketplace and more." },
+  pt: { title: "Produto Cubii | Incidentes, Energia, Manutenção e Documentos numa Só Aplicação", description: "Todas as capacidades da Cubii explicadas: criação automática de pedidos, monitorização energética em tempo real com a Leneda, calendários de manutenção, caderno de manutenção digital, marketplace e mais." },
+  es: { title: "Producto Cubii | Incidencias, Energía, Mantenimiento y Documentos en una Sola Aplicación", description: "Todas las funciones de Cubii explicadas: partes automatizados, monitorización energética en tiempo real con Leneda, calendarios de mantenimiento, libro de mantenimiento digital, marketplace y más." },
+  fr: { title: "Produit Cubii | Incidents, Énergie, Maintenance et Documents en une Seule Application", description: "Toutes les fonctionnalités de Cubii expliquées\u00A0: billetterie automatisée, suivi énergétique en temps réel avec Leneda, calendriers de maintenance, carnet d\u2019entretien numérique, marketplace et plus encore." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "SoftwareApplication (Cubii, offers)"],
+      h2s: ["What features does Cubii include?", "Incident management", "Energy monitoring", "Maintenance management", "Documents & building records", "Marketplace", "Communication", "What does Cubii integrate with?"],
+      gaps: ["6 product shots (ticket lifecycle, energy, maintenance, documents, marketplace, lobby display)", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>

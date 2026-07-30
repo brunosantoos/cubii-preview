@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="About / hero" style="padding:84px 0 64px;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0;font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.h1Prefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.h1Highlight }}</span></h1>
+        </div>
+        <div style="position:relative;">
+          <div style="border:1px solid #D9E6EB;border-radius:24px;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px rgba(41,109,131,0.12);">
+            <div style="display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid #E8EDEF;background:#FBFDFE;">
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="margin-left:10px;font-size:11px;font-weight:600;color:#878888;">{{ t.teamPhotoLabel }}</span>
+            </div>
+            <div style="height:320px;overflow:hidden;background-image:repeating-linear-gradient(135deg,#F2F8FB 0px,#F2F8FB 10px,#E8F4F9 10px,#E8F4F9 20px);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#6C8087;background:#FFFFFF;border:1px solid #D9E6EB;border-radius:6px;padding:6px 10px;">team photo</span>
+            </div>
+          </div>
+          <img src="assets/cubii-mascot-robot.png" alt="Cubii mascot" style="position:absolute;bottom:-38px;left:-30px;width:150px;height:auto;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="About / answer block" style="padding:0 0 76px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.answerH2 }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="About / why" style="padding:72px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.whyPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.whyHighlight }}</span></h2>
+          <p style="margin:0 0 18px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.whyText1 }}</p>
+          <p style="margin:0;font-size:18px;line-height:1.7;color:#FFFFFF;font-weight:600;">{{ t.whyText2 }}</p>
+        </div>
+        <div style="border:1px solid #26292A;border-radius:20px;padding:32px;">
+          <h2 style="margin:0 0 14px;font-size:20px;font-weight:800;letter-spacing:-0.015em;">{{ t.promiseH2 }}</h2>
+          <p style="margin:0 0 12px;font-size:20px;line-height:1.5;font-weight:700;color:#85CCF0;">{{ t.promiseText1 }}</p>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#B8C2C6;">{{ t.promiseText2 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="About / team" style="padding:80px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.teamH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;">
+          <div style="border:1px solid #DCE7EB;border-radius:20px;overflow:hidden;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <div style="height:220px;background-image:repeating-linear-gradient(135deg,#F2F8FB 0px,#F2F8FB 10px,#E8F4F9 10px,#E8F4F9 20px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:#6C8087;background:#FFFFFF;border:1px solid #D9E6EB;border-radius:6px;padding:5px 8px;">portrait</span>
+            </div>
+            <div style="padding:20px 22px;">
+              <h3 style="margin:0 0 4px;font-size:17px;font-weight:700;">Jorge De Oliveira</h3>
+              <p style="margin:0;font-size:14px;color:#6C8087;">{{ t.roleCeo }}</p>
+            </div>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:20px;overflow:hidden;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <div style="height:220px;background-image:repeating-linear-gradient(135deg,#F2F8FB 0px,#F2F8FB 10px,#E8F4F9 10px,#E8F4F9 20px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:#6C8087;background:#FFFFFF;border:1px solid #D9E6EB;border-radius:6px;padding:5px 8px;">portrait</span>
+            </div>
+            <div style="padding:20px 22px;">
+              <h3 style="margin:0 0 4px;font-size:17px;font-weight:700;">Eric Elter</h3>
+              <p style="margin:0;font-size:14px;color:#6C8087;">{{ t.rolePartner }}</p>
+            </div>
+          </div>
+          <div style="border:1px dashed #B9CFD7;border-radius:20px;padding:24px;display:flex;align-items:center;">
+            <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.7;">PLACEHOLDER: Audrey, Mabrouk, Noah &mdash; full names, roles and photos not yet supplied</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="About / facts" style="padding:72px 0;background:#F5FBFD;">
+      <div style="max-width:1000px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 32px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.factsH2 }}</h2>
+        <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <table style="width:100%;min-width:420px;border-collapse:collapse;font-size:16px;">
+            <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.factsCaption }}</caption>
+            <tbody>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;width:34%;color:#6C8087;">{{ t.factProduct }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factProductVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factCompany }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">Smart Cube</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factFounded }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factFoundedVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factHQ }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">40 Rangwee, L-2412 Howald, Luxembourg</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factHosting }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factHostingVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factRecognition }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factRecognitionVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factTraction }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factTractionVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#6C8087;">{{ t.factSister }}</th><td style="padding:16px 26px;border-bottom:1px solid #F0F4F5;">{{ t.factSisterVal }}</td></tr>
+              <tr><th scope="row" style="text-align:left;padding:16px 26px;font-weight:600;color:#6C8087;">{{ t.factContact }}</th><td style="padding:16px 26px;">info@smartcube.lu &middot; +352 621 257 775</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <a href="Demo.dc.html" style="margin-top:32px;display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/about" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "About", h1Prefix: "The company behind the", h1Highlight: "concierge", teamPhotoLabel: "Smart Cube \u2014 team",
+    answerH2: "Who makes Cubii?",
+    answerText: "Cubii is developed by Smart Cube, a 100% Luxembourg-based company. Launched commercially in 2018, Smart Cube won the Digital Innovation Prize in the artisanat category in 2019 and expanded into energy monitoring in 2021 through its sister company Cube4Metrum S.A. All Cubii data is hosted on servers in Europe.",
+    whyPrefix: "Why we built", whyHighlight: "Cubii",
+    whyText1: "Buildings are one of the last domains without real digitalization. We watched managers drown in calls, residents miss every notice, and providers drive to interventions blind. The tools existed for offices and factories, but not for the buildings people actually live and work in.",
+    whyText2: "So we built the missing piece: not another management software, but the connective layer between everyone a building depends on. A concierge, digital.",
+    promiseH2: "Our promise", promiseText1: "Cubii saves you time, every single day.", promiseText2: "Not someday after a long rollout. From day one, the calls get fewer and the processes get shorter.",
+    teamH2: "The team", roleCeo: "Founder & CEO", rolePartner: "Partner",
+    factsH2: "Quick facts", factsCaption: "Smart Cube and Cubii, at a glance",
+    factProduct: "Product", factProductVal: "Digital building concierge app",
+    factCompany: "Company", factFounded: "Founded / launched", factFoundedVal: "Commercial launch 2018",
+    factHQ: "Headquarters", factHosting: "Data hosting", factHostingVal: "Europe",
+    factRecognition: "Recognition", factRecognitionVal: "Digital Innovation Prize, 2019",
+    factTraction: "Traction", factTractionVal: "2,600+ buildings connected, 5,000+ incidents resolved, 600+ building professionals onboarded",
+    factSister: "Sister company", factSisterVal: "Cube4Metrum S.A. (energy monitoring, 2021)",
+    factContact: "Contact", bookDemo: "Book a demo"
+  },
+  pt: {
+    eyebrow: "Sobre Nós", h1Prefix: "A empresa por trás da", h1Highlight: "concierge", teamPhotoLabel: "Smart Cube \u2014 equipa",
+    answerH2: "Quem faz a Cubii?",
+    answerText: "A Cubii é desenvolvida pela Smart Cube, uma empresa 100% luxemburguesa. Lançada comercialmente em 2018, a Smart Cube venceu o Prémio de Inovação Digital na categoria artesanato em 2019 e expandiu-se para a monitorização energética em 2021 através da sua empresa irmã Cube4Metrum S.A. Todos os dados da Cubii são alojados em servidores na Europa.",
+    whyPrefix: "Porque criámos a", whyHighlight: "Cubii",
+    whyText1: "Os edifícios são um dos últimos domínios sem digitalização real. Vimos gestores a afogarem-se em chamadas, residentes a perderem todos os avisos, e prestadores a conduzir para intervenções às cegas. As ferramentas existiam para escritórios e fábricas, mas não para os edifícios onde as pessoas realmente vivem e trabalham.",
+    whyText2: "Por isso, construímos a peça em falta: não mais um software de gestão, mas a camada de ligação entre todos de quem um edifício depende. Uma concierge, digital.",
+    promiseH2: "A nossa promessa", promiseText1: "A Cubii poupa-lhe tempo, todos os dias.", promiseText2: "Não um dia depois de uma longa implementação. Desde o primeiro dia, as chamadas diminuem e os processos encurtam.",
+    teamH2: "A equipa", roleCeo: "Fundador e CEO", rolePartner: "Sócio",
+    factsH2: "Factos rápidos", factsCaption: "Smart Cube e Cubii, num relance",
+    factProduct: "Produto", factProductVal: "Aplicação de concierge digital de edifícios",
+    factCompany: "Empresa", factFounded: "Fundação / lançamento", factFoundedVal: "Lançamento comercial em 2018",
+    factHQ: "Sede", factHosting: "Alojamento de dados", factHostingVal: "Europa",
+    factRecognition: "Reconhecimento", factRecognitionVal: "Prémio de Inovação Digital, 2019",
+    factTraction: "Tração", factTractionVal: "2.600+ edifícios ligados, 5.000+ incidentes resolvidos, 600+ profissionais de edifícios integrados",
+    factSister: "Empresa irmã", factSisterVal: "Cube4Metrum S.A. (monitorização energética, 2021)",
+    factContact: "Contacto", bookDemo: "Marcar uma demonstração"
+  },
+  es: {
+    eyebrow: "Sobre Nosotros", h1Prefix: "La empresa detrás de la", h1Highlight: "conserjería", teamPhotoLabel: "Smart Cube \u2014 equipo",
+    answerH2: "\u00BFQui\u00E9n hace Cubii?",
+    answerText: "Cubii está desarrollada por Smart Cube, una empresa 100% luxemburguesa. Lanzada comercialmente en 2018, Smart Cube ganó el Premio de Innovación Digital en la categoría de artesanía en 2019 y se expandió a la monitorización energética en 2021 a través de su empresa hermana Cube4Metrum S.A. Todos los datos de Cubii se alojan en servidores en Europa.",
+    whyPrefix: "Por qu\u00E9 creamos", whyHighlight: "Cubii",
+    whyText1: "Los edificios son uno de los últimos ámbitos sin digitalización real. Vimos a administradores ahogados en llamadas, residentes que se perdían todos los avisos, y proveedores que conducían a intervenciones a ciegas. Las herramientas existían para oficinas y fábricas, pero no para los edificios donde la gente realmente vive y trabaja.",
+    whyText2: "Así que construimos la pieza que faltaba: no otro software de gestión, sino la capa de conexión entre todos aquellos de quienes depende un edificio. Una conserjería, digital.",
+    promiseH2: "Nuestra promesa", promiseText1: "Cubii te ahorra tiempo, todos los días.", promiseText2: "No algún día tras un largo despliegue. Desde el primer día, las llamadas disminuyen y los procesos se acortan.",
+    teamH2: "El equipo", roleCeo: "Fundador y CEO", rolePartner: "Socio",
+    factsH2: "Datos rápidos", factsCaption: "Smart Cube y Cubii, de un vistazo",
+    factProduct: "Producto", factProductVal: "Aplicación de conserjería digital de edificios",
+    factCompany: "Empresa", factFounded: "Fundación / lanzamiento", factFoundedVal: "Lanzamiento comercial en 2018",
+    factHQ: "Sede", factHosting: "Alojamiento de datos", factHostingVal: "Europa",
+    factRecognition: "Reconocimiento", factRecognitionVal: "Premio de Innovación Digital, 2019",
+    factTraction: "Tracción", factTractionVal: "2.600+ edificios conectados, 5.000+ incidencias resueltas, 600+ profesionales de edificios incorporados",
+    factSister: "Empresa hermana", factSisterVal: "Cube4Metrum S.A. (monitorización energética, 2021)",
+    factContact: "Contacto", bookDemo: "Reservar una demo"
+  },
+  fr: {
+    eyebrow: "À propos", h1Prefix: "L\u2019entreprise derrière la", h1Highlight: "conciergerie", teamPhotoLabel: "Smart Cube \u2014 équipe",
+    answerH2: "Qui fait Cubii\u00A0?",
+    answerText: "Cubii est développée par Smart Cube, une entreprise 100\u00A0% luxembourgeoise. Lancée commercialement en 2018, Smart Cube a remporté le Prix de l\u2019Innovation Digitale dans la catégorie artisanat en 2019 et s\u2019est développée dans le suivi énergétique en 2021 via sa société sœur Cube4Metrum S.A. Toutes les données de Cubii sont hébergées sur des serveurs en Europe.",
+    whyPrefix: "Pourquoi nous avons cr\u00E9\u00E9", whyHighlight: "Cubii",
+    whyText1: "Les bâtiments sont l\u2019un des derniers domaines sans réelle numérisation. Nous avons vu des gestionnaires noyés sous les appels, des résidents rater chaque avis, et des prestataires se rendre à des interventions à l\u2019aveugle. Les outils existaient pour les bureaux et les usines, mais pas pour les bâtiments où les gens vivent et travaillent réellement.",
+    whyText2: "Nous avons donc construit la pièce manquante\u00A0: pas un énième logiciel de gestion, mais la couche de connexion entre tous ceux dont dépend un bâtiment. Une conciergerie, numérique.",
+    promiseH2: "Notre promesse", promiseText1: "Cubii vous fait gagner du temps, chaque jour.", promiseText2: "Pas un jour après un long déploiement. Dès le premier jour, les appels diminuent et les processus se raccourcissent.",
+    teamH2: "L\u2019équipe", roleCeo: "Fondateur et PDG", rolePartner: "Associé",
+    factsH2: "En bref", factsCaption: "Smart Cube et Cubii, en un coup d\u2019œil",
+    factProduct: "Produit", factProductVal: "Application de conciergerie numérique de bâtiments",
+    factCompany: "Entreprise", factFounded: "Fondation / lancement", factFoundedVal: "Lancement commercial en 2018",
+    factHQ: "Siège", factHosting: "Hébergement des données", factHostingVal: "Europe",
+    factRecognition: "Distinction", factRecognitionVal: "Prix de l\u2019Innovation Digitale, 2019",
+    factTraction: "Traction", factTractionVal: "2\u00A0600+ bâtiments connectés, 5\u00A0000+ incidents résolus, 600+ professionnels du bâtiment intégrés",
+    factSister: "Société sœur", factSisterVal: "Cube4Metrum S.A. (suivi énergétique, 2021)",
+    factContact: "Contact", bookDemo: "Réserver une démo"
+  }
+};
+
+const META = {
+  en: { title: "About Cubii | Built by Smart Cube in Luxembourg", description: "Cubii is built by Smart Cube, a Luxembourg company founded on 10+ years of smart building expertise. Digital Innovation Prize winner 2019. Meet the team." },
+  pt: { title: "Sobre a Cubii | Criada pela Smart Cube no Luxemburgo", description: "A Cubii é criada pela Smart Cube, uma empresa luxemburguesa com mais de 10 anos de experiência em edifícios inteligentes. Vencedora do Prémio de Inovação Digital 2019. Conheça a equipa." },
+  es: { title: "Sobre Cubii | Creada por Smart Cube en Luxemburgo", description: "Cubii está creada por Smart Cube, una empresa luxemburguesa con más de 10 años de experiencia en edificios inteligentes. Ganadora del Premio de Innovación Digital 2019. Conoce al equipo." },
+  fr: { title: "À propos de Cubii | Conçue par Smart Cube au Luxembourg", description: "Cubii est conçue par Smart Cube, une entreprise luxembourgeoise forte de plus de 10 ans d\u2019expertise en bâtiments intelligents. Lauréate du Prix de l\u2019Innovation Digitale 2019. Découvrez l\u2019équipe." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["AboutPage", "Organization (Smart Cube: address, phone, email, foundingDate 2018, award 2019, sameAs)"],
+      h2s: ["Who makes Cubii?", "Why we built Cubii", "Our promise", "The team", "Quick facts"],
+      gaps: ["Team: Audrey, Mabrouk, Noah \u2014 names, roles, photos", "Portraits for Jorge and Eric", "No video in this section (removed in an earlier review)", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>

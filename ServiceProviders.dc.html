@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="SP / hero" style="padding:84px 0 0;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(36px,4.6vw,60px);font-weight:800;line-height:1.06;letter-spacing:-0.035em;">{{ t.heroLine1 }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span></h1>
+          <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+          <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
+        </div>
+        <div style="position:relative;">
+          <div style="border:1px solid #D9E6EB;border-radius:24px;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px rgba(41,109,131,0.12);">
+            <div style="display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid #E8EDEF;background:#FBFDFE;">
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="margin-left:10px;font-size:11px;font-weight:600;color:#878888;">{{ t.ticketLabel }}</span>
+            </div>
+            <div style="height:340px;overflow:hidden;background:#FFFFFF;">
+              <img src="assets/sp-ticket-status.png" alt="Cubii ticket detail with status progress, quick info and incident details" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+            </div>
+          </div>
+          <img src="assets/cubii-mascot-robot.png" alt="Cubii mascot" style="position:absolute;bottom:-38px;left:-30px;width:150px;height:auto;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / answer block" style="padding:80px 0 72px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2 }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / pain" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.painPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.painHighlight }}</span></h2>
+        <div>
+          <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.painText1 }}</p>
+          <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;">{{ t.painText2 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / benefits" style="padding:88px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.benefitsH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b1Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b2Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b2Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b3Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b3Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b4Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b4Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b5Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b5Text }}</p>
+          </div>
+          <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:18px;padding:28px;display:flex;align-items:flex-end;gap:14px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <img src="assets/cubii-mascot-robot.png" alt="" style="width:84px;height:auto;flex:0 0 auto;" />
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;font-weight:600;">{{ t.mascotCaption }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / pricing preview" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1000px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 32px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.pricingH2 }}</h2>
+        <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:16px;">
+            <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.tableCaption }}</caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thPlan }}</th>
+                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thMonthly }}</th>
+                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thClients }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">Starter</th>
+                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;">\u20AC160</td>
+                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;color:#3A4247;">~30</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">Starter Plus</th>
+                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;">\u20AC375</td>
+                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;color:#3A4247;">~75</td>
+              </tr>
+              <tr style="background:#F0FAFE;">
+                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:800;">Growth <span style="font-size:12px;font-weight:700;color:#0090E8;letter-spacing:0.06em;">{{ t.mostPopular }}</span></th>
+                <td style="padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:800;">\u20AC710</td>
+                <td style="padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:700;">~150</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:18px 26px;font-weight:600;">Enterprise</th>
+                <td style="padding:18px 26px;">\u20AC1.599</td>
+                <td style="padding:18px 26px;color:#3A4247;">~400</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:20px 0 0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.pricingNote }}</p>
+        <a href="Pricing.dc.html" style="margin-top:18px;display:inline-block;font-size:15px;font-weight:700;color:#0090E8;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;">{{ t.pricingLink }}</a>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / ROI" style="padding:88px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.roiH2 }}</h2>
+          <p style="margin:0;font-size:18px;line-height:1.7;color:#3A4247;">{{ t.roiText }}</p>
+        </div>
+        <div style="border:1px dashed #B9CFD7;border-radius:18px;padding:26px;">
+          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.6;">PLACEHOLDER: provider testimonial &mdash; e.g. &ldquo;picked up X new contracts through the marketplace in Y months&rdquo;</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / mini FAQ" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.miniFaqH2 }}</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:44px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq1Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq1A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq2Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq2A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq3Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq3A }}</p>
+          </div>
+        </div>
+        <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/service-providers" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "For service providers",
+    heroLine1: "More clients. Less paperwork.", heroHighlight: "Better interventions.",
+    heroSubhead: "Every ticket arrives with photos, location, category and urgency already filled in. The marketplace brings you clients you didn\u2019t have to chase. And the proof of work writes itself.",
+    bookDemo: "Book a demo", heroNote: "Plans from \u20AC160/month. Most popular: Growth, ~150 clients covered.",
+    ticketLabel: "Cubii provider view \u2014 incoming ticket",
+    answerH2: "What does Cubii do for service providers?",
+    answerText: "Cubii gives maintenance companies, HVAC contractors, elevator technicians and other service providers structured intervention requests, a marketplace for winning new clients, remote equipment monitoring, and automatic intervention documentation. Plans range from \u20AC160 to \u20AC1,599 per month depending on client volume.",
+    painPrefix: "The job is the", painHighlight: "easy part",
+    painText1: "You know the drill: a call with half the information, a first visit just to see what\u2019s actually wrong, then the real intervention, then the evening spent writing it up.",
+    painText2: "The work takes an hour. Everything around it takes three.",
+    benefitsH2: "How Cubii changes your operations",
+    b1Title: "Complete tickets from the first second.", b1Text: "Photos, exact location, category, urgency. Diagnose before you drive. Bring the right part the first time.",
+    b2Title: "New business finds you.", b2Text: "The marketplace puts your company in front of every facility manager on Cubii, searchable by specialty and availability. That\u2019s 2,600+ connected buildings that may need your trade.",
+    b3Title: "Monitor your installed equipment remotely.", b3Text: "Connect the boilers, elevators and HVAC systems you maintain. Get alerted at the first anomaly and intervene before the breakdown, and before the emergency call-out.",
+    b4Title: "Proof of work, automatic.", b4Text: "Every intervention documented, every exchange archived per ticket. When a client asks what was done in March, the answer takes one click.",
+    b5Title: "Onboard your existing clients in minutes.", b5Text: "QR code or email invite. No IT project.",
+    mascotCaption: "Works with the equipment you already service, whatever the brand.",
+    pricingH2: "How much does Cubii cost for service providers?",
+    tableCaption: "Cubii service provider plans, monthly, excl. VAT",
+    thPlan: "Plan", thMonthly: "Monthly", thClients: "Clients covered", mostPopular: "MOST POPULAR",
+    pricingNote: "All prices excl. VAT. Annual prepayment saves 10%. Effective cost per client drops from \u20AC5.33 (Starter) to \u20AC4.00 (Enterprise).",
+    pricingLink: "\u2192 Full pricing details",
+    roiH2: "Does it pay for itself?",
+    roiText: "One avoided empty first visit per week already covers the Starter plan. Add the call-outs you win through the marketplace and the admin hours you stop spending on write-ups, and the math gets short.",
+    miniFaqH2: "Provider questions, answered",
+    faq1Q: "Which trades is Cubii for?", faq1A: "Any building service provider: HVAC, plumbing, electrical, elevators, cleaning, general maintenance, security systems and more.",
+    faq2Q: "Can I connect equipment I already maintain?", faq2A: "Yes. Boilers, elevators, HVAC and other equipment can be connected via sensors regardless of brand, so you see anomalies before your client calls.",
+    faq3Q: "What\u2019s included in Starter vs higher plans?", faq3A: "Starter covers structured ticketing and documentation for ~30 clients. Marketplace access and surveys start at Starter Plus. Growth adds display ads, priority support and document cloud."
+  },
+  pt: {
+    eyebrow: "Para prestadores de serviços",
+    heroLine1: "Mais clientes. Menos burocracia.", heroHighlight: "Melhores intervenções.",
+    heroSubhead: "Cada pedido chega com fotografias, localização, categoria e urgência já preenchidas. O marketplace traz-lhe clientes que não teve de procurar. E o comprovativo de trabalho escreve-se sozinho.",
+    bookDemo: "Marcar uma demonstração", heroNote: "Planos a partir de \u20AC160/mês. Mais popular: Growth, ~150 clientes cobertos.",
+    ticketLabel: "Vista de prestador Cubii \u2014 pedido recebido",
+    answerH2: "O que faz a Cubii pelos prestadores de serviços?",
+    answerText: "A Cubii dá a empresas de manutenção, empreiteiros de AVAC, técnicos de elevadores e outros prestadores de serviços pedidos de intervenção estruturados, um marketplace para conquistar novos clientes, monitorização remota de equipamento e documentação automática das intervenções. Os planos vão de \u20AC160 a \u20AC1.599 por mês, consoante o volume de clientes.",
+    painPrefix: "O trabalho é a parte", painHighlight: "fácil",
+    painText1: "Conhece a rotina: uma chamada com metade da informação, uma primeira visita só para ver o que está mesmo avariado, depois a intervenção a sério, depois a noite passada a escrever o relatório.",
+    painText2: "O trabalho demora uma hora. Tudo o resto demora três.",
+    benefitsH2: "Como a Cubii muda as suas operações",
+    b1Title: "Pedidos completos desde o primeiro segundo.", b1Text: "Fotografias, localização exata, categoria, urgência. Diagnostique antes de conduzir. Leve a peça certa à primeira.",
+    b2Title: "Novos negócios encontram-no.", b2Text: "O marketplace coloca a sua empresa à vista de todos os gestores de condomínio na Cubii, pesquisável por especialidade e disponibilidade. São mais de 2.600 edifícios ligados que podem precisar do seu ofício.",
+    b3Title: "Monitorize o seu equipamento instalado à distância.", b3Text: "Ligue as caldeiras, elevadores e sistemas de AVAC que mantém. Seja alertado à primeira anomalia e intervenha antes da avaria, e antes da chamada de emergência.",
+    b4Title: "Comprovativo de trabalho, automático.", b4Text: "Cada intervenção documentada, cada troca de mensagens arquivada por pedido. Quando um cliente pergunta o que foi feito em março, a resposta demora um clique.",
+    b5Title: "Integre os seus clientes atuais em minutos.", b5Text: "Código QR ou convite por email. Sem projeto de informática.",
+    mascotCaption: "Funciona com o equipamento que já assiste, seja qual for a marca.",
+    pricingH2: "Quanto custa a Cubii para prestadores de serviços?",
+    tableCaption: "Planos Cubii para prestadores de serviços, mensal, sem IVA",
+    thPlan: "Plano", thMonthly: "Mensal", thClients: "Clientes cobertos", mostPopular: "MAIS POPULAR",
+    pricingNote: "Todos os preços sem IVA. O pré-pagamento anual poupa 10%. O custo efetivo por cliente desce de \u20AC5,33 (Starter) para \u20AC4,00 (Enterprise).",
+    pricingLink: "\u2192 Ver preços completos",
+    roiH2: "Isto compensa financeiramente?",
+    roiText: "Uma primeira visita desnecessária evitada por semana já cobre o plano Starter. Some as chamadas conquistadas através do marketplace e as horas de administração que deixa de gastar em relatórios, e a conta fecha rapidamente.",
+    miniFaqH2: "Perguntas de prestadores de serviços, respondidas",
+    faq1Q: "Para que ofícios é a Cubii?", faq1A: "Qualquer prestador de serviços de edifícios: AVAC, canalização, eletricidade, elevadores, limpeza, manutenção geral, sistemas de segurança e muito mais.",
+    faq2Q: "Posso ligar equipamento que já mantenho?", faq2A: "Sim. Caldeiras, elevadores, AVAC e outro equipamento podem ser ligados através de sensores independentemente da marca, para ver anomalias antes de o seu cliente ligar.",
+    faq3Q: "O que está incluído no Starter em comparação com planos superiores?", faq3A: "O Starter cobre pedidos estruturados e documentação para cerca de 30 clientes. O acesso ao marketplace e a inquéritos começa no Starter Plus. O Growth acrescenta anúncios em ecrã, apoio prioritário e armazenamento de documentos na nuvem."
+  },
+  es: {
+    eyebrow: "Para proveedores de servicios",
+    heroLine1: "Más clientes. Menos papeleo.", heroHighlight: "Mejores intervenciones.",
+    heroSubhead: "Cada parte llega con fotos, ubicación, categoría y urgencia ya rellenadas. El marketplace te trae clientes que no tuviste que buscar. Y el justificante de trabajo se genera solo.",
+    bookDemo: "Reservar una demo", heroNote: "Planes desde \u20AC160/mes. Más popular: Growth, ~150 clientes cubiertos.",
+    ticketLabel: "Vista de proveedor Cubii \u2014 parte entrante",
+    answerH2: "\u00BFQu\u00E9 hace Cubii por los proveedores de servicios?",
+    answerText: "Cubii ofrece a empresas de mantenimiento, contratistas de climatización, técnicos de ascensores y otros proveedores de servicios solicitudes de intervención estructuradas, un marketplace para conseguir nuevos clientes, monitorización remota de equipos y documentación automática de intervenciones. Los planes van de \u20AC160 a \u20AC1.599 al mes según el volumen de clientes.",
+    painPrefix: "El trabajo es la parte", painHighlight: "fácil",
+    painText1: "Ya conoces la rutina: una llamada con la mitad de la información, una primera visita solo para ver qué está realmente mal, luego la intervención de verdad, y después la noche dedicada a redactar el informe.",
+    painText2: "El trabajo dura una hora. Todo lo demás dura tres.",
+    benefitsH2: "Cómo Cubii cambia tus operaciones",
+    b1Title: "Partes completos desde el primer segundo.", b1Text: "Fotos, ubicación exacta, categoría, urgencia. Diagnostica antes de conducir. Lleva la pieza correcta a la primera.",
+    b2Title: "El nuevo negocio te encuentra.", b2Text: "El marketplace coloca a tu empresa ante todos los administradores de fincas en Cubii, con búsqueda por especialidad y disponibilidad. Son más de 2.600 edificios conectados que pueden necesitar tu oficio.",
+    b3Title: "Monitoriza tus equipos instalados a distancia.", b3Text: "Conecta las calderas, ascensores y sistemas de climatización que mantienes. Recibe una alerta ante la primera anomalía e interviene antes de la avería, y antes de la llamada de urgencia.",
+    b4Title: "Justificante de trabajo, automático.", b4Text: "Cada intervención documentada, cada intercambio archivado por parte. Cuando un cliente pregunta qué se hizo en marzo, la respuesta tarda un clic.",
+    b5Title: "Incorpora a tus clientes actuales en minutos.", b5Text: "Código QR o invitación por correo electrónico. Sin proyecto de informática.",
+    mascotCaption: "Funciona con el equipo que ya mantienes, sea cual sea la marca.",
+    pricingH2: "\u00BFCu\u00E1nto cuesta Cubii para proveedores de servicios?",
+    tableCaption: "Planes Cubii para proveedores de servicios, mensual, sin IVA",
+    thPlan: "Plan", thMonthly: "Mensual", thClients: "Clientes cubiertos", mostPopular: "MÁS POPULAR",
+    pricingNote: "Todos los precios sin IVA. El pago anual anticipado ahorra un 10%. El coste efectivo por cliente baja de \u20AC5,33 (Starter) a \u20AC4,00 (Enterprise).",
+    pricingLink: "\u2192 Ver precios completos",
+    roiH2: "\u00BFSe amortiza solo?",
+    roiText: "Evitar una primera visita en balde a la semana ya cubre el plan Starter. Súmale los avisos que ganas a través del marketplace y las horas de administración que dejas de dedicar a redactar informes, y la cuenta sale rápido.",
+    miniFaqH2: "Preguntas de proveedores, respondidas",
+    faq1Q: "\u00BFPara qu\u00E9 oficios es Cubii?", faq1A: "Para cualquier proveedor de servicios de edificios: climatización, fontanería, electricidad, ascensores, limpieza, mantenimiento general, sistemas de seguridad y más.",
+    faq2Q: "\u00BFPuedo conectar equipos que ya mantengo?", faq2A: "Sí. Calderas, ascensores, climatización y otros equipos pueden conectarse mediante sensores sea cual sea la marca, para que veas las anomalías antes de que te llame el cliente.",
+    faq3Q: "\u00BFQu\u00E9 incluye Starter frente a planes superiores?", faq3A: "Starter cubre partes estructurados y documentación para unos 30 clientes. El acceso al marketplace y las encuestas empiezan en Starter Plus. Growth añade anuncios en pantalla, soporte prioritario y almacenamiento de documentos en la nube."
+  },
+  fr: {
+    eyebrow: "Pour les prestataires de services",
+    heroLine1: "Plus de clients. Moins de paperasse.", heroHighlight: "De meilleures interventions.",
+    heroSubhead: "Chaque ticket arrive avec photos, localisation, catégorie et urgence déjà renseignées. La marketplace vous apporte des clients que vous n\u2019avez pas eu à démarcher. Et la preuve d\u2019intervention se rédige toute seule.",
+    bookDemo: "Réserver une démo", heroNote: "Forfaits à partir de 160\u00A0\u20AC/mois. Le plus populaire\u00A0: Growth, ~150 clients couverts.",
+    ticketLabel: "Vue prestataire Cubii \u2014 ticket entrant",
+    answerH2: "Que fait Cubii pour les prestataires de services\u00A0?",
+    answerText: "Cubii offre aux entreprises de maintenance, chauffagistes, techniciens ascensoristes et autres prestataires de services des demandes d\u2019intervention structurées, une marketplace pour gagner de nouveaux clients, un suivi à distance des équipements et une documentation automatique des interventions. Les forfaits vont de 160\u00A0\u20AC à 1\u00A0599\u00A0\u20AC par mois selon le volume de clients.",
+    painPrefix: "L\u2019intervention est la partie", painHighlight: "facile",
+    painText1: "Vous connaissez le scénario\u00A0: un appel avec la moitié des informations, une première visite juste pour voir ce qui cloche vraiment, puis la véritable intervention, puis la soirée passée à tout rédiger.",
+    painText2: "Le travail prend une heure. Tout le reste en prend trois.",
+    benefitsH2: "Comment Cubii transforme vos opérations",
+    b1Title: "Des tickets complets dès la première seconde.", b1Text: "Photos, localisation exacte, catégorie, urgence. Diagnostiquez avant de prendre la route. Emportez la bonne pièce du premier coup.",
+    b2Title: "Les nouveaux contrats viennent à vous.", b2Text: "La marketplace place votre entreprise devant chaque gestionnaire immobilier sur Cubii, avec recherche par spécialité et disponibilité. Ce sont plus de 2\u00A0600 bâtiments connectés qui pourraient avoir besoin de votre métier.",
+    b3Title: "Surveillez vos équipements installés à distance.", b3Text: "Connectez les chaudières, ascenseurs et systèmes CVC que vous entretenez. Soyez alerté dès la première anomalie et intervenez avant la panne, et avant l\u2019appel d\u2019urgence.",
+    b4Title: "Preuve d\u2019intervention, automatique.", b4Text: "Chaque intervention documentée, chaque échange archivé par ticket. Quand un client demande ce qui a été fait en mars, la réponse ne prend qu\u2019un clic.",
+    b5Title: "Intégrez vos clients existants en quelques minutes.", b5Text: "Code QR ou invitation par e-mail. Aucun projet informatique.",
+    mascotCaption: "Fonctionne avec les équipements que vous entretenez déjà, quelle que soit la marque.",
+    pricingH2: "Combien coûte Cubii pour les prestataires de services\u00A0?",
+    tableCaption: "Forfaits Cubii pour prestataires de services, mensuel, hors TVA",
+    thPlan: "Forfait", thMonthly: "Mensuel", thClients: "Clients couverts", mostPopular: "LE PLUS POPULAIRE",
+    pricingNote: "Tous les prix sont hors TVA. Le prépaiement annuel fait économiser 10\u00A0%. Le coût effectif par client passe de 5,33\u00A0\u20AC (Starter) à 4,00\u00A0\u20AC (Enterprise).",
+    pricingLink: "\u2192 Voir les tarifs complets",
+    roiH2: "Est-ce rentabilisé\u00A0?",
+    roiText: "Une seule visite à vide évitée par semaine couvre déjà le forfait Starter. Ajoutez les interventions gagnées via la marketplace et les heures d\u2019administration que vous ne passez plus à rédiger des comptes rendus, et le calcul est vite fait.",
+    miniFaqH2: "Questions des prestataires, avec réponses",
+    faq1Q: "Pour quels métiers Cubii est-elle faite\u00A0?", faq1A: "Pour tout prestataire de services du bâtiment\u00A0: CVC, plomberie, électricité, ascenseurs, nettoyage, maintenance générale, systèmes de sécurité et plus encore.",
+    faq2Q: "Puis-je connecter des équipements que j\u2019entretiens déjà\u00A0?", faq2A: "Oui. Chaudières, ascenseurs, CVC et autres équipements peuvent être connectés via des capteurs quelle que soit la marque, pour repérer les anomalies avant l\u2019appel de votre client.",
+    faq3Q: "Que comprend Starter par rapport aux forfaits supérieurs\u00A0?", faq3A: "Starter couvre la billetterie structurée et la documentation pour environ 30 clients. L\u2019accès à la marketplace et aux enquêtes commence avec Starter Plus. Growth ajoute les écrans publicitaires, le support prioritaire et le cloud documentaire."
+  }
+};
+
+const META = {
+  en: { title: "Cubii for Service Providers | More Clients, Less Paperwork", description: "Complete intervention tickets from the start, new clients via the marketplace, automatic proof of work. Plans from \u20AC160/month. Book a demo." },
+  pt: { title: "Cubii para Prestadores de Serviços | Mais Clientes, Menos Burocracia", description: "Pedidos de intervenção completos desde o início, novos clientes através do marketplace, comprovativo de trabalho automático. Planos a partir de \u20AC160/mês. Marque uma demonstração." },
+  es: { title: "Cubii para Proveedores de Servicios | Más Clientes, Menos Papeleo", description: "Partes de intervención completos desde el principio, nuevos clientes a través del marketplace, justificante de trabajo automático. Planes desde \u20AC160/mes. Reserva una demo." },
+  fr: { title: "Cubii pour les Prestataires de Services | Plus de Clients, Moins de Paperasse", description: "Tickets d\u2019intervention complets dès le départ, nouveaux clients via la marketplace, preuve d\u2019intervention automatique. Forfaits à partir de 160\u00A0\u20AC/mois. Réservez une démo." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "FAQPage (3 provider Q/A)", "Product + Offer per plan (EUR)"],
+      h2s: ["What does Cubii do for service providers?", "The job is the easy part", "How Cubii changes your operations", "How much does Cubii cost for service providers?", "Does it pay for itself?", "Provider questions, answered"],
+      gaps: ["Provider testimonial with contract numbers", "Provider ticket product shot", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# Cubii
+
+Cubii is a digital building concierge app developed by Smart Cube in Luxembourg. It centralizes incident management, energy monitoring, maintenance scheduling, document storage and service provider coordination for residential and commercial buildings in a single platform.
+
+## Audiences
+
+- **Residents & homeowners** — report incidents in 30 seconds with photos, receive building alerts, track water/gas/electricity in real time. Free in condominiums managed on Cubii; €1.99/month for an individually owned house or apartment.
+- **Facility managers & syndics** — structured incident tickets, automatic dispatch, maintenance calendars, energy monitoring and EPBD-aligned digital records across a whole portfolio. From €2.99 per user/month (excl. VAT), degressive with volume.
+- **Service providers** — intervention requests arriving complete (photos, location, category, urgency), a marketplace of 2,600+ connected buildings, remote equipment monitoring, automatic proof of work. Plans: Starter €160/mo (~30 clients), Starter Plus €375/mo (~75), Growth €710/mo (~150), Enterprise €1,599/mo (~400). Annual prepayment saves 10%.
+
+## Facts
+
+- Company: Smart Cube, 100% Luxembourg-based, commercial launch 2018
+- Recognition: Digital Innovation Prize, 2019 (artisanat category)
+- Sister company: Cube4Metrum S.A. (energy monitoring, 2021)
+- Headquarters: 40 Rangwee, L-2412 Howald, Luxembourg
+- Data hosting: Europe (GDPR)
+- Traction: 2,600+ buildings connected, 5,000+ incidents resolved, 600+ building professionals onboarded
+- Integrations: BMS, IoT sensors and dry contacts from any manufacturer; Leneda (Luxembourg national energy data platform)
+- Contact: info@smartcube.lu · +352 621 257 775
+
+## Key pages
+
+- Home: /
+- For residents & homeowners: /residents
+- For facility managers: /facility-managers
+- For service providers: /service-providers
+- Product: /product
+- Pricing: /pricing
+- FAQ: /faq
+- About: /about
+- Book a demo: /demo
+- Contact: /contact

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    @keyframes cubii-onboard-pop {
+      0% { transform: scale(0.3); opacity: 0; }
+      70% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="FM / hero" style="padding:84px 0 0;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span>.</h1>
+          <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+          <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
+        </div>
+        <div style="position:relative;">
+          <div style="border:1px solid #D9E6EB;border-radius:24px;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px rgba(41,109,131,0.12);">
+            <div style="display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid #E8EDEF;background:#FBFDFE;">
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="margin-left:10px;font-size:11px;font-weight:600;color:#878888;">{{ t.dashboardLabel }}</span>
+            </div>
+            <div style="height:340px;overflow:hidden;background:#FFFFFF;">
+              <img src="assets/fm-dashboard-incidents.png" alt="Cubii admin dashboard showing incidents for your property with quick stats" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+            </div>
+          </div>
+          <img src="assets/cubii-mascot-robot.png" alt="Cubii mascot" style="position:absolute;bottom:-38px;left:-30px;width:150px;height:auto;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / answer block" style="padding:80px 0 72px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2 }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / friction" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.frictionHighlight }}</span></h2>
+        <div>
+          <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.frictionText1 }}</p>
+          <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;color:#FFFFFF;">{{ t.frictionText2 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / benefits" style="padding:88px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.benefitsH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b1Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b2Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b2Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b3Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b3Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b4Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b4Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b5Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b5Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b6Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b6Text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / ROI" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.roiH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:32px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:34px;font-weight:800;color:#0090E8;letter-spacing:-0.025em;">{{ t.roi1Number }}</span>
+            <span style="display:block;margin-top:10px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.roi1Text }}</span>
+            <span style="display:block;margin-top:10px;font-size:12px;color:#6C8087;">{{ t.roi1Source }}</span>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:34px;font-weight:800;color:#0090E8;letter-spacing:-0.025em;">{{ t.roi2Number }}</span>
+            <span style="display:block;margin-top:10px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.roi2Text }}</span>
+            <span style="display:block;margin-top:10px;font-size:12px;color:#6C8087;">{{ t.roi2Source }}</span>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:34px;font-weight:800;color:#0090E8;letter-spacing:-0.025em;">{{ t.roi3Number }}</span>
+            <span style="display:block;margin-top:10px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.roi3Text }}</span>
+          </div>
+        </div>
+        <div style="border:1px dashed #B9CFD7;border-radius:18px;padding:26px;background:#FFFFFF;">
+          <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.6;">PLACEHOLDER: case study of a real syndic / manager &mdash; portfolio size, calls reduced, hours saved</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / compatibility + onboarding" style="padding:88px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:start;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.compatH2 }}</h2>
+          <p style="margin:0 0 28px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.compatText }}</p>
+          <div style="display:flex;align-items:flex-end;gap:16px;">
+            <img src="assets/cubii-mascot-robot.png" alt="" style="width:96px;height:auto;" />
+            <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:#6C8087;">{{ t.compatCaption }}</p>
+          </div>
+        </div>
+        <div>
+          <h2 style="margin:0 0 28px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.onboardH2 }}</h2>
+          <ol ref="{{ onboardRef }}" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px;">
+            <li style="display:flex;gap:18px;">
+              <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle1 }}">1</span>
+              <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step1Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step1Text }}</span></span>
+            </li>
+            <li style="display:flex;gap:18px;">
+              <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle2 }}">2</span>
+              <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step2Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step2Text }}</span></span>
+            </li>
+            <li style="display:flex;gap:18px;">
+              <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle3 }}">3</span>
+              <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step3Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step3Text }}</span></span>
+            </li>
+            <li style="display:flex;gap:18px;">
+              <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle4 }}">4</span>
+              <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step4Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step4Text }}</span></span>
+            </li>
+          </ol>
+          <a href="Demo.dc.html" style="margin-top:32px;display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="FM / mini FAQ" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.miniFaqH2 }}</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq1Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq1A }} <a href="Pricing.dc.html" style="font-weight:600;">{{ t.pricingPageLink }}</a>.</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq2Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq2A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq3Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq3A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq4Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq4A }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/facility-managers" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "For facility managers & syndics",
+    heroPrefix: "Manage buildings. Not", heroHighlight: "phone calls",
+    heroSubhead: "Cubii automates everything between \u201Csomething\u2019s broken\u201D and \u201Cit\u2019s fixed\u201D: detection, ticketing, dispatch, follow-up and documentation. Your team gets hours back, every week.",
+    bookDemo: "Book a demo", heroNote: "30 minutes, on your real portfolio. From \u20AC2.99 per user/month.",
+    dashboardLabel: "Cubii admin \u2014 portfolio dashboard",
+    answerH2: "What does Cubii do for facility managers and syndics?",
+    answerText: "Cubii gives facility managers and syndics a single platform to manage incidents, maintenance, energy and documents across their entire building portfolio. Incidents are reported by residents or detected by sensors, converted into structured tickets, and dispatched to service providers automatically. Pricing starts at \u20AC2.99 per user per month.",
+    frictionPrefix: "Where your week actually", frictionHighlight: "goes",
+    frictionText1: "Answering the same resident question fifteen times. Chasing a technician for a report. Reconstructing an intervention history from three inboxes. Manually checking buildings because nobody would report a problem until it flooded.",
+    frictionText2: "None of that is management. It\u2019s friction. Cubii removes it.",
+    benefitsH2: "How Cubii changes the day-to-day",
+    b1Title: "Incidents come to you structured, not as phone calls.", b1Text: "Residents report in the app with photos and location. Sensors and building systems (any brand: BMS, IoT, dry contacts) create tickets automatically. You validate, Cubii dispatches.",
+    b2Title: "Maintenance runs itself.", b2Text: "Recurring tasks are pre-programmed. On the scheduled date, the ticket goes to the provider automatically. The register updates itself.",
+    b3Title: "Energy under control, EPBD covered.", b3Text: "Real-time water, gas and electricity per building, Leneda integration, anomaly alerts, and the digital records European regulation increasingly requires.",
+    b4Title: "Every document where it should be.", b4Text: "Digital maintenance book, security register, contracts, plans. Shareable with providers in two clicks.",
+    b5Title: "Residents stay informed without you lifting a finger.", b5Text: "Push notifications, lobby display, per-ticket status. Fewer calls because people already know.",
+    b6Title: "One platform, your whole portfolio.", b6Text: "Multi-site by design. Every building, one dashboard.",
+    roiH2: "What does this save?",
+    roi1Number: "up to 30%", roi1Text: "lower operational costs by eliminating manual rounds", roi1Source: "Source: Ignitec",
+    roi2Number: "up to 20%", roi2Text: "lower repair costs through early detection with connected systems", roi2Source: "Source: IQnext",
+    roi3Number: "100\u2013150", roi3Text: "units per technician today \u2014 early detection raises that ceiling",
+    compatH2: "Do we have to change our tools?",
+    compatText: "No. Cubii is not a revolution, it\u2019s an evolution. It connects to equipment from any manufacturer, works alongside your existing property management software, and requires no IT department. Most teams are operational within days.",
+    compatCaption: "Brand-agnostic by design: BMS, IoT sensors, dry contacts.",
+    onboardH2: "How does onboarding work?",
+    step1Title: "Demo.", step1Text: "30 minutes on your actual portfolio and use cases.",
+    step2Title: "Setup by us, not by you.", step2Text: "You send us your building structure and user list. We build your account and load everything.",
+    step3Title: "Residents onboarded automatically.", step3Text: "Each resident receives an access code by email. We handle reminders at week 1 and week 3, and give you a clear activation report at week 4.",
+    step4Title: "Your providers connected.", step4Text: "Share your provider list; we bring them onto the platform.",
+    miniFaqH2: "Facility manager questions, answered",
+    faq1Q: "How much does Cubii cost for facility managers?", faq1A: "From \u20AC2.99 per user per month (excl. VAT), degressive with the number of users. Annual prepayment saves 10%. Full details on the", pricingPageLink: "pricing page",
+    faq2Q: "Does Cubii work with our existing sensors and building systems?", faq2A: "Yes. Cubii is brand-agnostic: it connects to BMS systems, IoT sensors and dry contacts from any manufacturer.",
+    faq3Q: "Does Cubii help with EPBD compliance?", faq3A: "Yes. Cubii tracks energy consumption per building in real time and maintains the digital maintenance records aligned with the Energy Performance of Buildings Directive.",
+    faq4Q: "How long does implementation take?", faq4A: "Smart Cube handles the setup: account creation, building structure, user injection and resident onboarding emails. Most portfolios are live within days, not months."
+  },
+  pt: {
+    eyebrow: "Para gestores de condomínio e administradores",
+    heroPrefix: "Gerir edifícios. Não", heroHighlight: "chamadas telefónicas",
+    heroSubhead: "A Cubii automatiza tudo entre \u201Calgo está avariado\u201D e \u201Cestá reparado\u201D: deteção, criação de pedidos, despacho, acompanhamento e documentação. A sua equipa recupera horas, todas as semanas.",
+    bookDemo: "Marcar uma demonstração", heroNote: "30 minutos, sobre o seu portfólio real. A partir de \u20AC2,99 por utilizador/mês.",
+    dashboardLabel: "Painel de administração Cubii \u2014 portfólio",
+    answerH2: "O que faz a Cubii pelos gestores de condomínio e administradores?",
+    answerText: "A Cubii dá aos gestores de condomínio e administradores uma única plataforma para gerir incidentes, manutenção, energia e documentos em todo o seu portfólio de edifícios. Os incidentes são reportados pelos residentes ou detetados por sensores, convertidos em pedidos estruturados e despachados automaticamente para prestadores de serviços. Os preços começam em \u20AC2,99 por utilizador por mês.",
+    frictionPrefix: "Para onde vai realmente a sua", frictionHighlight: "semana",
+    frictionText1: "Responder à mesma pergunta de um residente quinze vezes. Perseguir um técnico por um relatório. Reconstruir um histórico de intervenções a partir de três caixas de correio. Verificar edifícios manualmente porque ninguém reportaria um problema até inundar.",
+    frictionText2: "Nada disso é gestão. É atrito. A Cubii elimina-o.",
+    benefitsH2: "Como a Cubii muda o dia a dia",
+    b1Title: "Os incidentes chegam-lhe estruturados, não como chamadas telefónicas.", b1Text: "Os residentes reportam na aplicação com fotografias e localização. Sensores e sistemas do edifício (qualquer marca: BMS, IoT, contactos secos) criam pedidos automaticamente. Você valida, a Cubii despacha.",
+    b2Title: "A manutenção acontece sozinha.", b2Text: "As tarefas recorrentes são pré-programadas. Na data agendada, o pedido segue automaticamente para o prestador. O registo atualiza-se sozinho.",
+    b3Title: "Energia sob controlo, EPBD coberta.", b3Text: "Água, gás e eletricidade em tempo real por edifício, integração com a Leneda, alertas de anomalias, e os registos digitais cada vez mais exigidos pela regulamentação europeia.",
+    b4Title: "Cada documento onde deve estar.", b4Text: "Caderno de manutenção digital, registo de segurança, contratos, plantas. Partilhável com prestadores em dois cliques.",
+    b5Title: "Os residentes mantêm-se informados sem qualquer esforço da sua parte.", b5Text: "Notificações push, ecrã no átrio, estado por pedido. Menos chamadas porque as pessoas já sabem.",
+    b6Title: "Uma plataforma, todo o seu portfólio.", b6Text: "Multi-edifício por definição. Cada edifício, um só painel.",
+    roiH2: "Quanto é que isto poupa?",
+    roi1Number: "até 30%", roi1Text: "menos custos operacionais ao eliminar rondas manuais", roi1Source: "Fonte: Ignitec",
+    roi2Number: "até 20%", roi2Text: "menos custos de reparação com deteção precoce em sistemas ligados", roi2Source: "Fonte: IQnext",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico atualmente \u2014 a deteção precoce eleva esse limite",
+    compatH2: "Temos de mudar as nossas ferramentas?",
+    compatText: "Não. A Cubii não é uma revolução, é uma evolução. Liga-se a equipamento de qualquer fabricante, funciona junto do seu software de gestão de imóveis já existente e não exige departamento de informática. A maioria das equipas fica operacional em poucos dias.",
+    compatCaption: "Independente de marca, por definição: BMS, sensores IoT, contactos secos.",
+    onboardH2: "Como funciona a integração?",
+    step1Title: "Demonstração.", step1Text: "30 minutos sobre o seu portfólio e casos de uso reais.",
+    step2Title: "Configuração feita por nós, não por si.", step2Text: "Envia-nos a estrutura do seu edifício e a lista de utilizadores. Nós criamos a sua conta e carregamos tudo.",
+    step3Title: "Residentes integrados automaticamente.", step3Text: "Cada residente recebe um código de acesso por email. Tratamos dos lembretes na semana 1 e na semana 3, e damos-lhe um relatório de ativação claro na semana 4.",
+    step4Title: "Os seus prestadores ligados.", step4Text: "Partilhe a sua lista de prestadores; nós integramo-los na plataforma.",
+    miniFaqH2: "Perguntas de gestores de condomínio, respondidas",
+    faq1Q: "Quanto custa a Cubii para gestores de condomínio?", faq1A: "A partir de \u20AC2,99 por utilizador por mês (sem IVA), com desconto conforme o número de utilizadores. O pré-pagamento anual poupa 10%. Detalhes completos na", pricingPageLink: "página de preços",
+    faq2Q: "A Cubii funciona com os nossos sensores e sistemas de edifício já existentes?", faq2A: "Sim. A Cubii é independente de marca: liga-se a sistemas BMS, sensores IoT e contactos secos de qualquer fabricante.",
+    faq3Q: "A Cubii ajuda com a conformidade com a EPBD?", faq3A: "Sim. A Cubii acompanha o consumo de energia por edifício em tempo real e mantém os registos de manutenção digitais alinhados com a Diretiva de Desempenho Energético dos Edifícios.",
+    faq4Q: "Quanto tempo demora a implementação?", faq4A: "A Smart Cube trata da configuração: criação da conta, estrutura do edifício, integração de utilizadores e emails de ativação dos residentes. A maioria dos portfólios fica operacional em dias, não meses."
+  },
+  es: {
+    eyebrow: "Para administradores de fincas y comunidades",
+    heroPrefix: "Gestiona edificios. No", heroHighlight: "llamadas telefónicas",
+    heroSubhead: "Cubii automatiza todo lo que hay entre \u201Calgo está averiado\u201D y \u201Cestá arreglado\u201D: detección, apertura de partes, asignación, seguimiento y documentación. Tu equipo recupera horas, cada semana.",
+    bookDemo: "Reservar una demo", heroNote: "30 minutos, sobre tu cartera real. Desde \u20AC2,99 por usuario/mes.",
+    dashboardLabel: "Panel de administración Cubii \u2014 cartera de edificios",
+    answerH2: "\u00BFQu\u00E9 hace Cubii por los administradores de fincas y comunidades?",
+    answerText: "Cubii ofrece a los administradores de fincas y comunidades una única plataforma para gestionar incidencias, mantenimiento, energía y documentos en toda su cartera de edificios. Las incidencias las reportan los residentes o las detectan sensores, se convierten en partes estructurados y se asignan automáticamente a proveedores de servicios. Los precios comienzan en \u20AC2,99 por usuario al mes.",
+    frictionPrefix: "A d\u00F3nde va realmente tu", frictionHighlight: "semana",
+    frictionText1: "Responder quince veces a la misma pregunta de un residente. Perseguir a un técnico para que entregue un informe. Reconstruir un historial de intervenciones a partir de tres bandejas de entrada. Revisar edificios manualmente porque nadie reportaría un problema hasta que inundara.",
+    frictionText2: "Nada de eso es gestión. Es fricción. Cubii la elimina.",
+    benefitsH2: "Cómo Cubii cambia el día a día",
+    b1Title: "Las incidencias te llegan estructuradas, no como llamadas telefónicas.", b1Text: "Los residentes las reportan en la aplicación con fotos y ubicación. Sensores y sistemas del edificio (de cualquier marca: BMS, IoT, contactos secos) crean partes automáticamente. Tú validas, Cubii asigna.",
+    b2Title: "El mantenimiento se ejecuta solo.", b2Text: "Las tareas recurrentes se preprograman. En la fecha prevista, el parte llega automáticamente al proveedor. El registro se actualiza solo.",
+    b3Title: "Energía bajo control, EPBD cubierta.", b3Text: "Agua, gas y electricidad en tiempo real por edificio, integración con Leneda, alertas de anomalías, y los registros digitales que la normativa europea exige cada vez más.",
+    b4Title: "Cada documento donde debe estar.", b4Text: "Libro de mantenimiento digital, registro de seguridad, contratos, planos. Compartible con proveedores en dos clics.",
+    b5Title: "Los residentes se mantienen informados sin que muevas un dedo.", b5Text: "Notificaciones push, pantalla en el vestíbulo, estado por parte. Menos llamadas porque la gente ya lo sabe.",
+    b6Title: "Una plataforma, toda tu cartera.", b6Text: "Multi-sede por diseño. Cada edificio, un solo panel.",
+    roiH2: "\u00BFCu\u00E1nto ahorra esto?",
+    roi1Number: "hasta 30%", roi1Text: "menos costes operativos al eliminar las rondas manuales", roi1Source: "Fuente: Ignitec",
+    roi2Number: "hasta 20%", roi2Text: "menos costes de reparación gracias a la detección temprana con sistemas conectados", roi2Source: "Fuente: IQnext",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico en la actualidad \u2014 la detección temprana eleva ese límite",
+    compatH2: "\u00BFTenemos que cambiar nuestras herramientas?",
+    compatText: "No. Cubii no es una revolución, es una evolución. Se conecta a equipos de cualquier fabricante, funciona junto a tu software de gestión de fincas ya existente y no requiere departamento de informática. La mayoría de los equipos están operativos en pocos días.",
+    compatCaption: "Independiente de marca por diseño: BMS, sensores IoT, contactos secos.",
+    onboardH2: "\u00BFCómo funciona la incorporación?",
+    step1Title: "Demo.", step1Text: "30 minutos sobre tu cartera y casos de uso reales.",
+    step2Title: "La configuración la hacemos nosotros, no tú.", step2Text: "Nos envías la estructura de tus edificios y la lista de usuarios. Nosotros creamos tu cuenta y lo cargamos todo.",
+    step3Title: "Los residentes se incorporan automáticamente.", step3Text: "Cada residente recibe un código de acceso por correo electrónico. Nos encargamos de los recordatorios en la semana 1 y la semana 3, y te damos un informe de activación claro en la semana 4.",
+    step4Title: "Tus proveedores conectados.", step4Text: "Comparte tu lista de proveedores; nosotros los incorporamos a la plataforma.",
+    miniFaqH2: "Preguntas de administradores de fincas, respondidas",
+    faq1Q: "\u00BFCu\u00E1nto cuesta Cubii para administradores de fincas?", faq1A: "Desde \u20AC2,99 por usuario al mes (sin IVA), con descuentos según el número de usuarios. El pago anual anticipado ahorra un 10%. Todos los detalles en la", pricingPageLink: "página de precios",
+    faq2Q: "\u00BFCubii funciona con nuestros sensores y sistemas de edificio ya existentes?", faq2A: "Sí. Cubii es independiente de marca: se conecta a sistemas BMS, sensores IoT y contactos secos de cualquier fabricante.",
+    faq3Q: "\u00BFCubii ayuda con el cumplimiento de la EPBD?", faq3A: "Sí. Cubii registra el consumo energético por edificio en tiempo real y mantiene los registros de mantenimiento digitales alineados con la Directiva de Eficiencia Energética de los Edificios.",
+    faq4Q: "\u00BFCu\u00E1nto tarda la implementación?", faq4A: "Smart Cube se encarga de la configuración: creación de la cuenta, estructura del edificio, incorporación de usuarios y correos de activación para los residentes. La mayoría de las carteras están operativas en días, no en meses."
+  },
+  fr: {
+    eyebrow: "Pour les gestionnaires immobiliers et syndics",
+    heroPrefix: "Gérez des bâtiments. Pas des", heroHighlight: "appels téléphoniques",
+    heroSubhead: "Cubii automatise tout ce qui se passe entre \u00AB\u00A0quelque chose est cassé\u00A0\u00BB et \u00AB\u00A0c\u2019est réparé\u00A0\u00BB\u00A0: détection, création de tickets, envoi, suivi et documentation. Votre équipe récupère des heures, chaque semaine.",
+    bookDemo: "Réserver une démo", heroNote: "30 minutes, sur votre portefeuille réel. À partir de 2,99\u00A0\u20AC par utilisateur/mois.",
+    dashboardLabel: "Console d\u2019administration Cubii \u2014 portefeuille multi-sites",
+    answerH2: "Que fait Cubii pour les gestionnaires immobiliers et les syndics\u00A0?",
+    answerText: "Cubii offre aux gestionnaires immobiliers et aux syndics une plateforme unique pour gérer les incidents, la maintenance, l\u2019énergie et les documents sur l\u2019ensemble de leur portefeuille de bâtiments. Les incidents sont signalés par les résidents ou détectés par des capteurs, convertis en tickets structurés, et envoyés automatiquement aux prestataires de services. Les tarifs démarrent à 2,99\u00A0\u20AC par utilisateur et par mois.",
+    frictionPrefix: "Où passe vraiment votre", frictionHighlight: "semaine",
+    frictionText1: "Répondre quinze fois à la même question d\u2019un résident. Relancer un technicien pour un rapport. Reconstituer un historique d\u2019intervention à partir de trois boîtes mail. Vérifier les bâtiments manuellement parce que personne ne signalerait un problème avant l\u2019inondation.",
+    frictionText2: "Rien de tout cela n\u2019est de la gestion. C\u2019est de la friction. Cubii l\u2019élimine.",
+    benefitsH2: "Comment Cubii change le quotidien",
+    b1Title: "Les incidents vous arrivent structurés, pas sous forme d\u2019appels.", b1Text: "Les résidents les signalent dans l\u2019application avec photos et localisation. Les capteurs et systèmes du bâtiment (toutes marques\u00A0: GTB, IoT, contacts secs) créent des tickets automatiquement. Vous validez, Cubii envoie.",
+    b2Title: "La maintenance se gère toute seule.", b2Text: "Les tâches récurrentes sont préprogrammées. À la date prévue, le ticket part automatiquement chez le prestataire. Le registre se met à jour tout seul.",
+    b3Title: "Énergie sous contrôle, EPBD couverte.", b3Text: "Eau, gaz et électricité en temps réel par bâtiment, intégration Leneda, alertes d\u2019anomalies, et les registres numériques de plus en plus exigés par la réglementation européenne.",
+    b4Title: "Chaque document à sa place.", b4Text: "Carnet d\u2019entretien numérique, registre de sécurité, contrats, plans. Partageable avec les prestataires en deux clics.",
+    b5Title: "Les résidents restent informés sans le moindre effort de votre part.", b5Text: "Notifications push, affichage en hall d\u2019entrée, statut par ticket. Moins d\u2019appels car les gens savent déjà.",
+    b6Title: "Une plateforme, tout votre portefeuille.", b6Text: "Multi-sites par conception. Chaque bâtiment, un seul tableau de bord.",
+    roiH2: "Qu\u2019est-ce que cela permet d\u2019économiser\u00A0?",
+    roi1Number: "jusqu\u2019à 30\u00A0%", roi1Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", roi1Source: "Source\u00A0: Ignitec",
+    roi2Number: "jusqu\u2019à 20\u00A0%", roi2Text: "de coûts de réparation en moins grâce à la détection précoce sur des systèmes connectés", roi2Source: "Source\u00A0: IQnext",
+    roi3Number: "100\u2013150", roi3Text: "unités par technicien aujourd\u2019hui \u2014 la détection précoce relève ce plafond",
+    compatH2: "Devons-nous changer nos outils\u00A0?",
+    compatText: "Non. Cubii n\u2019est pas une révolution, c\u2019est une évolution. Elle se connecte à des équipements de tout fabricant, fonctionne aux côtés de votre logiciel de gestion immobilière existant, et ne nécessite aucun service informatique. La plupart des équipes sont opérationnelles en quelques jours.",
+    compatCaption: "Agnostique de marque par conception\u00A0: GTB, capteurs IoT, contacts secs.",
+    onboardH2: "Comment se déroule l\u2019intégration\u00A0?",
+    step1Title: "Démo.", step1Text: "30 minutes sur votre portefeuille et vos cas d\u2019usage réels.",
+    step2Title: "La configuration est faite par nous, pas par vous.", step2Text: "Vous nous envoyez la structure de vos bâtiments et la liste des utilisateurs. Nous créons votre compte et chargeons tout.",
+    step3Title: "Les résidents sont intégrés automatiquement.", step3Text: "Chaque résident reçoit un code d\u2019accès par e-mail. Nous gérons les relances en semaine 1 et en semaine 3, et vous fournissons un rapport d\u2019activation clair en semaine 4.",
+    step4Title: "Vos prestataires connectés.", step4Text: "Partagez votre liste de prestataires\u00A0; nous les intégrons à la plateforme.",
+    miniFaqH2: "Questions des gestionnaires immobiliers, avec réponses",
+    faq1Q: "Combien coûte Cubii pour les gestionnaires immobiliers\u00A0?", faq1A: "À partir de 2,99\u00A0\u20AC par utilisateur et par mois (hors TVA), dégressif selon le nombre d\u2019utilisateurs. Le prépaiement annuel fait économiser 10\u00A0%. Tous les détails sur la", pricingPageLink: "page tarifs",
+    faq2Q: "Cubii fonctionne-t-elle avec nos capteurs et systèmes de bâtiment existants\u00A0?", faq2A: "Oui. Cubii est agnostique de marque\u00A0: elle se connecte aux systèmes GTB, capteurs IoT et contacts secs de tout fabricant.",
+    faq3Q: "Cubii aide-t-elle à la conformité EPBD\u00A0?", faq3A: "Oui. Cubii suit la consommation énergétique par bâtiment en temps réel et maintient les registres de maintenance numériques alignés sur la directive sur la performance énergétique des bâtiments.",
+    faq4Q: "Combien de temps prend la mise en œuvre\u00A0?", faq4A: "Smart Cube prend en charge la configuration\u00A0: création du compte, structure des bâtiments, intégration des utilisateurs et e-mails d\u2019activation des résidents. La plupart des portefeuilles sont opérationnels en quelques jours, pas en mois."
+  }
+};
+
+const META = {
+  en: { title: "Cubii for Facility Managers & Syndics | Fewer Calls, Faster Fixes", description: "Automated incident ticketing, energy monitoring, maintenance calendars and EPBD-ready records for facility managers and syndics. From \u20AC2.99 per user/month. Book a demo." },
+  pt: { title: "Cubii para Gestores de Condomínio | Menos Chamadas, Reparações Mais Rápidas", description: "Criação automática de pedidos, monitorização energética, calendários de manutenção e registos prontos para a EPBD para gestores de condomínio e administradores. A partir de \u20AC2,99 por utilizador/mês. Marque uma demonstração." },
+  es: { title: "Cubii para Administradores de Fincas | Menos Llamadas, Reparaciones Más Rápidas", description: "Partes de incidencias automatizados, monitorización energética, calendarios de mantenimiento y registros listos para la EPBD para administradores de fincas y comunidades. Desde \u20AC2,99 por usuario/mes. Reserva una demo." },
+  fr: { title: "Cubii pour les Gestionnaires Immobiliers | Moins d\u2019Appels, Réparations Plus Rapides", description: "Tickets d\u2019incidents automatisés, suivi énergétique, calendriers de maintenance et registres conformes à l\u2019EPBD pour gestionnaires immobiliers et syndics. À partir de 2,99\u00A0\u20AC par utilisateur/mois. Réservez une démo." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en", onboardRevealed: false };
+
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+
+    this._onboardRef = (el) => {
+      if (!el || this._onboardObserved) return;
+      this._onboardObserved = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.setState({ onboardRevealed: entry.isIntersecting });
+        });
+      }, { threshold: 0.3 });
+      observer.observe(el);
+    };
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    const revealed = this.state.onboardRevealed;
+    const onboardStyle = (delay) => revealed
+      ? `animation:cubii-onboard-pop 0.45s ease-out ${delay}s both;`
+      : `transform:scale(0.3);opacity:0;`;
+    return {
+      t,
+      onboardRef: this._onboardRef,
+      onboardStyle1: onboardStyle(0.05), onboardStyle2: onboardStyle(0.25), onboardStyle3: onboardStyle(0.45), onboardStyle4: onboardStyle(0.65),
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "FAQPage (4 manager Q/A, text identical to page)"],
+      h2s: ["What does Cubii do for facility managers and syndics?", "Where your week actually goes", "How Cubii changes the day-to-day", "What does this save?", "Do we have to change our tools?", "How does onboarding work?", "Facility manager questions, answered"],
+      gaps: ["Syndic case study: portfolio size, calls reduced, hours saved", "Real volume pricing bands (today: quote on request)", "Admin dashboard product shot", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>

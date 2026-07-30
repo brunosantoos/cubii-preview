@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    input, textarea { font-family: Montserrat, sans-serif; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Contact / hero" style="padding:84px 0 56px;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+        <h1 style="margin:0 0 20px;font-size:clamp(38px,5vw,62px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.h1Prefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.h1Highlight }}</span></h1>
+        <p style="margin:0;font-size:19px;line-height:1.6;color:#3A4247;max-width:620px;">{{ t.intro }}</p>
+      </div>
+    </section>
+
+    <section data-screen-label="Contact / details + form" style="padding:0 0 80px;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start;">
+        <div>
+          <div style="display:flex;flex-direction:column;gap:22px;margin-bottom:44px;">
+            <div style="border-top:1px solid #E8EDEF;padding-top:18px;">
+              <span style="display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#878888;margin-bottom:6px;">{{ t.emailLabel }}</span>
+              <a href="Contact.dc.html" style="font-size:20px;font-weight:700;text-decoration:none;">info@smartcube.lu</a>
+            </div>
+            <div style="border-top:1px solid #E8EDEF;padding-top:18px;">
+              <span style="display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#878888;margin-bottom:6px;">{{ t.phoneLabel }}</span>
+              <span style="font-size:20px;font-weight:700;">+352 621 257 775</span>
+            </div>
+            <div style="border-top:1px solid #E8EDEF;padding-top:18px;">
+              <span style="display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#878888;margin-bottom:6px;">{{ t.addressLabel }}</span>
+              <span style="font-size:17px;line-height:1.6;color:#3A4247;">Smart Cube, 40 Rangwee,<br />L-2412 Howald, Luxembourg</span>
+            </div>
+          </div>
+          <h2 style="margin:0 0 20px;font-size:20px;font-weight:800;letter-spacing:-0.015em;">{{ t.shortcutsH2 }}</h2>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <a href="Demo.dc.html" style="border:1px solid #DCE7EB;border-radius:16px;padding:20px 22px;text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#0A0A0A;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="border-color:#00B5F1;box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);">
+              <span style="font-size:16px;font-weight:600;">{{ t.shortcutDemoText }}</span>
+              <span style="font-size:14px;font-weight:700;color:#0090E8;white-space:nowrap;">{{ t.shortcutDemoCta }} &rarr;</span>
+            </a>
+            <div style="border:1px dashed #B9CFD7;border-radius:16px;padding:20px 22px;">
+              <p style="margin:0 0 6px;font-size:16px;font-weight:600;">{{ t.shortcutSupportText }}</p>
+              <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">PLACEHOLDER: support email or help centre link</p>
+            </div>
+            <a href="Residents.dc.html" style="border:1px solid #DCE7EB;border-radius:16px;padding:20px 22px;text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#0A0A0A;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="border-color:#00B5F1;box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);">
+              <span style="font-size:16px;font-weight:600;">{{ t.shortcutSuggestText }}</span>
+              <span style="font-size:14px;font-weight:700;color:#0090E8;white-space:nowrap;">{{ t.shortcutSuggestCta }} &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="border:1px solid #DCE7EB;border-radius:24px;padding:34px;box-shadow:0 24px 60px rgba(41,109,131,0.10);">
+          <h2 style="margin:0 0 24px;font-size:22px;font-weight:800;letter-spacing:-0.02em;">{{ t.formH2 }}</h2>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <label style="display:flex;flex-direction:column;gap:7px;">
+              <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldName }}</span>
+              <input type="text" placeholder="Jane Muller" style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;outline:none;" />
+            </label>
+            <label style="display:flex;flex-direction:column;gap:7px;">
+              <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldEmail }}</span>
+              <input type="email" placeholder="jane@company.lu" style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;outline:none;" />
+            </label>
+            <label style="display:flex;flex-direction:column;gap:7px;">
+              <span style="font-size:13px;font-weight:700;color:#3A4247;">{{ t.fieldMessage }}</span>
+              <textarea rows="5" placeholder="{{ t.messagePlaceholder }}" style="border:1px solid #D9E6EB;border-radius:12px;padding:14px 16px;font-size:15px;outline:none;resize:vertical;"></textarea>
+            </label>
+            <button type="button" style="margin-top:6px;border:none;background:#00B5F1;color:#FFFFFF;font-size:16px;font-weight:700;font-family:Montserrat,sans-serif;padding:17px 30px;border-radius:999px;cursor:pointer;" style-hover="background:#0090E8;">{{ t.sendCta }}</button>
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#6C8087;">{{ t.reassurance }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/contact" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "Contact", h1Prefix: "Talk to", h1Highlight: "us.",
+    intro: "A question about the product, a partnership idea, or press? We answer fast.",
+    emailLabel: "Email", phoneLabel: "Phone", addressLabel: "Address",
+    shortcutsH2: "Shortcuts",
+    shortcutDemoText: "Want to see the product?", shortcutDemoCta: "Book a demo",
+    shortcutSupportText: "Resident with an app question?",
+    shortcutSuggestText: "Your building doesn\u2019t have Cubii yet?", shortcutSuggestCta: "Suggest us",
+    formH2: "Send us a message",
+    fieldName: "Name", fieldEmail: "Email", fieldMessage: "Message", messagePlaceholder: "How can we help?",
+    sendCta: "Send message",
+    reassurance: "We reply within one business day. Your data stays in Europe and is never shared."
+  },
+  pt: {
+    eyebrow: "Contacto", h1Prefix: "Fale", h1Highlight: "connosco.",
+    intro: "Uma questão sobre o produto, uma ideia de parceria, ou imprensa? Respondemos rapidamente.",
+    emailLabel: "Email", phoneLabel: "Telefone", addressLabel: "Morada",
+    shortcutsH2: "Atalhos",
+    shortcutDemoText: "Quer ver o produto?", shortcutDemoCta: "Marcar uma demonstração",
+    shortcutSupportText: "Residente com uma questão sobre a aplicação?",
+    shortcutSuggestText: "O seu edifício ainda não tem a Cubii?", shortcutSuggestCta: "Sugira-nos",
+    formH2: "Envie-nos uma mensagem",
+    fieldName: "Nome", fieldEmail: "Email", fieldMessage: "Mensagem", messagePlaceholder: "Como podemos ajudar?",
+    sendCta: "Enviar mensagem",
+    reassurance: "Respondemos no prazo de um dia útil. Os seus dados permanecem na Europa e nunca são partilhados."
+  },
+  es: {
+    eyebrow: "Contacto", h1Prefix: "Habla con", h1Highlight: "nosotros.",
+    intro: "\u00BFUna pregunta sobre el producto, una idea de colaboraci\u00F3n, o prensa? Respondemos rápido.",
+    emailLabel: "Correo electrónico", phoneLabel: "Teléfono", addressLabel: "Dirección",
+    shortcutsH2: "Accesos directos",
+    shortcutDemoText: "\u00BFQuieres ver el producto?", shortcutDemoCta: "Reservar una demo",
+    shortcutSupportText: "\u00BFEres residente con una pregunta sobre la aplicaci\u00F3n?",
+    shortcutSuggestText: "\u00BFTu edificio a\u00FAn no tiene Cubii?", shortcutSuggestCta: "Recomiéndanos",
+    formH2: "Envíanos un mensaje",
+    fieldName: "Nombre", fieldEmail: "Correo electrónico", fieldMessage: "Mensaje", messagePlaceholder: "\u00BFC\u00F3mo podemos ayudarte?",
+    sendCta: "Enviar mensaje",
+    reassurance: "Respondemos en un día laborable. Tus datos permanecen en Europa y nunca se comparten."
+  },
+  fr: {
+    eyebrow: "Contact", h1Prefix: "Parlons-", h1Highlight: "nous.",
+    intro: "Une question sur le produit, une idée de partenariat, ou la presse\u00A0? Nous répondons vite.",
+    emailLabel: "E-mail", phoneLabel: "Téléphone", addressLabel: "Adresse",
+    shortcutsH2: "Raccourcis",
+    shortcutDemoText: "Vous voulez voir le produit\u00A0?", shortcutDemoCta: "Réserver une démo",
+    shortcutSupportText: "Résident avec une question sur l\u2019application\u00A0?",
+    shortcutSuggestText: "Votre bâtiment n\u2019a pas encore Cubii\u00A0?", shortcutSuggestCta: "Suggérez-nous",
+    formH2: "Envoyez-nous un message",
+    fieldName: "Nom", fieldEmail: "E-mail", fieldMessage: "Message", messagePlaceholder: "Comment pouvons-nous vous aider\u00A0?",
+    sendCta: "Envoyer le message",
+    reassurance: "Nous répondons sous un jour ouvré. Vos données restent en Europe et ne sont jamais partagées."
+  }
+};
+
+const META = {
+  en: { title: "Contact Cubii | Smart Cube, Luxembourg", description: "Reach Smart Cube in Howald, Luxembourg: info@smartcube.lu, +352 621 257 775. Product questions, partnerships and press." },
+  pt: { title: "Contacte a Cubii | Smart Cube, Luxemburgo", description: "Contacte a Smart Cube em Howald, Luxemburgo: info@smartcube.lu, +352 621 257 775. Questões sobre o produto, parcerias e imprensa." },
+  es: { title: "Contacta con Cubii | Smart Cube, Luxemburgo", description: "Contacta con Smart Cube en Howald, Luxemburgo: info@smartcube.lu, +352 621 257 775. Preguntas sobre el producto, colaboraciones y prensa." },
+  fr: { title: "Contacter Cubii | Smart Cube, Luxembourg", description: "Contactez Smart Cube à Howald, Luxembourg\u00A0: info@smartcube.lu, +352 621 257 775. Questions produit, partenariats et presse." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["ContactPage", "Organization (Smart Cube: address, phone, email)"],
+      h2s: ["Shortcuts", "Send us a message"],
+      gaps: ["Resident support email or help centre link"]
+    };
+  }
+}
+</script>
+</body>
+</html>

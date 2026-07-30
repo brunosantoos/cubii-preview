@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Pricing / hero" style="padding:84px 0 64px;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+        <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span></h1>
+        <p style="margin:0;font-size:19px;line-height:1.6;color:#3A4247;max-width:720px;">{{ t.heroSubhead }}</p>
+      </div>
+    </section>
+
+    <section data-screen-label="Pricing / answer block" style="padding:0 0 76px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2 }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Pricing / residents" style="padding:64px 0;border-top:1px solid #E8EDEF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 26px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.tier1Label }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+          <div style="border:1px solid #DCE7EB;border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0;font-size:22px;font-weight:800;letter-spacing:-0.02em;">{{ t.condoTitle }} <span style="color:#00B5F1;">{{ t.free }}</span></h3>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;flex:1 1 auto;">{{ t.condoText }}</p>
+            <a href="Residents.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.condoCta }}</a>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0;font-size:22px;font-weight:800;letter-spacing:-0.02em;">{{ t.homeTitle }} <span style="color:#00B5F1;">\u20AC1.99/{{ t.perMonth }}</span></h3>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;flex:1 1 auto;">{{ t.homeText }}</p>
+            <a href="Residents.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:15px;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.homeCta }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Pricing / facility managers" style="padding:64px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 26px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.tier2Label }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:start;">
+          <div>
+            <h3 style="margin:0 0 16px;font-size:24px;font-weight:800;letter-spacing:-0.02em;">{{ t.fmTitle }}</h3>
+            <p style="margin:0 0 20px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.fmText1 }}</p>
+            <p style="margin:0 0 24px;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.fmText2 }}</p>
+            <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+            <p style="margin:18px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:#6C8087;line-height:1.6;">PLACEHOLDER: real volume bands (today: quote on request)</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <table style="width:100%;min-width:420px;border-collapse:collapse;font-size:16px;">
+              <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.modulesCaption }}</caption>
+              <thead>
+                <tr>
+                  <th scope="col" style="text-align:left;padding:16px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thModule }}</th>
+                  <th scope="col" style="text-align:right;padding:16px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thPrice }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">{{ t.moduleUser }}</th>
+                  <td style="text-align:right;padding:16px 26px;border-bottom:1px solid #F0F4F5;">\u20AC2.99</td>
+                </tr>
+                <tr>
+                  <th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">{{ t.moduleAlarm }}</th>
+                  <td style="text-align:right;padding:16px 26px;border-bottom:1px solid #F0F4F5;">\u20AC2.99</td>
+                </tr>
+                <tr>
+                  <th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">{{ t.moduleMaintenance }}</th>
+                  <td style="text-align:right;padding:16px 26px;border-bottom:1px solid #F0F4F5;">\u20AC0.99</td>
+                </tr>
+                <tr>
+                  <th scope="row" style="text-align:left;padding:16px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">{{ t.moduleSurveys }}</th>
+                  <td style="text-align:right;padding:16px 26px;border-bottom:1px solid #F0F4F5;">\u20AC2.99</td>
+                </tr>
+                <tr>
+                  <th scope="row" style="text-align:left;padding:16px 26px;font-weight:600;">{{ t.moduleStorage }}</th>
+                  <td style="text-align:right;padding:16px 26px;">\u20AC0.60/GB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Pricing / service providers" style="padding:72px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <p style="margin:0 0 26px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.tier3Label }}</p>
+        <div style="border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <table style="width:100%;min-width:720px;border-collapse:collapse;font-size:15px;">
+            <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.spTableCaption }}</caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align:left;padding:18px 22px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;"></th>
+                <th scope="col" style="text-align:left;padding:18px 22px;border-bottom:1px solid #E8EDEF;font-size:15px;font-weight:700;">Starter</th>
+                <th scope="col" style="text-align:left;padding:18px 22px;border-bottom:1px solid #E8EDEF;font-size:15px;font-weight:700;">Starter Plus</th>
+                <th scope="col" style="text-align:left;padding:18px 22px;border-bottom:1px solid #E8EDEF;background:#F0FAFE;font-size:15px;font-weight:800;">Growth <span style="display:block;font-size:10px;font-weight:700;color:#0090E8;letter-spacing:0.08em;">{{ t.mostPopular }}</span></th>
+                <th scope="col" style="text-align:left;padding:18px 22px;border-bottom:1px solid #E8EDEF;font-size:15px;font-weight:700;">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowMonthly }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC160</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC375</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;font-weight:800;">\u20AC710</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC1.599</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowAnnual }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">\u20AC1.728</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">\u20AC4.050</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;font-weight:700;">\u20AC7.668</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">\u20AC17.269</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowClients }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">~30</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">~75</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;font-weight:700;">~150</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">~400</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowCostPerClient }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">\u20AC5.33</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#878888;">&mdash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#878888;">&mdash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;">\u20AC4.00</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowTicketing }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowDocumentation }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowMarketplace }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowSurveys }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowDisplayAds }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowPrioritySupport }}</th>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #E3F3FA;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;border-bottom:1px solid #F0F4F5;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 22px;font-weight:600;color:#3A4247;">{{ t.rowDocumentCloud }}</th>
+                <td style="padding:16px 22px;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;color:#B9C4C8;">&ndash;</td>
+                <td style="padding:16px 22px;background:#F0FAFE;color:#0090E8;font-weight:700;">&#10003;</td>
+                <td style="padding:16px 22px;color:#0090E8;font-weight:700;">&#10003;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+          <p style="margin:0;font-size:15px;color:#3A4247;">{{ t.spNote }}</p>
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:15px 30px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Pricing / FAQ" style="padding:76px 0;background:#F5FBFD;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 36px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.faqH2 }}</h2>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:24px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">{{ t.faq1Q }}</h3>
+            <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">PLACEHOLDER: confirm with client</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:24px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">{{ t.faq2Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq2A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:24px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">{{ t.faq3Q }}</h3>
+            <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">PLACEHOLDER: confirm contract terms</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:24px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 8px;font-size:18px;font-weight:700;">{{ t.faq4Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq4A }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/pricing" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "Pricing", heroPrefix: "Simple pricing.", heroHighlight: "No surprises.",
+    heroSubhead: "Free for residents in managed buildings. \u20AC1.99/month for homeowners. Degressive per-user pricing for facility managers. Flat plans for service providers. Annual prepayment saves 10%.",
+    answerH2: "How much does Cubii cost?",
+    answerText: "Cubii is free for residents whose building is managed on the platform; their facility manager covers the cost. Individual homeowners subscribe for \u20AC1.99/month. For facility managers and syndics, pricing starts at \u20AC2.99 per user per month (excl. VAT) and decreases with volume. Service provider plans range from \u20AC160/month (Starter, ~30 clients) to \u20AC1,599/month (Enterprise, ~400 clients). Annual prepayment reduces all prices by 10%.",
+    tier1Label: "Tier 1 \u2014 Residents & homeowners",
+    condoTitle: "Condominium residents:", free: "Free",
+    condoText: "Your building has a syndic or facility manager on Cubii? The app is free for you: your manager covers the platform. Download, activate with your building\u2019s access code, done. No charge, no ads, no catch.", condoCta: "Download free",
+    homeTitle: "Own house or apartment:", perMonth: "month",
+    homeText: "You manage your own home, no syndic involved? Subscribe directly for \u20AC1.99/month and get the digital maintenance book, energy tracking, incident history, inspection reports and marketplace access.", homeCta: "Start for \u20AC1.99/month",
+    tier2Label: "Tier 2 \u2014 Facility Managers",
+    fmTitle: "Facility Managers & Syndics: from \u20AC2.99 per user/month",
+    fmText1: "Per-user pricing that decreases as your portfolio grows. Includes incident management, notifications, resident communication and the core platform.",
+    fmText2: "Exact pricing depends on portfolio size and modules. The demo includes a tailored quote.",
+    bookDemo: "Book a demo",
+    modulesCaption: "Optional modules, per unit per month, excl. VAT", thModule: "Module", thPrice: "Price",
+    moduleUser: "Cubii User", moduleAlarm: "Alarm monitoring", moduleMaintenance: "Maintenance module", moduleSurveys: "Surveys", moduleStorage: "Extra storage",
+    tier3Label: "Tier 3 \u2014 Service Providers",
+    spTableCaption: "Cubii service provider plans, excl. VAT", mostPopular: "MOST POPULAR",
+    rowMonthly: "Monthly", rowAnnual: "Annual (10% off)", rowClients: "Clients covered", rowCostPerClient: "Cost per client",
+    rowTicketing: "Structured ticketing", rowDocumentation: "Documentation & proof of work", rowMarketplace: "Marketplace", rowSurveys: "Surveys", rowDisplayAds: "Display ads", rowPrioritySupport: "Priority support", rowDocumentCloud: "Document cloud",
+    spNote: "All plans include the base platform fee. All prices excl. VAT.",
+    faqH2: "Pricing questions, answered",
+    faq1Q: "Is there a setup fee?",
+    faq2Q: "Can I change plans later?", faq2A: "Yes. Plans scale with your client base; upgrade when you grow.",
+    faq3Q: "Is there a minimum contract length?",
+    faq4Q: "Do prices include VAT?", faq4A: "No, all listed prices exclude VAT."
+  },
+  pt: {
+    eyebrow: "Preços", heroPrefix: "Preços simples.", heroHighlight: "Sem surpresas.",
+    heroSubhead: "Gratuita para residentes em edifícios geridos. \u20AC1,99/mês para proprietários. Preços degressivos por utilizador para gestores de condomínio. Planos fixos para prestadores de serviços. O pré-pagamento anual poupa 10%.",
+    answerH2: "Quanto custa a Cubii?",
+    answerText: "A Cubii é gratuita para residentes cujo edifício é gerido na plataforma; o gestor de condomínio cobre o custo. Os proprietários individuais subscrevem por \u20AC1,99/mês. Para gestores de condomínio e administradores, os preços começam em \u20AC2,99 por utilizador por mês (sem IVA) e diminuem com o volume. Os planos para prestadores de serviços vão de \u20AC160/mês (Starter, ~30 clientes) a \u20AC1.599/mês (Enterprise, ~400 clientes). O pré-pagamento anual reduz todos os preços em 10%.",
+    tier1Label: "Nível 1 \u2014 Residentes e proprietários",
+    condoTitle: "Residentes em condomínio:", free: "Grátis",
+    condoText: "O seu edifício tem um administrador ou gestor de condomínio na Cubii? A aplicação é gratuita para si: o seu gestor paga a plataforma. Descarregue, ative com o código de acesso do seu edifício, pronto. Sem custos, sem anúncios, sem letra pequena.", condoCta: "Descarregar grátis",
+    homeTitle: "Casa ou apartamento próprios:", perMonth: "mês",
+    homeText: "Gere a sua própria casa, sem administrador envolvido? Subscreva diretamente por \u20AC1,99/mês e obtenha o caderno de manutenção digital, acompanhamento de energia, histórico de incidentes, relatórios de vistoria e acesso ao marketplace.", homeCta: "Começar por \u20AC1,99/mês",
+    tier2Label: "Nível 2 \u2014 Gestores de condomínio",
+    fmTitle: "Gestores de Condomínio e Administradores: a partir de \u20AC2,99 por utilizador/mês",
+    fmText1: "Preço por utilizador que diminui à medida que o seu portfólio cresce. Inclui gestão de incidentes, notificações, comunicação com residentes e a plataforma base.",
+    fmText2: "O preço exato depende do tamanho do portfólio e dos módulos. A demonstração inclui um orçamento personalizado.",
+    bookDemo: "Marcar uma demonstração",
+    modulesCaption: "Módulos opcionais, por unidade por mês, sem IVA", thModule: "Módulo", thPrice: "Preço",
+    moduleUser: "Utilizador Cubii", moduleAlarm: "Monitorização de alarmes", moduleMaintenance: "Módulo de manutenção", moduleSurveys: "Inquéritos", moduleStorage: "Armazenamento extra",
+    tier3Label: "Nível 3 \u2014 Prestadores de serviços",
+    spTableCaption: "Planos Cubii para prestadores de serviços, sem IVA", mostPopular: "MAIS POPULAR",
+    rowMonthly: "Mensal", rowAnnual: "Anual (10% desc.)", rowClients: "Clientes cobertos", rowCostPerClient: "Custo por cliente",
+    rowTicketing: "Pedidos estruturados", rowDocumentation: "Documentação e comprovativo de trabalho", rowMarketplace: "Marketplace", rowSurveys: "Inquéritos", rowDisplayAds: "Anúncios em ecrã", rowPrioritySupport: "Apoio prioritário", rowDocumentCloud: "Documentos na nuvem",
+    spNote: "Todos os planos incluem a taxa base da plataforma. Todos os preços sem IVA.",
+    faqH2: "Perguntas sobre preços, respondidas",
+    faq1Q: "Há uma taxa de configuração?",
+    faq2Q: "Posso mudar de plano mais tarde?", faq2A: "Sim. Os planos escalam com a sua base de clientes; faça upgrade à medida que cresce.",
+    faq3Q: "Existe um período mínimo de contrato?",
+    faq4Q: "Os preços incluem IVA?", faq4A: "Não, todos os preços apresentados são sem IVA."
+  },
+  es: {
+    eyebrow: "Precios", heroPrefix: "Precios simples.", heroHighlight: "Sin sorpresas.",
+    heroSubhead: "Gratis para residentes en edificios gestionados. \u20AC1,99/mes para propietarios. Precios degresivos por usuario para administradores de fincas. Planes fijos para proveedores de servicios. El pago anual anticipado ahorra un 10%.",
+    answerH2: "\u00BFCu\u00E1nto cuesta Cubii?",
+    answerText: "Cubii es gratis para los residentes cuyo edificio está gestionado en la plataforma; el administrador de fincas cubre el coste. Los propietarios individuales se suscriben por \u20AC1,99/mes. Para administradores de fincas y comunidades, los precios empiezan en \u20AC2,99 por usuario al mes (sin IVA) y disminuyen con el volumen. Los planes para proveedores de servicios van de \u20AC160/mes (Starter, ~30 clientes) a \u20AC1.599/mes (Enterprise, ~400 clientes). El pago anual anticipado reduce todos los precios un 10%.",
+    tier1Label: "Nivel 1 \u2014 Residentes y propietarios",
+    condoTitle: "Residentes en comunidad:", free: "Gratis",
+    condoText: "\u00BFTu edificio tiene un administrador de fincas en Cubii? La aplicación es gratis para ti: tu administrador paga la plataforma. Descárgala, actívala con el código de acceso de tu edificio, listo. Sin coste, sin anuncios, sin letra pequeña.", condoCta: "Descargar gratis",
+    homeTitle: "Vivienda propia:", perMonth: "mes",
+    homeText: "\u00BFGestionas tu propia vivienda, sin administrador de fincas de por medio? Suscríbete directamente por \u20AC1,99/mes y obtén el libro de mantenimiento digital, seguimiento energético, historial de incidencias, informes de inspección y acceso al marketplace.", homeCta: "Empezar por \u20AC1,99/mes",
+    tier2Label: "Nivel 2 \u2014 Administradores de fincas",
+    fmTitle: "Administradores de Fincas y Comunidades: desde \u20AC2,99 por usuario/mes",
+    fmText1: "Precio por usuario que disminuye a medida que crece tu cartera. Incluye gestión de incidencias, notificaciones, comunicación con residentes y la plataforma base.",
+    fmText2: "El precio exacto depende del tamaño de la cartera y de los módulos. La demo incluye un presupuesto a medida.",
+    bookDemo: "Reservar una demo",
+    modulesCaption: "Módulos opcionales, por unidad al mes, sin IVA", thModule: "Módulo", thPrice: "Precio",
+    moduleUser: "Usuario Cubii", moduleAlarm: "Monitorización de alarmas", moduleMaintenance: "Módulo de mantenimiento", moduleSurveys: "Encuestas", moduleStorage: "Almacenamiento adicional",
+    tier3Label: "Nivel 3 \u2014 Proveedores de servicios",
+    spTableCaption: "Planes Cubii para proveedores de servicios, sin IVA", mostPopular: "MÁS POPULAR",
+    rowMonthly: "Mensual", rowAnnual: "Anual (10% dto.)", rowClients: "Clientes cubiertos", rowCostPerClient: "Coste por cliente",
+    rowTicketing: "Partes estructurados", rowDocumentation: "Documentación y justificante de trabajo", rowMarketplace: "Marketplace", rowSurveys: "Encuestas", rowDisplayAds: "Anuncios en pantalla", rowPrioritySupport: "Soporte prioritario", rowDocumentCloud: "Documentos en la nube",
+    spNote: "Todos los planes incluyen la tarifa base de la plataforma. Todos los precios sin IVA.",
+    faqH2: "Preguntas sobre precios, respondidas",
+    faq1Q: "\u00BFHay una cuota de configuración?",
+    faq2Q: "\u00BFPuedo cambiar de plan más adelante?", faq2A: "Sí. Los planes escalan con tu base de clientes; mejora de plan a medida que creces.",
+    faq3Q: "\u00BFHay una duración mínima de contrato?",
+    faq4Q: "\u00BFLos precios incluyen IVA?", faq4A: "No, todos los precios indicados no incluyen IVA."
+  },
+  fr: {
+    eyebrow: "Tarifs", heroPrefix: "Des tarifs simples.", heroHighlight: "Aucune surprise.",
+    heroSubhead: "Gratuit pour les résidents dans les bâtiments gérés. 1,99\u00A0\u20AC/mois pour les propriétaires. Tarification dégressive par utilisateur pour les gestionnaires immobiliers. Forfaits fixes pour les prestataires de services. Le prépaiement annuel fait économiser 10\u00A0%.",
+    answerH2: "Combien coûte Cubii\u00A0?",
+    answerText: "Cubii est gratuite pour les résidents dont le bâtiment est géré sur la plateforme\u00A0; leur gestionnaire immobilier prend en charge le coût. Les propriétaires individuels s\u2019abonnent pour 1,99\u00A0\u20AC/mois. Pour les gestionnaires immobiliers et syndics, les tarifs démarrent à 2,99\u00A0\u20AC par utilisateur et par mois (hors TVA) et diminuent avec le volume. Les forfaits pour prestataires de services vont de 160\u00A0\u20AC/mois (Starter, ~30 clients) à 1\u00A0599\u00A0\u20AC/mois (Enterprise, ~400 clients). Le prépaiement annuel réduit tous les prix de 10\u00A0%.",
+    tier1Label: "Niveau 1 \u2014 Résidents et propriétaires",
+    condoTitle: "Résidents en copropriété\u00A0:", free: "Gratuit",
+    condoText: "Votre bâtiment a un syndic ou un gestionnaire immobilier sur Cubii\u00A0? L\u2019application est gratuite pour vous\u00A0: votre gestionnaire prend en charge la plateforme. Téléchargez, activez avec le code d\u2019accès de votre bâtiment, c\u2019est fait. Aucun frais, aucune publicité, aucun piège.", condoCta: "Télécharger gratuitement",
+    homeTitle: "Maison ou appartement en propre\u00A0:", perMonth: "mois",
+    homeText: "Vous gérez votre propre logement, sans syndic\u00A0? Abonnez-vous directement pour 1,99\u00A0\u20AC/mois et profitez du carnet d\u2019entretien numérique, du suivi énergétique, de l\u2019historique des incidents, des états des lieux et de l\u2019accès à la marketplace.", homeCta: "Commencer pour 1,99\u00A0\u20AC/mois",
+    tier2Label: "Niveau 2 \u2014 Gestionnaires immobiliers",
+    fmTitle: "Gestionnaires Immobiliers et Syndics\u00A0: à partir de 2,99\u00A0\u20AC par utilisateur/mois",
+    fmText1: "Un tarif par utilisateur qui diminue à mesure que votre portefeuille grandit. Comprend la gestion des incidents, les notifications, la communication avec les résidents et la plateforme de base.",
+    fmText2: "Le tarif exact dépend de la taille du portefeuille et des modules choisis. La démo inclut un devis sur mesure.",
+    bookDemo: "Réserver une démo",
+    modulesCaption: "Modules optionnels, par unité et par mois, hors TVA", thModule: "Module", thPrice: "Prix",
+    moduleUser: "Utilisateur Cubii", moduleAlarm: "Suivi des alarmes", moduleMaintenance: "Module maintenance", moduleSurveys: "Enquêtes", moduleStorage: "Stockage supplémentaire",
+    tier3Label: "Niveau 3 \u2014 Prestataires de services",
+    spTableCaption: "Forfaits Cubii pour prestataires de services, hors TVA", mostPopular: "LE PLUS POPULAIRE",
+    rowMonthly: "Mensuel", rowAnnual: "Annuel (-10\u00A0%)", rowClients: "Clients couverts", rowCostPerClient: "Coût par client",
+    rowTicketing: "Billetterie structurée", rowDocumentation: "Documentation et preuve d\u2019intervention", rowMarketplace: "Marketplace", rowSurveys: "Enquêtes", rowDisplayAds: "Écrans publicitaires", rowPrioritySupport: "Support prioritaire", rowDocumentCloud: "Cloud documentaire",
+    spNote: "Tous les forfaits incluent le tarif de base de la plateforme. Tous les prix sont hors TVA.",
+    faqH2: "Questions sur les tarifs, avec réponses",
+    faq1Q: "Y a-t-il des frais de mise en service\u00A0?",
+    faq2Q: "Puis-je changer de forfait plus tard\u00A0?", faq2A: "Oui. Les forfaits évoluent avec votre base de clients\u00A0; passez au niveau supérieur en même temps que votre croissance.",
+    faq3Q: "Y a-t-il une durée minimale de contrat\u00A0?",
+    faq4Q: "Les prix incluent-ils la TVA\u00A0?", faq4A: "Non, tous les prix indiqués sont hors TVA."
+  }
+};
+
+const META = {
+  en: { title: "Cubii Pricing | Residents Free in Managed Buildings, Managers from \u20AC2.99/user", description: "Transparent Cubii pricing: free for residents in managed buildings, \u20AC1.99/month for individual homeowners, from \u20AC2.99 per user/month for facility managers, provider plans from \u20AC160/month." },
+  pt: { title: "Preços da Cubii | Residentes Grátis em Edifícios Geridos, Gestores a partir de \u20AC2,99/utilizador", description: "Preços transparentes da Cubii: gratuita para residentes em edifícios geridos, \u20AC1,99/mês para proprietários individuais, a partir de \u20AC2,99 por utilizador/mês para gestores de condomínio, planos de prestadores a partir de \u20AC160/mês." },
+  es: { title: "Precios de Cubii | Residentes Gratis en Edificios Gestionados, Administradores desde \u20AC2,99/usuario", description: "Precios transparentes de Cubii: gratis para residentes en edificios gestionados, \u20AC1,99/mes para propietarios individuales, desde \u20AC2,99 por usuario/mes para administradores de fincas, planes de proveedores desde \u20AC160/mes." },
+  fr: { title: "Tarifs Cubii | Résidents Gratuits dans les Bâtiments Gérés, Gestionnaires à partir de 2,99\u00A0\u20AC/utilisateur", description: "Tarifs Cubii transparents\u00A0: gratuit pour les résidents dans les bâtiments gérés, 1,99\u00A0\u20AC/mois pour les propriétaires individuels, à partir de 2,99\u00A0\u20AC par utilisateur/mois pour les gestionnaires immobiliers, forfaits prestataires à partir de 160\u00A0\u20AC/mois." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "Product + Offer per plan, exact prices, currency EUR", "FAQPage (pricing Q/A)"],
+      h2s: ["How much does Cubii cost?", "Pricing questions, answered"],
+      gaps: ["Setup fee: confirm", "Minimum contract length: confirm", "Real volume bands for facility managers", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>

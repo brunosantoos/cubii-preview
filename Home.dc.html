@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    @keyframes cubii-step-fill {
+      0%, 3% { transform: scaleX(0); }
+      8%, 100% { transform: scaleX(1); }
+    }
+    @keyframes cubii-step-glow {
+      0%, 4% { opacity: 0.35; }
+      10%, 100% { opacity: 1; }
+    }
+    @keyframes cubii-step-bump {
+      0% { transform: scale(1); opacity: 0.55; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+      3% { transform: scale(1); opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+      9% { transform: scale(1.035); opacity: 1; box-shadow: 0 14px 32px rgba(0,181,241,0.28); }
+      18%, 30% { transform: scale(1); opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+      36%, 100% { transform: scale(1); opacity: 0.55; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+    }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Home / hero" style="padding:88px 0 0;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(40px,5.2vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span>.</h1>
+          <p style="margin:0 0 34px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
+            <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;transition:background 0.15s ease;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.ctaPrimary }}</a>
+            <a href="Residents.dc.html" style="font-size:15px;font-weight:600;color:#296D83;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;" style-hover="color:#0090E8;">{{ t.ctaSecondary }}</a>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div style="border:1px solid #D9E6EB;border-radius:24px;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px rgba(41,109,131,0.12);">
+            <div style="display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid #E8EDEF;background:#FBFDFE;">
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="margin-left:10px;font-size:11px;font-weight:600;color:#878888;">{{ t.adminBoardLabel }}</span>
+            </div>
+            <div style="height:320px;overflow:hidden;background:#FFFFFF;">
+              <img src="assets/admin-incidents.png" alt="Cubii admin incident board listing tickets by patrimony, priority, status and category" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block;" />
+            </div>
+          </div>
+          <img src="assets/cubii-mascot-robot.png" alt="Cubii mascot" style="position:absolute;bottom:-38px;left:-30px;width:150px;height:auto;" />
+        </div>
+      </div>
+      <div style="max-width:1240px;margin:72px auto 0;padding:22px 32px;border-top:1px solid #E8EDEF;">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px 32px;align-items:center;">
+          <span style="font-size:16px;font-weight:600;color:#6C8087;transition:color 0.18s ease;cursor:default;" style-hover="color:#0090E8;">{{ t.trust1 }}</span>
+          <span style="width:5px;height:5px;border-radius:999px;background:#C6D3D8;display:block;"></span>
+          <span style="font-size:16px;font-weight:600;color:#6C8087;transition:color 0.18s ease;cursor:default;" style-hover="color:#0090E8;">{{ t.trust2 }}</span>
+          <span style="width:5px;height:5px;border-radius:999px;background:#C6D3D8;display:block;"></span>
+          <span style="font-size:16px;font-weight:600;color:#6C8087;transition:color 0.18s ease;cursor:default;" style-hover="color:#0090E8;">{{ t.trust3 }}</span>
+          <span style="width:5px;height:5px;border-radius:999px;background:#C6D3D8;display:block;"></span>
+          <span style="font-size:16px;font-weight:600;color:#6C8087;transition:color 0.18s ease;cursor:default;" style-hover="color:#0090E8;">{{ t.trust4 }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / what is Cubii" style="padding:96px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:56px;align-items:center;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;line-height:1.12;">{{ t.whatIsH2 }}</h2>
+          <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.whatIsAnswer }}</p>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 20px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.whatIsPara2 }}</p>
+          <p style="margin:0;font-size:19px;line-height:1.6;color:#0A0A0A;font-weight:600;">{{ t.whatIsPara3 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / audience router" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.audienceH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#00AAEE;">{{ t.card1Label }}</span>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card1Text }}</p>
+            <a href="Residents.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card1Cta }}</a>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#00AAEE;">{{ t.card2Label }}</span>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card2Text }}</p>
+            <a href="FacilityManagers.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card2Cta }}</a>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#00AAEE;">{{ t.card3Label }}</span>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card3Text }}</p>
+            <a href="ServiceProviders.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card3Cta }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / how it works" style="padding:104px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 12px;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;">{{ t.howPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.howHighlight }}</span>{{ t.howSuffix }}</h2>
+        <p style="margin:0 0 52px;font-size:17px;line-height:1.6;color:#878888;max-width:520px;">{{ t.howSubtitle }}</p>
+        <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+          <li style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 0s infinite;">
+            <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:#00B5F1;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 0s infinite;"></div>
+            </div>
+            <div style="padding:30px 30px 0;">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 0s infinite;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#CCF0FC;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">1</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#85CCF0;">{{ t.step1Role }}</span>
+              </div>
+              <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step1Title }}</h3>
+              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step1Text }}</p>
+            </div>
+            <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
+              <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
+                <img src="assets/step1-ticket-details.png" alt="Cubii ticket details screen showing a Roof Water Leak report" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+              </div>
+            </div>
+          </li>
+          <li style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 2s infinite;">
+            <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:#00B5F1;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 2s infinite;"></div>
+            </div>
+            <div style="padding:30px 30px 0;">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 2s infinite;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#CCF0FC;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">2</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#85CCF0;">{{ t.step2Role }}</span>
+              </div>
+              <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step2Title }}</h3>
+              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step2Text }}</p>
+            </div>
+            <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
+              <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
+                <img src="assets/step2-ticket-progress.png" alt="Cubii ticket progress timeline from acknowledged to done" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+              </div>
+            </div>
+          </li>
+          <li style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 4s infinite;">
+            <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
+              <div style="position:absolute;inset:0;background:#00B5F1;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 4s infinite;"></div>
+            </div>
+            <div style="padding:30px 30px 0;">
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 4s infinite;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#CCF0FC;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">3</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#85CCF0;">{{ t.step3Role }}</span>
+              </div>
+              <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step3Title }}</h3>
+              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step3Text }}</p>
+            </div>
+            <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
+              <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
+                <img src="assets/step3-ticket-chat.png" alt="Cubii per-ticket chat between company and manager" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / capabilities" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px;">
+          <h2 style="margin:0;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.capsH2 }}</h2>
+          <a href="Product.dc.html" style="font-size:15px;font-weight:700;color:#0090E8;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;">{{ t.capsLink }}</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap1Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap1Text }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap2Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap2Text }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap3Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap3Text }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap4Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap4Text }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap5Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap5Text }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap6Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.cap6Text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / results" style="padding:96px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.resultsH2 }}</h2>
+        <p style="margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.resultsTodayLabel }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-bottom:56px;">
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">2.600+</span>
+            <span style="display:block;margin-top:10px;font-size:15px;color:#3A4247;">{{ t.stat1Label }}</span>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">5.000+</span>
+            <span style="display:block;margin-top:10px;font-size:15px;color:#3A4247;">{{ t.stat2Label }}</span>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">600+</span>
+            <span style="display:block;margin-top:10px;font-size:15px;color:#3A4247;">{{ t.stat3Label }}</span>
+          </div>
+        </div>
+        <p style="margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.benchmarksLabel }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;">
+          <div style="background:#F0FAFE;border-radius:18px;padding:26px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:30px;font-weight:800;color:#0090E8;letter-spacing:-0.02em;">{{ t.bench1Number }}</span>
+            <span style="display:block;margin-top:8px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.bench1Text }}</span>
+            <span style="display:block;margin-top:10px;font-size:12px;color:#6C8087;">{{ t.bench1Source }}</span>
+          </div>
+          <div style="background:#F0FAFE;border-radius:18px;padding:26px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:30px;font-weight:800;color:#0090E8;letter-spacing:-0.02em;">{{ t.bench2Number }}</span>
+            <span style="display:block;margin-top:8px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.bench2Text }}</span>
+            <span style="display:block;margin-top:10px;font-size:12px;color:#6C8087;">{{ t.bench2Source }}</span>
+          </div>
+          <div style="background:#F0FAFE;border-radius:18px;padding:26px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <span style="display:block;font-size:30px;font-weight:800;color:#0090E8;letter-spacing:-0.02em;">{{ t.bench3Number }}</span>
+            <span style="display:block;margin-top:8px;font-size:15px;line-height:1.55;color:#12313C;">{{ t.bench3Text }}</span>
+            <span style="display:block;margin-top:10px;font-size:12px;color:#6C8087;">{{ t.bench3Source }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / social proof" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 36px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.proofH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:28px;">
+          <div style="height:82px;border:1px dashed #B9CFD7;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;">
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">client logo 1</span>
+          </div>
+          <div style="height:82px;border:1px dashed #B9CFD7;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;">
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">client logo 2</span>
+          </div>
+          <div style="height:82px;border:1px dashed #B9CFD7;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;">
+            <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;">client logo 3</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+          <div style="border:1px dashed #B9CFD7;border-radius:18px;padding:28px;background:#FFFFFF;">
+            <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.6;">PLACEHOLDER: testimonial 1 &mdash; result + number + name + role + company</p>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:40px;height:40px;border-radius:999px;background:#E8F4F9;display:block;"></span>
+              <span style="height:12px;width:140px;background:#E8F4F9;display:block;border-radius:4px;"></span>
+            </div>
+          </div>
+          <div style="border:1px dashed #B9CFD7;border-radius:18px;padding:28px;background:#FFFFFF;">
+            <p style="margin:0 0 14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.6;">PLACEHOLDER: testimonial 2 &mdash; result + number + name + role + company</p>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:40px;height:40px;border-radius:999px;background:#E8F4F9;display:block;"></span>
+              <span style="height:12px;width:140px;background:#E8F4F9;display:block;border-radius:4px;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Home / final CTA" style="padding:104px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;">
+        <div>
+          <h2 style="margin:0 0 18px;font-size:clamp(30px,3.6vw,48px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;">{{ t.finalCtaPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.finalCtaHighlight }}</span></h2>
+          <p style="margin:0 0 32px;font-size:18px;line-height:1.6;color:#B8C2C6;max-width:520px;">{{ t.finalCtaText }}</p>
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#4DCBF5;color:#0A0A0A;">{{ t.ctaPrimary }}</a>
+        </div>
+        <div style="border-top:1px solid #26292A;padding-top:26px;display:flex;gap:22px;align-items:flex-start;">
+          <img src="assets/cubii-mascot-robot.png" alt="" style="width:88px;height:auto;flex:0 0 auto;" />
+          <p style="margin:0;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.residentLinePrefix }} <a href="Residents.dc.html" style="color:#85CCF0;font-weight:700;text-decoration:none;border-bottom:1px solid #296D83;">{{ t.residentLineCta }}</a> {{ t.residentLineSuffix }}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "Digital building concierge · Luxembourg",
+    heroPrefix: "Your building, finally", heroHighlight: "connected",
+    heroSubhead: "Cubii is the digital concierge that links residents, facility managers and service providers in one app. Incidents get reported in seconds, the right technician gets dispatched automatically, and the phone stops ringing.",
+    ctaPrimary: "Book a demo",
+    ctaSecondary: "I\u2019m a resident \u2192 Download the app",
+    adminBoardLabel: "Cubii admin \u2014 incident board",
+    trust1: "Made in Luxembourg", trust2: "Servers hosted in Europe", trust3: "Winner, Digital Innovation Prize 2019", trust4: "Ready for EU energy regulation (EPBD)",
+    whatIsH2: "What is Cubii?",
+    whatIsAnswer: "Cubii is a digital building concierge app developed by Smart Cube in Luxembourg. It centralizes incident management, energy monitoring, maintenance scheduling, document storage and service provider coordination for residential and commercial buildings in a single platform. In condominiums managed on Cubii, the app is free for residents; owners of individual houses or apartments subscribe for \u20AC1.99/month. Facility managers and service providers use it to cut response times and operating costs.",
+    whatIsPara2: "Buildings are one of the last places where nothing is digital. Water gets cut and everyone calls. A leak goes unnoticed until the ceiling falls. Documents live in five different inboxes. Technicians show up without knowing what\u2019s broken.",
+    whatIsPara3: "Cubii closes that loop. Not a revolution, an evolution: it works with the tools and equipment you already have.",
+    audienceH2: "Who is Cubii for?",
+    card1Label: "Residents & Homeowners", card1Text: "Never miss what\u2019s happening in your building. Report an issue in 30 seconds, get alerts before they matter, see your energy use anytime. Free in condominiums on Cubii, \u20AC1.99/month for your own home.", card1Cta: "Get the app",
+    card2Label: "Facility Managers", card2Text: "Fewer calls, faster interventions, full compliance. Cubii automates the work between the incident and the fix.", card2Cta: "See how it works",
+    card3Label: "Service Providers", card3Text: "Complete tickets from the start, new clients through the marketplace, less paperwork after every job.", card3Cta: "See how it works",
+    howPrefix: "How does Cubii", howHighlight: "work", howSuffix: "?",
+    howSubtitle: "Three steps, from the first sign of a problem to a documented fix.",
+    step1Role: "Resident", step1Title: "An incident happens", step1Text: "A resident reports it with photos in the app, or a connected sensor detects it automatically. Water leak, elevator failure, heating breakdown: Cubii knows before it gets expensive.",
+    step2Role: "Manager", step2Title: "The right people know instantly", step2Text: "The facility manager validates the ticket. The service provider receives it with location, photos, category and urgency already filled in. No phone chain, no missing details.",
+    step3Role: "Provider", step3Title: "Fixed, documented, done", step3Text: "Intervention tracked to closure, chat archived per ticket, proof of work generated. The building\u2019s full history stays in one place.",
+    capsH2: "What can Cubii do?", capsLink: "\u2192 Explore the full product",
+    cap1Title: "Incident management", cap1Text: "Tickets created manually or automatically via sensors, tracked from report to resolution.",
+    cap2Title: "Energy monitoring", cap2Text: "Water, gas and electricity in real time, with integration to Leneda (Luxembourg\u2019s national energy data platform) and anomaly alerts.",
+    cap3Title: "Maintenance", cap3Text: "A calendar that dispatches recurring tickets to providers automatically.",
+    cap4Title: "Documents", cap4Text: "Digital maintenance book, contracts, plans and the security register, centralized and shareable.",
+    cap5Title: "Marketplace", cap5Text: "Find and hire verified service providers by specialty and availability.",
+    cap6Title: "Communication", cap6Text: "Push notifications, per-ticket chat, and lobby displays for building announcements.",
+    resultsH2: "What results can you expect?", resultsTodayLabel: "Cubii today",
+    stat1Label: "buildings connected", stat2Label: "incidents resolved", stat3Label: "building professionals onboarded",
+    benchmarksLabel: "Industry benchmarks",
+    bench1Number: "up to 20%", bench1Text: "lower repair costs with connected IoT systems", bench1Source: "Source: IQnext",
+    bench2Number: "up to 30%", bench2Text: "lower operational costs by eliminating manual rounds", bench2Source: "Source: Ignitec",
+    bench3Number: "up to 25%", bench3Text: "energy savings with IoT-enabled monitoring", bench3Source: "Source: Ignitec",
+    proofH2: "Trusted across Luxembourg",
+    finalCtaPrefix: "See Cubii on your", finalCtaHighlight: "buildings",
+    finalCtaText: "A 30-minute demo with our team, on your real use case. No commitment.",
+    residentLinePrefix: "Resident? You don\u2019t need a demo.", residentLineCta: "Get the app", residentLineSuffix: "\u2014 free in condominiums on Cubii, \u20AC1.99/month for your own home."
+  },
+  pt: {
+    eyebrow: "Concierge digital de edifícios · Luxemburgo",
+    heroPrefix: "O seu edifício, finalmente", heroHighlight: "ligado",
+    heroSubhead: "A Cubii é a concierge digital que liga residentes, gestores de condomínio e prestadores de serviços numa só aplicação. Os incidentes são reportados em segundos, o técnico certo é despachado automaticamente e o telefone deixa de tocar.",
+    ctaPrimary: "Marcar uma demonstração",
+    ctaSecondary: "Sou residente \u2192 Descarregar a aplicação",
+    adminBoardLabel: "Painel de administração Cubii \u2014 incidentes",
+    trust1: "Concebida no Luxemburgo", trust2: "Servidores alojados na Europa", trust3: "Vencedora do Prémio de Inovação Digital 2019", trust4: "Preparada para a regulamentação energética da UE (EPBD)",
+    whatIsH2: "O que é a Cubii?",
+    whatIsAnswer: "A Cubii é uma aplicação de concierge digital de edifícios, desenvolvida pela Smart Cube no Luxemburgo. Centraliza a gestão de incidentes, a monitorização energética, o planeamento da manutenção, o arquivo de documentos e a coordenação de prestadores de serviços para edifícios residenciais e comerciais numa única plataforma. Em condomínios geridos na Cubii, a aplicação é gratuita para os residentes; os proprietários de moradias ou apartamentos individuais subscrevem por \u20AC1,99/mês. Gestores de condomínio e prestadores de serviços utilizam-na para reduzir os tempos de resposta e os custos operacionais.",
+    whatIsPara2: "Os edifícios são um dos últimos lugares onde nada é digital. A água é cortada e todos telefonam. Uma fuga passa despercebida até o teto ceder. Os documentos vivem espalhados por cinco caixas de correio diferentes. Os técnicos chegam sem saber o que está avariado.",
+    whatIsPara3: "A Cubii fecha esse ciclo. Não é uma revolução, é uma evolução: funciona com as ferramentas e os equipamentos que já tem.",
+    audienceH2: "Para quem é a Cubii?",
+    card1Label: "Residentes e Proprietários", card1Text: "Nunca perca o que se passa no seu edifício. Reporte um problema em 30 segundos, receba alertas antes de serem importantes, veja o seu consumo de energia a qualquer momento. Gratuita em condomínios na Cubii, \u20AC1,99/mês para a sua própria casa.", card1Cta: "Descarregar a aplicação",
+    card2Label: "Gestores de Condomínio", card2Text: "Menos chamadas, intervenções mais rápidas, conformidade total. A Cubii automatiza o trabalho entre o incidente e a reparação.", card2Cta: "Ver como funciona",
+    card3Label: "Prestadores de Serviços", card3Text: "Pedidos completos desde o início, novos clientes através do marketplace, menos burocracia depois de cada trabalho.", card3Cta: "Ver como funciona",
+    howPrefix: "Como funciona a", howHighlight: "Cubii", howSuffix: "?",
+    howSubtitle: "Três etapas, do primeiro sinal de um problema até à reparação documentada.",
+    step1Role: "Residente", step1Title: "Um incidente acontece", step1Text: "Um residente reporta-o com fotografias na aplicação, ou um sensor ligado deteta-o automaticamente. Fuga de água, avaria do elevador, falha no aquecimento: a Cubii sabe antes de sair caro.",
+    step2Role: "Gestor", step2Title: "As pessoas certas sabem de imediato", step2Text: "O gestor de condomínio valida o pedido. O prestador de serviços recebe-o com localização, fotografias, categoria e urgência já preenchidas. Sem cadeia de telefonemas, sem detalhes em falta.",
+    step3Role: "Prestador", step3Title: "Reparado, documentado, concluído", step3Text: "Intervenção acompanhada até ao encerramento, conversa arquivada por pedido, comprovativo de trabalho gerado. O histórico completo do edifício fica num só lugar.",
+    capsH2: "O que pode a Cubii fazer?", capsLink: "\u2192 Explorar o produto completo",
+    cap1Title: "Gestão de incidentes", cap1Text: "Pedidos criados manualmente ou automaticamente através de sensores, acompanhados desde o reporte até à resolução.",
+    cap2Title: "Monitorização energética", cap2Text: "Água, gás e eletricidade em tempo real, com integração com a Leneda (plataforma nacional de dados energéticos do Luxemburgo) e alertas de anomalias.",
+    cap3Title: "Manutenção", cap3Text: "Um calendário que envia pedidos recorrentes aos prestadores automaticamente.",
+    cap4Title: "Documentos", cap4Text: "Caderno de manutenção digital, contratos, plantas e o registo de segurança, centralizados e partilháveis.",
+    cap5Title: "Marketplace", cap5Text: "Encontre e contrate prestadores de serviços verificados por especialidade e disponibilidade.",
+    cap6Title: "Comunicação", cap6Text: "Notificações push, conversa por pedido e ecrãs no átrio para os avisos do edifício.",
+    resultsH2: "Que resultados pode esperar?", resultsTodayLabel: "A Cubii hoje",
+    stat1Label: "edifícios ligados", stat2Label: "incidentes resolvidos", stat3Label: "profissionais de edifícios integrados",
+    benchmarksLabel: "Referências do setor",
+    bench1Number: "até 20%", bench1Text: "menos custos de reparação com sistemas IoT ligados", bench1Source: "Fonte: IQnext",
+    bench2Number: "até 30%", bench2Text: "menos custos operacionais ao eliminar rondas manuais", bench2Source: "Fonte: Ignitec",
+    bench3Number: "até 25%", bench3Text: "poupança energética com monitorização baseada em IoT", bench3Source: "Fonte: Ignitec",
+    proofH2: "Reconhecida em todo o Luxemburgo",
+    finalCtaPrefix: "Veja a Cubii nos seus", finalCtaHighlight: "edifícios",
+    finalCtaText: "Uma demonstração de 30 minutos com a nossa equipa, sobre o seu caso real. Sem compromisso.",
+    residentLinePrefix: "É residente? Não precisa de uma demonstração.", residentLineCta: "Descarregar a aplicação", residentLineSuffix: "\u2014 gratuita em condomínios na Cubii, \u20AC1,99/mês para a sua própria casa."
+  },
+  es: {
+    eyebrow: "Conserjería digital de edificios · Luxemburgo",
+    heroPrefix: "Tu edificio, por fin", heroHighlight: "conectado",
+    heroSubhead: "Cubii es la conserjería digital que conecta a residentes, administradores de fincas y proveedores de servicios en una sola aplicación. Las incidencias se reportan en segundos, el técnico adecuado se despacha automáticamente y el teléfono deja de sonar.",
+    ctaPrimary: "Reservar una demo",
+    ctaSecondary: "Soy residente \u2192 Descargar la aplicación",
+    adminBoardLabel: "Panel de administración de Cubii \u2014 incidencias",
+    trust1: "Creada en Luxemburgo", trust2: "Servidores alojados en Europa", trust3: "Ganadora del Premio de Innovación Digital 2019", trust4: "Preparada para la normativa energética de la UE (EPBD)",
+    whatIsH2: "\u00BFQu\u00E9 es Cubii?",
+    whatIsAnswer: "Cubii es una aplicaci\u00F3n de conserjer\u00EDa digital de edificios, desarrollada por Smart Cube en Luxemburgo. Centraliza la gesti\u00F3n de incidencias, la monitorizaci\u00F3n energ\u00E9tica, la programaci\u00F3n del mantenimiento, el almacenamiento de documentos y la coordinaci\u00F3n de proveedores de servicios para edificios residenciales y comerciales en una sola plataforma. En comunidades gestionadas con Cubii, la aplicaci\u00F3n es gratuita para los residentes; los propietarios de viviendas o apartamentos individuales se suscriben por \u20AC1,99/mes. Administradores de fincas y proveedores de servicios la utilizan para reducir los tiempos de respuesta y los costes operativos.",
+    whatIsPara2: "Los edificios son uno de los \u00FAltimos lugares donde nada es digital. Se corta el agua y todos llaman. Una fuga pasa desapercibida hasta que se hunde el techo. Los documentos viven repartidos en cinco bandejas de entrada distintas. Los t\u00E9cnicos llegan sin saber qu\u00E9 est\u00E1 averiado.",
+    whatIsPara3: "Cubii cierra ese ciclo. No es una revoluci\u00F3n, es una evoluci\u00F3n: funciona con las herramientas y los equipos que ya tienes.",
+    audienceH2: "\u00BFPara qui\u00E9n es Cubii?",
+    card1Label: "Residentes y Propietarios", card1Text: "No te pierdas lo que pasa en tu edificio. Reporta una incidencia en 30 segundos, recibe alertas antes de que importen, consulta tu consumo energético en cualquier momento. Gratis en comunidades con Cubii, \u20AC1,99/mes para tu propia vivienda.", card1Cta: "Descargar la aplicación",
+    card2Label: "Administradores de Fincas", card2Text: "Menos llamadas, intervenciones más rápidas, cumplimiento total. Cubii automatiza el trabajo entre la incidencia y la reparación.", card2Cta: "Ver cómo funciona",
+    card3Label: "Proveedores de Servicios", card3Text: "Partes de trabajo completos desde el principio, nuevos clientes a través del marketplace, menos papeleo después de cada trabajo.", card3Cta: "Ver cómo funciona",
+    howPrefix: "\u00BFC\u00F3mo", howHighlight: "funciona", howSuffix: " Cubii?",
+    howSubtitle: "Tres pasos, desde la primera señal de un problema hasta la reparación documentada.",
+    step1Role: "Residente", step1Title: "Ocurre una incidencia", step1Text: "Un residente la reporta con fotos en la aplicación, o un sensor conectado la detecta automáticamente. Fuga de agua, avería del ascensor, fallo de la calefacción: Cubii lo sabe antes de que salga caro.",
+    step2Role: "Administrador", step2Title: "Las personas adecuadas lo saben al instante", step2Text: "El administrador de fincas valida el parte. El proveedor de servicios lo recibe con ubicación, fotos, categoría y urgencia ya rellenadas. Sin cadena de llamadas, sin detalles pendientes.",
+    step3Role: "Proveedor", step3Title: "Reparado, documentado, resuelto", step3Text: "Intervención seguida hasta el cierre, chat archivado por parte, justificante de trabajo generado. El historial completo del edificio queda en un solo lugar.",
+    capsH2: "\u00BFQu\u00E9 puede hacer Cubii?", capsLink: "\u2192 Explorar el producto completo",
+    cap1Title: "Gestión de incidencias", cap1Text: "Partes creados manualmente o automáticamente mediante sensores, seguidos desde el reporte hasta la resolución.",
+    cap2Title: "Monitorización energética", cap2Text: "Agua, gas y electricidad en tiempo real, con integración con Leneda (la plataforma nacional de datos energéticos de Luxemburgo) y alertas de anomalías.",
+    cap3Title: "Mantenimiento", cap3Text: "Un calendario que envía partes recurrentes a los proveedores automáticamente.",
+    cap4Title: "Documentos", cap4Text: "Libro de mantenimiento digital, contratos, planos y el registro de seguridad, centralizados y compartibles.",
+    cap5Title: "Marketplace", cap5Text: "Encuentra y contrata proveedores de servicios verificados por especialidad y disponibilidad.",
+    cap6Title: "Comunicación", cap6Text: "Notificaciones push, chat por parte de trabajo y pantallas en el vestíbulo para los avisos del edificio.",
+    resultsH2: "\u00BFQu\u00E9 resultados puedes esperar?", resultsTodayLabel: "Cubii hoy",
+    stat1Label: "edificios conectados", stat2Label: "incidencias resueltas", stat3Label: "profesionales de edificios incorporados",
+    benchmarksLabel: "Referencias del sector",
+    bench1Number: "hasta 20%", bench1Text: "menos costes de reparación con sistemas IoT conectados", bench1Source: "Fuente: IQnext",
+    bench2Number: "hasta 30%", bench2Text: "menos costes operativos al eliminar las rondas manuales", bench2Source: "Fuente: Ignitec",
+    bench3Number: "hasta 25%", bench3Text: "de ahorro energético con monitorización basada en IoT", bench3Source: "Fuente: Ignitec",
+    proofH2: "Con la confianza de todo Luxemburgo",
+    finalCtaPrefix: "Descubre Cubii en tus", finalCtaHighlight: "edificios",
+    finalCtaText: "Una demo de 30 minutos con nuestro equipo, sobre tu caso real. Sin compromiso.",
+    residentLinePrefix: "\u00BFEres residente? No necesitas una demo.", residentLineCta: "Descargar la aplicación", residentLineSuffix: "\u2014 gratis en comunidades con Cubii, \u20AC1,99/mes para tu propia vivienda."
+  },
+  fr: {
+    eyebrow: "Conciergerie numérique de bâtiments · Luxembourg",
+    heroPrefix: "Votre bâtiment, enfin", heroHighlight: "connecté",
+    heroSubhead: "Cubii est la conciergerie numérique qui relie résidents, gestionnaires immobiliers et prestataires de services au sein d\u2019une seule application. Les incidents sont signalés en quelques secondes, le bon technicien est dépêché automatiquement, et le téléphone arrête de sonner.",
+    ctaPrimary: "Réserver une démo",
+    ctaSecondary: "Je suis résident \u2192 Télécharger l\u2019application",
+    adminBoardLabel: "Console d\u2019administration Cubii \u2014 suivi des incidents",
+    trust1: "Conçue au Luxembourg", trust2: "Serveurs hébergés en Europe", trust3: "Laurate du Prix de l\u2019Innovation Digitale 2019", trust4: "Prête pour la réglementation énergétique de l\u2019UE (EPBD)",
+    whatIsH2: "Qu\u2019est-ce que Cubii\u00A0?",
+    whatIsAnswer: "Cubii est une application de conciergerie numérique de bâtiments, développée par Smart Cube au Luxembourg. Elle centralise la gestion des incidents, le suivi énergétique, la planification de la maintenance, l\u2019archivage des documents et la coordination des prestataires de services pour les bâtiments résidentiels et commerciaux au sein d\u2019une seule plateforme. Dans les copropriétés gérées sur Cubii, l\u2019application est gratuite pour les résidents\u00A0; les propriétaires de maisons ou d\u2019appartements individuels s\u2019abonnent pour 1,99\u00A0\u20AC/mois. Gestionnaires immobiliers et prestataires de services l\u2019utilisent pour réduire les délais d\u2019intervention et les coûts d\u2019exploitation.",
+    whatIsPara2: "Les bâtiments sont l\u2019un des derniers domaines où rien n\u2019est numérique. L\u2019eau est coupée et tout le monde appelle. Une fuite passe inaperçue jusqu\u2019à ce que le plafond cède. Les documents vivent éparpillés dans cinq boîtes mail différentes. Les techniciens arrivent sans savoir ce qui est en panne.",
+    whatIsPara3: "Cubii referme cette boucle. Pas une révolution, une évolution\u00A0: elle fonctionne avec les outils et équipements que vous avez déjà.",
+    audienceH2: "À qui s\u2019adresse Cubii\u00A0?",
+    card1Label: "Résidents et Propriétaires", card1Text: "Ne manquez plus rien de ce qui se passe dans votre bâtiment. Signalez un problème en 30 secondes, recevez des alertes avant qu\u2019elles ne comptent, consultez votre consommation d\u2019énergie à tout moment. Gratuit dans les copropriétés sur Cubii, 1,99\u00A0\u20AC/mois pour votre propre logement.", card1Cta: "Télécharger l\u2019application",
+    card2Label: "Gestionnaires Immobiliers", card2Text: "Moins d\u2019appels, des interventions plus rapides, une conformité totale. Cubii automatise le travail entre l\u2019incident et la réparation.", card2Cta: "Voir comment ça marche",
+    card3Label: "Prestataires de Services", card3Text: "Des interventions complètes dès le départ, de nouveaux clients via la marketplace, moins de paperasse après chaque intervention.", card3Cta: "Voir comment ça marche",
+    howPrefix: "Comment", howHighlight: "fonctionne", howSuffix: " Cubii\u00A0?",
+    howSubtitle: "Trois étapes, du premier signe d\u2019un problème jusqu\u2019à la réparation documentée.",
+    step1Role: "Résident", step1Title: "Un incident survient", step1Text: "Un résident le signale avec des photos dans l\u2019application, ou un capteur connecté le détecte automatiquement. Fuite d\u2019eau, panne d\u2019ascenseur, panne de chauffage\u00A0: Cubii le sait avant que cela ne coûte cher.",
+    step2Role: "Gestionnaire", step2Title: "Les bonnes personnes sont informées instantanément", step2Text: "Le gestionnaire immobilier valide le ticket. Le prestataire de services le reçoit avec localisation, photos, catégorie et urgence déjà renseignées. Pas de chaîne d\u2019appels, pas de détails manquants.",
+    step3Role: "Prestataire", step3Title: "Réparé, documenté, terminé", step3Text: "Intervention suivie jusqu\u2019à sa clôture, échanges archivés par ticket, preuve d\u2019intervention générée. L\u2019historique complet du bâtiment reste au même endroit.",
+    capsH2: "Que peut faire Cubii\u00A0?", capsLink: "\u2192 Découvrir le produit complet",
+    cap1Title: "Gestion des incidents", cap1Text: "Tickets créés manuellement ou automatiquement via des capteurs, suivis du signalement jusqu\u2019à la résolution.",
+    cap2Title: "Suivi énergétique", cap2Text: "Eau, gaz et électricité en temps réel, avec intégration à Leneda (la plateforme nationale de données énergétiques du Luxembourg) et alertes d\u2019anomalies.",
+    cap3Title: "Maintenance", cap3Text: "Un calendrier qui envoie automatiquement les tickets récurrents aux prestataires.",
+    cap4Title: "Documents", cap4Text: "Carnet d\u2019entretien numérique, contrats, plans et registre de sécurité, centralisés et partageables.",
+    cap5Title: "Marketplace", cap5Text: "Trouvez et engagez des prestataires de services vérifiés selon leur spécialité et leur disponibilité.",
+    cap6Title: "Communication", cap6Text: "Notifications push, chat par ticket, et affichage en hall d\u2019entrée pour les annonces du bâtiment.",
+    resultsH2: "Quels résultats pouvez-vous attendre\u00A0?", resultsTodayLabel: "Cubii aujourd\u2019hui",
+    stat1Label: "bâtiments connectés", stat2Label: "incidents résolus", stat3Label: "professionnels du bâtiment intégrés",
+    benchmarksLabel: "Références du secteur",
+    bench1Number: "jusqu\u2019à 20\u00A0%", bench1Text: "de coûts de réparation en moins grâce aux systèmes IoT connectés", bench1Source: "Source\u00A0: IQnext",
+    bench2Number: "jusqu\u2019à 30\u00A0%", bench2Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", bench2Source: "Source\u00A0: Ignitec",
+    bench3Number: "jusqu\u2019à 25\u00A0%", bench3Text: "d\u2019économies d\u2019énergie grâce au suivi connecté par IoT", bench3Source: "Source\u00A0: Ignitec",
+    proofH2: "Adoptée dans tout le Luxembourg",
+    finalCtaPrefix: "Découvrez Cubii sur vos", finalCtaHighlight: "bâtiments",
+    finalCtaText: "Une démo de 30 minutes avec notre équipe, sur votre cas réel. Sans engagement.",
+    residentLinePrefix: "Résident\u00A0? Vous n\u2019avez pas besoin de démo.", residentLineCta: "Téléchargez l\u2019application", residentLineSuffix: "\u2014 gratuite dans les copropriétés sur Cubii, 1,99\u00A0\u20AC/mois pour votre propre logement."
+  }
+};
+
+const META = {
+  en: { title: "Cubii | Your Digital Building Concierge, Made in Luxembourg", description: "Cubii connects residents, facility managers and service providers in one app. Incident tickets, energy monitoring, maintenance and documents, centralized. Book a demo or get the app." },
+  pt: { title: "Cubii | A sua Concierge Digital de Edifícios, Feita no Luxemburgo", description: "A Cubii liga residentes, gestores de condomínio e prestadores de serviços numa só aplicação. Pedidos de incidentes, monitorização energética, manutenção e documentos, centralizados. Marque uma demonstração ou obtenha a aplicação." },
+  es: { title: "Cubii | Tu Conserjería Digital de Edificios, Creada en Luxemburgo", description: "Cubii conecta a residentes, administradores de fincas y proveedores de servicios en una sola aplicación. Incidencias, monitorización energética, mantenimiento y documentos, centralizados. Reserva una demo o descarga la aplicación." },
+  fr: { title: "Cubii | Votre Conciergerie Numérique de Bâtiments, Conçue au Luxembourg", description: "Cubii relie résidents, gestionnaires immobiliers et prestataires de services dans une seule application. Tickets d\u2019incidents, suivi énergétique, maintenance et documents, centralisés. Réservez une démo ou téléchargez l\u2019application." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en" };
+
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    return {
+      t,
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "SoftwareApplication (Cubii, BusinessApplication, iOS/Android, offers)"],
+      h2s: ["What is Cubii?", "Who is Cubii for?", "How does Cubii work?", "What can Cubii do?", "What results can you expect?", "Trusted across Luxembourg", "See Cubii on your buildings"],
+      gaps: ["2-3 client logos", "1-2 testimonials: result + number + name + role + company", "Real app store links / QR status", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+</script>
+</body>
+</html>
