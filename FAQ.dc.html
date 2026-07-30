@@ -16,6 +16,9 @@
     a { color: #0090E8; }
     a:hover { color: #00B5F1; }
     h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    @media (max-width: 900px) {
+      .faq-catnav { position: static !important; max-width: none !important; }
+    }
   </style>
 </helmet>
 <div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
@@ -33,7 +36,7 @@
 
     <section data-screen-label="FAQ / body" style="padding:0 0 88px;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:start;">
-        <nav style="position:sticky;top:104px;max-width:280px;border:1px solid #DCE7EB;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+        <nav class="faq-catnav" style="position:sticky;top:104px;max-width:280px;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
           <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#878888;margin-bottom:4px;">{{ t.categoriesLabel }}</span>
           <a href="#about-cubii" style="font-size:14px;font-weight:600;color:#0A0A0A;text-decoration:none;" style-hover="color:#0090E8;">{{ t.catAbout }}</a>
           <a href="#faq-pricing" style="font-size:14px;font-weight:600;color:#0A0A0A;text-decoration:none;" style-hover="color:#0090E8;">{{ t.catPricing }}</a>
