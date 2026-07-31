@@ -90,7 +90,7 @@
 
     <section data-screen-label="Residents / answer block" style="padding:80px 0 72px;">
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2 }}</h2>
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#B4E6FF;color:#0A0A0A;padding:0.04em 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.answerH2Hl }}</span>{{ t.answerH2Suf }}</h2>
         <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
           <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
         </div>
@@ -224,7 +224,7 @@ const TRANSLATIONS = {
     card1Eyebrow: "Ticket 482", card1Title: "Elevator stuck between floors 3 and 4", card1Status: "Provider on site \u00b7 22 min",
     card2Eyebrow: "Meter reading", card2Title: "Apt 3B logged water and electricity", card2Status: "Ready to export",
     jumpLabel: "Jump to your situation", jumpCondo: "I live in a condominium", jumpHome: "I own my house or apartment",
-    answerH2: "What does the Cubii app do for residents?",
+    answerH2Pre: "What does the Cubii app do for ", answerH2Hl: "residents", answerH2Suf: "?",
     answerText: "Cubii is an app for residents and homeowners. It replaces paper notices with instant notifications, lets you report incidents with photos, and shows your water, gas and electricity consumption in real time. In a condominium managed on Cubii, the app is free for residents: the facility manager covers the platform. For your own house or apartment, you subscribe directly for \u20AC1.99/month.",
     condoH2: "In a condominium: free for residents",
     condoIntro: "Your building has a syndic or facility manager, and they\u2019ve connected it to Cubii. The app costs you nothing. Your manager covers the platform; you just download the app and activate it with the access code you received by email. Two minutes, no setup.",
@@ -263,7 +263,7 @@ const TRANSLATIONS = {
     card1Eyebrow: "Ticket 482", card1Title: "Elevador parado entre os pisos 3 e 4", card1Status: "Prestador no local \u00b7 22 min",
     card2Eyebrow: "Leitura de contador", card2Title: "O Apt 3B submeteu água e eletricidade", card2Status: "Pronto a exportar",
     jumpLabel: "Vá diretamente à sua situação", jumpCondo: "Vivo num condomínio", jumpHome: "Sou proprietário da minha casa ou apartamento",
-    answerH2: "O que faz a aplicação Cubii pelos residentes?",
+    answerH2Pre: "O que faz a aplicação Cubii pelos ", answerH2Hl: "residentes", answerH2Suf: "?",
     answerText: "A Cubii é uma aplicação para residentes e proprietários. Substitui os avisos em papel por notificações instantâneas, permite reportar incidentes com fotografias e mostra o seu consumo de água, gás e eletricidade em tempo real. Num condomínio gerido na Cubii, a aplicação é gratuita para os residentes: o gestor de condomínio paga a plataforma. Para a sua própria casa ou apartamento, subscreve diretamente por \u20AC1,99/mês.",
     condoH2: "Num condomínio: gratuita para os residentes",
     condoIntro: "O seu edifício tem um administrador de condomínio ou gestor, e ele já o ligou à Cubii. A aplicação não lhe custa nada. O seu gestor paga a plataforma; só tem de descarregar a aplicação e ativá-la com o código de acesso que recebeu por email. Dois minutos, sem configuração.",
@@ -302,7 +302,7 @@ const TRANSLATIONS = {
     card1Eyebrow: "Ticket 482", card1Title: "Ascensor parado entre las plantas 3 y 4", card1Status: "Proveedor en el lugar \u00b7 22 min",
     card2Eyebrow: "Lectura del contador", card2Title: "El Apt 3B envió agua y electricidad", card2Status: "Listo para exportar",
     jumpLabel: "Ve directamente a tu situación", jumpCondo: "Vivo en una comunidad de vecinos", jumpHome: "Soy propietario de mi vivienda",
-    answerH2: "\u00BFQu\u00E9 hace la aplicaci\u00F3n Cubii por los residentes?",
+    answerH2Pre: "\u00BFQu\u00E9 hace la aplicaci\u00F3n Cubii por los ", answerH2Hl: "residentes", answerH2Suf: "?",
     answerText: "Cubii es una aplicaci\u00F3n para residentes y propietarios. Sustituye los avisos en papel por notificaciones instant\u00E1neas, te permite reportar incidencias con fotos y muestra tu consumo de agua, gas y electricidad en tiempo real. En una comunidad gestionada con Cubii, la aplicaci\u00F3n es gratuita para los residentes: el administrador de fincas paga la plataforma. Para tu propia vivienda, te suscribes directamente por \u20AC1,99/mes.",
     condoH2: "En una comunidad de vecinos: gratis para los residentes",
     condoIntro: "Tu edificio tiene un administrador de fincas, y ya lo ha conectado a Cubii. La aplicaci\u00F3n no te cuesta nada. Tu administrador paga la plataforma; t\u00FA solo tienes que descargar la aplicaci\u00F3n y activarla con el c\u00F3digo de acceso que recibiste por correo electr\u00F3nico. Dos minutos, sin configuraci\u00F3n.",
@@ -341,7 +341,7 @@ const TRANSLATIONS = {
     card1Eyebrow: "Ticket 482", card1Title: "Ascenseur bloqué entre les étages 3 et 4", card1Status: "Prestataire sur place \u00b7 22 min",
     card2Eyebrow: "Relevé de compteur", card2Title: "L\u2019appt 3B a transmis l\u2019eau et l\u2019électricité", card2Status: "Prêt à exporter",
     jumpLabel: "Accédez directement à votre situation", jumpCondo: "Je vis en copropriété", jumpHome: "Je suis propriétaire de ma maison ou de mon appartement",
-    answerH2: "Que fait l\u2019application Cubii pour les résidents\u00A0?",
+    answerH2Pre: "Que fait l\u2019application Cubii pour les ", answerH2Hl: "résidents", answerH2Suf: "\u00A0?",
     answerText: "Cubii est une application pour les résidents et les propriétaires. Elle remplace les avis papier par des notifications instantanées, vous permet de signaler des incidents avec des photos, et affiche votre consommation d\u2019eau, de gaz et d\u2019électricité en temps réel. Dans une copropriété gérée sur Cubii, l\u2019application est gratuite pour les résidents\u00A0: le gestionnaire immobilier prend en charge la plateforme. Pour votre propre maison ou appartement, vous vous abonnez directement pour 1,99\u00A0\u20AC/mois.",
     condoH2: "En copropriété\u00A0: gratuit pour les résidents",
     condoIntro: "Votre bâtiment a un syndic ou un gestionnaire immobilier, et il l\u2019a déjà connecté à Cubii. L\u2019application ne vous coûte rien. Votre gestionnaire prend en charge la plateforme\u00A0; vous n\u2019avez qu\u2019à télécharger l\u2019application et l\u2019activer avec le code d\u2019accès reçu par e-mail. Deux minutes, sans configuration.",
