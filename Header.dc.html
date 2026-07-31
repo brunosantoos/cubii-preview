@@ -7,12 +7,24 @@
 </head>
 <body>
 <x-dc>
-<header style="background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #E8EDEF;font-family:Montserrat,sans-serif;">
-  <div style="max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+<helmet>
+  <style>
+    .cubii-burger { display: none; }
+    @media (max-width: 940px) {
+      .cubii-nav-desktop { display: none !important; }
+      .cubii-burger { display: inline-flex !important; }
+    }
+    @media (min-width: 941px) {
+      .cubii-mobile-menu { display: none !important; }
+    }
+  </style>
+</helmet>
+<header style="position:relative;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #E8EDEF;font-family:Montserrat,sans-serif;">
+  <div style="max-width:1240px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="Home.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto;">
       <img src="assets/cubii-logo.png" alt="Cubii" style="height:26px;width:auto;display:block;" />
     </a>
-    <nav style="display:flex;align-items:center;gap:11px;flex-wrap:wrap;flex:1 1 auto;justify-content:flex-end;row-gap:8px;">
+    <nav class="cubii-nav-desktop" style="display:flex;align-items:center;gap:11px;flex-wrap:wrap;flex:1 1 auto;justify-content:flex-end;row-gap:8px;">
       <a href="Residents.dc.html" style="font-size:12px;font-weight:600;color:#0A0A0A;text-decoration:none;letter-spacing:-0.01em;white-space:nowrap;" style-hover="color:#0090E8;">{{ t.residents }}</a>
       <a href="FacilityManagers.dc.html" style="font-size:12px;font-weight:600;color:#0A0A0A;text-decoration:none;letter-spacing:-0.01em;white-space:nowrap;" style-hover="color:#0090E8;">{{ t.facilityManagers }}</a>
       <a href="ServiceProviders.dc.html" style="font-size:12px;font-weight:600;color:#0A0A0A;text-decoration:none;letter-spacing:-0.01em;white-space:nowrap;" style-hover="color:#0090E8;">{{ t.serviceProviders }}</a>
@@ -38,7 +50,29 @@
 
       <a href="Demo.dc.html" style="font-size:12px;font-weight:700;color:#FFFFFF;background:#00B5F1;padding:9px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background 0.15s ease;" style-hover="background:#0090E8;">{{ t.bookDemo }}</a>
     </nav>
+
+    <button type="button" class="cubii-burger" onClick="{{ toggleNav }}" aria-label="Menu" aria-expanded="{{ navOpen }}" style="flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:1px solid #DCE7EB;background:#FFFFFF;border-radius:12px;cursor:pointer;padding:0;align-items:center;">
+      <span style="display:block;width:18px;height:2px;border-radius:2px;background:#0A0A0A;"></span>
+      <span style="display:block;width:18px;height:2px;border-radius:2px;background:#0A0A0A;"></span>
+      <span style="display:block;width:18px;height:2px;border-radius:2px;background:#0A0A0A;"></span>
+    </button>
   </div>
+
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <div class="cubii-mobile-menu" style="position:absolute;top:100%;left:0;right:0;background:#FFFFFF;border-bottom:1px solid #E8EDEF;box-shadow:0 24px 48px rgba(41,109,131,0.16);padding:10px 24px 22px;display:flex;flex-direction:column;gap:2px;z-index:60;">
+      <a href="Residents.dc.html" style="font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;border-bottom:1px solid #F0F4F5;">{{ t.residents }}</a>
+      <a href="FacilityManagers.dc.html" style="font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;border-bottom:1px solid #F0F4F5;">{{ t.facilityManagers }}</a>
+      <a href="ServiceProviders.dc.html" style="font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;border-bottom:1px solid #F0F4F5;">{{ t.serviceProviders }}</a>
+      <a href="Product.dc.html" style="font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;border-bottom:1px solid #F0F4F5;">{{ t.product }}</a>
+      <a href="Pricing.dc.html" style="font-size:15px;font-weight:600;color:#0A0A0A;text-decoration:none;padding:12px 0;border-bottom:1px solid #F0F4F5;">{{ t.pricing }}</a>
+      <div style="display:flex;gap:8px;padding:16px 0 6px;">
+        <sc-for list="{{ localeOptions }}" as="opt" hint-placeholder-count="4">
+          <button type="button" onClick="{{ opt.select }}" style="border:1px solid {{ opt.borderColor }};background:{{ opt.bg }};color:{{ opt.color }};font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;cursor:pointer;">{{ opt.code }}</button>
+        </sc-for>
+      </div>
+      <a href="Demo.dc.html" style="margin-top:10px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#FFFFFF;background:#00B5F1;padding:13px 20px;border-radius:999px;text-decoration:none;">{{ t.bookDemo }}</a>
+    </div>
+  </sc-if>
 </header>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240,&quot;height&quot;:80}}">
@@ -53,7 +87,7 @@ const LOCALE_LABELS = { en: "EN", pt: "PT", es: "ES", fr: "FR" };
 const LOCALES = ["en", "pt", "es", "fr"];
 
 class Component extends DCLogic {
-  state = { locale: "en", menuOpen: false };
+  state = { locale: "en", menuOpen: false, navOpen: false };
 
   componentDidMount() {
     try {
@@ -63,7 +97,7 @@ class Component extends DCLogic {
     this._onChange = (ev) => this.setState({ locale: ev.detail });
     window.addEventListener("cubii-locale-change", this._onChange);
     this._onDocClick = (ev) => {
-      if (this.state.menuOpen) this.setState({ menuOpen: false });
+      if (this.state.menuOpen || this.state.navOpen) this.setState({ menuOpen: false, navOpen: false });
     };
     document.addEventListener("click", this._onDocClick);
   }
@@ -85,13 +119,21 @@ class Component extends DCLogic {
     return {
       t,
       menuOpen: this.state.menuOpen,
+      navOpen: this.state.navOpen,
       currentLabel: LOCALE_LABELS[locale],
-      toggleMenu: (ev) => { ev.stopPropagation(); this.setState(s => ({ menuOpen: !s.menuOpen })); },
-      localeOptions: LOCALES.map(code => ({
-        code: LOCALE_LABELS[code],
-        name: LOCALE_NAMES[code],
-        select: (ev) => { ev.stopPropagation(); this.selectLocale(code); }
-      }))
+      toggleMenu: (ev) => { ev.stopPropagation(); this.setState(s => ({ menuOpen: !s.menuOpen, navOpen: false })); },
+      toggleNav: (ev) => { ev.stopPropagation(); this.setState(s => ({ navOpen: !s.navOpen, menuOpen: false })); },
+      localeOptions: LOCALES.map(code => {
+        const active = code === locale;
+        return {
+          code: LOCALE_LABELS[code],
+          name: LOCALE_NAMES[code],
+          bg: active ? "#00B5F1" : "#FFFFFF",
+          color: active ? "#FFFFFF" : "#0A0A0A",
+          borderColor: active ? "#00B5F1" : "#DCE7EB",
+          select: (ev) => { ev.stopPropagation(); this.selectLocale(code); }
+        };
+      })
     };
   }
 }
