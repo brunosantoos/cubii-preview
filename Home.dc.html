@@ -16,11 +16,18 @@
     a { color: #0090E8; }
     a:hover { color: #00B5F1; }
     h1, h2, h3, p, ul, ol { text-wrap: pretty; }
-    @keyframes cubii-step-fill {
-      0%, 3% { transform: scaleX(0); }
-      8%, 100% { transform: scaleX(1); }
-    }
-    @keyframes cubii-step-glow {
+    .cubii-step-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+    .cubii-step-card:hover { transform: translateY(-2px); }
+    .cubii-step-fill-1, .cubii-step-fill-2, .cubii-step-fill-3, .cubii-step-glow-1, .cubii-step-glow-2, .cubii-step-glow-3 { transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; }
+    .cubii-step-card:hover .cubii-step-fill-1, .cubii-step-card:hover .cubii-step-fill-2, .cubii-step-card:hover .cubii-step-fill-3 { transform: scaleX(1); }
+    .cubii-step-card:hover .cubii-step-glow-1, .cubii-step-card:hover .cubii-step-glow-2, .cubii-step-card:hover .cubii-step-glow-3 { opacity: 1; transform: scale(1.05); }
+    .cubii-step-glow-1 span:last-child, .cubii-step-glow-2 span:last-child, .cubii-step-glow-3 span:last-child { transition: color 0.3s ease, letter-spacing 0.3s ease; }
+    .cubii-step-card:hover .cubii-step-glow-1 span:last-child { color: #FFFFFF !important; letter-spacing: 0.19em; }
+    .cubii-step-card:hover .cubii-step-glow-2 span:last-child { color: #A9C6F5 !important; letter-spacing: 0.19em; }
+    .cubii-step-card:hover .cubii-step-glow-3 span:last-child { color: #FFFFFF !important; letter-spacing: 0.19em; }
+    .cubii-step-glow-1 span:first-child, .cubii-step-glow-2 span:first-child, .cubii-step-glow-3 span:first-child { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .cubii-step-card:hover .cubii-step-glow-1 span:first-child, .cubii-step-card:hover .cubii-step-glow-2 span:first-child, .cubii-step-card:hover .cubii-step-glow-3 span:first-child { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(255,255,255,0.06); }
+    @keyframes cubii-step-glow-unused {
       0%, 4% { opacity: 0.35; }
       10%, 100% { opacity: 1; }
     }
@@ -41,7 +48,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
-          <h1 style="margin:0 0 24px;font-size:clamp(40px,5.2vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:linear-gradient(180deg,transparent 16%,#BDE9FC 16%,#BDE9FC 94%,transparent 94%);color:#0A0A0A;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.heroHighlight }}</span>.</h1>
+          <h1 style="margin:0 0 24px;font-size:clamp(40px,5.2vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span>.</h1>
           <p style="margin:0 0 34px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
           <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
             <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;transition:background 0.15s ease;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.ctaPrimary }}</a>
@@ -95,18 +102,18 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.audienceH2 }}</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-          <div style="background:#EAF6FD;border:1px solid #D3ECFA;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B4E6FF;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0090E8;">{{ t.card1Label }}</span>
+          <div style="background:#EAF8FD;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#00AAEE;">{{ t.card1Label }}</span>
             <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card1Text }}</p>
             <a href="Residents.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card1Cta }}</a>
           </div>
-          <div style="background:#E9ECF3;border:1px solid #D8DEE9;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#1A3F6F;">
+          <div style="background:#E9EDF4;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1A3F6F;">{{ t.card2Label }}</span>
             <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card2Text }}</p>
             <a href="FacilityManagers.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card2Cta }}</a>
           </div>
-          <div style="background:#F9EEF6;border:1px solid #EEDCEB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#DFBFDD;">
-            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#A0549B;">{{ t.card3Label }}</span>
+          <div style="background:#F8ECF5;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#B15FA3;">{{ t.card3Label }}</span>
             <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card3Text }}</p>
             <a href="ServiceProviders.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card3Cta }}</a>
           </div>
@@ -116,17 +123,17 @@
 
     <section data-screen-label="Home / how it works" style="padding:104px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 12px;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;">{{ t.howPrefix }} <span style="background:linear-gradient(180deg,transparent 16%,#BDE9FC 16%,#BDE9FC 94%,transparent 94%);color:#0A0A0A;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.howHighlight }}</span>{{ t.howSuffix }}</h2>
+        <h2 style="margin:0 0 12px;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;">{{ t.howPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.howHighlight }}</span>{{ t.howSuffix }}</h2>
         <p style="margin:0 0 52px;font-size:17px;line-height:1.6;color:#878888;max-width:520px;">{{ t.howSubtitle }}</p>
         <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-          <li style="background:#121415;border:1px solid #3D6E8C;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 0s infinite;">
+          <li class="cubii-step-card" onClick="{{ toggleStep1 }}" style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;{{ step1EmphasisStyle }}">
             <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
-              <div style="position:absolute;inset:0;background:#B4E6FF;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 0s infinite;"></div>
+              <div class="cubii-step-fill-1" style="position:absolute;inset:0;background:#00B5F1;transform-origin:left center;transform:scaleX(0);"></div>
             </div>
             <div style="padding:30px 30px 0;">
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 0s infinite;">
-                <span style="width:34px;height:34px;border-radius:999px;background:#B4E6FF;color:#1A3F6F;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">1</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:#B4E6FF;color:#1A3F6F;padding:5px 11px;border-radius:999px;">{{ t.step1Role }}</span>
+              <div class="cubii-step-glow-1" style="display:flex;align-items:center;gap:14px;margin-bottom:22px;opacity:0.35;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#00B5F1;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">1</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#4DCBF5;">{{ t.step1Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step1Title }}</h3>
               <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step1Text }}</p>
@@ -137,14 +144,14 @@
               </div>
             </div>
           </li>
-          <li style="background:#121415;border:1px solid #2E5A96;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 2s infinite;">
+          <li class="cubii-step-card" onClick="{{ toggleStep2 }}" style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;{{ step2EmphasisStyle }}">
             <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
-              <div style="position:absolute;inset:0;background:#1A3F6F;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 2s infinite;"></div>
+              <div class="cubii-step-fill-2" style="position:absolute;inset:0;background:#1A3F6F;transform-origin:left center;transform:scaleX(0);"></div>
             </div>
             <div style="padding:30px 30px 0;">
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 2s infinite;">
-                <span style="width:34px;height:34px;border-radius:999px;background:#1A3F6F;color:#FFFFFF;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">2</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:#1A3F6F;color:#FFFFFF;padding:5px 11px;border-radius:999px;">{{ t.step2Role }}</span>
+              <div class="cubii-step-glow-2" style="display:flex;align-items:center;gap:14px;margin-bottom:22px;opacity:0.35;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#2E5FA3;color:#FFFFFF;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">2</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#7CA7E8;">{{ t.step2Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step2Title }}</h3>
               <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step2Text }}</p>
@@ -155,14 +162,14 @@
               </div>
             </div>
           </li>
-          <li style="background:#121415;border:1px solid #8A6E9E;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;animation:cubii-step-bump 6s ease-out 4s infinite;">
+          <li class="cubii-step-card" onClick="{{ toggleStep3 }}" style="background:#121415;border:1px solid #26292A;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;{{ step3EmphasisStyle }}">
             <div style="height:4px;background:#26292A;position:relative;overflow:hidden;">
-              <div style="position:absolute;inset:0;background:#EDDFFA;transform-origin:left center;animation:cubii-step-fill 6s ease-in-out 4s infinite;"></div>
+              <div class="cubii-step-fill-3" style="position:absolute;inset:0;background:#C77DB8;transform-origin:left center;transform:scaleX(0);"></div>
             </div>
             <div style="padding:30px 30px 0;">
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;animation:cubii-step-glow 6s ease-in-out 4s infinite;">
-                <span style="width:34px;height:34px;border-radius:999px;background:#EDDFFA;color:#1A3F6F;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">3</span>
-                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:#EDDFFA;color:#1A3F6F;padding:5px 11px;border-radius:999px;">{{ t.step3Role }}</span>
+              <div class="cubii-step-glow-3" style="display:flex;align-items:center;gap:14px;margin-bottom:22px;opacity:0.35;">
+                <span style="width:34px;height:34px;border-radius:999px;background:#C77DB8;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;">3</span>
+                <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E796DA;">{{ t.step3Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step3Title }}</h3>
               <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step3Text }}</p>
@@ -214,16 +221,15 @@
 
     <section data-screen-label="Home / results" style="padding:96px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 18px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.resultsH2 }}</h2>
-        <p style="margin:0 0 40px;font-size:17px;line-height:1.65;color:#3A4247;max-width:720px;">{{ t.resultsIntro }}</p>
+        <h2 style="margin:0 0 40px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.resultsH2 }}</h2>
         <p style="margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.resultsTodayLabel }}</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;margin-bottom:56px;">
           <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">2,600+</span>
+            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">2.600+</span>
             <span style="display:block;margin-top:10px;font-size:15px;color:#3A4247;">{{ t.stat1Label }}</span>
           </div>
           <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">5,000+</span>
+            <span style="display:block;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:#0A0A0A;line-height:1;">5.000+</span>
             <span style="display:block;margin-top:10px;font-size:15px;color:#3A4247;">{{ t.stat2Label }}</span>
           </div>
           <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
@@ -288,7 +294,7 @@
     <section data-screen-label="Home / final CTA" style="padding:104px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center;">
         <div>
-          <h2 style="margin:0 0 18px;font-size:clamp(30px,3.6vw,48px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;">{{ t.finalCtaPrefix }} <span style="background:linear-gradient(180deg,transparent 16%,#BDE9FC 16%,#BDE9FC 94%,transparent 94%);color:#0A0A0A;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.finalCtaHighlight }}</span></h2>
+          <h2 style="margin:0 0 18px;font-size:clamp(30px,3.6vw,48px);font-weight:800;letter-spacing:-0.03em;line-height:1.08;">{{ t.finalCtaPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.finalCtaHighlight }}</span></h2>
           <p style="margin:0 0 32px;font-size:18px;line-height:1.6;color:#B8C2C6;max-width:520px;">{{ t.finalCtaText }}</p>
           <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#4DCBF5;color:#0A0A0A;">{{ t.ctaPrimary }}</a>
         </div>
@@ -336,10 +342,10 @@ const TRANSLATIONS = {
     cap4Title: "Documents", cap4Text: "Digital maintenance book, contracts, plans and the security register, centralized and shareable.",
     cap5Title: "Marketplace", cap5Text: "Find and hire verified service providers by specialty and availability.",
     cap6Title: "Communication", cap6Text: "Push notifications, per-ticket chat, and lobby displays for building announcements.",
-    resultsH2: "What results can you expect?", resultsIntro: "Connected monitoring and centralized ticketing measurably cut costs:", resultsTodayLabel: "Cubii today",
+    resultsH2: "What results can you expect?", resultsTodayLabel: "Cubii today",
     stat1Label: "buildings connected", stat2Label: "incidents resolved", stat3Label: "building professionals onboarded",
-    benchmarksLabel: "And the industry data backs it up:",
-    bench1Number: "up to 20%", bench1Text: "lower repair costs with IoT-connected building systems", bench1Source: "Source: IQnext",
+    benchmarksLabel: "Industry benchmarks",
+    bench1Number: "up to 20%", bench1Text: "lower repair costs with connected IoT systems", bench1Source: "Source: IQnext",
     bench2Number: "up to 30%", bench2Text: "lower operational costs by eliminating manual rounds", bench2Source: "Source: Ignitec",
     bench3Number: "up to 25%", bench3Text: "energy savings with IoT-enabled monitoring", bench3Source: "Source: Ignitec",
     proofH2: "Trusted across Luxembourg",
@@ -375,10 +381,10 @@ const TRANSLATIONS = {
     cap4Title: "Documentos", cap4Text: "Caderno de manutenção digital, contratos, plantas e o registo de segurança, centralizados e partilháveis.",
     cap5Title: "Marketplace", cap5Text: "Encontre e contrate prestadores de serviços verificados por especialidade e disponibilidade.",
     cap6Title: "Comunicação", cap6Text: "Notificações push, conversa por pedido e ecrãs no átrio para os avisos do edifício.",
-    resultsH2: "Que resultados pode esperar?", resultsIntro: "A monitorização ligada e a gestão centralizada de pedidos reduzem os custos de forma mensurável:", resultsTodayLabel: "A Cubii hoje",
+    resultsH2: "Que resultados pode esperar?", resultsTodayLabel: "A Cubii hoje",
     stat1Label: "edifícios ligados", stat2Label: "incidentes resolvidos", stat3Label: "profissionais de edifícios integrados",
-    benchmarksLabel: "E os dados do setor confirmam-no:",
-    bench1Number: "até 20%", bench1Text: "menos custos de reparação com sistemas de edifícios ligados por IoT", bench1Source: "Fonte: IQnext",
+    benchmarksLabel: "Referências do setor",
+    bench1Number: "até 20%", bench1Text: "menos custos de reparação com sistemas IoT ligados", bench1Source: "Fonte: IQnext",
     bench2Number: "até 30%", bench2Text: "menos custos operacionais ao eliminar rondas manuais", bench2Source: "Fonte: Ignitec",
     bench3Number: "até 25%", bench3Text: "poupança energética com monitorização baseada em IoT", bench3Source: "Fonte: Ignitec",
     proofH2: "Reconhecida em todo o Luxemburgo",
@@ -414,10 +420,10 @@ const TRANSLATIONS = {
     cap4Title: "Documentos", cap4Text: "Libro de mantenimiento digital, contratos, planos y el registro de seguridad, centralizados y compartibles.",
     cap5Title: "Marketplace", cap5Text: "Encuentra y contrata proveedores de servicios verificados por especialidad y disponibilidad.",
     cap6Title: "Comunicación", cap6Text: "Notificaciones push, chat por parte de trabajo y pantallas en el vestíbulo para los avisos del edificio.",
-    resultsH2: "\u00BFQu\u00E9 resultados puedes esperar?", resultsIntro: "La monitorizaci\u00F3n conectada y la gesti\u00F3n centralizada de incidencias reducen los costes de forma medible:", resultsTodayLabel: "Cubii hoy",
+    resultsH2: "\u00BFQu\u00E9 resultados puedes esperar?", resultsTodayLabel: "Cubii hoy",
     stat1Label: "edificios conectados", stat2Label: "incidencias resueltas", stat3Label: "profesionales de edificios incorporados",
-    benchmarksLabel: "Y los datos del sector lo confirman:",
-    bench1Number: "hasta 20%", bench1Text: "menos costes de reparación con sistemas de edificios conectados por IoT", bench1Source: "Fuente: IQnext",
+    benchmarksLabel: "Referencias del sector",
+    bench1Number: "hasta 20%", bench1Text: "menos costes de reparación con sistemas IoT conectados", bench1Source: "Fuente: IQnext",
     bench2Number: "hasta 30%", bench2Text: "menos costes operativos al eliminar las rondas manuales", bench2Source: "Fuente: Ignitec",
     bench3Number: "hasta 25%", bench3Text: "de ahorro energético con monitorización basada en IoT", bench3Source: "Fuente: Ignitec",
     proofH2: "Con la confianza de todo Luxemburgo",
@@ -453,10 +459,10 @@ const TRANSLATIONS = {
     cap4Title: "Documents", cap4Text: "Carnet d\u2019entretien numérique, contrats, plans et registre de sécurité, centralisés et partageables.",
     cap5Title: "Marketplace", cap5Text: "Trouvez et engagez des prestataires de services vérifiés selon leur spécialité et leur disponibilité.",
     cap6Title: "Communication", cap6Text: "Notifications push, chat par ticket, et affichage en hall d\u2019entrée pour les annonces du bâtiment.",
-    resultsH2: "Quels résultats pouvez-vous attendre\u00A0?", resultsIntro: "Le suivi connecté et la gestion centralisée des tickets réduisent les coûts de manière mesurable\u00A0:", resultsTodayLabel: "Cubii aujourd\u2019hui",
+    resultsH2: "Quels résultats pouvez-vous attendre\u00A0?", resultsTodayLabel: "Cubii aujourd\u2019hui",
     stat1Label: "bâtiments connectés", stat2Label: "incidents résolus", stat3Label: "professionnels du bâtiment intégrés",
-    benchmarksLabel: "Et les données du secteur le confirment\u00A0:",
-    bench1Number: "jusqu\u2019à 20\u00A0%", bench1Text: "de coûts de réparation en moins grâce aux systèmes de bâtiment connectés par IoT", bench1Source: "Source\u00A0: IQnext",
+    benchmarksLabel: "Références du secteur",
+    bench1Number: "jusqu\u2019à 20\u00A0%", bench1Text: "de coûts de réparation en moins grâce aux systèmes IoT connectés", bench1Source: "Source\u00A0: IQnext",
     bench2Number: "jusqu\u2019à 30\u00A0%", bench2Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", bench2Source: "Source\u00A0: Ignitec",
     bench3Number: "jusqu\u2019à 25\u00A0%", bench3Text: "d\u2019économies d\u2019énergie grâce au suivi connecté par IoT", bench3Source: "Source\u00A0: Ignitec",
     proofH2: "Adoptée dans tout le Luxembourg",
@@ -474,6 +480,7 @@ const META = {
 };
 
 class Component extends DCLogic {
+  state = { activeStep: null };
   state = { locale: "en" };
 
   componentDidMount() {
@@ -489,11 +496,22 @@ class Component extends DCLogic {
     window.removeEventListener("cubii-locale-change", this._onChange);
   }
 
+  makeEmphasis(active, color) {
+    return active ? `box-shadow:0 0 0 2px ${color},0 14px 34px rgba(0,0,0,0.4);border-color:${color};transform:translateY(-3px);` : "";
+  }
   renderVals() {
+    const step1EmphasisStyle = this.makeEmphasis(this.state.activeStep === 1, "#00B5F1");
+    const step2EmphasisStyle = this.makeEmphasis(this.state.activeStep === 2, "#1A3F6F");
+    const step3EmphasisStyle = this.makeEmphasis(this.state.activeStep === 3, "#C77DB8");
+    const toggleStep1 = () => this.setState(s => ({ activeStep: s.activeStep === 1 ? null : 1 }));
+    const toggleStep2 = () => this.setState(s => ({ activeStep: s.activeStep === 2 ? null : 2 }));
+    const toggleStep3 = () => this.setState(s => ({ activeStep: s.activeStep === 3 ? null : 3 }));
     const locale = this.state.locale;
     const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
     const meta = META[locale] || META.en;
     return {
+      step1EmphasisStyle, step2EmphasisStyle, step3EmphasisStyle,
+      toggleStep1, toggleStep2, toggleStep3,
       t,
       metaTitle: meta.title,
       metaDescription: meta.description,

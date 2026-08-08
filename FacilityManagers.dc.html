@@ -31,7 +31,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
-          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:linear-gradient(180deg,transparent 16%,#BDE9FC 16%,#BDE9FC 94%,transparent 94%);color:#0A0A0A;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.heroHighlight }}</span>.</h1>
+          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span>.</h1>
           <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
           <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
           <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
@@ -55,7 +55,7 @@
 
     <section data-screen-label="FM / answer block" style="padding:80px 0 72px;">
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:linear-gradient(180deg,transparent 16%,#1A3F6F 16%,#1A3F6F 94%,transparent 94%);color:#FFFFFF;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.answerH2Hl }}</span>{{ t.answerH2Suf }}</h2>
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#CBD9EE;border-radius:6px;padding:0 6px;">{{ t.answerH2Emph }}</span>{{ t.answerH2Post }}</h2>
         <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
           <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
         </div>
@@ -64,7 +64,7 @@
 
     <section data-screen-label="FM / friction" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
-        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="background:linear-gradient(180deg,transparent 16%,#BDE9FC 16%,#BDE9FC 94%,transparent 94%);color:#0A0A0A;padding:0 0.14em;border-radius:0.18em;-webkit-box-decoration-break:clone;box-decoration-break:clone;">{{ t.frictionHighlight }}</span></h2>
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.frictionHighlight }}</span></h2>
         <div>
           <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.frictionText1 }}</p>
           <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;color:#FFFFFF;">{{ t.frictionText2 }}</p>
@@ -203,7 +203,7 @@ const TRANSLATIONS = {
     heroSubhead: "Cubii automates everything between \u201Csomething\u2019s broken\u201D and \u201Cit\u2019s fixed\u201D: detection, ticketing, dispatch, follow-up and documentation. Your team gets hours back, every week.",
     bookDemo: "Book a demo", heroNote: "30 minutes, on your real portfolio. From \u20AC2.99 per user/month.",
     dashboardLabel: "Cubii admin \u2014 portfolio dashboard",
-    answerH2Pre: "What does Cubii do for ", answerH2Hl: "facility managers", answerH2Suf: " and syndics?",
+    answerH2Pre: "What does Cubii do for ", answerH2Emph: "facility managers and syndics", answerH2Post: "?",
     answerText: "Cubii gives facility managers and syndics a single platform to manage incidents, maintenance, energy and documents across their entire building portfolio. Incidents are reported by residents or detected by sensors, converted into structured tickets, and dispatched to service providers automatically. Pricing starts at \u20AC2.99 per user per month.",
     frictionPrefix: "Where your week actually", frictionHighlight: "goes",
     frictionText1: "Answering the same resident question fifteen times. Chasing a technician for a report. Reconstructing an intervention history from three inboxes. Manually checking buildings because nobody would report a problem until it flooded.",
@@ -218,7 +218,7 @@ const TRANSLATIONS = {
     roiH2: "What does this save?",
     roi1Number: "up to 30%", roi1Text: "lower operational costs by eliminating manual rounds", roi1Source: "Source: Ignitec",
     roi2Number: "up to 20%", roi2Text: "lower repair costs through early detection with connected systems", roi2Source: "Source: IQnext",
-    roi3Number: "100\u2013150", roi3Text: "units per technician in residential \u2014 early detection and automated dispatch raise that ceiling: more m² per team member",
+    roi3Number: "100\u2013150", roi3Text: "units per technician today \u2014 early detection raises that ceiling",
     compatH2: "Do we have to change our tools?",
     compatText: "No. Cubii is not a revolution, it\u2019s an evolution. It connects to equipment from any manufacturer, works alongside your existing property management software, and requires no IT department. Most teams are operational within days.",
     compatCaption: "Brand-agnostic by design: BMS, IoT sensors, dry contacts.",
@@ -239,7 +239,7 @@ const TRANSLATIONS = {
     heroSubhead: "A Cubii automatiza tudo entre \u201Calgo está avariado\u201D e \u201Cestá reparado\u201D: deteção, criação de pedidos, despacho, acompanhamento e documentação. A sua equipa recupera horas, todas as semanas.",
     bookDemo: "Marcar uma demonstração", heroNote: "30 minutos, sobre o seu portfólio real. A partir de \u20AC2,99 por utilizador/mês.",
     dashboardLabel: "Painel de administração Cubii \u2014 portfólio",
-    answerH2Pre: "O que faz a Cubii pelos ", answerH2Hl: "gestores de condomínio", answerH2Suf: " e administradores?",
+    answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "gestores de condomínio e administradores", answerH2Post: "?",
     answerText: "A Cubii dá aos gestores de condomínio e administradores uma única plataforma para gerir incidentes, manutenção, energia e documentos em todo o seu portfólio de edifícios. Os incidentes são reportados pelos residentes ou detetados por sensores, convertidos em pedidos estruturados e despachados automaticamente para prestadores de serviços. Os preços começam em \u20AC2,99 por utilizador por mês.",
     frictionPrefix: "Para onde vai realmente a sua", frictionHighlight: "semana",
     frictionText1: "Responder à mesma pergunta de um residente quinze vezes. Perseguir um técnico por um relatório. Reconstruir um histórico de intervenções a partir de três caixas de correio. Verificar edifícios manualmente porque ninguém reportaria um problema até inundar.",
@@ -254,7 +254,7 @@ const TRANSLATIONS = {
     roiH2: "Quanto é que isto poupa?",
     roi1Number: "até 30%", roi1Text: "menos custos operacionais ao eliminar rondas manuais", roi1Source: "Fonte: Ignitec",
     roi2Number: "até 20%", roi2Text: "menos custos de reparação com deteção precoce em sistemas ligados", roi2Source: "Fonte: IQnext",
-    roi3Number: "100\u2013150", roi3Text: "unidades por técnico no residencial \u2014 a deteção precoce e o despacho automático elevam esse limite: mais m² por membro da equipa",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico atualmente \u2014 a deteção precoce eleva esse limite",
     compatH2: "Temos de mudar as nossas ferramentas?",
     compatText: "Não. A Cubii não é uma revolução, é uma evolução. Liga-se a equipamento de qualquer fabricante, funciona junto do seu software de gestão de imóveis já existente e não exige departamento de informática. A maioria das equipas fica operacional em poucos dias.",
     compatCaption: "Independente de marca, por definição: BMS, sensores IoT, contactos secos.",
@@ -275,7 +275,7 @@ const TRANSLATIONS = {
     heroSubhead: "Cubii automatiza todo lo que hay entre \u201Calgo está averiado\u201D y \u201Cestá arreglado\u201D: detección, apertura de partes, asignación, seguimiento y documentación. Tu equipo recupera horas, cada semana.",
     bookDemo: "Reservar una demo", heroNote: "30 minutos, sobre tu cartera real. Desde \u20AC2,99 por usuario/mes.",
     dashboardLabel: "Panel de administración Cubii \u2014 cartera de edificios",
-    answerH2Pre: "\u00BFQu\u00E9 hace Cubii por los ", answerH2Hl: "administradores de fincas", answerH2Suf: " y comunidades?",
+    answerH2: "\u00BFQu\u00E9 hace Cubii por los administradores de fincas y comunidades?",
     answerText: "Cubii ofrece a los administradores de fincas y comunidades una única plataforma para gestionar incidencias, mantenimiento, energía y documentos en toda su cartera de edificios. Las incidencias las reportan los residentes o las detectan sensores, se convierten en partes estructurados y se asignan automáticamente a proveedores de servicios. Los precios comienzan en \u20AC2,99 por usuario al mes.",
     frictionPrefix: "A d\u00F3nde va realmente tu", frictionHighlight: "semana",
     frictionText1: "Responder quince veces a la misma pregunta de un residente. Perseguir a un técnico para que entregue un informe. Reconstruir un historial de intervenciones a partir de tres bandejas de entrada. Revisar edificios manualmente porque nadie reportaría un problema hasta que inundara.",
@@ -290,7 +290,7 @@ const TRANSLATIONS = {
     roiH2: "\u00BFCu\u00E1nto ahorra esto?",
     roi1Number: "hasta 30%", roi1Text: "menos costes operativos al eliminar las rondas manuales", roi1Source: "Fuente: Ignitec",
     roi2Number: "hasta 20%", roi2Text: "menos costes de reparación gracias a la detección temprana con sistemas conectados", roi2Source: "Fuente: IQnext",
-    roi3Number: "100\u2013150", roi3Text: "unidades por técnico en residencial \u2014 la detección temprana y el despacho automático elevan ese límite: más m² por miembro del equipo",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico en la actualidad \u2014 la detección temprana eleva ese límite",
     compatH2: "\u00BFTenemos que cambiar nuestras herramientas?",
     compatText: "No. Cubii no es una revolución, es una evolución. Se conecta a equipos de cualquier fabricante, funciona junto a tu software de gestión de fincas ya existente y no requiere departamento de informática. La mayoría de los equipos están operativos en pocos días.",
     compatCaption: "Independiente de marca por diseño: BMS, sensores IoT, contactos secos.",
@@ -311,7 +311,7 @@ const TRANSLATIONS = {
     heroSubhead: "Cubii automatise tout ce qui se passe entre \u00AB\u00A0quelque chose est cassé\u00A0\u00BB et \u00AB\u00A0c\u2019est réparé\u00A0\u00BB\u00A0: détection, création de tickets, envoi, suivi et documentation. Votre équipe récupère des heures, chaque semaine.",
     bookDemo: "Réserver une démo", heroNote: "30 minutes, sur votre portefeuille réel. À partir de 2,99\u00A0\u20AC par utilisateur/mois.",
     dashboardLabel: "Console d\u2019administration Cubii \u2014 portefeuille multi-sites",
-    answerH2Pre: "Que fait Cubii pour les ", answerH2Hl: "gestionnaires immobiliers", answerH2Suf: " et les syndics\u00A0?",
+    answerH2: "Que fait Cubii pour les gestionnaires immobiliers et les syndics\u00A0?",
     answerText: "Cubii offre aux gestionnaires immobiliers et aux syndics une plateforme unique pour gérer les incidents, la maintenance, l\u2019énergie et les documents sur l\u2019ensemble de leur portefeuille de bâtiments. Les incidents sont signalés par les résidents ou détectés par des capteurs, convertis en tickets structurés, et envoyés automatiquement aux prestataires de services. Les tarifs démarrent à 2,99\u00A0\u20AC par utilisateur et par mois.",
     frictionPrefix: "Où passe vraiment votre", frictionHighlight: "semaine",
     frictionText1: "Répondre quinze fois à la même question d\u2019un résident. Relancer un technicien pour un rapport. Reconstituer un historique d\u2019intervention à partir de trois boîtes mail. Vérifier les bâtiments manuellement parce que personne ne signalerait un problème avant l\u2019inondation.",
@@ -326,7 +326,7 @@ const TRANSLATIONS = {
     roiH2: "Qu\u2019est-ce que cela permet d\u2019économiser\u00A0?",
     roi1Number: "jusqu\u2019à 30\u00A0%", roi1Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", roi1Source: "Source\u00A0: Ignitec",
     roi2Number: "jusqu\u2019à 20\u00A0%", roi2Text: "de coûts de réparation en moins grâce à la détection précoce sur des systèmes connectés", roi2Source: "Source\u00A0: IQnext",
-    roi3Number: "100\u2013150", roi3Text: "unités par technicien en résidentiel \u2014 la détection précoce et l\u2019envoi automatique relèvent ce plafond\u00A0: plus de m² par membre d\u2019équipe",
+    roi3Number: "100\u2013150", roi3Text: "unités par technicien aujourd\u2019hui \u2014 la détection précoce relève ce plafond",
     compatH2: "Devons-nous changer nos outils\u00A0?",
     compatText: "Non. Cubii n\u2019est pas une révolution, c\u2019est une évolution. Elle se connecte à des équipements de tout fabricant, fonctionne aux côtés de votre logiciel de gestion immobilière existant, et ne nécessite aucun service informatique. La plupart des équipes sont opérationnelles en quelques jours.",
     compatCaption: "Agnostique de marque par conception\u00A0: GTB, capteurs IoT, contacts secs.",

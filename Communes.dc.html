@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+    a { color: #0090E8; }
+    a:hover { color: #00B5F1; }
+    h1, h2, h3, p, ul, ol { text-wrap: pretty; }
+    @keyframes cubii-onboard-pop {
+      0% { transform: scale(0.3); opacity: 0; }
+      70% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</helmet>
+<div style="font-family:Montserrat,sans-serif;color:#0A0A0A;background:#FFFFFF;">
+  <dc-import name="Header" style="position:sticky;top:0;z-index:50;" hint-size="100%,80px"></dc-import>
+
+  <main>
+    <section data-screen-label="Communes / hero" style="padding:84px 0 0;background:linear-gradient(180deg,#F5FBFD 0%,#FFFFFF 100%);">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
+        <div>
+          <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="color:#00B5F1;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#00B5F1;">{{ t.heroHighlight }}</span></h1>
+          <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+          <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
+        </div>
+        <div style="position:relative;">
+          <div style="border:1px solid #D9E6EB;border-radius:24px;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px rgba(41,109,131,0.12);">
+            <div style="display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid #E8EDEF;background:#FBFDFE;">
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="width:9px;height:9px;border-radius:999px;background:#E1E7E9;display:block;"></span>
+              <span style="margin-left:10px;font-size:11px;font-weight:600;color:#878888;">{{ t.dashboardLabel }}</span>
+            </div>
+            <div style="height:340px;overflow:hidden;background:#FFFFFF;">
+              <img src="assets/fm-dashboard-incidents.png" alt="Cubii admin dashboard showing incidents across communal buildings with quick stats" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+            </div>
+          </div>
+          <img src="assets/cubii-mascot-robot.png" alt="Cubii mascot" style="position:absolute;bottom:-38px;left:-30px;width:150px;height:auto;" />
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / answer block" style="padding:80px 0 72px;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#DCEDEA;border-radius:6px;padding:0 6px;">{{ t.answerH2Emph }}</span>{{ t.answerH2Post }}</h2>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / reality" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="color:#85CCF0;text-decoration:underline;text-decoration-thickness:0.075em;text-underline-offset:0.16em;text-decoration-skip-ink:none;text-decoration-color:#85CCF0;">{{ t.frictionHighlight }}</span></h2>
+        <div>
+          <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.frictionText1 }}</p>
+          <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;color:#FFFFFF;">{{ t.frictionText2 }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / benefits" style="padding:88px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.benefitsH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b1Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b2Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b2Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b3Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b3Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b4Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b4Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b5Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b5Text }}</p>
+          </div>
+          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b6Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b6Text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / regulation" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:48px;align-items:start;">
+        <div>
+          <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.regH2 }}</h2>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.regIntro }}</p>
+        </div>
+        <div>
+          <ul style="list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:16px;">
+            <li style="display:flex;gap:14px;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:14px;padding:18px 20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+              <span style="flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#296D83;margin-top:7px;display:block;"></span>
+              <span style="font-size:15px;line-height:1.6;color:#12313C;">{{ t.reg1 }}</span>
+            </li>
+            <li style="display:flex;gap:14px;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:14px;padding:18px 20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+              <span style="flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#296D83;margin-top:7px;display:block;"></span>
+              <span style="font-size:15px;line-height:1.6;color:#12313C;">{{ t.reg2 }}</span>
+            </li>
+            <li style="display:flex;gap:14px;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:14px;padding:18px 20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+              <span style="flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#296D83;margin-top:7px;display:block;"></span>
+              <span style="font-size:15px;line-height:1.6;color:#12313C;">{{ t.reg3 }}</span>
+            </li>
+            <li style="display:flex;gap:14px;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:14px;padding:18px 20px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+              <span style="flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#296D83;margin-top:7px;display:block;"></span>
+              <span style="font-size:15px;line-height:1.6;color:#12313C;">{{ t.reg4 }}</span>
+            </li>
+          </ul>
+          <p style="margin:0 0 10px;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.regText1 }}</p>
+          <p style="margin:0;font-size:12px;color:#878888;">{{ t.regSource }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / social proof" style="padding:80px 0;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 36px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.proofH2 }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;align-items:start;">
+          <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:32px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <p style="margin:0 0 16px;font-size:20px;line-height:1.55;font-weight:600;color:#12313C;font-style:italic;">&ldquo;Et ass immens hëllefräich, zemools fir kleng deeglech Saachen net méi ze vergiessen.&rdquo;</p>
+            <p style="margin:0 0 18px;font-size:14px;line-height:1.6;color:#6C8087;">&ldquo;It&rsquo;s immensely helpful, especially so we no longer forget the small everyday things.&rdquo;</p>
+            <p style="margin:0;font-size:14px;font-weight:700;color:#12313C;">Marco Lobo <span style="font-weight:500;color:#6C8087;">&mdash; Monnerecher Gemengen Atelier (Commune of Mondercange)</span></p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <p style="margin:0;font-size:17px;line-height:1.65;color:#3A4247;">{{ t.proofStat }}</p>
+            <div style="border:1px dashed #B9CFD7;border-radius:14px;padding:20px;background:#F5FBFD;">
+              <p style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#6C8087;line-height:1.6;">{{ t.proofPlaceholder }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / pricing" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 12px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.pricingH2 }}</h2>
+        <p style="margin:0 0 32px;font-size:16px;line-height:1.65;color:#3A4247;max-width:720px;">{{ t.pricingIntro }}</p>
+        <div style="border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);background:#FFFFFF;">
+          <table style="width:100%;min-width:760px;border-collapse:collapse;font-size:15px;">
+            <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.tableCaption }}</caption>
+            <thead>
+              <tr>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;"></th>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:14px;font-weight:700;">De Pättchen</th>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:14px;font-weight:700;">D&rsquo;Mëttelpäerd</th>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:14px;font-weight:700;">De Palais</th>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:14px;font-weight:700;">D&rsquo;Palais</th>
+                <th scope="col" style="text-align:left;padding:18px 20px;border-bottom:1px solid #E8EDEF;font-size:14px;font-weight:700;">Op Mooss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowMonthly }}</th>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC100.63</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC359.93</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC903.11</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:700;">\u20AC1,613.00</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:700;">{{ t.custom }}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowAnnual }}</th>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">\u20AC1,207.56</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">\u20AC4,319.19</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">\u20AC10,837.34</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">\u20AC19,356.04</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">{{ t.custom }}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 20px;border-bottom:1px solid #F0F4F5;font-weight:600;color:#3A4247;">{{ t.rowUsers }}</th>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">10</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">30</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">50</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">100</td>
+                <td style="padding:16px 20px;border-bottom:1px solid #F0F4F5;">{{ t.custom }}</td>
+              </tr>
+              <tr>
+                <th scope="row" style="text-align:left;padding:16px 20px;font-weight:600;color:#3A4247;">{{ t.rowAlarms }}</th>
+                <td style="padding:16px 20px;">20</td>
+                <td style="padding:16px 20px;">100</td>
+                <td style="padding:16px 20px;">300</td>
+                <td style="padding:16px 20px;">600</td>
+                <td style="padding:16px 20px;">{{ t.custom }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:22px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+          <p style="margin:0;font-size:15px;color:#3A4247;">{{ t.pricingNote }}</p>
+          <a href="Pricing.dc.html" style="font-weight:600;">{{ t.fullPricingLink }}</a>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / onboarding" style="padding:88px 0;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 28px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.onboardH2 }}</h2>
+        <ol ref="{{ onboardRef }}" style="list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:22px;">
+          <li style="display:flex;gap:18px;">
+            <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle1 }}">1</span>
+            <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step1Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step1Text }}</span></span>
+          </li>
+          <li style="display:flex;gap:18px;">
+            <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle2 }}">2</span>
+            <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step2Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step2Text }}</span></span>
+          </li>
+          <li style="display:flex;gap:18px;">
+            <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle3 }}">3</span>
+            <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step3Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step3Text }}</span></span>
+          </li>
+          <li style="display:flex;gap:18px;">
+            <span style="flex:0 0 auto;width:32px;height:32px;border-radius:999px;background:#CCF0FC;color:#12313C;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;{{ onboardStyle4 }}">4</span>
+            <span><strong style="display:block;font-size:16px;font-weight:700;margin-bottom:4px;">{{ t.step4Title }}</strong><span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.step4Text }}</span></span>
+          </li>
+        </ol>
+        <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
+      </div>
+    </section>
+
+    <section data-screen-label="Communes / mini FAQ" style="padding:80px 0;background:#F5FBFD;">
+      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 40px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.miniFaqH2 }}</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq1Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq1A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq2Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq2A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq3Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq3A }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:16px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.faq4Q }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3A4247;">{{ t.faq4A }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dc-import name="Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="HandoffNotes" route="/communes" meta-title="{{ metaTitle }}" meta-description="{{ metaDescription }}" schema="{{ schema }}" h2s="{{ h2s }}" gaps="{{ gaps }}" hint-size="0px,0px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LOCALES = ["en", "pt", "es", "fr"];
+
+const TRANSLATIONS = {
+  en: {
+    eyebrow: "For communes",
+    heroPrefix: "Every communal building.", heroHighlight: "One screen.",
+    heroSubhead: "Schools, town hall, sports halls, technical depots. Cubii centralizes incidents, maintenance, energy consumption and building records across your entire portfolio, and builds the documentation European regulation now asks of public bodies.",
+    bookDemo: "Book a demo", heroNote: "Packages from \u20AC100.63/month. 800+ tickets already handled by the commune of Mondercange.",
+    dashboardLabel: "Cubii admin \u2014 commune portfolio",
+    answerH2Pre: "What does Cubii do for ", answerH2Emph: "communes", answerH2Post: "?",
+    answerText: "Cubii gives Luxembourg communes a single platform to manage all their public buildings: residents and staff report incidents with photos, connected equipment raises alerts automatically, maintenance dispatches itself on schedule, and energy consumption is tracked per building with Leneda integration. Packages designed for communes start at \u20AC100.63 per month.",
+    frictionPrefix: "Nobody can be in every building", frictionHighlight: "at once",
+    frictionText1: "A leak starts in a school on Friday evening. It\u2019s found Monday morning. Ceilings, flooring, insurance file, classes relocated. Detected Friday at 22:00, the same incident costs a seal and a call-out.",
+    frictionText2: "Meanwhile the technical service is fielding calls, reconstructing intervention histories from three inboxes, and driving between sites to check things manually.",
+    benefitsH2: "How communes work with Cubii",
+    b1Title: "One entry point for every incident.", b1Text: "A caretaker, teacher or agent reports a problem with a photo from their phone. The technical service sees everything arrive in one place, prioritizes and dispatches.",
+    b2Title: "Buildings that report themselves.", b2Text: "Boilers, ventilation and meters connect to Cubii regardless of brand and raise an alert at the first anomaly, weekends included.",
+    b3Title: "Maintenance that runs on schedule.", b3Text: "Recurring tasks are programmed once and dispatch automatically to the right provider. The register stays complete on its own.",
+    b4Title: "Energy per building, in real time.", b4Text: "Electricity and gas consumption via Leneda, with alerts on overconsumption.",
+    b5Title: "Records that build themselves.", b5Text: "Every intervention documented as it happens: the digital maintenance book grows without administrative work.",
+    b6Title: "Multi-site by design.", b6Text: "Schools, town hall, sports halls, depots: one view, one history, one dashboard.",
+    regH2: "How Cubii helps with your obligations",
+    regIntro: "Public bodies face concrete obligations under European energy rules, transposed in Luxembourg.",
+    reg1: "Reduce final energy consumption by 1.9% per year compared to 2021 (indicative until October 2027; communes under 50,000 inhabitants covered from 2027, under 5,000 from 2030).",
+    reg2: "Renovate the equivalent of 3% of the energy reference area each year for public buildings over 250\u00A0m\u00B2.",
+    reg3: "Declare data annually through Enercoach, the national platform run by Klima-Agence, available to public bodies from 2026.",
+    reg4: "New public buildings must be zero-emission from 1 January 2028.",
+    regText1: "Cubii doesn\u2019t do compliance for you. It makes sure the data compliance requires already exists, clean and current, the day it\u2019s asked for: consumption tracked continuously per building, every intervention historized, technical documentation centralized. And the history shows objectively which buildings to prioritize for renovation.",
+    regSource: "Source: circular n\u00BA 2025-035; EU directives 2023/1791 and 2024/1275.",
+    proofH2: "Already working with Luxembourg communes",
+    proofStat: "800+ tickets created by the commune of Mondercange on Cubii.",
+    proofPlaceholder: "PLACEHOLDER: logo of the Commune of Mondercange. A second commune would make this section decisive \u2014 flag to the client that social proof is still thin with only one case.",
+    pricingH2: "How much does Cubii cost for a commune?",
+    pricingIntro: "Packages sized by number of users and alarms, with names that should feel familiar.",
+    tableCaption: "Cubii packages for communes, excl. VAT",
+    rowMonthly: "Monthly", rowAnnual: "Annual", rowUsers: "Users", rowAlarms: "Alarms", custom: "Custom",
+    pricingNote: "All prices excl. VAT. Packages save 15 to 30% compared to \u00E0-la-carte modules.",
+    fullPricingLink: "Full pricing details",
+    onboardH2: "How does onboarding work?",
+    step1Title: "Demo.", step1Text: "30 minutes on your actual buildings and priorities.",
+    step2Title: "Setup by us.", step2Text: "You send us your building list and users. We build your account and load everything.",
+    step3Title: "Your teams onboarded.", step3Text: "Access codes sent automatically, with follow-up reminders and an activation report.",
+    step4Title: "Your providers connected.", step4Text: "Share your provider list and we bring them onto the platform.",
+    miniFaqH2: "Commune questions, answered",
+    faq1Q: "How much does Cubii cost for a commune?", faq1A: "Packages range from De P\u00E4ttchen at \u20AC100.63/month (10 users, 20 alarms) to D\u2019Palais at \u20AC1,613/month (100 users, 600 alarms), with an Op Mooss option tailored to your portfolio. All prices exclude VAT and packages save 15 to 30% versus \u00E0-la-carte modules.",
+    faq2Q: "Do we need to replace our existing equipment?", faq2A: "No. Cubii connects to boilers, meters, ventilation and building management systems from any manufacturer. Existing installations stay in place.",
+    faq3Q: "Does Cubii help with our energy reporting obligations?", faq3A: "Cubii tracks electricity and gas consumption per building continuously via Leneda and historizes every intervention, so the data required for annual declarations through Enercoach already exists and is current.",
+    faq4Q: "Can Cubii handle all our buildings?", faq4A: "Yes. Cubii is multi-site by design: schools, town hall, sports halls, cultural centres and technical depots are managed from a single dashboard, each with its own history."
+  },
+  pt: {
+    eyebrow: "Para municípios",
+    heroPrefix: "Cada edifício municipal.", heroHighlight: "Um único ecrã.",
+    heroSubhead: "Escolas, câmara municipal, pavilhões desportivos, armazéns técnicos. A Cubii centraliza incidentes, manutenção, consumo de energia e registos de edifícios em todo o seu portfólio, e constrói a documentação que a regulamentação europeia exige agora aos organismos públicos.",
+    bookDemo: "Marcar uma demonstração", heroNote: "Pacotes a partir de \u20AC100,63/mês. Mais de 800 pedidos já tratados pelo município de Mondercange.",
+    dashboardLabel: "Painel de administração Cubii \u2014 portfólio municipal",
+    answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "municípios", answerH2Post: "?",
+    answerText: "A Cubii dá aos municípios do Luxemburgo uma única plataforma para gerir todos os seus edifícios públicos: residentes e funcionários reportam incidentes com fotografias, equipamento ligado gera alertas automaticamente, a manutenção despacha-se sozinha conforme o calendário, e o consumo de energia é acompanhado por edifício com integração com a Leneda. Os pacotes concebidos para municípios começam em \u20AC100,63 por mês.",
+    frictionPrefix: "Ninguém pode estar em todos os edifícios", frictionHighlight: "ao mesmo tempo",
+    frictionText1: "Uma fuga começa numa escola numa sexta-feira à noite. É encontrada na segunda-feira de manhã. Tetos, pavimentos, processo de seguro, aulas realocadas. Detetada na sexta-feira às 22h, o mesmo incidente custa uma vedação e uma chamada de urgência.",
+    frictionText2: "Entretanto, o serviço técnico está a atender chamadas, a reconstruir históricos de intervenções a partir de três caixas de correio, e a deslocar-se entre locais para verificar as coisas manualmente.",
+    benefitsH2: "Como os municípios trabalham com a Cubii",
+    b1Title: "Um único ponto de entrada para cada incidente.", b1Text: "Um zelador, professor ou agente reporta um problema com uma fotografia a partir do telefone. O serviço técnico vê tudo chegar num só lugar, prioriza e despacha.",
+    b2Title: "Edifícios que se reportam a si próprios.", b2Text: "Caldeiras, ventilação e contadores ligam-se à Cubii independentemente da marca e emitem um alerta à primeira anomalia, incluindo aos fins de semana.",
+    b3Title: "Manutenção que corre conforme o calendário.", b3Text: "As tarefas recorrentes são programadas uma vez e despachadas automaticamente para o prestador certo. O registo mantém-se completo por si só.",
+    b4Title: "Energia por edifício, em tempo real.", b4Text: "Consumo de eletricidade e gás via Leneda, com alertas de sobreconsumo.",
+    b5Title: "Registos que se constroem sozinhos.", b5Text: "Cada intervenção documentada no momento em que acontece: o caderno de manutenção digital cresce sem trabalho administrativo.",
+    b6Title: "Multi-edifício por definição.", b6Text: "Escolas, câmara municipal, pavilhões desportivos, armazéns: uma só vista, um só histórico, um só painel.",
+    regH2: "Como a Cubii ajuda nas suas obrigações",
+    regIntro: "Os organismos públicos enfrentam obrigações concretas ao abrigo das regras europeias de energia, transpostas no Luxemburgo.",
+    reg1: "Reduzir o consumo final de energia em 1,9% por ano em comparação com 2021 (indicativo até outubro de 2027; municípios com menos de 50.000 habitantes abrangidos a partir de 2027, com menos de 5.000 a partir de 2030).",
+    reg2: "Renovar o equivalente a 3% da área de referência energética por ano em edifícios públicos com mais de 250\u00A0m\u00B2.",
+    reg3: "Declarar dados anualmente através do Enercoach, a plataforma nacional gerida pela Klima-Agence, disponível para organismos públicos a partir de 2026.",
+    reg4: "Os novos edifícios públicos devem ter emissões zero a partir de 1 de janeiro de 2028.",
+    regText1: "A Cubii não faz a conformidade por si. Garante que os dados que a conformidade exige já existem, limpos e atuais, no dia em que são pedidos: consumo acompanhado continuamente por edifício, cada intervenção historizada, documentação técnica centralizada. E o histórico mostra objetivamente que edifícios priorizar para renovação.",
+    regSource: "Fonte: circular n.\u00BA 2025-035; diretivas da UE 2023/1791 e 2024/1275.",
+    proofH2: "Já a trabalhar com municípios do Luxemburgo",
+    proofStat: "Mais de 800 pedidos criados pelo município de Mondercange na Cubii.",
+    proofPlaceholder: "PLACEHOLDER: logótipo do Município de Mondercange. Um segundo município tornaria esta secção decisiva \u2014 sinalizar ao cliente que esta prova social ainda está fraca com apenas um caso.",
+    pricingH2: "Quanto custa a Cubii para um município?",
+    pricingIntro: "Pacotes dimensionados pelo número de utilizadores e alarmes, com nomes que devem parecer familiares.",
+    tableCaption: "Pacotes Cubii para municípios, sem IVA",
+    rowMonthly: "Mensal", rowAnnual: "Anual", rowUsers: "Utilizadores", rowAlarms: "Alarmes", custom: "Personalizado",
+    pricingNote: "Todos os preços sem IVA. Os pacotes poupam entre 15 e 30% em comparação com módulos à la carte.",
+    fullPricingLink: "Detalhes completos de preços",
+    onboardH2: "Como funciona a integração?",
+    step1Title: "Demonstração.", step1Text: "30 minutos sobre os seus edifícios e prioridades reais.",
+    step2Title: "Configuração feita por nós.", step2Text: "Envia-nos a sua lista de edifícios e utilizadores. Nós criamos a sua conta e carregamos tudo.",
+    step3Title: "As suas equipas integradas.", step3Text: "Códigos de acesso enviados automaticamente, com lembretes de acompanhamento e um relatório de ativação.",
+    step4Title: "Os seus prestadores ligados.", step4Text: "Partilhe a sua lista de prestadores e nós integramo-los na plataforma.",
+    miniFaqH2: "Perguntas de municípios, respondidas",
+    faq1Q: "Quanto custa a Cubii para um município?", faq1A: "Os pacotes vão de De P\u00E4ttchen a \u20AC100,63/mês (10 utilizadores, 20 alarmes) a D\u2019Palais a \u20AC1.613/mês (100 utilizadores, 600 alarmes), com uma opção Op Mooss personalizada ao seu portfólio. Todos os preços excluem IVA e os pacotes poupam entre 15 e 30% em comparação com módulos à la carte.",
+    faq2Q: "Precisamos de substituir o nosso equipamento existente?", faq2A: "Não. A Cubii liga-se a caldeiras, contadores, ventilação e sistemas de gestão de edifícios de qualquer fabricante. As instalações existentes permanecem no lugar.",
+    faq3Q: "A Cubii ajuda nas nossas obrigações de reporte energético?", faq3A: "A Cubii acompanha o consumo de eletricidade e gás por edifício continuamente via Leneda e historiza cada intervenção, pelo que os dados necessários para as declarações anuais através do Enercoach já existem e estão atuais.",
+    faq4Q: "A Cubii consegue gerir todos os nossos edifícios?", faq4A: "Sim. A Cubii é multi-edifício por definição: escolas, câmara municipal, pavilhões desportivos, centros culturais e armazéns técnicos são geridos a partir de um único painel, cada um com o seu próprio histórico."
+  },
+  es: {
+    eyebrow: "Para municipios",
+    heroPrefix: "Cada edificio municipal.", heroHighlight: "Una sola pantalla.",
+    heroSubhead: "Colegios, ayuntamiento, polideportivos, naves técnicas. Cubii centraliza incidencias, mantenimiento, consumo energético y registros de edificios en toda tu cartera, y construye la documentación que la normativa europea exige ahora a los organismos públicos.",
+    bookDemo: "Reservar una demo", heroNote: "Paquetes desde \u20AC100,63/mes. Más de 800 partes ya gestionados por el municipio de Mondercange.",
+    dashboardLabel: "Panel de administración Cubii \u2014 cartera municipal",
+    answerH2Pre: "\u00BFQu\u00E9 hace Cubii por los ", answerH2Emph: "municipios", answerH2Post: "?",
+    answerText: "Cubii ofrece a los municipios de Luxemburgo una única plataforma para gestionar todos sus edificios públicos: residentes y personal reportan incidencias con fotos, los equipos conectados generan alertas automáticamente, el mantenimiento se despacha solo según el calendario, y el consumo energético se controla por edificio con integración con Leneda. Los paquetes diseñados para municipios comienzan en \u20AC100,63 al mes.",
+    frictionPrefix: "Nadie puede estar en todos los edificios", frictionHighlight: "a la vez",
+    frictionText1: "Una fuga empieza en un colegio un viernes por la noche. Se descubre el lunes por la mañana. Techos, suelos, expediente de seguro, clases reubicadas. Detectada el viernes a las 22:00, la misma incidencia cuesta un sellado y un aviso de urgencia.",
+    frictionText2: "Mientras tanto, el servicio técnico atiende llamadas, reconstruye historiales de intervención a partir de tres bandejas de entrada, y se desplaza entre sedes para comprobar las cosas manualmente.",
+    benefitsH2: "Cómo trabajan los municipios con Cubii",
+    b1Title: "Un único punto de entrada para cada incidencia.", b1Text: "Un conserje, profesor o agente reporta un problema con una foto desde su teléfono. El servicio técnico ve todo llegar en un solo lugar, prioriza y despacha.",
+    b2Title: "Edificios que se reportan a sí mismos.", b2Text: "Calderas, ventilación y contadores se conectan a Cubii sea cual sea la marca y emiten una alerta a la primera anomalía, fines de semana incluidos.",
+    b3Title: "Mantenimiento que se ejecuta según el calendario.", b3Text: "Las tareas recurrentes se programan una vez y se despachan automáticamente al proveedor adecuado. El registro se mantiene completo por sí solo.",
+    b4Title: "Energía por edificio, en tiempo real.", b4Text: "Consumo de electricidad y gas vía Leneda, con alertas de sobreconsumo.",
+    b5Title: "Registros que se construyen solos.", b5Text: "Cada intervención documentada en el momento en que ocurre: el libro de mantenimiento digital crece sin trabajo administrativo.",
+    b6Title: "Multi-sede por diseño.", b6Text: "Colegios, ayuntamiento, polideportivos, naves: una sola vista, un solo historial, un solo panel.",
+    regH2: "Cómo ayuda Cubii con tus obligaciones",
+    regIntro: "Los organismos públicos afrontan obligaciones concretas bajo las normas europeas de energía, transpuestas en Luxemburgo.",
+    reg1: "Reducir el consumo final de energía un 1,9% al año respecto a 2021 (indicativo hasta octubre de 2027; municipios de menos de 50.000 habitantes cubiertos desde 2027, de menos de 5.000 desde 2030).",
+    reg2: "Renovar el equivalente al 3% de la superficie de referencia energética cada año en edificios públicos de más de 250\u00A0m\u00B2.",
+    reg3: "Declarar datos anualmente a través de Enercoach, la plataforma nacional gestionada por Klima-Agence, disponible para organismos públicos desde 2026.",
+    reg4: "Los nuevos edificios públicos deben tener cero emisiones a partir del 1 de enero de 2028.",
+    regText1: "Cubii no gestiona el cumplimiento por ti. Se asegura de que los datos que exige el cumplimiento ya existen, limpios y actualizados, el día en que se piden: consumo controlado continuamente por edificio, cada intervención historizada, documentación técnica centralizada. Y el historial muestra objetivamente qué edificios priorizar para la renovación.",
+    regSource: "Fuente: circular n.\u00BA 2025-035; directivas de la UE 2023/1791 y 2024/1275.",
+    proofH2: "Ya trabajando con municipios de Luxemburgo",
+    proofStat: "Más de 800 partes creados por el municipio de Mondercange en Cubii.",
+    proofPlaceholder: "PLACEHOLDER: logo del Municipio de Mondercange. Un segundo municipio haría esta sección decisiva \u2014 señalar al cliente que la prueba social aún es escasa con un solo caso.",
+    pricingH2: "\u00BFCu\u00E1nto cuesta Cubii para un municipio?",
+    pricingIntro: "Paquetes dimensionados por número de usuarios y alarmas, con nombres que deberían resultar familiares.",
+    tableCaption: "Paquetes Cubii para municipios, sin IVA",
+    rowMonthly: "Mensual", rowAnnual: "Anual", rowUsers: "Usuarios", rowAlarms: "Alarmas", custom: "A medida",
+    pricingNote: "Todos los precios sin IVA. Los paquetes ahorran entre un 15 y un 30% frente a los módulos a la carta.",
+    fullPricingLink: "Detalles completos de precios",
+    onboardH2: "\u00BFCómo funciona la incorporación?",
+    step1Title: "Demo.", step1Text: "30 minutos sobre tus edificios y prioridades reales.",
+    step2Title: "La configuración la hacemos nosotros.", step2Text: "Nos envías tu lista de edificios y usuarios. Nosotros creamos tu cuenta y lo cargamos todo.",
+    step3Title: "Tus equipos incorporados.", step3Text: "Códigos de acceso enviados automáticamente, con recordatorios de seguimiento y un informe de activación.",
+    step4Title: "Tus proveedores conectados.", step4Text: "Comparte tu lista de proveedores y los incorporamos a la plataforma.",
+    miniFaqH2: "Preguntas de municipios, respondidas",
+    faq1Q: "\u00BFCu\u00E1nto cuesta Cubii para un municipio?", faq1A: "Los paquetes van desde De P\u00E4ttchen a \u20AC100,63/mes (10 usuarios, 20 alarmas) hasta D\u2019Palais a \u20AC1.613/mes (100 usuarios, 600 alarmas), con una opción Op Mooss adaptada a tu cartera. Todos los precios excluyen IVA y los paquetes ahorran entre un 15 y un 30% frente a los módulos a la carta.",
+    faq2Q: "\u00BFNecesitamos sustituir nuestro equipamiento existente?", faq2A: "No. Cubii se conecta a calderas, contadores, ventilación y sistemas de gestión de edificios de cualquier fabricante. Las instalaciones existentes permanecen en su lugar.",
+    faq3Q: "\u00BFCubii ayuda con nuestras obligaciones de reporte energético?", faq3A: "Cubii controla el consumo de electricidad y gas por edificio de forma continua vía Leneda e historiza cada intervención, de modo que los datos necesarios para las declaraciones anuales a través de Enercoach ya existen y están actualizados.",
+    faq4Q: "\u00BFPuede Cubii gestionar todos nuestros edificios?", faq4A: "Sí. Cubii es multi-sede por diseño: colegios, ayuntamiento, polideportivos, centros culturales y naves técnicas se gestionan desde un único panel, cada uno con su propio historial."
+  },
+  fr: {
+    eyebrow: "Pour les communes",
+    heroPrefix: "Chaque b\u00E2timent communal.", heroHighlight: "Un seul \u00E9cran.",
+    heroSubhead: "\u00C9coles, maison communale, halls sportifs, d\u00E9p\u00F4ts techniques. Cubii centralise les incidents, la maintenance, la consommation \u00E9nerg\u00E9tique et les registres de b\u00E2timents sur l\u2019ensemble de votre patrimoine, et construit la documentation que la r\u00E9glementation europ\u00E9enne exige d\u00E9sormais des organismes publics.",
+    bookDemo: "R\u00E9server une d\u00E9mo", heroNote: "Forfaits \u00E0 partir de 100,63\u00A0\u20AC/mois. Plus de 800 tickets d\u00E9j\u00E0 trait\u00E9s par la commune de Mondercange.",
+    dashboardLabel: "Console d\u2019administration Cubii \u2014 patrimoine communal",
+    answerH2Pre: "Que fait Cubii pour les ", answerH2Emph: "communes", answerH2Post: "\u00A0?",
+    answerText: "Cubii offre aux communes luxembourgeoises une plateforme unique pour g\u00E9rer tous leurs b\u00E2timents publics\u00A0: r\u00E9sidents et agents signalent les incidents avec des photos, les \u00E9quipements connect\u00E9s d\u00E9clenchent des alertes automatiquement, la maintenance s\u2019envoie d\u2019elle-m\u00EAme selon le calendrier, et la consommation \u00E9nerg\u00E9tique est suivie par b\u00E2timent avec l\u2019int\u00E9gration Leneda. Les forfaits con\u00E7us pour les communes d\u00E9marrent \u00E0 100,63\u00A0\u20AC par mois.",
+    frictionPrefix: "Personne ne peut \u00EAtre dans tous les b\u00E2timents", frictionHighlight: "\u00E0 la fois",
+    frictionText1: "Une fuite commence dans une \u00E9cole un vendredi soir. Elle est d\u00E9couverte le lundi matin. Plafonds, sols, dossier d\u2019assurance, classes relog\u00E9es. D\u00E9tect\u00E9 le vendredi \u00E0 22h, le m\u00EAme incident co\u00FBte un joint et une intervention d\u2019urgence.",
+    frictionText2: "Pendant ce temps, le service technique r\u00E9pond aux appels, reconstitue des historiques d\u2019intervention \u00E0 partir de trois bo\u00EEtes mail, et se d\u00E9place entre les sites pour v\u00E9rifier les choses manuellement.",
+    benefitsH2: "Comment les communes travaillent avec Cubii",
+    b1Title: "Un point d\u2019entr\u00E9e unique pour chaque incident.", b1Text: "Un concierge, un enseignant ou un agent signale un probl\u00E8me avec une photo depuis son t\u00E9l\u00E9phone. Le service technique voit tout arriver au m\u00EAme endroit, priorise et envoie.",
+    b2Title: "Des b\u00E2timents qui se signalent eux-m\u00EAmes.", b2Text: "Chaudi\u00E8res, ventilation et compteurs se connectent \u00E0 Cubii quelle que soit la marque et d\u00E9clenchent une alerte \u00E0 la premi\u00E8re anomalie, week-ends compris.",
+    b3Title: "Une maintenance qui se d\u00E9roule selon le calendrier.", b3Text: "Les t\u00E2ches r\u00E9currentes sont programm\u00E9es une fois et envoy\u00E9es automatiquement au bon prestataire. Le registre reste complet tout seul.",
+    b4Title: "L\u2019\u00E9nergie par b\u00E2timent, en temps r\u00E9el.", b4Text: "Consommation d\u2019\u00E9lectricit\u00E9 et de gaz via Leneda, avec alertes en cas de surconsommation.",
+    b5Title: "Des registres qui se construisent tout seuls.", b5Text: "Chaque intervention document\u00E9e au moment o\u00F9 elle a lieu\u00A0: le carnet d\u2019entretien num\u00E9rique se remplit sans travail administratif.",
+    b6Title: "Multi-sites par conception.", b6Text: "\u00C9coles, maison communale, halls sportifs, d\u00E9p\u00F4ts\u00A0: une seule vue, un seul historique, un seul tableau de bord.",
+    regH2: "Comment Cubii vous aide dans vos obligations",
+    regIntro: "Les organismes publics font face \u00E0 des obligations concr\u00E8tes en vertu des r\u00E8gles \u00E9nerg\u00E9tiques europ\u00E9ennes, transpos\u00E9es au Luxembourg.",
+    reg1: "R\u00E9duire la consommation finale d\u2019\u00E9nergie de 1,9\u00A0% par an par rapport \u00E0 2021 (indicatif jusqu\u2019en octobre 2027\u00A0; communes de moins de 50\u00A0000 habitants couvertes \u00E0 partir de 2027, de moins de 5\u00A0000 \u00E0 partir de 2030).",
+    reg2: "R\u00E9nover l\u2019\u00E9quivalent de 3\u00A0% de la surface de r\u00E9f\u00E9rence \u00E9nerg\u00E9tique chaque ann\u00E9e pour les b\u00E2timents publics de plus de 250\u00A0m\u00B2.",
+    reg3: "D\u00E9clarer les donn\u00E9es chaque ann\u00E9e via Enercoach, la plateforme nationale g\u00E9r\u00E9e par Klima-Agence, disponible pour les organismes publics \u00E0 partir de 2026.",
+    reg4: "Les nouveaux b\u00E2timents publics doivent \u00EAtre \u00E0 \u00E9missions nulles \u00E0 partir du 1er janvier 2028.",
+    regText1: "Cubii ne fait pas la mise en conformit\u00E9 \u00E0 votre place. Elle garantit que les donn\u00E9es exig\u00E9es par la conformit\u00E9 existent d\u00E9j\u00E0, propres et \u00E0 jour, le jour o\u00F9 elles sont demand\u00E9es\u00A0: consommation suivie en continu par b\u00E2timent, chaque intervention historis\u00E9e, documentation technique centralis\u00E9e. Et l\u2019historique montre objectivement quels b\u00E2timents prioriser pour la r\u00E9novation.",
+    regSource: "Source\u00A0: circulaire n\u00B0\u00A02025-035\u00A0; directives europ\u00E9ennes 2023/1791 et 2024/1275.",
+    proofH2: "D\u00E9j\u00E0 au travail avec des communes luxembourgeoises",
+    proofStat: "Plus de 800 tickets cr\u00E9\u00E9s par la commune de Mondercange sur Cubii.",
+    proofPlaceholder: "PLACEHOLDER\u00A0: logo de la commune de Mondercange. Une deuxi\u00E8me commune rendrait cette section d\u00E9terminante \u2014 signaler au client que cette preuve sociale reste faible avec un seul cas.",
+    pricingH2: "Combien co\u00FBte Cubii pour une commune\u00A0?",
+    pricingIntro: "Des forfaits dimensionn\u00E9s par nombre d\u2019utilisateurs et d\u2019alarmes, avec des noms qui devraient para\u00EEtre familiers.",
+    tableCaption: "Forfaits Cubii pour les communes, hors TVA",
+    rowMonthly: "Mensuel", rowAnnual: "Annuel", rowUsers: "Utilisateurs", rowAlarms: "Alarmes", custom: "Sur mesure",
+    pricingNote: "Tous les prix sont hors TVA. Les forfaits font économiser de 15 à 30\u00A0% par rapport aux modules \u00E0 la carte.",
+    fullPricingLink: "D\u00E9tails complets des tarifs",
+    onboardH2: "Comment se d\u00E9roule l\u2019int\u00E9gration\u00A0?",
+    step1Title: "D\u00E9mo.", step1Text: "30 minutes sur vos b\u00E2timents et priorit\u00E9s r\u00E9els.",
+    step2Title: "La configuration est faite par nous.", step2Text: "Vous nous envoyez votre liste de b\u00E2timents et d\u2019utilisateurs. Nous cr\u00E9ons votre compte et chargeons tout.",
+    step3Title: "Vos \u00E9quipes int\u00E9gr\u00E9es.", step3Text: "Codes d\u2019acc\u00E8s envoy\u00E9s automatiquement, avec relances de suivi et un rapport d\u2019activation.",
+    step4Title: "Vos prestataires connect\u00E9s.", step4Text: "Partagez votre liste de prestataires et nous les int\u00E9grons \u00E0 la plateforme.",
+    miniFaqH2: "Questions des communes, avec r\u00E9ponses",
+    faq1Q: "Combien co\u00FBte Cubii pour une commune\u00A0?", faq1A: "Les forfaits vont de De P\u00E4ttchen \u00E0 100,63\u00A0\u20AC/mois (10 utilisateurs, 20 alarmes) \u00E0 D\u2019Palais \u00E0 1\u00A0613\u00A0\u20AC/mois (100 utilisateurs, 600 alarmes), avec une option Op Mooss adapt\u00E9e \u00E0 votre patrimoine. Tous les prix sont hors TVA et les forfaits font \u00E9conomiser de 15 \u00E0 30\u00A0% par rapport aux modules \u00E0 la carte.",
+    faq2Q: "Devons-nous remplacer nos \u00E9quipements existants\u00A0?", faq2A: "Non. Cubii se connecte aux chaudi\u00E8res, compteurs, syst\u00E8mes de ventilation et de gestion technique du b\u00E2timent de tout fabricant. Les installations existantes restent en place.",
+    faq3Q: "Cubii aide-t-elle pour nos obligations de reporting \u00E9nerg\u00E9tique\u00A0?", faq3A: "Cubii suit la consommation d\u2019\u00E9lectricit\u00E9 et de gaz par b\u00E2timent en continu via Leneda et historise chaque intervention, si bien que les donn\u00E9es requises pour les d\u00E9clarations annuelles via Enercoach existent d\u00E9j\u00E0 et sont \u00E0 jour.",
+    faq4Q: "Cubii peut-elle g\u00E9rer tous nos b\u00E2timents\u00A0?", faq4A: "Oui. Cubii est multi-sites par conception\u00A0: \u00E9coles, maison communale, halls sportifs, centres culturels et d\u00E9p\u00F4ts techniques sont g\u00E9r\u00E9s depuis un tableau de bord unique, chacun avec son propre historique."
+  }
+};
+
+const META = {
+  en: { title: "Cubii for Communes | Manage Every Communal Building From One Screen", description: "Schools, town halls, sports halls: incidents, maintenance, energy monitoring and the records EU regulation requires, in one platform. Packages from \u20AC100.63/month. Book a demo." },
+  pt: { title: "Cubii para Municípios | Gerir Cada Edifício Municipal a Partir de um Ecrã", description: "Escolas, câmaras municipais, pavilhões desportivos: incidentes, manutenção, monitorização energética e os registos que a regulamentação da UE exige, numa só plataforma. Pacotes a partir de \u20AC100,63/mês. Marque uma demonstração." },
+  es: { title: "Cubii para Municipios | Gestiona Cada Edificio Municipal desde una Pantalla", description: "Colegios, ayuntamientos, polideportivos: incidencias, mantenimiento, monitorización energética y los registros que exige la normativa de la UE, en una sola plataforma. Paquetes desde \u20AC100,63/mes. Reserva una demo." },
+  fr: { title: "Cubii pour les Communes | Gérez Chaque Bâtiment Communal Depuis un Écran", description: "Écoles, maisons communales, halls sportifs\u00A0: incidents, maintenance, suivi énergétique et les registres qu\u2019exige la réglementation européenne, sur une seule plateforme. Forfaits à partir de 100,63\u00A0\u20AC/mois. Réservez une démo." }
+};
+
+class Component extends DCLogic {
+  state = { locale: "en", onboardRevealed: false };
+
+  componentDidMount() {
+    try {
+      const stored = window.localStorage.getItem("cubii-locale");
+      if (LOCALES.includes(stored)) this.setState({ locale: stored });
+    } catch (e) {}
+    this._onChange = (ev) => this.setState({ locale: ev.detail });
+    window.addEventListener("cubii-locale-change", this._onChange);
+
+    this._onboardRef = (el) => {
+      if (!el || this._onboardObserved) return;
+      this._onboardObserved = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.setState({ onboardRevealed: entry.isIntersecting });
+        });
+      }, { threshold: 0.3 });
+      observer.observe(el);
+    };
+  }
+  componentWillUnmount() {
+    window.removeEventListener("cubii-locale-change", this._onChange);
+  }
+  renderVals() {
+    const locale = this.state.locale;
+    const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
+    const meta = META[locale] || META.en;
+    const revealed = this.state.onboardRevealed;
+    const onboardStyle = (delay) => revealed
+      ? `animation:cubii-onboard-pop 0.45s ease-out ${delay}s both;`
+      : `transform:scale(0.3);opacity:0;`;
+    return {
+      t,
+      onboardRef: this._onboardRef,
+      onboardStyle1: onboardStyle(0.05), onboardStyle2: onboardStyle(0.25), onboardStyle3: onboardStyle(0.45), onboardStyle4: onboardStyle(0.65),
+      metaTitle: meta.title,
+      metaDescription: meta.description,
+      schema: ["Organization (Smart Cube)", "Product + Offer per package (De Pättchen, D'Mëttelpäerd, De Palais, D'Palais, Op Mooss), currency EUR", "FAQPage (4 commune Q/A, text identical to page)"],
+      h2s: ["What does Cubii do for communes?", "Nobody can be in every building at once", "How communes work with Cubii", "How Cubii helps with your obligations", "Already working with Luxembourg communes", "How much does Cubii cost for a commune?", "How does onboarding work?", "Commune questions, answered"],
+      gaps: ["Second commune reference / logo (social proof currently rests on a single case)", "Regulatory figures sourced from circular n\u00BA 2025-035 and EU directives 2023/1791 & 2024/1275 \u2014 verify against latest client-confirmed text before publishing", "Package names De Palais (50 users) and D'Palais (100 users) are intentionally distinct Luxembourgish names, not a typo \u2014 do not merge or correct", "Testimonial quote stays in Luxembourgish verbatim in every locale; the English caption beneath it is also left untranslated by design (written for international readers and AI agents), never hidden or reordered above the original", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

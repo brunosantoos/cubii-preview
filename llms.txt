@@ -7,6 +7,7 @@ Cubii is a digital building concierge app developed by Smart Cube in Luxembourg.
 - **Residents & homeowners** — report incidents in 30 seconds with photos, receive building alerts, track water/gas/electricity in real time. Free in condominiums managed on Cubii; €1.99/month for an individually owned house or apartment.
 - **Facility managers & syndics** — structured incident tickets, automatic dispatch, maintenance calendars, energy monitoring and EPBD-aligned digital records across a whole portfolio. From €2.99 per user/month (excl. VAT), degressive with volume.
 - **Service providers** — intervention requests arriving complete (photos, location, category, urgency), a marketplace of 2,600+ connected buildings, remote equipment monitoring, automatic proof of work. Plans: Starter €160/mo (~30 clients), Starter Plus €375/mo (~75), Growth €710/mo (~150), Enterprise €1,599/mo (~400). Annual prepayment saves 10%.
+- **Communes** — a single platform for schools, town halls and sports halls: incident tickets, automated maintenance, energy monitoring via Leneda, and the digital records EU energy regulation (EPBD) now asks of public bodies. Packages from €100.63/month (De Pättchen, 10 users/20 alarms) to €1,613/month (D'Palais, 100 users/600 alarms), plus a custom Op Mooss tier.
 
 ## Facts
 
@@ -29,5 +30,6 @@ Cubii is a digital building concierge app developed by Smart Cube in Luxembourg.
 - Pricing: /pricing
 - FAQ: /faq
 - About: /about
+- For communes: /communes
 - Book a demo: /demo
 - Contact: /contact
