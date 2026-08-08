@@ -16,10 +16,17 @@
     a { color: #0090E8; }
     a:hover { color: #00B5F1; }
     h1, h2, h3, p, ul, ol { text-wrap: pretty; }
-    .cubii-step-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-    .cubii-step-card:hover { transform: translateY(-2px); }
-    .cubii-step-fill-1, .cubii-step-fill-2, .cubii-step-fill-3, .cubii-step-glow-1, .cubii-step-glow-2, .cubii-step-glow-3 { transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; }
-    .cubii-step-card:hover .cubii-step-fill-1, .cubii-step-card:hover .cubii-step-fill-2, .cubii-step-card:hover .cubii-step-fill-3 { transform: scaleX(1); }
+    .cubii-step-card { transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+    .cubii-step-card:hover { transform: translateY(-10px) scale(1.02); }
+    .cubii-step-card:has(.cubii-step-fill-1):hover { border-color: #00B5F1; box-shadow: 0 24px 52px rgba(0,181,241,0.32), 0 0 0 1px rgba(0,181,241,0.55); }
+    .cubii-step-card:has(.cubii-step-fill-2):hover { border-color: #2E5FA3; box-shadow: 0 24px 52px rgba(46,95,163,0.4), 0 0 0 1px rgba(46,95,163,0.6); }
+    .cubii-step-card:has(.cubii-step-fill-3):hover { border-color: #C77DB8; box-shadow: 0 24px 52px rgba(199,125,184,0.32), 0 0 0 1px rgba(199,125,184,0.55); }
+    .cubii-step-fill-1, .cubii-step-fill-2, .cubii-step-fill-3, .cubii-step-glow-1, .cubii-step-glow-2, .cubii-step-glow-3 { transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.35s ease; }
+    .cubii-step-card:hover .cubii-step-fill-1, .cubii-step-card:hover .cubii-step-fill-2, .cubii-step-card:hover .cubii-step-fill-3 { transform: scaleX(1); filter: brightness(1.25); }
+    .cubii-step-card > div:first-child { transition: box-shadow 0.35s ease; }
+    .cubii-step-card:has(.cubii-step-fill-1):hover > div:first-child { box-shadow: 0 6px 20px rgba(0,181,241,0.75); }
+    .cubii-step-card:has(.cubii-step-fill-2):hover > div:first-child { box-shadow: 0 6px 20px rgba(46,95,163,0.8); }
+    .cubii-step-card:has(.cubii-step-fill-3):hover > div:first-child { box-shadow: 0 6px 20px rgba(199,125,184,0.75); }
     .cubii-step-card:hover .cubii-step-glow-1, .cubii-step-card:hover .cubii-step-glow-2, .cubii-step-card:hover .cubii-step-glow-3 { opacity: 1; transform: scale(1.05); }
     .cubii-step-glow-1 span:last-child, .cubii-step-glow-2 span:last-child, .cubii-step-glow-3 span:last-child { transition: color 0.3s ease, letter-spacing 0.3s ease; }
     .cubii-step-card:hover .cubii-step-glow-1 span:last-child { color: #FFFFFF !important; letter-spacing: 0.19em; }
