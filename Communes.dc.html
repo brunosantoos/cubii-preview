@@ -274,13 +274,13 @@ const LOCALES = ["en", "pt", "es", "fr"];
 
 const TRANSLATIONS = {
   en: {
-    eyebrow: "For communes",
+    eyebrow: "For municipalities",
     heroPrefix: "Every communal building.", heroHighlight: "One screen.",
     heroSubhead: "Schools, town hall, sports halls, technical depots. Cubii centralizes incidents, maintenance, energy consumption and building records across your entire portfolio, and builds the documentation European regulation now asks of public bodies.",
     bookDemo: "Book a demo", heroNote: "Packages from €100.63/month. 800+ tickets already handled by the commune of Mondercange.",
     dashboardLabel: "Cubii admin \u2014 commune portfolio",
     answerH2Pre: "What does Cubii do for ", answerH2Emph: "communes", answerH2Post: "?",
-    answerText: "Cubii gives Luxembourg communes a single platform to manage all their public buildings: residents and staff report incidents with photos, connected equipment raises alerts automatically, maintenance dispatches itself on schedule, and energy consumption is tracked per building with Leneda integration. Packages designed for communes start at €100.63 per month.",
+    answerText: "Cubii gives Luxembourg communes a single platform to manage all their public buildings: residents and staff report incidents with photos, connected equipment raises alerts automatically, maintenance dispatches itself on schedule, and energy consumption is tracked per building with Leneda integration. Packages designed for municipalities start at €100.63 per month.",
     frictionPrefix: "Nobody can be in every building", frictionHighlight: "at once",
     frictionText1: "A leak starts in a school on Friday evening. It\u2019s found Monday morning. Ceilings, flooring, insurance file, classes relocated. Detected Friday at 22:00, the same incident costs a seal and a call-out.",
     frictionText2: "Meanwhile the technical service is fielding calls, reconstructing intervention histories from three inboxes, and driving between sites to check things manually.",
@@ -304,7 +304,7 @@ const TRANSLATIONS = {
     proofPlaceholder: "PLACEHOLDER: logo of the Commune of Mondercange. A second commune would make this section decisive \u2014 flag to the client that social proof is still thin with only one case.",
     pricingH2: "How much does Cubii cost for a commune?",
     pricingIntro: "Packages sized by number of users and alarms, with names that should feel familiar.",
-    tableCaption: "Cubii packages for communes, excl. VAT",
+    tableCaption: "Cubii packages for municipalities, excl. VAT",
     rowMonthly: "Monthly", rowAnnual: "Annual", rowUsers: "Users", rowAlarms: "Alarms", custom: "Custom",
     pricingNote: "All prices excl. VAT. Packages save 15 to 30% compared to \u00E0-la-carte modules.",
     fullPricingLink: "Full pricing details",
@@ -460,7 +460,7 @@ const TRANSLATIONS = {
 };
 
 const META = {
-  en: { title: "Cubii for Communes | Manage Every Communal Building From One Screen", description: "Schools, town halls, sports halls: incidents, maintenance, energy monitoring and the records EU regulation requires, in one platform. Packages from €100.63/month. Book a demo." },
+  en: { title: "Cubii for Municipalities | Manage Every Communal Building From One Screen", description: "Schools, town halls, sports halls: incidents, maintenance, energy monitoring and the records EU regulation requires, in one platform. Packages from €100.63/month. Book a demo." },
   pt: { title: "Cubii para MunicÃ­pios | Gerir Cada EdifÃ­cio Municipal a Partir de um EcrÃ£", description: "Escolas, cÃ¢maras municipais, pavilhÃµes desportivos: incidentes, manutenÃ§Ã£o, monitorizaÃ§Ã£o energÃ©tica e os registos que a regulamentaÃ§Ã£o da UE exige, numa sÃ³ plataforma. Pacotes a partir de €100,63/mÃªs. Marque uma demonstraÃ§Ã£o." },
   es: { title: "Cubii para Municipios | Gestiona Cada Edificio Municipal desde una Pantalla", description: "Colegios, ayuntamientos, polideportivos: incidencias, mantenimiento, monitorizaciÃ³n energÃ©tica y los registros que exige la normativa de la UE, en una sola plataforma. Paquetes desde €100,63/mes. Reserva una demo." },
   fr: { title: "Cubii pour les Communes | GÃ©rez Chaque BÃ¢timent Communal Depuis un Ãcran", description: "Ãcoles, maisons communales, halls sportifs\u00A0: incidents, maintenance, suivi Ã©nergÃ©tique et les registres qu\u2019exige la rÃ©glementation europÃ©enne, sur une seule plateforme. Forfaits Ã  partir de 100,63\u00A0€/mois. RÃ©servez une dÃ©mo." }
@@ -506,7 +506,7 @@ class Component extends DCLogic {
       metaTitle: meta.title,
       metaDescription: meta.description,
       schema: ["Organization (Smart Cube)", "Product + Offer per package (De Pättchen, D'Mëttelpäerd, De Palais, D'Palais, Op Mooss), currency EUR", "FAQPage (4 commune Q/A, text identical to page)"],
-      h2s: ["What does Cubii do for communes?", "Nobody can be in every building at once", "How communes work with Cubii", "How Cubii helps with your obligations", "Already working with Luxembourg communes", "How much does Cubii cost for a commune?", "How does onboarding work?", "Commune questions, answered"],
+      h2s: ["What does Cubii do for municipalities?", "Nobody can be in every building at once", "How communes work with Cubii", "How Cubii helps with your obligations", "Already working with Luxembourg communes", "How much does Cubii cost for a commune?", "How does onboarding work?", "Commune questions, answered"],
       gaps: ["Second commune reference / logo (social proof currently rests on a single case)", "Regulatory figures sourced from circular n\u00BA 2025-035 and EU directives 2023/1791 & 2024/1275 \u2014 verify against latest client-confirmed text before publishing", "Package names De Palais (50 users) and D'Palais (100 users) are intentionally distinct Luxembourgish names, not a typo \u2014 do not merge or correct", "Testimonial quote stays in Luxembourgish verbatim in every locale; the English caption beneath it is also left untranslated by design (written for international readers and AI agents), never hidden or reordered above the original", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
     };
   }
