@@ -194,7 +194,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -340,6 +340,42 @@ const TRANSLATIONS = {
     faq2Q: "Cubii fonctionne-t-elle avec nos capteurs et systèmes de bâtiment existants\u00A0?", faq2A: "Oui. Cubii est agnostique de marque\u00A0: elle se connecte aux systèmes GTB, capteurs IoT et contacts secs de tout fabricant.",
     faq3Q: "Cubii aide-t-elle à la conformité EPBD\u00A0?", faq3A: "Oui. Cubii suit la consommation énergétique par bâtiment en temps réel et maintient les registres de maintenance numériques alignés sur la directive sur la performance énergétique des bâtiments.",
     faq4Q: "Combien de temps prend la mise en œuvre\u00A0?", faq4A: "Smart Cube prend en charge la configuration\u00A0: création du compte, structure des bâtiments, intégration des utilisateurs et e-mails d\u2019activation des résidents. La plupart des portefeuilles sont opérationnels en quelques jours, pas en mois."
+  },
+  de: {
+    eyebrow: "Für Gebäudeverwalter",
+    heroPrefix: "Gebäude verwalten. Keine", heroHighlight: "Telefonate",
+    heroSubhead: "Cubii automatisiert alles zwischen „etwas ist kaputt“ und „es ist repariert“: Erkennung, Ticketerstellung, Zuweisung, Nachverfolgung und Dokumentation. Ihr Team gewinnt jede Woche wertvolle Stunden zurück.",
+    bookDemo: "Demo buchen", heroNote: "30 Minuten, anhand Ihres echten Portfolios. Ab 2,99 € pro Nutzer/Monat.",
+    dashboardLabel: "Cubii Admin — Portfolio-Dashboard",
+    answerH2Pre: "Was macht Cubii für ", answerH2Emph: "Gebäudeverwalter", answerH2Post: "?",
+    answerText: "Cubii bietet Gebäudeverwaltern eine einzige Plattform, um Vorfälle, Wartung, Energie und Dokumente über das gesamte Gebäudeportfolio hinweg zu verwalten. Vorfälle werden von Bewohnern gemeldet oder von Sensoren erkannt, in strukturierte Tickets umgewandelt und automatisch an Dienstleister weitergeleitet. Die Preise beginnen bei 2,99 € pro Nutzer und Monat.",
+    frictionPrefix: "Wo Ihre Woche wirklich", frictionHighlight: "bleibt",
+    frictionText1: "Die gleiche Frage eines Bewohners fünfzehnmal beantworten. Einem Techniker hinterherlaufen, um einen Bericht zu bekommen. Eine Interventionshistorie aus drei Postfächern rekonstruieren. Gebäude manuell kontrollieren, weil niemand ein Problem melden würde, bevor es zur Überschwemmung kommt.",
+    frictionText2: "Nichts davon ist Verwaltung. Das ist Reibung. Cubii beseitigt sie.",
+    benefitsH2: "Wie Cubii den Alltag verändert",
+    b1Title: "Vorfälle erreichen Sie strukturiert, nicht als Telefonanrufe.", b1Text: "Bewohner melden Vorfälle in der App mit Fotos und Standort. Sensoren und Gebäudesysteme (jede Marke: GLT, IoT, Trockenkontakte) erstellen automatisch Tickets. Sie bestätigen, Cubii leitet weiter.",
+    b2Title: "Die Wartung läuft von selbst.", b2Text: "Wiederkehrende Aufgaben sind vorprogrammiert. Am geplanten Termin geht das Ticket automatisch an den Dienstleister. Das Register aktualisiert sich von selbst.",
+    b3Title: "Energie unter Kontrolle, EPBD abgedeckt.", b3Text: "Wasser, Gas und Strom in Echtzeit pro Gebäude, Leneda-Integration, Anomalie-Warnungen und die digitalen Aufzeichnungen, die die europäische Regulierung zunehmend verlangt.",
+    b4Title: "Jedes Dokument dort, wo es hingehört.", b4Text: "Digitales Wartungsbuch, Sicherheitsregister, Verträge, Pläne. Mit Dienstleistern in zwei Klicks teilbar.",
+    b5Title: "Bewohner bleiben informiert, ohne dass Sie einen Finger rühren müssen.", b5Text: "Push-Benachrichtigungen, Anzeige im Eingangsbereich, Status pro Ticket. Weniger Anrufe, weil die Bewohner bereits Bescheid wissen.",
+    b6Title: "Eine Plattform, Ihr gesamtes Portfolio.", b6Text: "Multi-Standort von Grund auf. Jedes Gebäude, ein Dashboard.",
+    roiH2: "Was spart das?",
+    roi1Number: "bis zu 30 %", roi1Text: "geringere Betriebskosten durch den Wegfall manueller Kontrollgänge", roi1Source: "Quelle: Ignitec",
+    roi2Number: "bis zu 20 %", roi2Text: "geringere Reparaturkosten durch Früherkennung mit vernetzten Systemen", roi2Source: "Quelle: IQnext",
+    roi3Number: "100–150", roi3Text: "Einheiten pro Techniker heute — Früherkennung hebt diese Grenze an",
+    compatH2: "Müssen wir unsere Tools wechseln?",
+    compatText: "Nein. Cubii ist keine Revolution, sondern eine Weiterentwicklung. Es lässt sich mit Geräten jedes Herstellers verbinden, funktioniert neben Ihrer bestehenden Immobilienverwaltungssoftware und erfordert keine IT-Abteilung. Die meisten Teams sind innerhalb weniger Tage einsatzbereit.",
+    compatCaption: "Herstellerunabhängig von Grund auf: GLT, IoT-Sensoren, Trockenkontakte.",
+    onboardH2: "Wie funktioniert das Onboarding?",
+    step1Title: "Demo.", step1Text: "30 Minuten anhand Ihres tatsächlichen Portfolios und Ihrer Anwendungsfälle.",
+    step2Title: "Einrichtung durch uns, nicht durch Sie.", step2Text: "Sie senden uns Ihre Gebäudestruktur und Nutzerliste. Wir erstellen Ihr Konto und laden alles hoch.",
+    step3Title: "Bewohner werden automatisch integriert.", step3Text: "Jeder Bewohner erhält einen Zugangscode per E-Mail. Wir kümmern uns um Erinnerungen in Woche 1 und Woche 3 und liefern Ihnen in Woche 4 einen klaren Aktivierungsbericht.",
+    step4Title: "Ihre Dienstleister angebunden.", step4Text: "Teilen Sie uns Ihre Dienstleisterliste mit; wir bringen sie auf die Plattform.",
+    miniFaqH2: "Fragen von Gebäudeverwaltern, beantwortet",
+    faq1Q: "Wie viel kostet Cubii für Gebäudeverwalter?", faq1A: "Ab 2,99 € pro Nutzer und Monat (zzgl. MwSt.), degressiv je nach Nutzeranzahl. Die jährliche Vorauszahlung spart 10 %. Alle Details finden Sie auf der", pricingPageLink: "Preisseite",
+    faq2Q: "Funktioniert Cubii mit unseren bestehenden Sensoren und Gebäudesystemen?", faq2A: "Ja. Cubii ist herstellerunabhängig: Es verbindet sich mit GLT-Systemen, IoT-Sensoren und Trockenkontakten jedes Herstellers.",
+    faq3Q: "Unterstützt Cubii bei der EPBD-Konformität?", faq3A: "Ja. Cubii erfasst den Energieverbrauch pro Gebäude in Echtzeit und pflegt die digitalen Wartungsaufzeichnungen im Einklang mit der Richtlinie über die Gesamtenergieeffizienz von Gebäuden.",
+    faq4Q: "Wie lange dauert die Implementierung?", faq4A: "Smart Cube übernimmt die Einrichtung: Kontoerstellung, Gebäudestruktur, Nutzeranlage und Onboarding-E-Mails für Bewohner. Die meisten Portfolios sind innerhalb von Tagen einsatzbereit, nicht Monaten."
   }
 };
 
@@ -347,7 +383,8 @@ const META = {
   en: { title: "Cubii for Facility Managers & Syndics | Fewer Calls, Faster Fixes", description: "Automated incident ticketing, energy monitoring, maintenance calendars and EPBD-ready records for facility managers and syndics. From €2.99 per user/month. Book a demo." },
   pt: { title: "Cubii para Gestores de Condomínio | Menos Chamadas, Reparações Mais Rápidas", description: "Criação automática de pedidos, monitorização energética, calendários de manutenção e registos prontos para a EPBD para gestores de condomínio e administradores. A partir de €2,99 por utilizador/mês. Marque uma demonstração." },
   es: { title: "Cubii para Administradores de Fincas | Menos Llamadas, Reparaciones Más Rápidas", description: "Partes de incidencias automatizados, monitorización energética, calendarios de mantenimiento y registros listos para la EPBD para administradores de fincas y comunidades. Desde €2,99 por usuario/mes. Reserva una demo." },
-  fr: { title: "Cubii pour les Gestionnaires Immobiliers | Moins d\u2019Appels, Réparations Plus Rapides", description: "Tickets d\u2019incidents automatisés, suivi énergétique, calendriers de maintenance et registres conformes à l\u2019EPBD pour gestionnaires immobiliers et syndics. À partir de 2,99\u00A0€ par utilisateur/mois. Réservez une démo." }
+  fr: { title: "Cubii pour les Gestionnaires Immobiliers | Moins d\u2019Appels, Réparations Plus Rapides", description: "Tickets d\u2019incidents automatisés, suivi énergétique, calendriers de maintenance et registres conformes à l\u2019EPBD pour gestionnaires immobiliers et syndics. À partir de 2,99\u00A0€ par utilisateur/mois. Réservez une démo." },
+  de: { title: "Cubii für Gebäudeverwalter | Weniger Anrufe, Schnellere Reparaturen", description: "Automatisierte Vorfall-Tickets, Energieüberwachung, Wartungskalender und EPBD-konforme Aufzeichnungen für Gebäudeverwalter. Ab 2,99 € pro Nutzer/Monat. Demo buchen." }
 };
 
 class Component extends DCLogic {

@@ -270,7 +270,7 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -456,6 +456,52 @@ const TRANSLATIONS = {
     faq2Q: "Devons-nous remplacer nos \u00E9quipements existants\u00A0?", faq2A: "Non. Cubii se connecte aux chaudi\u00E8res, compteurs, syst\u00E8mes de ventilation et de gestion technique du b\u00E2timent de tout fabricant. Les installations existantes restent en place.",
     faq3Q: "Cubii aide-t-elle pour nos obligations de reporting \u00E9nerg\u00E9tique\u00A0?", faq3A: "Cubii suit la consommation d\u2019\u00E9lectricit\u00E9 et de gaz par b\u00E2timent en continu via Leneda et historise chaque intervention, si bien que les donn\u00E9es requises pour les d\u00E9clarations annuelles via Enercoach existent d\u00E9j\u00E0 et sont \u00E0 jour.",
     faq4Q: "Cubii peut-elle g\u00E9rer tous nos b\u00E2timents\u00A0?", faq4A: "Oui. Cubii est multi-sites par conception\u00A0: \u00E9coles, maison communale, halls sportifs, centres culturels et d\u00E9p\u00F4ts techniques sont g\u00E9r\u00E9s depuis un tableau de bord unique, chacun avec son propre historique."
+  },
+  de: {
+    eyebrow: "F\u00FCr Gemeinden",
+    heroPrefix: "Jedes Gemeindegeb\u00E4ude.", heroHighlight: "Ein Bildschirm.",
+    heroSubhead: "Schulen, Gemeindehaus, Sporthallen, technische Depots. Cubii zentralisiert Vorf\u00E4lle, Wartung, Energieverbrauch und Geb\u00E4udeakten \u00FCber Ihr gesamtes Portfolio hinweg und erstellt die Dokumentation, die europ\u00E4ische Vorschriften nun von \u00F6ffentlichen Einrichtungen verlangen.",
+    bookDemo: "Demo buchen", heroNote: "Pakete ab 100,63\u00A0\u20AC/Monat. Bereits \u00FCber 800 Tickets von der Gemeinde Mondercange bearbeitet.",
+    dashboardLabel: "Cubii Admin \u2014 Gemeinde-Portfolio",
+    answerH2Pre: "Was macht Cubii f\u00FCr ", answerH2Emph: "Gemeinden", answerH2Post: "?",
+    answerText: "Cubii bietet luxemburgischen Gemeinden eine einzige Plattform zur Verwaltung all ihrer \u00F6ffentlichen Geb\u00E4ude: Bewohner und Mitarbeiter melden Vorf\u00E4lle mit Fotos, vernetzte Ger\u00E4te l\u00F6sen automatisch Warnungen aus, die Wartung erfolgt selbstst\u00E4ndig nach Zeitplan, und der Energieverbrauch wird pro Geb\u00E4ude mit Leneda-Integration erfasst. F\u00FCr Gemeinden konzipierte Pakete beginnen bei 100,63\u00A0\u20AC pro Monat.",
+    frictionPrefix: "Niemand kann in jedem Geb\u00E4ude sein", frictionHighlight: "zugleich",
+    frictionText1: "Ein Leck beginnt an einem Freitagabend in einer Schule. Es wird am Montagmorgen entdeckt. Decken, B\u00F6den, Versicherungsakte, verlegte Klassen. Am Freitag um 22 Uhr entdeckt, kostet derselbe Vorfall eine Dichtung und einen Noteinsatz.",
+    frictionText2: "Unterdessen nimmt der technische Dienst Anrufe entgegen, rekonstruiert Einsatzverl\u00E4ufe aus drei Postf\u00E4chern und f\u00E4hrt zwischen Standorten hin und her, um Dinge manuell zu \u00FCberpr\u00FCfen.",
+    benefitsH2: "Wie Gemeinden mit Cubii arbeiten",
+    b1Title: "Ein einziger Anlaufpunkt f\u00FCr jeden Vorfall.", b1Text: "Ein Hausmeister, Lehrer oder Mitarbeiter meldet ein Problem mit einem Foto vom Smartphone. Der technische Dienst sieht alles an einem Ort eingehen, priorisiert und weist zu.",
+    b2Title: "Geb\u00E4ude, die sich selbst melden.", b2Text: "Heizkessel, L\u00FCftung und Z\u00E4hler verbinden sich unabh\u00E4ngig von der Marke mit Cubii und l\u00F6sen bei der ersten Abweichung eine Warnung aus, auch am Wochenende.",
+    b3Title: "Wartung, die nach Zeitplan l\u00E4uft.", b3Text: "Wiederkehrende Aufgaben werden einmal programmiert und automatisch an den richtigen Dienstleister weitergeleitet. Das Register bleibt von selbst vollst\u00E4ndig.",
+    b4Title: "Energie pro Geb\u00E4ude, in Echtzeit.", b4Text: "Strom- und Gasverbrauch \u00FCber Leneda, mit Warnungen bei Mehrverbrauch.",
+    b5Title: "Akten, die sich von selbst aufbauen.", b5Text: "Jeder Einsatz wird dokumentiert, sobald er stattfindet: Das digitale Wartungsbuch w\u00E4chst ohne Verwaltungsaufwand.",
+    b6Title: "Von Grund auf multi-standortf\u00E4hig.", b6Text: "Schulen, Gemeindehaus, Sporthallen, Depots: eine Ansicht, ein Verlauf, ein Dashboard.",
+    regH2: "Wie Cubii Ihnen bei Ihren Pflichten hilft",
+    regIntro: "\u00D6ffentliche Einrichtungen stehen vor konkreten Pflichten im Rahmen der europ\u00E4ischen Energievorschriften, die in Luxemburg umgesetzt wurden.",
+    reg1: "Den Endenergieverbrauch gegen\u00FCber 2021 um j\u00E4hrlich 1,9\u00A0% senken (Richtwert bis Oktober 2027; Gemeinden mit weniger als 50.000 Einwohnern ab 2027 erfasst, mit weniger als 5.000 ab 2030).",
+    reg2: "J\u00E4hrlich das \u00C4quivalent von 3\u00A0% der energetischen Bezugsfl\u00E4che f\u00FCr \u00F6ffentliche Geb\u00E4ude \u00FCber 250\u00A0m\u00B2 sanieren.",
+    reg3: "Daten j\u00E4hrlich \u00FCber Enercoach melden, die von der Klima-Agence betriebene nationale Plattform, die \u00F6ffentlichen Einrichtungen ab 2026 zur Verf\u00FCgung steht.",
+    reg4: "Neue \u00F6ffentliche Geb\u00E4ude m\u00FCssen ab dem 1. Januar 2028 emissionsfrei sein.",
+    regText1: "Cubii \u00FCbernimmt die Compliance nicht f\u00FCr Sie. Es sorgt daf\u00FCr, dass die von der Compliance geforderten Daten bereits existieren, sauber und aktuell, an dem Tag, an dem sie verlangt werden: Verbrauch kontinuierlich pro Geb\u00E4ude erfasst, jeder Einsatz historisiert, technische Dokumentation zentralisiert. Und der Verlauf zeigt objektiv, welche Geb\u00E4ude bei der Sanierung priorisiert werden sollten.",
+    regSource: "Quelle: Rundschreiben Nr.\u00A02025-035; EU-Richtlinien 2023/1791 und 2024/1275.",
+    proofH2: "Bereits im Einsatz bei luxemburgischen Gemeinden",
+    proofStat: "\u00DCber 800 Tickets von der Gemeinde Mondercange auf Cubii erstellt.",
+    proofPlaceholder: "PLATZHALTER: Logo der Gemeinde Mondercange. Eine zweite Gemeinde w\u00FCrde diesen Abschnitt aussagekr\u00E4ftiger machen \u2014 dem Kunden mitteilen, dass dieser soziale Beweis mit nur einem Fall noch d\u00FCnn ist.",
+    pricingH2: "Was kostet Cubii f\u00FCr eine Gemeinde?",
+    pricingIntro: "Pakete, dimensioniert nach Anzahl der Nutzer und Alarme, mit Namen, die vertraut klingen sollten.",
+    tableCaption: "Cubii-Pakete f\u00FCr Gemeinden, zzgl. MwSt.",
+    rowMonthly: "Monatlich", rowAnnual: "J\u00E4hrlich", rowUsers: "Nutzer", rowAlarms: "Alarme", custom: "Individuell",
+    pricingNote: "Alle Preise zzgl. MwSt. Pakete sparen 15 bis 30\u00A0% gegen\u00FCber \u00E0 la carte-Modulen.",
+    fullPricingLink: "Vollst\u00E4ndige Preisdetails",
+    onboardH2: "Wie funktioniert das Onboarding?",
+    step1Title: "Demo.", step1Text: "30 Minuten zu Ihren tats\u00E4chlichen Geb\u00E4uden und Priorit\u00E4ten.",
+    step2Title: "Einrichtung durch uns.", step2Text: "Sie senden uns Ihre Geb\u00E4ude- und Nutzerliste. Wir erstellen Ihr Konto und laden alles hoch.",
+    step3Title: "Ihre Teams eingebunden.", step3Text: "Zugangscodes werden automatisch versendet, mit Erinnerungen zur Nachverfolgung und einem Aktivierungsbericht.",
+    step4Title: "Ihre Dienstleister angebunden.", step4Text: "Teilen Sie uns Ihre Dienstleisterliste mit, und wir bringen sie auf die Plattform.",
+    miniFaqH2: "Fragen von Gemeinden, beantwortet",
+    faq1Q: "Was kostet Cubii f\u00FCr eine Gemeinde?", faq1A: "Die Pakete reichen von De P\u00E4ttchen f\u00FCr 100,63\u00A0\u20AC/Monat (10 Nutzer, 20 Alarme) bis D\u2019Palais f\u00FCr 1.613\u00A0\u20AC/Monat (100 Nutzer, 600 Alarme), mit einer auf Ihr Portfolio zugeschnittenen Option Op Mooss. Alle Preise verstehen sich zzgl. MwSt., und die Pakete sparen 15 bis 30\u00A0% gegen\u00FCber \u00E0 la carte-Modulen.",
+    faq2Q: "M\u00FCssen wir unsere bestehenden Anlagen ersetzen?", faq2A: "Nein. Cubii verbindet sich mit Heizkesseln, Z\u00E4hlern, L\u00FCftungs- und Geb\u00E4udeleittechniksystemen jeglicher Hersteller. Bestehende Installationen bleiben unver\u00E4ndert.",
+    faq3Q: "Hilft Cubii bei unseren Pflichten zur Energieberichterstattung?", faq3A: "Cubii erfasst den Strom- und Gasverbrauch pro Geb\u00E4ude kontinuierlich \u00FCber Leneda und historisiert jeden Einsatz, sodass die f\u00FCr die j\u00E4hrlichen Meldungen \u00FCber Enercoach erforderlichen Daten bereits existieren und aktuell sind.",
+    faq4Q: "Kann Cubii alle unsere Geb\u00E4ude verwalten?", faq4A: "Ja. Cubii ist von Grund auf multi-standortf\u00E4hig: Schulen, Gemeindehaus, Sporthallen, Kulturzentren und technische Depots werden von einem einzigen Dashboard aus verwaltet, jedes mit eigenem Verlauf."
   }
 };
 
@@ -463,7 +509,8 @@ const META = {
   en: { title: "Cubii for Municipalities | Manage Every Communal Building From One Screen", description: "Schools, town halls, sports halls: incidents, maintenance, energy monitoring and the records EU regulation requires, in one platform. Packages from €100.63/month. Book a demo." },
   pt: { title: "Cubii para Municípios | Gerir Cada Edifício Municipal a Partir de um Ecrã", description: "Escolas, câmaras municipais, pavilhões desportivos: incidentes, manutenção, monitorização energética e os registos que a regulamentação da UE exige, numa só plataforma. Pacotes a partir de €100,63/mês. Marque uma demonstração." },
   es: { title: "Cubii para Municipios | Gestiona Cada Edificio Municipal desde una Pantalla", description: "Colegios, ayuntamientos, polideportivos: incidencias, mantenimiento, monitorización energética y los registros que exige la normativa de la UE, en una sola plataforma. Paquetes desde €100,63/mes. Reserva una demo." },
-  fr: { title: "Cubii pour les Communes | Gérez Chaque Bâtiment Communal Depuis un Écran", description: "Écoles, maisons communales, halls sportifs\u00A0: incidents, maintenance, suivi énergétique et les registres qu\u2019exige la réglementation européenne, sur une seule plateforme. Forfaits à partir de 100,63\u00A0€/mois. Réservez une démo." }
+  fr: { title: "Cubii pour les Communes | Gérez Chaque Bâtiment Communal Depuis un Écran", description: "Écoles, maisons communales, halls sportifs\u00A0: incidents, maintenance, suivi énergétique et les registres qu\u2019exige la réglementation européenne, sur une seule plateforme. Forfaits à partir de 100,63\u00A0€/mois. Réservez une démo." },
+  de: { title: "Cubii für Gemeinden | Jedes Gemeindegebäude von einem Bildschirm aus verwalten", description: "Schulen, Gemeindehäuser, Sporthallen: Vorfälle, Wartung, Energieüberwachung und die von der EU-Regulierung geforderten Aufzeichnungen, in einer Plattform. Pakete ab 100,63\u00A0€/Monat. Demo buchen." }
 };
 
 class Component extends DCLogic {

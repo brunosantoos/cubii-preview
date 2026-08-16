@@ -93,7 +93,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -147,6 +147,19 @@ const TRANSLATIONS = {
     fieldName: "Nom", fieldEmail: "E-mail", fieldMessage: "Message", messagePlaceholder: "Comment pouvons-nous vous aider\u00A0?",
     sendCta: "Envoyer le message",
     reassurance: "Nous répondons sous un jour ouvré. Vos données restent en Europe et ne sont jamais partagées."
+  },
+  de: {
+    eyebrow: "Kontakt", h1Prefix: "Sprechen Sie mit", h1Highlight: "uns.",
+    intro: "Eine Frage zum Produkt, eine Partnerschaftsidee oder eine Presseanfrage? Wir antworten schnell.",
+    emailLabel: "E-Mail", phoneLabel: "Telefon", addressLabel: "Adresse",
+    shortcutsH2: "Schnellzugriff",
+    shortcutDemoText: "Möchten Sie das Produkt sehen?", shortcutDemoCta: "Demo buchen",
+    shortcutSupportText: "Bewohner mit einer Frage zur App?",
+    shortcutSuggestText: "Ihr Gebäude hat Cubii noch nicht?", shortcutSuggestCta: "Empfehlen Sie uns",
+    formH2: "Senden Sie uns eine Nachricht",
+    fieldName: "Name", fieldEmail: "E-Mail", fieldMessage: "Nachricht", messagePlaceholder: "Wie können wir helfen?",
+    sendCta: "Nachricht senden",
+    reassurance: "Wir antworten innerhalb eines Werktags. Ihre Daten bleiben in Europa und werden niemals weitergegeben."
   }
 };
 
@@ -154,7 +167,8 @@ const META = {
   en: { title: "Contact Cubii | Smart Cube, Luxembourg", description: "Reach Smart Cube in Howald, Luxembourg: info@smartcube.lu, +352 621 257 775. Product questions, partnerships and press." },
   pt: { title: "Contacte a Cubii | Smart Cube, Luxemburgo", description: "Contacte a Smart Cube em Howald, Luxemburgo: info@smartcube.lu, +352 621 257 775. Questões sobre o produto, parcerias e imprensa." },
   es: { title: "Contacta con Cubii | Smart Cube, Luxemburgo", description: "Contacta con Smart Cube en Howald, Luxemburgo: info@smartcube.lu, +352 621 257 775. Preguntas sobre el producto, colaboraciones y prensa." },
-  fr: { title: "Contacter Cubii | Smart Cube, Luxembourg", description: "Contactez Smart Cube à Howald, Luxembourg\u00A0: info@smartcube.lu, +352 621 257 775. Questions produit, partenariats et presse." }
+  fr: { title: "Contacter Cubii | Smart Cube, Luxembourg", description: "Contactez Smart Cube à Howald, Luxembourg\u00A0: info@smartcube.lu, +352 621 257 775. Questions produit, partenariats et presse." },
+  de: { title: "Kontaktieren Sie Cubii | Smart Cube, Luxemburg", description: "Erreichen Sie Smart Cube in Howald, Luxemburg: info@smartcube.lu, +352 621 257 775. Fragen zum Produkt, Partnerschaften und Presse." }
 };
 
 class Component extends DCLogic {

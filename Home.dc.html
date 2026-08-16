@@ -324,7 +324,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -482,6 +482,45 @@ const TRANSLATIONS = {
     finalCtaPrefix: "Découvrez Cubii sur vos", finalCtaHighlight: "bâtiments",
     finalCtaText: "Une démo de 30 minutes avec notre équipe, sur votre cas réel. Sans engagement.",
     residentLinePrefix: "Résident\u00A0? Vous n\u2019avez pas besoin de démo.", residentLineCta: "Téléchargez l\u2019application", residentLineSuffix: "\u2014 gratuite dans les copropriétés sur Cubii, 1,99\u00A0€/mois pour votre propre logement."
+  },
+  de: {
+    eyebrow: "Digitaler Gebäude-Concierge · Luxemburg",
+    heroPrefix: "Ihr Gebäude, endlich", heroHighlight: "vernetzt",
+    heroSubhead: "Cubii ist der digitale Concierge, der Bewohner, Gebäudeverwalter und Dienstleister in einer App verbindet. Vorfälle werden in Sekunden gemeldet, der richtige Techniker wird automatisch entsandt, und das Telefon hört auf zu klingeln.",
+    ctaPrimary: "Demo buchen",
+    ctaSecondary: "Ich bin Bewohner \u2192 App herunterladen",
+    adminBoardLabel: "Cubii-Verwaltungskonsole \u2014 Vorfallübersicht",
+    trust1: "Entwickelt in Luxemburg", trust2: "Server in Europa gehostet", trust3: "Gewinner des Preises für digitale Innovation 2019", trust4: "Bereit für die EU-Energieregulierung (EPBD)",
+    whatIsH2: "Was ist Cubii?",
+    whatIsAnswer: "Cubii ist eine von Smart Cube in Luxemburg entwickelte App als digitaler Gebäude-Concierge. Sie bündelt Störungsmanagement, Energieüberwachung, Wartungsplanung, Dokumentenverwaltung und die Koordination von Dienstleistern für Wohn- und Gewerbeimmobilien auf einer einzigen Plattform. In Eigentümergemeinschaften, die Cubii nutzen, ist die App für Bewohner kostenlos; Eigentümer von Einzelhäusern oder -wohnungen abonnieren sie für 1,99 €/Monat. Gebäudeverwalter und Dienstleister nutzen sie, um Reaktionszeiten und Betriebskosten zu senken.",
+    whatIsPara2: "Gebäude sind einer der letzten Bereiche, in denen nichts digital ist. Das Wasser wird abgestellt, und alle rufen an. Ein Leck bleibt unbemerkt, bis die Decke einstürzt. Dokumente verteilen sich auf fünf verschiedene Postfächer. Techniker erscheinen, ohne zu wissen, was defekt ist.",
+    whatIsPara3: "Cubii schließt diese Lücke. Keine Revolution, sondern eine Evolution: Cubii funktioniert mit den Werkzeugen und Anlagen, die Sie bereits haben.",
+    audienceH2: "Für wen ist Cubii gedacht?",
+    card1Label: "Bewohner & Eigentümer", card1Text: "Verpassen Sie nie, was in Ihrem Gebäude passiert. Melden Sie ein Problem in 30 Sekunden, erhalten Sie Warnungen, bevor sie kritisch werden, und behalten Sie Ihren Energieverbrauch jederzeit im Blick. Kostenlos in Eigentümergemeinschaften auf Cubii, 1,99 €/Monat für Ihr eigenes Zuhause.", card1Cta: "App herunterladen",
+    card2Label: "Gebäudeverwalter", card2Text: "Weniger Anrufe, schnellere Einsätze, vollständige Compliance. Cubii automatisiert den Ablauf zwischen Vorfall und Behebung.", card2Cta: "So funktioniert es",
+    card3Label: "Dienstleister", card3Text: "Vollständige Tickets von Anfang an, neue Kunden über den Marktplatz, weniger Papierkram nach jedem Einsatz.", card3Cta: "So funktioniert es",
+    howPrefix: "Wie", howHighlight: "funktioniert", howSuffix: " Cubii?",
+    howSubtitle: "Drei Schritte, vom ersten Anzeichen eines Problems bis zur dokumentierten Behebung.",
+    step1Role: "Bewohner", step1Title: "Ein Vorfall tritt auf", step1Text: "Ein Bewohner meldet ihn mit Fotos in der App, oder ein vernetzter Sensor erkennt ihn automatisch. Wasserleck, Aufzugsausfall, Heizungsstörung: Cubii erkennt es, bevor es teuer wird.",
+    step2Role: "Verwalter", step2Title: "Die richtigen Personen erfahren es sofort", step2Text: "Der Gebäudeverwalter bestätigt das Ticket. Der Dienstleister erhält es mit bereits ausgefülltem Standort, Fotos, Kategorie und Dringlichkeit. Keine Telefonkette, keine fehlenden Angaben.",
+    step3Role: "Dienstleister", step3Title: "Behoben, dokumentiert, erledigt", step3Text: "Der Einsatz wird bis zum Abschluss verfolgt, der Chat wird pro Ticket archiviert, ein Nachweis der Arbeit wird erstellt. Die vollständige Historie des Gebäudes bleibt an einem Ort.",
+    capsH2: "Was kann Cubii?", capsLink: "\u2192 Produkt entdecken",
+    cap1Title: "Störungsmanagement", cap1Text: "Tickets, manuell erstellt oder automatisch über Sensoren, verfolgt von der Meldung bis zur Behebung.",
+    cap2Title: "Energieüberwachung", cap2Text: "Wasser, Gas und Strom in Echtzeit, mit Anbindung an Leneda (die nationale Energiedatenplattform Luxemburgs) und Warnungen bei Auffälligkeiten.",
+    cap3Title: "Wartung", cap3Text: "Ein Kalender, der wiederkehrende Tickets automatisch an Dienstleister verteilt.",
+    cap4Title: "Dokumente", cap4Text: "Digitales Wartungsbuch, Verträge, Pläne und das Sicherheitsregister, zentralisiert und teilbar.",
+    cap5Title: "Marktplatz", cap5Text: "Finden und beauftragen Sie geprüfte Dienstleister nach Fachgebiet und Verfügbarkeit.",
+    cap6Title: "Kommunikation", cap6Text: "Push-Benachrichtigungen, Chat pro Ticket und Anzeigen in der Lobby für Gebäudeankündigungen.",
+    resultsH2: "Welche Ergebnisse können Sie erwarten?", resultsTodayLabel: "Cubii heute",
+    stat1Label: "vernetzte Gebäude", stat2Label: "behobene Vorfälle", stat3Label: "integrierte Gebäudefachleute",
+    benchmarksLabel: "Branchenbenchmarks",
+    bench1Number: "bis zu 20 %", bench1Text: "geringere Reparaturkosten mit vernetzten IoT-Systemen", bench1Source: "Quelle: IQnext",
+    bench2Number: "bis zu 30 %", bench2Text: "geringere Betriebskosten durch den Wegfall manueller Rundgänge", bench2Source: "Quelle: Ignitec",
+    bench3Number: "bis zu 25 %", bench3Text: "Energieeinsparung durch IoT-gestützte Überwachung", bench3Source: "Quelle: Ignitec",
+    proofH2: "Bewährt in ganz Luxemburg",
+    finalCtaPrefix: "Erleben Sie Cubii in Ihren", finalCtaHighlight: "Gebäuden",
+    finalCtaText: "Eine 30-minütige Demo mit unserem Team, zu Ihrem konkreten Anwendungsfall. Unverbindlich.",
+    residentLinePrefix: "Sind Sie Bewohner? Sie brauchen keine Demo.", residentLineCta: "App herunterladen", residentLineSuffix: "\u2014 kostenlos in Eigentümergemeinschaften auf Cubii, 1,99 €/Monat für Ihr eigenes Zuhause."
   }
 };
 
@@ -489,7 +528,8 @@ const META = {
   en: { title: "Cubii | Your Digital Building Concierge, Made in Luxembourg", description: "Cubii connects residents, facility managers and service providers in one app. Incident tickets, energy monitoring, maintenance and documents, centralized. Book a demo or get the app." },
   pt: { title: "Cubii | A sua Concierge Digital de Edifícios, Feita no Luxemburgo", description: "A Cubii liga residentes, gestores de condomínio e prestadores de serviços numa só aplicação. Pedidos de incidentes, monitorização energética, manutenção e documentos, centralizados. Marque uma demonstração ou obtenha a aplicação." },
   es: { title: "Cubii | Tu Conserjería Digital de Edificios, Creada en Luxemburgo", description: "Cubii conecta a residentes, administradores de fincas y proveedores de servicios en una sola aplicación. Incidencias, monitorización energética, mantenimiento y documentos, centralizados. Reserva una demo o descarga la aplicación." },
-  fr: { title: "Cubii | Votre Conciergerie Numérique de Bâtiments, Conçue au Luxembourg", description: "Cubii relie résidents, gestionnaires immobiliers et prestataires de services dans une seule application. Tickets d\u2019incidents, suivi énergétique, maintenance et documents, centralisés. Réservez une démo ou téléchargez l\u2019application." }
+  fr: { title: "Cubii | Votre Conciergerie Numérique de Bâtiments, Conçue au Luxembourg", description: "Cubii relie résidents, gestionnaires immobiliers et prestataires de services dans une seule application. Tickets d\u2019incidents, suivi énergétique, maintenance et documents, centralisés. Réservez une démo ou téléchargez l\u2019application." },
+  de: { title: "Cubii | Ihr digitaler Gebäude-Concierge, entwickelt in Luxemburg", description: "Cubii verbindet Bewohner, Gebäudeverwalter und Dienstleister in einer App. Tickets für Störungen, Energieüberwachung, Wartung und Dokumente, zentralisiert. Demo buchen oder App herunterladen." }
 };
 
 class Component extends DCLogic {

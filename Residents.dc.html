@@ -212,7 +212,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -374,6 +374,46 @@ const TRANSLATIONS = {
     faq2Q: "Mes données sont-elles en sécurité\u00A0?", faq2A: "Oui. Cubii est développée au Luxembourg et toutes les données sont hébergées sur des serveurs en Europe, conformément au droit européen de protection des données (RGPD).",
     faq3Q: "Ai-je besoin de connaissances techniques\u00A0?", faq3A: "Non. Si vous savez envoyer une photo dans une application de messagerie, vous savez utiliser Cubii.",
     readFaqLink: "Lire la FAQ complète \u2192"
+  },
+  de: {
+    eyebrow: "Für Bewohner und Eigentümer",
+    heroPrefix: "Ihr Gebäude in Ihrer", heroHighlight: "Tasche",
+    heroSubhead: "Gebäudebenachrichtigungen, die Sie wirklich erreichen, Problemmeldungen in 30 Sekunden und Ihr Energieverbrauch auf Abruf. Kostenlos, wenn Ihr Gebäude Cubii nutzt.",
+    appStoreLine1: "Laden im", googlePlayLine1: "Jetzt bei",
+    mock1Caption: "Melden Sie einen Vorfall in 30 Sekunden", mock2Caption: "Wasser-, Gas- und Stromverbrauch live einsehen",
+    card1Eyebrow: "Ticket 482", card1Title: "Aufzug zwischen Stockwerk 3 und 4 stecken geblieben", card1Status: "Dienstleister vor Ort \u00b7 22 Min.",
+    card2Eyebrow: "Zählerstand", card2Title: "Wohnung 3B hat Wasser und Gas übermittelt", card2Status: "Bereit zum Export",
+    card3Title: "Automatisch zugewiesen", card3Status: "Aufzugsdienstleister \u00b7 7 Min. nach Ihrer Meldung",
+    jumpLabel: "Direkt zu Ihrer Situation", jumpCondo: "Ich wohne in einer Eigentümergemeinschaft", jumpHome: "Ich besitze mein Haus oder meine Wohnung",
+    answerH2Pre: "Was macht die Cubii-App für ", answerH2Emph: "Bewohner", answerH2Post: "?",
+    answerText: "Cubii ist eine App für Bewohner und Eigentümer. Sie ersetzt Papieraushänge durch sofortige Benachrichtigungen, ermöglicht Ihnen die Meldung von Vorfällen mit Fotos und zeigt Ihren Wasser-, Gas- und Stromverbrauch in Echtzeit. In einer Eigentümergemeinschaft, die Cubii nutzt, ist die App für Bewohner kostenlos: Der Gebäudeverwalter übernimmt die Plattformkosten. Für Ihr eigenes Haus oder Ihre eigene Wohnung abonnieren Sie direkt für 1,99 €/Monat.",
+    condoH2: "In einer Eigentümergemeinschaft: kostenlos für Bewohner",
+    condoIntro: "Ihr Gebäude hat einen Verwalter oder Gebäudeverwalter, und dieser hat es bereits mit Cubii verbunden. Die App kostet Sie nichts. Ihr Verwalter übernimmt die Plattformkosten; Sie müssen nur die App herunterladen und mit dem per E-Mail erhaltenen Zugangscode aktivieren. Zwei Minuten, keine Einrichtung.",
+    familiarH3: "Kommt Ihnen das bekannt vor?",
+    familiarText: "Der Aufzug ist seit drei Tagen kaputt, und niemand weiß, ob es gemeldet wurde. Das Wasser wird abgestellt, und Sie merken es erst, wenn der Hahn trocken bleibt. Letzte Woche wurde ein Aushang im Flur angebracht. Sie haben ihn nie gesehen.",
+    withCubiiLabel: "Mit Cubii",
+    benefit1Title: "Sie sind immer informiert.", benefit1Text: "Wasserabstellung am Donnerstag von 9 bis 12 Uhr? Sie erfahren es schon am Dienstag. Test der Brandmeldeanlage? Keine Panik, Sie haben die Benachrichtigung erhalten.",
+    benefit2Title: "Eine Meldung dauert 30 Sekunden.", benefit2Text: "Foto, Kategorie, senden. Sie können die Reparatur in der App verfolgen, statt sich zu fragen, ob sich jemand darum kümmert.",
+    benefit3Title: "Melden Sie heikle Themen anonym.", benefit3Text: "Lärm, Konflikte in Gemeinschaftsbereichen: sprechen Sie sie an, ohne dass es unangenehm wird.",
+    benefit4Title: "Ihr Energieverbrauch, auf Abruf.", benefit4Text: "Wasser, Gas, Strom, live. Erkennen Sie Auffälligkeiten, bevor die Rechnung es tut.",
+    benefit5Title: "Gebäudedokumente an einem Ort.", benefit5Text: "Hausordnung, Sitzungsprotokolle, Pläne. Kein Durchsuchen von E-Mails mehr.",
+    startedH3: "Wie fange ich an?",
+    startedText1: "Sie erhalten einen Zugangscode per E-Mail von Ihrem Gebäudeverwalter. App herunterladen, Code eingeben, fertig.",
+    startedText2: "Ihr Gebäude nutzt Cubii noch nicht? Erzählen Sie Ihrem Verwalter oder Gebäudeverwalter von uns, oder schicken Sie uns dessen Kontaktdaten, und wir übernehmen das Gespräch. Sobald Ihr Gebäude beitritt, ist die App für Sie kostenlos.",
+    downloadFreeCta: "Kostenlos herunterladen", suggestCta: "Cubii meinem Gebäudeverwalter vorschlagen",
+    ownHomeH2: "Für Ihr eigenes Zuhause: 1,99 €/Monat",
+    ownHomeIntro: "Kein Verwalter, kein Gebäudeverwalter: Sie verwalten Ihr Zuhause selbst. Cubii arbeitet auch für Sie, als Ihr persönlicher Gebäudeverwalter, für 1,99 €/Monat.",
+    hCard1Title: "Das digitale Wartungsbuch.", hCard1Text: "Jede Reparatur, jeder Einsatz und jedes Dokument an einem Ort. Eine dokumentierte Historie, die den Wert Ihrer Immobilie beim Verkauf oder bei der Vermietung schützt.",
+    hCard2Title: "Ihr Energieverbrauch, live.", hCard2Text: "Wasser, Gas und Strom in Echtzeit. Erkennen Sie das Leck oder die Auffälligkeit, bevor die Rechnung es tut.",
+    hCard3Title: "Vorfallhistorie.", hCard3Text: "Fotos, Daten, was von wem erledigt wurde. Kein Schuhkarton voller Rechnungen mehr.",
+    hCard4Title: "Zustandsberichte (état des lieux).", hCard4Text: "Bereit, wenn Sie vermieten, kaufen oder verkaufen.",
+    hCard5Title: "Der Marktplatz für Dienstleister.", hCard5Text: "Finden Sie einen Klempner, Elektriker oder Heizungs- und Lüftungstechniker nach Fachgebiet und Verfügbarkeit, ohne herumfragen zu müssen.",
+    hStartedTitle: "Wie fange ich an?", hStartedText: "Laden Sie die App herunter, richten Sie Ihr Zuhause in wenigen Minuten ein und abonnieren Sie für 1,99 €/Monat. Keine Installation, keine Hardware erforderlich.", hStartedCta: "Für 1,99 €/Monat starten",
+    miniFaqH2: "Fragen von Bewohnern, beantwortet",
+    faq1Q: "Ist Cubii für Bewohner kostenlos?", faq1A: "Ja, wenn Ihr Gebäude über Cubii verwaltet wird: Ihr Verwalter oder Gebäudeverwalter übernimmt die Plattformkosten, sodass Sie nichts bezahlen. Einzelne Eigentümer ohne Gebäudeverwalter können unabhängig für 1,99 €/Monat abonnieren.",
+    faq2Q: "Sind meine Daten sicher?", faq2A: "Ja. Cubii wird in Luxemburg entwickelt, und alle Daten werden auf Servern in Europa gehostet, im Einklang mit der europäischen Datenschutz-Grundverordnung (DSGVO).",
+    faq3Q: "Benötige ich technische Kenntnisse?", faq3A: "Nein. Wenn Sie ein Foto in einer Messaging-App versenden können, können Sie auch Cubii nutzen.",
+    readFaqLink: "Vollständige FAQ lesen \u2192"
   }
 };
 
@@ -381,7 +421,8 @@ const META = {
   en: { title: "Cubii for Residents & Homeowners | Your Building in Your Pocket", description: "Report issues with a photo, get building alerts before they matter, and track your energy use. Free in managed buildings, €1.99/month for homeowners. iOS and Android." },
   pt: { title: "Cubii para Residentes e Proprietários | O seu Edifício no seu Bolso", description: "Reporte problemas com uma fotografia, receba alertas do edifício antes de serem importantes e acompanhe o seu consumo de energia. Gratuita em edifícios geridos, €1,99/mês para proprietários. iOS e Android." },
   es: { title: "Cubii para Residentes y Propietarios | Tu Edificio en tu Bolsillo", description: "Reporta incidencias con una foto, recibe alertas del edificio antes de que importen y controla tu consumo energético. Gratis en edificios gestionados, €1,99/mes para propietarios. iOS y Android." },
-  fr: { title: "Cubii pour les Résidents et Propriétaires | Votre Bâtiment dans votre Poche", description: "Signalez les problèmes avec une photo, recevez des alertes du bâtiment avant qu\u2019elles ne comptent, et suivez votre consommation d\u2019énergie. Gratuit dans les bâtiments gérés, 1,99\u00A0€/mois pour les propriétaires. iOS et Android." }
+  fr: { title: "Cubii pour les Résidents et Propriétaires | Votre Bâtiment dans votre Poche", description: "Signalez les problèmes avec une photo, recevez des alertes du bâtiment avant qu\u2019elles ne comptent, et suivez votre consommation d\u2019énergie. Gratuit dans les bâtiments gérés, 1,99\u00A0€/mois pour les propriétaires. iOS et Android." },
+  de: { title: "Cubii für Bewohner und Eigentümer | Ihr Gebäude in Ihrer Tasche", description: "Melden Sie Probleme mit einem Foto, erhalten Sie Gebäudebenachrichtigungen, bevor sie wichtig werden, und behalten Sie Ihren Energieverbrauch im Blick. Kostenlos in verwalteten Gebäuden, 1,99 €/Monat für Eigentümer. iOS und Android." }
 };
 
 class Component extends DCLogic {

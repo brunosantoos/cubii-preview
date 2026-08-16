@@ -127,7 +127,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -201,6 +201,24 @@ const TRANSLATIONS = {
     factTraction: "Traction", factTractionVal: "2\u00A0600+ bâtiments connectés, 5\u00A0000+ incidents résolus, 600+ professionnels du bâtiment intégrés",
     factSister: "Société sœur", factSisterVal: "Cube4Metrum S.A. (suivi énergétique, 2021)",
     factContact: "Contact", bookDemo: "Réserver une démo"
+  },
+  de: {
+    eyebrow: "Über uns", h1Prefix: "Das Unternehmen hinter dem", h1Highlight: "Concierge", teamPhotoLabel: "Smart Cube — Team",
+    answerH2: "Wer entwickelt Cubii?",
+    answerText: "Cubii wird von Smart Cube entwickelt, einem zu 100 % luxemburgischen Unternehmen. Nach der kommerziellen Markteinführung 2018 gewann Smart Cube 2019 den Preis für digitale Innovation in der Kategorie Handwerk und erweiterte 2021 sein Angebot um die Energieüberwachung durch die Schwestergesellschaft Cube4Metrum S.A. Alle Cubii-Daten werden auf Servern in Europa gehostet.",
+    whyPrefix: "Der Grund für", whyHighlight: "Cubii",
+    whyText1: "Gebäude sind einer der letzten Bereiche ohne echte Digitalisierung. Wir haben erlebt, wie Gebäudeverwalter in Anrufen versinken, Bewohner jede Mitteilung verpassen und Dienstleister blind zu Einsätzen fahren. Die Werkzeuge gab es für Büros und Fabriken, aber nicht für die Gebäude, in denen Menschen tatsächlich leben und arbeiten.",
+    whyText2: "Also haben wir den fehlenden Baustein geschaffen: keine weitere Verwaltungssoftware, sondern die Verbindungsschicht zwischen allen, von denen ein Gebäude abhängt. Ein Concierge, digital.",
+    promiseH2: "Unser Versprechen", promiseText1: "Cubii spart Ihnen jeden Tag Zeit.", promiseText2: "Nicht erst irgendwann nach einer langen Einführungsphase. Vom ersten Tag an nehmen die Anrufe ab und die Prozesse werden kürzer.",
+    teamH2: "Das Team", roleCeo: "Gründer & CEO", rolePartner: "Partner",
+    factsH2: "Kurzfakten", factsCaption: "Smart Cube und Cubii auf einen Blick",
+    factProduct: "Produkt", factProductVal: "Digitale Gebäude-Concierge-App",
+    factCompany: "Unternehmen", factFounded: "Gegründet / gestartet", factFoundedVal: "Kommerzieller Start 2018",
+    factHQ: "Hauptsitz", factHosting: "Datenhosting", factHostingVal: "Europa",
+    factRecognition: "Auszeichnung", factRecognitionVal: "Preis für digitale Innovation, 2019",
+    factTraction: "Wachstum", factTractionVal: "2.600+ angebundene Gebäude, 5.000+ gelöste Vorfälle, 600+ eingebundene Gebäudefachkräfte",
+    factSister: "Schwesterunternehmen", factSisterVal: "Cube4Metrum S.A. (Energieüberwachung, 2021)",
+    factContact: "Kontakt", bookDemo: "Demo buchen"
   }
 };
 
@@ -208,7 +226,8 @@ const META = {
   en: { title: "About Cubii | Built by Smart Cube in Luxembourg", description: "Cubii is built by Smart Cube, a Luxembourg company founded on 10+ years of smart building expertise. Digital Innovation Prize winner 2019. Meet the team." },
   pt: { title: "Sobre a Cubii | Criada pela Smart Cube no Luxemburgo", description: "A Cubii é criada pela Smart Cube, uma empresa luxemburguesa com mais de 10 anos de experiência em edifícios inteligentes. Vencedora do Prémio de Inovação Digital 2019. Conheça a equipa." },
   es: { title: "Sobre Cubii | Creada por Smart Cube en Luxemburgo", description: "Cubii está creada por Smart Cube, una empresa luxemburguesa con más de 10 años de experiencia en edificios inteligentes. Ganadora del Premio de Innovación Digital 2019. Conoce al equipo." },
-  fr: { title: "À propos de Cubii | Conçue par Smart Cube au Luxembourg", description: "Cubii est conçue par Smart Cube, une entreprise luxembourgeoise forte de plus de 10 ans d\u2019expertise en bâtiments intelligents. Lauréate du Prix de l\u2019Innovation Digitale 2019. Découvrez l\u2019équipe." }
+  fr: { title: "À propos de Cubii | Conçue par Smart Cube au Luxembourg", description: "Cubii est conçue par Smart Cube, une entreprise luxembourgeoise forte de plus de 10 ans d\u2019expertise en bâtiments intelligents. Lauréate du Prix de l\u2019Innovation Digitale 2019. Découvrez l\u2019équipe." },
+  de: { title: "Über Cubii | Entwickelt von Smart Cube in Luxemburg", description: "Cubii wird von Smart Cube entwickelt, einem luxemburgischen Unternehmen mit über 10 Jahren Erfahrung im Bereich Smart Buildings. Gewinner des Preises für digitale Innovation 2019. Lernen Sie das Team kennen." }
 };
 
 class Component extends DCLogic {

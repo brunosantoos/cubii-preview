@@ -128,7 +128,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -194,6 +194,22 @@ const TRANSLATIONS = {
     integPrefix: "Avec quoi Cubii", integHighlight: "s\u2019intègre", integSuffix: "-t-elle\u00A0?",
     integText: "Cubii est agnostique de marque. Elle se connecte aux systèmes de gestion technique du bâtiment (GTB), aux capteurs IoT et aux contacts secs de tout fabricant, et s\u2019intègre à Leneda pour les données énergétiques au Luxembourg. Elle fonctionne aux côtés de votre logiciel de gestion immobilière existant\u00A0; rien n\u2019a besoin d\u2019être remplacé.",
     bookDemo: "Réserver une démo", residentLinePrefix: "Résident\u00A0?", residentLineCta: "Téléchargez l\u2019application"
+  },
+  de: {
+    eyebrow: "Produkt",
+    heroPrefix: "Alles, was Ihr Gebäude braucht. Eine einzige", heroHighlight: "App.",
+    heroSubhead: "Sechs Funktionen, die zusammenarbeiten, damit Informationen nicht mehr zwischen Bewohnern, Gebäudeverwaltern und Dienstleistern verloren gehen.",
+    answerH2: "Welche Funktionen bietet Cubii?",
+    answerText: "Cubii umfasst Störungsmanagement mit automatischer sensorbasierter Erkennung, Echtzeit-Energieüberwachung für Wasser, Gas und Strom, automatisierte Wartungsplanung, zentrales Dokumentenmanagement einschließlich des digitalen Wartungsbuchs, einen Marktplatz für Dienstleister sowie integrierte Kommunikationswerkzeuge wie Push-Benachrichtigungen, Chat pro Ticket und Anzeigen im Eingangsbereich.",
+    f1Title: "Störungsmanagement", f1Text: "Jeder Nutzer meldet einen Vorfall in Sekunden: Fotos, Videos, Standort, Kategorie, Dringlichkeit. Sensoren, Gebäudeleitsysteme und Trockenkontakte erstellen Tickets automatisch, unabhängig von der Gerätemarke. Jedes Ticket durchläuft denselben Lebenszyklus: Meldung → Prüfung → Zuweisung → Einsatz → Abschluss, mit vollständiger Historie, archiviert pro Gebäude. Sensible Anliegen können anonym gemeldet werden.",
+    f2Title: "Energieüberwachung", f2Text: "Wasser, Gas und Strom werden in Echtzeit pro Gebäude erfasst, mit Anbindung an Leneda, die Energiedatenplattform Luxemburgs. Bei Mehrverbrauch oder Auffälligkeiten werden Warnungen ausgelöst, sodass ein verstecktes Leck in den Daten sichtbar wird, bevor es an der Decke sichtbar wird. Diese Überwachung erstellt zudem die nach der EPBD erforderlichen Nachweise.",
+    f3Title: "Wartungsmanagement", f3Text: "Wiederkehrende Wartungen werden einmal programmiert. Am Fälligkeitstermin erstellt Cubii automatisch das Ticket und sendet es an den zuständigen Dienstleister. Das Wartungsregister bleibt so von selbst vollständig. Mit angeschlossenen Sensoren wird aus reaktiver Wartung vorausschauende Wartung.",
+    f4Title: "Dokumente & Gebäudeakten", f4Text: "Das digitale Wartungsbuch (carnet d’entretien), das Sicherheitsregister, Verträge, Rechnungen, technische Handbücher, Pläne und Zustandsberichte (état des lieux), alles zentral pro Gebäude gebündelt und mit Dienstleistern teilbar. Eine vollständige Wartungshistorie schützt zudem den Wert der Immobilie.",
+    f5Title: "Marktplatz", f5Text: "Ein Verzeichnis von Dienstleistern, durchsuchbar nach Fachgebiet, Verfügbarkeit und Dringlichkeit. Gebäudeverwalter finden das passende Unternehmen in Minuten; Dienstleister gewinnen Sichtbarkeit bei jedem Gebäude auf der Plattform.",
+    f6Title: "Kommunikation", f6Text: "Push-Benachrichtigungen bei jedem Ticketschritt, automatische Erinnerungen an Fristen, ein Chat-Verlauf in jedem Ticket, Umfragen und Abstimmungen sowie eine optionale Anzeige im Eingangsbereich, die Gebäudeinformationen und Warnmeldungen auf einem Bildschirm im Foyer anzeigt.",
+    integPrefix: "Womit lässt sich Cubii", integHighlight: "integrieren", integSuffix: "?",
+    integText: "Cubii ist herstellerunabhängig. Es verbindet sich mit Gebäudeleitsystemen (GLT), IoT-Sensoren und Trockenkontakten jedes Herstellers und integriert sich mit Leneda für Energiedaten in Luxemburg. Es läuft parallel zu Ihrer bestehenden Immobilienverwaltungssoftware; nichts muss ersetzt werden.",
+    bookDemo: "Demo buchen", residentLinePrefix: "Bewohner?", residentLineCta: "App herunterladen"
   }
 };
 
@@ -201,7 +217,8 @@ const META = {
   en: { title: "Cubii Product | Incidents, Energy, Maintenance & Documents in One App", description: "Every Cubii capability explained: automated ticketing, real-time energy monitoring with Leneda, maintenance calendars, digital maintenance book, marketplace and more." },
   pt: { title: "Produto Cubii | Incidentes, Energia, Manutenção e Documentos numa Só Aplicação", description: "Todas as capacidades da Cubii explicadas: criação automática de pedidos, monitorização energética em tempo real com a Leneda, calendários de manutenção, caderno de manutenção digital, marketplace e mais." },
   es: { title: "Producto Cubii | Incidencias, Energía, Mantenimiento y Documentos en una Sola Aplicación", description: "Todas las funciones de Cubii explicadas: partes automatizados, monitorización energética en tiempo real con Leneda, calendarios de mantenimiento, libro de mantenimiento digital, marketplace y más." },
-  fr: { title: "Produit Cubii | Incidents, Énergie, Maintenance et Documents en une Seule Application", description: "Toutes les fonctionnalités de Cubii expliquées\u00A0: billetterie automatisée, suivi énergétique en temps réel avec Leneda, calendriers de maintenance, carnet d\u2019entretien numérique, marketplace et plus encore." }
+  fr: { title: "Produit Cubii | Incidents, Énergie, Maintenance et Documents en une Seule Application", description: "Toutes les fonctionnalités de Cubii expliquées\u00A0: billetterie automatisée, suivi énergétique en temps réel avec Leneda, calendriers de maintenance, carnet d\u2019entretien numérique, marketplace et plus encore." },
+  de: { title: "Cubii Produkt | Störungen, Energie, Wartung & Dokumente in einer App", description: "Alle Funktionen von Cubii im Überblick: automatisierte Ticketerstellung, Echtzeit-Energieüberwachung mit Leneda, Wartungskalender, digitales Wartungsbuch, Marktplatz und mehr." }
 };
 
 class Component extends DCLogic {

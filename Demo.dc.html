@@ -100,7 +100,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -166,6 +166,22 @@ const TRANSLATIONS = {
     fieldVolume: "Nombre de bâtiments ou de clients", optional: "facultatif",
     pickTime: "Choisir un créneau",
     reassurance: "Nous répondons sous un jour ouvré. Vos données restent en Europe et ne sont jamais partagées."
+  },
+  de: {
+    residentNotePrefix: "Sie möchten nur die App? Bewohner benötigen keine Demo.", residentNoteCta: "App herunterladen.",
+    heroPrefix: "Erleben Sie Cubii in Ihren", heroHighlight: "Gebäuden",
+    heroSubhead: "30 Minuten mit unserem Team, ganz auf Ihr Portfolio oder Ihren Kundenstamm zugeschnitten, keine generische Präsentation. Sie erhalten ein individuelles Angebot und einen klaren Onboarding-Plan.",
+    expectH2: "Was Sie erwartet",
+    step1Title: "Wir hören zuerst zu.", step1Text: "Ihre Gebäude, Ihr Team, Ihre aktuellen Tools, Ihre größten Zeitfresser.",
+    step2Title: "Sie sehen Ihren Anwendungsfall live.", step2Text: "Ticketablauf, Energie-Dashboard, Wartungskalender, anhand von Szenarien, die Ihrer Realität entsprechen.",
+    step3Title: "Sie erhalten Zahlen.", step3Text: "Ein individuelles Angebot und wie das Onboarding Woche für Woche abläuft.",
+    noCommitment: "Keine Verpflichtung, kein Druck. Wenn Cubii nicht passt, sagen wir es Ihnen.",
+    formH2: "Demo buchen",
+    fieldName: "Name", fieldCompany: "Unternehmen", fieldEmail: "E-Mail", fieldIAm: "Ich bin",
+    optionManager: "Gebäudeverwalter", optionProvider: "Dienstleister", optionOther: "Sonstiges",
+    fieldVolume: "Anzahl der Gebäude oder Kunden", optional: "optional",
+    pickTime: "Termin auswählen",
+    reassurance: "Wir antworten innerhalb eines Werktags. Ihre Daten bleiben in Europa und werden niemals weitergegeben."
   }
 };
 
@@ -173,7 +189,8 @@ const META = {
   en: { title: "Book a Cubii Demo | 30 Minutes, Your Real Use Case", description: "See Cubii on your own buildings or client base. A 30-minute demo for facility managers and service providers, no commitment. Pick a time." },
   pt: { title: "Marque uma Demonstração da Cubii | 30 Minutos, o seu Caso Real", description: "Veja a Cubii nos seus edifícios ou base de clientes. Uma demonstração de 30 minutos para gestores de condomínio e prestadores de serviços, sem compromisso. Escolha um horário." },
   es: { title: "Reserva una Demo de Cubii | 30 Minutos, tu Caso Real", description: "Descubre Cubii en tus propios edificios o base de clientes. Una demo de 30 minutos para administradores de fincas y proveedores de servicios, sin compromiso. Elige un horario." },
-  fr: { title: "Réservez une Démo Cubii | 30 Minutes, votre Cas Réel", description: "Découvrez Cubii sur vos propres bâtiments ou base de clients. Une démo de 30 minutes pour gestionnaires immobiliers et prestataires de services, sans engagement. Choisissez un créneau." }
+  fr: { title: "Réservez une Démo Cubii | 30 Minutes, votre Cas Réel", description: "Découvrez Cubii sur vos propres bâtiments ou base de clients. Une démo de 30 minutes pour gestionnaires immobiliers et prestataires de services, sans engagement. Choisissez un créneau." },
+  de: { title: "Cubii-Demo buchen | 30 Minuten, Ihr echter Anwendungsfall", description: "Erleben Sie Cubii in Ihren eigenen Gebäuden oder Ihrem Kundenstamm. Eine 30-minütige Demo für Gebäudeverwalter und Dienstleister, unverbindlich. Wählen Sie einen Termin." }
 };
 
 class Component extends DCLogic {

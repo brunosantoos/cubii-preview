@@ -299,7 +299,7 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
@@ -437,6 +437,40 @@ const TRANSLATIONS = {
     faq2Q: "Puis-je changer de forfait plus tard\u00A0?", faq2A: "Oui. Les forfaits évoluent avec votre base de clients\u00A0; passez au niveau supérieur en même temps que votre croissance.",
     faq3Q: "Y a-t-il une durée minimale de contrat\u00A0?",
     faq4Q: "Les prix incluent-ils la TVA\u00A0?", faq4A: "Non, tous les prix indiqués sont hors TVA."
+  },
+  de: {
+    eyebrow: "Preise", heroPrefix: "Einfache Preise.", heroHighlight: "Keine Überraschungen.",
+    heroSubhead: "Kostenlos für Bewohner in verwalteten Gebäuden. 1,99 €/Monat für Eigentümer. Degressive Preise pro Nutzer für Gebäudeverwalter. Feste Pakete für Dienstleister. Jährliche Vorauszahlung spart 10 %.",
+    answerH2: "Was kostet Cubii?",
+    answerText: "Cubii ist kostenlos für Bewohner, deren Gebäude über die Plattform verwaltet wird; ihr Gebäudeverwalter übernimmt die Kosten. Einzelne Eigentümer abonnieren für 1,99 €/Monat. Für Gebäudeverwalter und Verwaltungen beginnen die Preise bei 2,99 € pro Nutzer und Monat (zzgl. MwSt.) und sinken mit dem Volumen. Die Pakete für Dienstleister reichen von 160 €/Monat (Starter, ~30 Kunden) bis 1.599 €/Monat (Enterprise, ~400 Kunden). Die jährliche Vorauszahlung reduziert alle Preise um 10 %.",
+    tier1Label: "Stufe 1 \u2014 Bewohner und Eigentümer",
+    condoTitle: "Bewohner einer Eigentümergemeinschaft:", free: "Kostenlos",
+    condoText: "Ihr Gebäude hat einen Gebäudeverwalter auf Cubii? Die App ist für Sie kostenlos: Ihr Verwalter übernimmt die Plattformkosten. Herunterladen, mit dem Zugangscode Ihres Gebäudes aktivieren, fertig. Keine Kosten, keine Werbung, kein Haken.", condoCta: "Kostenlos herunterladen",
+    homeTitle: "Eigenes Haus oder eigene Wohnung:", perMonth: "Monat",
+    homeText: "Sie verwalten Ihr Zuhause selbst, ohne Verwalter? Abonnieren Sie direkt für 1,99 €/Monat und erhalten Sie das digitale Wartungsbuch, die Energieerfassung, die Vorfallhistorie, Inspektionsberichte und Zugang zum Marketplace.", homeCta: "Für 1,99 €/Monat starten",
+    tier2Label: "Stufe 2 \u2014 Gebäudeverwalter",
+    fmTitle: "Gebäudeverwalter und Verwaltungen: ab 2,99 € pro Nutzer/Monat",
+    fmText1: "Preise pro Nutzer, die mit wachsendem Portfolio sinken. Enthält Vorfallmanagement, Benachrichtigungen, Kommunikation mit Bewohnern und die Kernplattform.",
+    fmText2: "Der genaue Preis hängt von der Portfoliogröße und den gewählten Modulen ab. Die Demo beinhaltet ein individuelles Angebot.",
+    bookDemo: "Demo buchen",
+    modulesCaption: "Optionale Module, pro Einheit und Monat, zzgl. MwSt.", thModule: "Modul", thPrice: "Preis",
+    moduleUser: "Cubii-Nutzer", moduleAlarm: "Alarmüberwachung", moduleMaintenance: "Wartungsmodul", moduleSurveys: "Umfragen", moduleStorage: "Zusätzlicher Speicherplatz",
+    tier4Label: "Stufe 4 \u2014 Gemeinden",
+    communesTitle: "Gemeinden: Pakete ab 100,63 €/Monat",
+    communesText: "Pakete, die nach Anzahl der Nutzer und Alarme dimensioniert sind. Enthält Vorfallmanagement, Wartung, Energieüberwachung pro Gebäude und die digitalen Wartungsnachweise, die von der europäischen Regulierung zunehmend gefordert werden.",
+    communesTableCaption: "Cubii-Pakete für Gemeinden, zzgl. MwSt.",
+    rowMonthlyC: "Monatlich", rowAnnualC: "Jährlich", rowUsersC: "Nutzer", rowAlarmsC: "Alarme", customC: "Individuell",
+    communesNote: "Alle Preise zzgl. MwSt. Die Pakete sparen 15 bis 30 % gegenüber einzeln gebuchten Modulen.",
+    tier3Label: "Stufe 3 \u2014 Dienstleister",
+    spTableCaption: "Cubii-Pakete für Dienstleister, zzgl. MwSt.", mostPopular: "AM BELIEBTESTEN",
+    rowMonthly: "Monatlich", rowAnnual: "Jährlich (10 % Rabatt)", rowClients: "Abgedeckte Kunden", rowCostPerClient: "Kosten pro Kunde",
+    rowTicketing: "Strukturiertes Ticketing", rowDocumentation: "Dokumentation und Arbeitsnachweis", rowMarketplace: "Marketplace", rowSurveys: "Umfragen", rowDisplayAds: "Werbeanzeigen", rowPrioritySupport: "Priorisierter Support", rowDocumentCloud: "Dokumenten-Cloud",
+    spNote: "Alle Pakete beinhalten die Basisplattformgebühr. Alle Preise zzgl. MwSt.",
+    faqH2: "Fragen zu den Preisen, beantwortet",
+    faq1Q: "Gibt es eine Einrichtungsgebühr?",
+    faq2Q: "Kann ich später das Paket wechseln?", faq2A: "Ja. Die Pakete skalieren mit Ihrem Kundenstamm; wechseln Sie bei Bedarf in ein höheres Paket.",
+    faq3Q: "Gibt es eine Mindestvertragslaufzeit?",
+    faq4Q: "Sind die Preise inklusive MwSt.?", faq4A: "Nein, alle angegebenen Preise verstehen sich zzgl. MwSt."
   }
 };
 
@@ -444,7 +478,8 @@ const META = {
   en: { title: "Cubii Pricing | Residents Free in Managed Buildings, Managers from €2.99/user", description: "Transparent Cubii pricing: free for residents in managed buildings, €1.99/month for individual homeowners, from €2.99 per user/month for facility managers, provider plans from €160/month." },
   pt: { title: "Preços da Cubii | Residentes Grátis em Edifícios Geridos, Gestores a partir de €2,99/utilizador", description: "Preços transparentes da Cubii: gratuita para residentes em edifícios geridos, €1,99/mês para proprietários individuais, a partir de €2,99 por utilizador/mês para gestores de condomínio, planos de prestadores a partir de €160/mês." },
   es: { title: "Precios de Cubii | Residentes Gratis en Edificios Gestionados, Administradores desde €2,99/usuario", description: "Precios transparentes de Cubii: gratis para residentes en edificios gestionados, €1,99/mes para propietarios individuales, desde €2,99 por usuario/mes para administradores de fincas, planes de proveedores desde €160/mes." },
-  fr: { title: "Tarifs Cubii | Résidents Gratuits dans les Bâtiments Gérés, Gestionnaires à partir de 2,99\u00A0€/utilisateur", description: "Tarifs Cubii transparents\u00A0: gratuit pour les résidents dans les bâtiments gérés, 1,99\u00A0€/mois pour les propriétaires individuels, à partir de 2,99\u00A0€ par utilisateur/mois pour les gestionnaires immobiliers, forfaits prestataires à partir de 160\u00A0€/mois." }
+  fr: { title: "Tarifs Cubii | Résidents Gratuits dans les Bâtiments Gérés, Gestionnaires à partir de 2,99\u00A0€/utilisateur", description: "Tarifs Cubii transparents\u00A0: gratuit pour les résidents dans les bâtiments gérés, 1,99\u00A0€/mois pour les propriétaires individuels, à partir de 2,99\u00A0€ par utilisateur/mois pour les gestionnaires immobiliers, forfaits prestataires à partir de 160\u00A0€/mois." },
+  de: { title: "Cubii Preise | Bewohner kostenlos in verwalteten Gebäuden, Verwalter ab 2,99 €/Nutzer", description: "Transparente Cubii-Preise: kostenlos für Bewohner in verwalteten Gebäuden, 1,99 €/Monat für einzelne Eigentümer, ab 2,99 € pro Nutzer/Monat für Gebäudeverwalter, Dienstleisterpakete ab 160 €/Monat." }
 };
 
 class Component extends DCLogic {

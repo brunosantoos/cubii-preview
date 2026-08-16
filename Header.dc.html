@@ -57,11 +57,12 @@ const TRANSLATIONS = {
   en: { services: "Services", residents: "For Residents & Homeowners", facilityManagers: "For Facility Managers", serviceProviders: "For Service Providers", communes: "For Municipalities", product: "Product", pricing: "Pricing", bookDemo: "Book a Demo" },
   pt: { services: "Serviços", residents: "Para Residentes e Proprietários", facilityManagers: "Para Gestores de Condomínio", serviceProviders: "Para Prestadores de Serviços", communes: "Para Municípios", product: "Produto", pricing: "Preços", bookDemo: "Marcar uma Demonstração" },
   es: { services: "Servicios", residents: "Para Residentes y Propietarios", facilityManagers: "Para Administradores de Fincas", serviceProviders: "Para Proveedores de Servicios", communes: "Para Municipios", product: "Producto", pricing: "Precios", bookDemo: "Reservar una Demo" },
-  fr: { services: "Services", residents: "Pour les Résidents et Propriétaires", facilityManagers: "Pour les Gestionnaires Immobiliers", serviceProviders: "Pour les Prestataires de Services", communes: "Pour les Communes", product: "Produit", pricing: "Tarifs", bookDemo: "Réserver une Démo" }
+  fr: { services: "Services", residents: "Pour les Résidents et Propriétaires", facilityManagers: "Pour les Gestionnaires Immobiliers", serviceProviders: "Pour les Prestataires de Services", communes: "Pour les Communes", product: "Produit", pricing: "Tarifs", bookDemo: "Réserver une Démo" },
+  de: { services: "Services", residents: "Für Bewohner und Eigentümer", facilityManagers: "Für Gebäudeverwalter", serviceProviders: "Für Dienstleister", communes: "Für Gemeinden", product: "Produkt", pricing: "Preise", bookDemo: "Demo buchen" }
 };
-const LOCALE_NAMES = { en: "English", pt: "Português", es: "Español", fr: "Français" };
-const LOCALE_LABELS = { en: "EN", pt: "PT", es: "ES", fr: "FR" };
-const LOCALES = ["en", "pt", "es", "fr"];
+const LOCALE_NAMES = { en: "English", pt: "Português", es: "Español", fr: "Français", de: "Deutsch" };
+const LOCALE_LABELS = { en: "EN", pt: "PT", es: "ES", fr: "FR", de: "DE" };
+const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 class Component extends DCLogic {
   state = { locale: "en", menuOpen: false, servicesOpen: false };
