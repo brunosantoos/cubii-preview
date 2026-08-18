@@ -31,10 +31,8 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
-          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span>{{ t.heroSuffix }}</h1>
-          <p style="margin:0 0 12px;font-size:13px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#0090E8;">{{ t.heroLead }}</p>
-          <p style="margin:0 0 16px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
-          <p style="margin:0 0 32px;font-size:18px;line-height:1.55;font-weight:700;color:#0A0A0A;max-width:560px;">{{ t.heroPunch }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span>.</h1>
+          <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
           <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
           <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
         </div>
@@ -59,20 +57,15 @@
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#CBD9EE;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;">{{ t.answerH2Emph }}</span>{{ t.answerH2Post }}</h2>
         <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-          <p style="margin:0 0 16px;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
-          <p style="margin:0 0 4px;font-size:17px;line-height:1.5;font-weight:800;color:#0A0A0A;">{{ t.answerPrice }}</p>
-          <p style="margin:0;font-size:15px;line-height:1.55;color:#3A4247;">{{ t.answerPriceNote }}</p>
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
         </div>
       </div>
     </section>
 
     <section data-screen-label="FM / friction" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
-        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.frictionHighlight }}</span>{{ t.frictionSuffix }}</h2>
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.frictionPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.frictionHighlight }}</span></h2>
         <div>
-          <ul style="margin:0 0 20px;padding:0 0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">
-            <sc-for list="{{ t.frictionItems }}" as="item" hint-placeholder-count="4"><li style="margin:0 0 6px;">{{ item }}</li></sc-for>
-          </ul>
           <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.frictionText1 }}</p>
           <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;color:#FFFFFF;">{{ t.frictionText2 }}</p>
         </div>
@@ -84,10 +77,8 @@
         <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.benefitsH2 }}</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
           <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-            <h3 style="margin:0 0 12px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
-            <div style="display:flex;flex-direction:column;gap:12px;">
-              <sc-for list="{{ t.b1Items }}" as="item" hint-placeholder-count="3"><p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;"><span style="display:block;font-weight:700;color:#0A0A0A;">{{ item.title }}</span>{{ item.text }}</p></sc-for>
-            </div>
+            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b1Text }}</p>
           </div>
           <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
             <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b2Title }}</h3>
@@ -142,8 +133,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px;align-items:start;">
         <div>
           <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.compatH2 }}</h2>
-          <p style="margin:0 0 16px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.compatText }}</p>
-          <p style="margin:0 0 28px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.compatText2 }}</p>
+          <p style="margin:0 0 28px;font-size:17px;line-height:1.7;color:#3A4247;">{{ t.compatText }}</p>
           <div style="display:flex;align-items:flex-end;gap:16px;">
             <img src="assets/cubii-mascot-robot.png" alt="" style="width:96px;height:auto;" />
             <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:#6C8087;">{{ t.compatCaption }}</p>
@@ -209,235 +199,180 @@ const LOCALES = ["en", "pt", "es", "fr", "de"];
 const TRANSLATIONS = {
   en: {
     eyebrow: "For facility managers & syndics",
-    heroPrefix: "Fewer calls, emails and trips. More", heroHighlight: "buildings", heroSuffix: " for more profitability.",
-    heroLead: "Incidents and AI-assisted ticketing",
-    heroSubhead: "A failure is reported by voice or photo, in 30 seconds. The AI structures the ticket. Sensors, for their part, create tickets automatically. A single ticket informs the whole condominium, the building manager and the relevant provider. You validate, you forward, everyone follows in real time.",
-    heroPunch: "Ten calls and ten emails for the same problem: that is over.",
-    bookDemo: "Book a demo", heroNote: "30 minutes, on your real portfolio. From €1.99 per lot per month.",
-    dashboardLabel: "Cubii admin — portfolio dashboard",
-    answerH2Pre: "What does Cubii do for ", answerH2Emph: "facility managers", answerH2Post: " and syndics?",
-    answerText: "Cubii gives facility managers and syndics a single platform to manage incidents, maintenance, energy and documents across their whole building portfolio. Incidents are reported by residents or detected by sensors, converted into structured tickets, and sent automatically to service providers.",
-    answerPrice: "Pricing starts at €1.99 per lot per month.",
-    answerPriceNote: "The rate decreases with the number of lots.",
-    frictionPrefix: "What is new in your buildings", frictionHighlight: "this week", frictionSuffix: "?",
-    frictionItems: ["Answering the same question about the same failure fifteen times.", "Chasing a technician for a report.", "Reconstructing an intervention history out of three mailboxes.", "Driving over to check a building because nobody will report anything."],
-    frictionText1: "None of that is management. It is friction.",
-    frictionText2: "One ticket informs everyone. A due date triggers the intervention. A history writes itself. A sensor speaks before the damage does.",
-    benefitsH2: "How does Cubii improve your day-to-day?",
-    b1Title: "Incidents reach you structured, not as phone calls.",
-    b1Items: [
-      { title: "Residents report from the app", text: "Photo, location, category. In 30 seconds, without calling you." },
-      { title: "Equipment reports on its own", text: "Building sensors and systems, any brand: BMS, IoT, dry contacts. The ticket is created with no human involved." },
-      { title: "You validate, Cubii sends", text: "One click. The provider is dispatched, residents are informed, tracking begins." }
-    ],
-    b2Title: "Maintenance is never forgotten again.", b2Text: "You schedule once: task, due date, provider. On the date, the ticket goes out on its own. The register updates itself.",
-    b3Title: "Energy & compliance", b3Text: "Real-time consumption, anomaly alerts, digital EPBD register maintained automatically.",
-    b4Title: "Document management", b4Text: "Maintenance book, safety register, contracts, plans, all filed by building, findable in three seconds, shareable in two clicks. Your archives are no longer in your inbox.",
-    b5Title: "The sheet taped to the lobby door is over.", b5Text: "A Cubii notification, on the other hand, lands in every co-owner’s pocket. Water shutdown, alarm test, intervention under way, general assembly minutes: the information is entered once and reaches everyone within seconds.",
-    b6Title: "Cubii is the building’s ecosystem.", b6Text: "Simple to adopt. Impossible to saturate.",
+    heroPrefix: "Manage buildings. Not", heroHighlight: "phone calls",
+    heroSubhead: "Cubii automates everything between \u201Csomething\u2019s broken\u201D and \u201Cit\u2019s fixed\u201D: detection, ticketing, dispatch, follow-up and documentation. Your team gets hours back, every week.",
+    bookDemo: "Book a demo", heroNote: "30 minutes, on your real portfolio. From €2.99 per user/month.",
+    dashboardLabel: "Cubii admin \u2014 portfolio dashboard",
+    answerH2Pre: "What does Cubii do for ", answerH2Emph: "facility managers and syndics", answerH2Post: "?",
+    answerText: "Cubii gives facility managers and syndics a single platform to manage incidents, maintenance, energy and documents across their entire building portfolio. Incidents are reported by residents or detected by sensors, converted into structured tickets, and dispatched to service providers automatically. Pricing starts at €2.99 per user per month.",
+    frictionPrefix: "Where your week actually", frictionHighlight: "goes",
+    frictionText1: "Answering the same resident question fifteen times. Chasing a technician for a report. Reconstructing an intervention history from three inboxes. Manually checking buildings because nobody would report a problem until it flooded.",
+    frictionText2: "None of that is management. It\u2019s friction. Cubii removes it.",
+    benefitsH2: "How Cubii changes the day-to-day",
+    b1Title: "Incidents come to you structured, not as phone calls.", b1Text: "Residents report in the app with photos and location. Sensors and building systems (any brand: BMS, IoT, dry contacts) create tickets automatically. You validate, Cubii dispatches.",
+    b2Title: "Maintenance runs itself.", b2Text: "Recurring tasks are pre-programmed. On the scheduled date, the ticket goes to the provider automatically. The register updates itself.",
+    b3Title: "Energy under control, EPBD covered.", b3Text: "Real-time water, gas and electricity per building, Leneda integration, anomaly alerts, and the digital records European regulation increasingly requires.",
+    b4Title: "Every document where it should be.", b4Text: "Digital maintenance book, security register, contracts, plans. Shareable with providers in two clicks.",
+    b5Title: "Residents stay informed without you lifting a finger.", b5Text: "Push notifications, lobby display, per-ticket status. Fewer calls because people already know.",
+    b6Title: "One platform, your whole portfolio.", b6Text: "Multi-site by design. Every building, one dashboard.",
     roiH2: "What does this save?",
     roi1Number: "up to 30%", roi1Text: "lower operational costs by eliminating manual rounds", roi1Source: "Source: Ignitec",
     roi2Number: "up to 20%", roi2Text: "lower repair costs through early detection with connected systems", roi2Source: "Source: IQnext",
-    roi3Number: "100–150", roi3Text: "units per technician today — early detection raises that ceiling",
-    compatH2: "Cubii on its own or with the rest. You choose!",
-    compatText: "Cubii works standalone: you install it, you use it, you need nothing else.",
-    compatText2: "But you already have accounting software, an ERP, a BMS, a rental management tool. Cubii connects to them by API. Data flows both ways, with no double entry and without replacing what already works for you. You are adding a building block, not committing to a migration.",
+    roi3Number: "100\u2013150", roi3Text: "units per technician today \u2014 early detection raises that ceiling",
+    compatH2: "Do we have to change our tools?",
+    compatText: "No. Cubii is not a revolution, it\u2019s an evolution. It connects to equipment from any manufacturer, works alongside your existing property management software, and requires no IT department. Most teams are operational within days.",
     compatCaption: "Brand-agnostic by design: BMS, IoT sensors, dry contacts.",
     onboardH2: "How does onboarding work?",
-    step1Title: "The demo — 30 minutes", step1Text: "Not a generic presentation: we work on your portfolio and your real cases. You see what Cubii looks like with your buildings inside it.",
-    step2Title: "Setup is on us, not on you", step2Text: "You send us your building structure and your user list. We create the account, load the data, configure the access rights. You receive a platform ready to use.",
-    step3Title: "Resident activation — automatic and tracked", step3Text: "Each resident receives an email with their access code. We follow up with those who have not activated, in week 1 and again in week 3. In week 4 you receive a clear activation report: who is active, who is not, where to push. You chase nobody.",
-    step4Title: "Connecting your providers", step4Text: "You share your list, we onboard them and support them through the first steps. From the very first ticket, they are in the loop.",
+    step1Title: "Demo.", step1Text: "30 minutes on your actual portfolio and use cases.",
+    step2Title: "Setup by us, not by you.", step2Text: "You send us your building structure and user list. We build your account and load everything.",
+    step3Title: "Residents onboarded automatically.", step3Text: "Each resident receives an access code by email. We handle reminders at week 1 and week 3, and give you a clear activation report at week 4.",
+    step4Title: "Your providers connected.", step4Text: "Share your provider list; we bring them onto the platform.",
     miniFaqH2: "Facility manager questions, answered",
-    faq1Q: "How much does Cubii cost for facility managers?", faq1A: "From €1.99 per lot per month (excl. VAT), degressive with the number of lots. Annual prepayment saves 10%. Full details on the", pricingPageLink: "pricing page",
+    faq1Q: "How much does Cubii cost for facility managers?", faq1A: "From €2.99 per user per month (excl. VAT), degressive with the number of users. Annual prepayment saves 10%. Full details on the", pricingPageLink: "pricing page",
     faq2Q: "Does Cubii work with our existing sensors and building systems?", faq2A: "Yes. Cubii is brand-agnostic: it connects to BMS systems, IoT sensors and dry contacts from any manufacturer.",
     faq3Q: "Does Cubii help with EPBD compliance?", faq3A: "Yes. Cubii tracks energy consumption per building in real time and maintains the digital maintenance records aligned with the Energy Performance of Buildings Directive.",
     faq4Q: "How long does implementation take?", faq4A: "Smart Cube handles the setup: account creation, building structure, user injection and resident onboarding emails. Most portfolios are live within days, not months."
   },
   pt: {
     eyebrow: "Para gestores de condomínio e administradores",
-    heroPrefix: "Menos chamadas, e-mails e deslocações. Mais", heroHighlight: "edifícios", heroSuffix: " para mais rentabilidade.",
-    heroLead: "Incidentes e ticketing assistido por IA",
-    heroSubhead: "Uma avaria comunica-se por voz ou por fotografia, em 30 segundos. A IA estrutura o pedido. Os sensores, por seu lado, criam-nos automaticamente. Um único pedido informa todo o condomínio, o administrador e o prestador em causa. Valida, encaminha, e toda a gente acompanha em tempo real.",
-    heroPunch: "Dez chamadas e dez e-mails para o mesmo problema: acabou.",
-    bookDemo: "Marcar uma demonstração", heroNote: "30 minutos, sobre o seu portfólio real. A partir de 1,99 € por fração e por mês.",
-    dashboardLabel: "Painel de administração Cubii — portfólio",
-    answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "gestores de condomínio", answerH2Post: " e administradores?",
-    answerText: "A Cubii dá aos gestores de condomínio e administradores uma única plataforma para gerir incidentes, manutenção, energia e documentos em todo o seu portfólio de edifícios. Os incidentes são comunicados pelos residentes ou detetados por sensores, convertidos em pedidos estruturados e enviados automaticamente aos prestadores de serviços.",
-    answerPrice: "Os preços começam em 1,99 € por fração e por mês.",
-    answerPriceNote: "O valor é decrescente em função do número de frações.",
-    frictionPrefix: "O que há de novo nos seus edifícios", frictionHighlight: "esta semana", frictionSuffix: "?",
-    frictionItems: ["Responder quinze vezes à mesma pergunta sobre a mesma avaria.", "Andar atrás de um técnico para obter um relatório.", "Reconstituir um histórico de intervenção a partir de três caixas de correio.", "Ir verificar um edifício porque ninguém vai comunicar nada."],
-    frictionText1: "Nada disto é gestão. É fricção.",
-    frictionText2: "Um pedido informa toda a gente. Um prazo desencadeia a intervenção. Um histórico escreve-se sozinho. Um sensor fala antes do estrago.",
-    benefitsH2: "Como é que a Cubii melhora o seu dia a dia?",
-    b1Title: "Os incidentes chegam-lhe estruturados, e não sob a forma de chamadas.",
-    b1Items: [
-      { title: "Os residentes comunicam a partir da aplicação", text: "Fotografia, localização, categoria. Em 30 segundos, sem lhe telefonar." },
-      { title: "Os equipamentos comunicam sozinhos", text: "Sensores e sistemas do edifício, de todas as marcas: BMS, IoT, contactos secos. O pedido cria-se sem intervenção humana." },
-      { title: "Valida, e a Cubii envia", text: "Um clique. O prestador é mandatado, os residentes são informados, o acompanhamento começa." }
-    ],
-    b2Title: "A manutenção deixa de se esquecer.", b2Text: "Programa uma vez: tarefa, prazo, prestador. Na data, o pedido sai sozinho. O registo atualiza-se.",
-    b3Title: "Energia e conformidade", b3Text: "Consumos em tempo real, alertas de anomalias, registo digital EPBD mantido automaticamente.",
-    b4Title: "Gestão documental", b4Text: "Livro de manutenção, registo de segurança, contratos, plantas, tudo arrumado por edifício, encontrável em três segundos, partilhável em dois cliques. Os seus arquivos já não estão no e-mail.",
-    b5Title: "O papel colado na porta do átrio acabou.", b5Text: "Uma notificação Cubii, essa, chega ao bolso de cada condómino. Corte de água, teste de alarme, intervenção em curso, ata da assembleia: a informação é introduzida uma vez e chega a toda a gente em poucos segundos.",
-    b6Title: "A Cubii é o ecossistema do edifício.", b6Text: "Simples de adotar. Impossível de saturar.",
+    heroPrefix: "Gerir edifícios. Não", heroHighlight: "chamadas telefónicas",
+    heroSubhead: "A Cubii automatiza tudo entre \u201Calgo está avariado\u201D e \u201Cestá reparado\u201D: deteção, criação de pedidos, despacho, acompanhamento e documentação. A sua equipa recupera horas, todas as semanas.",
+    bookDemo: "Marcar uma demonstração", heroNote: "30 minutos, sobre o seu portfólio real. A partir de €2,99 por utilizador/mês.",
+    dashboardLabel: "Painel de administração Cubii \u2014 portfólio",
+    answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "gestores de condomínio e administradores", answerH2Post: "?",
+    answerText: "A Cubii dá aos gestores de condomínio e administradores uma única plataforma para gerir incidentes, manutenção, energia e documentos em todo o seu portfólio de edifícios. Os incidentes são reportados pelos residentes ou detetados por sensores, convertidos em pedidos estruturados e despachados automaticamente para prestadores de serviços. Os preços começam em €2,99 por utilizador por mês.",
+    frictionPrefix: "Para onde vai realmente a sua", frictionHighlight: "semana",
+    frictionText1: "Responder à mesma pergunta de um residente quinze vezes. Perseguir um técnico por um relatório. Reconstruir um histórico de intervenções a partir de três caixas de correio. Verificar edifícios manualmente porque ninguém reportaria um problema até inundar.",
+    frictionText2: "Nada disso é gestão. É atrito. A Cubii elimina-o.",
+    benefitsH2: "Como a Cubii muda o dia a dia",
+    b1Title: "Os incidentes chegam-lhe estruturados, não como chamadas telefónicas.", b1Text: "Os residentes reportam na aplicação com fotografias e localização. Sensores e sistemas do edifício (qualquer marca: BMS, IoT, contactos secos) criam pedidos automaticamente. Você valida, a Cubii despacha.",
+    b2Title: "A manutenção acontece sozinha.", b2Text: "As tarefas recorrentes são pré-programadas. Na data agendada, o pedido segue automaticamente para o prestador. O registo atualiza-se sozinho.",
+    b3Title: "Energia sob controlo, EPBD coberta.", b3Text: "Água, gás e eletricidade em tempo real por edifício, integração com a Leneda, alertas de anomalias, e os registos digitais cada vez mais exigidos pela regulamentação europeia.",
+    b4Title: "Cada documento onde deve estar.", b4Text: "Caderno de manutenção digital, registo de segurança, contratos, plantas. Partilhável com prestadores em dois cliques.",
+    b5Title: "Os residentes mantêm-se informados sem qualquer esforço da sua parte.", b5Text: "Notificações push, ecrã no átrio, estado por pedido. Menos chamadas porque as pessoas já sabem.",
+    b6Title: "Uma plataforma, todo o seu portfólio.", b6Text: "Multi-edifício por definição. Cada edifício, um só painel.",
     roiH2: "Quanto é que isto poupa?",
     roi1Number: "até 30%", roi1Text: "menos custos operacionais ao eliminar rondas manuais", roi1Source: "Fonte: Ignitec",
     roi2Number: "até 20%", roi2Text: "menos custos de reparação com deteção precoce em sistemas ligados", roi2Source: "Fonte: IQnext",
-    roi3Number: "100–150", roi3Text: "unidades por técnico atualmente — a deteção precoce eleva esse limite",
-    compatH2: "A Cubii sozinha ou com as outras. Escolhe você!",
-    compatText: "A Cubii funciona de forma autónoma: instala-a, usa-a, não precisa de mais nada.",
-    compatText2: "Mas já tem um software de contabilidade, um ERP, um BMS, uma ferramenta de gestão de arrendamento. A Cubii liga-se a eles por API. Os dados circulam nos dois sentidos, sem dupla introdução e sem substituir o que já funciona consigo. Acrescenta uma peça, não embarca numa migração.",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico atualmente \u2014 a deteção precoce eleva esse limite",
+    compatH2: "Temos de mudar as nossas ferramentas?",
+    compatText: "Não. A Cubii não é uma revolução, é uma evolução. Liga-se a equipamento de qualquer fabricante, funciona junto do seu software de gestão de imóveis já existente e não exige departamento de informática. A maioria das equipas fica operacional em poucos dias.",
     compatCaption: "Independente de marca, por definição: BMS, sensores IoT, contactos secos.",
-    onboardH2: "Como decorre a integração?",
-    step1Title: "A demonstração — 30 minutos", step1Text: "Não é uma apresentação genérica: trabalhamos sobre o seu portfólio e os seus casos reais. Vê como fica a Cubii com os seus edifícios lá dentro.",
-    step2Title: "A configuração é connosco, não consigo", step2Text: "Transmite-nos a estrutura dos seus edifícios e a lista dos seus utilizadores. Criamos a conta, carregamos os dados, parametrizamos os acessos. Recebe uma plataforma pronta a usar.",
-    step3Title: "A ativação dos residentes — automática e acompanhada", step3Text: "Cada residente recebe um e-mail com o seu código de acesso. Insistimos com quem não ativou, na semana 1 e depois na semana 3. Na semana 4, recebe um relatório de ativação claro: quem está ativo, quem não está, onde insistir. Não anda atrás de ninguém.",
-    step4Title: "A ligação dos prestadores", step4Text: "Partilha a sua lista, nós integramo-los e acompanhamo-los na adoção. Logo no primeiro pedido, estão no circuito.",
+    onboardH2: "Como funciona a integração?",
+    step1Title: "Demonstração.", step1Text: "30 minutos sobre o seu portfólio e casos de uso reais.",
+    step2Title: "Configuração feita por nós, não por si.", step2Text: "Envia-nos a estrutura do seu edifício e a lista de utilizadores. Nós criamos a sua conta e carregamos tudo.",
+    step3Title: "Residentes integrados automaticamente.", step3Text: "Cada residente recebe um código de acesso por email. Tratamos dos lembretes na semana 1 e na semana 3, e damos-lhe um relatório de ativação claro na semana 4.",
+    step4Title: "Os seus prestadores ligados.", step4Text: "Partilhe a sua lista de prestadores; nós integramo-los na plataforma.",
     miniFaqH2: "Perguntas de gestores de condomínio, respondidas",
-    faq1Q: "Quanto custa a Cubii para gestores de condomínio?", faq1A: "A partir de €1,99 por fração por mês (sem IVA), com desconto conforme o número de frações. O pré-pagamento anual poupa 10%. Detalhes completos na", pricingPageLink: "página de preços",
+    faq1Q: "Quanto custa a Cubii para gestores de condomínio?", faq1A: "A partir de €2,99 por utilizador por mês (sem IVA), com desconto conforme o número de utilizadores. O pré-pagamento anual poupa 10%. Detalhes completos na", pricingPageLink: "página de preços",
     faq2Q: "A Cubii funciona com os nossos sensores e sistemas de edifício já existentes?", faq2A: "Sim. A Cubii é independente de marca: liga-se a sistemas BMS, sensores IoT e contactos secos de qualquer fabricante.",
     faq3Q: "A Cubii ajuda com a conformidade com a EPBD?", faq3A: "Sim. A Cubii acompanha o consumo de energia por edifício em tempo real e mantém os registos de manutenção digitais alinhados com a Diretiva de Desempenho Energético dos Edifícios.",
     faq4Q: "Quanto tempo demora a implementação?", faq4A: "A Smart Cube trata da configuração: criação da conta, estrutura do edifício, integração de utilizadores e emails de ativação dos residentes. A maioria dos portfólios fica operacional em dias, não meses."
   },
   es: {
     eyebrow: "Para administradores de fincas y comunidades",
-    heroPrefix: "Menos llamadas, correos y desplazamientos. Más", heroHighlight: "edificios", heroSuffix: " para más rentabilidad.",
-    heroLead: "Incidencias y ticketing asistido por IA",
-    heroSubhead: "Una avería se comunica con la voz o con una foto, en 30 segundos. La IA estructura la incidencia. Los sensores, por su parte, las crean automáticamente. Una sola incidencia informa a toda la comunidad, al administrador y al proveedor implicado. Tú validas, tú transfieres, todo el mundo lo sigue en tiempo real.",
-    heroPunch: "Diez llamadas y diez correos por el mismo problema: se acabó.",
-    bookDemo: "Reservar una demo", heroNote: "30 minutos, sobre tu cartera real. Desde 1,99 € por unidad y mes.",
-    dashboardLabel: "Panel de administración Cubii — cartera de edificios",
-    answerH2Pre: "¿Qué hace Cubii por los ", answerH2Emph: "administradores de fincas", answerH2Post: " y comunidades?",
-    answerText: "Cubii ofrece a los administradores de fincas y comunidades una única plataforma para gestionar incidencias, mantenimiento, energía y documentos en toda su cartera de edificios. Las incidencias las comunican los residentes o las detectan los sensores, se convierten en partes estructurados y se envían automáticamente a los proveedores de servicios.",
-    answerPrice: "Las tarifas arrancan en 1,99 € por unidad y mes.",
-    answerPriceNote: "La tarifa es decreciente en función del número de unidades.",
-    frictionPrefix: "¿Qué hay de nuevo en tus edificios", frictionHighlight: "esta semana", frictionSuffix: "?",
-    frictionItems: ["Responder quince veces a la misma pregunta sobre la misma avería.", "Perseguir a un técnico para conseguir un informe.", "Reconstruir un historial de intervención a partir de tres buzones de correo.", "Ir a revisar un edificio porque nadie va a comunicar nada."],
-    frictionText1: "Nada de eso es gestión. Es fricción.",
-    frictionText2: "Una incidencia informa a todo el mundo. Un vencimiento dispara la intervención. Un historial se escribe solo. Un sensor habla antes que el daño.",
-    benefitsH2: "¿Cómo mejora Cubii tu día a día?",
-    b1Title: "Las incidencias te llegan estructuradas, no en forma de llamadas.",
-    b1Items: [
-      { title: "Los residentes avisan desde la aplicación", text: "Foto, ubicación, categoría. En 30 segundos, sin llamarte." },
-      { title: "Los equipos avisan solos", text: "Sensores y sistemas del edificio, de cualquier marca: BMS, IoT, contactos secos. La incidencia se crea sin intervención humana." },
-      { title: "Tú validas, Cubii envía", text: "Un clic. El proveedor queda asignado, los residentes están informados, el seguimiento empieza." }
-    ],
-    b2Title: "El mantenimiento ya no se olvida.", b2Text: "Lo programas una vez: tarea, vencimiento, proveedor. Llegada la fecha, la incidencia sale sola. El registro se actualiza.",
-    b3Title: "Energía y conformidad", b3Text: "Consumos en tiempo real, alertas de anomalías, registro digital EPBD mantenido automáticamente.",
-    b4Title: "Gestión documental", b4Text: "Libro del edificio, registro de seguridad, contratos, planos, todo clasificado por edificio, localizable en tres segundos, compartible en dos clics. Tus archivos ya no están en tu correo.",
-    b5Title: "El papel pegado en la puerta del portal se acabó.", b5Text: "Una notificación de Cubii, en cambio, llega al bolsillo de cada propietario. Corte de agua, prueba de alarma, intervención en curso, acta de la junta: la información se introduce una vez y llega a todo el mundo en segundos.",
-    b6Title: "Cubii es el ecosistema del edificio.", b6Text: "Sencillo de adoptar. Imposible de saturar.",
-    roiH2: "¿Cuánto ahorra esto?",
+    heroPrefix: "Gestiona edificios. No", heroHighlight: "llamadas telefónicas",
+    heroSubhead: "Cubii automatiza todo lo que hay entre \u201Calgo está averiado\u201D y \u201Cestá arreglado\u201D: detección, apertura de partes, asignación, seguimiento y documentación. Tu equipo recupera horas, cada semana.",
+    bookDemo: "Reservar una demo", heroNote: "30 minutos, sobre tu cartera real. Desde €2,99 por usuario/mes.",
+    dashboardLabel: "Panel de administración Cubii \u2014 cartera de edificios",
+    answerH2: "\u00BFQu\u00E9 hace Cubii por los administradores de fincas y comunidades?",
+    answerText: "Cubii ofrece a los administradores de fincas y comunidades una única plataforma para gestionar incidencias, mantenimiento, energía y documentos en toda su cartera de edificios. Las incidencias las reportan los residentes o las detectan sensores, se convierten en partes estructurados y se asignan automáticamente a proveedores de servicios. Los precios comienzan en €2,99 por usuario al mes.",
+    frictionPrefix: "A d\u00F3nde va realmente tu", frictionHighlight: "semana",
+    frictionText1: "Responder quince veces a la misma pregunta de un residente. Perseguir a un técnico para que entregue un informe. Reconstruir un historial de intervenciones a partir de tres bandejas de entrada. Revisar edificios manualmente porque nadie reportaría un problema hasta que inundara.",
+    frictionText2: "Nada de eso es gestión. Es fricción. Cubii la elimina.",
+    benefitsH2: "Cómo Cubii cambia el día a día",
+    b1Title: "Las incidencias te llegan estructuradas, no como llamadas telefónicas.", b1Text: "Los residentes las reportan en la aplicación con fotos y ubicación. Sensores y sistemas del edificio (de cualquier marca: BMS, IoT, contactos secos) crean partes automáticamente. Tú validas, Cubii asigna.",
+    b2Title: "El mantenimiento se ejecuta solo.", b2Text: "Las tareas recurrentes se preprograman. En la fecha prevista, el parte llega automáticamente al proveedor. El registro se actualiza solo.",
+    b3Title: "Energía bajo control, EPBD cubierta.", b3Text: "Agua, gas y electricidad en tiempo real por edificio, integración con Leneda, alertas de anomalías, y los registros digitales que la normativa europea exige cada vez más.",
+    b4Title: "Cada documento donde debe estar.", b4Text: "Libro de mantenimiento digital, registro de seguridad, contratos, planos. Compartible con proveedores en dos clics.",
+    b5Title: "Los residentes se mantienen informados sin que muevas un dedo.", b5Text: "Notificaciones push, pantalla en el vestíbulo, estado por parte. Menos llamadas porque la gente ya lo sabe.",
+    b6Title: "Una plataforma, toda tu cartera.", b6Text: "Multi-sede por diseño. Cada edificio, un solo panel.",
+    roiH2: "\u00BFCu\u00E1nto ahorra esto?",
     roi1Number: "hasta 30%", roi1Text: "menos costes operativos al eliminar las rondas manuales", roi1Source: "Fuente: Ignitec",
     roi2Number: "hasta 20%", roi2Text: "menos costes de reparación gracias a la detección temprana con sistemas conectados", roi2Source: "Fuente: IQnext",
-    roi3Number: "100–150", roi3Text: "unidades por técnico en la actualidad — la detección temprana eleva ese límite",
-    compatH2: "Cubii sola o con las demás. ¡Tú eliges!",
-    compatText: "Cubii funciona de forma autónoma: la instalas, la usas, no necesitas nada más.",
-    compatText2: "Pero ya tienes un software de contabilidad, un ERP, un BMS, una herramienta de gestión de alquileres. Cubii se conecta a ellos por API. Los datos circulan en ambos sentidos, sin doble introducción y sin sustituir lo que ya te funciona. Añades una pieza, no emprendes una migración.",
+    roi3Number: "100\u2013150", roi3Text: "unidades por técnico en la actualidad \u2014 la detección temprana eleva ese límite",
+    compatH2: "\u00BFTenemos que cambiar nuestras herramientas?",
+    compatText: "No. Cubii no es una revolución, es una evolución. Se conecta a equipos de cualquier fabricante, funciona junto a tu software de gestión de fincas ya existente y no requiere departamento de informática. La mayoría de los equipos están operativos en pocos días.",
     compatCaption: "Independiente de marca por diseño: BMS, sensores IoT, contactos secos.",
-    onboardH2: "¿Cómo funciona la puesta en marcha?",
-    step1Title: "La demo — 30 minutos", step1Text: "No es una presentación genérica: trabajamos sobre tu cartera y tus casos reales. Ves qué aspecto tiene Cubii con tus edificios dentro.",
-    step2Title: "La configuración la hacemos nosotros, no tú", step2Text: "Nos envías la estructura de tus edificios y la lista de tus usuarios. Creamos la cuenta, cargamos los datos, configuramos los accesos. Recibes una plataforma lista para usar.",
-    step3Title: "La activación de los residentes — automática y con seguimiento", step3Text: "Cada residente recibe un correo con su código de acceso. Insistimos a quienes no han activado, en la semana 1 y de nuevo en la semana 3. En la semana 4 recibes un informe de activación claro: quién está activo, quién no, dónde insistir. No persigues a nadie.",
-    step4Title: "La conexión de los proveedores", step4Text: "Compartes tu lista, los damos de alta y los acompañamos en los primeros pasos. Desde la primera incidencia, están en el circuito.",
+    onboardH2: "\u00BFCómo funciona la incorporación?",
+    step1Title: "Demo.", step1Text: "30 minutos sobre tu cartera y casos de uso reales.",
+    step2Title: "La configuración la hacemos nosotros, no tú.", step2Text: "Nos envías la estructura de tus edificios y la lista de usuarios. Nosotros creamos tu cuenta y lo cargamos todo.",
+    step3Title: "Los residentes se incorporan automáticamente.", step3Text: "Cada residente recibe un código de acceso por correo electrónico. Nos encargamos de los recordatorios en la semana 1 y la semana 3, y te damos un informe de activación claro en la semana 4.",
+    step4Title: "Tus proveedores conectados.", step4Text: "Comparte tu lista de proveedores; nosotros los incorporamos a la plataforma.",
     miniFaqH2: "Preguntas de administradores de fincas, respondidas",
-    faq1Q: "\u00BFCu\u00E1nto cuesta Cubii para administradores de fincas?", faq1A: "Desde €1,99 por unidad al mes (sin IVA), con descuentos según el número de unidades. El pago anual anticipado ahorra un 10%. Todos los detalles en la", pricingPageLink: "página de precios",
+    faq1Q: "\u00BFCu\u00E1nto cuesta Cubii para administradores de fincas?", faq1A: "Desde €2,99 por usuario al mes (sin IVA), con descuentos según el número de usuarios. El pago anual anticipado ahorra un 10%. Todos los detalles en la", pricingPageLink: "página de precios",
     faq2Q: "\u00BFCubii funciona con nuestros sensores y sistemas de edificio ya existentes?", faq2A: "Sí. Cubii es independiente de marca: se conecta a sistemas BMS, sensores IoT y contactos secos de cualquier fabricante.",
     faq3Q: "\u00BFCubii ayuda con el cumplimiento de la EPBD?", faq3A: "Sí. Cubii registra el consumo energético por edificio en tiempo real y mantiene los registros de mantenimiento digitales alineados con la Directiva de Eficiencia Energética de los Edificios.",
     faq4Q: "\u00BFCu\u00E1nto tarda la implementación?", faq4A: "Smart Cube se encarga de la configuración: creación de la cuenta, estructura del edificio, incorporación de usuarios y correos de activación para los residentes. La mayoría de las carteras están operativas en días, no en meses."
   },
   fr: {
     eyebrow: "Pour les gestionnaires immobiliers et syndics",
-    heroPrefix: "Moins d’appels, de mails et de déplacements. Plus de", heroHighlight: "bâtiments", heroSuffix: " pour plus de rentabilité.",
-    heroLead: "Incidents et ticketing assisté par IA",
-    heroSubhead: "Une panne se signale à la voix ou en photo, en 30 secondes. L’IA structure le ticket. Les capteurs, eux, en créent automatiquement. Un seul ticket informe toute la copropriété, le syndic de copropriété et le prestataire concerné. Vous validez, vous transférez, tout le monde suit en temps réel.",
-    heroPunch: "Dix appels et dix mails pour le même problème : c’est fini.",
-    bookDemo: "Réserver une démo", heroNote: "30 minutes, sur votre portefeuille réel. À partir de 1,99 € par lot et par mois.",
-    dashboardLabel: "Console d’administration Cubii — portefeuille multi-sites",
-    answerH2Pre: "Que fait Cubii pour les ", answerH2Emph: "gestionnaires immobiliers", answerH2Post: " et les syndics ?",
-    answerText: "Cubii offre aux gestionnaires immobiliers et aux syndics une plateforme unique pour gérer les incidents, la maintenance, l’énergie et les documents sur l’ensemble de leur portefeuille de bâtiments. Les incidents sont signalés par les résidents ou détectés par des capteurs, convertis en tickets structurés, et envoyés automatiquement aux prestataires de services.",
-    answerPrice: "Les tarifs démarrent à 1,99 € par lot et par mois.",
-    answerPriceNote: "Le tarif varie de façon décroissante en fonction du nombre de lots.",
-    frictionPrefix: "Quoi de neuf dans vos bâtiments", frictionHighlight: "cette semaine", frictionSuffix: " ?",
-    frictionItems: ["Répondre quinze fois à la même question sur la même panne.", "Relancer un technicien pour un rapport.", "Reconstituer un historique d’intervention à partir de trois boîtes mail.", "Passer vérifier un bâtiment parce que personne ne signalera rien."],
-    frictionText1: "Rien de tout cela n’est de la gestion. C’est de la friction.",
-    frictionText2: "Un ticket informe tout le monde. Une échéance déclenche l’intervention. Un historique s’écrit tout seul. Un capteur parle avant le dégât.",
-    benefitsH2: "Comment Cubii améliore votre quotidien ?",
-    b1Title: "Les incidents vous arrivent structurés, pas sous forme d’appels.",
-    b1Items: [
-      { title: "Les résidents signalent depuis l’application", text: "Photo, localisation, catégorie. En 30 secondes, sans vous appeler." },
-      { title: "Les équipements signalent tout seuls", text: "Capteurs et systèmes du bâtiment, toutes marques : GTB, IoT, contacts secs. Le ticket se crée sans intervention humaine." },
-      { title: "Vous validez, Cubii envoie", text: "Un clic. Le prestataire est mandaté, les résidents sont informés, le suivi commence." }
-    ],
-    b2Title: "La maintenance ne s’oublie plus.", b2Text: "Vous programmez une fois : tâche, échéance, prestataire. À la date, le ticket part tout seul. Le registre se met à jour.",
-    b3Title: "Énergie & conformité", b3Text: "Consommations en temps réel, alertes d’anomalies, registre numérique EPBD tenu automatiquement.",
-    b4Title: "Gestion documentaire", b4Text: "Carnet d’entretien, registre de sécurité, contrats, plans, le tout classé par bâtiment, trouvable en trois secondes, partageable en deux clics. Vos archives ne sont plus dans vos mails.",
-    b5Title: "La feuille scotchée sur la porte du hall, c’est terminé.", b5Text: "Une notification Cubii, elle, arrive dans la poche de chaque copropriétaire. Coupure d’eau, test d’alarme, intervention en cours, compte rendu d’AG : l’information est saisie une fois et touche tout le monde en quelques secondes.",
-    b6Title: "Cubii, c’est l’écosystème du bâtiment.", b6Text: "Simple à adopter. Impossible à saturer.",
-    roiH2: "Qu’est-ce que cela permet d’économiser ?",
-    roi1Number: "jusqu’à 30 %", roi1Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", roi1Source: "Source : Ignitec",
-    roi2Number: "jusqu’à 20 %", roi2Text: "de coûts de réparation en moins grâce à la détection précoce sur des systèmes connectés", roi2Source: "Source : IQnext",
-    roi3Number: "100–150", roi3Text: "unités par technicien aujourd’hui — la détection précoce relève ce plafond",
-    compatH2: "Cubii seul ou avec les autres. Vous choisissez !",
-    compatText: "Cubii fonctionne de façon autonome : vous l’installez, vous l’utilisez, vous n’avez besoin de rien d’autre.",
-    compatText2: "Mais vous avez déjà un logiciel de comptabilité, un ERP, une GTB, un outil de gestion locative. Cubii s’y connecte par API. Les données circulent dans les deux sens, sans double saisie et sans remplacer ce qui fonctionne déjà chez vous. Vous ajoutez une brique, vous n’engagez pas une migration.",
-    compatCaption: "Agnostique de marque par conception : GTB, capteurs IoT, contacts secs.",
-    onboardH2: "Comment se déroule l’intégration ?",
-    step1Title: "La démo — 30 minutes", step1Text: "Pas une présentation générique : nous travaillons sur votre portefeuille et vos cas réels. Vous voyez à quoi Cubii ressemble avec vos bâtiments dedans.",
-    step2Title: "La configuration, c’est nous et pas vous", step2Text: "Vous nous transmettez la structure de vos bâtiments et la liste de vos utilisateurs. Nous créons le compte, chargeons les données, paramétrons les accès. Vous recevez une plateforme prête à l’emploi.",
-    step3Title: "L’activation des résidents — automatique et suivie", step3Text: "Chaque résident reçoit un mail avec son code d’accès. Nous relançons ceux qui n’ont pas activé, en semaine 1 puis en semaine 3. En semaine 4, vous recevez un rapport d’activation clair : qui est actif, qui ne l’est pas, où insister. Vous ne courez après personne.",
-    step4Title: "Le raccordement des prestataires", step4Text: "Vous partagez votre liste, nous les intégrons et les accompagnons à la prise en main. Dès le premier ticket, ils sont dans la boucle.",
+    heroPrefix: "Gérez des bâtiments. Pas des", heroHighlight: "appels téléphoniques",
+    heroSubhead: "Cubii automatise tout ce qui se passe entre \u00AB\u00A0quelque chose est cassé\u00A0\u00BB et \u00AB\u00A0c\u2019est réparé\u00A0\u00BB\u00A0: détection, création de tickets, envoi, suivi et documentation. Votre équipe récupère des heures, chaque semaine.",
+    bookDemo: "Réserver une démo", heroNote: "30 minutes, sur votre portefeuille réel. À partir de 2,99\u00A0€ par utilisateur/mois.",
+    dashboardLabel: "Console d\u2019administration Cubii \u2014 portefeuille multi-sites",
+    answerH2: "Que fait Cubii pour les gestionnaires immobiliers et les syndics\u00A0?",
+    answerText: "Cubii offre aux gestionnaires immobiliers et aux syndics une plateforme unique pour gérer les incidents, la maintenance, l\u2019énergie et les documents sur l\u2019ensemble de leur portefeuille de bâtiments. Les incidents sont signalés par les résidents ou détectés par des capteurs, convertis en tickets structurés, et envoyés automatiquement aux prestataires de services. Les tarifs démarrent à 2,99\u00A0€ par utilisateur et par mois.",
+    frictionPrefix: "Où passe vraiment votre", frictionHighlight: "semaine",
+    frictionText1: "Répondre quinze fois à la même question d\u2019un résident. Relancer un technicien pour un rapport. Reconstituer un historique d\u2019intervention à partir de trois boîtes mail. Vérifier les bâtiments manuellement parce que personne ne signalerait un problème avant l\u2019inondation.",
+    frictionText2: "Rien de tout cela n\u2019est de la gestion. C\u2019est de la friction. Cubii l\u2019élimine.",
+    benefitsH2: "Comment Cubii change le quotidien",
+    b1Title: "Les incidents vous arrivent structurés, pas sous forme d\u2019appels.", b1Text: "Les résidents les signalent dans l\u2019application avec photos et localisation. Les capteurs et systèmes du bâtiment (toutes marques\u00A0: GTB, IoT, contacts secs) créent des tickets automatiquement. Vous validez, Cubii envoie.",
+    b2Title: "La maintenance se gère toute seule.", b2Text: "Les tâches récurrentes sont préprogrammées. À la date prévue, le ticket part automatiquement chez le prestataire. Le registre se met à jour tout seul.",
+    b3Title: "Énergie sous contrôle, EPBD couverte.", b3Text: "Eau, gaz et électricité en temps réel par bâtiment, intégration Leneda, alertes d\u2019anomalies, et les registres numériques de plus en plus exigés par la réglementation européenne.",
+    b4Title: "Chaque document à sa place.", b4Text: "Carnet d\u2019entretien numérique, registre de sécurité, contrats, plans. Partageable avec les prestataires en deux clics.",
+    b5Title: "Les résidents restent informés sans le moindre effort de votre part.", b5Text: "Notifications push, affichage en hall d\u2019entrée, statut par ticket. Moins d\u2019appels car les gens savent déjà.",
+    b6Title: "Une plateforme, tout votre portefeuille.", b6Text: "Multi-sites par conception. Chaque bâtiment, un seul tableau de bord.",
+    roiH2: "Qu\u2019est-ce que cela permet d\u2019économiser\u00A0?",
+    roi1Number: "jusqu\u2019à 30\u00A0%", roi1Text: "de coûts opérationnels en moins en éliminant les rondes manuelles", roi1Source: "Source\u00A0: Ignitec",
+    roi2Number: "jusqu\u2019à 20\u00A0%", roi2Text: "de coûts de réparation en moins grâce à la détection précoce sur des systèmes connectés", roi2Source: "Source\u00A0: IQnext",
+    roi3Number: "100\u2013150", roi3Text: "unités par technicien aujourd\u2019hui \u2014 la détection précoce relève ce plafond",
+    compatH2: "Devons-nous changer nos outils\u00A0?",
+    compatText: "Non. Cubii n\u2019est pas une révolution, c\u2019est une évolution. Elle se connecte à des équipements de tout fabricant, fonctionne aux côtés de votre logiciel de gestion immobilière existant, et ne nécessite aucun service informatique. La plupart des équipes sont opérationnelles en quelques jours.",
+    compatCaption: "Agnostique de marque par conception\u00A0: GTB, capteurs IoT, contacts secs.",
+    onboardH2: "Comment se déroule l\u2019intégration\u00A0?",
+    step1Title: "Démo.", step1Text: "30 minutes sur votre portefeuille et vos cas d\u2019usage réels.",
+    step2Title: "La configuration est faite par nous, pas par vous.", step2Text: "Vous nous envoyez la structure de vos bâtiments et la liste des utilisateurs. Nous créons votre compte et chargeons tout.",
+    step3Title: "Les résidents sont intégrés automatiquement.", step3Text: "Chaque résident reçoit un code d\u2019accès par e-mail. Nous gérons les relances en semaine 1 et en semaine 3, et vous fournissons un rapport d\u2019activation clair en semaine 4.",
+    step4Title: "Vos prestataires connectés.", step4Text: "Partagez votre liste de prestataires\u00A0; nous les intégrons à la plateforme.",
     miniFaqH2: "Questions des gestionnaires immobiliers, avec réponses",
-    faq1Q: "Combien coûte Cubii pour les gestionnaires immobiliers\u00A0?", faq1A: "À partir de 1,99\u00A0€ par lot et par mois (hors TVA), dégressif selon le nombre de lots. Le prépaiement annuel fait économiser 10\u00A0%. Tous les détails sur la", pricingPageLink: "page tarifs",
+    faq1Q: "Combien coûte Cubii pour les gestionnaires immobiliers\u00A0?", faq1A: "À partir de 2,99\u00A0€ par utilisateur et par mois (hors TVA), dégressif selon le nombre d\u2019utilisateurs. Le prépaiement annuel fait économiser 10\u00A0%. Tous les détails sur la", pricingPageLink: "page tarifs",
     faq2Q: "Cubii fonctionne-t-elle avec nos capteurs et systèmes de bâtiment existants\u00A0?", faq2A: "Oui. Cubii est agnostique de marque\u00A0: elle se connecte aux systèmes GTB, capteurs IoT et contacts secs de tout fabricant.",
     faq3Q: "Cubii aide-t-elle à la conformité EPBD\u00A0?", faq3A: "Oui. Cubii suit la consommation énergétique par bâtiment en temps réel et maintient les registres de maintenance numériques alignés sur la directive sur la performance énergétique des bâtiments.",
     faq4Q: "Combien de temps prend la mise en œuvre\u00A0?", faq4A: "Smart Cube prend en charge la configuration\u00A0: création du compte, structure des bâtiments, intégration des utilisateurs et e-mails d\u2019activation des résidents. La plupart des portefeuilles sont opérationnels en quelques jours, pas en mois."
   },
   de: {
     eyebrow: "Für Gebäudeverwalter",
-    heroPrefix: "Weniger Anrufe, Mails und Fahrten. Mehr", heroHighlight: "Gebäude", heroSuffix: " für mehr Rentabilität.",
-    heroLead: "Störungen und KI-gestütztes Ticketing",
-    heroSubhead: "Eine Störung wird per Sprache oder Foto gemeldet, in 30 Sekunden. Die KI strukturiert das Ticket. Sensoren wiederum erzeugen Tickets automatisch. Ein einziges Ticket informiert die gesamte Eigentümergemeinschaft, die Hausverwaltung und den zuständigen Dienstleister. Sie geben frei, Sie leiten weiter, alle verfolgen es in Echtzeit.",
-    heroPunch: "Zehn Anrufe und zehn Mails für dasselbe Problem: vorbei.",
-    bookDemo: "Demo buchen", heroNote: "30 Minuten, anhand Ihres echten Portfolios. Ab 1,99 € pro Einheit und Monat.",
+    heroPrefix: "Gebäude verwalten. Keine", heroHighlight: "Telefonate",
+    heroSubhead: "Cubii automatisiert alles zwischen „etwas ist kaputt“ und „es ist repariert“: Erkennung, Ticketerstellung, Zuweisung, Nachverfolgung und Dokumentation. Ihr Team gewinnt jede Woche wertvolle Stunden zurück.",
+    bookDemo: "Demo buchen", heroNote: "30 Minuten, anhand Ihres echten Portfolios. Ab 2,99 € pro Nutzer/Monat.",
     dashboardLabel: "Cubii Admin — Portfolio-Dashboard",
     answerH2Pre: "Was macht Cubii für ", answerH2Emph: "Gebäudeverwalter", answerH2Post: "?",
-    answerText: "Cubii bietet Gebäudeverwaltern eine einzige Plattform, um Vorfälle, Wartung, Energie und Dokumente über das gesamte Gebäudeportfolio hinweg zu steuern. Vorfälle werden von Bewohnern gemeldet oder von Sensoren erkannt, in strukturierte Tickets umgewandelt und automatisch an Dienstleister gesendet.",
-    answerPrice: "Die Preise beginnen bei 1,99 € pro Einheit und Monat.",
-    answerPriceNote: "Der Tarif sinkt mit der Anzahl der Einheiten.",
-    frictionPrefix: "Was gibt es in Ihren Gebäuden", frictionHighlight: "diese Woche", frictionSuffix: " Neues?",
-    frictionItems: ["Fünfzehnmal dieselbe Frage zur selben Störung beantworten.", "Einem Techniker wegen eines Berichts hinterhertelefonieren.", "Einen Einsatzverlauf aus drei Postfächern zusammensuchen.", "Ein Gebäude kontrollieren fahren, weil ohnehin niemand etwas meldet."],
-    frictionText1: "Nichts davon ist Verwaltung. Das ist Reibung.",
-    frictionText2: "Ein Ticket informiert alle. Eine Frist löst den Einsatz aus. Eine Historie schreibt sich von selbst. Ein Sensor spricht, bevor der Schaden es tut.",
-    benefitsH2: "Wie verbessert Cubii Ihren Alltag?",
-    b1Title: "Störungen erreichen Sie strukturiert, nicht als Anrufe.",
-    b1Items: [
-      { title: "Bewohner melden aus der App", text: "Foto, Ort, Kategorie. In 30 Sekunden, ohne Sie anzurufen." },
-      { title: "Anlagen melden sich von selbst", text: "Gebäudesensoren und -systeme, jede Marke: GLT, IoT, Trockenkontakte. Das Ticket entsteht ohne menschliches Zutun." },
-      { title: "Sie geben frei, Cubii sendet", text: "Ein Klick. Der Dienstleister ist beauftragt, die Bewohner sind informiert, die Nachverfolgung beginnt." }
-    ],
-    b2Title: "Wartung wird nie mehr vergessen.", b2Text: "Sie planen einmal: Aufgabe, Frist, Dienstleister. Am Stichtag geht das Ticket von selbst raus. Das Register aktualisiert sich.",
-    b3Title: "Energie & Konformität", b3Text: "Verbräuche in Echtzeit, Anomaliewarnungen, digitales EPBD-Register automatisch geführt.",
-    b4Title: "Dokumentenverwaltung", b4Text: "Wartungsbuch, Sicherheitsregister, Verträge, Pläne, alles nach Gebäude abgelegt, in drei Sekunden auffindbar, in zwei Klicks teilbar. Ihr Archiv liegt nicht mehr im Postfach.",
-    b5Title: "Der Zettel an der Eingangstür hat ausgedient.", b5Text: "Eine Cubii-Benachrichtigung landet dagegen in der Tasche jedes Miteigentümers. Wasserabschaltung, Alarmtest, laufender Einsatz, Protokoll der Eigentümerversammlung: Die Information wird einmal erfasst und erreicht alle binnen Sekunden.",
-    b6Title: "Cubii ist das Ökosystem des Gebäudes.", b6Text: "Einfach einzuführen. Unmöglich zu überlasten.",
+    answerText: "Cubii bietet Gebäudeverwaltern eine einzige Plattform, um Vorfälle, Wartung, Energie und Dokumente über das gesamte Gebäudeportfolio hinweg zu verwalten. Vorfälle werden von Bewohnern gemeldet oder von Sensoren erkannt, in strukturierte Tickets umgewandelt und automatisch an Dienstleister weitergeleitet. Die Preise beginnen bei 2,99 € pro Nutzer und Monat.",
+    frictionPrefix: "Wo Ihre Woche wirklich", frictionHighlight: "bleibt",
+    frictionText1: "Die gleiche Frage eines Bewohners fünfzehnmal beantworten. Einem Techniker hinterherlaufen, um einen Bericht zu bekommen. Eine Interventionshistorie aus drei Postfächern rekonstruieren. Gebäude manuell kontrollieren, weil niemand ein Problem melden würde, bevor es zur Überschwemmung kommt.",
+    frictionText2: "Nichts davon ist Verwaltung. Das ist Reibung. Cubii beseitigt sie.",
+    benefitsH2: "Wie Cubii den Alltag verändert",
+    b1Title: "Vorfälle erreichen Sie strukturiert, nicht als Telefonanrufe.", b1Text: "Bewohner melden Vorfälle in der App mit Fotos und Standort. Sensoren und Gebäudesysteme (jede Marke: GLT, IoT, Trockenkontakte) erstellen automatisch Tickets. Sie bestätigen, Cubii leitet weiter.",
+    b2Title: "Die Wartung läuft von selbst.", b2Text: "Wiederkehrende Aufgaben sind vorprogrammiert. Am geplanten Termin geht das Ticket automatisch an den Dienstleister. Das Register aktualisiert sich von selbst.",
+    b3Title: "Energie unter Kontrolle, EPBD abgedeckt.", b3Text: "Wasser, Gas und Strom in Echtzeit pro Gebäude, Leneda-Integration, Anomalie-Warnungen und die digitalen Aufzeichnungen, die die europäische Regulierung zunehmend verlangt.",
+    b4Title: "Jedes Dokument dort, wo es hingehört.", b4Text: "Digitales Wartungsbuch, Sicherheitsregister, Verträge, Pläne. Mit Dienstleistern in zwei Klicks teilbar.",
+    b5Title: "Bewohner bleiben informiert, ohne dass Sie einen Finger rühren müssen.", b5Text: "Push-Benachrichtigungen, Anzeige im Eingangsbereich, Status pro Ticket. Weniger Anrufe, weil die Bewohner bereits Bescheid wissen.",
+    b6Title: "Eine Plattform, Ihr gesamtes Portfolio.", b6Text: "Multi-Standort von Grund auf. Jedes Gebäude, ein Dashboard.",
     roiH2: "Was spart das?",
     roi1Number: "bis zu 30 %", roi1Text: "geringere Betriebskosten durch den Wegfall manueller Kontrollgänge", roi1Source: "Quelle: Ignitec",
     roi2Number: "bis zu 20 %", roi2Text: "geringere Reparaturkosten durch Früherkennung mit vernetzten Systemen", roi2Source: "Quelle: IQnext",
     roi3Number: "100–150", roi3Text: "Einheiten pro Techniker heute — Früherkennung hebt diese Grenze an",
-    compatH2: "Cubii allein oder mit den anderen. Sie entscheiden!",
-    compatText: "Cubii funktioniert eigenständig: Sie installieren es, Sie nutzen es, mehr brauchen Sie nicht.",
-    compatText2: "Aber Sie haben bereits eine Buchhaltungssoftware, ein ERP, eine GLT, ein Mietverwaltungstool. Cubii verbindet sich per API damit. Die Daten fließen in beide Richtungen, ohne Doppelerfassung und ohne zu ersetzen, was bei Ihnen bereits funktioniert. Sie fügen einen Baustein hinzu, Sie starten keine Migration.",
+    compatH2: "Müssen wir unsere Tools wechseln?",
+    compatText: "Nein. Cubii ist keine Revolution, sondern eine Weiterentwicklung. Es lässt sich mit Geräten jedes Herstellers verbinden, funktioniert neben Ihrer bestehenden Immobilienverwaltungssoftware und erfordert keine IT-Abteilung. Die meisten Teams sind innerhalb weniger Tage einsatzbereit.",
     compatCaption: "Herstellerunabhängig von Grund auf: GLT, IoT-Sensoren, Trockenkontakte.",
-    onboardH2: "Wie läuft das Onboarding ab?",
-    step1Title: "Die Demo — 30 Minuten", step1Text: "Keine generische Präsentation: Wir arbeiten an Ihrem Portfolio und Ihren echten Fällen. Sie sehen, wie Cubii mit Ihren Gebäuden darin aussieht.",
-    step2Title: "Die Einrichtung machen wir, nicht Sie", step2Text: "Sie übermitteln uns die Struktur Ihrer Gebäude und Ihre Nutzerliste. Wir erstellen das Konto, laden die Daten, richten die Zugriffe ein. Sie erhalten eine einsatzbereite Plattform.",
-    step3Title: "Die Aktivierung der Bewohner — automatisch und nachverfolgt", step3Text: "Jeder Bewohner erhält eine E-Mail mit seinem Zugangscode. Wir hören bei denen nach, die nicht aktiviert haben, in Woche 1 und erneut in Woche 3. In Woche 4 erhalten Sie einen klaren Aktivierungsbericht: wer aktiv ist, wer nicht, wo nachzufassen ist. Sie laufen niemandem hinterher.",
-    step4Title: "Die Anbindung der Dienstleister", step4Text: "Sie teilen Ihre Liste, wir binden sie ein und begleiten sie beim Einstieg. Schon ab dem ersten Ticket sind sie im Boot.",
+    onboardH2: "Wie funktioniert das Onboarding?",
+    step1Title: "Demo.", step1Text: "30 Minuten anhand Ihres tatsächlichen Portfolios und Ihrer Anwendungsfälle.",
+    step2Title: "Einrichtung durch uns, nicht durch Sie.", step2Text: "Sie senden uns Ihre Gebäudestruktur und Nutzerliste. Wir erstellen Ihr Konto und laden alles hoch.",
+    step3Title: "Bewohner werden automatisch integriert.", step3Text: "Jeder Bewohner erhält einen Zugangscode per E-Mail. Wir kümmern uns um Erinnerungen in Woche 1 und Woche 3 und liefern Ihnen in Woche 4 einen klaren Aktivierungsbericht.",
+    step4Title: "Ihre Dienstleister angebunden.", step4Text: "Teilen Sie uns Ihre Dienstleisterliste mit; wir bringen sie auf die Plattform.",
     miniFaqH2: "Fragen von Gebäudeverwaltern, beantwortet",
-    faq1Q: "Wie viel kostet Cubii für Gebäudeverwalter?", faq1A: "Ab 1,99 € pro Einheit und Monat (zzgl. MwSt.), degressiv je nach Einheitenanzahl. Die jährliche Vorauszahlung spart 10 %. Alle Details finden Sie auf der", pricingPageLink: "Preisseite",
+    faq1Q: "Wie viel kostet Cubii für Gebäudeverwalter?", faq1A: "Ab 2,99 € pro Nutzer und Monat (zzgl. MwSt.), degressiv je nach Nutzeranzahl. Die jährliche Vorauszahlung spart 10 %. Alle Details finden Sie auf der", pricingPageLink: "Preisseite",
     faq2Q: "Funktioniert Cubii mit unseren bestehenden Sensoren und Gebäudesystemen?", faq2A: "Ja. Cubii ist herstellerunabhängig: Es verbindet sich mit GLT-Systemen, IoT-Sensoren und Trockenkontakten jedes Herstellers.",
     faq3Q: "Unterstützt Cubii bei der EPBD-Konformität?", faq3A: "Ja. Cubii erfasst den Energieverbrauch pro Gebäude in Echtzeit und pflegt die digitalen Wartungsaufzeichnungen im Einklang mit der Richtlinie über die Gesamtenergieeffizienz von Gebäuden.",
     faq4Q: "Wie lange dauert die Implementierung?", faq4A: "Smart Cube übernimmt die Einrichtung: Kontoerstellung, Gebäudestruktur, Nutzeranlage und Onboarding-E-Mails für Bewohner. Die meisten Portfolios sind innerhalb von Tagen einsatzbereit, nicht Monaten."
@@ -445,11 +380,11 @@ const TRANSLATIONS = {
 };
 
 const META = {
-  en: { title: "Cubii for Facility Managers & Syndics | Fewer Calls, Faster Fixes", description: "Automated incident ticketing, energy monitoring, maintenance calendars and EPBD-ready records for facility managers and syndics. From €1.99 per lot/month. Book a demo." },
-  pt: { title: "Cubii para Gestores de Condomínio | Menos Chamadas, Reparações Mais Rápidas", description: "Criação automática de pedidos, monitorização energética, calendários de manutenção e registos prontos para a EPBD para gestores de condomínio e administradores. A partir de €1,99 por fração/mês. Marque uma demonstração." },
-  es: { title: "Cubii para Administradores de Fincas | Menos Llamadas, Reparaciones Más Rápidas", description: "Partes de incidencias automatizados, monitorización energética, calendarios de mantenimiento y registros listos para la EPBD para administradores de fincas y comunidades. Desde €1,99 por unidad/mes. Reserva una demo." },
-  fr: { title: "Cubii pour les Gestionnaires Immobiliers | Moins d\u2019Appels, Réparations Plus Rapides", description: "Tickets d\u2019incidents automatisés, suivi énergétique, calendriers de maintenance et registres conformes à l\u2019EPBD pour gestionnaires immobiliers et syndics. À partir de 1,99\u00A0€ par lot/mois. Réservez une démo." },
-  de: { title: "Cubii für Gebäudeverwalter | Weniger Anrufe, Schnellere Reparaturen", description: "Automatisierte Vorfall-Tickets, Energieüberwachung, Wartungskalender und EPBD-konforme Aufzeichnungen für Gebäudeverwalter. Ab 1,99 € pro Einheit/Monat. Demo buchen." }
+  en: { title: "Cubii for Facility Managers & Syndics | Fewer Calls, Faster Fixes", description: "Automated incident ticketing, energy monitoring, maintenance calendars and EPBD-ready records for facility managers and syndics. From €2.99 per user/month. Book a demo." },
+  pt: { title: "Cubii para Gestores de Condomínio | Menos Chamadas, Reparações Mais Rápidas", description: "Criação automática de pedidos, monitorização energética, calendários de manutenção e registos prontos para a EPBD para gestores de condomínio e administradores. A partir de €2,99 por utilizador/mês. Marque uma demonstração." },
+  es: { title: "Cubii para Administradores de Fincas | Menos Llamadas, Reparaciones Más Rápidas", description: "Partes de incidencias automatizados, monitorización energética, calendarios de mantenimiento y registros listos para la EPBD para administradores de fincas y comunidades. Desde €2,99 por usuario/mes. Reserva una demo." },
+  fr: { title: "Cubii pour les Gestionnaires Immobiliers | Moins d\u2019Appels, Réparations Plus Rapides", description: "Tickets d\u2019incidents automatisés, suivi énergétique, calendriers de maintenance et registres conformes à l\u2019EPBD pour gestionnaires immobiliers et syndics. À partir de 2,99\u00A0€ par utilisateur/mois. Réservez une démo." },
+  de: { title: "Cubii für Gebäudeverwalter | Weniger Anrufe, Schnellere Reparaturen", description: "Automatisierte Vorfall-Tickets, Energieüberwachung, Wartungskalender und EPBD-konforme Aufzeichnungen für Gebäudeverwalter. Ab 2,99 € pro Nutzer/Monat. Demo buchen." }
 };
 
 class Component extends DCLogic {
@@ -492,7 +427,7 @@ class Component extends DCLogic {
       metaTitle: meta.title,
       metaDescription: meta.description,
       schema: ["Organization (Smart Cube)", "FAQPage (4 manager Q/A, text identical to page)"],
-      h2s: ["What does Cubii do for facility managers and syndics?", "What is new in your buildings this week?", "How does Cubii improve your day-to-day?", "What does this save?", "Cubii on its own or with the rest. You choose!", "How does onboarding work?", "Facility manager questions, answered"],
+      h2s: ["What does Cubii do for facility managers and syndics?", "Where your week actually goes", "How Cubii changes the day-to-day", "What does this save?", "Do we have to change our tools?", "How does onboarding work?", "Facility manager questions, answered"],
       gaps: ["Syndic case study: portfolio size, calls reduced, hours saved", "Real volume pricing bands (today: quote on request)", "Admin dashboard product shot", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
     };
   }

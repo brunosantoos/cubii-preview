@@ -35,8 +35,7 @@
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
           <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span>.</h1>
-          <p style="margin:0 0 16px;font-size:19px;line-height:1.6;color:#3A4247;max-width:540px;">{{ t.heroSubhead }}</p>
-          <p style="margin:0 0 34px;font-size:17px;line-height:1.6;color:#0A0A0A;font-weight:600;max-width:540px;">{{ t.heroSubhead2 }}</p>
+          <p style="margin:0 0 34px;font-size:19px;line-height:1.6;color:#3A4247;max-width:540px;">{{ t.heroSubhead }}</p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
             <a href="#condominium" style="display:flex;align-items:center;gap:10px;background:#0A0A0A;color:#FFFFFF;padding:13px 22px;border-radius:12px;text-decoration:none;" style-hover="background:#296D83;color:#FFFFFF;">
               <span style="font-size:22px;line-height:1;">&#63743;</span>
@@ -93,10 +92,7 @@
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;">{{ t.answerH2Emph }}</span>{{ t.answerH2Post }}</h2>
         <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-          <p style="margin:0 0 18px;font-size:19px;line-height:1.45;color:#0A0A0A;font-weight:800;letter-spacing:-0.015em;">{{ t.answerLead }}</p>
-          <ul style="margin:0;padding:0 0 0 20px;font-size:16px;line-height:1.7;color:#12313C;">
-            <sc-for list="{{ t.answerItems }}" as="item" hint-placeholder-count="7"><li style="margin:0 0 6px;">{{ item }}</li></sc-for>
-          </ul>
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
         </div>
       </div>
     </section>
@@ -105,41 +101,47 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 24px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.condoH2 }}</h2>
         <p style="margin:0 0 48px;font-size:18px;line-height:1.65;color:#3A4247;max-width:760px;">{{ t.condoIntro }}</p>
-        <h3 style="margin:0 0 28px;font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-0.02em;">{{ t.waysH3 }}</h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
-            <span style="width:34px;height:34px;border-radius:999px;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">1</span>
-            <h4 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.way1Title }}</h4>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;">{{ t.way1Text }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:44px;align-items:start;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+            <h3 style="margin:0 0 14px;font-size:19px;font-weight:700;">{{ t.familiarH3 }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#6C8087;">{{ t.familiarText }}</p>
           </div>
-          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
-            <span style="width:34px;height:34px;border-radius:999px;background:#2E5FA3;color:#FFFFFF;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">2</span>
-            <h4 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.way2Title }}</h4>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;">{{ t.way2Text }}</p>
-          </div>
-          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
-            <span style="width:34px;height:34px;border-radius:999px;background:#C77DB8;color:#0A0A0A;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">3</span>
-            <h4 style="margin:0 0 10px;font-size:18px;font-weight:700;">{{ t.way3Title }}</h4>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;">{{ t.way3Text }}</p>
+          <div>
+            <p style="margin:0 0 20px;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#00AAEE;">{{ t.withCubiiLabel }}</p>
+            <ul ref="{{ railRef }}" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;">
+              <li style="padding-left:20px;border-left:3px solid #85CCF0;transform-origin:top;{{ railStyle1 }}">
+                <strong style="display:block;font-size:16px;font-weight:700;margin-bottom:5px;">{{ t.benefit1Title }}</strong>
+                <span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.benefit1Text }}</span>
+              </li>
+              <li style="padding-left:20px;border-left:3px solid #85CCF0;transform-origin:top;{{ railStyle2 }}">
+                <strong style="display:block;font-size:16px;font-weight:700;margin-bottom:5px;">{{ t.benefit2Title }}</strong>
+                <span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.benefit2Text }}</span>
+              </li>
+              <li style="padding-left:20px;border-left:3px solid #85CCF0;transform-origin:top;{{ railStyle3 }}">
+                <strong style="display:block;font-size:16px;font-weight:700;margin-bottom:5px;">{{ t.benefit3Title }}</strong>
+                <span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.benefit3Text }}</span>
+              </li>
+              <li style="padding-left:20px;border-left:3px solid #85CCF0;transform-origin:top;{{ railStyle4 }}">
+                <strong style="display:block;font-size:16px;font-weight:700;margin-bottom:5px;">{{ t.benefit4Title }}</strong>
+                <span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.benefit4Text }}</span>
+              </li>
+              <li style="padding-left:20px;border-left:3px solid #85CCF0;transform-origin:top;{{ railStyle5 }}">
+                <strong style="display:block;font-size:16px;font-weight:700;margin-bottom:5px;">{{ t.benefit5Title }}</strong>
+                <span style="font-size:16px;line-height:1.6;color:#3A4247;">{{ t.benefit5Text }}</span>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section data-screen-label="Residents / getting started" style="padding:88px 0;">
-      <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 40px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.startH2 }}</h2>
-        <ol style="list-style:none;margin:0 0 36px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-          <sc-for list="{{ t.startSteps }}" as="step" hint-placeholder-count="4"><li style="border:1px solid #DCE7EB;border-radius:18px;padding:26px 28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-            <span style="display:block;font-size:12px;font-weight:800;letter-spacing:0.14em;color:#00AAEE;margin-bottom:12px;">{{ step.n }}</span>
-            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ step.title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.62;color:#3A4247;">{{ step.text }}</p>
-          </li></sc-for>
-        </ol>
-        <p style="margin:0 0 30px;font-size:16px;line-height:1.65;color:#3A4247;max-width:820px;">{{ t.startNote }}</p>
-        <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
-          <a href="#condominium" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.downloadFreeCta }}</a>
-          <a href="Contact.dc.html" style="font-size:15px;font-weight:600;color:#296D83;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;">{{ t.suggestCta }}</a>
+        <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;align-items:center;background:#FFFFFF;border:1px solid #DCE7EB;border-radius:22px;padding:34px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <div>
+            <h3 style="margin:0 0 12px;font-size:19px;font-weight:700;">{{ t.startedH3 }}</h3>
+            <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#3A4247;">{{ t.startedText1 }}</p>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;">{{ t.startedText2 }}</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+            <a href="#condominium" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.downloadFreeCta }}</a>
+            <a href="Contact.dc.html" style="font-size:15px;font-weight:600;color:#296D83;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;">{{ t.suggestCta }}</a>
+          </div>
         </div>
       </div>
     </section>
@@ -180,14 +182,6 @@
       </div>
     </section>
 
-    <section data-screen-label="Residents / ROI" style="padding:80px 0;background:#F5FBFD;">
-      <div style="max-width:900px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 20px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.roiH2 }}</h2>
-        <p style="margin:0 0 18px;font-size:18px;line-height:1.65;color:#3A4247;">{{ t.roiText }}</p>
-        <p style="margin:0;font-size:20px;line-height:1.5;font-weight:800;letter-spacing:-0.015em;color:#0A0A0A;">{{ t.roiPunch }}</p>
-      </div>
-    </section>
-
     <section data-screen-label="Residents / mini FAQ" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 40px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;">{{ t.miniFaqH2 }}</h2>
@@ -223,47 +217,38 @@ const LOCALES = ["en", "pt", "es", "fr", "de"];
 const TRANSLATIONS = {
   en: {
     eyebrow: "For residents & homeowners",
-    heroPrefix: "Everything about your building,", heroHighlight: "within reach",
-    heroSubhead: "What you are looking for is already there, in your pocket. And so is what you never think about: the ventilation filters to replace, the servicing that is coming due. Cubii thinks of it for you.",
-    heroSubhead2: "Preventive maintenance spares you the breakdown. The maintenance book raises the value of your property.",
+    heroPrefix: "Your building in your", heroHighlight: "pocket",
+    heroSubhead: "Building alerts that actually reach you, issue reporting in 30 seconds, and your energy consumption on demand. Free when your building is on Cubii.",
     appStoreLine1: "Download on the", googlePlayLine1: "Get it on",
     mock1Caption: "Report an incident in 30 seconds", mock2Caption: "Check water, gas and electricity live",
-    card1Eyebrow: "Ticket 482", card1Title: "Elevator stuck between floors 3 and 4", card1Status: "Provider on site · 22 min",
+    card1Eyebrow: "Ticket 482", card1Title: "Elevator stuck between floors 3 and 4", card1Status: "Provider on site \u00b7 22 min",
     card2Eyebrow: "Meter reading", card2Title: "Apt 3B logged water and electricity", card2Status: "Ready to export",
-    card3Title: "Assigned automatically", card3Status: "Elevator provider · 7 min after your report",
+    card3Title: "Assigned automatically", card3Status: "Elevator provider \u00b7 7 min after your report",
     jumpLabel: "Jump to your situation", jumpCondo: "I live in a condominium", jumpHome: "I own my house or apartment",
-    answerH2Pre: "For owners, co-owners and ", answerH2Emph: "tenants", answerH2Post: "",
-    answerLead: "Your home, in your pocket.",
-    answerItems: ["Be warned, through notifications", "Report a problem with your voice", "Follow every intervention live", "Documents centralized and easy to find", "Invoices scanned and filed automatically", "Marketplace: the right professional without searching", "Community: your neighbours somewhere other than WhatsApp"],
-    condoH2: "Do you live in a condominium?",
-    condoIntro: "You need nobody’s permission to improve your building.",
-    waysH3: "Are you a co-owner? Three ways to start",
-    way1Title: "Talk to your building manager",
-    way1Text: "Suggest Cubii to your condominium manager. You are not asking them for a favour: smoother internal communication, faster interventions, lower maintenance costs. The building, the co-owners and the manager all gain together.",
-    way2Title: "Start among co-owners",
-    way2Text: "No need to wait. Replace the WhatsApp groups, where everything gets mixed up and eventually lost, with the Cubii community: one single place where every problem in the building is reported, tracked and resolved.",
-    way3Title: "Offer it to your tenant",
-    way3Text: "Renting out your apartment? Give your tenant the tool that makes daily life simpler, and that keeps you informed without being contacted over every detail.",
-    startH2: "Getting started with Cubii, in a few minutes",
-    startSteps: [
-      { n: "1", title: "Download the app", text: "Cubii installs from the App Store or Google Play. Nothing to configure, nothing to install in the building." },
-      { n: "2", title: "Create your account", text: "An email address, a password, and your profile is active. You then state your role (owner, co-owner, tenant, manager or provider), because that is what determines what you see and what you can do." },
-      { n: "3", title: "Join your building", text: "With the invitation link, you enter your building’s space. You immediately find the community, the documents and the open incidents." },
-      { n: "4", title: "Use Cubii day to day", text: "A problem? You dictate it out loud, the AI writes the ticket. An invoice? You scan it, it files itself. A tradesperson? The Marketplace suggests one. A question for the neighbours? The building chat is there." }
-    ],
-    startNote: "No technical installation is required to start. Sensors, meters and connected alarms come later to enrich the platform, when you and your manager are ready.",
+    answerH2Pre: "What does the Cubii app do for ", answerH2Emph: "residents", answerH2Post: "?",
+    answerText: "Cubii is an app for residents and homeowners. It replaces paper notices with instant notifications, lets you report incidents with photos, and shows your water, gas and electricity consumption in real time. In a condominium managed on Cubii, the app is free for residents: the facility manager covers the platform. For your own house or apartment, you subscribe directly for €1.99/month.",
+    condoH2: "In a condominium: free for residents",
+    condoIntro: "Your building has a syndic or facility manager, and they\u2019ve connected it to Cubii. The app costs you nothing. Your manager covers the platform; you just download the app and activate it with the access code you received by email. Two minutes, no setup.",
+    familiarH3: "Sound familiar?",
+    familiarText: "The elevator\u2019s been broken for three days and nobody knows if it\u2019s been reported. The water gets cut and you find out when the tap runs dry. A notice was posted in the hallway last week. You never saw it.",
+    withCubiiLabel: "With Cubii",
+    benefit1Title: "You\u2019re always informed.", benefit1Text: "Water cut Thursday 9 to 12? You\u2019ll know Tuesday. Fire alarm test? No panic, you got the notification.",
+    benefit2Title: "Reporting takes 30 seconds.", benefit2Text: "Photo, category, send. You can follow the fix in the app instead of wondering if anyone is on it.",
+    benefit3Title: "Report sensitive issues anonymously.", benefit3Text: "Noise, shared space conflicts: raise them without awkwardness.",
+    benefit4Title: "Your energy use, on demand.", benefit4Text: "Water, gas, electricity, live. Spot the anomaly before the bill does.",
+    benefit5Title: "Building documents in one place.", benefit5Text: "House rules, meeting notes, plans. No more digging through emails.",
+    startedH3: "How do I get started?",
+    startedText1: "You\u2019ll receive an access code by email from your building manager. Download the app, enter the code, done.",
+    startedText2: "Your building isn\u2019t on Cubii yet? Tell your syndic or property manager about us, or send us their contact and we\u2019ll do the talking. Once your building joins, the app is free for you.",
     downloadFreeCta: "Download free", suggestCta: "Suggest Cubii to my building manager",
-    ownHomeH2: "Cubii, even without a condominium",
-    ownHomeIntro: "Your house deserves the same follow-up as an apartment building.",
-    hCard1Title: "All your papers in one place", hCard1Text: "Deeds, warranties, contracts, plans, manuals. Findable in three seconds, wherever you are.",
-    hCard2Title: "Your invoices scanned and filed", hCard2Text: "You know what your home costs you, item by item.",
-    hCard3Title: "Your deadlines kept", hCard3Text: "Boiler, chimney sweeping, inspections: Cubii reminds you what is coming due before it becomes a problem.",
-    hCard4Title: "Your consumption in plain sight", hCard4Text: "Water, heating, electricity, charging point. A drift shows up in three days, not on the annual bill.",
-    hCard5Title: "The right tradesperson, without searching", hCard5Text: "The Marketplace suggests one who is available.",
-    hStartedTitle: "A maintenance book that writes itself.", hStartedText: "At resale, a documented home defends itself better than a home taken on trust.", hStartedCta: "Start for €1.99/month",
-    roiH2: "What Cubii brings us",
-    roiText: "An incident caught in time is an emergency avoided. Consumption under watch is a drift stopped. A complete history is a building that is worth more.",
-    roiPunch: "Cubii pays for itself with the first problem avoided.",
+    ownHomeH2: "For your own home: €1.99/month",
+    ownHomeIntro: "No syndic, no facility manager: you run your own home. Cubii works for you too, as your personal building manager, for €1.99/month.",
+    hCard1Title: "The digital maintenance book.", hCard1Text: "Every repair, intervention and document in one place. A documented history that protects your property\u2019s value when you sell or rent.",
+    hCard2Title: "Your energy use, live.", hCard2Text: "Water, gas and electricity in real time. Spot the leak or the anomaly before the bill does.",
+    hCard3Title: "Incident history.", hCard3Text: "Photos, dates, what was done and by whom. No more shoebox of invoices.",
+    hCard4Title: "Inspection reports (\u00E9tat des lieux).", hCard4Text: "Ready when you rent out, buy or sell.",
+    hCard5Title: "The service provider marketplace.", hCard5Text: "Find a plumber, electrician or HVAC technician by specialty and availability, without asking around.",
+    hStartedTitle: "How do I get started?", hStartedText: "Download the app, create your home in a few minutes, and subscribe for €1.99/month. No installation, no hardware required.", hStartedCta: "Start for €1.99/month",
     miniFaqH2: "Resident questions, answered",
     faq1Q: "Is Cubii free for residents?", faq1A: "Yes, if your building is managed on Cubii: your syndic or facility manager covers the platform, so you pay nothing. Individual homeowners without a building manager can subscribe independently for €1.99/month.",
     faq2Q: "Is my data safe?", faq2A: "Yes. Cubii is built in Luxembourg and all data is hosted on servers in Europe, under European data protection law (GDPR).",
@@ -272,47 +257,38 @@ const TRANSLATIONS = {
   },
   pt: {
     eyebrow: "Para residentes e proprietários",
-    heroPrefix: "Todas as informações do seu edifício,", heroHighlight: "à mão",
-    heroSubhead: "O que procura já lá está, no seu bolso. E também aquilo em que não pensa: os filtros de ventilação a substituir, a manutenção que está a chegar ao prazo. A Cubii pensa nisso por si.",
-    heroSubhead2: "A manutenção preventiva evita-lhe a avaria. O livro de manutenção valoriza o seu bem.",
-    appStoreLine1: "Descarregar na", googlePlayLine1: "Disponível no",
-    mock1Caption: "Reporte um incidente em 30 segundos", mock2Caption: "Consulte água, gás e eletricidade em direto",
-    card1Eyebrow: "Pedido 482", card1Title: "Elevador bloqueado entre os pisos 3 e 4", card1Status: "Prestador no local · 22 min",
-    card2Eyebrow: "Leitura de contador", card2Title: "O apt. 3B transmitiu água e eletricidade", card2Status: "Pronto a exportar",
-    card3Title: "Atribuído automaticamente", card3Status: "Prestador de elevadores · 7 min após a sua comunicação",
+    heroPrefix: "O seu edifício no seu", heroHighlight: "bolso",
+    heroSubhead: "Alertas do edifício que chegam mesmo até si, reporte de problemas em 30 segundos e o seu consumo de energia quando quiser. Gratuita quando o seu edifício está na Cubii.",
+    appStoreLine1: "Descarregar na", googlePlayLine1: "Disponível na",
+    mock1Caption: "Reporte um incidente em 30 segundos", mock2Caption: "Consulte a água, o gás e a eletricidade em direto",
+    card1Eyebrow: "Ticket 482", card1Title: "Elevador parado entre os pisos 3 e 4", card1Status: "Prestador no local \u00b7 22 min",
+    card2Eyebrow: "Leitura de contador", card2Title: "O Apt 3B submeteu água e gás", card2Status: "Pronto a exportar",
+    card3Title: "Atribuído automaticamente", card3Status: "Prestador de elevadores \u00b7 7 min após o seu reporte",
     jumpLabel: "Vá diretamente à sua situação", jumpCondo: "Vivo num condomínio", jumpHome: "Sou proprietário da minha casa ou apartamento",
-    answerH2Pre: "Para proprietários, condóminos e ", answerH2Emph: "inquilinos", answerH2Post: "",
-    answerLead: "A sua habitação, no seu bolso.",
-    answerItems: ["Ser avisado através de notificações", "Comunicar um problema com a voz", "Acompanhar em direto cada intervenção", "Documentos centralizados e fáceis de encontrar", "Faturas digitalizadas e arquivadas automaticamente", "Marketplace: o profissional certo sem procurar", "Comunidade: os seus vizinhos noutro sítio que não o WhatsApp"],
-    condoH2: "Vive num condomínio?",
-    condoIntro: "Não precisa da autorização de ninguém para melhorar o seu prédio.",
-    waysH3: "É condómino? Três formas de começar",
-    way1Title: "Fale com o seu administrador",
-    way1Text: "Proponha a Cubii ao seu administrador de condomínio. Não lhe está a pedir um favor: uma comunicação interna mais fluida, intervenções mais rápidas, custos de manutenção reduzidos. O prédio, os condóminos e o administrador ganham todos em conjunto.",
-    way2Title: "Comecem entre condóminos",
-    way2Text: "Não vale a pena esperar. Substitua os grupos de WhatsApp, onde tudo se mistura e tudo acaba por se perder, pela comunidade Cubii: um único sítio onde cada problema do condomínio é comunicado, acompanhado e resolvido.",
-    way3Title: "Ofereça-a ao seu inquilino",
-    way3Text: "Vai arrendar o seu apartamento? Dê ao seu inquilino a ferramenta que lhe simplifica o dia a dia e que o mantém informado sem o contactar por cada detalhe.",
-    startH2: "Começar com a Cubii, em poucos minutos",
-    startSteps: [
-      { n: "1", title: "Descarregue a aplicação", text: "A Cubii instala-se a partir da App Store ou do Google Play. Nada a configurar, nada a instalar no edifício." },
-      { n: "2", title: "Crie a sua conta", text: "Um endereço de e-mail, uma palavra-passe, e o seu perfil está ativo. Indica depois o seu papel (proprietário, condómino, inquilino, gestor ou prestador), porque é ele que determina o que vê e o que pode fazer." },
-      { n: "3", title: "Junte-se ao seu edifício", text: "Através do link de convite, entra no espaço do seu prédio. Encontra imediatamente a comunidade, os documentos e os incidentes em curso." },
-      { n: "4", title: "Use a Cubii no dia a dia", text: "Um problema? Dita-o em voz alta e a IA redige o pedido. Uma fatura? Digitaliza-a e ela arquiva-se sozinha. Um profissional? O Marketplace propõe-lhe um. Uma questão para os vizinhos? O chat do edifício está lá." }
-    ],
-    startNote: "Nenhuma instalação técnica é necessária para começar. Os sensores, os contadores e os alarmes ligados vêm depois enriquecer a plataforma, quando você e o seu gestor estiverem prontos.",
-    downloadFreeCta: "Descarregar gratuitamente", suggestCta: "Sugerir a Cubii ao meu gestor de condomínio",
-    ownHomeH2: "Cubii, mesmo sem condomínio",
-    ownHomeIntro: "A sua casa merece o mesmo acompanhamento que um prédio.",
-    hCard1Title: "Todos os seus papéis no mesmo sítio", hCard1Text: "Escrituras, garantias, contratos, plantas, manuais. Encontráveis em três segundos, onde quer que esteja.",
-    hCard2Title: "As suas faturas digitalizadas e arquivadas", hCard2Text: "Sabe quanto lhe custa a sua habitação, rubrica a rubrica.",
-    hCard3Title: "Os seus prazos cumpridos", hCard3Text: "Caldeira, limpeza de chaminés, inspeções: a Cubii lembra-lhe o que está a chegar ao prazo antes de se tornar um problema.",
-    hCard4Title: "Os seus consumos à vista", hCard4Text: "Água, aquecimento, eletricidade, posto de carregamento. Um desvio vê-se em três dias, não na fatura anual.",
-    hCard5Title: "O profissional certo, sem procurar", hCard5Text: "O Marketplace propõe-lhe um, disponível.",
-    hStartedTitle: "Um livro de manutenção que se escreve sozinho.", hStartedText: "Na revenda, uma habitação documentada defende-se melhor do que uma habitação de palavra.", hStartedCta: "Começar por 1,99 €/mês",
-    roiH2: "O que a Cubii nos traz",
-    roiText: "Um incidente detetado a tempo é uma urgência evitada. Um consumo vigiado é um desvio travado. Um histórico completo é um edifício que vale mais.",
-    roiPunch: "A Cubii paga-se logo ao primeiro problema evitado.",
+    answerH2Pre: "O que faz a aplicação Cubii pelos ", answerH2Emph: "residentes", answerH2Post: "?",
+    answerText: "A Cubii é uma aplicação para residentes e proprietários. Substitui os avisos em papel por notificações instantâneas, permite reportar incidentes com fotografias e mostra o seu consumo de água, gás e eletricidade em tempo real. Num condomínio gerido na Cubii, a aplicação é gratuita para os residentes: o gestor de condomínio paga a plataforma. Para a sua própria casa ou apartamento, subscreve diretamente por €1,99/mês.",
+    condoH2: "Num condomínio: gratuita para os residentes",
+    condoIntro: "O seu edifício tem um administrador de condomínio ou gestor, e ele já o ligou à Cubii. A aplicação não lhe custa nada. O seu gestor paga a plataforma; só tem de descarregar a aplicação e ativá-la com o código de acesso que recebeu por email. Dois minutos, sem configuração.",
+    familiarH3: "Isto soa-lhe familiar?",
+    familiarText: "O elevador está avariado há três dias e ninguém sabe se já foi reportado. A água é cortada e só se apercebe quando a torneira para de correr. Foi afixado um aviso no corredor na semana passada. Nunca o viu.",
+    withCubiiLabel: "Com a Cubii",
+    benefit1Title: "Está sempre informado.", benefit1Text: "Corte de água na quinta-feira das 9h às 12h? Fica a saber na terça-feira. Teste do alarme de incêndio? Sem sustos, recebe a notificação.",
+    benefit2Title: "Reportar demora 30 segundos.", benefit2Text: "Fotografia, categoria, enviar. Pode acompanhar a reparação na aplicação em vez de ficar sem saber se alguém está a tratar do assunto.",
+    benefit3Title: "Reporte problemas sensíveis de forma anónima.", benefit3Text: "Ruído, conflitos em espaços comuns: pode levantá-los sem constrangimento.",
+    benefit4Title: "O seu consumo de energia, quando quiser.", benefit4Text: "Água, gás, eletricidade, em direto. Detete a anomalia antes de a fatura chegar.",
+    benefit5Title: "Documentos do edifício num só lugar.", benefit5Text: "Regulamento interno, atas de reunião, plantas. Chega de procurar em emails.",
+    startedH3: "Como começo?",
+    startedText1: "Vai receber um código de acesso por email do seu gestor de condomínio. Descarregue a aplicação, introduza o código, pronto.",
+    startedText2: "O seu edifício ainda não está na Cubii? Fale da Cubii ao seu administrador ou gestor, ou envie-nos o contacto dele e nós tratamos disso. Assim que o seu edifício aderir, a aplicação é gratuita para si.",
+    downloadFreeCta: "Descarregar grátis", suggestCta: "Sugerir a Cubii ao meu gestor de condomínio",
+    ownHomeH2: "Para a sua própria casa: €1,99/mês",
+    ownHomeIntro: "Sem administrador, sem gestor de condomínio: é você quem gere a sua casa. A Cubii também trabalha para si, como o seu gestor de imóvel pessoal, por €1,99/mês.",
+    hCard1Title: "O caderno de manutenção digital.", hCard1Text: "Todas as reparações, intervenções e documentos num só lugar. Um histórico documentado que protege o valor do seu imóvel quando vende ou arrenda.",
+    hCard2Title: "O seu consumo de energia, em direto.", hCard2Text: "Água, gás e eletricidade em tempo real. Detete a fuga ou a anomalia antes de a fatura chegar.",
+    hCard3Title: "Histórico de incidentes.", hCard3Text: "Fotografias, datas, o que foi feito e por quem. Chega de caixas cheias de faturas.",
+    hCard4Title: "Relatórios de vistoria (état des lieux).", hCard4Text: "Prontos para quando arrenda, compra ou vende.",
+    hCard5Title: "O marketplace de prestadores de serviços.", hCard5Text: "Encontre um canalizador, eletricista ou técnico de AVAC por especialidade e disponibilidade, sem ter de perguntar por aí.",
+    hStartedTitle: "Como começo?", hStartedText: "Descarregue a aplicação, crie a sua casa em poucos minutos e subscreva por €1,99/mês. Sem instalação, sem equipamento necessário.", hStartedCta: "Começar por €1,99/mês",
     miniFaqH2: "Perguntas de residentes, respondidas",
     faq1Q: "A Cubii é gratuita para os residentes?", faq1A: "Sim, se o seu edifício for gerido na Cubii: o seu administrador de condomínio ou gestor paga a plataforma, pelo que não paga nada. Proprietários individuais sem gestor de condomínio podem subscrever de forma independente por €1,99/mês.",
     faq2Q: "Os meus dados estão seguros?", faq2A: "Sim. A Cubii é construída no Luxemburgo e todos os dados são alojados em servidores na Europa, ao abrigo da lei europeia de proteção de dados (RGPD).",
@@ -321,47 +297,38 @@ const TRANSLATIONS = {
   },
   es: {
     eyebrow: "Para residentes y propietarios",
-    heroPrefix: "Toda la información de tu edificio,", heroHighlight: "al alcance de la mano",
-    heroSubhead: "Lo que buscas ya está ahí, en tu bolsillo. Y también aquello en lo que no piensas: los filtros de ventilación que hay que cambiar, el mantenimiento que vence. Cubii lo piensa por ti.",
-    heroSubhead2: "El mantenimiento preventivo te evita la avería. El libro del edificio revaloriza tu propiedad.",
-    appStoreLine1: "Descárgalo en el", googlePlayLine1: "Disponible en",
-    mock1Caption: "Comunica una incidencia en 30 segundos", mock2Caption: "Consulta agua, gas y electricidad en directo",
-    card1Eyebrow: "Incidencia 482", card1Title: "Ascensor bloqueado entre las plantas 3 y 4", card1Status: "Proveedor in situ · 22 min",
-    card2Eyebrow: "Lectura de contador", card2Title: "El 3B ha transmitido agua y electricidad", card2Status: "Listo para exportar",
-    card3Title: "Asignado automáticamente", card3Status: "Proveedor de ascensores · 7 min tras tu aviso",
-    jumpLabel: "Ve directamente a tu situación", jumpCondo: "Vivo en una comunidad de propietarios", jumpHome: "Soy propietario de mi casa o piso",
-    answerH2Pre: "Para propietarios, copropietarios e ", answerH2Emph: "inquilinos", answerH2Post: "",
-    answerLead: "Tu vivienda, en tu bolsillo.",
-    answerItems: ["Estar avisado gracias a las notificaciones", "Comunicar un problema con la voz", "Seguir en directo cada intervención", "Documentos centralizados y fáciles de encontrar", "Facturas escaneadas y clasificadas automáticamente", "Marketplace: el profesional adecuado sin buscar", "Comunidad: tus vecinos en un sitio que no sea WhatsApp"],
-    condoH2: "¿Vives en una comunidad de propietarios?",
-    condoIntro: "No necesitas la autorización de nadie para mejorar tu edificio.",
-    waysH3: "¿Eres copropietario? Tres formas de empezar",
-    way1Title: "Háblalo con tu administrador",
-    way1Text: "Propón Cubii a tu administrador de fincas. No le estás pidiendo un favor: una comunicación interna más fluida, intervenciones más rápidas, costes de mantenimiento reducidos. El edificio, los propietarios y el administrador ganan todos a la vez.",
-    way2Title: "Lanzaos entre copropietarios",
-    way2Text: "No hace falta esperar. Sustituye los grupos de WhatsApp, donde todo se mezcla y todo acaba perdiéndose, por la comunidad Cubii: un solo lugar donde cada problema de la comunidad se comunica, se sigue y se resuelve.",
-    way3Title: "Ofréceselo a tu inquilino",
-    way3Text: "¿Vas a alquilar tu piso? Dale a tu inquilino la herramienta que le simplifica el día a día y que te mantiene informado sin tener que consultarte por cada detalle.",
-    startH2: "Empezar con Cubii, en unos minutos",
-    startSteps: [
-      { n: "1", title: "Descarga la aplicación", text: "Cubii se instala desde la App Store o Google Play. Nada que configurar, nada que instalar en el edificio." },
-      { n: "2", title: "Crea tu cuenta", text: "Una dirección de correo, una contraseña, y tu perfil está activo. Después indicas tu rol (propietario, copropietario, inquilino, administrador o proveedor), porque es lo que determina qué ves y qué puedes hacer." },
-      { n: "3", title: "Únete a tu edificio", text: "Con el enlace de invitación entras en el espacio de tu edificio. Encuentras de inmediato la comunidad, los documentos y las incidencias en curso." },
-      { n: "4", title: "Usa Cubii en el día a día", text: "¿Un problema? Lo dictas en voz alta y la IA redacta la incidencia. ¿Una factura? La escaneas y se clasifica sola. ¿Un profesional? El Marketplace te propone uno. ¿Una pregunta para los vecinos? El chat del edificio está ahí." }
-    ],
-    startNote: "No hace falta ninguna instalación técnica para empezar. Los sensores, los contadores y las alarmas conectadas vienen después a enriquecer la plataforma, cuando tú y tu administrador estéis listos.",
-    downloadFreeCta: "Descargar gratis", suggestCta: "Sugerir Cubii a mi administrador de fincas",
-    ownHomeH2: "Cubii, incluso sin comunidad de propietarios",
-    ownHomeIntro: "Tu casa merece el mismo seguimiento que un edificio.",
-    hCard1Title: "Todos tus papeles en un mismo sitio", hCard1Text: "Escrituras, garantías, contratos, planos, manuales. Localizables en tres segundos, estés donde estés.",
-    hCard2Title: "Tus facturas escaneadas y clasificadas", hCard2Text: "Sabes lo que te cuesta tu vivienda, partida por partida.",
-    hCard3Title: "Tus vencimientos cumplidos", hCard3Text: "Caldera, deshollinado, inspecciones: Cubii te recuerda lo que vence antes de que se convierta en un problema.",
-    hCard4Title: "Tus consumos a la vista", hCard4Text: "Agua, calefacción, electricidad, punto de recarga. Una desviación se ve en tres días, no en la factura anual.",
-    hCard5Title: "El profesional adecuado, sin buscar", hCard5Text: "El Marketplace te propone uno, disponible.",
-    hStartedTitle: "Un libro del edificio que se escribe solo.", hStartedText: "En la reventa, una vivienda documentada se defiende mejor que una vivienda de palabra.", hStartedCta: "Empezar por 1,99 €/mes",
-    roiH2: "Lo que Cubii nos aporta",
-    roiText: "Una incidencia detectada a tiempo es una urgencia evitada. Un consumo vigilado es una desviación frenada. Un historial completo es un edificio que vale más.",
-    roiPunch: "Cubii se amortiza con el primer problema evitado.",
+    heroPrefix: "Tu edificio en tu", heroHighlight: "bolsillo",
+    heroSubhead: "Alertas del edificio que realmente te llegan, reporte de incidencias en 30 segundos y tu consumo energético cuando quieras. Gratis cuando tu edificio está en Cubii.",
+    appStoreLine1: "Descárgala en", googlePlayLine1: "Disponible en",
+    mock1Caption: "Reporta una incidencia en 30 segundos", mock2Caption: "Consulta el agua, el gas y la electricidad en directo",
+    card1Eyebrow: "Ticket 482", card1Title: "Ascensor parado entre las plantas 3 y 4", card1Status: "Proveedor en el lugar \u00b7 22 min",
+    card2Eyebrow: "Lectura del contador", card2Title: "El Apt 3B envió agua y gas", card2Status: "Listo para exportar",
+    card3Title: "Asignado automáticamente", card3Status: "Proveedor de ascensores \u00b7 7 min tras tu aviso",
+    jumpLabel: "Ve directamente a tu situación", jumpCondo: "Vivo en una comunidad de vecinos", jumpHome: "Soy propietario de mi vivienda",
+    answerH2: "\u00BFQu\u00E9 hace la aplicaci\u00F3n Cubii por los residentes?",
+    answerText: "Cubii es una aplicaci\u00F3n para residentes y propietarios. Sustituye los avisos en papel por notificaciones instant\u00E1neas, te permite reportar incidencias con fotos y muestra tu consumo de agua, gas y electricidad en tiempo real. En una comunidad gestionada con Cubii, la aplicaci\u00F3n es gratuita para los residentes: el administrador de fincas paga la plataforma. Para tu propia vivienda, te suscribes directamente por €1,99/mes.",
+    condoH2: "En una comunidad de vecinos: gratis para los residentes",
+    condoIntro: "Tu edificio tiene un administrador de fincas, y ya lo ha conectado a Cubii. La aplicaci\u00F3n no te cuesta nada. Tu administrador paga la plataforma; t\u00FA solo tienes que descargar la aplicaci\u00F3n y activarla con el c\u00F3digo de acceso que recibiste por correo electr\u00F3nico. Dos minutos, sin configuraci\u00F3n.",
+    familiarH3: "\u00BFTe suena familiar?",
+    familiarText: "El ascensor lleva tres d\u00EDas averiado y nadie sabe si se ha reportado. Se corta el agua y te enteras cuando el grifo deja de salir. La semana pasada se colg\u00F3 un aviso en el portal. Nunca lo viste.",
+    withCubiiLabel: "Con Cubii",
+    benefit1Title: "Siempre estás informado.", benefit1Text: "\u00BFCorte de agua el jueves de 9 a 12? Lo sabrás el martes. \u00BFPrueba de la alarma de incendios? Sin sustos, recibes la notificación.",
+    benefit2Title: "Reportar toma 30 segundos.", benefit2Text: "Foto, categoría, enviar. Puedes seguir la reparación en la aplicación en lugar de preguntarte si alguien se está ocupando.",
+    benefit3Title: "Reporta incidencias sensibles de forma anónima.", benefit3Text: "Ruido, conflictos por zonas comunes: plantéalos sin incomodidad.",
+    benefit4Title: "Tu consumo energético, cuando quieras.", benefit4Text: "Agua, gas, electricidad, en directo. Detecta la anomalía antes de que llegue la factura.",
+    benefit5Title: "Los documentos del edificio en un solo lugar.", benefit5Text: "Normas de la comunidad, actas de reuniones, planos. Se acabó buscar en el correo.",
+    startedH3: "\u00BFCómo empiezo?",
+    startedText1: "Recibirás un código de acceso por correo electrónico de tu administrador de fincas. Descarga la aplicación, introduce el código, listo.",
+    startedText2: "\u00BFTu edificio a\u00FAn no está en Cubii? Habla de nosotros a tu administrador de fincas, o envíanos su contacto y nosotros nos encargamos. En cuanto tu edificio se una, la aplicación será gratuita para ti.",
+    downloadFreeCta: "Descargar gratis", suggestCta: "Recomendar Cubii a mi administrador de fincas",
+    ownHomeH2: "Para tu propia vivienda: €1,99/mes",
+    ownHomeIntro: "Sin administrador, sin comunidad de vecinos: tú gestionas tu propia vivienda. Cubii también trabaja para ti, como tu administrador de fincas personal, por €1,99/mes.",
+    hCard1Title: "El libro de mantenimiento digital.", hCard1Text: "Cada reparación, intervención y documento en un solo lugar. Un historial documentado que protege el valor de tu propiedad cuando la vendes o alquilas.",
+    hCard2Title: "Tu consumo energético, en directo.", hCard2Text: "Agua, gas y electricidad en tiempo real. Detecta la fuga o la anomalía antes de que llegue la factura.",
+    hCard3Title: "Historial de incidencias.", hCard3Text: "Fotos, fechas, qu\u00E9 se hizo y por qui\u00E9n. Se acab\u00F3 la caja de zapatos llena de facturas.",
+    hCard4Title: "Informes de inspecci\u00F3n (estado de la vivienda).", hCard4Text: "Listos para cuando alquiles, compres o vendas.",
+    hCard5Title: "El marketplace de proveedores de servicios.", hCard5Text: "Encuentra un fontanero, electricista o técnico de climatización por especialidad y disponibilidad, sin tener que preguntar por ahí.",
+    hStartedTitle: "\u00BFCómo empiezo?", hStartedText: "Descarga la aplicación, crea tu vivienda en pocos minutos y suscríbete por €1,99/mes. Sin instalación, sin necesidad de hardware.", hStartedCta: "Empezar por €1,99/mes",
     miniFaqH2: "Preguntas de residentes, respondidas",
     faq1Q: "\u00BFEs Cubii gratis para los residentes?", faq1A: "Sí, si tu edificio está gestionado con Cubii: tu administrador de fincas paga la plataforma, así que no pagas nada. Los propietarios individuales sin administrador pueden suscribirse de forma independiente por €1,99/mes.",
     faq2Q: "\u00BFEstán seguros mis datos?", faq2A: "Sí. Cubii está construida en Luxemburgo y todos los datos se alojan en servidores en Europa, conforme a la ley europea de protección de datos (RGPD).",
@@ -370,47 +337,38 @@ const TRANSLATIONS = {
   },
   fr: {
     eyebrow: "Pour les résidents et propriétaires",
-    heroPrefix: "Toutes les infos de votre bâtiment,", heroHighlight: "à portée de main",
-    heroSubhead: "Ce que vous cherchez est déjà là, dans votre poche. Et ce à quoi vous ne pensez pas non plus : les filtres de ventilation à remplacer, l’entretien qui arrive à échéance. Cubii y pense à votre place.",
-    heroSubhead2: "La maintenance préventive vous évite la panne. Le carnet d’entretien valorise votre bien.",
-    appStoreLine1: "Télécharger sur l’", googlePlayLine1: "Disponible sur",
-    mock1Caption: "Signalez un incident en 30 secondes", mock2Caption: "Consultez l’eau, le gaz et l’électricité en direct",
-    card1Eyebrow: "Ticket 482", card1Title: "Ascenseur bloqué entre les étages 3 et 4", card1Status: "Prestataire sur place · 22 min",
-    card2Eyebrow: "Relevé de compteur", card2Title: "L’appt 3B a transmis l’eau et le gaz", card2Status: "Prêt à exporter",
-    card3Title: "Assigné automatiquement", card3Status: "Prestataire ascenseurs · 7 min après votre signalement",
+    heroPrefix: "Votre bâtiment dans votre", heroHighlight: "poche",
+    heroSubhead: "Des alertes du bâtiment qui vous parviennent vraiment, un signalement d\u2019incident en 30 secondes, et votre consommation d\u2019énergie à la demande. Gratuit lorsque votre bâtiment est sur Cubii.",
+    appStoreLine1: "Télécharger sur l\u2019", googlePlayLine1: "Disponible sur",
+    mock1Caption: "Signalez un incident en 30 secondes", mock2Caption: "Consultez l\u2019eau, le gaz et l\u2019électricité en direct",
+    card1Eyebrow: "Ticket 482", card1Title: "Ascenseur bloqué entre les étages 3 et 4", card1Status: "Prestataire sur place \u00b7 22 min",
+    card2Eyebrow: "Relevé de compteur", card2Title: "L\u2019appt 3B a transmis l\u2019eau et le gaz", card2Status: "Prêt à exporter",
+    card3Title: "Assigné automatiquement", card3Status: "Prestataire ascenseurs \u00b7 7 min après votre signalement",
     jumpLabel: "Accédez directement à votre situation", jumpCondo: "Je vis en copropriété", jumpHome: "Je suis propriétaire de ma maison ou de mon appartement",
-    answerH2Pre: "Pour les propriétaires, copropriétaires et ", answerH2Emph: "locataires", answerH2Post: "",
-    answerLead: "Votre logement, dans votre poche.",
-    answerItems: ["Être prévenu grâce à des notifications", "Signaler un problème grâce à la voix", "Suivre en direct chaque intervention", "Des documents centralisés et retrouvables", "Des factures scannées et classées automatiquement", "Marketplace : le bon professionnel sans chercher", "Communauté : vos voisins ailleurs que sur WhatsApp"],
-    condoH2: "Vous habitez dans une copropriété ?",
-    condoIntro: "Vous n’avez besoin de l’autorisation de personne pour améliorer votre immeuble.",
-    waysH3: "Vous êtes copropriétaire ? Trois façons de commencer",
-    way1Title: "Parlez-en à votre syndic",
-    way1Text: "Proposez Cubii à votre gestionnaire de copropriété. Ce n’est pas une faveur que vous lui demandez : une communication interne fluidifiée, des interventions plus rapides, des coûts de maintenance réduits. L’immeuble, les copropriétaires et le gestionnaire y gagnent ensemble.",
-    way2Title: "Lancez-vous entre copropriétaires",
-    way2Text: "Inutile d’attendre. Remplacez les groupes WhatsApp, où tout se mélange et où tout finit par se perdre, par la communauté Cubii : un seul endroit où chaque problème de la copropriété est signalé, suivi et résolu.",
-    way3Title: "Offrez-le à votre locataire",
-    way3Text: "Vous mettez votre appartement en location ? Donnez à votre locataire l’outil qui lui simplifie le quotidien, et qui vous tient informé sans vous solliciter pour chaque détail.",
-    startH2: "Démarrer avec Cubii, en quelques minutes",
-    startSteps: [
-      { n: "1", title: "Téléchargez l’application", text: "Cubii s’installe depuis l’App Store ou Google Play. Rien à configurer, rien à installer dans le bâtiment." },
-      { n: "2", title: "Créez votre compte", text: "Une adresse e-mail, un mot de passe, et votre profil est actif. Vous indiquez ensuite votre rôle (propriétaire, copropriétaire, locataire, gestionnaire ou prestataire), car c’est lui qui détermine ce que vous voyez et ce que vous pouvez faire." },
-      { n: "3", title: "Rejoignez votre bâtiment", text: "Grâce au lien d’invitation, vous entrez dans l’espace de votre immeuble. Vous y retrouvez immédiatement la communauté, les documents et les incidents en cours." },
-      { n: "4", title: "Utilisez Cubii au quotidien", text: "Un problème ? Vous le dictez à voix haute, l’IA rédige le ticket. Une facture ? Vous la scannez, elle se classe seule. Un artisan ? La Marketplace vous en propose un. Une question aux voisins ? Le chat du bâtiment est là." }
-    ],
-    startNote: "Aucune installation technique n’est nécessaire pour commencer. Les capteurs, les compteurs et les alarmes connectées viennent ensuite enrichir la plateforme, quand vous et votre gestionnaire êtes prêts.",
+    answerH2: "Que fait l\u2019application Cubii pour les résidents\u00A0?",
+    answerText: "Cubii est une application pour les résidents et les propriétaires. Elle remplace les avis papier par des notifications instantanées, vous permet de signaler des incidents avec des photos, et affiche votre consommation d\u2019eau, de gaz et d\u2019électricité en temps réel. Dans une copropriété gérée sur Cubii, l\u2019application est gratuite pour les résidents\u00A0: le gestionnaire immobilier prend en charge la plateforme. Pour votre propre maison ou appartement, vous vous abonnez directement pour 1,99\u00A0€/mois.",
+    condoH2: "En copropriété\u00A0: gratuit pour les résidents",
+    condoIntro: "Votre bâtiment a un syndic ou un gestionnaire immobilier, et il l\u2019a déjà connecté à Cubii. L\u2019application ne vous coûte rien. Votre gestionnaire prend en charge la plateforme\u00A0; vous n\u2019avez qu\u2019à télécharger l\u2019application et l\u2019activer avec le code d\u2019accès reçu par e-mail. Deux minutes, sans configuration.",
+    familiarH3: "Cela vous semble familier\u00A0?",
+    familiarText: "L\u2019ascenseur est en panne depuis trois jours et personne ne sait si cela a été signalé. L\u2019eau est coupée et vous ne le découvrez qu\u2019en ouvrant le robinet. Une note a été affichée dans le hall la semaine dernière. Vous ne l\u2019avez jamais vue.",
+    withCubiiLabel: "Avec Cubii",
+    benefit1Title: "Vous êtes toujours informé.", benefit1Text: "Coupure d\u2019eau jeudi de 9h à 12h\u00A0? Vous le saurez dès mardi. Test de l\u2019alarme incendie\u00A0? Pas de panique, vous recevez la notification.",
+    benefit2Title: "Le signalement prend 30 secondes.", benefit2Text: "Photo, catégorie, envoi. Vous pouvez suivre la réparation dans l\u2019application au lieu de vous demander si quelqu\u2019un s\u2019en occupe.",
+    benefit3Title: "Signalez les problèmes sensibles de manière anonyme.", benefit3Text: "Bruit, conflits sur les espaces communs\u00A0: soulevez-les sans gêne.",
+    benefit4Title: "Votre consommation d\u2019énergie, à la demande.", benefit4Text: "Eau, gaz, électricité, en direct. Repérez l\u2019anomalie avant la facture.",
+    benefit5Title: "Les documents du bâtiment au même endroit.", benefit5Text: "Règlement intérieur, comptes rendus de réunion, plans. Fini les recherches dans les e-mails.",
+    startedH3: "Comment démarrer\u00A0?",
+    startedText1: "Vous recevrez un code d\u2019accès par e-mail de votre gestionnaire immobilier. Téléchargez l\u2019application, saisissez le code, c\u2019est fait.",
+    startedText2: "Votre bâtiment n\u2019est pas encore sur Cubii\u00A0? Parlez de nous à votre syndic ou gestionnaire, ou envoyez-nous ses coordonnées et nous nous chargeons du reste. Dès que votre bâtiment rejoint Cubii, l\u2019application devient gratuite pour vous.",
     downloadFreeCta: "Télécharger gratuitement", suggestCta: "Suggérer Cubii à mon gestionnaire immobilier",
-    ownHomeH2: "Cubii, même sans copropriété",
-    ownHomeIntro: "Votre maison mérite le même suivi qu’un immeuble.",
-    hCard1Title: "Tous vos papiers au même endroit", hCard1Text: "Actes, garanties, contrats, plans, notices. Retrouvables en trois secondes, où que vous soyez.",
-    hCard2Title: "Vos factures scannées et classées", hCard2Text: "Vous savez ce que votre logement vous coûte, poste par poste.",
-    hCard3Title: "Vos échéances tenues", hCard3Text: "Chaudière, ramonage, contrôles : Cubii vous rappelle ce qui arrive à terme avant que ça ne devienne un problème.",
-    hCard4Title: "Vos consommations sous les yeux", hCard4Text: "Eau, chauffage, électricité, borne de recharge. Une dérive se voit en trois jours, pas sur la facture annuelle.",
-    hCard5Title: "Le bon artisan, sans chercher", hCard5Text: "La Marketplace vous en propose un, disponible.",
-    hStartedTitle: "Un carnet d’entretien qui s’écrit tout seul.", hStartedText: "À la revente, un logement documenté se défend mieux qu’un logement sur parole.", hStartedCta: "Commencer pour 1,99 €/mois",
-    roiH2: "Ce que Cubii nous rapporte",
-    roiText: "Un incident détecté à temps, c’est une urgence évitée. Une consommation surveillée, c’est une dérive stoppée. Un historique complet, c’est un bâtiment qui vaut plus.",
-    roiPunch: "Cubii se rembourse au premier problème évité.",
+    ownHomeH2: "Pour votre propre logement\u00A0: 1,99\u00A0€/mois",
+    ownHomeIntro: "Pas de syndic, pas de gestionnaire immobilier\u00A0: vous gérez vous-même votre logement. Cubii fonctionne aussi pour vous, comme votre gestionnaire immobilier personnel, pour 1,99\u00A0€/mois.",
+    hCard1Title: "Le carnet d\u2019entretien numérique.", hCard1Text: "Chaque réparation, intervention et document au même endroit. Un historique documenté qui protège la valeur de votre bien lors d\u2019une vente ou d\u2019une location.",
+    hCard2Title: "Votre consommation d\u2019énergie, en direct.", hCard2Text: "Eau, gaz et électricité en temps réel. Repérez la fuite ou l\u2019anomalie avant la facture.",
+    hCard3Title: "Historique des incidents.", hCard3Text: "Photos, dates, ce qui a été fait et par qui. Fini la boîte à chaussures pleine de factures.",
+    hCard4Title: "Rapports d\u2019état des lieux.", hCard4Text: "Prêts pour une location, un achat ou une vente.",
+    hCard5Title: "La marketplace de prestataires de services.", hCard5Text: "Trouvez un plombier, un électricien ou un technicien CVC selon sa spécialité et sa disponibilité, sans avoir à vous renseigner ailleurs.",
+    hStartedTitle: "Comment démarrer\u00A0?", hStartedText: "Téléchargez l\u2019application, créez votre logement en quelques minutes, et abonnez-vous pour 1,99\u00A0€/mois. Aucune installation, aucun matériel requis.", hStartedCta: "Commencer pour 1,99\u00A0€/mois",
     miniFaqH2: "Questions des résidents, avec réponses",
     faq1Q: "Cubii est-elle gratuite pour les résidents\u00A0?", faq1A: "Oui, si votre bâtiment est géré sur Cubii\u00A0: votre syndic ou gestionnaire immobilier prend en charge la plateforme, vous ne payez donc rien. Les propriétaires individuels sans gestionnaire peuvent s\u2019abonner indépendamment pour 1,99\u00A0€/mois.",
     faq2Q: "Mes données sont-elles en sécurité\u00A0?", faq2A: "Oui. Cubii est développée au Luxembourg et toutes les données sont hébergées sur des serveurs en Europe, conformément au droit européen de protection des données (RGPD).",
@@ -419,47 +377,38 @@ const TRANSLATIONS = {
   },
   de: {
     eyebrow: "Für Bewohner und Eigentümer",
-    heroPrefix: "Alle Infos zu Ihrem Gebäude,", heroHighlight: "griffbereit",
-    heroSubhead: "Was Sie suchen, ist bereits da, in Ihrer Tasche. Und auch das, woran Sie nicht denken: die zu wechselnden Lüftungsfilter, die anstehende Wartung. Cubii denkt für Sie daran.",
-    heroSubhead2: "Vorbeugende Wartung erspart Ihnen den Ausfall. Das Wartungsbuch steigert den Wert Ihrer Immobilie.",
+    heroPrefix: "Ihr Gebäude in Ihrer", heroHighlight: "Tasche",
+    heroSubhead: "Gebäudebenachrichtigungen, die Sie wirklich erreichen, Problemmeldungen in 30 Sekunden und Ihr Energieverbrauch auf Abruf. Kostenlos, wenn Ihr Gebäude Cubii nutzt.",
     appStoreLine1: "Laden im", googlePlayLine1: "Jetzt bei",
-    mock1Caption: "Melden Sie eine Störung in 30 Sekunden", mock2Caption: "Wasser, Gas und Strom live einsehen",
-    card1Eyebrow: "Ticket 482", card1Title: "Aufzug zwischen Etage 3 und 4 blockiert", card1Status: "Dienstleister vor Ort · 22 Min.",
-    card2Eyebrow: "Zählerstand", card2Title: "Whg. 3B hat Wasser und Strom übermittelt", card2Status: "Bereit zum Export",
-    card3Title: "Automatisch zugewiesen", card3Status: "Aufzugsdienstleister · 7 Min. nach Ihrer Meldung",
+    mock1Caption: "Melden Sie einen Vorfall in 30 Sekunden", mock2Caption: "Wasser-, Gas- und Stromverbrauch live einsehen",
+    card1Eyebrow: "Ticket 482", card1Title: "Aufzug zwischen Stockwerk 3 und 4 stecken geblieben", card1Status: "Dienstleister vor Ort \u00b7 22 Min.",
+    card2Eyebrow: "Zählerstand", card2Title: "Wohnung 3B hat Wasser und Gas übermittelt", card2Status: "Bereit zum Export",
+    card3Title: "Automatisch zugewiesen", card3Status: "Aufzugsdienstleister \u00b7 7 Min. nach Ihrer Meldung",
     jumpLabel: "Direkt zu Ihrer Situation", jumpCondo: "Ich wohne in einer Eigentümergemeinschaft", jumpHome: "Ich besitze mein Haus oder meine Wohnung",
-    answerH2Pre: "Für Eigentümer, Miteigentümer und ", answerH2Emph: "Mieter", answerH2Post: "",
-    answerLead: "Ihre Wohnung, in Ihrer Tasche.",
-    answerItems: ["Über Benachrichtigungen informiert werden", "Ein Problem per Sprache melden", "Jeden Einsatz live verfolgen", "Zentral abgelegte und auffindbare Dokumente", "Automatisch gescannte und abgelegte Rechnungen", "Marktplatz: der richtige Profi ohne Suche", "Community: Ihre Nachbarn außerhalb von WhatsApp"],
-    condoH2: "Wohnen Sie in einer Eigentümergemeinschaft?",
-    condoIntro: "Sie brauchen niemandes Erlaubnis, um Ihr Haus zu verbessern.",
-    waysH3: "Sie sind Miteigentümer? Drei Wege, um zu starten",
-    way1Title: "Sprechen Sie mit Ihrer Hausverwaltung",
-    way1Text: "Schlagen Sie Cubii Ihrer Hausverwaltung vor. Sie bitten dabei nicht um einen Gefallen: eine flüssigere interne Kommunikation, schnellere Einsätze, geringere Wartungskosten. Das Haus, die Miteigentümer und die Verwaltung gewinnen gemeinsam.",
-    way2Title: "Starten Sie unter Miteigentümern",
-    way2Text: "Warten lohnt sich nicht. Ersetzen Sie die WhatsApp-Gruppen, in denen alles durcheinandergerät und am Ende verloren geht, durch die Cubii-Community: ein einziger Ort, an dem jedes Problem des Hauses gemeldet, verfolgt und gelöst wird.",
-    way3Title: "Schenken Sie es Ihrem Mieter",
-    way3Text: "Sie vermieten Ihre Wohnung? Geben Sie Ihrem Mieter das Werkzeug, das den Alltag vereinfacht und Sie informiert hält, ohne dass Sie wegen jeder Kleinigkeit kontaktiert werden.",
-    startH2: "In wenigen Minuten mit Cubii starten",
-    startSteps: [
-      { n: "1", title: "App herunterladen", text: "Cubii wird über den App Store oder Google Play installiert. Nichts zu konfigurieren, nichts im Gebäude zu installieren." },
-      { n: "2", title: "Konto erstellen", text: "Eine E-Mail-Adresse, ein Passwort, und Ihr Profil ist aktiv. Anschließend geben Sie Ihre Rolle an (Eigentümer, Miteigentümer, Mieter, Verwalter oder Dienstleister), denn sie bestimmt, was Sie sehen und was Sie tun können." },
-      { n: "3", title: "Ihrem Gebäude beitreten", text: "Über den Einladungslink gelangen Sie in den Bereich Ihres Hauses. Dort finden Sie sofort die Community, die Dokumente und die laufenden Störungen." },
-      { n: "4", title: "Cubii im Alltag nutzen", text: "Ein Problem? Sie diktieren es laut, die KI verfasst das Ticket. Eine Rechnung? Sie scannen sie, sie legt sich selbst ab. Ein Handwerker? Der Marktplatz schlägt Ihnen einen vor. Eine Frage an die Nachbarn? Der Gebäude-Chat ist da." }
-    ],
-    startNote: "Für den Start ist keine technische Installation nötig. Sensoren, Zähler und vernetzte Alarme ergänzen die Plattform später, wenn Sie und Ihre Verwaltung so weit sind.",
-    downloadFreeCta: "Kostenlos herunterladen", suggestCta: "Cubii meiner Hausverwaltung vorschlagen",
-    ownHomeH2: "Cubii, auch ohne Eigentümergemeinschaft",
-    ownHomeIntro: "Ihr Haus verdient dieselbe Betreuung wie ein Mehrfamilienhaus.",
-    hCard1Title: "Alle Ihre Unterlagen an einem Ort", hCard1Text: "Urkunden, Garantien, Verträge, Pläne, Anleitungen. In drei Sekunden auffindbar, wo immer Sie sind.",
-    hCard2Title: "Ihre Rechnungen gescannt und abgelegt", hCard2Text: "Sie wissen, was Ihre Wohnung Sie kostet, Posten für Posten.",
-    hCard3Title: "Ihre Fristen eingehalten", hCard3Text: "Heizkessel, Schornsteinfeger, Prüfungen: Cubii erinnert Sie an das, was fällig wird, bevor es zum Problem wird.",
-    hCard4Title: "Ihre Verbräuche im Blick", hCard4Text: "Wasser, Heizung, Strom, Ladepunkt. Eine Abweichung zeigt sich in drei Tagen, nicht erst auf der Jahresrechnung.",
-    hCard5Title: "Der richtige Handwerker, ohne Suche", hCard5Text: "Der Marktplatz schlägt Ihnen einen vor, der verfügbar ist.",
-    hStartedTitle: "Ein Wartungsbuch, das sich von selbst schreibt.", hStartedText: "Beim Wiederverkauf verteidigt sich eine dokumentierte Wohnung besser als eine Wohnung auf bloßes Wort hin.", hStartedCta: "Für 1,99 €/Monat starten",
-    roiH2: "Was Cubii uns bringt",
-    roiText: "Eine rechtzeitig erkannte Störung ist ein vermiedener Notfall. Ein überwachter Verbrauch ist eine gestoppte Abweichung. Eine vollständige Historie ist ein Gebäude, das mehr wert ist.",
-    roiPunch: "Cubii rechnet sich schon beim ersten vermiedenen Problem.",
+    answerH2Pre: "Was macht die Cubii-App für ", answerH2Emph: "Bewohner", answerH2Post: "?",
+    answerText: "Cubii ist eine App für Bewohner und Eigentümer. Sie ersetzt Papieraushänge durch sofortige Benachrichtigungen, ermöglicht Ihnen die Meldung von Vorfällen mit Fotos und zeigt Ihren Wasser-, Gas- und Stromverbrauch in Echtzeit. In einer Eigentümergemeinschaft, die Cubii nutzt, ist die App für Bewohner kostenlos: Der Gebäudeverwalter übernimmt die Plattformkosten. Für Ihr eigenes Haus oder Ihre eigene Wohnung abonnieren Sie direkt für 1,99 €/Monat.",
+    condoH2: "In einer Eigentümergemeinschaft: kostenlos für Bewohner",
+    condoIntro: "Ihr Gebäude hat einen Verwalter oder Gebäudeverwalter, und dieser hat es bereits mit Cubii verbunden. Die App kostet Sie nichts. Ihr Verwalter übernimmt die Plattformkosten; Sie müssen nur die App herunterladen und mit dem per E-Mail erhaltenen Zugangscode aktivieren. Zwei Minuten, keine Einrichtung.",
+    familiarH3: "Kommt Ihnen das bekannt vor?",
+    familiarText: "Der Aufzug ist seit drei Tagen kaputt, und niemand weiß, ob es gemeldet wurde. Das Wasser wird abgestellt, und Sie merken es erst, wenn der Hahn trocken bleibt. Letzte Woche wurde ein Aushang im Flur angebracht. Sie haben ihn nie gesehen.",
+    withCubiiLabel: "Mit Cubii",
+    benefit1Title: "Sie sind immer informiert.", benefit1Text: "Wasserabstellung am Donnerstag von 9 bis 12 Uhr? Sie erfahren es schon am Dienstag. Test der Brandmeldeanlage? Keine Panik, Sie haben die Benachrichtigung erhalten.",
+    benefit2Title: "Eine Meldung dauert 30 Sekunden.", benefit2Text: "Foto, Kategorie, senden. Sie können die Reparatur in der App verfolgen, statt sich zu fragen, ob sich jemand darum kümmert.",
+    benefit3Title: "Melden Sie heikle Themen anonym.", benefit3Text: "Lärm, Konflikte in Gemeinschaftsbereichen: sprechen Sie sie an, ohne dass es unangenehm wird.",
+    benefit4Title: "Ihr Energieverbrauch, auf Abruf.", benefit4Text: "Wasser, Gas, Strom, live. Erkennen Sie Auffälligkeiten, bevor die Rechnung es tut.",
+    benefit5Title: "Gebäudedokumente an einem Ort.", benefit5Text: "Hausordnung, Sitzungsprotokolle, Pläne. Kein Durchsuchen von E-Mails mehr.",
+    startedH3: "Wie fange ich an?",
+    startedText1: "Sie erhalten einen Zugangscode per E-Mail von Ihrem Gebäudeverwalter. App herunterladen, Code eingeben, fertig.",
+    startedText2: "Ihr Gebäude nutzt Cubii noch nicht? Erzählen Sie Ihrem Verwalter oder Gebäudeverwalter von uns, oder schicken Sie uns dessen Kontaktdaten, und wir übernehmen das Gespräch. Sobald Ihr Gebäude beitritt, ist die App für Sie kostenlos.",
+    downloadFreeCta: "Kostenlos herunterladen", suggestCta: "Cubii meinem Gebäudeverwalter vorschlagen",
+    ownHomeH2: "Für Ihr eigenes Zuhause: 1,99 €/Monat",
+    ownHomeIntro: "Kein Verwalter, kein Gebäudeverwalter: Sie verwalten Ihr Zuhause selbst. Cubii arbeitet auch für Sie, als Ihr persönlicher Gebäudeverwalter, für 1,99 €/Monat.",
+    hCard1Title: "Das digitale Wartungsbuch.", hCard1Text: "Jede Reparatur, jeder Einsatz und jedes Dokument an einem Ort. Eine dokumentierte Historie, die den Wert Ihrer Immobilie beim Verkauf oder bei der Vermietung schützt.",
+    hCard2Title: "Ihr Energieverbrauch, live.", hCard2Text: "Wasser, Gas und Strom in Echtzeit. Erkennen Sie das Leck oder die Auffälligkeit, bevor die Rechnung es tut.",
+    hCard3Title: "Vorfallhistorie.", hCard3Text: "Fotos, Daten, was von wem erledigt wurde. Kein Schuhkarton voller Rechnungen mehr.",
+    hCard4Title: "Zustandsberichte (état des lieux).", hCard4Text: "Bereit, wenn Sie vermieten, kaufen oder verkaufen.",
+    hCard5Title: "Der Marktplatz für Dienstleister.", hCard5Text: "Finden Sie einen Klempner, Elektriker oder Heizungs- und Lüftungstechniker nach Fachgebiet und Verfügbarkeit, ohne herumfragen zu müssen.",
+    hStartedTitle: "Wie fange ich an?", hStartedText: "Laden Sie die App herunter, richten Sie Ihr Zuhause in wenigen Minuten ein und abonnieren Sie für 1,99 €/Monat. Keine Installation, keine Hardware erforderlich.", hStartedCta: "Für 1,99 €/Monat starten",
     miniFaqH2: "Fragen von Bewohnern, beantwortet",
     faq1Q: "Ist Cubii für Bewohner kostenlos?", faq1A: "Ja, wenn Ihr Gebäude über Cubii verwaltet wird: Ihr Verwalter oder Gebäudeverwalter übernimmt die Plattformkosten, sodass Sie nichts bezahlen. Einzelne Eigentümer ohne Gebäudeverwalter können unabhängig für 1,99 €/Monat abonnieren.",
     faq2Q: "Sind meine Daten sicher?", faq2A: "Ja. Cubii wird in Luxemburg entwickelt, und alle Daten werden auf Servern in Europa gehostet, im Einklang mit der europäischen Datenschutz-Grundverordnung (DSGVO).",
@@ -477,7 +426,7 @@ const META = {
 };
 
 class Component extends DCLogic {
-  state = { locale: "en" };
+  state = { locale: "en", railRevealed: false };
 
   componentDidMount() {
     try {
@@ -486,6 +435,17 @@ class Component extends DCLogic {
     } catch (e) {}
     this._onChange = (ev) => this.setState({ locale: ev.detail });
     window.addEventListener("cubii-locale-change", this._onChange);
+
+    this._railRef = (el) => {
+      if (!el || this._railObserved) return;
+      this._railObserved = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          this.setState({ railRevealed: entry.isIntersecting });
+        });
+      }, { threshold: 0.3 });
+      observer.observe(el);
+    };
   }
 
   componentWillUnmount() {
@@ -495,12 +455,18 @@ class Component extends DCLogic {
     const locale = this.state.locale;
     const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
     const meta = META[locale] || META.en;
+    const revealed = this.state.railRevealed;
+    const railStyle = (delay) => revealed
+      ? `animation:cubii-rail-grow 0.5s ease-out ${delay}s both;`
+      : `transform:scaleY(0);opacity:0.4;`;
     return {
       t,
+      railRef: this._railRef,
+      railStyle1: railStyle(0.05), railStyle2: railStyle(0.25), railStyle3: railStyle(0.45), railStyle4: railStyle(0.65), railStyle5: railStyle(0.85),
       metaTitle: meta.title,
       metaDescription: meta.description,
       schema: ["Organization (Smart Cube)", "FAQPage (3 resident Q/A, text identical to page)"],
-      h2s: ["For owners, co-owners and tenants", "Do you live in a condominium?", "Getting started with Cubii, in a few minutes", "Cubii, even without a condominium", "What Cubii brings us", "Resident questions, answered"],
+      h2s: ["What does the Cubii app do for residents?", "In a condominium: free for residents", "For your own home: €1.99/month", "Resident questions, answered"],
       gaps: ["Real App Store / Google Play links", "Dynamic QR code", "Mobile app screenshots (admin screens must never appear here)", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
     };
   }
