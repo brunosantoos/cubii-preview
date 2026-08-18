@@ -52,7 +52,8 @@
       <div style="max-width:900px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 20px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.answerH2Pre }}<span style="background:#F3D3EB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;">{{ t.answerH2Emph }}</span>{{ t.answerH2Post }}</h2>
         <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+          <p style="margin:0 0 16px;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText }}</p>
+          <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.answerText2 }}</p>
         </div>
       </div>
     </section>
@@ -60,9 +61,32 @@
     <section data-screen-label="SP / pain" style="padding:80px 0;background:#0A0A0A;color:#FFFFFF;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:48px;align-items:center;">
         <h2 style="margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;">{{ t.painPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.painHighlight }}</span></h2>
-        <div>
-          <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:#B8C2C6;">{{ t.painText1 }}</p>
-          <p style="margin:0;font-size:20px;line-height:1.55;font-weight:700;">{{ t.painText2 }}</p>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;min-width:420px;border-collapse:collapse;font-size:16px;">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align:left;padding:12px 18px 12px 0;border-bottom:1px solid #3A4247;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thBefore }}</th>
+                <th scope="col" style="text-align:left;padding:12px 0;border-bottom:1px solid #3A4247;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#85CCF0;">{{ t.thAfter }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ t.compareRows }}" as="row" hint-placeholder-count="4"><tr>
+                <td style="padding:14px 18px 14px 0;border-bottom:1px solid #26292A;color:#B8C2C6;line-height:1.5;">{{ row.before }}</td>
+                <td style="padding:14px 0;border-bottom:1px solid #26292A;color:#FFFFFF;font-weight:600;line-height:1.5;">{{ row.after }}</td>
+              </tr></sc-for>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="SP / field work" style="padding:88px 0;">
+      <div style="max-width:1000px;margin:0 auto;padding:0 32px;">
+        <h2 style="margin:0 0 14px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.fieldH2 }}</h2>
+        <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;">{{ t.fieldSubtitle }}</p>
+        <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:30px 32px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;letter-spacing:-0.015em;">{{ t.fieldH3 }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#12313C;">{{ t.fieldText }}</p>
         </div>
       </div>
     </section>
@@ -101,40 +125,21 @@
 
     <section data-screen-label="SP / pricing preview" style="padding:80px 0;background:#F5FBFD;">
       <div style="max-width:1000px;margin:0 auto;padding:0 32px;">
-        <h2 style="margin:0 0 32px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.pricingH2 }}</h2>
-        <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;overflow-x:auto;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-          <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:16px;">
-            <caption style="caption-side:top;text-align:left;padding:22px 26px 0;font-size:13px;font-weight:600;color:#6C8087;">{{ t.tableCaption }}</caption>
-            <thead>
-              <tr>
-                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thPlan }}</th>
-                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thMonthly }}</th>
-                <th scope="col" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E8EDEF;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#878888;">{{ t.thClients }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">Starter</th>
-                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;">€160</td>
-                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;color:#3A4247;">~30</td>
-              </tr>
-              <tr>
-                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #F0F4F5;font-weight:600;">Starter Plus</th>
-                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;">€375</td>
-                <td style="padding:18px 26px;border-bottom:1px solid #F0F4F5;color:#3A4247;">~75</td>
-              </tr>
-              <tr style="background:#F0FAFE;">
-                <th scope="row" style="text-align:left;padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:800;">Growth <span style="font-size:12px;font-weight:700;color:#0090E8;letter-spacing:0.06em;">{{ t.mostPopular }}</span></th>
-                <td style="padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:800;">€710</td>
-                <td style="padding:18px 26px;border-bottom:1px solid #E3F3FA;font-weight:700;">~150</td>
-              </tr>
-              <tr>
-                <th scope="row" style="text-align:left;padding:18px 26px;font-weight:600;">Enterprise</th>
-                <td style="padding:18px 26px;">€1,599</td>
-                <td style="padding:18px 26px;color:#3A4247;">~400</td>
-              </tr>
-            </tbody>
-          </table>
+        <h2 style="margin:0 0 14px;font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-0.025em;line-height:1.14;">{{ t.pricingH2 }}</h2>
+        <p style="margin:0 0 32px;font-size:19px;line-height:1.6;font-weight:700;color:#0A0A0A;">{{ t.pricingLead }}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;">
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px 32px;box-shadow:0 4px 14px rgba(41,109,131,0.11);display:flex;flex-direction:column;gap:14px;">
+            <h3 style="margin:0;font-size:19px;font-weight:800;letter-spacing:-0.015em;">{{ t.rev1Title }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;flex:1 1 auto;">{{ t.rev1Text }}</p>
+            <p style="margin:0;font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#0090E8;">{{ t.rev1Price }}</p>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.rev1Note }}</p>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #DCE7EB;border-radius:20px;padding:30px 32px;box-shadow:0 4px 14px rgba(41,109,131,0.11);display:flex;flex-direction:column;gap:14px;">
+            <h3 style="margin:0;font-size:19px;font-weight:800;letter-spacing:-0.015em;">{{ t.rev2Title }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#3A4247;flex:1 1 auto;">{{ t.rev2Text }}</p>
+            <p style="margin:0;font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#0090E8;">{{ t.rev2Price }}</p>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.rev2Note }}</p>
+          </div>
         </div>
         <p style="margin:20px 0 0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.pricingNote }}</p>
         <a href="Pricing.dc.html" style="margin-top:18px;display:inline-block;font-size:15px;font-weight:700;color:#0090E8;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;">{{ t.pricingLink }}</a>
@@ -184,163 +189,248 @@ const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
-    eyebrow: "For service providers",
-    heroLine1: "More clients. Less paperwork.", heroHighlight: "Better interventions.",
-    heroSubhead: "Every ticket arrives with photos, location, category and urgency already filled in. The marketplace brings you clients you didn\u2019t have to chase. And the proof of work writes itself.",
-    bookDemo: "Book a demo", heroNote: "Plans from €160/month. Most popular: Growth, ~150 clients covered.",
-    ticketLabel: "Cubii provider view \u2014 incoming ticket",
+    eyebrow: "Cubii for service providers",
+    heroLine1: "Failures centralized. Call-outs organized.", heroHighlight: "Extra revenue.",
+    heroSubhead: "Your clients no longer call you. They alert you.",
+    bookDemo: "Book a demo", heroNote: "€3.59 per alarm per month, degressive by volume. Marketplace at €49 per month.",
+    ticketLabel: "Cubii provider view — incoming ticket",
     answerH2Pre: "What does Cubii do for ", answerH2Emph: "service providers", answerH2Post: "?",
-    answerText: "Cubii gives maintenance companies, HVAC contractors, elevator technicians and other service providers structured intervention requests, a marketplace for winning new clients, remote equipment monitoring, and automatic intervention documentation. Plans range from €160 to €1,599 per month depending on client volume.",
-    painPrefix: "The job is the", painHighlight: "easy part",
-    painText1: "You know the drill: a call with half the information, a first visit just to see what\u2019s actually wrong, then the real intervention, then the evening spent writing it up.",
-    painText2: "The work takes an hour. Everything around it takes three.",
-    benefitsH2: "How Cubii changes your operations",
-    b1Title: "Complete tickets from the first second.", b1Text: "Photos, exact location, category, urgency. Diagnose before you drive. Bring the right part the first time.",
-    b2Title: "New business finds you.", b2Text: "The marketplace puts your company in front of every facility manager on Cubii, searchable by specialty and availability. That\u2019s 2,600+ connected buildings that may need your trade.",
+    answerText: "A boiler drops out at 6 in the morning. A sensor detects it, the ticket is created, it lands with you. No panicked call at 8, no unintelligible voicemail, no “I think it’s making a weird noise”.",
+    answerText2: "Every failure from every client arrives in the same place, in the same format: equipment, location, photo, history. You see at a glance what is on fire and what can wait.",
+    painPrefix: "What it changes,", painHighlight: "concretely",
+    thBefore: "Before", thAfter: "With Cubii",
+    compareRows: [
+      { before: "The client calls once it is already serious", after: "The sensor alerts beforehand" },
+      { before: "Diagnosis over the phone", after: "Photo, location, history inside the ticket" },
+      { before: "Three follow-ups to get paid", after: "Validation releases the invoice" },
+      { before: "One maintenance contract", after: "A contract + an alarm subscription" }
+    ],
+    fieldH2: "Your interventions, simplified end to end",
+    fieldSubtitle: "You get in the van already knowing what you are going to find.",
+    fieldH3: "Interventions without friction",
+    fieldText: "You leave knowing what you will find: the request arrives qualified (equipment, floor, photo, machine history). On site, access details and documents are in the ticket, and the chat brings manager, resident and technician together in one place. You document what you did with a photo and a note, then you close it out. No report to write in the evening. The manager’s validation releases your invoice and records the intervention in the client’s maintenance book.",
+    benefitsH2: "How Cubii transforms your operations!",
+    b1Title: "Well-documented tickets. Everything is clear!", b1Text: "Photos, exact location, category, urgency. Diagnose before you drive. Bring the right part the first time.",
+    b2Title: "New business finds you.", b2Text: "The marketplace puts your company in front of every facility manager on Cubii, searchable by specialty and availability. That’s 2,600+ connected buildings that may need your trade.",
     b3Title: "Monitor your installed equipment remotely.", b3Text: "Connect the boilers, elevators and HVAC systems you maintain. Get alerted at the first anomaly and intervene before the breakdown, and before the emergency call-out.",
     b4Title: "Proof of work, automatic.", b4Text: "Every intervention documented, every exchange archived per ticket. When a client asks what was done in March, the answer takes one click.",
     b5Title: "Onboard your existing clients in minutes.", b5Text: "QR code or email invite. No IT project.",
     mascotCaption: "Works with the equipment you already service, whatever the brand.",
     pricingH2: "How much does Cubii cost for service providers?",
-    tableCaption: "Cubii service provider plans, monthly, excl. VAT",
-    thPlan: "Plan", thMonthly: "Monthly", thClients: "Clients covered", mostPopular: "MOST POPULAR",
-    pricingNote: "All prices excl. VAT. Annual prepayment saves 10%. Effective cost per client drops from €5.33 (Starter) to €4.00 (Enterprise).",
-    pricingLink: "\u2192 Full pricing details",
+    pricingLead: "Your clients no longer see you as a repairman. They see you as the one watching over their building.",
+    rev1Title: "One more service to offer your current clients",
+    rev1Text: "Your clients already have a contract with you: you add the automatic reporting of their failures to it. You install the alarms, you connect them, you invoice them.",
+    rev1Price: "€3.59 per alarm per month",
+    rev1Note: "Degressive by volume. A hundred alarms at clients you already have is recurring revenue without hiring a single extra technician.",
+    rev2Title: "Clients you did not have",
+    rev2Text: "On the Cubii Marketplace, you are visible to the managers and co-owners looking for a provider.",
+    rev2Price: "€49 per month",
+    rev2Note: "Advertising included. New opportunities mean new revenue.",
+    pricingNote: "All prices excl. VAT.",
+    pricingLink: "→ Full pricing details",
     roiH2: "Does it pay for itself?",
-    roiText: "One avoided empty first visit per week already covers the Starter plan. Add the call-outs you win through the marketplace and the admin hours you stop spending on write-ups, and the math gets short.",
+    roiText: "One avoided empty first visit per week already covers your subscription. Add the call-outs you win through the Marketplace, the recurring revenue from connected alarms, and the admin hours you stop spending on write-ups, and the math gets short.",
     miniFaqH2: "Provider questions, answered",
     faq1Q: "Which trades is Cubii for?", faq1A: "Any building service provider: HVAC, plumbing, electrical, elevators, cleaning, general maintenance, security systems and more.",
     faq2Q: "Can I connect equipment I already maintain?", faq2A: "Yes. Boilers, elevators, HVAC and other equipment can be connected via sensors regardless of brand, so you see anomalies before your client calls.",
-    faq3Q: "What\u2019s included in Starter vs higher plans?", faq3A: "Starter covers structured ticketing and documentation for ~30 clients. Marketplace access and surveys start at Starter Plus. Growth adds display ads, priority support and document cloud."
+    faq3Q: "How is Cubii billed for providers?", faq3A: "Two independent building blocks: automatic failure reporting, at €3.59 per alarm per month, degressive by volume; and presence on the Marketplace, at €49 per month, advertising included. All prices excl. VAT."
   },
   pt: {
-    eyebrow: "Para prestadores de serviços",
-    heroLine1: "Mais clientes. Menos burocracia.", heroHighlight: "Melhores intervenções.",
-    heroSubhead: "Cada pedido chega com fotografias, localização, categoria e urgência já preenchidas. O marketplace traz-lhe clientes que não teve de procurar. E o comprovativo de trabalho escreve-se sozinho.",
-    bookDemo: "Marcar uma demonstração", heroNote: "Planos a partir de €160/mês. Mais popular: Growth, ~150 clientes cobertos.",
-    ticketLabel: "Vista de prestador Cubii \u2014 pedido recebido",
+    eyebrow: "Cubii para prestadores de serviços",
+    heroLine1: "Avarias centralizadas. Reparações organizadas.", heroHighlight: "Receitas a mais.",
+    heroSubhead: "Os seus clientes já não lhe telefonam. Alertam-no.",
+    bookDemo: "Marcar uma demonstração", heroNote: "3,59 € por alarme e por mês, decrescente com o volume. Marketplace a 49 € por mês.",
+    ticketLabel: "Vista de prestador Cubii — pedido recebido",
     answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "prestadores de serviços", answerH2Post: "?",
-    answerText: "A Cubii dá a empresas de manutenção, empreiteiros de AVAC, técnicos de elevadores e outros prestadores de serviços pedidos de intervenção estruturados, um marketplace para conquistar novos clientes, monitorização remota de equipamento e documentação automática das intervenções. Os planos vão de €160 a €1.599 por mês, consoante o volume de clientes.",
-    painPrefix: "O trabalho é a parte", painHighlight: "fácil",
-    painText1: "Conhece a rotina: uma chamada com metade da informação, uma primeira visita só para ver o que está mesmo avariado, depois a intervenção a sério, depois a noite passada a escrever o relatório.",
-    painText2: "O trabalho demora uma hora. Tudo o resto demora três.",
-    benefitsH2: "Como a Cubii muda as suas operações",
-    b1Title: "Pedidos completos desde o primeiro segundo.", b1Text: "Fotografias, localização exata, categoria, urgência. Diagnostique antes de conduzir. Leve a peça certa à primeira.",
+    answerText: "Uma caldeira falha às 6 da manhã. Um sensor deteta-o, o pedido cria-se, chega até si. Sem chamada em pânico às 8, sem mensagem de voz incompreensível, sem «acho que está a fazer um barulho estranho».",
+    answerText2: "Todas as avarias de todos os seus clientes chegam ao mesmo sítio, no mesmo formato: equipamento, localização, fotografia, histórico. Vê num relance o que arde e o que pode esperar.",
+    painPrefix: "O que isto muda,", painHighlight: "na prática",
+    thBefore: "Antes", thAfter: "Com a Cubii",
+    compareRows: [
+      { before: "O cliente telefona quando já é grave", after: "O sensor alerta antes" },
+      { before: "Diagnóstico por telefone", after: "Fotografia, local e histórico dentro do pedido" },
+      { before: "Três insistências para faturar", after: "A validação autoriza a fatura" },
+      { before: "Um contrato de manutenção", after: "Um contrato + uma subscrição de alarmes" }
+    ],
+    fieldH2: "As suas intervenções, simplificadas de ponta a ponta",
+    fieldSubtitle: "Entra na carrinha já a saber o que vai encontrar.",
+    fieldH3: "Intervenções sem fricção",
+    fieldText: "Parte a saber o que vai encontrar: o pedido chega qualificado (equipamento, piso, fotografia, histórico da máquina). No local, os acessos e os documentos estão no pedido, e o chat reúne gestor, residente e técnico no mesmo sítio. Documenta o que fez com uma fotografia e uma nota, e depois fecha. Sem relatório para escrever à noite. A validação do gestor desbloqueia a sua fatura e inscreve a intervenção no livro de manutenção do cliente.",
+    benefitsH2: "Como a Cubii transforma a sua operação!",
+    b1Title: "Pedidos bem documentados. Está tudo claro!", b1Text: "Fotografias, localização exata, categoria, urgência. Diagnostique antes de conduzir. Leve a peça certa à primeira.",
     b2Title: "Novos negócios encontram-no.", b2Text: "O marketplace coloca a sua empresa à vista de todos os gestores de condomínio na Cubii, pesquisável por especialidade e disponibilidade. São mais de 2.600 edifícios ligados que podem precisar do seu ofício.",
     b3Title: "Monitorize o seu equipamento instalado à distância.", b3Text: "Ligue as caldeiras, elevadores e sistemas de AVAC que mantém. Seja alertado à primeira anomalia e intervenha antes da avaria, e antes da chamada de emergência.",
     b4Title: "Comprovativo de trabalho, automático.", b4Text: "Cada intervenção documentada, cada troca de mensagens arquivada por pedido. Quando um cliente pergunta o que foi feito em março, a resposta demora um clique.",
     b5Title: "Integre os seus clientes atuais em minutos.", b5Text: "Código QR ou convite por email. Sem projeto de informática.",
     mascotCaption: "Funciona com o equipamento que já assiste, seja qual for a marca.",
     pricingH2: "Quanto custa a Cubii para prestadores de serviços?",
-    tableCaption: "Planos Cubii para prestadores de serviços, mensal, sem IVA",
-    thPlan: "Plano", thMonthly: "Mensal", thClients: "Clientes cobertos", mostPopular: "MAIS POPULAR",
-    pricingNote: "Todos os preços sem IVA. O pré-pagamento anual poupa 10%. O custo efetivo por cliente desce de €5,33 (Starter) para €4,00 (Enterprise).",
-    pricingLink: "\u2192 Ver preços completos",
+    pricingLead: "Os seus clientes deixam de o ver como quem repara. Passam a vê-lo como quem vela pelo edifício deles.",
+    rev1Title: "Mais um serviço para propor aos seus clientes atuais",
+    rev1Text: "Os seus clientes já têm um contrato consigo: acrescenta-lhe a comunicação automática das avarias. Instala os alarmes, liga-os, fatura-os.",
+    rev1Price: "3,59 € por alarme e por mês",
+    rev1Note: "Decrescente com o volume. Cem alarmes em clientes que já tem é receita recorrente sem contratar mais um técnico.",
+    rev2Title: "Clientes que não tinha",
+    rev2Text: "No Marketplace Cubii, fica visível para os gestores e condóminos que procuram um prestador.",
+    rev2Price: "49 € por mês",
+    rev2Note: "Publicidade incluída. Novas oportunidades significam novas receitas.",
+    pricingNote: "Todos os preços sem IVA.",
+    pricingLink: "→ Ver preços completos",
     roiH2: "Isto compensa financeiramente?",
-    roiText: "Uma primeira visita desnecessária evitada por semana já cobre o plano Starter. Some as chamadas conquistadas através do marketplace e as horas de administração que deixa de gastar em relatórios, e a conta fecha rapidamente.",
+    roiText: "Uma primeira visita desnecessária evitada por semana já cobre a sua subscrição. Some as intervenções conquistadas através do Marketplace, a receita recorrente dos alarmes ligados e as horas de administração que deixa de gastar em relatórios, e a conta fecha rapidamente.",
     miniFaqH2: "Perguntas de prestadores de serviços, respondidas",
     faq1Q: "Para que ofícios é a Cubii?", faq1A: "Qualquer prestador de serviços de edifícios: AVAC, canalização, eletricidade, elevadores, limpeza, manutenção geral, sistemas de segurança e muito mais.",
     faq2Q: "Posso ligar equipamento que já mantenho?", faq2A: "Sim. Caldeiras, elevadores, AVAC e outro equipamento podem ser ligados através de sensores independentemente da marca, para ver anomalias antes de o seu cliente ligar.",
-    faq3Q: "O que está incluído no Starter em comparação com planos superiores?", faq3A: "O Starter cobre pedidos estruturados e documentação para cerca de 30 clientes. O acesso ao marketplace e a inquéritos começa no Starter Plus. O Growth acrescenta anúncios em ecrã, apoio prioritário e armazenamento de documentos na nuvem."
+    faq3Q: "Como é faturada a Cubii para os prestadores?", faq3A: "Duas peças independentes: a comunicação automática das avarias, a 3,59 € por alarme e por mês, decrescente com o volume; e a presença no Marketplace, a 49 € por mês, publicidade incluída. Todos os preços sem IVA."
   },
   es: {
-    eyebrow: "Para proveedores de servicios",
-    heroLine1: "Más clientes. Menos papeleo.", heroHighlight: "Mejores intervenciones.",
-    heroSubhead: "Cada parte llega con fotos, ubicación, categoría y urgencia ya rellenadas. El marketplace te trae clientes que no tuviste que buscar. Y el justificante de trabajo se genera solo.",
-    bookDemo: "Reservar una demo", heroNote: "Planes desde €160/mes. Más popular: Growth, ~150 clientes cubiertos.",
-    ticketLabel: "Vista de proveedor Cubii \u2014 parte entrante",
-    answerH2: "\u00BFQu\u00E9 hace Cubii por los proveedores de servicios?",
-    answerText: "Cubii ofrece a empresas de mantenimiento, contratistas de climatización, técnicos de ascensores y otros proveedores de servicios solicitudes de intervención estructuradas, un marketplace para conseguir nuevos clientes, monitorización remota de equipos y documentación automática de intervenciones. Los planes van de €160 a €1.599 al mes según el volumen de clientes.",
-    painPrefix: "El trabajo es la parte", painHighlight: "fácil",
-    painText1: "Ya conoces la rutina: una llamada con la mitad de la información, una primera visita solo para ver qué está realmente mal, luego la intervención de verdad, y después la noche dedicada a redactar el informe.",
-    painText2: "El trabajo dura una hora. Todo lo demás dura tres.",
-    benefitsH2: "Cómo Cubii cambia tus operaciones",
-    b1Title: "Partes completos desde el primer segundo.", b1Text: "Fotos, ubicación exacta, categoría, urgencia. Diagnostica antes de conducir. Lleva la pieza correcta a la primera.",
-    b2Title: "El nuevo negocio te encuentra.", b2Text: "El marketplace coloca a tu empresa ante todos los administradores de fincas en Cubii, con búsqueda por especialidad y disponibilidad. Son más de 2.600 edificios conectados que pueden necesitar tu oficio.",
-    b3Title: "Monitoriza tus equipos instalados a distancia.", b3Text: "Conecta las calderas, ascensores y sistemas de climatización que mantienes. Recibe una alerta ante la primera anomalía e interviene antes de la avería, y antes de la llamada de urgencia.",
-    b4Title: "Justificante de trabajo, automático.", b4Text: "Cada intervención documentada, cada intercambio archivado por parte. Cuando un cliente pregunta qué se hizo en marzo, la respuesta tarda un clic.",
-    b5Title: "Incorpora a tus clientes actuales en minutos.", b5Text: "Código QR o invitación por correo electrónico. Sin proyecto de informática.",
-    mascotCaption: "Funciona con el equipo que ya mantienes, sea cual sea la marca.",
-    pricingH2: "\u00BFCu\u00E1nto cuesta Cubii para proveedores de servicios?",
-    tableCaption: "Planes Cubii para proveedores de servicios, mensual, sin IVA",
-    thPlan: "Plan", thMonthly: "Mensual", thClients: "Clientes cubiertos", mostPopular: "MÁS POPULAR",
-    pricingNote: "Todos los precios sin IVA. El pago anual anticipado ahorra un 10%. El coste efectivo por cliente baja de €5,33 (Starter) a €4,00 (Enterprise).",
-    pricingLink: "\u2192 Ver precios completos",
-    roiH2: "\u00BFSe amortiza solo?",
-    roiText: "Evitar una primera visita en balde a la semana ya cubre el plan Starter. Súmale los avisos que ganas a través del marketplace y las horas de administración que dejas de dedicar a redactar informes, y la cuenta sale rápido.",
+    eyebrow: "Cubii para proveedores de servicios",
+    heroLine1: "Averías centralizadas. Reparaciones organizadas.", heroHighlight: "Ingresos de más.",
+    heroSubhead: "Tus clientes ya no te llaman. Te avisan.",
+    bookDemo: "Reservar una demo", heroNote: "3,59 € por alarma y mes, decreciente por volumen. Marketplace a 49 € al mes.",
+    ticketLabel: "Vista de proveedor Cubii — incidencia entrante",
+    answerH2Pre: "¿Qué hace Cubii por los ", answerH2Emph: "proveedores de servicios", answerH2Post: "?",
+    answerText: "Una caldera falla a las 6 de la mañana. Un sensor lo detecta, la incidencia se crea, te llega. Sin llamada de pánico a las 8, sin mensaje de voz incomprensible, sin «creo que hace un ruido raro».",
+    answerText2: "Todas las averías de todos tus clientes llegan al mismo sitio, en el mismo formato: equipo, ubicación, foto, historial. Ves de un vistazo lo que arde y lo que puede esperar.",
+    painPrefix: "Lo que esto cambia,", painHighlight: "en concreto",
+    thBefore: "Antes", thAfter: "Con Cubii",
+    compareRows: [
+      { before: "El cliente llama cuando ya es grave", after: "El sensor avisa antes" },
+      { before: "Diagnóstico por teléfono", after: "Foto, lugar e historial dentro de la incidencia" },
+      { before: "Tres reclamaciones para poder facturar", after: "La validación autoriza la factura" },
+      { before: "Un contrato de mantenimiento", after: "Un contrato + una suscripción de alarmas" }
+    ],
+    fieldH2: "Tus intervenciones, simplificadas de principio a fin",
+    fieldSubtitle: "Te subes a la furgoneta sabiendo ya lo que vas a encontrar.",
+    fieldH3: "Intervenciones sin fricción",
+    fieldText: "Sales sabiendo lo que vas a encontrar: la solicitud llega cualificada (equipo, planta, foto, historial de la máquina). Sobre el terreno, los accesos y los documentos están en la incidencia, y el chat reúne a administrador, residente y técnico en un mismo sitio. Documentas lo que has hecho con una foto y una nota, y cierras. Sin informe que redactar por la noche. La validación del administrador libera tu factura e inscribe la intervención en el libro del edificio del cliente.",
+    benefitsH2: "¡Cómo transforma Cubii tu operativa!",
+    b1Title: "Incidencias bien documentadas. ¡Todo está claro!", b1Text: "Fotos, ubicación exacta, categoría, urgencia. Diagnostica antes de conducir. Lleva la pieza correcta a la primera.",
+    b2Title: "El nuevo negocio te encuentra.", b2Text: "El marketplace pone tu empresa delante de cada administrador de fincas en Cubii, con búsqueda por especialidad y disponibilidad. Son más de 2.600 edificios conectados que pueden necesitar tu oficio.",
+    b3Title: "Supervisa a distancia los equipos que has instalado.", b3Text: "Conecta las calderas, ascensores y sistemas de climatización que mantienes. Recibe el aviso a la primera anomalía e interviene antes de la avería, y antes de la llamada de urgencia.",
+    b4Title: "Justificante de trabajo, automático.", b4Text: "Cada intervención documentada, cada intercambio archivado por incidencia. Cuando un cliente pregunta qué se hizo en marzo, la respuesta está a un clic.",
+    b5Title: "Incorpora a tus clientes actuales en minutos.", b5Text: "Código QR o invitación por correo. Sin proyecto informático.",
+    mascotCaption: "Funciona con los equipos a los que ya das servicio, sea cual sea la marca.",
+    pricingH2: "¿Cuánto cuesta Cubii para los proveedores de servicios?",
+    pricingLead: "Tus clientes dejan de verte como quien repara. Pasan a verte como quien vela por su edificio.",
+    rev1Title: "Un servicio más que ofrecer a tus clientes actuales",
+    rev1Text: "Tus clientes ya tienen un contrato contigo: le añades el reporte automático de sus averías. Instalas las alarmas, las conectas, las facturas.",
+    rev1Price: "3,59 € por alarma y mes",
+    rev1Note: "Decreciente por volumen. Cien alarmas en clientes que ya tienes son ingresos recurrentes sin contratar ni un técnico más.",
+    rev2Title: "Clientes que no tenías",
+    rev2Text: "En el Marketplace de Cubii eres visible para los administradores y propietarios que buscan un proveedor.",
+    rev2Price: "49 € al mes",
+    rev2Note: "Publicidad incluida. Nuevas oportunidades significan nuevos ingresos.",
+    pricingNote: "Todos los precios sin IVA.",
+    pricingLink: "→ Ver precios completos",
+    roiH2: "¿Se amortiza?",
+    roiText: "Una sola primera visita en vano evitada por semana ya cubre tu suscripción. Suma las intervenciones que ganas por el Marketplace, los ingresos recurrentes de las alarmas conectadas y las horas de administración que dejas de dedicar a redactar partes, y la cuenta sale rápido.",
     miniFaqH2: "Preguntas de proveedores, respondidas",
-    faq1Q: "\u00BFPara qu\u00E9 oficios es Cubii?", faq1A: "Para cualquier proveedor de servicios de edificios: climatización, fontanería, electricidad, ascensores, limpieza, mantenimiento general, sistemas de seguridad y más.",
-    faq2Q: "\u00BFPuedo conectar equipos que ya mantengo?", faq2A: "Sí. Calderas, ascensores, climatización y otros equipos pueden conectarse mediante sensores sea cual sea la marca, para que veas las anomalías antes de que te llame el cliente.",
-    faq3Q: "\u00BFQu\u00E9 incluye Starter frente a planes superiores?", faq3A: "Starter cubre partes estructurados y documentación para unos 30 clientes. El acceso al marketplace y las encuestas empiezan en Starter Plus. Growth añade anuncios en pantalla, soporte prioritario y almacenamiento de documentos en la nube."
+    faq1Q: "¿Para qué oficios es Cubii?", faq1A: "Para cualquier proveedor de servicios de edificios: climatización, fontanería, electricidad, ascensores, limpieza, mantenimiento general, sistemas de seguridad y más.",
+    faq2Q: "¿Puedo conectar equipos que ya mantengo?", faq2A: "Sí. Calderas, ascensores, climatización y otros equipos pueden conectarse mediante sensores sea cual sea la marca, para ver las anomalías antes de que llame tu cliente.",
+    faq3Q: "¿Cómo se factura Cubii para los proveedores?", faq3A: "Dos piezas independientes: el reporte automático de averías, a 3,59 € por alarma y mes, decreciente por volumen; y la presencia en el Marketplace, a 49 € al mes, publicidad incluida. Todos los precios sin IVA."
   },
   fr: {
-    eyebrow: "Pour les prestataires de services",
-    heroLine1: "Plus de clients. Moins de paperasse.", heroHighlight: "De meilleures interventions.",
-    heroSubhead: "Chaque ticket arrive avec photos, localisation, catégorie et urgence déjà renseignées. La marketplace vous apporte des clients que vous n\u2019avez pas eu à démarcher. Et la preuve d\u2019intervention se rédige toute seule.",
-    bookDemo: "Réserver une démo", heroNote: "Forfaits à partir de 160\u00A0€/mois. Le plus populaire\u00A0: Growth, ~150 clients couverts.",
-    ticketLabel: "Vue prestataire Cubii \u2014 ticket entrant",
-    answerH2: "Que fait Cubii pour les prestataires de services\u00A0?",
-    answerText: "Cubii offre aux entreprises de maintenance, chauffagistes, techniciens ascensoristes et autres prestataires de services des demandes d\u2019intervention structurées, une marketplace pour gagner de nouveaux clients, un suivi à distance des équipements et une documentation automatique des interventions. Les forfaits vont de 160\u00A0€ à 1\u00A0599\u00A0€ par mois selon le volume de clients.",
-    painPrefix: "L\u2019intervention est la partie", painHighlight: "facile",
-    painText1: "Vous connaissez le scénario\u00A0: un appel avec la moitié des informations, une première visite juste pour voir ce qui cloche vraiment, puis la véritable intervention, puis la soirée passée à tout rédiger.",
-    painText2: "Le travail prend une heure. Tout le reste en prend trois.",
-    benefitsH2: "Comment Cubii transforme vos opérations",
-    b1Title: "Des tickets complets dès la première seconde.", b1Text: "Photos, localisation exacte, catégorie, urgence. Diagnostiquez avant de prendre la route. Emportez la bonne pièce du premier coup.",
-    b2Title: "Les nouveaux contrats viennent à vous.", b2Text: "La marketplace place votre entreprise devant chaque gestionnaire immobilier sur Cubii, avec recherche par spécialité et disponibilité. Ce sont plus de 2\u00A0600 bâtiments connectés qui pourraient avoir besoin de votre métier.",
-    b3Title: "Surveillez vos équipements installés à distance.", b3Text: "Connectez les chaudières, ascenseurs et systèmes CVC que vous entretenez. Soyez alerté dès la première anomalie et intervenez avant la panne, et avant l\u2019appel d\u2019urgence.",
-    b4Title: "Preuve d\u2019intervention, automatique.", b4Text: "Chaque intervention documentée, chaque échange archivé par ticket. Quand un client demande ce qui a été fait en mars, la réponse ne prend qu\u2019un clic.",
+    eyebrow: "Cubii pour les prestataires de services",
+    heroLine1: "Pannes centralisées. Dépannages organisés.", heroHighlight: "Revenus en plus.",
+    heroSubhead: "Vos clients ne vous appellent plus. Ils vous alertent.",
+    bookDemo: "Réserver une démo", heroNote: "3,59 € par alarme et par mois, dégressif au volume. Marketplace à 49 € par mois.",
+    ticketLabel: "Vue prestataire Cubii — ticket entrant",
+    answerH2Pre: "Que fait Cubii pour les ", answerH2Emph: "prestataires de services", answerH2Post: " ?",
+    answerText: "Une chaudière décroche à 6h du matin. Un capteur le détecte, le ticket se crée, il arrive chez vous. Pas d’appel paniqué à 8h, pas de message vocal incompréhensible, pas de « je crois que ça fait un bruit bizarre ».",
+    answerText2: "Toutes les pannes de tous vos clients arrivent au même endroit, dans le même format : équipement, localisation, photo, historique. Vous voyez d’un coup d’œil ce qui brûle et ce qui attend.",
+    painPrefix: "Ce que ça change,", painHighlight: "concrètement",
+    thBefore: "Avant", thAfter: "Avec Cubii",
+    compareRows: [
+      { before: "Le client appelle quand c’est déjà grave", after: "Le capteur alerte avant" },
+      { before: "Diagnostic par téléphone", after: "Photo, lieu, historique dans le ticket" },
+      { before: "Trois relances pour facturer", after: "La validation autorise la facture" },
+      { before: "Un contrat de maintenance", after: "Un contrat + un abonnement alarmes" }
+    ],
+    fieldH2: "Vos interventions, simplifiées de bout en bout",
+    fieldSubtitle: "Vous montez dans le camion en sachant déjà ce que vous allez trouver.",
+    fieldH3: "Des interventions sans friction",
+    fieldText: "Vous partez en sachant ce que vous allez trouver : la demande arrive qualifiée (équipement, étage, photo, historique de la machine). Sur place, l’accès et les documents sont dans le ticket, et le chat réunit gestionnaire, résident et technicien au même endroit. Vous documentez ce que vous avez fait avec une photo et une note, puis vous clôturez. Pas de rapport à rédiger le soir. La validation du gestionnaire débloque votre facture et inscrit l’intervention au carnet d’entretien du client.",
+    benefitsH2: "Comment Cubii transforme votre opérationnel !",
+    b1Title: "Les tickets bien documentés. Tout est clair !", b1Text: "Photos, localisation exacte, catégorie, urgence. Diagnostiquez avant de prendre la route. Emportez la bonne pièce du premier coup.",
+    b2Title: "Les nouveaux contrats viennent à vous.", b2Text: "La marketplace place votre entreprise devant chaque gestionnaire immobilier sur Cubii, avec recherche par spécialité et disponibilité. Ce sont plus de 2 600 bâtiments connectés qui pourraient avoir besoin de votre métier.",
+    b3Title: "Surveillez vos équipements installés à distance.", b3Text: "Connectez les chaudières, ascenseurs et systèmes CVC que vous entretenez. Soyez alerté dès la première anomalie et intervenez avant la panne, et avant l’appel d’urgence.",
+    b4Title: "Preuve d’intervention, automatique.", b4Text: "Chaque intervention documentée, chaque échange archivé par ticket. Quand un client demande ce qui a été fait en mars, la réponse ne prend qu’un clic.",
     b5Title: "Intégrez vos clients existants en quelques minutes.", b5Text: "Code QR ou invitation par e-mail. Aucun projet informatique.",
     mascotCaption: "Fonctionne avec les équipements que vous entretenez déjà, quelle que soit la marque.",
-    pricingH2: "Combien coûte Cubii pour les prestataires de services\u00A0?",
-    tableCaption: "Forfaits Cubii pour prestataires de services, mensuel, hors TVA",
-    thPlan: "Forfait", thMonthly: "Mensuel", thClients: "Clients couverts", mostPopular: "LE PLUS POPULAIRE",
-    pricingNote: "Tous les prix sont hors TVA. Le prépaiement annuel fait économiser 10\u00A0%. Le coût effectif par client passe de 5,33\u00A0€ (Starter) à 4,00\u00A0€ (Enterprise).",
-    pricingLink: "\u2192 Voir les tarifs complets",
-    roiH2: "Est-ce rentabilisé\u00A0?",
-    roiText: "Une seule visite à vide évitée par semaine couvre déjà le forfait Starter. Ajoutez les interventions gagnées via la marketplace et les heures d\u2019administration que vous ne passez plus à rédiger des comptes rendus, et le calcul est vite fait.",
+    pricingH2: "Combien coûte Cubii pour les prestataires de services ?",
+    pricingLead: "Vos clients ne vous voient plus comme un dépanneur. Ils vous voient comme celui qui veille sur leur bâtiment.",
+    rev1Title: "Un service de plus à proposer à vos clients actuels",
+    rev1Text: "Vos clients ont déjà un contrat avec vous : vous y ajoutez la remontée automatique de leurs pannes. Vous installez les alarmes, vous les connectez, vous les facturez.",
+    rev1Price: "3,59 € par alarme et par mois",
+    rev1Note: "Dégressif au volume. Cent alarmes chez des clients que vous avez déjà, c’est un revenu récurrent sans un technicien de plus à embaucher.",
+    rev2Title: "Des clients que vous n’aviez pas",
+    rev2Text: "Sur la Marketplace Cubii, vous êtes visible auprès des gestionnaires et copropriétaires qui cherchent un prestataire.",
+    rev2Price: "49 € par mois",
+    rev2Note: "Publicité incluse. Qui dit nouvelles opportunités, dit nouveaux revenus.",
+    pricingNote: "Tous les prix sont hors TVA.",
+    pricingLink: "→ Voir les tarifs complets",
+    roiH2: "Est-ce rentabilisé ?",
+    roiText: "Une seule visite à vide évitée par semaine couvre déjà votre abonnement. Ajoutez les interventions gagnées via la Marketplace, le revenu récurrent des alarmes connectées et les heures d’administration que vous ne passez plus à rédiger des comptes rendus, et le calcul est vite fait.",
     miniFaqH2: "Questions des prestataires, avec réponses",
-    faq1Q: "Pour quels métiers Cubii est-elle faite\u00A0?", faq1A: "Pour tout prestataire de services du bâtiment\u00A0: CVC, plomberie, électricité, ascenseurs, nettoyage, maintenance générale, systèmes de sécurité et plus encore.",
-    faq2Q: "Puis-je connecter des équipements que j\u2019entretiens déjà\u00A0?", faq2A: "Oui. Chaudières, ascenseurs, CVC et autres équipements peuvent être connectés via des capteurs quelle que soit la marque, pour repérer les anomalies avant l\u2019appel de votre client.",
-    faq3Q: "Que comprend Starter par rapport aux forfaits supérieurs\u00A0?", faq3A: "Starter couvre la billetterie structurée et la documentation pour environ 30 clients. L\u2019accès à la marketplace et aux enquêtes commence avec Starter Plus. Growth ajoute les écrans publicitaires, le support prioritaire et le cloud documentaire."
+    faq1Q: "Pour quels métiers Cubii est-elle faite ?", faq1A: "Pour tout prestataire de services du bâtiment : CVC, plomberie, électricité, ascenseurs, nettoyage, maintenance générale, systèmes de sécurité et plus encore.",
+    faq2Q: "Puis-je connecter des équipements que j’entretiens déjà ?", faq2A: "Oui. Chaudières, ascenseurs, CVC et autres équipements peuvent être connectés via des capteurs quelle que soit la marque, pour repérer les anomalies avant l’appel de votre client.",
+    faq3Q: "Comment Cubii est-elle facturée pour les prestataires ?", faq3A: "Deux briques indépendantes : la remontée automatique des pannes, à 3,59 € par alarme et par mois, dégressif au volume ; et la présence sur la Marketplace, à 49 € par mois, publicité incluse. Tous les prix sont hors TVA."
   },
   de: {
-    eyebrow: "Für Dienstleister",
-    heroLine1: "Mehr Kunden. Weniger Papierkram.", heroHighlight: "Bessere Einsätze.",
-    heroSubhead: "Jedes Ticket kommt bereits mit Fotos, Standort, Kategorie und Dringlichkeit an. Der Marktplatz bringt Ihnen Kunden, die Sie nicht erst gewinnen mussten. Und der Arbeitsnachweis schreibt sich von selbst.",
-    bookDemo: "Demo buchen", heroNote: "Pläne ab 160 €/Monat. Am beliebtesten: Growth, ~150 abgedeckte Kunden.",
+    eyebrow: "Cubii für Dienstleister",
+    heroLine1: "Störungen gebündelt. Einsätze organisiert.", heroHighlight: "Zusätzliche Einnahmen.",
+    heroSubhead: "Ihre Kunden rufen Sie nicht mehr an. Sie alarmieren Sie.",
+    bookDemo: "Demo buchen", heroNote: "3,59 € pro Alarm und Monat, mengenabhängig degressiv. Marktplatz für 49 € im Monat.",
     ticketLabel: "Cubii Dienstleisteransicht — eingehendes Ticket",
     answerH2Pre: "Was macht Cubii für ", answerH2Emph: "Dienstleister", answerH2Post: "?",
-    answerText: "Cubii bietet Wartungsunternehmen, HLK-Fachbetrieben, Aufzugstechnikern und anderen Dienstleistern strukturierte Einsatzanfragen, einen Marktplatz zur Gewinnung neuer Kunden, Fernüberwachung von Anlagen und automatische Einsatzdokumentation. Die Pläne reichen je nach Kundenvolumen von 160 € bis 1.599 € pro Monat.",
-    painPrefix: "Der Auftrag ist der", painHighlight: "einfache Teil",
-    painText1: "Sie kennen das: ein Anruf mit der Hälfte der Informationen, ein erster Besuch nur um zu sehen, was wirklich nicht stimmt, dann der eigentliche Einsatz, dann der Abend, den Sie mit dem Schreiben des Berichts verbringen.",
-    painText2: "Die Arbeit dauert eine Stunde. Alles drumherum dauert drei.",
-    benefitsH2: "Wie Cubii Ihre Abläufe verändert",
-    b1Title: "Vollständige Tickets von der ersten Sekunde an.", b1Text: "Fotos, genauer Standort, Kategorie, Dringlichkeit. Stellen Sie die Diagnose, bevor Sie losfahren. Bringen Sie das richtige Ersatzteil gleich beim ersten Mal mit.",
-    b2Title: "Neue Aufträge finden Sie.", b2Text: "Der Marktplatz stellt Ihr Unternehmen jedem Gebäudeverwalter auf Cubii vor, durchsuchbar nach Fachgebiet und Verfügbarkeit. Das sind über 2.600 vernetzte Gebäude, die Ihr Gewerk brauchen könnten.",
-    b3Title: "Überwachen Sie Ihre installierten Anlagen aus der Ferne.", b3Text: "Verbinden Sie die Heizkessel, Aufzüge und HLK-Systeme, die Sie warten. Werden Sie bei der ersten Anomalie benachrichtigt und greifen Sie ein, bevor es zum Ausfall kommt, und bevor der Notruf eingeht.",
-    b4Title: "Arbeitsnachweis, automatisch.", b4Text: "Jeder Einsatz dokumentiert, jeder Austausch pro Ticket archiviert. Wenn ein Kunde fragt, was im März erledigt wurde, dauert die Antwort einen Klick.",
-    b5Title: "Binden Sie Ihre bestehenden Kunden in wenigen Minuten ein.", b5Text: "QR-Code oder E-Mail-Einladung. Kein IT-Projekt.",
-    mascotCaption: "Funktioniert mit den Anlagen, die Sie bereits warten, unabhängig von der Marke.",
-    pricingH2: "Was kostet Cubii für Dienstleister?",
-    tableCaption: "Cubii-Pläne für Dienstleister, monatlich, zzgl. MwSt.",
-    thPlan: "Plan", thMonthly: "Monatlich", thClients: "Abgedeckte Kunden", mostPopular: "AM BELIEBTESTEN",
-    pricingNote: "Alle Preise zzgl. MwSt. Jährliche Vorauszahlung spart 10 %. Die effektiven Kosten pro Kunde sinken von 5,33 € (Starter) auf 4,00 € (Enterprise).",
-    pricingLink: "→ Vollständige Preisdetails",
+    answerText: "Ein Heizkessel fällt um 6 Uhr morgens aus. Ein Sensor erkennt es, das Ticket entsteht, es landet bei Ihnen. Kein Panikanruf um 8, keine unverständliche Sprachnachricht, kein „ich glaube, es macht ein komisches Geräusch“.",
+    answerText2: "Alle Störungen aller Ihrer Kunden laufen an derselben Stelle auf, im selben Format: Anlage, Ort, Foto, Historie. Sie sehen auf einen Blick, was brennt und was warten kann.",
+    painPrefix: "Was sich ändert,", painHighlight: "ganz konkret",
+    thBefore: "Vorher", thAfter: "Mit Cubii",
+    compareRows: [
+      { before: "Der Kunde ruft an, wenn es schon ernst ist", after: "Der Sensor warnt vorher" },
+      { before: "Diagnose am Telefon", after: "Foto, Ort und Historie im Ticket" },
+      { before: "Dreimal nachfassen, um abzurechnen", after: "Die Freigabe gibt die Rechnung frei" },
+      { before: "Ein Wartungsvertrag", after: "Ein Vertrag + ein Alarm-Abo" }
+    ],
+    fieldH2: "Ihre Einsätze, durchgehend vereinfacht",
+    fieldSubtitle: "Sie steigen in den Wagen und wissen bereits, was Sie vorfinden werden.",
+    fieldH3: "Einsätze ohne Reibung",
+    fieldText: "Sie fahren los und wissen, was Sie erwartet: Die Anfrage kommt qualifiziert an (Anlage, Etage, Foto, Maschinenhistorie). Vor Ort stehen Zugang und Dokumente im Ticket, und der Chat bringt Verwalter, Bewohner und Techniker an einem Ort zusammen. Sie dokumentieren mit einem Foto und einer Notiz, was Sie getan haben, und schließen ab. Kein Bericht, den Sie abends schreiben müssen. Die Freigabe des Verwalters gibt Ihre Rechnung frei und trägt den Einsatz in das Wartungsbuch des Kunden ein.",
+    benefitsH2: "So verändert Cubii Ihr operatives Geschäft!",
+    b1Title: "Gut dokumentierte Tickets. Alles ist klar!", b1Text: "Fotos, exakter Ort, Kategorie, Dringlichkeit. Diagnostizieren Sie, bevor Sie losfahren. Nehmen Sie das richtige Ersatzteil gleich beim ersten Mal mit.",
+    b2Title: "Neue Aufträge finden Sie.", b2Text: "Der Marktplatz zeigt Ihr Unternehmen jedem Gebäudeverwalter auf Cubii, durchsuchbar nach Fachgebiet und Verfügbarkeit. Das sind über 2.600 vernetzte Gebäude, die Ihr Gewerk brauchen könnten.",
+    b3Title: "Überwachen Sie Ihre installierten Anlagen aus der Ferne.", b3Text: "Verbinden Sie die Heizkessel, Aufzüge und Lüftungsanlagen, die Sie warten. Werden Sie bei der ersten Anomalie alarmiert und greifen Sie ein, bevor die Anlage ausfällt und bevor der Notruf kommt.",
+    b4Title: "Arbeitsnachweis, automatisch.", b4Text: "Jeder Einsatz dokumentiert, jeder Austausch pro Ticket archiviert. Wenn ein Kunde fragt, was im März gemacht wurde, ist die Antwort einen Klick entfernt.",
+    b5Title: "Binden Sie Ihre bestehenden Kunden in Minuten ein.", b5Text: "QR-Code oder E-Mail-Einladung. Kein IT-Projekt.",
+    mascotCaption: "Funktioniert mit den Anlagen, die Sie ohnehin betreuen, unabhängig von der Marke.",
+    pricingH2: "Wie viel kostet Cubii für Dienstleister?",
+    pricingLead: "Ihre Kunden sehen Sie nicht mehr als Notdienst. Sie sehen Sie als denjenigen, der über ihr Gebäude wacht.",
+    rev1Title: "Eine Leistung mehr für Ihre heutigen Kunden",
+    rev1Text: "Ihre Kunden haben bereits einen Vertrag mit Ihnen: Sie ergänzen ihn um die automatische Meldung ihrer Störungen. Sie installieren die Alarme, Sie verbinden sie, Sie stellen sie in Rechnung.",
+    rev1Price: "3,59 € pro Alarm und Monat",
+    rev1Note: "Mengenabhängig degressiv. Hundert Alarme bei Kunden, die Sie schon haben, sind wiederkehrende Einnahmen, ohne einen einzigen Techniker zusätzlich einzustellen.",
+    rev2Title: "Kunden, die Sie nicht hatten",
+    rev2Text: "Auf dem Cubii-Marktplatz sind Sie für Verwalter und Miteigentümer sichtbar, die einen Dienstleister suchen.",
+    rev2Price: "49 € pro Monat",
+    rev2Note: "Werbung inbegriffen. Neue Gelegenheiten bedeuten neue Einnahmen.",
+    pricingNote: "Alle Preise zzgl. MwSt.",
+    pricingLink: "→ Vollständige Preisübersicht",
     roiH2: "Rechnet sich das?",
-    roiText: "Ein vermiedener unnötiger Erstbesuch pro Woche deckt bereits den Starter-Plan. Rechnen Sie die Aufträge hinzu, die Sie über den Marktplatz gewinnen, sowie die Verwaltungsstunden, die Sie nicht mehr für Berichte aufwenden, und die Rechnung geht schnell auf.",
+    roiText: "Ein einziger vermiedener Leerbesuch pro Woche deckt bereits Ihr Abo. Rechnen Sie die Einsätze dazu, die Sie über den Marktplatz gewinnen, die wiederkehrenden Einnahmen aus vernetzten Alarmen und die Verwaltungsstunden, die Sie nicht mehr mit Berichten verbringen — und die Rechnung ist schnell gemacht.",
     miniFaqH2: "Fragen von Dienstleistern, beantwortet",
-    faq1Q: "Für welche Gewerke ist Cubii geeignet?", faq1A: "Für jeden Gebäudedienstleister: HLK, Sanitär, Elektrik, Aufzüge, Reinigung, allgemeine Wartung, Sicherheitssysteme und mehr.",
-    faq2Q: "Kann ich Anlagen anschließen, die ich bereits warte?", faq2A: "Ja. Heizkessel, Aufzüge, HLK-Systeme und andere Anlagen können unabhängig von der Marke über Sensoren angeschlossen werden, sodass Sie Anomalien erkennen, bevor Ihr Kunde anruft.",
-    faq3Q: "Was ist im Starter-Plan im Vergleich zu höheren Plänen enthalten?", faq3A: "Starter umfasst strukturiertes Ticketing und Dokumentation für ca. 30 Kunden. Der Zugang zum Marktplatz und zu Umfragen beginnt mit Starter Plus. Growth ergänzt Display-Werbung, priorisierten Support und Dokumenten-Cloud."
+    faq1Q: "Für welche Gewerke ist Cubii gedacht?", faq1A: "Für jeden Gebäudedienstleister: Heizung/Klima/Lüftung, Sanitär, Elektro, Aufzüge, Reinigung, allgemeine Wartung, Sicherheitstechnik und mehr.",
+    faq2Q: "Kann ich Anlagen anbinden, die ich bereits warte?", faq2A: "Ja. Heizkessel, Aufzüge, Lüftungsanlagen und weitere Anlagen lassen sich unabhängig von der Marke über Sensoren anbinden, damit Sie Anomalien sehen, bevor Ihr Kunde anruft.",
+    faq3Q: "Wie wird Cubii für Dienstleister abgerechnet?", faq3A: "Zwei unabhängige Bausteine: die automatische Störungsmeldung für 3,59 € pro Alarm und Monat, mengenabhängig degressiv; und die Präsenz auf dem Marktplatz für 49 € pro Monat, Werbung inbegriffen. Alle Preise zzgl. MwSt."
   }
 };
 
 const META = {
-  en: { title: "Cubii for Service Providers | More Clients, Less Paperwork", description: "Complete intervention tickets from the start, new clients via the marketplace, automatic proof of work. Plans from €160/month. Book a demo." },
-  pt: { title: "Cubii para Prestadores de Serviços | Mais Clientes, Menos Burocracia", description: "Pedidos de intervenção completos desde o início, novos clientes através do marketplace, comprovativo de trabalho automático. Planos a partir de €160/mês. Marque uma demonstração." },
-  es: { title: "Cubii para Proveedores de Servicios | Más Clientes, Menos Papeleo", description: "Partes de intervención completos desde el principio, nuevos clientes a través del marketplace, justificante de trabajo automático. Planes desde €160/mes. Reserva una demo." },
-  fr: { title: "Cubii pour les Prestataires de Services | Plus de Clients, Moins de Paperasse", description: "Tickets d\u2019intervention complets dès le départ, nouveaux clients via la marketplace, preuve d\u2019intervention automatique. Forfaits à partir de 160\u00A0€/mois. Réservez une démo." },
-  de: { title: "Cubii für Dienstleister | Mehr Kunden, weniger Papierkram", description: "Vollständige Einsatzanfragen von Anfang an, neue Kunden über den Marktplatz, automatischer Arbeitsnachweis. Pläne ab 160 €/Monat. Demo buchen." }
+  en: { title: "Cubii for Service Providers | More Clients, Less Paperwork", description: "Complete intervention tickets from the start, new clients via the marketplace, automatic proof of work. €3.59 per alarm/month, Marketplace at €49/month. Book a demo." },
+  pt: { title: "Cubii para Prestadores de Serviços | Mais Clientes, Menos Burocracia", description: "Pedidos de intervenção completos desde o início, novos clientes através do marketplace, comprovativo de trabalho automático. 3,59 € por alarme/mês, Marketplace a 49 €/mês. Marque uma demonstração." },
+  es: { title: "Cubii para Proveedores de Servicios | Más Clientes, Menos Papeleo", description: "Partes de intervención completos desde el principio, nuevos clientes a través del marketplace, justificante de trabajo automático. 3,59 € por alarma/mes, Marketplace a 49 €/mes. Reserva una demo." },
+  fr: { title: "Cubii pour les Prestataires de Services | Plus de Clients, Moins de Paperasse", description: "Tickets d\u2019intervention complets dès le départ, nouveaux clients via la marketplace, preuve d\u2019intervention automatique. 3,59\u00A0€ par alarme/mois, Marketplace à 49\u00A0€/mois. Réservez une démo." },
+  de: { title: "Cubii für Dienstleister | Mehr Kunden, weniger Papierkram", description: "Vollständige Einsatzanfragen von Anfang an, neue Kunden über den Marktplatz, automatischer Arbeitsnachweis. 3,59 € pro Alarm/Monat, Marktplatz für 49 €/Monat. Demo buchen." }
 };
 
 class Component extends DCLogic {
@@ -364,8 +454,8 @@ class Component extends DCLogic {
       t,
       metaTitle: meta.title,
       metaDescription: meta.description,
-      schema: ["Organization (Smart Cube)", "FAQPage (3 provider Q/A)", "Product + Offer per plan (EUR)"],
-      h2s: ["What does Cubii do for service providers?", "The job is the easy part", "How Cubii changes your operations", "How much does Cubii cost for service providers?", "Does it pay for itself?", "Provider questions, answered"],
+      schema: ["Organization (Smart Cube)", "FAQPage (3 provider Q/A)", "Product + Offer per revenue stream (EUR)"],
+      h2s: ["What does Cubii do for service providers?", "What it changes, concretely", "Your interventions, simplified end to end", "How Cubii transforms your operations!", "How much does Cubii cost for service providers?", "Does it pay for itself?", "Provider questions, answered"],
       gaps: ["Provider testimonial with contract numbers", "Provider ticket product shot", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
     };
   }

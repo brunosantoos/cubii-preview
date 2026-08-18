@@ -32,7 +32,8 @@
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
           <h1 style="margin:0 0 24px;font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span></h1>
-          <p style="margin:0 0 32px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <p style="margin:0 0 16px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <p style="margin:0 0 32px;font-size:17px;line-height:1.6;color:#0A0A0A;font-weight:600;max-width:560px;">{{ t.heroSubhead2 }}</p>
           <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.bookDemo }}</a>
           <p style="margin:16px 0 0;font-size:14px;color:#6C8087;">{{ t.heroNote }}</p>
         </div>
@@ -75,31 +76,15 @@
     <section data-screen-label="Communes / benefits" style="padding:88px 0;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.benefitsH2 }}</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b1Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b1Text }}</p>
-          </div>
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b2Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b2Text }}</p>
-          </div>
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b3Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b3Text }}</p>
-          </div>
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b4Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b4Text }}</p>
-          </div>
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b5Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b5Text }}</p>
-          </div>
-          <div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
-            <h3 style="margin:0 0 10px;font-size:17px;font-weight:700;">{{ t.b6Title }}</h3>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#3A4247;">{{ t.b6Text }}</p>
-          </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;">
+          <sc-for list="{{ t.blocks }}" as="blk" hint-placeholder-count="5"><div style="border:1px solid #DCE7EB;border-radius:18px;padding:28px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.16);transform:translateY(-2px);border-color:#B7DCEA;">
+            <h3 style="margin:0 0 12px;font-size:18px;font-weight:800;letter-spacing:-0.015em;">{{ blk.title }}</h3>
+            <p style="margin:0 0 10px;font-size:15px;line-height:1.65;color:#3A4247;">{{ blk.lead }}</p>
+            <ul style="margin:0 0 12px;padding:0 0 0 20px;font-size:15px;line-height:1.6;color:#3A4247;">
+              <sc-for list="{{ blk.items }}" as="it" hint-placeholder-count="4"><li style="margin:0 0 3px;">{{ it }}</li></sc-for>
+            </ul>
+            <sc-if value="{{ blk.note }}"><p style="margin:0;font-size:15px;line-height:1.65;color:#12313C;font-weight:600;">{{ blk.note }}</p></sc-if>
+          </div></sc-for>
         </div>
       </div>
     </section>
@@ -275,8 +260,9 @@ const LOCALES = ["en", "pt", "es", "fr", "de"];
 const TRANSLATIONS = {
   en: {
     eyebrow: "For municipalities",
-    heroPrefix: "Every communal building.", heroHighlight: "One screen.",
-    heroSubhead: "Schools, town hall, sports halls, technical depots. Cubii centralizes incidents, maintenance, energy consumption and building records across your entire portfolio, and builds the documentation European regulation now asks of public bodies.",
+    heroPrefix: "Your building portfolio,", heroHighlight: "finally under control",
+    heroSubhead: "A municipality manages thirty, fifty, sometimes more: schools, day-care centres, sports halls, cultural centres, administrative buildings, municipal housing, workshops, pumping stations, playgrounds.",
+    heroSubhead2: "Cubii centralizes incidents, maintenance, energy consumption and building records across your whole portfolio.",
     bookDemo: "Book a demo", heroNote: "Packages from €100.63/month. 800+ tickets already handled by the commune of Mondercange.",
     dashboardLabel: "Cubii admin \u2014 commune portfolio",
     answerH2Pre: "What does Cubii do for ", answerH2Emph: "communes", answerH2Post: "?",
@@ -285,12 +271,38 @@ const TRANSLATIONS = {
     frictionText1: "A leak starts in a school on Friday evening. It\u2019s found Monday morning. Ceilings, flooring, insurance file, classes relocated. Detected Friday at 22:00, the same incident costs a seal and a call-out.",
     frictionText2: "Meanwhile the technical service is fielding calls, reconstructing intervention histories from three inboxes, and driving between sites to check things manually.",
     benefitsH2: "How communes work with Cubii",
-    b1Title: "One entry point for every incident.", b1Text: "A caretaker, teacher or agent reports a problem with a photo from their phone. The technical service sees everything arrive in one place, prioritizes and dispatches.",
-    b2Title: "Buildings that report themselves.", b2Text: "Boilers, ventilation and meters connect to Cubii regardless of brand and raise an alert at the first anomaly, weekends included.",
-    b3Title: "Maintenance that runs on schedule.", b3Text: "Recurring tasks are programmed once and dispatch automatically to the right provider. The register stays complete on its own.",
-    b4Title: "Energy per building, in real time.", b4Text: "Electricity and gas consumption via Leneda, with alerts on overconsumption.",
-    b5Title: "Records that build themselves.", b5Text: "Every intervention documented as it happens: the digital maintenance book grows without administrative work.",
-    b6Title: "Multi-site by design.", b6Text: "Schools, town hall, sports halls, depots: one view, one history, one dashboard.",
+    blocks: [
+      {
+        title: "A technical department that steers instead of reacting",
+        lead: "Every report becomes a ticket:",
+        items: ["qualified", "prioritized", "assigned", "followed through to validation"],
+        note: "The technical manager sees in real time what is open, in progress and closed, across all buildings at once, and has a complete annual report to present to the college of aldermen and to the municipal council."
+      },
+      {
+        title: "Regulatory compliance, without thinking about it",
+        lead: "Elevators, heating, ventilation, fire detection, playgrounds, periodic inspections.",
+        items: ["All maintenance contracts gathered together with their due dates.", "On the scheduled date, the ticket is created automatically and the invitation goes out to the technical department and to the provider.", "Everything is time-stamped and documented."],
+        note: "In the event of an inspection, an incident or a challenge to municipal liability, you no longer look for the proof: it is there."
+      },
+      {
+        title: "A digital maintenance book per building",
+        lead: "Staff change, mandates change; knowledge of the buildings must not leave with them. Cubii builds the complete history, building by building:",
+        items: ["interventions", "contracts", "plans", "inspection reports", "warranties", "invoices"],
+        note: "A documented portfolio is a better maintained and better valued portfolio."
+      },
+      {
+        title: "Energy measured, not estimated",
+        lead: "Cold water, hot water, heat, electricity, charging points: Cubii reads your meters via M-Bus or ModBus and connects to the national Leneda platform in Luxembourg. You follow the real consumption of each building, live.",
+        items: ["a drift caught in three days instead of six months", "a building heated while it is empty", "an invisible leak on a buried network"],
+        note: "That is where the municipality really saves. And you get objective data to feed your climate work, justify your energy investments and set your budget with figures rather than impressions."
+      },
+      {
+        title: "Providers mobilized faster",
+        lead: "Your providers receive a request that is already qualified, with photo and location.",
+        items: ["They intervene faster.", "They arrive better prepared."],
+        note: ""
+      }
+    ],
     regH2: "How Cubii helps with your obligations",
     regIntro: "Public bodies face concrete obligations under European energy rules, transposed in Luxembourg.",
     reg1: "Reduce final energy consumption by 1.9% per year compared to 2021 (indicative until October 2027; communes under 50,000 inhabitants covered from 2027, under 5,000 from 2030).",
@@ -321,8 +333,9 @@ const TRANSLATIONS = {
   },
   pt: {
     eyebrow: "Para municípios",
-    heroPrefix: "Cada edifício municipal.", heroHighlight: "Um único ecrã.",
-    heroSubhead: "Escolas, câmara municipal, pavilhões desportivos, armazéns técnicos. A Cubii centraliza incidentes, manutenção, consumo de energia e registos de edifícios em todo o seu portfólio, e constrói a documentação que a regulamentação europeia exige agora aos organismos públicos.",
+    heroPrefix: "O seu património edificado,", heroHighlight: "finalmente sob controlo",
+    heroSubhead: "Um município gere trinta, cinquenta, por vezes mais: escolas, creches, pavilhões desportivos, centros culturais, edifícios administrativos, habitação municipal, oficinas, estações elevatórias, parques infantis.",
+    heroSubhead2: "A Cubii centraliza incidentes, manutenção, consumo energético e registos de edifícios em todo o seu património.",
     bookDemo: "Marcar uma demonstração", heroNote: "Pacotes a partir de €100,63/mês. Mais de 800 pedidos já tratados pelo município de Mondercange.",
     dashboardLabel: "Painel de administração Cubii \u2014 portfólio municipal",
     answerH2Pre: "O que faz a Cubii pelos ", answerH2Emph: "municípios", answerH2Post: "?",
@@ -331,12 +344,38 @@ const TRANSLATIONS = {
     frictionText1: "Uma fuga começa numa escola numa sexta-feira à noite. É encontrada na segunda-feira de manhã. Tetos, pavimentos, processo de seguro, aulas realocadas. Detetada na sexta-feira às 22h, o mesmo incidente custa uma vedação e uma chamada de urgência.",
     frictionText2: "Entretanto, o serviço técnico está a atender chamadas, a reconstruir históricos de intervenções a partir de três caixas de correio, e a deslocar-se entre locais para verificar as coisas manualmente.",
     benefitsH2: "Como os municípios trabalham com a Cubii",
-    b1Title: "Um único ponto de entrada para cada incidente.", b1Text: "Um zelador, professor ou agente reporta um problema com uma fotografia a partir do telefone. O serviço técnico vê tudo chegar num só lugar, prioriza e despacha.",
-    b2Title: "Edifícios que se reportam a si próprios.", b2Text: "Caldeiras, ventilação e contadores ligam-se à Cubii independentemente da marca e emitem um alerta à primeira anomalia, incluindo aos fins de semana.",
-    b3Title: "Manutenção que corre conforme o calendário.", b3Text: "As tarefas recorrentes são programadas uma vez e despachadas automaticamente para o prestador certo. O registo mantém-se completo por si só.",
-    b4Title: "Energia por edifício, em tempo real.", b4Text: "Consumo de eletricidade e gás via Leneda, com alertas de sobreconsumo.",
-    b5Title: "Registos que se constroem sozinhos.", b5Text: "Cada intervenção documentada no momento em que acontece: o caderno de manutenção digital cresce sem trabalho administrativo.",
-    b6Title: "Multi-edifício por definição.", b6Text: "Escolas, câmara municipal, pavilhões desportivos, armazéns: uma só vista, um só histórico, um só painel.",
+    blocks: [
+      {
+        title: "Um serviço técnico que conduz em vez de reagir",
+        lead: "Cada sinalização torna-se um pedido:",
+        items: ["qualificado", "priorizado", "atribuído", "acompanhado até à validação"],
+        note: "O responsável técnico vê em tempo real o que está aberto, em curso e fechado, em todos os edifícios ao mesmo tempo, e dispõe de um relatório anual completo para apresentar ao executivo e à assembleia municipal."
+      },
+      {
+        title: "A conformidade regulamentar, sem ter de pensar nisso",
+        lead: "Elevadores, aquecimento, ventilação, deteção de incêndio, parques infantis, inspeções periódicas.",
+        items: ["Todos os contratos de manutenção reunidos com os respetivos prazos.", "Na data prevista, o pedido é criado automaticamente e o convite segue para o serviço técnico e para o prestador.", "Tudo fica datado e documentado."],
+        note: "Em caso de fiscalização, de sinistro ou de responsabilização do município, já não procura a prova: ela está lá."
+      },
+      {
+        title: "Um livro de manutenção digital por edifício",
+        lead: "Os funcionários mudam, os mandatos mudam, e o conhecimento dos edifícios não pode ir com eles. A Cubii constrói, edifício a edifício, o histórico completo:",
+        items: ["intervenções", "contratos", "plantas", "relatórios de inspeção", "garantias", "faturas"],
+        note: "Um património documentado é um património melhor mantido e mais valorizado."
+      },
+      {
+        title: "A energia medida, e não estimada",
+        lead: "Água fria, água quente, energia térmica, eletricidade, postos de carregamento: a Cubii lê os seus contadores via M-Bus ou ModBus e liga-se à plataforma nacional Leneda no Luxemburgo. Acompanha o consumo real de cada edifício, em direto.",
+        items: ["um desvio detetado em três dias em vez de seis meses", "um edifício aquecido enquanto está vazio", "uma fuga invisível numa rede enterrada"],
+        note: "É aí que o município poupa realmente. E dispõe de dados objetivos para alimentar as suas ações climáticas, justificar os seus investimentos energéticos e decidir o orçamento com números em vez de impressões."
+      },
+      {
+        title: "Prestadores mobilizados mais depressa",
+        lead: "Os seus prestadores recebem um pedido já qualificado, com fotografia e localização.",
+        items: ["Intervêm mais depressa.", "Chegam melhor preparados."],
+        note: ""
+      }
+    ],
     regH2: "Como a Cubii ajuda nas suas obrigações",
     regIntro: "Os organismos públicos enfrentam obrigações concretas ao abrigo das regras europeias de energia, transpostas no Luxemburgo.",
     reg1: "Reduzir o consumo final de energia em 1,9% por ano em comparação com 2021 (indicativo até outubro de 2027; municípios com menos de 50.000 habitantes abrangidos a partir de 2027, com menos de 5.000 a partir de 2030).",
@@ -367,8 +406,9 @@ const TRANSLATIONS = {
   },
   es: {
     eyebrow: "Para municipios",
-    heroPrefix: "Cada edificio municipal.", heroHighlight: "Una sola pantalla.",
-    heroSubhead: "Colegios, ayuntamiento, polideportivos, naves técnicas. Cubii centraliza incidencias, mantenimiento, consumo energético y registros de edificios en toda tu cartera, y construye la documentación que la normativa europea exige ahora a los organismos públicos.",
+    heroPrefix: "Tu patrimonio edificado,", heroHighlight: "por fin bajo control",
+    heroSubhead: "Un municipio gestiona treinta, cincuenta, a veces más: colegios, escuelas infantiles, pabellones deportivos, centros culturales, edificios administrativos, viviendas municipales, talleres, estaciones de bombeo, parques infantiles.",
+    heroSubhead2: "Cubii centraliza incidencias, mantenimiento, consumo energético y registros de edificios en todo tu patrimonio.",
     bookDemo: "Reservar una demo", heroNote: "Paquetes desde €100,63/mes. Más de 800 partes ya gestionados por el municipio de Mondercange.",
     dashboardLabel: "Panel de administración Cubii \u2014 cartera municipal",
     answerH2Pre: "\u00BFQu\u00E9 hace Cubii por los ", answerH2Emph: "municipios", answerH2Post: "?",
@@ -377,12 +417,38 @@ const TRANSLATIONS = {
     frictionText1: "Una fuga empieza en un colegio un viernes por la noche. Se descubre el lunes por la mañana. Techos, suelos, expediente de seguro, clases reubicadas. Detectada el viernes a las 22:00, la misma incidencia cuesta un sellado y un aviso de urgencia.",
     frictionText2: "Mientras tanto, el servicio técnico atiende llamadas, reconstruye historiales de intervención a partir de tres bandejas de entrada, y se desplaza entre sedes para comprobar las cosas manualmente.",
     benefitsH2: "Cómo trabajan los municipios con Cubii",
-    b1Title: "Un único punto de entrada para cada incidencia.", b1Text: "Un conserje, profesor o agente reporta un problema con una foto desde su teléfono. El servicio técnico ve todo llegar en un solo lugar, prioriza y despacha.",
-    b2Title: "Edificios que se reportan a sí mismos.", b2Text: "Calderas, ventilación y contadores se conectan a Cubii sea cual sea la marca y emiten una alerta a la primera anomalía, fines de semana incluidos.",
-    b3Title: "Mantenimiento que se ejecuta según el calendario.", b3Text: "Las tareas recurrentes se programan una vez y se despachan automáticamente al proveedor adecuado. El registro se mantiene completo por sí solo.",
-    b4Title: "Energía por edificio, en tiempo real.", b4Text: "Consumo de electricidad y gas vía Leneda, con alertas de sobreconsumo.",
-    b5Title: "Registros que se construyen solos.", b5Text: "Cada intervención documentada en el momento en que ocurre: el libro de mantenimiento digital crece sin trabajo administrativo.",
-    b6Title: "Multi-sede por diseño.", b6Text: "Colegios, ayuntamiento, polideportivos, naves: una sola vista, un solo historial, un solo panel.",
+    blocks: [
+      {
+        title: "Un servicio técnico que dirige en lugar de reaccionar",
+        lead: "Cada aviso se convierte en una incidencia:",
+        items: ["cualificada", "priorizada", "asignada", "seguida hasta su validación"],
+        note: "El responsable técnico ve en tiempo real lo que está abierto, en curso y cerrado, en todos los edificios a la vez, y dispone de un informe anual completo para presentar tanto a la junta de gobierno como al pleno municipal."
+      },
+      {
+        title: "La conformidad normativa, sin pensar en ella",
+        lead: "Ascensores, calefacción, ventilación, detección de incendios, parques infantiles, inspecciones periódicas.",
+        items: ["Todos los contratos de mantenimiento reunidos con sus vencimientos.", "En la fecha prevista, la incidencia se crea automáticamente y la invitación sale hacia el servicio técnico y hacia el proveedor.", "Todo queda fechado y documentado."],
+        note: "En caso de inspección, de siniestro o de puesta en cuestión de la responsabilidad municipal, ya no buscas la prueba: está ahí."
+      },
+      {
+        title: "Un libro del edificio digital por inmueble",
+        lead: "El personal cambia, los mandatos cambian, y el conocimiento de los edificios no puede irse con ellos. Cubii construye, edificio a edificio, el historial completo:",
+        items: ["intervenciones", "contratos", "planos", "informes de inspección", "garantías", "facturas"],
+        note: "Un patrimonio documentado es un patrimonio mejor mantenido y mejor valorado."
+      },
+      {
+        title: "La energía medida, no estimada",
+        lead: "Agua fría, agua caliente, energía térmica, electricidad, puntos de recarga: Cubii lee tus contadores mediante M-Bus o ModBus y se conecta a la plataforma nacional Leneda en Luxemburgo. Sigues el consumo real de cada edificio, en directo.",
+        items: ["una desviación detectada en tres días en lugar de seis meses", "un edificio calefactado mientras está vacío", "una fuga invisible en una red enterrada"],
+        note: "Ahí es donde el municipio ahorra de verdad. Y dispones de datos objetivos para alimentar tus acciones climáticas, justificar tus inversiones energéticas y decidir el presupuesto con cifras en lugar de impresiones."
+      },
+      {
+        title: "Proveedores movilizados más rápido",
+        lead: "Tus proveedores reciben una solicitud ya cualificada, con foto y ubicación.",
+        items: ["Intervienen más rápido.", "Llegan mejor preparados."],
+        note: ""
+      }
+    ],
     regH2: "Cómo ayuda Cubii con tus obligaciones",
     regIntro: "Los organismos públicos afrontan obligaciones concretas bajo las normas europeas de energía, transpuestas en Luxemburgo.",
     reg1: "Reducir el consumo final de energía un 1,9% al año respecto a 2021 (indicativo hasta octubre de 2027; municipios de menos de 50.000 habitantes cubiertos desde 2027, de menos de 5.000 desde 2030).",
@@ -413,8 +479,9 @@ const TRANSLATIONS = {
   },
   fr: {
     eyebrow: "Pour les communes",
-    heroPrefix: "Chaque b\u00E2timent communal.", heroHighlight: "Un seul \u00E9cran.",
-    heroSubhead: "\u00C9coles, maison communale, halls sportifs, d\u00E9p\u00F4ts techniques. Cubii centralise les incidents, la maintenance, la consommation \u00E9nerg\u00E9tique et les registres de b\u00E2timents sur l\u2019ensemble de votre patrimoine, et construit la documentation que la r\u00E9glementation europ\u00E9enne exige d\u00E9sormais des organismes publics.",
+    heroPrefix: "Votre patrimoine bâti,", heroHighlight: "enfin sous contrôle",
+    heroSubhead: "Une commune gère trente, cinquante, parfois davantage : écoles, maisons relais, halls sportifs, centres culturels, bâtiments administratifs, logements communaux, ateliers, stations de pompage, aires de jeux.",
+    heroSubhead2: "Cubii centralise les incidents, la maintenance, la consommation énergétique et les registres de bâtiments sur l’ensemble de votre patrimoine.",
     bookDemo: "R\u00E9server une d\u00E9mo", heroNote: "Forfaits \u00E0 partir de 100,63\u00A0€/mois. Plus de 800 tickets d\u00E9j\u00E0 trait\u00E9s par la commune de Mondercange.",
     dashboardLabel: "Console d\u2019administration Cubii \u2014 patrimoine communal",
     answerH2Pre: "Que fait Cubii pour les ", answerH2Emph: "communes", answerH2Post: "\u00A0?",
@@ -423,12 +490,38 @@ const TRANSLATIONS = {
     frictionText1: "Une fuite commence dans une \u00E9cole un vendredi soir. Elle est d\u00E9couverte le lundi matin. Plafonds, sols, dossier d\u2019assurance, classes relog\u00E9es. D\u00E9tect\u00E9 le vendredi \u00E0 22h, le m\u00EAme incident co\u00FBte un joint et une intervention d\u2019urgence.",
     frictionText2: "Pendant ce temps, le service technique r\u00E9pond aux appels, reconstitue des historiques d\u2019intervention \u00E0 partir de trois bo\u00EEtes mail, et se d\u00E9place entre les sites pour v\u00E9rifier les choses manuellement.",
     benefitsH2: "Comment les communes travaillent avec Cubii",
-    b1Title: "Un point d\u2019entr\u00E9e unique pour chaque incident.", b1Text: "Un concierge, un enseignant ou un agent signale un probl\u00E8me avec une photo depuis son t\u00E9l\u00E9phone. Le service technique voit tout arriver au m\u00EAme endroit, priorise et envoie.",
-    b2Title: "Des b\u00E2timents qui se signalent eux-m\u00EAmes.", b2Text: "Chaudi\u00E8res, ventilation et compteurs se connectent \u00E0 Cubii quelle que soit la marque et d\u00E9clenchent une alerte \u00E0 la premi\u00E8re anomalie, week-ends compris.",
-    b3Title: "Une maintenance qui se d\u00E9roule selon le calendrier.", b3Text: "Les t\u00E2ches r\u00E9currentes sont programm\u00E9es une fois et envoy\u00E9es automatiquement au bon prestataire. Le registre reste complet tout seul.",
-    b4Title: "L\u2019\u00E9nergie par b\u00E2timent, en temps r\u00E9el.", b4Text: "Consommation d\u2019\u00E9lectricit\u00E9 et de gaz via Leneda, avec alertes en cas de surconsommation.",
-    b5Title: "Des registres qui se construisent tout seuls.", b5Text: "Chaque intervention document\u00E9e au moment o\u00F9 elle a lieu\u00A0: le carnet d\u2019entretien num\u00E9rique se remplit sans travail administratif.",
-    b6Title: "Multi-sites par conception.", b6Text: "\u00C9coles, maison communale, halls sportifs, d\u00E9p\u00F4ts\u00A0: une seule vue, un seul historique, un seul tableau de bord.",
+    blocks: [
+      {
+        title: "Un service technique qui pilote au lieu de subir",
+        lead: "Chaque signalement devient un ticket :",
+        items: ["qualifié", "priorisé", "attribué", "suivi jusqu’à la validation"],
+        note: "Le responsable technique voit en temps réel ce qui est ouvert, en cours et clôturé, sur tous les bâtiments à la fois, et dispose d’un reporting annuel complet à présenter au collège échevinal comme au conseil communal."
+      },
+      {
+        title: "La conformité réglementaire, sans y penser",
+        lead: "Ascenseurs, chauffage, ventilation, détection incendie, aires de jeux, contrôles périodiques.",
+        items: ["Tous les contrats de maintenance regroupés avec leurs échéances.", "À la date prévue, le ticket est créé automatiquement et l’invitation part au service technique comme au prestataire.", "Tout est horodaté et documenté."],
+        note: "En cas de contrôle, de sinistre ou de mise en cause de la responsabilité communale, vous ne cherchez plus la preuve : elle est là."
+      },
+      {
+        title: "Un carnet d’entretien numérique par bâtiment",
+        lead: "Les agents changent, les mandats changent, la connaissance des bâtiments ne doit pas partir avec eux. Cubii construit, bâtiment par bâtiment, l’historique complet :",
+        items: ["interventions", "contrats", "plans", "rapports de contrôle", "garanties", "factures"],
+        note: "Un patrimoine documenté est un patrimoine mieux entretenu et mieux valorisé."
+      },
+      {
+        title: "L’énergie mesurée, pas estimée",
+        lead: "Eau froide, eau chaude, thermique, électricité, bornes de recharge : Cubii lit vos compteurs via M-Bus ou ModBus et se connecte à la plateforme nationale Leneda au Luxembourg. Vous suivez la consommation réelle de chaque bâtiment, en direct.",
+        items: ["une dérive détectée en trois jours au lieu de six mois", "un bâtiment chauffé quand il est vide", "une fuite invisible sur un réseau enterré"],
+        note: "C’est là que la commune économise vraiment. Et vous disposez de données objectives pour alimenter vos démarches climat, justifier vos investissements énergétiques et arbitrer votre budget avec des chiffres plutôt qu’avec des impressions."
+      },
+      {
+        title: "Des prestataires mobilisés plus vite",
+        lead: "Vos prestataires reçoivent une demande déjà qualifiée, avec photo et localisation.",
+        items: ["Ils interviennent plus vite.", "Ils arrivent mieux préparés."],
+        note: ""
+      }
+    ],
     regH2: "Comment Cubii vous aide dans vos obligations",
     regIntro: "Les organismes publics font face \u00E0 des obligations concr\u00E8tes en vertu des r\u00E8gles \u00E9nerg\u00E9tiques europ\u00E9ennes, transpos\u00E9es au Luxembourg.",
     reg1: "R\u00E9duire la consommation finale d\u2019\u00E9nergie de 1,9\u00A0% par an par rapport \u00E0 2021 (indicatif jusqu\u2019en octobre 2027\u00A0; communes de moins de 50\u00A0000 habitants couvertes \u00E0 partir de 2027, de moins de 5\u00A0000 \u00E0 partir de 2030).",
@@ -459,8 +552,9 @@ const TRANSLATIONS = {
   },
   de: {
     eyebrow: "F\u00FCr Gemeinden",
-    heroPrefix: "Jedes Gemeindegeb\u00E4ude.", heroHighlight: "Ein Bildschirm.",
-    heroSubhead: "Schulen, Gemeindehaus, Sporthallen, technische Depots. Cubii zentralisiert Vorf\u00E4lle, Wartung, Energieverbrauch und Geb\u00E4udeakten \u00FCber Ihr gesamtes Portfolio hinweg und erstellt die Dokumentation, die europ\u00E4ische Vorschriften nun von \u00F6ffentlichen Einrichtungen verlangen.",
+    heroPrefix: "Ihr Gebäudebestand,", heroHighlight: "endlich unter Kontrolle",
+    heroSubhead: "Eine Gemeinde verwaltet dreißig, fünfzig, manchmal mehr: Schulen, Kindertagesstätten, Sporthallen, Kulturzentren, Verwaltungsgebäude, Gemeindewohnungen, Werkstätten, Pumpstationen, Spielplätze.",
+    heroSubhead2: "Cubii bündelt Störungen, Wartung, Energieverbrauch und Gebäudeaufzeichnungen über Ihren gesamten Bestand hinweg.",
     bookDemo: "Demo buchen", heroNote: "Pakete ab 100,63\u00A0\u20AC/Monat. Bereits \u00FCber 800 Tickets von der Gemeinde Mondercange bearbeitet.",
     dashboardLabel: "Cubii Admin \u2014 Gemeinde-Portfolio",
     answerH2Pre: "Was macht Cubii f\u00FCr ", answerH2Emph: "Gemeinden", answerH2Post: "?",
@@ -469,12 +563,38 @@ const TRANSLATIONS = {
     frictionText1: "Ein Leck beginnt an einem Freitagabend in einer Schule. Es wird am Montagmorgen entdeckt. Decken, B\u00F6den, Versicherungsakte, verlegte Klassen. Am Freitag um 22 Uhr entdeckt, kostet derselbe Vorfall eine Dichtung und einen Noteinsatz.",
     frictionText2: "Unterdessen nimmt der technische Dienst Anrufe entgegen, rekonstruiert Einsatzverl\u00E4ufe aus drei Postf\u00E4chern und f\u00E4hrt zwischen Standorten hin und her, um Dinge manuell zu \u00FCberpr\u00FCfen.",
     benefitsH2: "Wie Gemeinden mit Cubii arbeiten",
-    b1Title: "Ein einziger Anlaufpunkt f\u00FCr jeden Vorfall.", b1Text: "Ein Hausmeister, Lehrer oder Mitarbeiter meldet ein Problem mit einem Foto vom Smartphone. Der technische Dienst sieht alles an einem Ort eingehen, priorisiert und weist zu.",
-    b2Title: "Geb\u00E4ude, die sich selbst melden.", b2Text: "Heizkessel, L\u00FCftung und Z\u00E4hler verbinden sich unabh\u00E4ngig von der Marke mit Cubii und l\u00F6sen bei der ersten Abweichung eine Warnung aus, auch am Wochenende.",
-    b3Title: "Wartung, die nach Zeitplan l\u00E4uft.", b3Text: "Wiederkehrende Aufgaben werden einmal programmiert und automatisch an den richtigen Dienstleister weitergeleitet. Das Register bleibt von selbst vollst\u00E4ndig.",
-    b4Title: "Energie pro Geb\u00E4ude, in Echtzeit.", b4Text: "Strom- und Gasverbrauch \u00FCber Leneda, mit Warnungen bei Mehrverbrauch.",
-    b5Title: "Akten, die sich von selbst aufbauen.", b5Text: "Jeder Einsatz wird dokumentiert, sobald er stattfindet: Das digitale Wartungsbuch w\u00E4chst ohne Verwaltungsaufwand.",
-    b6Title: "Von Grund auf multi-standortf\u00E4hig.", b6Text: "Schulen, Gemeindehaus, Sporthallen, Depots: eine Ansicht, ein Verlauf, ein Dashboard.",
+    blocks: [
+      {
+        title: "Ein technischer Dienst, der steuert statt zu reagieren",
+        lead: "Jede Meldung wird zu einem Ticket:",
+        items: ["qualifiziert", "priorisiert", "zugewiesen", "bis zur Freigabe verfolgt"],
+        note: "Der technische Leiter sieht in Echtzeit, was offen, in Bearbeitung und abgeschlossen ist, über alle Gebäude hinweg, und verfügt über einen vollständigen Jahresbericht für Schöffenrat und Gemeinderat."
+      },
+      {
+        title: "Regelkonformität, ohne daran zu denken",
+        lead: "Aufzüge, Heizung, Lüftung, Brandmeldung, Spielplätze, wiederkehrende Prüfungen.",
+        items: ["Alle Wartungsverträge mit ihren Fristen an einem Ort.", "Zum vorgesehenen Termin wird das Ticket automatisch erstellt, und die Einladung geht an den technischen Dienst wie an den Dienstleister.", "Alles ist mit Zeitstempel versehen und dokumentiert."],
+        note: "Bei einer Prüfung, einem Schadensfall oder einer Haftungsfrage der Gemeinde suchen Sie den Nachweis nicht mehr: Er ist da."
+      },
+      {
+        title: "Ein digitales Wartungsbuch pro Gebäude",
+        lead: "Mitarbeiter wechseln, Mandate wechseln; das Wissen über die Gebäude darf nicht mit ihnen gehen. Cubii baut Gebäude für Gebäude die vollständige Historie auf:",
+        items: ["Einsätze", "Verträge", "Pläne", "Prüfberichte", "Garantien", "Rechnungen"],
+        note: "Ein dokumentierter Bestand ist ein besser gepflegter und höher bewerteter Bestand."
+      },
+      {
+        title: "Energie gemessen, nicht geschätzt",
+        lead: "Kaltwasser, Warmwasser, Wärme, Strom, Ladepunkte: Cubii liest Ihre Zähler über M-Bus oder ModBus aus und verbindet sich mit der nationalen Plattform Leneda in Luxemburg. Sie verfolgen den tatsächlichen Verbrauch jedes Gebäudes, live.",
+        items: ["eine Abweichung in drei Tagen statt in sechs Monaten erkannt", "ein Gebäude, das beheizt wird, während es leer steht", "ein unsichtbares Leck in einem erdverlegten Netz"],
+        note: "Genau hier spart die Gemeinde wirklich. Und Sie haben objektive Daten für Ihre Klimaarbeit, zur Begründung Ihrer Energieinvestitionen und um Ihren Haushalt mit Zahlen statt mit Eindrücken zu entscheiden."
+      },
+      {
+        title: "Dienstleister schneller mobilisiert",
+        lead: "Ihre Dienstleister erhalten eine bereits qualifizierte Anfrage, mit Foto und Ortsangabe.",
+        items: ["Sie greifen schneller ein.", "Sie kommen besser vorbereitet an."],
+        note: ""
+      }
+    ],
     regH2: "Wie Cubii Ihnen bei Ihren Pflichten hilft",
     regIntro: "\u00D6ffentliche Einrichtungen stehen vor konkreten Pflichten im Rahmen der europ\u00E4ischen Energievorschriften, die in Luxemburg umgesetzt wurden.",
     reg1: "Den Endenergieverbrauch gegen\u00FCber 2021 um j\u00E4hrlich 1,9\u00A0% senken (Richtwert bis Oktober 2027; Gemeinden mit weniger als 50.000 Einwohnern ab 2027 erfasst, mit weniger als 5.000 ab 2030).",

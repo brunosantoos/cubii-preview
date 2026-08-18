@@ -55,8 +55,10 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:56px;align-items:center;">
         <div>
           <p style="margin:0 0 22px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6C8087;">{{ t.eyebrow }}</p>
-          <h1 style="margin:0 0 24px;font-size:clamp(40px,5.2vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span>.</h1>
-          <p style="margin:0 0 34px;font-size:19px;line-height:1.6;color:#3A4247;max-width:560px;">{{ t.heroSubhead }}</p>
+          <h1 style="margin:0 0 24px;font-size:clamp(40px,5.2vw,68px);font-weight:800;line-height:1.04;letter-spacing:-0.035em;">{{ t.heroPrefix }} <span style="background:#B3E7FB;border-radius:6px;padding:0.04em 0.2em 0.24em;display:inline-block;color:#0A0A0A;">{{ t.heroHighlight }}</span>{{ t.heroSuffix }}</h1>
+          <p style="margin:0 0 16px;font-size:20px;line-height:1.5;font-weight:700;color:#0A0A0A;max-width:560px;">{{ t.heroSubhead }}</p>
+          <p style="margin:0 0 14px;font-size:17px;line-height:1.62;color:#3A4247;max-width:560px;">{{ t.heroSubhead2 }}</p>
+          <p style="margin:0 0 34px;font-size:17px;line-height:1.62;color:#3A4247;max-width:560px;">{{ t.heroSubhead3 }}</p>
           <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
             <a href="Demo.dc.html" style="display:inline-flex;align-items:center;background:#00B5F1;color:#FFFFFF;font-size:15px;font-weight:700;padding:16px 32px;border-radius:999px;text-decoration:none;transition:background 0.15s ease;" style-hover="background:#0090E8;color:#FFFFFF;">{{ t.ctaPrimary }}</a>
             <a href="Residents.dc.html" style="font-size:15px;font-weight:600;color:#296D83;text-decoration:none;border-bottom:1px solid #85CCF0;padding-bottom:3px;" style-hover="color:#0090E8;">{{ t.ctaSecondary }}</a>
@@ -95,7 +97,10 @@
         <div>
           <h2 style="margin:0 0 20px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;line-height:1.12;">{{ t.whatIsH2 }}</h2>
           <div style="background:#F0FAFE;border:1px solid #CCF0FC;border-radius:20px;padding:28px 30px;box-shadow:0 4px 14px rgba(41,109,131,0.11);">
-            <p style="margin:0;font-size:18px;line-height:1.62;color:#12313C;font-weight:500;">{{ t.whatIsAnswer }}</p>
+            <p style="margin:0 0 16px;font-size:19px;line-height:1.4;color:#0A0A0A;font-weight:800;letter-spacing:-0.015em;">{{ t.whatIsAnswer }}</p>
+            <p style="margin:0 0 14px;font-size:16px;line-height:1.62;color:#12313C;">{{ t.whatIsAnswerResident }}</p>
+            <p style="margin:0 0 14px;font-size:16px;line-height:1.62;color:#12313C;">{{ t.whatIsAnswerManager }}</p>
+            <p style="margin:0;font-size:16px;line-height:1.62;color:#12313C;">{{ t.whatIsAnswerProvider }}</p>
           </div>
         </div>
         <div>
@@ -108,21 +113,63 @@
     <section data-screen-label="Home / audience router" style="padding:80px 0;background:#F5FBFD;">
       <div style="max-width:1240px;margin:0 auto;padding:0 32px;">
         <h2 style="margin:0 0 44px;font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-0.025em;">{{ t.audienceH2 }}</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:24px;">
           <div style="background:#EAF8FD;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#00AAEE;">{{ t.card1Label }}</span>
-            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card1Text }}</p>
+            <p style="margin:0;font-size:17px;line-height:1.5;font-weight:700;color:#0A0A0A;">{{ t.card1Lead }}</p>
+            <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:14px;">
+              <div>
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;font-weight:600;">{{ t.card1FindIntro }}</p>
+                <ul style="margin:6px 0 0;padding:0 0 0 20px;font-size:15px;line-height:1.6;color:#3A4247;">
+                  <sc-for list="{{ t.card1FindItems }}" as="item" hint-placeholder-count="4"><li style="margin:0 0 3px;">{{ item }}</li></sc-for>
+                </ul>
+              </div>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.card1ScanNote }}</p>
+              <div>
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;font-weight:600;">{{ t.card1CommunityIntro }}</p>
+                <ul style="margin:6px 0 0;padding:0 0 0 20px;font-size:15px;line-height:1.6;color:#3A4247;">
+                  <sc-for list="{{ t.card1CommunityItems }}" as="item" hint-placeholder-count="4"><li style="margin:0 0 3px;">{{ item }}</li></sc-for>
+                </ul>
+              </div>
+              <div>
+                <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;font-weight:600;">{{ t.card1VoiceIntro }}</p>
+                <ul style="margin:6px 0 0;padding:0 0 0 20px;font-size:15px;line-height:1.6;color:#3A4247;">
+                  <sc-for list="{{ t.card1VoiceItems }}" as="item" hint-placeholder-count="2"><li style="margin:0 0 3px;">{{ item }}</li></sc-for>
+                </ul>
+              </div>
+            </div>
             <a href="Residents.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card1Cta }}</a>
           </div>
           <div style="background:#E9EDF4;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1A3F6F;">{{ t.card2Label }}</span>
-            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card2Text }}</p>
+            <p style="margin:0;font-size:17px;line-height:1.5;font-weight:700;color:#0A0A0A;">{{ t.card2Lead }}</p>
+            <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:14px;">
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;"><span style="font-weight:700;color:#1F2C42;">{{ t.card2Item1Title }}</span> {{ t.card2Item1Text }}</p>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;"><span style="font-weight:700;color:#1F2C42;">{{ t.card2Item2Title }}</span> {{ t.card2Item2Text }}</p>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;"><span style="font-weight:700;color:#1F2C42;">{{ t.card2Item3Title }}</span> {{ t.card2Item3Text }}</p>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#1F2C42;font-weight:600;">{{ t.card2Result }}</p>
+            </div>
             <a href="FacilityManagers.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card2Cta }}</a>
           </div>
           <div style="background:#F8ECF5;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
             <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#B15FA3;">{{ t.card3Label }}</span>
-            <p style="margin:0;font-size:16px;line-height:1.6;color:#3A4247;flex:1 1 auto;">{{ t.card3Text }}</p>
+            <p style="margin:0;font-size:17px;line-height:1.5;font-weight:700;color:#0A0A0A;">{{ t.card3Lead }}</p>
+            <div style="flex:1 1 auto;">
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A2138;font-weight:600;">{{ t.card3Intro }}</p>
+              <ul style="margin:6px 0 0;padding:0 0 0 20px;font-size:15px;line-height:1.6;color:#3A4247;">
+                <sc-for list="{{ t.card3Items }}" as="item" hint-placeholder-count="6"><li style="margin:0 0 3px;">{{ item }}</li></sc-for>
+              </ul>
+            </div>
             <a href="ServiceProviders.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card3Cta }}</a>
+          </div>
+          <div style="background:#E6F2EF;border:1px solid #DCE7EB;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 4px 14px rgba(41,109,131,0.11);transition:box-shadow 0.18s ease,transform 0.18s ease,border-color 0.18s ease;" style-hover="box-shadow:0 10px 26px rgba(41,109,131,0.12);transform:translateY(-2px);border-color:#B7DCEA;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#2E7D6B;">{{ t.card4Label }}</span>
+            <p style="margin:0;font-size:17px;line-height:1.5;font-weight:700;color:#0A0A0A;">{{ t.card4Lead }}</p>
+            <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:14px;">
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.card4Text }}</p>
+              <p style="margin:0;font-size:15px;line-height:1.6;color:#3A4247;">{{ t.card4Text2 }}</p>
+            </div>
+            <a href="Communes.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;border:1.5px solid #00B5F1;color:#0090E8;font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;" style-hover="background:#00B5F1;color:#FFFFFF;">{{ t.card4Cta }}</a>
           </div>
         </div>
       </div>
@@ -143,7 +190,10 @@
                 <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#4DCBF5;">{{ t.step1Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step1Title }}</h3>
-              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step1Text }}</p>
+              <p style="margin:0 0 14px;font-size:16px;line-height:1.5;font-weight:700;color:#FFFFFF;">{{ t.step1Lead }}</p>
+              <div style="margin:0 0 28px;">
+                <sc-for list="{{ t.step1Paras }}" as="para" hint-placeholder-count="3"><p style="margin:0 0 10px;font-size:15px;line-height:1.65;color:#B8C2C6;">{{ para }}</p></sc-for>
+              </div>
             </div>
             <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
               <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
@@ -161,7 +211,10 @@
                 <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#7CA7E8;">{{ t.step2Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step2Title }}</h3>
-              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step2Text }}</p>
+              <p style="margin:0 0 14px;font-size:16px;line-height:1.5;font-weight:700;color:#FFFFFF;">{{ t.step2Lead }}</p>
+              <div style="margin:0 0 28px;">
+                <sc-for list="{{ t.step2Paras }}" as="para" hint-placeholder-count="3"><p style="margin:0 0 10px;font-size:15px;line-height:1.65;color:#B8C2C6;">{{ para }}</p></sc-for>
+              </div>
             </div>
             <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
               <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
@@ -179,7 +232,10 @@
                 <span style="font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E796DA;">{{ t.step3Role }}</span>
               </div>
               <h3 style="margin:0 0 12px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;">{{ t.step3Title }}</h3>
-              <p style="margin:0 0 28px;font-size:16px;line-height:1.65;color:#B8C2C6;">{{ t.step3Text }}</p>
+              <p style="margin:0 0 14px;font-size:16px;line-height:1.5;font-weight:700;color:#FFFFFF;">{{ t.step3Lead }}</p>
+              <div style="margin:0 0 28px;">
+                <sc-for list="{{ t.step3Paras }}" as="para" hint-placeholder-count="1"><p style="margin:0 0 10px;font-size:15px;line-height:1.65;color:#B8C2C6;">{{ para }}</p></sc-for>
+              </div>
             </div>
             <div style="margin-top:auto;padding:0 30px;display:flex;justify-content:center;">
               <div style="width:188px;height:210px;border:8px solid #26292A;border-bottom:none;border-radius:30px 30px 0 0;overflow:hidden;background:#FFFFFF;">
@@ -224,9 +280,24 @@
             <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;">{{ t.cap5Text }}</p>
           </div>
           <div style="background:#F3D3EB;border-radius:18px;padding:26px 28px;transition:transform 0.18s ease;" style-hover="transform:translateY(-2px);">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:16px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:16px;"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3Z"/></svg>
             <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap6Title }}</h3>
             <p style="margin:0;font-size:15px;line-height:1.6;color:#3A2138;">{{ t.cap6Text }}</p>
+          </div>
+          <div style="background:#CBD9EE;border-radius:18px;padding:26px 28px;transition:transform 0.18s ease;" style-hover="transform:translateY(-2px);">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:16px;"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap7Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#1F2C42;">{{ t.cap7Text }}</p>
+          </div>
+          <div style="background:#DCEDEA;border-radius:18px;padding:26px 28px;transition:transform 0.18s ease;" style-hover="transform:translateY(-2px);">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:16px;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap8Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#1B322E;">{{ t.cap8Text }}</p>
+          </div>
+          <div style="background:#B3E7FB;border-radius:18px;padding:26px 28px;transition:transform 0.18s ease;" style-hover="transform:translateY(-2px);">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:16px;"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
+            <h3 style="margin:0 0 8px;font-size:17px;font-weight:700;">{{ t.cap9Title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#12313C;">{{ t.cap9Text }}</p>
           </div>
         </div>
       </div>
@@ -328,33 +399,71 @@ const LOCALES = ["en", "pt", "es", "fr", "de"];
 
 const TRANSLATIONS = {
   en: {
-    eyebrow: "Digital building concierge · Luxembourg",
-    heroPrefix: "Your building, finally", heroHighlight: "connected",
-    heroSubhead: "Cubii is the digital concierge that links residents, facility managers and service providers in one app. Incidents get reported in seconds, the right technician gets dispatched automatically, and the phone stops ringing.",
+    eyebrow: "Your technical and financial assistant for your building",
+    heroPrefix: "Your building can finally", heroHighlight: "speak", heroSuffix: " — through the data it sends back.",
+    heroSubhead: "Cubii turns maintenance you endure into maintenance you control.",
+    heroSubhead2: "Through preventive maintenance, Cubii detects anomalies the moment they appear and alerts the owner, the manager and the service provider at the same time. Everyone has the same information, at the same moment.",
+    heroSubhead3: "The result: a fast intervention, co-owners informed in real time, and a building whose value is preserved over time.",
     ctaPrimary: "Book a demo",
-    ctaSecondary: "I\u2019m a resident \u2192 Download the app",
-    adminBoardLabel: "Cubii admin \u2014 incident board",
+    ctaSecondary: "I just want to try it out",
+    adminBoardLabel: "Cubii admin — incident board",
     trust1: "Made in Luxembourg", trust2: "Servers hosted in Europe", trust3: "Winner, Digital Innovation Prize 2019", trust4: "Ready for EU energy regulation (EPBD)",
-    whatIsH2: "What is Cubii?",
-    whatIsAnswer: "Cubii is a digital building concierge app developed by Smart Cube in Luxembourg. It centralizes incident management, energy monitoring, maintenance scheduling, document storage and service provider coordination for residential and commercial buildings in a single platform. In condominiums managed on Cubii, the app is free for residents; owners of individual houses or apartments subscribe for €1.99/month. Facility managers and service providers use it to cut response times and operating costs.",
-    whatIsPara2: "Buildings are one of the last places where nothing is digital. Water gets cut and everyone calls. A leak goes unnoticed until the ceiling falls. Documents live in five different inboxes. Technicians show up without knowing what\u2019s broken.",
+    whatIsH2: "A little history around Cubii",
+    whatIsAnswer: "One platform, three professions, one shared interest",
+    whatIsAnswerResident: "For co-owners, owners and tenants, having Cubii in your pocket is like having a guardian angel for your home. You are warned before the water is cut off, not after. You follow the repair instead of waiting for it. You can even report sensitive matters anonymously.",
+    whatIsAnswerManager: "For facility managers, it means fewer redundant calls and emails about the same issue. Fewer inspection trips. No more printed notices for the lobby. A maintenance book that builds itself, building by building, and an annual report of everything that was done. The result: better service delivered, and real profitability.",
+    whatIsAnswerProvider: "For service providers, it is a new service to sell to your clients, in B2C as well as B2B. Your connected alarms report automatically. You intervene faster, with better-qualified interventions, and above all you turn a maintenance contract into recurring revenue.",
+    whatIsPara2: "Buildings are one of the last places where nothing is digital. Water gets cut and everyone calls. A leak goes unnoticed until the ceiling falls. Documents live in five different inboxes. Technicians show up without knowing what’s broken.",
     whatIsPara3: "Cubii closes that loop. Not a revolution, an evolution: it works with the tools and equipment you already have.",
-    audienceH2: "Who is Cubii for?",
-    card1Label: "Residents & Homeowners", card1Text: "Never miss what\u2019s happening in your building. Report an issue in 30 seconds, get alerts before they matter, see your energy use anytime. Free in condominiums on Cubii, €1.99/month for your own home.", card1Cta: "Get the app",
-    card2Label: "Facility Managers", card2Text: "Fewer calls, faster interventions, full compliance. Cubii automates the work between the incident and the fix.", card2Cta: "See how it works",
-    card3Label: "Service Providers", card3Text: "Complete tickets from the start, new clients through the marketplace, less paperwork after every job.", card3Cta: "See how it works",
-    howPrefix: "How does Cubii", howHighlight: "work", howSuffix: "?",
+    audienceH2: "Who are Cubii’s users?",
+    card1Label: "Co-owner, owner or tenant",
+    card1Lead: "Cubii in your pocket is the assistant that helps you take control of your home.",
+    card1FindIntro: "Find in an instant:",
+    card1FindItems: ["your documents", "your invoices", "your consumption", "the service provider you need"],
+    card1ScanNote: "Scan your invoices and let Cubii file them for you.",
+    card1CommunityIntro: "Create a community per condominium to share:",
+    card1CommunityItems: ["the incidents detected within the condominium", "the exchanges with the building manager", "your general assembly documents", "the internal rules"],
+    card1VoiceIntro: "Record a voice note about your problem and Cubii handles the rest:",
+    card1VoiceItems: ["writing up the ticket", "finding a service provider"],
+    card1Cta: "Get the app",
+    card2Label: "Facility managers",
+    card2Lead: "Focus on management, not on chasing people.",
+    card2Item1Title: "Fewer requests.", card2Item1Text: "No more dozens of calls and emails about the same incident: the information travels once, to everyone.",
+    card2Item2Title: "Fewer trips.", card2Item2Text: "Check the state of your buildings remotely, and travel only when it is genuinely necessary.",
+    card2Item3Title: "No more paper.", card2Item3Text: "Notices taped to the lobby door give way to instant digital communication.",
+    card2Result: "The result: higher quality service, greater profitability, and management that finally matches what your clients expect.",
+    card2Cta: "See how it works",
+    card3Label: "Service providers",
+    card3Lead: "Enrich your offer and grow your revenue.",
+    card3Intro: "On top of your maintenance contracts, Cubii lets you:",
+    card3Items: ["offer an unprecedented service thanks to the automatic reporting of failures at your clients’ sites, private and professional alike", "be alerted before anyone even calls you", "plan interventions instead of enduring them", "build loyalty through responsiveness", "be part of an innovative marketplace", "centralize all your incidents on a single platform"],
+    card3Cta: "See how it works",
+    card4Label: "Municipalities",
+    card4Lead: "Your building portfolio, finally under control.",
+    card4Text: "A municipality manages thirty, fifty, sometimes more: schools, day-care centres, sports halls, cultural centres, administrative buildings, municipal housing, workshops, pumping stations, playgrounds.",
+    card4Text2: "A technical department that steers instead of reacting: every report becomes a ticket that is qualified, prioritized, assigned and followed through to validation.",
+    card4Cta: "See how it works",
+    howPrefix: "How does Cubii", howHighlight: "work", howSuffix: " when an incident occurs?",
     howSubtitle: "Three steps, from the first sign of a problem to a documented fix.",
-    step1Role: "Resident", step1Title: "An incident happens", step1Text: "A resident reports it with photos in the app, or a connected sensor detects it automatically. Water leak, elevator failure, heating breakdown: Cubii knows before it gets expensive.",
-    step2Role: "Manager", step2Title: "The right people know instantly", step2Text: "The facility manager validates the ticket. The service provider receives it with location, photos, category and urgency already filled in. No phone chain, no missing details.",
-    step3Role: "Provider", step3Title: "Fixed, documented, done", step3Text: "Intervention tracked to closure, chat archived per ticket, proof of work generated. The building\u2019s full history stays in one place.",
-    capsH2: "What can Cubii do?", capsLink: "\u2192 Explore the full product",
-    cap1Title: "Incident management", cap1Text: "Tickets created manually or automatically via sensors, tracked from report to resolution.",
-    cap2Title: "Energy monitoring", cap2Text: "Water, gas and electricity in real time, with integration to Leneda (Luxembourg\u2019s national energy data platform) and anomaly alerts.",
-    cap3Title: "Maintenance", cap3Text: "A calendar that dispatches recurring tickets to providers automatically.",
-    cap4Title: "Documents", cap4Text: "Digital maintenance book, contracts, plans and the security register, centralized and shareable.",
-    cap5Title: "Marketplace", cap5Text: "Find and hire verified service providers by specialty and availability.",
-    cap6Title: "Communication", cap6Text: "Push notifications, per-ticket chat, and lobby displays for building announcements.",
+    step1Role: "Resident", step1Title: "The incident",
+    step1Lead: "It all starts with a report. Cubii turns it into action.",
+    step1Paras: ["A sensor detects the anomaly and creates the ticket on its own, or you dictate it out loud: the artificial intelligence listens, understands, qualifies and writes it up for you. Either way, the incident exists within seconds.", "And a single ticket is enough. It simultaneously informs the whole condominium, the building manager and, when the situation calls for it, the relevant service provider directly. Nobody is left out, nobody reports the same failure twice.", "Photos, documents, history: everything stays attached to the ticket, from the first report to the validated repair."],
+    step2Role: "Manager", step2Title: "Handling the incident",
+    step2Lead: "A validated ticket means work launched and a condominium informed.",
+    step2Paras: ["The manager opens the ticket, validates it and forwards it to the internal technical team or to the right external provider. One gesture, one decision, and everything is set in motion.", "And that validation does more than assign the work. From that moment, every co-owner knows the problem is being handled, by whom, and where the intervention stands. In real time, without a single message having to be written.", "That is where the manager wins back their days: no more calls asking whether it has been reported, no more emails asking where it stands. The information travels on its own."],
+    step3Role: "Provider", step3Title: "Validating the work",
+    step3Lead: "Once the provider has finished the job, it is up to the building manager to validate it.",
+    step3Paras: ["Validation not only lets the provider send their invoice, it also informs every co-owner that the work is done, and above all it feeds the maintenance book."],
+    capsH2: "What are Cubii’s strengths?", capsLink: "→ Explore the full product",
+    cap1Title: "Incident management, automatic and manual", cap1Text: "Whether detected automatically by the building or reported manually by an occupant, every incident is centralized, qualified by artificial intelligence and routed to the right person.",
+    cap2Title: "Energy consumption monitoring", cap2Text: "Water, heating, electricity, electric vehicle charging points: view all your consumption in real time, or through Luxembourg’s national Leneda platform.",
+    cap3Title: "Maintenance", cap3Text: "All your contracts, with their due dates, in one place. As a deadline approaches, Cubii creates the ticket and invites both manager and provider. The intervention is documented and enriches the building’s history.",
+    cap4Title: "Document management", cap4Text: "All your building’s documents gathered in one place, accessible to those who need them.",
+    cap5Title: "An innovative marketplace", cap5Text: "Find and mobilize qualified providers directly, with no middleman and no wasted time.",
+    cap6Title: "Maintenance book", cap6Text: "With everything centralized, Cubii naturally becomes the maintenance book. Incidents, interventions, contracts, invoices: everything is archived, everything can be proven. And at resale, a documented building is worth more than one taken on trust.",
+    cap7Title: "Invoice scanning and charge management", cap7Text: "Digitize your invoices and manage the allocation of charges in full transparency.",
+    cap8Title: "A connected community", cap8Text: "The life of the building, in a single space. Co-owners and tenants talk, ask their questions and share their documents in one place. A simple message can become a ticket. Finally better than a WhatsApp group.",
+    cap9Title: "Financial management and general assemblies", cap9Text: "Full financial management, including the organization of condominium general assemblies, will soon be added to the platform.",
     resultsH2: "What results can you expect?", resultsTodayLabel: "Cubii today",
     stat1Label: "buildings connected", stat2Label: "incidents resolved", stat3Label: "building professionals onboarded",
     benchmarksLabel: "Industry benchmarks",
@@ -367,33 +476,71 @@ const TRANSLATIONS = {
     residentLinePrefix: "Resident? You don\u2019t need a demo.", residentLineCta: "Get the app", residentLineSuffix: "\u2014 free in condominiums on Cubii, €1.99/month for your own home."
   },
   pt: {
-    eyebrow: "Concierge digital de edifícios · Luxemburgo",
-    heroPrefix: "O seu edifício, finalmente", heroHighlight: "ligado",
-    heroSubhead: "A Cubii é a concierge digital que liga residentes, gestores de condomínio e prestadores de serviços numa só aplicação. Os incidentes são reportados em segundos, o técnico certo é despachado automaticamente e o telefone deixa de tocar.",
+    eyebrow: "O seu assistente técnico e financeiro para o seu edifício",
+    heroPrefix: "O seu edifício pode finalmente", heroHighlight: "comunicar", heroSuffix: " — através dos dados que envia.",
+    heroSubhead: "A Cubii transforma a manutenção sofrida em manutenção controlada.",
+    heroSubhead2: "Através da manutenção preventiva, a Cubii deteta as anomalias assim que surgem e alerta em simultâneo o proprietário, o gestor e o prestador de serviços. Todos têm a mesma informação, ao mesmo tempo.",
+    heroSubhead3: "O resultado: uma intervenção rápida, condóminos informados em tempo real e um edifício cujo valor é preservado ao longo do tempo.",
     ctaPrimary: "Marcar uma demonstração",
-    ctaSecondary: "Sou residente \u2192 Descarregar a aplicação",
-    adminBoardLabel: "Painel de administração Cubii \u2014 incidentes",
+    ctaSecondary: "Só quero experimentar",
+    adminBoardLabel: "Consola de administração Cubii — acompanhamento de incidentes",
     trust1: "Concebida no Luxemburgo", trust2: "Servidores alojados na Europa", trust3: "Vencedora do Prémio de Inovação Digital 2019", trust4: "Preparada para a regulamentação energética da UE (EPBD)",
-    whatIsH2: "O que é a Cubii?",
-    whatIsAnswer: "A Cubii é uma aplicação de concierge digital de edifícios, desenvolvida pela Smart Cube no Luxemburgo. Centraliza a gestão de incidentes, a monitorização energética, o planeamento da manutenção, o arquivo de documentos e a coordenação de prestadores de serviços para edifícios residenciais e comerciais numa única plataforma. Em condomínios geridos na Cubii, a aplicação é gratuita para os residentes; os proprietários de moradias ou apartamentos individuais subscrevem por €1,99/mês. Gestores de condomínio e prestadores de serviços utilizam-na para reduzir os tempos de resposta e os custos operacionais.",
-    whatIsPara2: "Os edifícios são um dos últimos lugares onde nada é digital. A água é cortada e todos telefonam. Uma fuga passa despercebida até o teto ceder. Os documentos vivem espalhados por cinco caixas de correio diferentes. Os técnicos chegam sem saber o que está avariado.",
+    whatIsH2: "Um pouco de história sobre a Cubii",
+    whatIsAnswer: "Uma plataforma, três profissões, um mesmo interesse",
+    whatIsAnswerResident: "Para condóminos, proprietários ou inquilinos, ter a Cubii no bolso é como ser acompanhado por um anjo da guarda da habitação. É avisado antes do corte de água, não depois. Acompanha a reparação em vez de esperar. Pode até sinalizar de forma anónima os assuntos sensíveis.",
+    whatIsAnswerManager: "Para os gestores de condomínio, são menos chamadas e e-mails repetidos sobre o mesmo assunto. Menos deslocações de controlo. Nunca mais avisos impressos para o átrio. Um livro de manutenção que se constrói sozinho, edifício a edifício, e um relatório anual de tudo o que foi feito. Resultado: um melhor serviço prestado e uma verdadeira rentabilidade.",
+    whatIsAnswerProvider: "Para os prestadores de serviços, é um novo serviço para vender aos seus clientes, em B2C tal como em B2B. Os seus alarmes ligados reportam automaticamente. Intervém mais depressa, com intervenções mais bem qualificadas e, sobretudo, transforma um contrato de manutenção em receita recorrente.",
+    whatIsPara2: "Os edifícios são um dos últimos domínios onde nada é digital. A água é cortada e toda a gente telefona. Uma fuga passa despercebida até o teto ceder. Os documentos vivem espalhados por cinco caixas de correio diferentes. Os técnicos chegam sem saber o que está avariado.",
     whatIsPara3: "A Cubii fecha esse ciclo. Não é uma revolução, é uma evolução: funciona com as ferramentas e os equipamentos que já tem.",
-    audienceH2: "Para quem é a Cubii?",
-    card1Label: "Residentes e Proprietários", card1Text: "Nunca perca o que se passa no seu edifício. Reporte um problema em 30 segundos, receba alertas antes de serem importantes, veja o seu consumo de energia a qualquer momento. Gratuita em condomínios na Cubii, €1,99/mês para a sua própria casa.", card1Cta: "Descarregar a aplicação",
-    card2Label: "Gestores de Condomínio", card2Text: "Menos chamadas, intervenções mais rápidas, conformidade total. A Cubii automatiza o trabalho entre o incidente e a reparação.", card2Cta: "Ver como funciona",
-    card3Label: "Prestadores de Serviços", card3Text: "Pedidos completos desde o início, novos clientes através do marketplace, menos burocracia depois de cada trabalho.", card3Cta: "Ver como funciona",
-    howPrefix: "Como funciona a", howHighlight: "Cubii", howSuffix: "?",
+    audienceH2: "Quem são os utilizadores da Cubii?",
+    card1Label: "Condómino, proprietário ou inquilino",
+    card1Lead: "A Cubii no seu bolso é o assistente que o ajuda a dominar melhor a sua habitação.",
+    card1FindIntro: "Encontre num instante:",
+    card1FindItems: ["os seus documentos", "as suas faturas", "os seus consumos", "o prestador de serviços de que precisa"],
+    card1ScanNote: "Digitalize as suas faturas e deixe a Cubii organizá-las.",
+    card1CommunityIntro: "Crie uma comunidade por condomínio para partilhar:",
+    card1CommunityItems: ["os incidentes detetados no âmbito do condomínio", "as trocas com o administrador do condomínio", "os seus documentos das assembleias gerais", "o regulamento interno"],
+    card1VoiceIntro: "Grave uma mensagem de voz com o seu problema e a Cubii trata do resto:",
+    card1VoiceItems: ["a redação do pedido", "a procura de um prestador de serviços"],
+    card1Cta: "Descarregar a aplicação",
+    card2Label: "Gestores de condomínio",
+    card2Lead: "Concentre-se na gestão, e não em andar atrás das pessoas.",
+    card2Item1Title: "Menos solicitações.", card2Item1Text: "Acabaram as dezenas de chamadas e e-mails sobre o mesmo incidente: a informação circula uma vez, para toda a gente.",
+    card2Item2Title: "Menos deslocações.", card2Item2Text: "Verifique o estado dos seus edifícios à distância e desloque-se apenas quando for realmente necessário.",
+    card2Item3Title: "Nunca mais papel.", card2Item3Text: "Os avisos à entrada dos prédios dão lugar a uma comunicação digital instantânea.",
+    card2Result: "Resultado: um serviço de melhor qualidade, uma rentabilidade acrescida e uma gestão finalmente à altura das expectativas dos seus clientes.",
+    card2Cta: "Ver como funciona",
+    card3Label: "Prestadores de serviços",
+    card3Lead: "Enriqueça a sua oferta e desenvolva as suas receitas.",
+    card3Intro: "Para além dos seus contratos de manutenção, a Cubii permite-lhe:",
+    card3Items: ["propor um serviço inédito graças ao reporte automático das avarias ocorridas nos seus clientes, particulares e profissionais", "ser alertado antes mesmo de lhe telefonarem", "planear as intervenções em vez de as sofrer", "fidelizar pela capacidade de resposta", "fazer parte de um marketplace inovador", "centralizar todos os seus incidentes numa única plataforma"],
+    card3Cta: "Ver como funciona",
+    card4Label: "Municípios",
+    card4Lead: "O seu património edificado, finalmente sob controlo.",
+    card4Text: "Um município gere trinta, cinquenta, por vezes mais: escolas, creches, pavilhões desportivos, centros culturais, edifícios administrativos, habitação municipal, oficinas, estações elevatórias, parques infantis.",
+    card4Text2: "Um serviço técnico que conduz em vez de reagir: cada sinalização torna-se um pedido qualificado, priorizado, atribuído e acompanhado até à validação.",
+    card4Cta: "Ver como funciona",
+    howPrefix: "Como", howHighlight: "funciona", howSuffix: " a Cubii no âmbito de um incidente?",
     howSubtitle: "Três etapas, do primeiro sinal de um problema até à reparação documentada.",
-    step1Role: "Residente", step1Title: "Um incidente acontece", step1Text: "Um residente reporta-o com fotografias na aplicação, ou um sensor ligado deteta-o automaticamente. Fuga de água, avaria do elevador, falha no aquecimento: a Cubii sabe antes de sair caro.",
-    step2Role: "Gestor", step2Title: "As pessoas certas sabem de imediato", step2Text: "O gestor de condomínio valida o pedido. O prestador de serviços recebe-o com localização, fotografias, categoria e urgência já preenchidas. Sem cadeia de telefonemas, sem detalhes em falta.",
-    step3Role: "Prestador", step3Title: "Reparado, documentado, concluído", step3Text: "Intervenção acompanhada até ao encerramento, conversa arquivada por pedido, comprovativo de trabalho gerado. O histórico completo do edifício fica num só lugar.",
-    capsH2: "O que pode a Cubii fazer?", capsLink: "\u2192 Explorar o produto completo",
-    cap1Title: "Gestão de incidentes", cap1Text: "Pedidos criados manualmente ou automaticamente através de sensores, acompanhados desde o reporte até à resolução.",
-    cap2Title: "Monitorização energética", cap2Text: "Água, gás e eletricidade em tempo real, com integração com a Leneda (plataforma nacional de dados energéticos do Luxemburgo) e alertas de anomalias.",
-    cap3Title: "Manutenção", cap3Text: "Um calendário que envia pedidos recorrentes aos prestadores automaticamente.",
-    cap4Title: "Documentos", cap4Text: "Caderno de manutenção digital, contratos, plantas e o registo de segurança, centralizados e partilháveis.",
-    cap5Title: "Marketplace", cap5Text: "Encontre e contrate prestadores de serviços verificados por especialidade e disponibilidade.",
-    cap6Title: "Comunicação", cap6Text: "Notificações push, conversa por pedido e ecrãs no átrio para os avisos do edifício.",
+    step1Role: "Residente", step1Title: "O incidente",
+    step1Lead: "Tudo começa com uma sinalização. A Cubii transforma-a em ação.",
+    step1Paras: ["Um sensor deteta a anomalia e cria o pedido sozinho, ou dita-o em voz alta: a inteligência artificial ouve, compreende, qualifica e redige por si. Em ambos os casos, o incidente existe em poucos segundos.", "E um único pedido basta. Informa em simultâneo todo o condomínio, o administrador e, quando a situação o exige, diretamente o prestador em causa. Ninguém fica esquecido, ninguém sinaliza duas vezes a mesma avaria.", "Fotografias, documentos, histórico: tudo fica associado ao pedido, desde a primeira sinalização até à reparação validada."],
+    step2Role: "Gestor", step2Title: "O tratamento do incidente",
+    step2Lead: "Um pedido validado é uma ação lançada e um condomínio informado.",
+    step2Paras: ["O gestor abre o pedido, valida-o e encaminha-o para a sua equipa técnica interna ou para o prestador externo competente. Um gesto, uma decisão, e tudo fica em marcha.", "E esta validação não se limita a atribuir o trabalho. A partir desse instante, cada condómino sabe que o problema está a ser tratado, por quem, e em que ponto está a intervenção. Em tempo real, sem que seja preciso escrever uma única mensagem.", "É aí que o gestor ganha os seus dias: acabaram as chamadas para saber se já foi sinalizado, acabaram os e-mails para perguntar como está. A informação circula por si própria."],
+    step3Role: "Prestador", step3Title: "Validação da prestação",
+    step3Lead: "Uma vez terminado o trabalho pelo prestador, cabe ao gestor de condomínio validá-lo.",
+    step3Paras: ["A validação permite não só que o prestador envie a sua fatura, como informa todos os condóminos de que o trabalho está feito e, sobretudo, alimenta o livro de manutenção."],
+    capsH2: "Quais são os trunfos da Cubii?", capsLink: "→ Descobrir o produto completo",
+    cap1Title: "Gestão de incidentes, automática e manual", cap1Text: "Quer seja detetado automaticamente pelo edifício ou sinalizado manualmente por um ocupante, cada incidente é centralizado, qualificado pela inteligência artificial e encaminhado para o interlocutor certo.",
+    cap2Title: "Acompanhamento dos consumos energéticos", cap2Text: "Água, aquecimento, eletricidade, postos de carregamento de veículos elétricos: visualize todos os seus consumos em tempo real, ou através da plataforma nacional luxemburguesa Leneda.",
+    cap3Title: "Manutenção", cap3Text: "Todos os seus contratos, com os respetivos prazos, no mesmo sítio. À aproximação do termo, a Cubii cria o pedido e convida gestor e prestador. A intervenção fica documentada e vem enriquecer o histórico do edifício.",
+    cap4Title: "Gestão documental", cap4Text: "Todos os documentos do seu edifício reunidos no mesmo sítio, acessíveis a quem deles precisa.",
+    cap5Title: "Um marketplace inovador", cap5Text: "Encontre e mobilize diretamente os prestadores competentes, sem intermediários nem perda de tempo.",
+    cap6Title: "Livro de manutenção", cap6Text: "Estando tudo centralizado, a Cubii torna-se naturalmente o livro de manutenção. Incidentes, intervenções, contratos, faturas: tudo fica arquivado, tudo se prova. E na revenda, um edifício documentado vale mais do que um edifício de palavra.",
+    cap7Title: "Digitalização de faturas e gestão de despesas", cap7Text: "Digitalize as suas faturas e faça a repartição das despesas com total transparência.",
+    cap8Title: "Uma comunidade ligada", cap8Text: "A vida do prédio, num só espaço. Condóminos e inquilinos conversam, colocam as suas questões e partilham os seus documentos no mesmo sítio. Uma simples mensagem pode tornar-se um pedido. Finalmente melhor do que um grupo de WhatsApp.",
+    cap9Title: "Gestão financeira e assembleias gerais", cap9Text: "A gestão financeira completa, incluindo a organização das assembleias gerais de condomínio, virá em breve enriquecer a plataforma.",
     resultsH2: "Que resultados pode esperar?", resultsTodayLabel: "A Cubii hoje",
     stat1Label: "edifícios ligados", stat2Label: "incidentes resolvidos", stat3Label: "profissionais de edifícios integrados",
     benchmarksLabel: "Referências do setor",
@@ -406,33 +553,71 @@ const TRANSLATIONS = {
     residentLinePrefix: "É residente? Não precisa de uma demonstração.", residentLineCta: "Descarregar a aplicação", residentLineSuffix: "\u2014 gratuita em condomínios na Cubii, €1,99/mês para a sua própria casa."
   },
   es: {
-    eyebrow: "Conserjería digital de edificios · Luxemburgo",
-    heroPrefix: "Tu edificio, por fin", heroHighlight: "conectado",
-    heroSubhead: "Cubii es la conserjería digital que conecta a residentes, administradores de fincas y proveedores de servicios en una sola aplicación. Las incidencias se reportan en segundos, el técnico adecuado se despacha automáticamente y el teléfono deja de sonar.",
+    eyebrow: "Tu asistente técnico y financiero para tu edificio",
+    heroPrefix: "Tu edificio por fin puede", heroHighlight: "comunicarse", heroSuffix: " — gracias a los datos que envía.",
+    heroSubhead: "Cubii transforma el mantenimiento sufrido en mantenimiento controlado.",
+    heroSubhead2: "Mediante el mantenimiento preventivo, Cubii detecta las anomalías en cuanto aparecen y avisa al mismo tiempo al propietario, al administrador y al proveedor de servicios. Todos disponen de la misma información, en el mismo momento.",
+    heroSubhead3: "El resultado: una intervención rápida, propietarios informados en tiempo real y un edificio cuyo valor se preserva en el tiempo.",
     ctaPrimary: "Reservar una demo",
-    ctaSecondary: "Soy residente \u2192 Descargar la aplicación",
-    adminBoardLabel: "Panel de administración de Cubii \u2014 incidencias",
-    trust1: "Creada en Luxemburgo", trust2: "Servidores alojados en Europa", trust3: "Ganadora del Premio de Innovación Digital 2019", trust4: "Preparada para la normativa energética de la UE (EPBD)",
-    whatIsH2: "\u00BFQu\u00E9 es Cubii?",
-    whatIsAnswer: "Cubii es una aplicaci\u00F3n de conserjer\u00EDa digital de edificios, desarrollada por Smart Cube en Luxemburgo. Centraliza la gesti\u00F3n de incidencias, la monitorizaci\u00F3n energ\u00E9tica, la programaci\u00F3n del mantenimiento, el almacenamiento de documentos y la coordinaci\u00F3n de proveedores de servicios para edificios residenciales y comerciales en una sola plataforma. En comunidades gestionadas con Cubii, la aplicaci\u00F3n es gratuita para los residentes; los propietarios de viviendas o apartamentos individuales se suscriben por €1,99/mes. Administradores de fincas y proveedores de servicios la utilizan para reducir los tiempos de respuesta y los costes operativos.",
-    whatIsPara2: "Los edificios son uno de los \u00FAltimos lugares donde nada es digital. Se corta el agua y todos llaman. Una fuga pasa desapercibida hasta que se hunde el techo. Los documentos viven repartidos en cinco bandejas de entrada distintas. Los t\u00E9cnicos llegan sin saber qu\u00E9 est\u00E1 averiado.",
-    whatIsPara3: "Cubii cierra ese ciclo. No es una revoluci\u00F3n, es una evoluci\u00F3n: funciona con las herramientas y los equipos que ya tienes.",
-    audienceH2: "\u00BFPara qui\u00E9n es Cubii?",
-    card1Label: "Residentes y Propietarios", card1Text: "No te pierdas lo que pasa en tu edificio. Reporta una incidencia en 30 segundos, recibe alertas antes de que importen, consulta tu consumo energético en cualquier momento. Gratis en comunidades con Cubii, €1,99/mes para tu propia vivienda.", card1Cta: "Descargar la aplicación",
-    card2Label: "Administradores de Fincas", card2Text: "Menos llamadas, intervenciones más rápidas, cumplimiento total. Cubii automatiza el trabajo entre la incidencia y la reparación.", card2Cta: "Ver cómo funciona",
-    card3Label: "Proveedores de Servicios", card3Text: "Partes de trabajo completos desde el principio, nuevos clientes a través del marketplace, menos papeleo después de cada trabajo.", card3Cta: "Ver cómo funciona",
-    howPrefix: "\u00BFC\u00F3mo", howHighlight: "funciona", howSuffix: " Cubii?",
+    ctaSecondary: "Solo quiero probarlo",
+    adminBoardLabel: "Consola de administración Cubii — seguimiento de incidencias",
+    trust1: "Creada en Luxemburgo", trust2: "Servidores alojados en Europa", trust3: "Ganadora del Premio a la Innovación Digital 2019", trust4: "Preparada para la normativa energética de la UE (EPBD)",
+    whatIsH2: "Un poco de historia sobre Cubii",
+    whatIsAnswer: "Una plataforma, tres oficios, un mismo interés",
+    whatIsAnswerResident: "Para propietarios, copropietarios o inquilinos, llevar Cubii en el bolsillo es como tener un ángel de la guarda de la vivienda. Te avisan antes del corte de agua, no después. Sigues la reparación en lugar de esperar. Incluso puedes comunicar de forma anónima los asuntos delicados.",
+    whatIsAnswerManager: "Para los administradores de fincas, significa menos llamadas y correos redundantes sobre el mismo asunto. Menos desplazamientos de control. Se acabaron los carteles impresos para el portal. Un libro del edificio que se construye solo, edificio a edificio, y un informe anual de todo lo realizado. Resultado: un mejor servicio prestado y una rentabilidad real.",
+    whatIsAnswerProvider: "Para los proveedores de servicios, es un nuevo servicio que vender a tus clientes, tanto en B2C como en B2B. Tus alarmas conectadas informan automáticamente. Intervienes más rápido, con intervenciones mejor cualificadas y, sobre todo, conviertes un contrato de mantenimiento en ingresos recurrentes.",
+    whatIsPara2: "Los edificios son uno de los últimos ámbitos donde nada es digital. Se corta el agua y todo el mundo llama. Una fuga pasa desapercibida hasta que cede el techo. Los documentos viven repartidos en cinco buzones distintos. Los técnicos llegan sin saber qué está averiado.",
+    whatIsPara3: "Cubii cierra ese círculo. No es una revolución, es una evolución: funciona con las herramientas y los equipos que ya tienes.",
+    audienceH2: "¿Quiénes son los usuarios de Cubii?",
+    card1Label: "Copropietario, propietario o inquilino",
+    card1Lead: "Cubii en tu bolsillo es el asistente que te ayuda a controlar mejor tu vivienda.",
+    card1FindIntro: "Encuentra en un instante:",
+    card1FindItems: ["tus documentos", "tus facturas", "tus consumos", "el proveedor de servicios que necesitas"],
+    card1ScanNote: "Escanea tus facturas y deja que Cubii las clasifique.",
+    card1CommunityIntro: "Crea una comunidad por edificio para compartir:",
+    card1CommunityItems: ["las incidencias detectadas en el marco de la comunidad", "los intercambios con el administrador de fincas", "tus documentos de las juntas de propietarios", "el reglamento interno"],
+    card1VoiceIntro: "Graba una nota de voz con tu problema y Cubii se encarga del resto:",
+    card1VoiceItems: ["la redacción de la incidencia", "la búsqueda de un proveedor de servicios"],
+    card1Cta: "Descargar la aplicación",
+    card2Label: "Administradores de fincas",
+    card2Lead: "Céntrate en la gestión, no en perseguir a la gente.",
+    card2Item1Title: "Menos solicitudes.", card2Item1Text: "Se acabaron las decenas de llamadas y correos sobre una misma incidencia: la información circula una vez, hacia todo el mundo.",
+    card2Item2Title: "Menos desplazamientos.", card2Item2Text: "Controla el estado de tus edificios a distancia y desplázate solo cuando sea realmente necesario.",
+    card2Item3Title: "Se acabó el papel.", card2Item3Text: "Los carteles en la entrada de los edificios dan paso a una comunicación digital instantánea.",
+    card2Result: "Resultado: un servicio de mayor calidad, una rentabilidad superior y una gestión por fin a la altura de lo que esperan tus clientes.",
+    card2Cta: "Ver cómo funciona",
+    card3Label: "Proveedores de servicios",
+    card3Lead: "Enriquece tu oferta y desarrolla tus ingresos.",
+    card3Intro: "Además de tus contratos de mantenimiento, Cubii te permite:",
+    card3Items: ["ofrecer un servicio inédito gracias al reporte automático de las averías ocurridas en tus clientes, tanto particulares como profesionales", "recibir el aviso antes incluso de que te llamen", "planificar las intervenciones en lugar de sufrirlas", "fidelizar por la capacidad de respuesta", "formar parte de un marketplace innovador", "centralizar todas tus incidencias en una sola plataforma"],
+    card3Cta: "Ver cómo funciona",
+    card4Label: "Municipios",
+    card4Lead: "Tu patrimonio edificado, por fin bajo control.",
+    card4Text: "Un municipio gestiona treinta, cincuenta, a veces más: colegios, escuelas infantiles, pabellones deportivos, centros culturales, edificios administrativos, viviendas municipales, talleres, estaciones de bombeo, parques infantiles.",
+    card4Text2: "Un servicio técnico que dirige en lugar de reaccionar: cada aviso se convierte en una incidencia cualificada, priorizada, asignada y seguida hasta su validación.",
+    card4Cta: "Ver cómo funciona",
+    howPrefix: "¿Cómo", howHighlight: "funciona", howSuffix: " Cubii en el marco de una incidencia?",
     howSubtitle: "Tres pasos, desde la primera señal de un problema hasta la reparación documentada.",
-    step1Role: "Residente", step1Title: "Ocurre una incidencia", step1Text: "Un residente la reporta con fotos en la aplicación, o un sensor conectado la detecta automáticamente. Fuga de agua, avería del ascensor, fallo de la calefacción: Cubii lo sabe antes de que salga caro.",
-    step2Role: "Administrador", step2Title: "Las personas adecuadas lo saben al instante", step2Text: "El administrador de fincas valida el parte. El proveedor de servicios lo recibe con ubicación, fotos, categoría y urgencia ya rellenadas. Sin cadena de llamadas, sin detalles pendientes.",
-    step3Role: "Proveedor", step3Title: "Reparado, documentado, resuelto", step3Text: "Intervención seguida hasta el cierre, chat archivado por parte, justificante de trabajo generado. El historial completo del edificio queda en un solo lugar.",
-    capsH2: "\u00BFQu\u00E9 puede hacer Cubii?", capsLink: "\u2192 Explorar el producto completo",
-    cap1Title: "Gestión de incidencias", cap1Text: "Partes creados manualmente o automáticamente mediante sensores, seguidos desde el reporte hasta la resolución.",
-    cap2Title: "Monitorización energética", cap2Text: "Agua, gas y electricidad en tiempo real, con integración con Leneda (la plataforma nacional de datos energéticos de Luxemburgo) y alertas de anomalías.",
-    cap3Title: "Mantenimiento", cap3Text: "Un calendario que envía partes recurrentes a los proveedores automáticamente.",
-    cap4Title: "Documentos", cap4Text: "Libro de mantenimiento digital, contratos, planos y el registro de seguridad, centralizados y compartibles.",
-    cap5Title: "Marketplace", cap5Text: "Encuentra y contrata proveedores de servicios verificados por especialidad y disponibilidad.",
-    cap6Title: "Comunicación", cap6Text: "Notificaciones push, chat por parte de trabajo y pantallas en el vestíbulo para los avisos del edificio.",
+    step1Role: "Residente", step1Title: "La incidencia",
+    step1Lead: "Todo empieza con un aviso. Cubii lo convierte en acción.",
+    step1Paras: ["Un sensor detecta la anomalía y crea la incidencia por sí solo, o la dictas en voz alta: la inteligencia artificial escucha, comprende, cualifica y redacta por ti. En ambos casos, la incidencia existe en unos segundos.", "Y basta con una sola incidencia. Informa a la vez a toda la comunidad, al administrador y, cuando la situación lo exige, directamente al proveedor implicado. Nadie queda olvidado, nadie comunica dos veces la misma avería.", "Fotos, documentos, historial: todo queda vinculado a la incidencia, desde el primer aviso hasta la reparación validada."],
+    step2Role: "Administrador", step2Title: "El tratamiento de la incidencia",
+    step2Lead: "Una incidencia validada es una acción lanzada y una comunidad informada.",
+    step2Paras: ["El administrador abre la incidencia, la valida y la transfiere a su equipo técnico interno o al proveedor externo competente. Un gesto, una decisión, y todo se pone en marcha.", "Y esta validación no se limita a asignar el trabajo. Desde ese instante, cada propietario sabe que el problema está siendo atendido, por quién y en qué punto está la intervención. En tiempo real, sin que haya que escribir ni un solo mensaje.", "Ahí es donde el administrador recupera sus días: se acabaron las llamadas para saber si ya está comunicado, se acabaron los correos para preguntar cómo va. La información circula sola."],
+    step3Role: "Proveedor", step3Title: "Validación de la prestación",
+    step3Lead: "Una vez terminado el trabajo por el proveedor, corresponde al administrador de fincas validarlo.",
+    step3Paras: ["La validación no solo permite al proveedor enviar su factura, sino que informa a todos los propietarios de que el trabajo está hecho y, sobre todo, alimenta el libro del edificio."],
+    capsH2: "¿Cuáles son las ventajas de Cubii?", capsLink: "→ Descubrir el producto completo",
+    cap1Title: "Gestión de incidencias, automática y manual", cap1Text: "Ya sea detectada automáticamente por el edificio o comunicada manualmente por un ocupante, cada incidencia se centraliza, la cualifica la inteligencia artificial y se dirige al interlocutor adecuado.",
+    cap2Title: "Seguimiento de los consumos energéticos", cap2Text: "Agua, calefacción, electricidad, puntos de recarga de vehículos eléctricos: visualiza todos tus consumos en tiempo real, o a través de la plataforma nacional luxemburguesa Leneda.",
+    cap3Title: "Mantenimiento", cap3Text: "Todos tus contratos, con sus vencimientos, en un mismo lugar. Al acercarse el plazo, Cubii crea la incidencia e invita a administrador y proveedor. La intervención queda documentada y enriquece el historial del edificio.",
+    cap4Title: "Gestión documental", cap4Text: "Todos los documentos de tu edificio reunidos en un mismo lugar, accesibles para quienes los necesitan.",
+    cap5Title: "Un marketplace innovador", cap5Text: "Encuentra y moviliza directamente a los proveedores competentes, sin intermediarios ni pérdida de tiempo.",
+    cap6Title: "Libro del edificio", cap6Text: "Al estar todo centralizado, Cubii se convierte de forma natural en el libro del edificio. Incidencias, intervenciones, contratos, facturas: todo se archiva, todo se demuestra. Y en la reventa, un edificio documentado vale más que un edificio de palabra.",
+    cap7Title: "Escaneo de facturas y gestión de gastos", cap7Text: "Digitaliza tus facturas y gestiona el reparto de gastos con total transparencia.",
+    cap8Title: "Una comunidad conectada", cap8Text: "La vida del edificio, en un solo espacio. Propietarios e inquilinos conversan, plantean sus preguntas y comparten sus documentos en un mismo lugar. Un simple mensaje puede convertirse en una incidencia. Por fin algo mejor que un grupo de WhatsApp.",
+    cap9Title: "Gestión financiera y juntas de propietarios", cap9Text: "La gestión financiera completa, incluida la organización de las juntas de propietarios, llegará próximamente a la plataforma.",
     resultsH2: "\u00BFQu\u00E9 resultados puedes esperar?", resultsTodayLabel: "Cubii hoy",
     stat1Label: "edificios conectados", stat2Label: "incidencias resueltas", stat3Label: "profesionales de edificios incorporados",
     benchmarksLabel: "Referencias del sector",
@@ -445,33 +630,71 @@ const TRANSLATIONS = {
     residentLinePrefix: "\u00BFEres residente? No necesitas una demo.", residentLineCta: "Descargar la aplicación", residentLineSuffix: "\u2014 gratis en comunidades con Cubii, €1,99/mes para tu propia vivienda."
   },
   fr: {
-    eyebrow: "Conciergerie numérique de bâtiments · Luxembourg",
-    heroPrefix: "Votre bâtiment, enfin", heroHighlight: "connecté",
-    heroSubhead: "Cubii est la conciergerie numérique qui relie résidents, gestionnaires immobiliers et prestataires de services au sein d\u2019une seule application. Les incidents sont signalés en quelques secondes, le bon technicien est dépêché automatiquement, et le téléphone arrête de sonner.",
+    eyebrow: "Votre assistant technique et financier pour votre bâtiment",
+    heroPrefix: "Votre bâtiment peut enfin", heroHighlight: "communiquer", heroSuffix: " grâce à la remontée de la donnée.",
+    heroSubhead: "Cubii transforme la maintenance subie en maintenance maîtrisée.",
+    heroSubhead2: "Par la maintenance préventive, Cubii détecte les anomalies dès leur apparition et alerte simultanément le propriétaire, le gestionnaire et le prestataire de service. Chacun dispose de la même information, au même moment.",
+    heroSubhead3: "Le résultat est une intervention rapide, des copropriétaires informés en temps réel, et un bâtiment dont la valeur est préservée dans la durée.",
     ctaPrimary: "Réserver une démo",
-    ctaSecondary: "Je suis résident \u2192 Télécharger l\u2019application",
-    adminBoardLabel: "Console d\u2019administration Cubii \u2014 suivi des incidents",
-    trust1: "Conçue au Luxembourg", trust2: "Serveurs hébergés en Europe", trust3: "Laurate du Prix de l\u2019Innovation Digitale 2019", trust4: "Prête pour la réglementation énergétique de l\u2019UE (EPBD)",
-    whatIsH2: "Qu\u2019est-ce que Cubii\u00A0?",
-    whatIsAnswer: "Cubii est une application de conciergerie numérique de bâtiments, développée par Smart Cube au Luxembourg. Elle centralise la gestion des incidents, le suivi énergétique, la planification de la maintenance, l\u2019archivage des documents et la coordination des prestataires de services pour les bâtiments résidentiels et commerciaux au sein d\u2019une seule plateforme. Dans les copropriétés gérées sur Cubii, l\u2019application est gratuite pour les résidents\u00A0; les propriétaires de maisons ou d\u2019appartements individuels s\u2019abonnent pour 1,99\u00A0€/mois. Gestionnaires immobiliers et prestataires de services l\u2019utilisent pour réduire les délais d\u2019intervention et les coûts d\u2019exploitation.",
-    whatIsPara2: "Les bâtiments sont l\u2019un des derniers domaines où rien n\u2019est numérique. L\u2019eau est coupée et tout le monde appelle. Une fuite passe inaperçue jusqu\u2019à ce que le plafond cède. Les documents vivent éparpillés dans cinq boîtes mail différentes. Les techniciens arrivent sans savoir ce qui est en panne.",
-    whatIsPara3: "Cubii referme cette boucle. Pas une révolution, une évolution\u00A0: elle fonctionne avec les outils et équipements que vous avez déjà.",
-    audienceH2: "À qui s\u2019adresse Cubii\u00A0?",
-    card1Label: "Résidents et Propriétaires", card1Text: "Ne manquez plus rien de ce qui se passe dans votre bâtiment. Signalez un problème en 30 secondes, recevez des alertes avant qu\u2019elles ne comptent, consultez votre consommation d\u2019énergie à tout moment. Gratuit dans les copropriétés sur Cubii, 1,99\u00A0€/mois pour votre propre logement.", card1Cta: "Télécharger l\u2019application",
-    card2Label: "Gestionnaires Immobiliers", card2Text: "Moins d\u2019appels, des interventions plus rapides, une conformité totale. Cubii automatise le travail entre l\u2019incident et la réparation.", card2Cta: "Voir comment ça marche",
-    card3Label: "Prestataires de Services", card3Text: "Des interventions complètes dès le départ, de nouveaux clients via la marketplace, moins de paperasse après chaque intervention.", card3Cta: "Voir comment ça marche",
-    howPrefix: "Comment", howHighlight: "fonctionne", howSuffix: " Cubii\u00A0?",
-    howSubtitle: "Trois étapes, du premier signe d\u2019un problème jusqu\u2019à la réparation documentée.",
-    step1Role: "Résident", step1Title: "Un incident survient", step1Text: "Un résident le signale avec des photos dans l\u2019application, ou un capteur connecté le détecte automatiquement. Fuite d\u2019eau, panne d\u2019ascenseur, panne de chauffage\u00A0: Cubii le sait avant que cela ne coûte cher.",
-    step2Role: "Gestionnaire", step2Title: "Les bonnes personnes sont informées instantanément", step2Text: "Le gestionnaire immobilier valide le ticket. Le prestataire de services le reçoit avec localisation, photos, catégorie et urgence déjà renseignées. Pas de chaîne d\u2019appels, pas de détails manquants.",
-    step3Role: "Prestataire", step3Title: "Réparé, documenté, terminé", step3Text: "Intervention suivie jusqu\u2019à sa clôture, échanges archivés par ticket, preuve d\u2019intervention générée. L\u2019historique complet du bâtiment reste au même endroit.",
-    capsH2: "Que peut faire Cubii\u00A0?", capsLink: "\u2192 Découvrir le produit complet",
-    cap1Title: "Gestion des incidents", cap1Text: "Tickets créés manuellement ou automatiquement via des capteurs, suivis du signalement jusqu\u2019à la résolution.",
-    cap2Title: "Suivi énergétique", cap2Text: "Eau, gaz et électricité en temps réel, avec intégration à Leneda (la plateforme nationale de données énergétiques du Luxembourg) et alertes d\u2019anomalies.",
-    cap3Title: "Maintenance", cap3Text: "Un calendrier qui envoie automatiquement les tickets récurrents aux prestataires.",
-    cap4Title: "Documents", cap4Text: "Carnet d\u2019entretien numérique, contrats, plans et registre de sécurité, centralisés et partageables.",
-    cap5Title: "Marketplace", cap5Text: "Trouvez et engagez des prestataires de services vérifiés selon leur spécialité et leur disponibilité.",
-    cap6Title: "Communication", cap6Text: "Notifications push, chat par ticket, et affichage en hall d\u2019entrée pour les annonces du bâtiment.",
+    ctaSecondary: "Je souhaite tout simplement tester",
+    adminBoardLabel: "Console d’administration Cubii — suivi des incidents",
+    trust1: "Conçue au Luxembourg", trust2: "Serveurs hébergés en Europe", trust3: "Laurate du Prix de l’Innovation Digitale 2019", trust4: "Prête pour la réglementation énergétique de l’UE (EPBD)",
+    whatIsH2: "Un peu d’histoire autour de Cubii",
+    whatIsAnswer: "Une plateforme, trois métiers, un même intérêt",
+    whatIsAnswerResident: "Pour les copropriétaires, propriétaires ou locataires, avoir Cubii dans la poche, c’est comme être accompagné d’un ange gardien du logement. Vous êtes prévenu avant la coupure d’eau, pas après. Vous suivez la réparation au lieu d’attendre. Vous signalez même de façon anonyme les sujets sensibles.",
+    whatIsAnswerManager: "Pour les gestionnaires immobiliers, c’est moins d’appels et de mails redondants sur un même sujet. Moins de déplacements de contrôle. Plus d’affiches imprimées pour le hall. Un carnet d’entretien qui se construit tout seul, bâtiment par bâtiment, et un reporting annuel de tout ce qui a été fait. Résultat : un meilleur service rendu, et une vraie rentabilité.",
+    whatIsAnswerProvider: "Pour les prestataires de services, c’est un nouveau service à vendre à vos clients, en B2C comme en B2B. Vos alarmes connectées remontent automatiquement. Vous intervenez plus vite, avec des interventions plus qualifiées, et surtout vous transformez un contrat de maintenance en revenu récurrent.",
+    whatIsPara2: "Les bâtiments sont l’un des derniers domaines où rien n’est numérique. L’eau est coupée et tout le monde appelle. Une fuite passe inaperçue jusqu’à ce que le plafond cède. Les documents vivent éparpillés dans cinq boîtes mail différentes. Les techniciens arrivent sans savoir ce qui est en panne.",
+    whatIsPara3: "Cubii referme cette boucle. Pas une révolution, une évolution : elle fonctionne avec les outils et équipements que vous avez déjà.",
+    audienceH2: "Qui sont les utilisateurs de Cubii ?",
+    card1Label: "Copropriétaire, propriétaire ou locataire",
+    card1Lead: "Cubii dans votre poche, c’est l’assistant qui vous aide à mieux maîtriser votre habitation.",
+    card1FindIntro: "Retrouvez en un instant :",
+    card1FindItems: ["vos documents", "vos factures", "vos consommations", "le prestataire de service dont vous avez besoin"],
+    card1ScanNote: "Scannez vos factures et laissez Cubii les répertorier.",
+    card1CommunityIntro: "Créez une communauté par copropriété pour partager :",
+    card1CommunityItems: ["les incidents détectés dans le cadre de la copropriété", "les échanges avec le syndic de copropriété", "vos documents des assemblées générales", "le règlement interne"],
+    card1VoiceIntro: "Enregistrez un vocal avec votre problème et Cubii se charge du reste :",
+    card1VoiceItems: ["la rédaction du ticket", "la recherche d’un prestataire de service"],
+    card1Cta: "Télécharger l’application",
+    card2Label: "Gestionnaires immobiliers",
+    card2Lead: "Concentrez-vous sur la gestion, plus sur les relances.",
+    card2Item1Title: "Moins de sollicitations.", card2Item1Text: "Fini les dizaines d’appels et de mails sur un même incident : l’information circule une fois, vers tout le monde.",
+    card2Item2Title: "Moins de déplacements.", card2Item2Text: "Contrôlez l’état de vos bâtiments à distance, et ne vous déplacez que lorsque c’est réellement nécessaire.",
+    card2Item3Title: "Plus de papier.", card2Item3Text: "Les affiches à l’entrée des immeubles laissent place à une communication numérique instantanée.",
+    card2Result: "Résultat : un service de meilleure qualité, une rentabilité accrue, et une gestion enfin à la hauteur des attentes de vos clients.",
+    card2Cta: "Voir comment ça marche",
+    card3Label: "Prestataires de services",
+    card3Lead: "Enrichissez votre offre et développez vos revenus.",
+    card3Intro: "En complément de vos contrats de maintenance, Cubii vous permet de :",
+    card3Items: ["proposer un service inédit grâce à la remontée automatique des pannes survenues chez vos clients, particuliers comme professionnels", "être alerté avant même qu’on ne vous appelle", "planifier les interventions au lieu de les subir", "fidéliser vos clients par la réactivité", "faire partie d’une marketplace innovante", "centraliser tous vos incidents sur une seule plateforme"],
+    card3Cta: "Voir comment ça marche",
+    card4Label: "Communes",
+    card4Lead: "Votre patrimoine bâti, enfin sous contrôle.",
+    card4Text: "Une commune gère trente, cinquante, parfois davantage : écoles, maisons relais, halls sportifs, centres culturels, bâtiments administratifs, logements communaux, ateliers, stations de pompage, aires de jeux.",
+    card4Text2: "Un service technique qui pilote au lieu de subir : chaque signalement devient un ticket qualifié, priorisé, attribué et suivi jusqu’à la validation.",
+    card4Cta: "Voir comment ça marche",
+    howPrefix: "Comment", howHighlight: "fonctionne", howSuffix: " Cubii dans le cadre d’un incident ?",
+    howSubtitle: "Trois étapes, du premier signe d’un problème jusqu’à la réparation documentée.",
+    step1Role: "Résident", step1Title: "L’incident",
+    step1Lead: "Tout commence par un signalement. Cubii le transforme en action.",
+    step1Paras: ["Un capteur détecte l’anomalie et crée le ticket seul, ou vous le dictez à voix haute : l’intelligence artificielle écoute, comprend, qualifie et rédige à votre place. Dans les deux cas, l’incident existe en quelques secondes.", "Et un seul ticket suffit. Il informe simultanément toute la copropriété, le syndic et, lorsque la situation l’exige, directement le prestataire concerné. Personne n’est oublié, personne ne signale deux fois la même panne.", "Photos, documents, historique : tout reste attaché au ticket, du premier signalement jusqu’à la réparation validée."],
+    step2Role: "Gestionnaire", step2Title: "Le traitement de l’incident",
+    step2Lead: "Un ticket validé, c’est une action lancée et une copropriété informée.",
+    step2Paras: ["Le gestionnaire ouvre le ticket, le valide et le transfère à son équipe technique interne ou au prestataire externe compétent. Un geste, une décision, tout est enclenché.", "Et cette validation ne fait pas qu’attribuer le travail. Dès cet instant, chaque copropriétaire sait que le problème est pris en charge, par qui, et où en est l’intervention. En temps réel, sans qu’aucun message n’ait à être écrit.", "C’est là que le gestionnaire gagne ses journées : plus d’appels pour savoir si c’est signalé, plus de mails pour demander où ça en est. L’information circule d’elle-même."],
+    step3Role: "Prestataire", step3Title: "Validation de la prestation",
+    step3Lead: "Une fois le travail terminé par le prestataire, c’est au gestionnaire de copropriété de le valider.",
+    step3Paras: ["La validation permet non seulement au prestataire d’envoyer sa facture, mais aussi d’informer tous les copropriétaires que le travail est fait, et surtout de nourrir le carnet d’entretien."],
+    capsH2: "C’est quoi les atouts de Cubii ?", capsLink: "→ Découvrir le produit complet",
+    cap1Title: "Gestion des incidents, automatique et manuelle", cap1Text: "Qu’il soit détecté automatiquement par le bâtiment ou signalé manuellement par un occupant, chaque incident est centralisé, qualifié par l’intelligence artificielle et orienté vers le bon interlocuteur.",
+    cap2Title: "Suivi des consommations énergétiques", cap2Text: "Eau, chauffage, électricité, bornes de recharge de véhicules électriques : visualisez l’ensemble de vos consommations en temps réel, ou via la plateforme nationale luxembourgeoise Leneda.",
+    cap3Title: "Maintenance", cap3Text: "Tous vos contrats, avec leurs échéances, au même endroit. À l’approche du terme, Cubii crée le ticket et invite gestionnaire et prestataire. L’intervention est documentée et vient enrichir l’historique du bâtiment.",
+    cap4Title: "Gestion documentaire", cap4Text: "Tous les documents de votre bâtiment réunis au même endroit, accessibles à ceux qui en ont besoin.",
+    cap5Title: "Une marketplace innovante", cap5Text: "Trouvez et mobilisez directement les prestataires compétents, sans intermédiaire ni perte de temps.",
+    cap6Title: "Carnet d’entretien", cap6Text: "Tout étant centralisé, Cubii en devient naturellement le carnet d’entretien. Incidents, interventions, contrats, factures : tout s’archive, tout se prouve. Et à la revente, un bâtiment documenté vaut mieux qu’un bâtiment sur parole.",
+    cap7Title: "Scan des factures et gestion des charges", cap7Text: "Numérisez vos factures et pilotez la répartition des charges en toute transparence.",
+    cap8Title: "Une communauté connectée", cap8Text: "La vie de l’immeuble, dans un seul espace. Copropriétaires et locataires échangent, posent leurs questions et partagent leurs documents au même endroit. Un simple message peut devenir un ticket. Enfin mieux qu’un groupe WhatsApp.",
+    cap9Title: "Gestion financière et assemblées générales", cap9Text: "La gestion financière complète, incluant l’organisation des assemblées générales de copropriété, viendra prochainement enrichir la plateforme.",
     resultsH2: "Quels résultats pouvez-vous attendre\u00A0?", resultsTodayLabel: "Cubii aujourd\u2019hui",
     stat1Label: "bâtiments connectés", stat2Label: "incidents résolus", stat3Label: "professionnels du bâtiment intégrés",
     benchmarksLabel: "Références du secteur",
@@ -484,33 +707,71 @@ const TRANSLATIONS = {
     residentLinePrefix: "Résident\u00A0? Vous n\u2019avez pas besoin de démo.", residentLineCta: "Téléchargez l\u2019application", residentLineSuffix: "\u2014 gratuite dans les copropriétés sur Cubii, 1,99\u00A0€/mois pour votre propre logement."
   },
   de: {
-    eyebrow: "Digitaler Gebäude-Concierge · Luxemburg",
-    heroPrefix: "Ihr Gebäude, endlich", heroHighlight: "vernetzt",
-    heroSubhead: "Cubii ist der digitale Concierge, der Bewohner, Gebäudeverwalter und Dienstleister in einer App verbindet. Vorfälle werden in Sekunden gemeldet, der richtige Techniker wird automatisch entsandt, und das Telefon hört auf zu klingeln.",
+    eyebrow: "Ihr technischer und finanzieller Assistent für Ihr Gebäude",
+    heroPrefix: "Ihr Gebäude kann endlich", heroHighlight: "sprechen", heroSuffix: " — dank der Daten, die es übermittelt.",
+    heroSubhead: "Cubii macht aus erlittener Wartung beherrschte Wartung.",
+    heroSubhead2: "Durch vorbeugende Wartung erkennt Cubii Anomalien, sobald sie auftreten, und alarmiert gleichzeitig Eigentümer, Verwalter und Dienstleister. Alle haben dieselbe Information, zum selben Zeitpunkt.",
+    heroSubhead3: "Das Ergebnis: ein schneller Einsatz, in Echtzeit informierte Eigentümer und ein Gebäude, dessen Wert dauerhaft erhalten bleibt.",
     ctaPrimary: "Demo buchen",
-    ctaSecondary: "Ich bin Bewohner \u2192 App herunterladen",
-    adminBoardLabel: "Cubii-Verwaltungskonsole \u2014 Vorfallübersicht",
+    ctaSecondary: "Ich möchte es einfach ausprobieren",
+    adminBoardLabel: "Cubii-Verwaltungskonsole — Vorfallübersicht",
     trust1: "Entwickelt in Luxemburg", trust2: "Server in Europa gehostet", trust3: "Gewinner des Preises für digitale Innovation 2019", trust4: "Bereit für die EU-Energieregulierung (EPBD)",
-    whatIsH2: "Was ist Cubii?",
-    whatIsAnswer: "Cubii ist eine von Smart Cube in Luxemburg entwickelte App als digitaler Gebäude-Concierge. Sie bündelt Störungsmanagement, Energieüberwachung, Wartungsplanung, Dokumentenverwaltung und die Koordination von Dienstleistern für Wohn- und Gewerbeimmobilien auf einer einzigen Plattform. In Eigentümergemeinschaften, die Cubii nutzen, ist die App für Bewohner kostenlos; Eigentümer von Einzelhäusern oder -wohnungen abonnieren sie für 1,99 €/Monat. Gebäudeverwalter und Dienstleister nutzen sie, um Reaktionszeiten und Betriebskosten zu senken.",
+    whatIsH2: "Ein wenig Geschichte rund um Cubii",
+    whatIsAnswer: "Eine Plattform, drei Berufe, ein gemeinsames Interesse",
+    whatIsAnswerResident: "Für Eigentümer, Miteigentümer und Mieter ist Cubii in der Tasche wie ein Schutzengel für die Wohnung. Sie werden vor der Wasserabschaltung informiert, nicht danach. Sie verfolgen die Reparatur, statt zu warten. Heikle Themen können Sie sogar anonym melden.",
+    whatIsAnswerManager: "Für Gebäudeverwalter bedeutet das weniger doppelte Anrufe und E-Mails zum selben Thema. Weniger Kontrollfahrten. Keine gedruckten Aushänge mehr für den Eingangsbereich. Ein Wartungsbuch, das sich von selbst aufbaut, Gebäude für Gebäude, und ein Jahresbericht über alles Geleistete. Ergebnis: ein besserer Service und echte Rentabilität.",
+    whatIsAnswerProvider: "Für Dienstleister ist es eine neue Leistung, die Sie Ihren Kunden verkaufen können, im B2C wie im B2B. Ihre vernetzten Alarme melden sich automatisch. Sie greifen schneller ein, mit besser qualifizierten Einsätzen, und vor allem machen Sie aus einem Wartungsvertrag wiederkehrende Einnahmen.",
     whatIsPara2: "Gebäude sind einer der letzten Bereiche, in denen nichts digital ist. Das Wasser wird abgestellt, und alle rufen an. Ein Leck bleibt unbemerkt, bis die Decke einstürzt. Dokumente verteilen sich auf fünf verschiedene Postfächer. Techniker erscheinen, ohne zu wissen, was defekt ist.",
     whatIsPara3: "Cubii schließt diese Lücke. Keine Revolution, sondern eine Evolution: Cubii funktioniert mit den Werkzeugen und Anlagen, die Sie bereits haben.",
-    audienceH2: "Für wen ist Cubii gedacht?",
-    card1Label: "Bewohner & Eigentümer", card1Text: "Verpassen Sie nie, was in Ihrem Gebäude passiert. Melden Sie ein Problem in 30 Sekunden, erhalten Sie Warnungen, bevor sie kritisch werden, und behalten Sie Ihren Energieverbrauch jederzeit im Blick. Kostenlos in Eigentümergemeinschaften auf Cubii, 1,99 €/Monat für Ihr eigenes Zuhause.", card1Cta: "App herunterladen",
-    card2Label: "Gebäudeverwalter", card2Text: "Weniger Anrufe, schnellere Einsätze, vollständige Compliance. Cubii automatisiert den Ablauf zwischen Vorfall und Behebung.", card2Cta: "So funktioniert es",
-    card3Label: "Dienstleister", card3Text: "Vollständige Tickets von Anfang an, neue Kunden über den Marktplatz, weniger Papierkram nach jedem Einsatz.", card3Cta: "So funktioniert es",
-    howPrefix: "Wie", howHighlight: "funktioniert", howSuffix: " Cubii?",
-    howSubtitle: "Drei Schritte, vom ersten Anzeichen eines Problems bis zur dokumentierten Behebung.",
-    step1Role: "Bewohner", step1Title: "Ein Vorfall tritt auf", step1Text: "Ein Bewohner meldet ihn mit Fotos in der App, oder ein vernetzter Sensor erkennt ihn automatisch. Wasserleck, Aufzugsausfall, Heizungsstörung: Cubii erkennt es, bevor es teuer wird.",
-    step2Role: "Verwalter", step2Title: "Die richtigen Personen erfahren es sofort", step2Text: "Der Gebäudeverwalter bestätigt das Ticket. Der Dienstleister erhält es mit bereits ausgefülltem Standort, Fotos, Kategorie und Dringlichkeit. Keine Telefonkette, keine fehlenden Angaben.",
-    step3Role: "Dienstleister", step3Title: "Behoben, dokumentiert, erledigt", step3Text: "Der Einsatz wird bis zum Abschluss verfolgt, der Chat wird pro Ticket archiviert, ein Nachweis der Arbeit wird erstellt. Die vollständige Historie des Gebäudes bleibt an einem Ort.",
-    capsH2: "Was kann Cubii?", capsLink: "\u2192 Produkt entdecken",
-    cap1Title: "Störungsmanagement", cap1Text: "Tickets, manuell erstellt oder automatisch über Sensoren, verfolgt von der Meldung bis zur Behebung.",
-    cap2Title: "Energieüberwachung", cap2Text: "Wasser, Gas und Strom in Echtzeit, mit Anbindung an Leneda (die nationale Energiedatenplattform Luxemburgs) und Warnungen bei Auffälligkeiten.",
-    cap3Title: "Wartung", cap3Text: "Ein Kalender, der wiederkehrende Tickets automatisch an Dienstleister verteilt.",
-    cap4Title: "Dokumente", cap4Text: "Digitales Wartungsbuch, Verträge, Pläne und das Sicherheitsregister, zentralisiert und teilbar.",
-    cap5Title: "Marktplatz", cap5Text: "Finden und beauftragen Sie geprüfte Dienstleister nach Fachgebiet und Verfügbarkeit.",
-    cap6Title: "Kommunikation", cap6Text: "Push-Benachrichtigungen, Chat pro Ticket und Anzeigen in der Lobby für Gebäudeankündigungen.",
+    audienceH2: "Wer sind die Nutzer von Cubii?",
+    card1Label: "Miteigentümer, Eigentümer oder Mieter",
+    card1Lead: "Cubii in Ihrer Tasche ist der Assistent, der Ihnen hilft, Ihre Wohnung besser im Griff zu haben.",
+    card1FindIntro: "Finden Sie im Handumdrehen:",
+    card1FindItems: ["Ihre Dokumente", "Ihre Rechnungen", "Ihre Verbräuche", "den Dienstleister, den Sie brauchen"],
+    card1ScanNote: "Scannen Sie Ihre Rechnungen und lassen Sie Cubii sie ablegen.",
+    card1CommunityIntro: "Erstellen Sie eine Community pro Eigentümergemeinschaft, um zu teilen:",
+    card1CommunityItems: ["die im Rahmen der Eigentümergemeinschaft erkannten Vorfälle", "den Austausch mit der Hausverwaltung", "Ihre Unterlagen zu den Eigentümerversammlungen", "die Hausordnung"],
+    card1VoiceIntro: "Nehmen Sie eine Sprachnachricht zu Ihrem Problem auf, und Cubii erledigt den Rest:",
+    card1VoiceItems: ["das Verfassen des Tickets", "die Suche nach einem Dienstleister"],
+    card1Cta: "App herunterladen",
+    card2Label: "Gebäudeverwalter",
+    card2Lead: "Konzentrieren Sie sich auf die Verwaltung, nicht auf das Nachfassen.",
+    card2Item1Title: "Weniger Anfragen.", card2Item1Text: "Schluss mit Dutzenden Anrufen und E-Mails zum selben Vorfall: Die Information wird einmal verschickt und erreicht alle.",
+    card2Item2Title: "Weniger Fahrten.", card2Item2Text: "Prüfen Sie den Zustand Ihrer Gebäude aus der Ferne und fahren Sie nur hin, wenn es wirklich nötig ist.",
+    card2Item3Title: "Kein Papier mehr.", card2Item3Text: "Aushänge im Hauseingang weichen einer sofortigen digitalen Kommunikation.",
+    card2Result: "Ergebnis: ein Service in besserer Qualität, höhere Rentabilität und eine Verwaltung, die endlich den Erwartungen Ihrer Kunden entspricht.",
+    card2Cta: "So funktioniert es",
+    card3Label: "Dienstleister",
+    card3Lead: "Erweitern Sie Ihr Angebot und steigern Sie Ihre Einnahmen.",
+    card3Intro: "Ergänzend zu Ihren Wartungsverträgen ermöglicht Ihnen Cubii:",
+    card3Items: ["eine bisher einzigartige Leistung anzubieten, dank der automatischen Meldung von Störungen bei Ihren Kunden, privat wie gewerblich", "alarmiert zu werden, noch bevor jemand anruft", "Einsätze zu planen, statt sie zu erleiden", "Kunden durch Reaktionsschnelligkeit zu binden", "Teil eines innovativen Marktplatzes zu sein", "alle Ihre Vorfälle auf einer einzigen Plattform zu bündeln"],
+    card3Cta: "So funktioniert es",
+    card4Label: "Gemeinden",
+    card4Lead: "Ihr Gebäudebestand, endlich unter Kontrolle.",
+    card4Text: "Eine Gemeinde verwaltet dreißig, fünfzig, manchmal mehr: Schulen, Kindertagesstätten, Sporthallen, Kulturzentren, Verwaltungsgebäude, Gemeindewohnungen, Werkstätten, Pumpstationen, Spielplätze.",
+    card4Text2: "Ein technischer Dienst, der steuert statt zu reagieren: Jede Meldung wird zu einem Ticket, das qualifiziert, priorisiert, zugewiesen und bis zur Freigabe verfolgt wird.",
+    card4Cta: "So funktioniert es",
+    howPrefix: "Wie", howHighlight: "funktioniert", howSuffix: " Cubii im Fall einer Störung?",
+    howSubtitle: "Drei Schritte, vom ersten Anzeichen eines Problems bis zur dokumentierten Reparatur.",
+    step1Role: "Bewohner", step1Title: "Die Störung",
+    step1Lead: "Alles beginnt mit einer Meldung. Cubii macht daraus eine Aktion.",
+    step1Paras: ["Ein Sensor erkennt die Anomalie und erstellt das Ticket von selbst, oder Sie diktieren es laut: Die künstliche Intelligenz hört zu, versteht, qualifiziert und formuliert für Sie. In beiden Fällen existiert die Störung binnen Sekunden.", "Und ein einziges Ticket genügt. Es informiert gleichzeitig die gesamte Eigentümergemeinschaft, die Verwaltung und, wenn die Lage es erfordert, direkt den zuständigen Dienstleister. Niemand wird vergessen, niemand meldet dieselbe Störung zweimal.", "Fotos, Dokumente, Verlauf: Alles bleibt am Ticket, von der ersten Meldung bis zur freigegebenen Reparatur."],
+    step2Role: "Verwalter", step2Title: "Die Bearbeitung der Störung",
+    step2Lead: "Ein freigegebenes Ticket bedeutet: Arbeit gestartet und Eigentümergemeinschaft informiert.",
+    step2Paras: ["Der Verwalter öffnet das Ticket, gibt es frei und leitet es an sein internes Technikteam oder an den passenden externen Dienstleister weiter. Ein Handgriff, eine Entscheidung, und alles ist in Gang gesetzt.", "Und diese Freigabe verteilt nicht nur die Arbeit. Ab diesem Moment weiß jeder Miteigentümer, dass das Problem bearbeitet wird, von wem und wie weit der Einsatz ist. In Echtzeit, ohne dass eine einzige Nachricht geschrieben werden muss.", "Genau hier gewinnt der Verwalter seine Tage zurück: keine Anrufe mehr mit der Frage, ob es gemeldet wurde, keine E-Mails mehr mit der Frage nach dem Stand. Die Information verbreitet sich von selbst."],
+    step3Role: "Dienstleister", step3Title: "Freigabe der Leistung",
+    step3Lead: "Sobald der Dienstleister die Arbeit abgeschlossen hat, gibt der Verwalter sie frei.",
+    step3Paras: ["Die Freigabe erlaubt dem Dienstleister nicht nur, seine Rechnung zu stellen, sie informiert auch alle Miteigentümer darüber, dass die Arbeit erledigt ist, und speist vor allem das Wartungsbuch."],
+    capsH2: "Was sind die Stärken von Cubii?", capsLink: "→ Das komplette Produkt entdecken",
+    cap1Title: "Störungsmanagement, automatisch und manuell", cap1Text: "Ob automatisch vom Gebäude erkannt oder manuell von einem Bewohner gemeldet: Jede Störung wird zentral erfasst, von der künstlichen Intelligenz qualifiziert und an den richtigen Ansprechpartner geleitet.",
+    cap2Title: "Überwachung des Energieverbrauchs", cap2Text: "Wasser, Heizung, Strom, Ladepunkte für Elektrofahrzeuge: Sehen Sie alle Ihre Verbräuche in Echtzeit, oder über die nationale luxemburgische Plattform Leneda.",
+    cap3Title: "Wartung", cap3Text: "Alle Ihre Verträge mit ihren Fristen an einem Ort. Wenn ein Termin näher rückt, erstellt Cubii das Ticket und lädt Verwalter und Dienstleister ein. Der Einsatz wird dokumentiert und ergänzt die Historie des Gebäudes.",
+    cap4Title: "Dokumentenverwaltung", cap4Text: "Alle Dokumente Ihres Gebäudes an einem Ort, zugänglich für alle, die sie brauchen.",
+    cap5Title: "Ein innovativer Marktplatz", cap5Text: "Finden und beauftragen Sie kompetente Dienstleister direkt, ohne Zwischenhändler und ohne Zeitverlust.",
+    cap6Title: "Wartungsbuch", cap6Text: "Da alles zentral erfasst ist, wird Cubii ganz natürlich zum Wartungsbuch. Störungen, Einsätze, Verträge, Rechnungen: Alles wird archiviert, alles ist belegbar. Und beim Wiederverkauf ist ein dokumentiertes Gebäude mehr wert als eines auf bloßes Wort hin.",
+    cap7Title: "Rechnungsscan und Nebenkostenverwaltung", cap7Text: "Digitalisieren Sie Ihre Rechnungen und steuern Sie die Umlage der Nebenkosten in voller Transparenz.",
+    cap8Title: "Eine vernetzte Gemeinschaft", cap8Text: "Das Leben im Haus, an einem einzigen Ort. Miteigentümer und Mieter tauschen sich aus, stellen ihre Fragen und teilen ihre Dokumente an derselben Stelle. Eine einfache Nachricht kann zu einem Ticket werden. Endlich besser als eine WhatsApp-Gruppe.",
+    cap9Title: "Finanzverwaltung und Eigentümerversammlungen", cap9Text: "Die vollständige Finanzverwaltung, einschließlich der Organisation von Eigentümerversammlungen, wird die Plattform demnächst ergänzen.",
     resultsH2: "Welche Ergebnisse können Sie erwarten?", resultsTodayLabel: "Cubii heute",
     stat1Label: "vernetzte Gebäude", stat2Label: "behobene Vorfälle", stat3Label: "integrierte Gebäudefachleute",
     benchmarksLabel: "Branchenbenchmarks",
@@ -569,7 +830,7 @@ class Component extends DCLogic {
       metaTitle: meta.title,
       metaDescription: meta.description,
       schema: ["Organization (Smart Cube)", "SoftwareApplication (Cubii, BusinessApplication, iOS/Android, offers)"],
-      h2s: ["What is Cubii?", "Who is Cubii for?", "How does Cubii work?", "What can Cubii do?", "What results can you expect?", "Trusted across Luxembourg", "See Cubii on your buildings"],
+      h2s: ["A little history around Cubii", "Who are Cubii’s users?", "How does Cubii work when an incident occurs?", "What are Cubii’s strengths?", "What results can you expect?", "Trusted across Luxembourg", "See Cubii on your buildings"],
       gaps: ["2-3 client logos", "1-2 testimonials: result + number + name + role + company", "Real app store links / QR status", "H2s shown in English (canonical reference); each locale renders its own equivalent in the same order"]
     };
   }
